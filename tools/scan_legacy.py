@@ -5,7 +5,7 @@ Uses the curated regexes in references/legacy-modernization/catalog.json plus th
 (api/deprecated.tsv, for `:Method(` / `.Property` names that are unambiguous). Findings are REVIEW CANDIDATES
 (text matching can hit comments/strings), not proof. Nothing is modified.
 
-  python tools/scan_legacy.py path/to/project [--json] [--no-api]
+  python tools/scan_legacy.py path/to/project_or_file.luau [--json] [--no-api]
 """
 from __future__ import annotations
 
@@ -40,15 +40,17 @@ def load_rules(use_api: bool) -> list[tuple[str, re.Pattern, str]]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("project", type=Path)
+    ap.add_argument("project", type=Path, help="directory (scanned recursively) or a single .lua/.luau file")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--no-api", action="store_true", help="only curated catalog rules")
     a = ap.parse_args()
-    if not a.project.is_dir():
-        ap.error("project directory not found")
+    if not a.project.exists():
+        ap.error(f"not found: {a.project}")
     rules = load_rules(not a.no_api)
     findings = []
-    for path in sorted(a.project.rglob("*")):
+    base = a.project if a.project.is_dir() else a.project.parent
+    paths = sorted(a.project.rglob("*")) if a.project.is_dir() else [a.project]
+    for path in paths:
         if path.suffix not in (".lua", ".luau") or not path.is_file() or ".git" in path.parts:
             continue
         for n, line in enumerate(path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
@@ -56,7 +58,7 @@ def main() -> int:
                 continue
             for rid, rx, fix in rules:
                 if rx.search(line):
-                    findings.append({"file": path.relative_to(a.project).as_posix(), "line": n, "rule": rid,
+                    findings.append({"file": path.relative_to(base).as_posix(), "line": n, "rule": rid,
                                      "code": line.strip()[:160], "suggest": fix})
     if a.json:
         print(json.dumps({"read_only": True, "findings": findings}, indent=1))

@@ -155,8 +155,44 @@ attributes; overlap zones at doorways so the blend starts before the player ente
 (a lit room inside a dark building).
 
 ## Server-wide changes (day/night, story events)
-If the server must change lighting for everyone (a day/night cycle), let the server own a *different* set of
-properties (e.g. `ClockTime`) and remove them from client presets — never both sides on the same property.
+Give each property exactly one owner. For a day/night cycle, don't write `ClockTime` from the server every frame (it
+would replicate constantly); publish the cycle once and let every client compute the same time:
+
+```luau
+--!strict
+-- Server (once, or when the cycle changes): the cycle definition is shared state.
+local Workspace = game:GetService("Workspace")
+Workspace:SetAttribute("DayStart", Workspace:GetServerTimeNow())
+Workspace:SetAttribute("DayLength", 20 * 60) -- real seconds per in-game day
+```
+
+```luau
+--!strict
+-- Client: derive ClockTime from server time at 10 Hz (the sun moves ~0.03° per update on a 20-minute day — invisible).
+local Lighting = game:GetService("Lighting")
+local RunService = game:GetService("RunService")
+local Workspace = game:GetService("Workspace")
+
+local START_HOUR = 6
+local accumulator = 0
+RunService.PreRender:Connect(function(dt: number)
+	accumulator += dt
+	if accumulator < 0.1 then
+		return
+	end
+	accumulator = 0
+	local start = Workspace:GetAttribute("DayStart")
+	local length = Workspace:GetAttribute("DayLength")
+	if type(start) ~= "number" or type(length) ~= "number" or length <= 0 then
+		return
+	end
+	local days = (Workspace:GetServerTimeNow() - start) / length
+	Lighting.ClockTime = (START_HOUR + days * 24) % 24
+end)
+```
+With a cycle running, remove `ClockTime` (and anything else the cycle owns) from the client presets. Server
+gameplay that depends on night (spawning monsters) computes the same formula from the attributes — it never reads
+`Lighting`.
 
 ## How to test
 Walk between zones → smooth 1.5 s blends, no flicker when standing on a boundary; set PowerState to Emergency from the

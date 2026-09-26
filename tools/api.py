@@ -91,6 +91,10 @@ def verdict(m: dict) -> list[str]:
     if "deprecated" in flags or "superseded" in flags:
         pref = next((f[7:] for f in flags if f.startswith("prefer=")), "")
         dep = deprecations().get(f"{m['class']}.{m['member']}", {})
+        # The dump's preferred name is sometimes the same method on another class (Humanoid.LoadAnimation →
+        # Animator:LoadAnimation); then only the message says where it moved.
+        if pref == m["member"]:
+            pref = ""
         notes.append("DEPRECATED/SUPERSEDED" + (f" -> use {pref}" if pref else "") +
                      (f". {dep.get('message')}" if dep.get("message") else ""))
     if kind == "Property":

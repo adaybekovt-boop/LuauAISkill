@@ -1,0 +1,28 @@
+{
+  "generated_from": {
+    "api_dump": {
+      "repo": "MaximumADHD/Roblox-Client-Tracker",
+      "file": "Full-API-Dump.json",
+      "client_version": "0.740.19.7400931",
+      "url": "https://github.com/MaximumADHD/Roblox-Client-Tracker.git",
+      "sha": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+      "commit_date": "2026-09-24T17:25:17-05:00"
+    },
+    "engine_yaml": {
+      "repo": "Roblox/creator-docs",
+      "path": "content/en-us/reference/engine",
+      "studio_version": "0.740.19.7400931\nversion-c792f79abddd41bd",
+      "url": "https://github.com/Roblox/creator-docs.git",
+      "sha": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+      "commit_date": "2026-09-25T10:12:55+00:00"
+    }
+  },
+  "counts": {
+    "classes": 924,
+    "members": 8478,
+    "enum_items": 3644,
+    "datatype_library_global_entries": 638,
+    "deprecated_or_superseded": 704
+  },
+  "note": "Generated file. Security 'None' = callable from ordinary game scripts. PluginSecurity/RobloxScriptSecurity/LocalUserSecurity = NOT available to game scripts. 'notscriptable' = Studio property only. Priority when sources disagree: reflection dump metadata > YAML text."
+}

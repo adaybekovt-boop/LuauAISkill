@@ -1,0 +1,925 @@
+class	superclass	tags	summary
+Accessory	Accoutrement		An item that a Character can wear.
+AccessoryDescription	Instance		Describes the appearance of an `Accessory` for the `HumanoidDescription`.
+AccountService	Instance	notcreatable,service,notreplicated	
+Accoutrement	Instance		An object that can attach to a player's character.
+AchievementService	Instance	notcreatable,service,notreplicated	
+ActivityHistoryEventService	Instance	notcreatable,service	
+Actor	Model		An `Actor` is a container for code that can be safely split into its own thread.
+AdGui	SurfaceGuiBase		A surface-based GUI that displays immersive ads on a face of a `Part` in the 3D world.
+AdPlacement	Instance		
+AdPortal	Instance		A portal that teleports players to a sponsored experience as part of immersive ads.
+AdService	Instance	notcreatable,service	The service responsible for in-experience advertising.
+AdvancedDragger	Instance		An unfinished advanced variant of the `Dragger` class.
+AirController	ControllerBase		A physics character controller that governs movement while a character is airborne.
+AlignOrientation	Constraint		Constraint which applies torque to align two attachments, or to align one attachment with a goal orientation.
+AlignPosition	Constraint		Constraint which applies force to move two attachments together, or to move one attachment to a goal position.
+AnalyticsService	Instance	notcreatable,service,notreplicated	Collection of methods that allows you to track how users interact with your experiences.
+AngularVelocity	Constraint		Applies torque on an assembly to maintain a constant angular velocity.
+AnimatedImage	GuiBase	notcreatable	
+AnimatedImageService	Instance	notcreatable,service	
+AnimatedImageTrack	Object	notcreatable,notreplicated	
+Animation	Instance		References an animation asset which can be loaded by an `AnimationController`.
+AnimationClip	Instance	notcreatable	Represents all types of animation data that the Roblox animation system can consume.
+AnimationClipProvider	Instance	notcreatable,service,notreplicated	Provides functions to load and preview `AnimationClip`.
+AnimationConstraint	Constraint		Aligns two `BasePart` with an animate-able kinematic or force-based joint that supports physical simulation (ragdoll, arm strength). The default joint type for R15 avatar rigs.
+AnimationController	Instance		Allows animations to be loaded and applied to a character or model in place of a `Humanoid`.
+AnimationFromVideoCreatorService	Instance	notcreatable,service	
+AnimationFromVideoCreatorStudioService	Instance	notcreatable,service,notreplicated	
+AnimationGraphDefinition	AnimationClip		
+AnimationImportData	BaseImportData	notcreatable,notreplicated	
+AnimationNode	Object	notcreatable,notreplicated	
+AnimationNodeDefinition	Instance		A single node within an animation graph, connected to other nodes through named input pins.
+AnimationRigData	Instance		Used to store information regarding the model an animation was authored for.
+AnimationStreamTrack	Instance	notcreatable,notreplicated	
+AnimationTrack	Instance	notcreatable	Controls the playback of an animation on an `Animator`.
+AnimationValueNodeDefinition	Instance		
+AnimationValueOutputDefinition	Instance		
+Animator	Instance		Responsible for the playback and replication of `Animation`.
+Annotation	Instance		
+AnnotationsService	Instance	notcreatable,service	
+AppAgeSignalsService	Instance	notcreatable,service,notreplicated	
+AppLifecycleObserverService	Instance	notcreatable,service,notreplicated	
+AppRatingPromptService	Instance	notcreatable,service,notreplicated	
+AppStorageService	LocalStorageService	notcreatable,service,notreplicated	
+AppUpdateService	Instance	notcreatable,service,notreplicated	
+ArcHandles	HandlesBase		The `ArcHandles` object places 3D arc handles around any 3D object that its `PartAdornment.Adornee` is set to.
+AssetCounterService	Instance	notcreatable,service,notreplicated	
+AssetDeliveryProxy	Instance	notcreatable,service,notreplicated	Runs a local HTTP server that serves assets to real devices.
+AssetImportService	Instance	notcreatable,service,notreplicated	
+AssetImportSession	ImportSession	notcreatable,notreplicated	
+AssetManagerService	Instance	notcreatable,service,notreplicated	
+AssetPatchSettings	Instance	notcreatable,notreplicated	Configures a single patch asset built by `IncrementalPatchBuilder` and served through `AssetDeliveryProxy`.
+AssetQualityService	Instance	notcreatable,service,notreplicated	
+AssetService	Instance	notcreatable,service	A non-replicated service that handles asset-related queries to the Roblox web API.
+AssetSoundEffect	CustomSoundEffect	notcreatable	
+Atmosphere	Instance		The `Atmosphere` object pushes Roblox closer toward realistic environments where sunlight scatters in different ways depending on density and other air particle properties.
+AtmosphereSensor	SensorBase		A `SensorBase` that outputs data about the `AtmosphereSensor.AirDensity` and `AtmosphereSensor.RelativeWindVelocity` at the sensor's position.
+Attachment	Instance		Defines a point and orientation relative to an ancestor `PVInstance`, `Bone`, or another `Attachment`.
+AudioAnalyzer	Instance		Takes measurements from audio streams that are connected to it via one or more `Wire`.
+AudioChannelMixer	Instance		Combines multiple audio streams into a single, multichannel audio stream.
+AudioChannelSplitter	Instance		Splits an audio stream into component channels so that each can be processed independently.
+AudioChorus	Instance		Makes an audio stream sound more voluminous. If applied to a single voice, it may sound like multiple voices.
+AudioCompressor	Instance		Adjusts the dynamic range of input streams.
+AudioDeviceInput	Instance		Produces audio streams from physical devices, such as microphones.
+AudioDeviceOutput	Instance		Accepts audio streams to be rendered out to physical hardware devices such as speakers or headphones.
+AudioDistortion	Instance		Distorts audio streams, making them sound fuzzier, grittier, and louder.
+AudioEcho	Instance		Overlays delayed copies of audio streams.
+AudioEmitter	Instance		Emits audio streams into the world.
+AudioEqualizer	Instance		Adjusts the frequency content of audio streams.
+AudioFader	Instance		Adjusts the volume of audio streams.
+AudioFilter	Instance		Adjusts the frequency content of audio streams.
+AudioFlanger	Instance		Imparts a whooshing or sweeping sound on audio streams.
+AudioFocusService	Instance	notcreatable,service,notreplicated	
+AudioGate	Instance		Mutes audio streams that fall below a certain volume threshold.
+AudioLimiter	Instance		Limits how loud audio streams are allowed to be.
+AudioListener	Instance		Records an audio stream from its surrounding `AudioEmitter` in the 3D world.
+AudioPages	Pages	notcreatable,notreplicated	A special version of the `Pages` class returned by `AssetService:SearchAudioAsync()`.
+AudioPitchShifter	Instance		Adjusts the perceived pitch of audio streams.
+AudioPlayer	Instance		Used to play audio assets.
+AudioRecorder	Instance	notbrowsable	Records audio streams in-experience.
+AudioReverb	Instance		Reverberates audio streams.
+AudioSearchParams	Instance	notreplicated	Instance to be passed to `AssetService:SearchAudioAsync()` to search for audio assets.
+AudioSpeechToText	Instance		Converts spoken audio into text.
+AudioTextToSpeech	Instance		Plays text as speech audio.
+AudioTremolo	Instance		Creates a trembling effect on a sound by varying the volume of the sound up and down.
+AudioWindSynthesizer	Instance	notbrowsable	
+AuroraScript	LuaSourceContainer	deprecated	
+AuroraScriptObject	Instance	notcreatable,deprecated	
+AuroraScriptService	Instance	notcreatable,service,deprecated	
+AuroraService	Instance	notcreatable,service,deprecated	
+AvatarAbilityRules	Instance		
+AvatarAccessoryRules	Instance		
+AvatarAnimationRules	Instance		
+AvatarBodyRules	Instance		
+AvatarChatService	Instance	notcreatable,service	
+AvatarClothingRules	Instance		
+AvatarCollisionRules	Instance		
+AvatarCreationService	Instance	notcreatable,service	A service to support developer avatar creators.
+AvatarEditorService	Instance	notcreatable,service	A service to support developer Avatar Editors.
+AvatarImportService	Instance	notcreatable,service,notreplicated	
+AvatarRules	Instance		
+AvatarSettings	Instance	notcreatable,service	
+Backpack	Instance		A container object that holds a player's inventory. Any `Tool` in a player's `Backpack` will be displayed in their inventory at the bottom of the screen.
+BackpackItem	Model	notcreatable	BackpackItem is an abstract class for backpack items such as HopperBins and Tools.
+BadgeService	Instance	notcreatable,service	Provides information on badges and awards them.
+BallSocketConstraint	Constraint		Forces its two attachments into the same position and allows them to freely rotate about all three axes, with optional limits to restrict both tilt and twist.
+BanHistoryPages	Pages	notcreatable,notreplicated	Returned by `Players:GetBanHistoryAsync` to view the entire ban and unban history of any UserId.
+BaseCoreGuiConfiguration	Instance	notcreatable,notreplicated	Base class for the configuration objects that control individual built-in `CoreGui` elements.
+BaseImportData	Instance	notcreatable,notreplicated	
+BasePart	PVInstance	notcreatable,notbrowsable	The abstract base class for in-world objects that physically interact.
+BasePlayerGui	Instance	notcreatable	`BasePlayerGui` is an abstract class which the GUI drawing storage classes inherit from.
+BaseRemoteEvent	Instance	notcreatable	Abstract base class inherited by `RemoteEvent` and `UnreliableRemoteEvent` for asynchronous, one-way communication across the client-server boundary.
+BaseScript	LuaSourceContainer	notcreatable	The base class for all script objects which run automatically.
+BaseWrap	Instance	notcreatable	Abstract base class for `WrapTarget` and `WrapLayer` that stores cage mesh data for layered clothing deformation.
+Beam	Instance		Connects two `Attachment` by drawing a texture between them.
+BevelMesh	DataModelMesh	notcreatable,notbrowsable,deprecated	An abstract class that `BlockMesh` and `CylinderMesh` inherit from.
+BillboardGui	LayerCollector		A container for `GuiObject` that renders in 3D space facing the camera.
+BinaryStringValue	ValueBase		An internal type of `StringValue` object, that stores a `BinaryString` value.
+BindableEvent	Instance		An object which enables custom events through asynchronous one-way communication between scripts on the same side of the client-server boundary. Scripts firing a `BindableEvent` do not yield.
+BindableFunction	Instance		An object which allows for synchronous two-way communication between scripts on the same side of the client-server boundary. Scripts invoking a `BindableFunction` yield until the corresponding callback is found.
+BlockMesh	BevelMesh		The BlockMesh object applies a 'brick' mesh to the `BasePart` it is parented to. It behaves identically to a `SpecialMesh` with `SpecialMesh.MeshType` set to 'Brick'.
+BloomEffect	PostEffect		Simulates the camera viewing a very bright light.
+BlurEffect	PostEffect		Applies a blur to the entire game world.
+BodyAngularVelocity	BodyMover	deprecated	Applies a torque to maintain a constant angular velocity.
+BodyColors	CharacterAppearance		For a Humanoid character, the BodyColors will specify the colors for the different body parts.
+BodyForce	BodyMover	deprecated	Applies a constant force to an object.
+BodyGyro	BodyMover	deprecated	Applies a torque to maintain a constant orientation.
+BodyMover	Instance	notcreatable,deprecated	Base class for objects that continually exert forces to assemblies.
+BodyPartDescription	Instance		Describes the appearance of an avatar body part for the `HumanoidDescription`.
+BodyPosition	BodyMover	deprecated	Applies a force to maintain a constant position.
+BodyThrust	BodyMover	deprecated	Applies a constant force to an object at a specific point.
+BodyVelocity	BodyMover	deprecated	Applies a force to maintain a constant velocity.
+Bone	Attachment		Bones are non-rendered objects that drive the movement of one or more parts for the purposes of animation, or creating clothing and characters.
+BoolValue	ValueBase		A container object for a single boolean value.
+BoxHandleAdornment	HandleAdornment		A box-shaped handle that can be adorned to a `BasePart`.
+BranchService	Instance	notcreatable,service	
+Breakpoint	Instance	notreplicated	
+BrickColorValue	ValueBase		A container object for a single BrickColor value.
+BrowserService	Instance	notcreatable,service,notreplicated	Bridges the Roblox client to its native web browser or WebView.
+BubbleChatConfiguration	TextChatConfigurations	notcreatable	Allows for customization of text chat bubbles through `TextChatService`.
+BubbleChatMessageProperties	TextChatMessageProperties		Overrides `BubbleChatConfiguration` properties for an individual bubble chat message.
+BugReporterService	Instance	notcreatable,service,notreplicated	
+BulkImportService	Instance	notcreatable,service,notreplicated	
+BuoyancySensor	SensorBase		A `SensorBase` that outputs data about how its `BasePart` is interacting with `Terrain` water.
+CFrameValue	ValueBase		A container object for a single CFrame value.
+CSGDictionaryService	FlyweightService	service	
+CacheableContentProvider	Instance	notcreatable,service,notreplicated	A variant of the `ContentProvider` that caches assets that have already been received. This service is not used directly, but it is used by the services that inherit from it.
+CallingService	Instance	notcreatable,service,notreplicated	
+CalloutService	Instance	notcreatable,service,notreplicated	
+Camera	PVInstance	notreplicated	A class which defines a view of the 3D world.
+CanvasGroup	GuiObject		Blends descendants as a flattened group with an optional color/transparency modification.
+Capture	Object	notcreatable,notreplicated	A class which defines a piece of content, such as a screenshot or video, taken in-experience.
+CaptureService	Instance	notcreatable,service	A service which provides control over screenshot and video capture features.
+CapturesPages	Pages	notcreatable,notreplicated	A special version of the `Pages` class returned by `CaptureService.ReadCapturesFromGalleryAsync`.
+CapturesViewConfiguration	BaseCoreGuiConfiguration	notcreatable,notreplicated	Controls the built-in captures view, the `CoreGui` element that lets players browse and manage screenshots and video captures they take within an experience.
+CatalogPages	Pages	notcreatable,notreplicated	A special version of `Pages` that stores the results of an Avatar Editor catalog search.
+ChangeHistoryService	Instance	notcreatable,service	**Must** be used by plugins to communicate to Studio how to undo and redo the changes which they make to the experience.
+ChangeHistoryStreamingService	Instance	notcreatable,service	
+ChannelSelectorSoundEffect	CustomSoundEffect	notcreatable	
+ChannelTabsConfiguration	TextChatConfigurations	notcreatable	Configures properties of the optional channel tabs in the default chat window.
+CharacterAppearance	Instance	notcreatable	The base class for objects that change the character's appearance, such as the `BodyColors`, `CharacterMesh`, `ShirtGraphic`, `Pants` and `Shirt` objects.
+CharacterMesh	CharacterAppearance		Modifies the appearance of an R6 body part.
+Chat	Instance	notcreatable,service,notreplicated	Houses the Luau code responsible for running the legacy chat system.
+ChatInputBarConfiguration	TextChatConfigurations	notcreatable	Configures properties of the default chat input bar.
+ChatWindowConfiguration	TextChatConfigurations	notcreatable	Configures properties of the default chat window.
+ChatWindowMessageProperties	TextChatMessageProperties	notcreatable	Customizes the appearance of an individual text chat message displayed in the chat window.
+ChorusSoundEffect	SoundEffect		Makes audio more voluminous by simulating multiple voices playing the same part.
+ClickDetector	Instance		An object that provides user input on in-experience `BasePart` and `Model`.
+ClientReplicator	NetworkReplicator	notcreatable,notreplicated	The client-side `NetworkReplicator` that manages replication of data model changes between the server and itself.
+ClientStorageService	Instance	notcreatable,service,notreplicated	
+ClimbController	ControllerBase		A physics character controller that moves its `ControllerManager.RootPart` along a climbable surface, such as a ladder.
+Clothing	CharacterAppearance	notcreatable	Clothing is the base class for the `Shirt` and `Pants` clothing objects.
+CloudCRUDService	Instance	notcreatable,service,notreplicated	
+CloudExecutionService	Instance	notcreatable,service,notreplicated	
+CloudLocalizationTable	LocalizationTable	notcreatable,notreplicated	
+Clouds	Instance		Renders realistic clouds that drift slowly across the sky.
+ClusterPacketCache	Instance	notcreatable,service,notreplicated	An internal service meant to cache cluster packets.
+Collaborator	Instance	notcreatable	
+CollaboratorsService	Instance	notcreatable,service	
+CollectionService	Instance	notcreatable,service	A service which manages instance collections using assigned tags.
+Color3Value	ValueBase		A container object for a single Color3 value.
+ColorCorrectionEffect	PostEffect		Adjusts color-related properties of the rendered world like saturation, tint, brightness, and contrast.
+ColorGradingEffect	PostEffect		Modifies how color values calculated by the renderer should be converted to the screen's color range.
+CommerceService	Instance	notcreatable,service	Supports real-world purchases that you can bundle with digital benefits.
+CompositeValueCurve	Instance		An animation curve that groups child `FloatCurve` which each animate a different component of a non-unary value.
+CompressorSoundEffect	SoundEffect		Adjusts the dynamic range of audio.
+ConeHandleAdornment	HandleAdornment		A cone-shaped handle that can be adorned to a `BasePart`.
+ConfigService	Instance	notcreatable,service,notreplicated	A game service that gives access to in-experience configuration with updates in real time.
+ConfigSnapshot	Object	notcreatable,notreplicated	A snapshot of configuration values at a given version. Can be player-specific.
+Configuration	Instance		A container object designed to hold value objects. Makes values used in `Tool` or any model using `Script` more accessible.
+ConfigureServerService	Instance	notcreatable,service	Configures a server's `DataModel` for a place session during game-server startup.
+ConnectivityService	Instance	notcreatable,service,notreplicated	
+Constraint	Instance	notcreatable	The base class for constraint-based objects.
+ContentProvider	Instance	notcreatable,service,notreplicated	Service that is used to load content, or assets, into a game.
+ContextActionService	Instance	notcreatable,service	A service used to bind user input to contextual actions.
+ControlState	Instance		
+Controller	Instance	notcreatable	The base class for controller objects, such as the `HumanoidController` object.
+ControllerBase	Instance	notcreatable	Abstract base class for the controllers that a `ControllerManager` uses to move its character.
+ControllerManager	Instance		Manages simulated motion control for its assigned `ControllerManager.RootPart` .
+ControllerPartSensor	ControllerSensor		A `SensorBase` that outputs data about another `BasePart` based on `Humanoid` floor and ladder detection logic.
+ControllerSensor	SensorBase	notcreatable	An abstract base class for `SensorBase` types that supply sensory data to a character controller.
+ControllerService	Instance	notcreatable,service,notreplicated	Container class for the `HumanoidController` among other classes.
+CookiesService	Instance	notcreatable,service	A backend service used by Roblox to control HTTP cookies. Its functions are not available to developers.
+CoreGui	BasePlayerGui	notcreatable,service,notreplicated	The CoreGui is a service used to store Guis created in-game by Roblox for the core user interface found in every game (such as the game menu, the playerlist, the backpack, etc.). It can also be used by `Plugin` in Roblox Studio.
+CoreGuiConfiguration	Instance	notcreatable,service,notreplicated	Service that groups the configuration objects controlling Roblox's built-in `CoreGui` elements.
+CorePackages	Instance	notcreatable,service,notreplicated	
+CoreScript	BaseScript	notcreatable,notreplicated	
+CoreScriptDebuggingManagerHelper	Instance	notcreatable,service	
+CoreScriptSyncService	Instance	notcreatable,service,notreplicated	
+CornerWedgePart	BasePart		A type of `BasePart` that has a corner wedge shape.
+CreationDBService	Instance	notcreatable,service,notreplicated	
+CreatorStoreService	Instance	notcreatable,service	Provides methods for querying Creator Store product information and purchasing assets.
+CrossDMScriptChangeListener	Instance	notcreatable,service,notreplicated	
+CurveAnimation	AnimationClip		Stores animation data in the form of curves for each individual channel to animate.
+CustomEvent	Instance	deprecated	
+CustomEventReceiver	Instance	deprecated	
+CustomLog	Instance	notreplicated	Internal-only instance that writes text to a file in the engine's logs directory.
+CustomSoundEffect	SoundEffect	notcreatable	
+CylinderHandleAdornment	HandleAdornment		A cylinder-shaped handle that can be adorned to a `BasePart`.
+CylinderMesh	BevelMesh	deprecated	The CylinderMesh object applies a 'cylinder' mesh to the `BasePart` it is parented to.
+CylindricalConstraint	SlidingBallConstraint		Constrains two attachments on two parts to have a relative linear and rotational motion.
+DataModel	ServiceProvider	notcreatable	The root of Roblox's parent-child hierarchy. Its direct children are services, such as `Workspace` and `Lighting`, that act as the fundamental components of a Roblox game.
+DataModelDiff	Object	notcreatable	
+DataModelMesh	Instance	notcreatable,notbrowsable	The DataModelMesh is an abstract class from which mesh classes descend.
+DataModelSession	Instance	notcreatable	
+DataStore	GlobalDataStore	notcreatable,notreplicated	A `GlobalDataStore` that also supports versioning, key metadata, and enumerating keys.
+DataStoreGetOptions	Instance	notreplicated	Specifies additional parameters for a `GlobalDataStore:GetAsync()` call.
+DataStoreIncrementOptions	Instance	notreplicated	Specifies additional parameters for a `GlobalDataStore:IncrementAsync()` call.
+DataStoreInfo	Instance	notcreatable,notreplicated	Object describing data store information.
+DataStoreKey	Instance	notcreatable,notreplicated	Object representing a key on a `DataStoreKeyPages` object.
+DataStoreKeyInfo	Instance	notcreatable,notreplicated	An object specifying information about a particular version of the key.
+DataStoreKeyPages	Pages	notcreatable,notreplicated	A special type of `Pages` object whose pages contain `DataStoreKey` instances.
+DataStoreListingPages	Pages	notcreatable,notreplicated	A special type of `Pages` object whose pages contain `DataStoreInfo` instances.
+DataStoreObjectVersionInfo	Instance	notcreatable,notreplicated	An instance describing version information for a key.
+DataStoreOptions	Instance	notreplicated	Object used to provide additional parameters to `DataStoreService:GetDataStore()`.
+DataStorePages	Pages	notcreatable,notreplicated	A `Pages` object that allows iteration through `OrderedDataStore` key/value pairs.
+DataStoreService	Instance	notcreatable,service,notreplicated	A game service that gives access to persistent data storage across places in a game.
+DataStoreSetOptions	Instance	notreplicated	Specifies additional parameters for a `GlobalDataStore:SetAsync()` call.
+DataStoreVersionPages	Pages	notcreatable,notreplicated	A special type of `Pages` object whose pages contain `DataStoreObjectVersionInfo` instances.
+Debris	Instance	notcreatable,service	Allows scheduling the guaranteed destruction of an object without yielding.
+DebugSettings	Instance	notcreatable,service,notreplicated,notbrowsable	Collection of various developer-facing diagnostics information.
+DebuggablePluginWatcher	Instance	notcreatable,service,notreplicated	
+DebuggerBreakpoint	Instance	notcreatable	
+DebuggerConnection	Instance	notcreatable,notreplicated	
+DebuggerConnectionManager	Instance	notcreatable,service,notreplicated	
+DebuggerLuaResponse	Instance	notcreatable,notreplicated	
+DebuggerManager	Instance	notcreatable,service,notreplicated	
+DebuggerUIService	Instance	notcreatable,service,notreplicated	
+DebuggerVariable	Instance	notcreatable,notreplicated	
+DebuggerWatch	Instance		
+Decal	FaceInstance		Applies an image texture to a face of a parent `BasePart`.
+DeferredAssetManagerService	Instance	notcreatable,service,notreplicated	
+DepthOfFieldEffect	PostEffect		Simulates a camera lens by blurring parts of a scene not in focus.
+DesignFoundationsService	Instance	notcreatable,service,notreplicated	
+DeviceDisplayService	Instance	notcreatable,service,notreplicated	
+DeviceIdService	Instance	notcreatable,service,notreplicated	
+Dialog	Instance		Creates NPC billboard-style dialog bubbles.
+DialogChoice	Instance		Used to craft the further choices available to players who have started a dialog conversation with an NPC.
+DigitsRigDescription	Instance		Maps the 15 phalanx joints of one hand (5 fingers, 3 joints each) and exposes forward- and inverse-kinematics helpers for controlling finger poses at runtime.
+DisplayWakeLock	Instance	notcreatable,notreplicated	
+DistortionSoundEffect	SoundEffect		Distorts audio, making it sound fuzzier and overdriven.
+DockWidgetPluginGui	PluginGui	notcreatable,notreplicated	A `PluginGui` that displays its contents in a dockable, resizable Roblox Studio window.
+DoubleConstrainedValue	ValueBase	deprecated	An instance which is used to create a number value which can never be less than the MinValue or more than the MaxValue.
+DraftsService	Instance	notcreatable,service,notreplicated	A Studio service that manages script drafts in a Team Create session with collaborative editing enabled.
+DragDetector	ClickDetector		Instance which facilitates and encourages interaction with 3D objects in an experience.
+Dragger	Instance		A helper object used to create tools that can drag parts.
+DraggerService	Instance	notcreatable,service,notreplicated	A service that centralizes the global dragger settings that Studio's dragging tools read so they move, snap, and highlight objects consistently.
+DynamicRotate	JointInstance	notcreatable	The base class for classic motor joints.
+EchoSoundEffect	SoundEffect		Adds delayed repetitions of a sound with diminishing volume.
+EditableImage	Object	notcreatable	Object which allows for the runtime creation and manipulation of images.
+EditableMesh	Object	notcreatable	Object which allows for the runtime creation and manipulation of meshes.
+EditableService	Instance	notcreatable,service	
+EditorSourceService	Instance	notcreatable,service,notreplicated	
+EncodingService	Instance	notcreatable,service,notreplicated	Service providing common encoding, hashing, and compression methods.
+EqualizerSoundEffect	SoundEffect		Controls the volume of incoming audio across three frequency ranges.
+EulerRotationCurve	Instance		Represents a 3D rotation curve through a group of three `FloatCurve`.
+EventIngestService	Instance	notcreatable,service	
+ExampleV2Service	Instance	notcreatable,service,notreplicated	
+ExecutedRemoteCommand	Object	notcreatable,notreplicated	
+ExperienceAuthService	Instance	notcreatable,service	
+ExperienceInviteOptions	Instance	notreplicated	Used to customize a player invite prompt.
+ExperienceNotificationService	Instance	notcreatable,service,notreplicated	Service containing methods to validate users and prompt them to enable experience notifications.
+ExperienceService	Instance	notcreatable,service,notreplicated	
+ExperienceStateCaptureService	Instance	notcreatable,service,notreplicated	
+ExperienceStateRecordingService	Instance	notcreatable,service	
+ExplorerFilter	Instance	notreplicated	
+ExplorerFilterAutocompleter	Instance	notcreatable,notreplicated	
+ExplorerServiceVisibilityService	Instance	notcreatable,service,notreplicated	
+Explosion	Instance		Applies force to `BasePart` within the explosion's `Explosion.BlastRadius`. Breaks `JointInstance` and `WeldConstraint` between parts and kills `Humanoid` characters not protected by a `ForceField`.
+ExternalIdentityService	Instance	notcreatable,service,notreplicated	
+FaceAnimatorService	Instance	notcreatable,service,notreplicated	
+FaceControls	Instance		The `FaceControls` object defines a set of properties for controlling the facial expressions of a Dynamic Head.
+FaceInstance	Instance	notcreatable,notbrowsable	An abstract class from which the `Decal` and `Texture` classes inherit.
+FacialAgeEstimationService	Instance	notcreatable,service,notreplicated	
+FacialAnimationRecordingService	Instance	notcreatable,service,notreplicated	
+FacialAnimationStreamingServiceStats	Instance	notcreatable,notreplicated	
+FacialAnimationStreamingServiceV2	Instance	notcreatable,service	
+FacialAnimationStreamingSubsessionStats	Instance	notcreatable,notreplicated	
+FacsImportData	BaseImportData	notcreatable,notreplicated	
+Feature	Instance	notcreatable	The base class for the legacy motor system.
+FeatureRestrictionManager	Instance	notcreatable,service	
+File	Instance	notcreatable,notreplicated	An asset loaded from a file on disk.
+FileManagerService	Instance	notcreatable,service,notreplicated	
+FileMesh	DataModelMesh		The FileMesh object applies a mesh to a `BasePart` when parented to it. Its properties are inherited by the `SpecialMesh` object.
+FileSyncReplicationService	Instance	notcreatable,service	
+Fire	Instance		A preconfigured particle emitter with the visual aesthetic of fire.
+Flag	Tool	deprecated	The Flag object helps you make 'capture the flag' style games.
+FlagStand	Part	deprecated	The FlagStand object helps you make 'capture the flag' style games.
+FlagStandService	Instance	notcreatable,service	An internal service responsible for handling the now deprecated `FlagStand` and `Flag` objects.
+FlangeSoundEffect	SoundEffect		Creates a sweeping or swooshing effect on a sound.
+FloatCurve	Instance		A sorted list of time-value pairs that define a curve. Used to animate a single numerical value.
+FloorWire	GuiBase3d	deprecated	A FloorWire attempts to make a wire from two of its properties: `FloorWire.From` and `FloorWire.From`, which both need to be set to a `BasePart`.
+FluidForceSensor	SensorBase		A `SensorBase` that outputs `FluidForceSensor.Force`, `FluidForceSensor.Torque` and `FluidForceSensor.CenterOfPressure`.
+FlyweightService	Instance	service	
+Folder	Instance		A simple container used to hold and organize Roblox instances.
+ForceField	Instance		Protects a `Humanoid` from taking damage dealt through the `Humanoid:TakeDamage()` method and protects `BasePart` from having their joints broken due to an `Explosion`.
+FormFactorPart	BasePart	notcreatable	The FormFactorPart class is an abstract class. It inherits from the BasePart class and adds the FormFactor property to classes that inherit from it.
+Frame	GuiObject		A `GuiObject` that renders as a plain rectangle, generally used as a container.
+FriendPages	Pages	notcreatable,notreplicated	A special version of `Pages` that contains information about a player's friends.
+FriendService	Instance	notcreatable,service	An internal service which is used to send, cancel, accept and decline friend requests in-game.
+FunctionalTest	Instance	deprecated	Deprecated container for automated test scripts; use `TestService` instead.
+GamePassService	Instance	notcreatable,service	A service associated with the legacy game pass system. Use `MarketplaceService` for all new work.
+GameSettings	Instance	notcreatable,service,notreplicated,notbrowsable	A container for miscellaneous in-game options.
+GamepadService	Instance	notcreatable,service,notreplicated	The GamepadService is internally responsible for handling inputs from various controllers, such as Xbox One or PlayStation DualShock controllers.
+GeneratedFolder	Folder		A container that stores `ProceduralModel` generation results.
+GenerationService	Instance	notcreatable,service	Service that allows developers to generate 3D objects from text prompts.
+GenericChallengeService	Instance	notcreatable,service	
+GenericSettings	ServiceProvider	notcreatable	The abstract class for settings database classes.
+Geometry	Instance	notcreatable,service	An internal Roblox service which cannot be used by developers.
+GeometryService	Instance	notcreatable,service	Service containing geometric operations.
+GetTextBoundsParams	Instance	notreplicated	Use with `TextService:GetTextBoundsAsync()` to measure the size of text.
+GlobalDataStore	Instance	notcreatable,notreplicated	An object that exposes methods to access a single data store.
+GlobalSettings	GenericSettings	notcreatable,notbrowsable	Collection of menu settings for Roblox Studio.
+Glue	JointInstance	deprecated	Glue is a type of joint that can break when enough force is applied.
+GongService	Instance	notcreatable,service	
+GroundController	ControllerBase		The `ControllerBase` that moves a `ControllerManager` character while it is walking or standing on the ground.
+GroupImportData	BaseImportData	notcreatable,notreplicated	
+GroupService	Instance	notcreatable,service,notreplicated	GroupService is a service that allows developers to fetch information about a Roblox group from within a game.
+GuiBase	Instance	notcreatable	GuiBase is an abstract class which most graphical user interface objects inherit from.
+GuiBase2d	GuiBase	notcreatable,notbrowsable	An abstract class inherited by 2D `GuiObject`.
+GuiBase3d	GuiBase	notcreatable	An abstract class for 3D GUI elements that are rendered in the world.
+GuiButton	GuiObject	notcreatable,notbrowsable	An abstract class for interactive 2D user interface elements.
+GuiLabel	GuiObject	notcreatable	An abstract class for non-interactive 2D user interface elements.
+GuiMain	ScreenGui	deprecated	The original name of the `ScreenGui`.
+GuiObject	GuiBase2d	notcreatable,notbrowsable	An abstract class for all 2D user interface objects.
+GuiService	Instance	notcreatable,service,notreplicated	Offers numerous properties and methods for working with `GuiObject`, player preferences, and other UI‑related tasks.
+GuidRegistryService	Instance	notcreatable,service	An internal service, whose functionality is not accessible to developers.
+HSRDataContentProvider	CacheableContentProvider	notcreatable,service,notreplicated	An internal service that fetches, parses, and caches hidden surface removal (HSR) data for layered clothing; cannot be used by developers.
+HandleAdornment	PVAdornment	notcreatable	An abstract class inherited by 3D handle adornments.
+Handles	HandlesBase		Places 3D handles around any object that its `Handles.Adornee` is set to.
+HandlesBase	PartAdornment	notcreatable	An abstract class for Handle objects, such as `ArcHandles` and `Handles`.
+HapticEffect	Instance		An object that provides waveform-based haptic feedback (vibrations and rumbles) on supported controllers and mobile devices.
+HapticService	Instance	notcreatable,service,notreplicated	Provides haptic feedback to controllers and devices.
+HarmonyService	Instance	notcreatable,service,notreplicated	
+Hat	Accoutrement	deprecated	A deprecated accessory container superseded by `Accessory`.
+HeapProfilerService	Instance	notcreatable,service	Generates and retrieves Luau heap memory profiles from the client and server Luau virtual machines for memory debugging.
+HeatmapQueryService	Instance	notcreatable,service	
+HeatmapService	Instance	notcreatable,service	
+HeightmapImporterService	Instance	service,notreplicated	A Studio-only service that backs the Terrain Editor's heightmap import tool, converting heightmap and colormap images into voxel `Terrain`.
+HiddenSurfaceRemovalAsset	Instance		Stores the precomputed hidden surface removal (HSR) data for a layered-clothing wrap, marking the mesh faces that are hidden by higher clothing layers so the engine can cull them.
+Highlight	Instance		A visual effect which you can use to call attention to a specific object within an experience.
+HingeConstraint	Constraint		Constrains its attachments to rotate about a single axis.
+Hint	Message	deprecated	A Hint is an object that creates a small black bar at the very top of the screen with text.
+Hole	Feature	deprecated	
+Hopper	Instance	notcreatable,service,deprecated	Hopper is the original name of the StarterPack service.
+HopperBin	BackpackItem	deprecated	
+HttpRbxApiService	Instance	notcreatable,service	
+HttpRequest	Instance	notcreatable	
+HttpService	Instance	notcreatable,service	Allows sending HTTP requests and provides various web-related and JSON methods.
+Humanoid	Instance		A special object that gives models the functionality of a character.
+HumanoidController	Controller		A `Controller` held within `ControllerService` that translates player input into movement for the user's character `Humanoid`.
+HumanoidDescription	Instance		Describes the appearance of a Humanoid character including body parts, accessories, colors, scales, animations, and emotes.
+HumanoidRigDescription	Instance		Stores the joint mapping, T-pose, and per-joint properties for a 22-joint bipedal character rig. Joints may be `AnimationConstraint`, `Motor6D`, or `Bone` instances.
+IKControl	Instance		Specifies a control to generate a procedural animation pose using Inverse Kinematics.
+ILegacyStudioBridge	Instance	notcreatable,service	Internal Studio-only base interface for a Studio bridge service. Declares no scriptable members.
+IXPService	Instance	notcreatable,service,notreplicated	
+ImageButton	GuiButton		A 2D user interface element that displays an interactive image.
+ImageHandleAdornment	HandleAdornment		An image handle that can be adorned to a `BasePart`.
+ImageLabel	GuiLabel		A 2D user interface element that displays a single non-interactive image.
+ImageScreenCaptureService	Instance	notcreatable,service	
+ImportSession	Instance	notcreatable,notreplicated	
+IncrementalPatchBuilder	Instance	notcreatable,service,notreplicated	Builds signed incremental patches for hot-reloading a running client from script changes detected by a separate file watcher.
+InputAction	Instance		Defines a gameplay action mechanic. These actions are then mapped to hardware inputs using `InputBinding`.
+InputActionLabel	GuiObject		A `GuiObject` that automatically displays the keybinding for an action as text or an image.
+InputBinding	Instance		Defines which hardware binding should trigger the parent `InputAction`.
+InputContext	Instance		Collection of actions which holds related actions and defines how they interact with other contexts/actions.
+InputObject	Instance	notcreatable	An object created when an input begins that describes a particular user input.
+InsertService	Instance	notcreatable,service	Used to insert assets from the Roblox website.
+Instance	Object	notcreatable,notbrowsable	`Instance` is the base class for all classes in the Roblox class hierarchy which can be part of the `DataModel` tree.
+InstanceAdornment	GuiBase3d	notcreatable	A base class for all objects that adorn `Instance` classes.
+InstanceExtensionsService	Instance	notcreatable,service	
+InstanceFileSyncService	Instance	notcreatable,service,notreplicated	A service for interacting with file sync from a plugin.
+IntConstrainedValue	ValueBase	deprecated	An IntConstrainedValue is used to store a value which can never be less than MinValue and can never be more than MaxValue.
+IntValue	ValueBase		A container object for a single integer.
+IntentService	Instance	notcreatable,service,notreplicated	
+InternalMessagingService	Instance	notcreatable,service,notreplicated	
+InternalMessagingServiceVerifier	Instance	notcreatable,service,notreplicated	
+InternalSyncItem	Instance	notreplicated	
+InternalSyncService	Instance	notcreatable,service,notreplicated	
+IntersectOperation	PartOperation		Result of parts that have been intersected into a single solid model.
+InventoryPages	Pages	notcreatable,notreplicated	A special version of `Pages` that contains information about a specific category of a user's inventory.
+JointImportData	BaseImportData	notcreatable,notreplicated	
+JointInstance	Instance	notcreatable	The base class for joints.
+JointsService	Instance	notcreatable,service,deprecated	A service that stores joints created by surface connections.
+KeyboardService	Instance	notcreatable,service	Service that maintains keyboard state, `TextBox` focus, and clipboard access; scripts read keyboard input through `UserInputService` instead.
+Keyframe	Instance		A Keyframe holds the `Pose` applied to joints in a `Model` at a given point of time in an animation. `Keyframe` are interpolated between during animation playback.
+KeyframeMarker	Instance		An instance meant to represent an event that will eventually be fired when a `Keyframe` is hit.
+KeyframeSequence	AnimationClip		This object stores all of the `Keyframe` and other data for the animation.
+KeyframeSequenceProvider	Instance	notcreatable,service,notreplicated	Provides functions to load and preview `KeyframeSequence`.
+LanguageService	Instance	notcreatable,service,notreplicated	
+LayerCollector	GuiBase2d	notcreatable,notbrowsable	The base class of 2D UI containers which render `GuiObject` in layers.
+LegacyStudioBridge	ILegacyStudioBridge	notcreatable,service,notreplicated	
+Light	Instance	notcreatable	Light is a root class for dynamic lighting related objects.
+Lighting	Instance	notcreatable,service	The `Lighting` service controls global lighting in an experience. It includes a range of adjustable properties that you can use to change how lighting appears and interacts with other objects.
+LineForce	Constraint		Applies a force along the theoretical line connecting its two `Attachment`.
+LineHandleAdornment	HandleAdornment		A line-shaped handle that can be adorned to a `BasePart`.
+LinearVelocity	Constraint		Applies force on an assembly to maintain a constant linear velocity.
+LinkingService	Instance	notcreatable,service,notreplicated	
+LiveScriptingService	Instance	notcreatable,service	
+LiveSyncService	Instance	notcreatable,service,notreplicated	
+LocalDebuggerConnection	DebuggerConnection	notcreatable,notreplicated	
+LocalScript	Script		An object that contains and runs Luau code on the client (player's device) instead of the server.
+LocalStorageService	Instance	notcreatable,service,notreplicated	
+LocalizationService	Instance	notcreatable,service,notreplicated	Handles automated translation.
+LocalizationTable	Instance		A LocalizationTable is a database of translations. It contains source strings and translations for various languages.
+LodDataEntity	Instance	notcreatable	
+LodDataService	Instance	notcreatable,service,notreplicated	
+LogReporterService	Instance	notcreatable,service,notreplicated	
+LogService	Instance	notcreatable,service	A service that allows you to read outputted text.
+Logger	Object	notcreatable,notreplicated	
+LoginService	Instance	notcreatable,service	An internal service whose functionality is not available to developers.
+LuaSettings	Instance	notcreatable,service,notreplicated	Settings related to how the engine handles Luau, its dialect of Lua.
+LuaSourceContainer	Instance	notcreatable,notbrowsable	The base class for all objects which contain Luau code.
+LuaWebService	Instance	notcreatable,service	An internal service, which is responsible for retrieving HTTP data from websites. Used by a range of services, including `MarketplaceService`, `InsertService` and `HttpService`. Its functions cannot be accessed by developers.
+LuauExpression	Object	notcreatable	
+LuauExpressionService	Instance	notcreatable,service,notreplicated	
+LuauScriptAnalyzerService	Instance	notcreatable,service,notreplicated	
+MLModelDeliveryService	Instance	notcreatable,service	
+MLService	Instance	notcreatable,service,notreplicated	A service that runs in-engine machine learning inference by loading model bundles and creating inference sessions.
+MLSession	Object	notcreatable,notreplicated	A machine-learning inference session that wraps a single loaded model and runs it through `MLSession:ForwardAsync()`.
+MakeupDescription	Instance		Describes the appearance of a makeup item for the `HumanoidDescription`.
+ManualGlue	ManualSurfaceJointInstance	deprecated	ManualGlue is a joint created in a similar manner to the `ManualWeld` class. It functions identically to the `Glue` class.
+ManualSurfaceJointInstance	JointInstance	notcreatable,deprecated	ManualSurfaceJointInstance is the base class for `ManualGlue` and `ManualWeld`.
+ManualWeld	ManualSurfaceJointInstance	deprecated	Holds two parts together and functions identically to `Weld`.
+MarkerCurve	Instance		Represents a list of strings markers in chronological order.
+MarketplaceService	Instance	notcreatable,service	The service responsible for in-experience transactions.
+MatchmakingService	Instance	notcreatable,service,notreplicated	The service responsible for managing custom matchmaking data.
+MaterialGenerationService	Instance	notcreatable,service,notreplicated	
+MaterialImportData	BaseImportData	notcreatable,notreplicated	
+MaterialService	Instance	notcreatable,service	The game service responsible for managing materials.
+MaterialVariant	Instance		Represent a variant of a Material.
+MemStorageConnection	Instance	notcreatable,notreplicated	Represents a live binding created by `Bind()` on `MemStorageService` that runs a callback whenever a memory-storage key changes.
+MemStorageService	Instance	notcreatable,service,notreplicated	
+MemoryStoreDistributedCounter	Instance	notcreatable,notreplicated	
+MemoryStoreHashMap	Instance	notcreatable,notreplicated	Provides access to a hash map within `MemoryStoreService`.
+MemoryStoreHashMapPages	Pages	notcreatable,notreplicated	A special type of `Pages` object whose pages contain key-value pairs from a `MemoryStoreHashMap`.
+MemoryStoreQueue	Instance	notcreatable,notreplicated	Provides access to a queue within MemoryStore.
+MemoryStoreService	Instance	service	Exposes methods to access specific primitives within MemoryStore.
+MemoryStoreSortedMap	Instance	notcreatable,notreplicated	Provides access to a sorted map within `MemoryStoreService`.
+MeshContentProvider	CacheableContentProvider	notcreatable,service,notreplicated	An internal Roblox service that is responsible for fetching, parsing and caching meshes. This service cannot be used by developers.
+MeshImportData	BaseImportData	notcreatable,notreplicated	
+MeshPart	TriangleMeshPart		A form of `BasePart` that includes a physically simulated custom mesh.
+Message	Instance	deprecated	Fills the entire screen with a semi-transparent grey background, with centered text in the middle of the screen.
+MessageBusConnection	Instance	notcreatable,notreplicated	
+MessageBusService	Instance	notcreatable,service,notreplicated	
+MessagingService	Instance	notcreatable,service,notreplicated	Allows servers of the same experience to communicate with each other.
+MetaBreakpoint	Instance	notcreatable,notreplicated	
+MetaBreakpointContext	Instance	notcreatable,notreplicated	
+MetaBreakpointManager	Instance	notcreatable,service,notreplicated	
+MicroProfilerService	Instance	notcreatable,service,notreplicated	
+Model	PVInstance		Models are container objects, meaning they group objects together. They are best used to hold collections of `BasePart` and have a number of functions that extend their functionality.
+ModerationService	Instance	notcreatable,service,notreplicated	Server-side service for submitting player captures to content moderation review and receiving the results asynchronously.
+ModuleScript	LuaSourceContainer		A script type that runs once when `LuaGlobals.require()` is called with it. Returns exactly one value, usually a table of functions, to used by other scripts. Useful for compartmentalizing code.
+MomentsService	Instance	notcreatable,service	
+Motor	JointInstance		Makes a movable `JointInstance` between two parts.
+Motor6D	Motor		Creates an animatable joint between two `BasePart`. Superseded by `AnimationConstraint` for avatar/character rigs. Motor6D is no longer used by default for player characters when `StarterPlayer.AvatarJointUpgrade` is enabled.
+MotorFeature	Feature	deprecated	
+Mouse	Instance	notcreatable	Legacy object that contains members useful for pointer input.
+MouseService	Instance	notcreatable,service,notreplicated	Engine service that manages mouse cursor rendering, mouse lock behavior, the cursor-icon stack, delta sensitivity, and mouse position, delta, and button tracking.
+MultipleDocumentInterfaceInstance	Instance	notcreatable,notreplicated	
+NegateOperation	PartOperation		Result of a part that has been negated for use in solid modeling.
+NetworkClient	NetworkPeer	notcreatable,service,notreplicated	A service that manages a network connection's properties server.
+NetworkMarker	Instance	notcreatable,notbrowsable	The NetworkMarker is used to tell the client when the server has finished loading the world for the client.
+NetworkPeer	Instance	notcreatable,notbrowsable	The `NetworkPeer` object is the most basic class of the network objects.
+NetworkReplicator	Instance	notcreatable,notreplicated	An object which handles the replication of other objects either from the server to the client, or from the client to the server.
+NetworkServer	NetworkPeer	notcreatable,service,notreplicated	A server-side service that manages all `NetworkReplicator` instances and handles incoming client connections.
+NetworkSettings	Instance	notcreatable,service,notreplicated,notbrowsable	Settings related to networked engine behaviors.
+NoCollisionConstraint	Instance		An instance used to prevent collisions between two specific parts.
+Noise	Instance	notreplicated	
+NonReplicatedCSGDictionaryService	FlyweightService	service	
+NotificationService	Instance	notcreatable,service	
+NumberPose	PoseBase		Holds the value applied to a specific FACS control.
+NumberValue	ValueBase		A container object for a single double-precision floating point number.
+Object	<<<ROOT>>>	notcreatable,notreplicated	`Object` is the base class for all classes in the Roblox class hierarchy.
+ObjectValue	ValueBase		A container object for a reference to another instance.
+OmniRecommendationsService	Instance	notcreatable,service,notreplicated	
+OpenCloudApiV1	Instance	notcreatable,notreplicated,deprecated	Deprecated Open Cloud API surface for in-experience cloud operations such as user notifications.
+OpenCloudService	Instance	notcreatable,service,notreplicated,deprecated	Deprecated. Do not use for new work; prefer `HttpService` for in-experience HTTP requests.
+OperationGraph	Instance		
+OrderedDataStore	GlobalDataStore	notcreatable,notreplicated	A GlobalDataStore that also allows for ordered data store entries.
+OutfitPages	Pages	notcreatable,notreplicated	The `OutfitPages` class is used in the case of iterating over a user's outfits.
+OutputLink	Object	notcreatable,notreplicated	
+PVAdornment	GuiBase3d	notcreatable	An abstract class of which the inheritors can be adorned to objects of the `PVInstance` class.
+PVInstance	Instance	notcreatable,notbrowsable	Abstract class for all objects that have a physical location in the world.
+PackageLink	Instance	notcreatable,notbrowsable	Links a `DataModel` instance to a corresponding asset in the cloud.
+PackageService	Instance	notcreatable,service,notreplicated	Manages Roblox Studio packages, tracking their metadata and versions and handling updates to package contents.
+PackageUIService	Instance	notcreatable,service,notreplicated	
+Packages	Instance	notcreatable,service	
+Pages	Instance	notcreatable,notreplicated	An abstract class for pages objects.
+Pants	Clothing		Displays a Pants texture from the Roblox website to display on a `Humanoid` rig.
+ParabolaAdornment	PVAdornment		
+Part	FormFactorPart		A common type of `BasePart` that comes in different primitive shapes.
+PartAdornment	GuiBase3d	notcreatable	An abstract class for GUI elements that are adorned to (displayed as attached to) objects deriving from `BasePart`.
+PartOperation	TriangleMeshPart		An abstract class that all parts based on solid modeling inherit from.
+PartOperationAsset	Instance		An internal service which cannot be used by developers.
+ParticleEmitter	Instance		A special object that emits customizable 2D particles into the world.
+PartyEmulatorService	Instance	notcreatable,service,notreplicated	
+PatchBundlerFileWatch	Instance	notcreatable,service,notreplicated	
+PatchMapping	Instance	notcreatable,notreplicated	
+Path	Instance	notcreatable,notreplicated	Stores the result of paths created by `PathfindingService:CreatePath()`.
+Path2D	GuiBase		Represents a 2D cubic spline path that renders a stroked curve under any `GuiObject`.
+Path3D	Instance		
+PathfindingLink	Instance		Connects two locations which otherwise by default are unconnected.
+PathfindingModifier	Instance		Modifiers used to represent space that has a higher or lower cost to be traversed when creating paths using `PathfindingService`.
+PathfindingService	Instance	notcreatable,service,notreplicated	Used to find logical paths between two points.
+PausedState	Instance	notcreatable,notreplicated	
+PausedStateBreakpoint	PausedState	notcreatable,notreplicated	
+PausedStateException	PausedState	notcreatable,notreplicated	
+PerformanceControlService	Instance	notcreatable,service,notreplicated	
+PermissionsService	Instance	notcreatable,service	
+PhysicsService	Instance	notcreatable,service	Service that provides methods for creating and managing collision groups, which control whether sets of `BasePart` collide with each other.
+PhysicsSettings	Instance	notcreatable,service,notreplicated	Lets you view debugging features in Roblox's physics engine, found under the Physics tab in Studio's settings menu.
+PinShortcutService	Instance	notcreatable,service,notreplicated	
+PitchShiftSoundEffect	SoundEffect		Adjusts the pitch of a sound without changing its playback speed.
+PlaceAssetIdsService	Instance	notcreatable,service	
+PlaceStatsService	Instance	notcreatable,service,notreplicated	
+PlacesService	Instance	notcreatable,service,notreplicated	
+Plane	PlaneConstraint	deprecated	Constrains Attachment0 and Attachment1 such that both points lie in a plane with origin at Attachment0's position and unit normal vector equal to Attachment0's primary axis.
+PlaneConstraint	Constraint		Moves its attachments into a position/orientation along a plane whose normal vector is the primary axis of `Constraint.Attachment0`.
+Platform	Part	notcreatable	Historically a form of `Seat` that wouldn't place the player in a sitting pose. This object is no longer create-able and cannot be used by developers.
+PlatformCloudStorageService	Instance	notcreatable,service,notreplicated	
+PlatformFriendsService	Instance	notcreatable,service,notreplicated	
+PlatformLibraries	Instance	notcreatable,service	
+Player	Instance		An object that represents a presently connected client to the experience.
+PlayerData	Instance	notcreatable,notreplicated	
+PlayerDataRecord	Instance	notcreatable,notreplicated	
+PlayerDataRecordConfig	Instance	notcreatable,notreplicated	
+PlayerDataService	Instance	notcreatable,service,notreplicated	
+PlayerEmulatorService	Instance	notcreatable,service,notreplicated	
+PlayerGui	BasePlayerGui	notcreatable,playerreplicated	A container that holds a player's UI.
+PlayerHydrationService	Instance	notcreatable,service	
+PlayerListConfiguration	BaseCoreGuiConfiguration	notcreatable,notreplicated	Controls the built-in player list, the `CoreGui` element that displays the players currently in the experience.
+PlayerMouse	Mouse	notcreatable	The PlayerMouse behaves identically to the `Mouse` object that is obtained using `Tool.Equipped`. Both PlayerMouse and `Mouse` are legacy APIs, superseded by `UserInputService`.
+PlayerScripts	Instance	notcreatable,notreplicated	A container for client-side scripts to be run inside `Player` objects within the `Players` service.
+PlayerViewService	Instance	notcreatable,service,notreplicated	Provides a way to get additional information about a player's view.
+Players	Instance	notcreatable,service	A service that contains presently connected `Player` objects.
+Plugin	Instance	notcreatable	The main object responsible for creating custom Studio widgets, toolbars, buttons, and other plugin UI elements.
+PluginAction	Instance	notreplicated	Represents a generic performable action in Roblox Studio that can optionally be bound to a keyboard shortcut.
+PluginCapabilities	Instance		Declares a plugin's capabilities (the data models it targets and the permissions it requests) through a JSON manifest.
+PluginConnection	Object	notcreatable,notreplicated	Encapsulates a connection between the current data model and another for plugin communication.
+PluginConnectionService	Instance	notcreatable,service,notreplicated	This service is used by plugins to communicate with other instances of themselves running in other data models.
+PluginDebugService	Instance	notcreatable,service,notreplicated	A service that holds the debuggable `Plugin` instances that are currently being debugged in Studio, parenting them into the data model.
+PluginDragEvent	Instance	notcreatable,notreplicated	Provides information about an in-progress drag for the drag events that plugins can respond to.
+PluginGui	LayerCollector	notcreatable,notreplicated	An abstract base class for GUIs that display `GuiObject` in Roblox Studio widgets.
+PluginGuiService	Instance	notcreatable,service,notreplicated	A service that stores `PluginGui` objects to be displayed in Roblox Studio.
+PluginManagementService	Instance	notcreatable,service,notreplicated	Studio service that manages installed plugins; not intended for creator scripts or plugins.
+PluginManager	Instance	notcreatable	A deprecated singleton that was previously required to create plugins.
+PluginManagerInterface	Instance	notcreatable,notreplicated	The singleton object returned by the global `PluginManager()` function, exposing a small set of legacy Studio plugin utilities.
+PluginMenu	Instance	notcreatable,notreplicated	A context menu that can be shown in Studio. Displays a list of `PluginAction` and supports submenus.
+PluginMouse	Mouse	notcreatable	The PluginMouse object gives `Plugin` access to the mouse. It works like the `Mouse` object and can be obtained using the plugin `Plugin:GetMouse()` method.
+PluginPolicyService	Instance	notcreatable,service,notreplicated	
+PluginToolbar	Instance	notcreatable	A toolbar created by `Plugin:CreateToolbar()` that groups `PluginToolbarButton` in the Studio ribbon.
+PluginToolbarButton	Instance	notcreatable	A button on a `PluginToolbar` in the Studio ribbon, created by `PluginToolbar:CreateButton()`, that fires `PluginToolbarButton.Click` when pressed.
+PointLight	Light		A light source that emits illumination from a single point.
+PointsService	Instance	notcreatable,service,deprecated	This service controls the points award system used to showcase a player's achievements and participation throughout Roblox.
+PolicyService	Instance	notcreatable,service,notreplicated	Helps you query information regarding policy compliance for players around the world based on age range, location, and platform type.
+PopLatencyService	Instance	notcreatable,service,notreplicated	
+Pose	PoseBase		Holds the `CFrame` applied to the `Motor6D` connected to its associated `BasePart`. The part which is controlled depends on the name of the Pose.
+PoseBase	Instance	notcreatable	Base class of all 'Pose Instance' objects.
+PostEffect	Instance	notcreatable	Abstract base class for post-processing effects.
+Preloaded	Instance	notcreatable,service	
+PrismaticConstraint	SlidingBallConstraint		Constraint which creates a rigid joint between two `Attachment`, allowing them to slide along one axis but not rotate.
+ProceduralBehaviorSchedulerService	Instance	notcreatable,service,notreplicated	
+ProceduralModel	Model		Procedural models support edit-time procedural generation. Instead of manually constructing model content, a procedural model generates its contents automatically in response to parameter changes.
+ProcessInstancePhysicsService	Instance	notcreatable,service	An internal engine service that generates collision geometry (physics data) for `MeshPart` and `PartOperation` instances that need new physics.
+ProximityPrompt	Instance		An object that lets you prompt players to interact with an object in the 3D world.
+ProximityPromptService	Instance	service,notbrowsable	Allows developers to interact with `ProximityPrompt` objects in a global way.
+PublishService	Instance	notcreatable,service,notreplicated	A service that centralizes uploading assets to Roblox, including publishing cage mesh edits and creating assets or asset versions.
+PyramidHandleAdornment	HandleAdornment		A pyramid-shaped handle that can be adorned to a `BasePart`.
+QWidgetPluginGui	PluginGui	notcreatable,notreplicated	
+QueueService	Instance	notcreatable,service,notreplicated	
+RTAnimationTracker	Instance	notreplicated	
+RayValue	ValueBase		A container object for a single Ray.
+RbxAnalyticsService	Instance	notcreatable,service	
+RealtimeMedia	Instance		
+RecommendationPages	Pages	notcreatable,notreplicated	A special version of the `Pages` class returned by `RecommendationService.GenerateItemListAsync`.
+RecommendationService	Instance	notcreatable,service	A service that provides an interface for you to manage and display personalized content recommendations.
+ReflectionMetadata	Instance		A currently unused object whose functionality was split into `ReflectionMetadataClasses` and `ReflectionMetadataEnums`.
+ReflectionMetadataCallbacks	Instance		Acts as a `Folder` containing information about callbacks for a `ReflectionMetadataClass`, and should be parented to it. `ReflectionMetadataMember` that are parented to this object will be perceived as callbacks under the class this is par…
+ReflectionMetadataClass	ReflectionMetadataItem		Registers information about a class, and its members. Should be parented to `ReflectionMetadataClasses`.
+ReflectionMetadataClasses	Instance		An internal object which cannot be used by developers.
+ReflectionMetadataEnum	ReflectionMetadataItem		Registers information about an `Enum` and its EnumItems.
+ReflectionMetadataEnumItem	ReflectionMetadataItem		Contains information about a specific EnumItem embedded within an Enum.
+ReflectionMetadataEnums	Instance		Acts as a `Folder` for `ReflectionMetadataEnum` objects.
+ReflectionMetadataEvents	Instance		Acts as a `Folder` containing information about events for a `ReflectionMetadataClass`, and should be parented to it. `ReflectionMetadataMember` that are parented to this object will be perceived as events under the class this is parented…
+ReflectionMetadataFunctions	Instance		Acts as a `Folder` containing information about functions for a `ReflectionMetadataClass`, and should be parented to it. `ReflectionMetadataMember` that are parented to this object will be perceived as functions under the class this is par…
+ReflectionMetadataItem	Instance	notcreatable	Acts as abstract properties for generic information about Classes, Members, Enums, and EnumItems.
+ReflectionMetadataMember	ReflectionMetadataItem		An internal object which cannot be used by developers.
+ReflectionMetadataProperties	Instance		Acts as a `Folder` containing information about properties for a `ReflectionMetadataClass`, and should be parented to it. `ReflectionMetadataMember` that are parented to this object will be perceived as properties under the class this is p…
+ReflectionMetadataYieldFunctions	Instance		Acts as a `Folder` containing information about yielding functions for a `ReflectionMetadataClass`, and should be parented to it. `ReflectionMetadataMember` that are parented to this object will be perceived as yielding functions under the…
+ReflectionService	Instance	notcreatable,service,notreplicated	A service that allows scripts to query the engine's API at runtime for information about classes, properties, methods, and events.
+RelativeGui	GuiObject	notreplicated	
+RemoteCommandService	Instance	notcreatable,service	Team Create service that executes Luau commands sent from a Studio client on the collaborative editing server and relays their output back to that client.
+RemoteCursorService	Instance	notcreatable,service	
+RemoteDebuggerServer	Instance	notcreatable,service,notreplicated	Studio service that runs the server side of Luau remote debugging over DAP; not created during normal script execution.
+RemoteEvent	BaseRemoteEvent		An object which facilitates asynchronous, one-way communication across the client-server boundary. Scripts firing a `RemoteEvent` do not yield.
+RemoteFunction	Instance		An object which facilitates synchronous, two-way communication across the client-server boundary. Scripts invoking a `RemoteFunction` yield until they receive a response from the recipient.
+RenderSettings	Instance	notcreatable,service,notreplicated,notbrowsable	A singleton settings class that exposes rendering configuration for graphics quality, framerate management, and debug visualization in Roblox Studio.
+RenderingTest	Instance		
+ReplicatedFirst	Instance	notcreatable,service	A container whose contents are replicated to all clients (but not back to the server) first before anything else.
+ReplicatedStorage	Instance	notcreatable,service	A container service for objects that are replicated to all clients.
+RequestOrchestratorService	Instance	notcreatable,service,notreplicated	
+ReverbSoundEffect	SoundEffect		Reverberates audio, simulating the effect of bouncing off walls in a room.
+RibbonNotificationService	Instance	notcreatable,service,notreplicated	
+RigidConstraint	Constraint		Creates a rigid connection between two `Attachment` or `Bone`.
+RobloxPluginGuiService	Instance	notcreatable,service,notreplicated	
+RobloxReplicatedStorage	Instance	notcreatable,service,notbrowsable	
+RobloxSerializableInstance	Instance	notcreatable,notreplicated	
+RobloxServerStorage	Instance	notcreatable,service,notreplicated	
+RocketPropulsion	BodyMover	deprecated	Applies a force so that an assembly follows and faces a target part.
+RodConstraint	Constraint		Keeps two attachments separated by its defined `RodConstraint.Length`.
+RolloutValidation	Instance	notcreatable,notreplicated	
+RolloutValidationService	Instance	notcreatable,service,notreplicated	
+RomarkRbxAnalyticsService	Instance	notcreatable,service	
+RomarkService	Instance	notcreatable,service	
+RootImportData	BaseImportData	notcreatable,notreplicated	
+RopeConstraint	Constraint		Simulates rope dynamics, preventing two attachments from separating further than a defined length.
+Rotate	JointInstance	deprecated	
+RotateP	DynamicRotate	deprecated	
+RotateV	DynamicRotate	deprecated	Joins two parts and allows rotation driven by angular velocity from the Motor surface type.
+RotationCurve	Instance		Represents a sequence of rotations and the interpolation curve between them.
+RtMessagingService	Instance	notcreatable,service,notreplicated	
+RunService	Instance	notcreatable,service,notreplicated	Service responsible for all runtime activity and progression of time.
+RunningAverageItemDouble	StatsItem	notcreatable	Measures the runtime average of a **double** value.
+RunningAverageItemInt	StatsItem	notcreatable	Measures the runtime average of an **integer** value.
+RunningAverageTimeIntervalItem	StatsItem	notcreatable	Measures the runtime average of a time interval value.
+RuntimeContentService	Instance	notcreatable,service	
+RuntimeScriptService	Instance	notcreatable,service,notreplicated	
+SafetyService	Instance	notcreatable,service	
+SceneAnalysisService	Instance	notcreatable,service,notreplicated	
+ScreenGui	LayerCollector		Primary container of on-screen 2D user interface elements.
+ScreenshotCapture	Capture	notcreatable,notreplicated	A child class of `Capture` for screenshots.
+ScreenshotHud	Instance	notcreatable,notreplicated	A 2D user interface that allows users to capture and save screenshots to their local device.
+Script	BaseScript		An object that contains and runs Luau code on the server.
+ScriptBuilder	Instance	notcreatable,notreplicated	
+ScriptChangeService	Instance	notcreatable,service,notreplicated	
+ScriptCloneWatcher	Instance	notcreatable,service,notreplicated	
+ScriptCloneWatcherHelper	Instance	notcreatable,service,notreplicated	
+ScriptCommitService	Instance	notcreatable,service,notreplicated	
+ScriptContext	Instance	notcreatable,service,notreplicated	A service that manages the execution of all `BaseScript` objects.
+ScriptDebugger	Instance	notcreatable	
+ScriptDebuggerService	Instance	notcreatable,service,notreplicated	Provides programmatic breakpoint management, execution control, and runtime inspection of Luau scripts during a playtest.
+ScriptDocument	Instance	notcreatable,notreplicated	Represents the ephemeral state of an open document in the Studio Script Editor, providing APIs for reading and editing code.
+ScriptEditorService	Instance	notcreatable,service,notreplicated	This service is used for interacting with `ScriptDocument` instances.
+ScriptProfilerService	Instance	notcreatable,service	A service that captures sampling-based profiles of Luau script execution on the server or on a client.
+ScriptRegistrationService	Instance	notcreatable,service,notreplicated	
+ScriptRuntime	Instance	notcreatable,notreplicated	
+ScriptScannerService	Instance	notcreatable,service	
+ScriptService	Instance	notcreatable,service	An unimplemented service that has zero functionality, in a similar manner to the `LocalWorkspace` service.
+ScrollingFrame	GuiObject		`ScrollingFrame` is a special `Frame` type with built-in scrolling interactivity and different ways to customize how the scrolling works.
+Seat	Part		A type of `BasePart` that characters can 'sit' in. When a character touches an enabled Seat object, it will be attached to the part by a `Weld` and the default character scripts will play a sitting animation.
+Selection	Instance	notcreatable,service	The Selection service controls the `Instance` that are selected in Roblox Studio.
+SelectionBox	InstanceAdornment		Renders a 3D box around its `PVAdornment.Adornee`.
+SelectionHighlightManager	Instance	notcreatable,service	Studio service that draws selection outline highlights for the local user's selection and for Team Create collaborators' selections.
+SelectionLasso	GuiBase3d	notcreatable	Abstract class for `SelectionPartLasso` and `SelectionPartLasso`.
+SelectionPartLasso	SelectionLasso	deprecated	An instance used to display a "lasso" between a `Humanoid` Torso and a `BasePart`.
+SelectionPointLasso	SelectionLasso	deprecated	
+SelectionSphere	PVAdornment		Renders a 3D sphere around its `PVAdornment.Adornee`.
+SelfViewConfiguration	BaseCoreGuiConfiguration	notcreatable,notreplicated	Controls the built-in self view, the `CoreGui` element that shows a player a preview of their own character within an experience.
+SensorBase	Instance	notcreatable	An abstract class for various sensor instance types.
+SerializationService	Instance	notcreatable,service	Serializes and deserializes `Instance` to and from the `.rbxm` format.
+ServerReplicator	NetworkReplicator	notcreatable,notreplicated	The server-side `NetworkReplicator` that manages replication of data model changes between the server to a single connected client.
+ServerScriptService	Instance	notcreatable,service,notreplicated	A container service for server-only `Script` objects.
+ServerStorage	Instance	notcreatable,service,notreplicated	A container whose contents are only accessible on the server. Objects descending from ServerStorage will not replicate to the client and will not be accessible from `LocalScript`.
+ServiceProvider	Instance	notcreatable,notbrowsable	A ServiceProvider is an abstract class, which stores, and provides certain singleton classes, depending on what inherited class you are using its members with.
+ServiceVisibilityService	Instance	notcreatable,service	
+SessionCheckService	Instance	notcreatable,service	
+SessionService	Instance	notcreatable,service	
+SharedTableRegistry	Instance	notcreatable,service,notreplicated	Provides a global registry of named `SharedTable` objects.
+Shirt	Clothing		Displays a shirt texture on a `Humanoid` rig.
+ShirtGraphic	CharacterAppearance		Applies a texture to the front surface of a character's torso, used to display t-shirts.
+SkateboardController	Controller		Translates player input into throttle and steer axis values for a `SkateboardPlatform`.
+SkateboardPlatform	Part	deprecated	A SkateboardPlatform can be used to create a skateboard. When characters get on a skateboard, they are stuck to it until they press the escape key. Until then, the character uses skateboard animations and travels faster than a walking char…
+Skin	CharacterAppearance	deprecated	Historically changed the colors of body parts to match the `Skin.SkinColor` property. Superseded by the `BodyColors` class.
+Sky	Instance		Changes the default appearance of the experience's sky.
+SlidingBallConstraint	Constraint	notcreatable	The base class for constraints that allow their attachments to slide along an axis but not rotate.
+SlimAnimationDataEntity	Instance	notcreatable	
+SlimAnimationReplicationService	Instance	notcreatable,service	
+SlimContentProvider	CacheableContentProvider	notcreatable,service	A service that fetches and caches SLIM (Scalable Lightweight Interactive Models) asset content representations for model rendering.
+SlimDebugSettings	Instance	notcreatable,service,notreplicated	
+SlimReplicationService	Instance	notcreatable,service	
+SlimService	Instance	notcreatable,service,notreplicated	
+Smoke	Instance		A particle emitter with the visual aesthetic of smoke.
+SmoothVoxelsUpgraderService	Instance	notcreatable,service,notreplicated	
+Snap	JointInstance	deprecated	Holds two parts together and functions identically to `Weld`.
+SocialService	Instance	notcreatable,service,notreplicated	Facilitates social functions that impact relationships made on the Roblox platform.
+SolidModelContentProvider	CacheableContentProvider	notcreatable,service,notreplicated	An internal service which serves no functionality to developers.
+Sound	Instance		An object that emits sound. This object can be placed within a `BasePart` or `Attachment` to emit a sound from a particular position within a place or world, or it can be attached elsewhere to play the sound at a constant volume throughout…
+SoundEffect	Instance	notcreatable	SoundEffect is the base class that all other sound effects derive from. A SoundEffect can be applied to either a `Sound` or `SoundGroup` by being parented to either.
+SoundGroup	Instance		A `SoundGroup` is used to manage the volume and sound effects on multiple `Sound` at once. `Sound` in the SoundGroup will have their volume and effects adjusted by the SoundGroup.
+SoundService	Instance	notcreatable,service	A service that determines various aspects of how the audio engine works. Most of its properties affect how `Sound` play in the experience.
+SoundShimService	Instance	notcreatable,service,notreplicated	
+Sparkles	Instance		A particle emitter with the visual aesthetic of sparkles.
+SpawnLocation	Part		`SpawnLocation`, or "spawns" determine where a `Player` respawns when they die. They can be configured to allow only certain players to use each spawn, using `Team`. They also control how `ForceField` are set up for newly-spawned players.
+SpawnerService	Instance	notcreatable,service	An internal service that is responsible for the behavior of `SpawnLocation`. Its functionality is not accessible to developers.
+SpecialMesh	FileMesh		The `SpecialMesh` object applies a mesh to a `BasePart` depending on the `SpecialMesh.MeshType` property.
+SphereHandleAdornment	HandleAdornment		A sphere-shaped handle that can be adorned to a `BasePart`.
+SpotLight	Light		A light source that emits light directionally in the shape of a cone with a spherical base.
+SpringConstraint	Constraint		Simulates spring and damper behavior between two attachments.
+StackFrame	Instance	notcreatable,notreplicated	
+StandalonePluginScripts	Instance		A container for `Script` that run only in the standalone plugin `DataModel` at Roblox Studio startup.
+StandardPages	Pages	notcreatable,notreplicated	A generic Pages object that can contain variable data depending on the method that returned it.
+StandardQueue	Instance	notcreatable,notreplicated	
+StartPageService	Instance	notcreatable,service,notreplicated	
+StarterCharacterScripts	StarterPlayerScripts	notcreatable	Stores instances to be parented to a player's character when it spawns.
+StarterGear	Instance		If the game allows gear, `StarterGear` is a container automatically inserted into each `Player` object when the player joins the game. Whenever the player's character spawns, the contents of that player's `StarterGear` are copied into the…
+StarterGui	BasePlayerGui	notcreatable,service	A container for `LayerCollector` objects to be copied into the `PlayerGui` of `Player`. Also provides a range of functions for interacting with the `CoreGui`.
+StarterPack	Instance	notcreatable,service	A container whose contents are copied into each player's `Backpack` when their player character spawns. It is generally used to hold `Tool`.
+StarterPlayer	Instance	notcreatable,service	A service which allows the defaults of properties in the `Player` object to be set.
+StarterPlayerScripts	Instance	notcreatable	A container for objects to be copied to a Player's PlayerScripts when they join a game.
+StartupMessageService	Instance	notcreatable,service,notreplicated	
+StateMachineDefinition	Instance	notreplicated	
+StateMachineTransitionDefinition	Instance		
+Stats	Instance	notcreatable,service	Performance metrics for a game.
+StatsItem	Instance	notcreatable	A single performance metric.
+Status	Model	notcreatable,deprecated	An unfinished object which offers no functionality to developers.
+StopWatchReporter	Instance	notcreatable,service,notreplicated	A service that times named tasks and reports their durations, classified by device platform and country code. Not available to creator scripts.
+StringValue	ValueBase		A container object for a single string.
+Studio	Instance	notcreatable,service,notreplicated	Represents Roblox Studio's script editor settings.
+StudioActionOverride	Object	notcreatable,notreplicated	
+StudioAssetService	Instance	notcreatable,service,notreplicated	
+StudioAttachment	Instance	notreplicated	
+StudioCallout	Instance	notreplicated	
+StudioCameraService	Instance	notcreatable,service,notreplicated	
+StudioCaptureService	Instance	notcreatable,service,notreplicated	A Studio-only service that lets plugins capture screenshots of the active place's 3D viewport.
+StudioData	Instance	notcreatable,service	
+StudioDeviceEmulatorService	Instance	notcreatable,service,notreplicated	
+StudioDeviceSimulatorService	Instance	notcreatable,service,notreplicated	Service allowing you to control Studio's Device Simulator.
+StudioObjectBase	Instance	notcreatable,notreplicated	
+StudioPublishService	Instance	notcreatable,service,notreplicated	
+StudioScreenshotCapture	Instance	notcreatable,notreplicated	Represents a single screenshot captured from Studio, exposing the resulting image buffer and the parameters the capture was taken with.
+StudioScriptDebugEventListener	Instance	notcreatable,service,notreplicated	
+StudioSdkService	Instance	notcreatable,service,notreplicated	
+StudioService	Instance	notcreatable,service,notreplicated	Provides access to configuration of Roblox Studio and allows importing files from the user's file system.
+StudioTestService	Instance	notcreatable,service,notreplicated	Service allowing plugins to automate and customize Test and Run mode testing.
+StudioTheme	Instance	notcreatable,notreplicated	A collection of colors that make up a Roblox Studio theme, letting a plugin query the color of a Studio UI element for the theme the user currently has active.
+StudioUserService	Instance	notcreatable,service,notreplicated	
+StudioWidget	StudioObjectBase	notcreatable,notreplicated	
+StudioWidgetsService	Instance	notcreatable,service,notreplicated	
+StyleBase	Instance	notcreatable	The base class for `StyleSheet` and `StyleRule`.
+StyleDerive	Instance		When parented to a `StyleSheet`, references another `StyleSheet` from which the parent inherits `StyleRule` and token definitions.
+StyleLink	Instance		Links a `StyleSheet` to the instance tree whose root is the parent of the `StyleLink`.
+StyleQuery	Instance		Instance used to set conditions such as `"MaxSize"` and `"PreferredInput"` for a `StyleRule`.
+StyleRule	StyleBase		Defines style properties which override properties on the instances affected by the `StyleRule.Selector` property.
+StyleSheet	StyleBase		Aggregates `StyleRule` and can be linked to `DataModel` trees to apply style properties to instances.
+StylingService	Instance	notcreatable,service,notreplicated	
+SunRaysEffect	PostEffect		Renders dynamic rays from the sun.
+SurfaceAppearance	Instance		An object that allows developers to override the appearance of a MeshPart with advanced graphics options.
+SurfaceGui	SurfaceGuiBase		Container for GuiObjects that are rendered on the surface of a part.
+SurfaceGuiBase	LayerCollector	notcreatable	Base class for containers that render `GuiObject` onto a face of a `BasePart` in the 3D world.
+SurfaceLight	Light		A light source that emits illumination of a specified color and brightness from a face for a specified range.
+SurfaceSelection	PartAdornment		Highlights a face of a surface in a configurable color.
+SwimController	ControllerBase		The `ControllerBase` that moves a `ControllerManager` character while it is swimming.
+SyncScriptBuilder	ScriptBuilder	notcreatable,notreplicated	
+SystemThemeService	Instance	notcreatable,service,notreplicated	
+TaskScheduler	Instance	notcreatable,service,notreplicated	Collection of settings for the _Task Scheduler_ feature.
+Team	Instance		The `Team` class represents a faction in a Roblox place. The only valid parent for a Team is in the `Teams` service.
+TeamCreateData	Instance	notcreatable,service	
+TeamCreatePublishService	Instance	notcreatable,service	
+TeamCreateService	Instance	notcreatable,service,notreplicated	
+Teams	Instance	notcreatable,service	The Teams service holds a game's `Team` objects. `Team` objects must be parented to the Teams service.
+TelemetryService	Instance	notcreatable,service,notreplicated	
+TeleportAsyncResult	Instance	notcreatable	The return structure of the `TeleportAsync` function call.
+TeleportOptions	Instance		Optional input arguments to the `TeleportService:TeleportAsync()` function.
+TeleportService	Instance	notcreatable,service	Enables transporting `Player` between places and servers. For more information on how to teleport players between servers, see [Teleport between places](../../../projects/teleport.md).
+TemporaryCageMeshProvider	Instance	notcreatable,service,notreplicated	
+TemporaryScriptService	Instance	notcreatable,service,notreplicated	
+Terrain	BasePart	notcreatable	`Terrain` lets you to create dynamically morphable environments.
+TerrainDetail	Instance		Determines appearance of a certain terrain face direction.
+TerrainIterateOperation	Object	notcreatable,notreplicated	
+TerrainModifyOperation	Object	notcreatable,notreplicated	
+TerrainReadOperation	Object	notcreatable,notreplicated	
+TerrainRegion	Instance		An object that stores a chunk of terrain voxel data, produced by `Terrain:CopyRegion()` and consumed by `Terrain:PasteRegion()`.
+TerrainWriteOperation	Object	notcreatable,notreplicated	
+TestCase	Instance	notcreatable	
+TestService	Instance	service	A service used by Roblox to run controlled tests of the engine. It is available for developers to use, to a limited degree.
+TextBox	GuiObject		A 2D user interface element that displays player-editable text.
+TextBoxService	Instance	notcreatable,service	A service that manages a user's `TextBox` state during gameplay.
+TextButton	GuiButton		A 2D user interface element that displays interactive text.
+TextChannel	Instance		Represents a text chat channel.
+TextChannelWindow	GuiObject	notbrowsable	
+TextChatCommand	Instance		Represents a text chat command.
+TextChatConfigurations	Instance	notcreatable,notreplicated	The parental class of all text chat configurations.
+TextChatMessage	Instance	notcreatable	A data object representing a text chat message.
+TextChatMessageProperties	Instance		Overrides `TextChatMessage` properties when returned by callbacks defined in `TextChatService.OnIncomingMessage` or `TextChannel.OnIncomingMessage`.
+TextChatService	Instance	notcreatable,service	A service handling in-experience text chat.
+TextFilterResult	Instance	notcreatable,notreplicated	Represents the result of a call to `TextService:FilterStringAsync()`, used to distribute a filtered string accordingly.
+TextFilterTranslatedResult	Instance	notcreatable,notreplicated	Holds the filtered source text and its filtered translations produced by `TextService:FilterAndTranslateStringAsync()`.
+TextGenerator	Instance		Gives access to a large language model for text generation.
+TextLabel	GuiLabel		A 2D user interface element that displays non-interactive text.
+TextService	Instance	notcreatable,service,notreplicated	Service internally responsible for handling the display of text.
+TextSource	Instance	notcreatable	Represents a speaker in a `TextChannel`.
+Texture	Decal		Applies a repeating image texture to the face of a parent `BasePart`.
+TextureGenerationPartGroup	Instance	notcreatable,notreplicated	
+TextureGenerationService	Instance	notcreatable,service,notreplicated	
+TextureGenerationUnwrappingRequest	Instance	notcreatable,notreplicated	
+ThirdPartyUserService	Instance	notcreatable,service,notreplicated	
+ThreadState	Instance	notcreatable,notreplicated	
+TimerService	Instance	notcreatable,service	An internal service responsible for scheduling timed events. It is used by the `Debris` class. Its functionality can not be accessed by developers.
+ToastNotificationService	Instance	notcreatable,service,notreplicated	
+Tool	BackpackItem		An object, such as a weapon, that can be equipped by a `Humanoid`.
+Torque	Constraint		Applies constant torque to an assembly from its center of mass.
+TorsionSpringConstraint	Constraint		A rotational spring that opposes the angular motion between two axes.
+TotalCountTimeIntervalItem	StatsItem	notcreatable	Measures a total-count-over-time interval.
+TouchInputService	Instance	notcreatable,service	An internal service responsible for touch inputs on mobile devices.
+TouchTransmitter	Instance	notcreatable,notbrowsable	An internal object used by networking and replication code to transmit `BasePart.Touched` and `BasePart.TouchEnded` events.
+TraceRouteService	Instance	notcreatable,service	
+TracerService	Instance	notcreatable,service,notreplicated	
+TrackerLodController	Instance	notcreatable,notreplicated	
+TrackerStreamAnimation	Instance	notreplicated	
+Trail	Instance		Used to create a trail effect between two attachments.
+Translator	Instance	notcreatable,notreplicated	The role of a Translator is to manufacture/return strings localized for the viewing player.
+TremoloSoundEffect	SoundEffect		Creates a trembling effect on a sound by varying the volume of the sound up and down.
+TriangleMeshPart	BasePart	notcreatable,notbrowsable	Abstract intermediate class that manages physical geometry properties for PartOperations and MeshParts.
+TrussPart	BasePart		Similar to a `Part` but with a different visual `TrussPart.Style` and the important distinction that default characters are able to climb it.
+TutorialService	Instance	notcreatable,service,notreplicated	
+Tween	TweenBase		The `Tween` object controls the playback of an interpolation.
+TweenBase	Instance	notcreatable,notbrowsable	Abstract base class for in-between interpolation handlers. `Tween` inherits from `TweenBase`.
+TweenService	Instance	notcreatable,service	Used to create `Tween` which interpolate, or tween, the properties of instances.
+UGCAvatarService	Instance	notcreatable,service	
+UGCValidationService	Instance	notcreatable,service,notreplicated	
+UIAspectRatioConstraint	UIConstraint		Ensures the parent UI element maintains a particular aspect ratio.
+UIBase	Instance	notcreatable	`UIBase` is the base class for UI layout and constraint classes.
+UIComponent	UIBase	notcreatable	A base class for UI constraint and layout classes.
+UIConstraint	UIComponent	notcreatable	The base class for UI constraint classes.
+UICorner	UIComponent		UI modifier which applies deformation to corners of its parent `GuiObject`.
+UIDragDetector	UIComponent		Instance which facilitates and encourages interaction with UI elements in an experience.
+UIDragDetectorService	Instance	notcreatable,service,notreplicated	
+UIFlexItem	UIComponent		Defines flex behavior for a `GuiObject` within a `UIListLayout`.
+UIGradient	UIComponent		Applies a color and transparency gradient to the parent `GuiObject`.
+UIGridLayout	UIGridStyleLayout		Positions sibling UI elements by filling rows using the space of the parent UI element.
+UIGridStyleLayout	UILayout	notcreatable,notbrowsable	The base class for grid style UI layouts.
+UILayout	UIComponent	notcreatable	The base class for UI layout classes.
+UIListLayout	UIGridStyleLayout		Positions sibling UI elements in rows or columns within the parent UI container.
+UIPadding	UIComponent		Applies padding to the borders of the parent `GuiObject`.
+UIPageLayout	UIGridStyleLayout		Positions sibling UI elements as full-size pages in a single row or column that users can scroll or animate through one page at a time.
+UIScale	UIComponent		An object that acts as a multiplier for the size of the parent UI element's scale.
+UIShadow	UIComponent		Renders a shadow below the parent UI instance.
+UISizeConstraint	UIConstraint		Ensures a `GuiObject` does not become larger or smaller than the constraint's maximum size or minimum size.
+UIStroke	UIComponent		Applies an outline to text or a UI border.
+UITableLayout	UIGridStyleLayout		Lays out sibling UI elements and their child UI elements as rows/columns and cells in a table.
+UITextSizeConstraint	UIConstraint		Ensures that the size of text rendered by certain `GuiObject` classes lies within the range described by `UITextSizeConstraint.MaxTextSize` and `UITextSizeConstraint.MinTextSize`.
+UnionOperation	PartOperation		Result of parts that have been joined together into a single solid model.
+UniqueIdLookupService	Instance	notcreatable,service	Team Create service that maps `Instance.UniqueId` to and from RFC-4122 strings; not for experience scripts.
+UniversalConstraint	Constraint		Ensures two axes on two bodies remain perpendicular.
+UnreliableRemoteEvent	BaseRemoteEvent		An object which facilitates asynchronous, unordered and unreliable, one-way communication across the client-server boundary. Scripts firing a `UnreliableRemoteEvent` do not yield.
+UnvalidatedAssetService	Instance	notcreatable,service	
+UserGameSettings	Instance	notcreatable,service,notreplicated	`UserGameSettings` is a singleton class found inside of the `UserSettings` singleton. It holds various persistent settings relating to how the user wants to control their camera, and their character.
+UserInputService	Instance	notcreatable,service,notreplicated	`UserInputService` is primarily used to detect the input types available on a user's device, as well as detect input events.
+UserService	Instance	notcreatable,service	A service that handles queries regarding users on the Roblox platform.
+UserSettings	GenericSettings	notcreatable	A singleton object that houses basic user settings, which persist across all games on Roblox.
+UserStorageService	LocalStorageService	notcreatable,service,notreplicated	
+VRService	Instance	notcreatable,service	Service responsible for handling interactions between Roblox and Virtual Reality (VR).
+VRStatusService	Instance	notcreatable,service	
+ValueBase	Instance	notcreatable	Base class of all "value instance" objects.
+ValueCurve	Instance		A sorted list of time-value pairs that define a curve. Used to animate any type of value.
+Vector3Curve	Instance		Represents a 3D vector curve, grouping three `FloatCurve` instances.
+Vector3Value	ValueBase		A container object for a single Vector3 value.
+VectorForce	Constraint		Applies constant force to an assembly.
+VehicleController	Controller		An object responsible for translating a seated player's directional input into throttle and steering for a `VehicleSeat`.
+VehicleSeat	BasePart		A seat object that can be used to control a vehicle.
+VelocityMotor	JointInstance		A `Motor`-like `JointInstance` that forms its connection using a `MotorFeature` and a `Hole`.
+VersionControlService	Instance	notcreatable,service	
+VideoCapture	Capture	notcreatable,notreplicated	A child class of `Capture` for videos.
+VideoCaptureService	Instance	notcreatable,service	Service that manages camera capture for features such as avatar facial-animation tracking. Requires `RobloxScript` security; not callable from experience scripts.
+VideoDeviceInput	Instance	notreplicated	
+VideoDisplay	GuiObject		A GUI object that displays video content from a connected `VideoPlayer`.
+VideoFrame	GuiObject		A GUI object that renders a rectangle, like a `Frame` does, with a moving video image.
+VideoPlayer	Instance		Used to play video assets.
+VideoSampler	Object	notcreatable,notreplicated	An object for sampling frames from video content.
+VideoScreenCaptureService	Instance	notcreatable,service	
+VideoService	Instance	notcreatable,service	An internal service that offers no functionality to developers.
+ViewportCamera	Camera		
+ViewportFrame	GuiObject		`GuiObject` that renders 3D objects inside its bounds.
+VirtualInput	Object	notcreatable,notreplicated	Simulates mouse, keyboard, and pointer input as if it were performed by a real player.
+VirtualInputManager	Instance	service	An internal service that offers no functionality to developers.
+VirtualUser	Instance	notcreatable,service,notreplicated	VirtualUser is a service that allows you to record the inputs of a user, and then play it back to a limited extent.
+VisibilityCheckDispatcher	Instance	notcreatable,service	Service that schedules and runs viewability checks for immersive ad instances in a place.
+Visit	Instance	notcreatable,service,notreplicated	The Visit service is a backend service used by Roblox. Its functions are not accessible to developers in any form.
+VisualizationMode	Instance		
+VisualizationModeCategory	Instance		
+VisualizationModeService	Instance	notcreatable,service	
+VoiceChatInternal	Instance	notcreatable,service,notbrowsable	
+VoiceChatService	Instance	notcreatable,service	**VoiceChatService** is responsible for voice chat's high-level functionality.
+VoxelBuffer	Object	notcreatable,notreplicated	
+WebSocketClient	Instance	notcreatable,notreplicated	
+WebSocketService	Instance	notcreatable,service,notreplicated	
+WebStreamClient	Object	notcreatable,notreplicated	Maintains a streaming connection.
+WebViewService	Instance	notcreatable,service,notreplicated	
+WedgePart	FormFactorPart		A type of `BasePart` that has a wedge shape.
+Weld	JointInstance		Holds two `BasePart` together in a fixed relative position, regardless of whether they're touching.
+WeldConstraint	Instance		Connects two `BasePart` together such that their relative position and orientation remain the same.
+WindowProtocolService	Instance	notcreatable,service,notreplicated	
+Wire	Instance		Connects one or more `Instance` to form a processing graph of their streams. At the moment, only audio streams are supported, but this may expand in the future.
+WireframeHandleAdornment	HandleAdornment		Renders a wireframe adornment consisting of one or more lines onto a `BasePart` (including `Terrain`) or into the `Workspace`.
+Workspace	WorldRoot	notcreatable,service	`Workspace` houses 3D objects which are rendered to the 3D world. Objects not descending from it will not be rendered or physically interact with the world.
+WorkspaceAnnotation	Annotation		
+WorldModel	WorldRoot		Extends limited physics to its children.
+WorldRoot	Model	notcreatable	Base class for handling physics simulation and 3D spatial queries.
+WrapContentProvider	CacheableContentProvider	notcreatable,service,notreplicated	
+WrapDeformMeshProvider	Instance	notcreatable,service,notreplicated	
+WrapDeformer	BaseWrap		Allows for the real-time deformation of a `MeshPart`.
+WrapLayer	BaseWrap		The WrapLayer object defines a 3D accessory's inner and outer surfaces and other properties related to layering accessories. These surfaces, or the Inner Cage and Outer Cage, are similar to collision boxes, and describe the surfaces of whi…
+WrapTarget	BaseWrap		The WrapTarget object defines a target. A target is the 3D body with only an outer surface, or an Outer Cage.
+WrapTextureTransfer	Instance		`WrapTextureTransfer` allows a parent `Decal` to be wrapped around its parent `MeshPart` based on the cage of its `WrapTarget`.

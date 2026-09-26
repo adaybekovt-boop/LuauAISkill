@@ -94,6 +94,10 @@ def check_markdown(paths: list[Path]) -> list[dict]:
             for line, _lang, body in md_blocks(path):
                 first = next((ln for ln in body.splitlines() if ln.strip()), "")
                 rel = path.relative_to(ROOT).as_posix()
+                if first.startswith("-- file: "):
+                    results.append({"file": rel, "line": line, "status": "EMBEDDED",
+                                    "reason": first[9:] + " (checked with its example project)"})
+                    continue
                 if MARKER.match(first):
                     results.append({"file": rel, "line": line, "status": "SKIPPED",
                                     "reason": MARKER.match(first).group(1)})

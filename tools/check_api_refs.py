@@ -16,7 +16,7 @@ Files under references/legacy-modernization/, references/ai-failure-modes.md, re
 maintainers/ and evals/ are legacy contexts by design (unknown refs still need FAKE markers).
 
   python tools/check_api_refs.py            check the whole skill
-  python tools/check_api_refs.py FILE...    check specific files
+  python tools/check_api_refs.py PATH...    check specific files or directories
 """
 from __future__ import annotations
 
@@ -159,13 +159,16 @@ def rel_of(path: Path) -> str:
 
 
 def iter_files(paths: list[str]) -> list[Path]:
-    if paths:
-        return [Path(p).resolve() for p in paths]
+    roots = [Path(p).resolve() for p in paths] or [ROOT]
     files = []
-    for p in ROOT.rglob("*"):
-        if p.is_file() and p.suffix in (".md", ".luau") and not (set(p.relative_to(ROOT).parts) & SKIP_DIRS):
-            files.append(p)
-    return sorted(files)
+    for root in roots:
+        if root.is_file():
+            files.append(root)
+            continue
+        for p in root.rglob("*"):
+            if p.is_file() and p.suffix in (".md", ".luau") and not (set(p.relative_to(ROOT).parts) & SKIP_DIRS):
+                files.append(p)
+    return sorted(set(files))
 
 
 def check_file(path: Path, restricted: dict[str, str], dt_owners: set[str]) -> list[tuple[int, str, str]]:

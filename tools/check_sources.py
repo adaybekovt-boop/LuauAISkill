@@ -26,7 +26,7 @@ import api  # noqa: E402
 CD = ROOT / ".cache" / "sources" / "creator-docs" / "content" / "en-us"
 LUAU = ROOT / ".cache" / "sources" / "luau-site" / "src" / "content" / "docs"
 REF = re.compile(r"\b(cd|luau|api):([A-Za-z0-9_./\-:]+[A-Za-z0-9_])")
-SKIP = {".cache", ".git", "api", "node_modules"}
+SKIP = {".cache", ".git", "api", "node_modules", "qa"}  # qa/ holds generated reports
 
 
 def resolve_api(ref: str) -> bool:

@@ -107,3 +107,7 @@ fetch concept (re-implemented against GitHub sources that are reachable); FTS se
 `PUBLISH_TO_GITHUB.cmd`, `publish_to_github.sh`, `PUBLISHING_RU.md`, `tools/publish_github.py` (one-off publication
 helpers, repo already exists), `indexes/knowledge.sqlite` (generated binary; rebuild locally), per-file SHA
 `PACK-MANIFEST.json` (git provides integrity), repeated disclaimers.
+
+## Recovering the v1 archive
+The v1 ZIP was removed from the working tree after v2 passed all checks locally and in CI (run 36237820688). It stays
+in git history: `git show b9d052e:LuauAISkill-Core-2026-09-26.zip > LuauAISkill-Core-2026-09-26.zip`.

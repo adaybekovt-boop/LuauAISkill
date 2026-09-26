@@ -25,7 +25,9 @@ CACHE = ROOT / ".cache" / "sources"
 LOCK = ROOT / "sources" / "lock.json"
 
 SOURCES = {
-    "creator-docs": {"url": "https://github.com/Roblox/creator-docs.git", "sparse": ["content/en-us"]},
+    # Text only: the checks need Markdown/YAML, not the thousands of images under assets/.
+    "creator-docs": {"url": "https://github.com/Roblox/creator-docs.git",
+                     "sparse": ["/content/en-us/", "!/content/en-us/assets/"], "no_cone": True},
     "luau-site": {"url": "https://github.com/luau-lang/site.git", "sparse": ["src/content/docs"]},
     "api-dump": {
         "url": "https://github.com/MaximumADHD/Roblox-Client-Tracker.git",
@@ -48,8 +50,9 @@ def fetch(name: str, spec: dict, sha: str | None) -> dict:
     if not (dest / ".git").exists():
         dest.parent.mkdir(parents=True, exist_ok=True)
         run(["git", "clone", "--filter=blob:none", "--no-checkout", "--depth", "1", spec["url"], str(dest)])
-        args = ["git", "sparse-checkout", "set"] + (["--no-cone"] if spec.get("no_cone") else []) + spec["sparse"]
-        run(args, cwd=dest)
+    # Re-applied every run so existing clones pick up changed patterns.
+    args = ["git", "sparse-checkout", "set"] + (["--no-cone"] if spec.get("no_cone") else []) + spec["sparse"]
+    run(args, cwd=dest)
     if sha:
         run(["git", "fetch", "--depth", "1", "origin", sha], cwd=dest)
         run(["git", "checkout", "--quiet", sha], cwd=dest)

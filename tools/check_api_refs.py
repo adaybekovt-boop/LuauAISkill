@@ -34,7 +34,7 @@ LEGACY_FILES = ("references/legacy-modernization/", "references/ai-failure-modes
                 "maintainers/", "evals/")
 LEGACY_MARK = re.compile(r"\bBAD\b|\bLEGACY\b|\bOLD\b|deprecated|superseded|→|->|❌|\bwas\b|\bformerly\b", re.I)
 FAKE_MARK = re.compile(r"\bFAKE\b|HALLUCINATED|does not exist|doesn't exist|api-ignore|not a real|invented|"
-                       r"not available|unavailable|\babsent\b|\bno `|removed|never existed", re.I)
+                       r"not available|unavailable|\babsent\b|\bno `|removed|never existed|undocumented|not Roblox|^- OLD:", re.I)
 FOLDER_SERVICES = {"ReplicatedStorage", "ServerStorage", "ServerScriptService", "ReplicatedFirst", "StarterGui",
                    "StarterPack", "StarterPlayerScripts", "StarterCharacterScripts", "PlayerGui", "Backpack",
                    "PlayerScripts"}
@@ -133,9 +133,8 @@ def check_line(text: str, ctx_legacy: bool, ctx_fake: bool, in_code: bool, restr
                 # Methods/properties on datatype instances are also stored as Owner.member / Owner:member.
                 if f"{owner}:{member}" in api.datatypes():
                     continue
-                if owner in ("math", "table", "string", "os", "debug", "coroutine", "utf8", "bit32", "task",
-                             "buffer", "vector") and not fake:
-                    out.append(("error", f"{key}: not in the Roblox {owner} library"))
+                if not fake:
+                    out.append(("error", f"{key}: not a member of the Roblox {owner} datatype/library"))
                 continue
             if ("deprecated" in dt["flags"] or "superseded" in dt["flags"]) and not legacy:
                 out.append(("warn", f"{key}: deprecated/superseded"))

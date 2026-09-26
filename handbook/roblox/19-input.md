@@ -55,7 +55,7 @@ Always handle `Cancel`/`End` (focus loss, menu opening, rebinding) — otherwise
 - Gamepad: `GamepadService` (virtual cursor), `UserInputService:GetConnectedGamepads()`, thumbstick dead zones
   (~0.15–0.2), `HapticService` for rumble (check support).
 - Text input: `TextBox.FocusLost(enterPressed)`; `UserInputService:GetFocusedTextBox()`.
-- `UserInputService.ModalEnabled` is deprecated → `TouchControlsEnabled`.
+- `UserInputService.ModalEnabled` is deprecated → `GuiService.TouchControlsEnabled`.
 
 ## Rebinding
 Store bindings as data (action → list of KeyCode names) in player settings; apply by setting `InputBinding.KeyCode`

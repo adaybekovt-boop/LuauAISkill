@@ -60,7 +60,8 @@ def restricted_props() -> dict[str, str]:
             blocked = (m["write"] != "None" or "write:plugin-only" in flags or "notscriptable" in flags
                        or "readonly" in flags)
             per_name.setdefault(name, []).append(blocked)
-    return {n: "not writable by game scripts" for n, v in per_name.items() if all(v) and len(n) > 3}
+    # PascalCase only: lowercase names are deprecated aliases that collide with ordinary Luau fields.
+    return {n: "not writable by game scripts" for n, v in per_name.items() if all(v) and len(n) > 3 and n[0].isupper()}
 
 
 def datatype_owners() -> set[str]:

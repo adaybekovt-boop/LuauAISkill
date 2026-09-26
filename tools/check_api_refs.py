@@ -36,6 +36,8 @@ LEGACY_FILES = ("references/legacy-modernization/", "references/ai-failure-modes
 LEGACY_MARK = re.compile(r"\bBAD\b|\bLEGACY\b|\bOLD\b|deprecated|superseded|→|->|❌|\bwas\b|\bformerly\b", re.I)
 FAKE_MARK = re.compile(r"\bFAKE\b|HALLUCINATED|does not exist|doesn't exist|api-ignore|not a real|invented|"
                        r"not available|unavailable|\babsent\b|\bno `|removed|never existed|undocumented|not Roblox|^- OLD:", re.I)
+# Names bound locally to a module or table shadow engine classes of the same name within that file.
+SHADOW = re.compile(r"^\s*local\s+([A-Z]\w*)\s*(?::[^=]+)?=\s*(?:require\s*\(|\{)", re.M)
 FOLDER_SERVICES = {"ReplicatedStorage", "ServerStorage", "ServerScriptService", "ReplicatedFirst", "StarterGui",
                    "StarterPack", "StarterPlayerScripts", "StarterCharacterScripts", "PlayerGui", "Backpack",
                    "PlayerScripts"}
@@ -70,7 +72,7 @@ def datatype_owners() -> set[str]:
 
 
 def check_line(text: str, ctx_legacy: bool, ctx_fake: bool, in_code: bool, restricted: dict[str, str],
-               dt_owners: set[str]) -> list[tuple[str, str]]:
+               dt_owners: set[str], shadow: frozenset[str] = frozenset()) -> list[tuple[str, str]]:
     out = []
     legacy = ctx_legacy or bool(LEGACY_MARK.search(text))
     fake = ctx_fake or bool(FAKE_MARK.search(text))
@@ -108,6 +110,8 @@ def check_line(text: str, ctx_legacy: bool, ctx_fake: bool, in_code: bool, restr
                 elif item is not None and "deprecated" in item["flags"] and not legacy:
                     out.append(("warn", f"Enum.{member}.{sub}: deprecated item"))
             continue
+        if owner in shadow:
+            continue  # a local module/table with the same name as an engine class (e.g. `local Noise = require(...)`)
         if owner in api.classes():
             if member in ("new",) and owner not in dt_owners:
                 continue  # user modules often shadow class names (e.g. a local Camera module)
@@ -180,7 +184,9 @@ def iter_files(paths: list[str]) -> list[Path]:
 def check_file(path: Path, restricted: dict[str, str], dt_owners: set[str]) -> list[tuple[int, str, str]]:
     rel = rel_of(path)
     file_legacy = rel.startswith(LEGACY_FILES)
-    lines = path.read_text(encoding="utf-8").splitlines()
+    text = path.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    shadow = frozenset(SHADOW.findall(text))
     findings = []
     if path.suffix == ".luau":
         head = "\n".join(lines[:5])
@@ -188,7 +194,7 @@ def check_file(path: Path, restricted: dict[str, str], dt_owners: set[str]) -> l
         blk_fake = bool(FAKE_MARK.search(head))
         for i, line in enumerate(lines, 1):
             code = line
-            for sev, msg in check_line(code, blk_legacy, blk_fake, True, restricted, dt_owners):
+            for sev, msg in check_line(code, blk_legacy, blk_fake, True, restricted, dt_owners, shadow):
                 findings.append((i, sev, msg))
         return findings
     in_code = False
@@ -211,7 +217,7 @@ def check_file(path: Path, restricted: dict[str, str], dt_owners: set[str]) -> l
         if in_code:
             if fence_lang not in ("lua", "luau", ""):
                 continue
-            for sev, msg in check_line(line, file_legacy or blk_legacy, blk_fake, True, restricted, dt_owners):
+            for sev, msg in check_line(line, file_legacy or blk_legacy, blk_fake, True, restricted, dt_owners, shadow):
                 findings.append((i, sev, msg))
         else:
             spans = re.findall(r"`([^`]+)`", line)

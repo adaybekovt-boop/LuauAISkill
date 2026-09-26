@@ -131,7 +131,7 @@ if hit then print(hit.Instance:GetFullName(), hit.Normal) end
   wakes the solver; use constraints.
 - Ragdoll: disable `Motor6D`s (or `Humanoid.BreakJointsOnDeath` flow), add BallSocketConstraints between limb
   attachments, set `Humanoid:ChangeState(Enum.HumanoidStateType.Physics)` on the owning machine, add
-  NoCollisionConstraints between adjacent limbs. See [combat](15-combat.md#ragdoll).
+  NoCollisionConstraints between adjacent limbs. See [combat](15-combat.md#ragdoll-on-death-or-knock-down).
 - Vehicles: `VehicleSeat` + HingeConstraint motors/`CylindricalConstraint` suspension; give the driver network
   ownership for responsiveness and validate speed on the server.
 - Fluid forces (`BasePart.EnableFluidForces`, aerodynamics) exist for planes/gliders — verify behaviour in docs.

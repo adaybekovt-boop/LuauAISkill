@@ -33,7 +33,11 @@ SKIP_DIRS = {".cache", ".git", "api", "node_modules", "__pycache__"}
 LEGACY_FILES = ("references/legacy-modernization/", "references/ai-failure-modes.md", "references/anti-patterns.md",
                 "maintainers/", "evals/")
 LEGACY_MARK = re.compile(r"\bBAD\b|\bLEGACY\b|\bOLD\b|deprecated|superseded|→|->|❌|\bwas\b|\bformerly\b", re.I)
-FAKE_MARK = re.compile(r"\bFAKE\b|HALLUCINATED|does not exist|doesn't exist|api-ignore|not a real|invented", re.I)
+FAKE_MARK = re.compile(r"\bFAKE\b|HALLUCINATED|does not exist|doesn't exist|api-ignore|not a real|invented|"
+                       r"not available|unavailable|\babsent\b|\bno `|removed|never existed", re.I)
+FOLDER_SERVICES = {"ReplicatedStorage", "ServerStorage", "ServerScriptService", "ReplicatedFirst", "StarterGui",
+                   "StarterPack", "StarterPlayerScripts", "StarterCharacterScripts", "PlayerGui", "Backpack",
+                   "PlayerScripts"}
 LIBS = {"task", "buffer", "vector", "math", "table", "string", "coroutine", "bit32", "utf8", "os", "debug"}
 
 REF = re.compile(r"(?<![\w.])([A-Z][A-Za-z0-9]*|task|buffer|vector|math|table|string|coroutine|bit32|utf8|os|debug)"
@@ -104,6 +108,10 @@ def check_line(text: str, ctx_legacy: bool, ctx_fake: bool, in_code: bool, restr
             if member in ("new",) and owner not in dt_owners:
                 continue  # user modules often shadow class names (e.g. a local Camera module)
             found = api.resolve_member(owner, member)
+            if found is None and owner in FOLDER_SERVICES:
+                continue  # user hierarchy path, e.g. ReplicatedStorage.Remotes
+            if found is None and member in api.classes():
+                continue  # hierarchy path to a child container, e.g. Player.PlayerGui, StarterPlayer.StarterPlayerScripts
             if found is None:
                 key = f"{owner}.{member}"
                 if key in api.datatypes() or owner in dt_owners:

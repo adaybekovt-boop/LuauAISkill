@@ -236,16 +236,18 @@ def main() -> int:
     if not a.query:
         ap.print_help()
         return 1
-    q = a.query.replace(":", ".").rstrip("()")
+    raw = a.query.rstrip("()")
+    q = raw.replace(":", ".")
     parts = q.split(".")
     if parts[0] == "Enum" and len(parts) >= 2:
         return show_enum(parts)
-    if q in datatypes():
-        r = datatypes()[q]
-        print(f"{q}  ({r['kind']} of {r['owner']})  {r['signature']}  flags: {r['flags'] or '-'}")
-        if summaries().get(q):
-            print("  summary: " + summaries()[q])
-        return 0
+    for cand in (raw, q, q.replace(".", ":", 1) if len(parts) == 2 else q):
+        if cand in datatypes():
+            r = datatypes()[cand]
+            print(f"{cand}  ({r['kind']} of {r['owner']})  {r['signature']}  flags: {r['flags'] or '-'}")
+            if summaries().get(cand):
+                print("  summary: " + summaries()[cand])
+            return 0
     if len(parts) == 1:
         if parts[0] in classes():
             return show_class(parts[0], a.all)
@@ -261,4 +263,7 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except BrokenPipeError:  # output piped into head/grep
+        sys.exit(0)

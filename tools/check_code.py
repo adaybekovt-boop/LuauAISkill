@@ -172,23 +172,47 @@ def build_sourcemap(project: Path, lib: Path | None) -> dict:
     return {"name": "Game", "className": "DataModel", "children": list(services.values())}
 
 
+LIB = ROOT / "examples" / "lib"
+
+
+def link_lib(project: Path) -> list[Path]:
+    """Copy the shared lib into a project (as it would be in a real place: ReplicatedStorage.Lib).
+    Returns the copied files so unlink_lib can remove exactly those."""
+    linked = []
+    if LIB.exists() and project != LIB:
+        for f in LIB.rglob("*.luau"):
+            target = project / f.relative_to(LIB)
+            if not target.exists():
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(f, target)
+                linked.append(target)
+    return linked
+
+
+def unlink_lib(project: Path, linked: list[Path]) -> None:
+    for t in linked:
+        t.unlink()
+        parent = t.parent
+        while parent != project and not any(parent.iterdir()):
+            parent.rmdir()
+            parent = parent.parent
+
+
+def example_projects() -> list[Path]:
+    ex = ROOT / "examples"
+    if not ex.exists():
+        return []
+    return [p for p in sorted(ex.iterdir()) if p.is_dir() and p.name not in ("tests", "lib")]
+
+
 def check_examples(projects: list[Path]) -> list[dict]:
     results = []
-    lib = ROOT / "examples" / "lib"
     for project in projects:
         files = sorted(p for p in project.rglob("*.luau") if "tests" not in p.parts)
         if not files:
             continue
         # Link the shared lib into the project so relative sourcemap paths stay inside the project root.
-        linked = []
-        if lib.exists() and project != lib:
-            for svc in lib.iterdir():
-                for f in svc.rglob("*.luau"):
-                    target = project / f.relative_to(lib)
-                    if not target.exists():
-                        target.parent.mkdir(parents=True, exist_ok=True)
-                        shutil.copyfile(f, target)
-                        linked.append(target)
+        linked = link_lib(project)
         try:
             smap = build_sourcemap(project, None)
             smap_path = project / "sourcemap.json"
@@ -205,12 +229,7 @@ def check_examples(projects: list[Path]) -> list[dict]:
                 fe = [e for e in errs if f.name in e.split("(")[0] or str(f) in e]
                 results.append({"file": rel, "status": "FAILED" if fe else "TYPECHECKED", "errors": fe})
         finally:
-            for t in linked:
-                t.unlink()
-                parent = t.parent
-                while parent != project and not any(parent.iterdir()):
-                    parent.rmdir()
-                    parent = parent.parent
+            unlink_lib(project, linked)
             (project / "sourcemap.json").unlink(missing_ok=True)
     return results
 
@@ -218,12 +237,18 @@ def check_examples(projects: list[Path]) -> list[dict]:
 def run_cli_tests() -> list[dict]:
     results = []
     tests = sorted((ROOT / "examples" / "tests").glob("*.spec.luau"))
-    for t in tests:
-        res = subprocess.run([tool("luau"), str(t.relative_to(ROOT))], cwd=ROOT, capture_output=True, text=True)
-        out = (res.stdout + res.stderr).strip().splitlines()
-        results.append({"file": t.relative_to(ROOT).as_posix(),
-                        "status": "CLI-EXECUTED" if res.returncode == 0 else "FAILED",
-                        "exit": res.returncode, "tail": out[-8:]})
+    # Pure modules may require the lib by string ("../Lib/Hash"): link it into every project like in a real place.
+    linked = {p: link_lib(p) for p in example_projects()}
+    try:
+        for t in tests:
+            res = subprocess.run([tool("luau"), str(t.relative_to(ROOT))], cwd=ROOT, capture_output=True, text=True)
+            out = (res.stdout + res.stderr).strip().splitlines()
+            results.append({"file": t.relative_to(ROOT).as_posix(),
+                            "status": "CLI-EXECUTED" if res.returncode == 0 else "FAILED",
+                            "exit": res.returncode, "tail": out[-8:]})
+    finally:
+        for project, files in linked.items():
+            unlink_lib(project, files)
     return results
 
 
@@ -243,9 +268,9 @@ def main() -> int:
         report["markdown"] = check_markdown(md_paths)
     if not a.md_only and not [p for p in a.paths if p.endswith(".md")]:
         ex = ROOT / "examples"
-        projects = [p for p in sorted(ex.iterdir()) if p.is_dir() and p.name not in ("tests", "lib")] if ex.exists() else []
-        if ex.exists() and (ex / "lib").exists():
-            projects.insert(0, ex / "lib")
+        projects = example_projects()
+        if LIB.exists():
+            projects.insert(0, LIB)
         report["examples"] = check_examples(projects)
         report["cli_tests"] = run_cli_tests() if (ex / "tests").exists() else []
     failed = 0

@@ -1,0 +1,19 @@
+{
+  "assets": [
+    {
+      "name": "REPLACE_WITH_ASSET_NAME",
+      "source_url": null,
+      "creator": null,
+      "license": null,
+      "license_checked_on": null,
+      "asset_id": null,
+      "owner_permissions_verified": false,
+      "content_hash": null,
+      "intended_use": null,
+      "scripts_audited": false,
+      "dependencies": [],
+      "import_settings": {},
+      "status": "NOT_APPROVED"
+    }
+  ]
+}

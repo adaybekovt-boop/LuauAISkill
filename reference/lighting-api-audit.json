@@ -1,0 +1,129 @@
+{
+  "source": {
+    "repository": "Roblox/creator-docs",
+    "commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+    "commit_date": "2026-09-25T10:12:55Z",
+    "path": "content/en-us/reference/engine/classes/Lighting.yaml",
+    "url": "https://github.com/Roblox/creator-docs/blob/cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91/content/en-us/reference/engine/classes/Lighting.yaml",
+    "checked_on": "2026-09-26",
+    "kind": "manually transcribed selected metadata; not verbatim full YAML"
+  },
+  "warning": "Permissions in this snapshot do not prove support in a particular installed Studio build or sandbox capability set. ReadSafe is not parallel-write permission.",
+  "members": [
+    {
+      "name": "Lighting.Ambient",
+      "type": "Color3",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "capabilities": [
+        "Environment"
+      ],
+      "source_tags": [],
+      "notes": "Occluded areas; interaction with OutdoorAmbient.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.Brightness",
+      "type": "float",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "capabilities": [
+        "Environment"
+      ],
+      "source_tags": [],
+      "notes": "Global light intensity; art direction is separate from permission.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.GlobalShadows",
+      "type": "boolean",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "capabilities": [
+        "Environment"
+      ],
+      "source_tags": [],
+      "notes": "Review guide and target pipeline before assuming all old voxel wording applies.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.LightingStyle",
+      "type": "LightingStyle",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "capabilities": [
+        "Environment"
+      ],
+      "source_tags": [],
+      "notes": "Soft or Realistic; shadowing path also depends on PrioritizeLightingQuality.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.OutdoorAmbient",
+      "type": "Color3",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "capabilities": [
+        "Environment"
+      ],
+      "source_tags": [],
+      "notes": "Per-channel relationship with Ambient matters.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.PrioritizeLightingQuality",
+      "type": "boolean",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "capabilities": [
+        "Environment"
+      ],
+      "source_tags": [],
+      "notes": "True favors close lighting/shading quality over view distance as quality reduces.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.ShadowSoftness",
+      "type": "float",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "capabilities": [
+        "Environment"
+      ],
+      "source_tags": [],
+      "notes": "Description still references old Technology modes; reconcile with current lighting guide.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.Technology",
+      "type": "Technology",
+      "read_security": "RobloxScriptSecurity",
+      "write_security": "RobloxScriptSecurity",
+      "thread_safety": "ReadSafe",
+      "source_tags": [],
+      "has_deprecation_message": true,
+      "notes": "Non-scriptable / Studio-only in YAML. Superseded by LightingStyle and PrioritizeLightingQuality. HTML deprecated status and empty YAML tags should not be flattened into a false active verdict.",
+      "runtime_tested": false
+    },
+    {
+      "name": "Lighting.ShadowColor",
+      "type": "Color3",
+      "read_security": "None",
+      "write_security": "None",
+      "thread_safety": "ReadSafe",
+      "source_tags": [
+        "NotReplicated",
+        "Deprecated"
+      ],
+      "notes": "Source states no current functionality. Do not use for new work.",
+      "runtime_tested": false
+    }
+  ]
+}

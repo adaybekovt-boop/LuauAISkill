@@ -1,14 +1,23 @@
 ---
 name: tk-luau-roblox
-version: 1.0.0
+version: 1.1.0
 snapshot: 2026-09-26
-description: Source-grounded Luau and Roblox engineering. Use for scripts, game architecture, networking, persistence, procedural worlds, lighting, PBR, UI, audio, optimization, migration and Studio validation. Includes Russian handbook, runnable-reference code, local retrieval and an official-corpus downloader. Does not assume undocumented APIs or claim unrun tests.
+description: Expert-level Luau and Roblox engineering. Use for writing, fixing, reviewing or modernizing any Roblox script or Luau module — gameplay systems, networking/remotes, DataStore persistence, purchases, characters/animation, UI/input/camera, physics/raycasting, effects/audio/lighting, architecture, performance, procedural worlds. Includes a code-first knowledge layer (knowledge/, every code block typechecked against the real Roblox API), an offline Roblox API lookup (tools/roblox_api.py), a Luau/luau-lsp toolchain for typechecking generated code, the Russian process handbook, local retrieval and an official-corpus downloader. Does not assume undocumented APIs or claim unrun tests.
 ---
 
 # TK Luau + Roblox
 
 ## Trigger
 Use when implementing, reviewing, debugging, modernizing or visually improving a Roblox experience or Luau module. This is an **inference-time skill**, not a trained model or a guarantee of better results. Answer the user in their language; preserve API names exactly.
+
+## Knowledge layer — how to actually write the code (read first)
+1. Read `knowledge/00-START-HERE.md` in full: the expert algorithm, default decisions, golden rules, script skeletons, answer format and the pre-delivery self-review checklist.
+2. Route the task with `knowledge/INDEX.md` and read the relevant topic files (language, types, stdlib, scheduler, runtime/DataModel, instances, CFrame math, physics, networking/security, persistence/monetization, characters/animation, UI/input/camera, effects/audio/lighting, architecture, cookbook of complete systems, pitfalls/error dictionary/migration, performance, tooling). Code in these files is complete and placeable; adapt it to the user's project instead of pasting blindly.
+3. Verify every uncertain class/member/enum with `python tools/roblox_api.py Class.Member` (offline; shows signature, inheritance, deprecation and the official summary). Never invent API.
+4. Typecheck what you write: `bash tools/setup_luau_toolchain.sh` once, then `.toolchain/luau-lsp analyze --definitions=.toolchain/globalTypes.d.luau --platform=roblox file.luau`, or put several scripts as ```luau blocks with `-- @path` into a Markdown file and run `python tools/check_code_blocks.py that.md`. Pure logic can be executed with `.toolchain/luau`. Report this honestly as "typecheck passed", never as a Studio test.
+5. Deliver in the format of `knowledge/00-START-HERE.md` §6: where each script goes (type + location), full code, Studio setup, test plan, what was not verified.
+
+The sections below are the process/evidence contract (handbook layer). They still apply.
 
 ## Start with evidence, not memory
 1. Read `README_RU.md`, `handbook/00-contract.md` and the relevant route in `tracks/INDEX.md`.

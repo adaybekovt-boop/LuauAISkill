@@ -1,0 +1,194 @@
+[
+  {
+    "path": "handbook/00-contract.md",
+    "title": "00. Что именно агент обязан делать"
+  },
+  {
+    "path": "handbook/01-language-model.md",
+    "title": "01. Luau, Lua и Roblox — разные уровни"
+  },
+  {
+    "path": "handbook/02-modern-syntax.md",
+    "title": "02. Современный синтаксис и проверка новых возможностей"
+  },
+  {
+    "path": "handbook/03-types.md",
+    "title": "03. Типы, unknown и реальные проверки"
+  },
+  {
+    "path": "handbook/04-tables-generics.md",
+    "title": "04. Таблицы, generics и проектирование данных"
+  },
+  {
+    "path": "handbook/05-runtime-layout.md",
+    "title": "05. Script, LocalScript, ModuleScript и RunContext"
+  },
+  {
+    "path": "handbook/06-scheduling.md",
+    "title": "06. Scheduler, события и жизненный цикл"
+  },
+  {
+    "path": "handbook/07-remotes.md",
+    "title": "07. Сетевые контракты и RemoteEvent"
+  },
+  {
+    "path": "handbook/08-security.md",
+    "title": "08. Безопасность данных и взаимодействий"
+  },
+  {
+    "path": "handbook/09-authoritative-combat.md",
+    "title": "09. Игровая боёвка без доверия клиенту"
+  },
+  {
+    "path": "handbook/10-server-authority.md",
+    "title": "10. Новая server authority: prediction и rollback"
+  },
+  {
+    "path": "handbook/11-streaming.md",
+    "title": "11. Большие миры и streaming-safe код"
+  },
+  {
+    "path": "handbook/12-parallel.md",
+    "title": "12. Parallel Luau и native code без магии"
+  },
+  {
+    "path": "handbook/13-physics.md",
+    "title": "13. Физика, constraints и пространственные запросы"
+  },
+  {
+    "path": "handbook/14-persistence.md",
+    "title": "14. Сохранения: состояние, конкуренция и отказ"
+  },
+  {
+    "path": "handbook/15-purchases.md",
+    "title": "15. Покупки, идемпотентность и награды"
+  },
+  {
+    "path": "handbook/16-architecture.md",
+    "title": "16. Модули, dependency injection и bootstrap"
+  },
+  {
+    "path": "handbook/17-npc-animation.md",
+    "title": "17. NPC, pathfinding и анимации"
+  },
+  {
+    "path": "handbook/18-input-ui.md",
+    "title": "18. Input Actions, UI и управление"
+  },
+  {
+    "path": "handbook/19-audio.md",
+    "title": "19. Современное аудио и звуковая сцена"
+  },
+  {
+    "path": "handbook/20-graphics-pipeline.md",
+    "title": "20. Высокая графика: рабочий процесс, а не один скрипт"
+  },
+  {
+    "path": "handbook/21-lighting.md",
+    "title": "21. Освещение и ограничения API"
+  },
+  {
+    "path": "handbook/22-pbr.md",
+    "title": "22. PBR, текстуры и визуальная правдоподобность"
+  },
+  {
+    "path": "handbook/23-geometry.md",
+    "title": "23. Модульная архитектура без дыр и наложений"
+  },
+  {
+    "path": "handbook/24-camera-effects.md",
+    "title": "24. Камера, bodycam и комфорт"
+  },
+  {
+    "path": "handbook/25-particles.md",
+    "title": "25. VFX, прозрачность и ограничение затрат"
+  },
+  {
+    "path": "handbook/26-performance.md",
+    "title": "26. Профилирование: CPU, GPU, память и сеть"
+  },
+  {
+    "path": "handbook/27-quality-tiers.md",
+    "title": "27. Графические профили и устойчивый FPS"
+  },
+  {
+    "path": "handbook/28-testing.md",
+    "title": "28. Тестирование: от чистой функции до живого сервера"
+  },
+  {
+    "path": "handbook/29-agent-retrieval.md",
+    "title": "29. Как агент читает большую библиотеку"
+  },
+  {
+    "path": "handbook/30-migration.md",
+    "title": "30. Миграция старого кода без слепых замен"
+  },
+  {
+    "path": "handbook/31-release.md",
+    "title": "31. Релиз, права и поддержка"
+  },
+  {
+    "path": "handbook/32-script-sync.md",
+    "title": "32. Script Sync, внешний редактор и источник истины"
+  },
+  {
+    "path": "handbook/33-script-capabilities.md",
+    "title": "33. Capabilities и sandbox: права не лечатся pcall"
+  },
+  {
+    "path": "handbook/34-procedural-models.md",
+    "title": "34. Нативные ProceduralModel и безопасная генерация"
+  },
+  {
+    "path": "handbook/35-ccl.md",
+    "title": "35. Character Controller Library и выбор движения"
+  },
+  {
+    "path": "handbook/36-animation-graphs.md",
+    "title": "36. Animation Graph: клипы, параметры и сетевой режим"
+  },
+  {
+    "path": "handbook/37-memory-stores.md",
+    "title": "37. MemoryStore: временная координация, а не вечный сейв"
+  },
+  {
+    "path": "handbook/38-messaging.md",
+    "title": "38. Cross-server messaging и консистентность"
+  },
+  {
+    "path": "handbook/39-teleports.md",
+    "title": "39. Телепортация и переход между плейсами"
+  },
+  {
+    "path": "handbook/40-text-safety.md",
+    "title": "40. Пользовательский текст, фильтрация и RichText"
+  },
+  {
+    "path": "handbook/41-profiling-workflow.md",
+    "title": "41. MicroProfiler: от симптома к проверенной причине"
+  },
+  {
+    "path": "handbook/42-scene-analysis.md",
+    "title": "42. Scene Analysis и утечки ресурсов"
+  },
+  {
+    "path": "handbook/43-language-edge-cases.md",
+    "title": "43. Luau: края языка, которые ломают надёжные системы"
+  },
+  {
+    "path": "handbook/44-binary-protocol.md",
+    "title": "44. Buffers и компактные данные без хрупкого протокола"
+  },
+  {
+    "path": "handbook/45-transform-math.md",
+    "title": "45. CFrame, локальные оси, pivot и сетка"
+  },
+  {
+    "path": "handbook/46-async-contracts.md",
+    "title": "46. Асинхронность, отмена и отсутствие скрытых гонок"
+  },
+  {
+    "path": "handbook/47-release-status.md",
+    "title": "47. Сентябрь 2026: новизна, эксперимент и противоречия"
+  }
+]

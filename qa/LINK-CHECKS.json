@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "checked_file_links": 220,
+  "missing": [],
+  "outside_root": [],
+  "scope": "Authored relative Markdown file links only; not anchors or online URL availability."
+}

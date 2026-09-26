@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-09-26",
+  "roblox": {
+    "repository": "Roblox/creator-docs",
+    "commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+    "commit_date": "2026-09-25T10:12:55Z",
+    "path": "content/en-us/reference/engine/classes/Lighting.yaml",
+    "url": "https://github.com/Roblox/creator-docs/blob/cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91/content/en-us/reference/engine/classes/Lighting.yaml",
+    "checked_on": "2026-09-26",
+    "kind": "manually transcribed selected metadata; not verbatim full YAML"
+  },
+  "luau_site": {
+    "repository": "luau-lang/site",
+    "commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+    "commit_date": "2026-09-21T10:17:32Z"
+  },
+  "luau_compiler_observed": {
+    "repository": "luau-lang/luau",
+    "commit": "c0e346edd89066b44dca174c9f54ce84c746a540",
+    "commit_date": "2026-09-25T18:25:15Z",
+    "upstream_release_line": "740",
+    "compiler_bundled": false
+  },
+  "official_index": {
+    "url": "https://create.roblox.com/docs/llms.txt",
+    "last_updated": "2026-09-25T18:51:47Z",
+    "advertised_pages": 2279,
+    "index_advertisement_is_not_local_coverage": true
+  }
+}

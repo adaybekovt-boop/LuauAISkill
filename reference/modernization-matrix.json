@@ -1,0 +1,412 @@
+{
+  "checked_on": "2026-09-26",
+  "notes": "Statuses are per row. Not every older pattern is officially deprecated; target validation remains necessary.",
+  "items": [
+    {
+      "old": "Lua 5.4/5.5 syntax everywhere",
+      "new": "Check Luau compatibility and host",
+      "status": "Language compatibility",
+      "source_id": "L13",
+      "caveat": "Luau is not a full superset of later Lua; do not import filesystem/package APIs into Studio."
+    },
+    {
+      "old": "wait()",
+      "new": "task.wait or an event driven design",
+      "status": "Migration with timing review",
+      "source_id": "R07",
+      "caveat": "Do not preserve a polling loop unnecessarily; task.wait is not an exact timer."
+    },
+    {
+      "old": "spawn()",
+      "new": "Choose task.defer or task.spawn by scheduling intent",
+      "status": "Migration with behavior review",
+      "source_id": "R07",
+      "caveat": "Legacy delayed scheduling is not identical to immediate task.spawn."
+    },
+    {
+      "old": "delay()",
+      "new": "task.delay with owner and cancellation policy",
+      "status": "Migration with lifecycle review",
+      "source_id": "R07",
+      "caveat": "A scheduled callback can outlive character/UI; do not rely only on nominal delay."
+    },
+    {
+      "old": "a and b or c ternary",
+      "new": "if a then b else c",
+      "status": "Supported modern syntax",
+      "source_id": "L01",
+      "caveat": "False/nil b differs from desired true branch semantics."
+    },
+    {
+      "old": "hand written table iterator everywhere",
+      "new": "Generalized iteration where appropriate",
+      "status": "Supported syntax, optional migration",
+      "source_id": "L01",
+      "caveat": "Dictionary order remains unsuitable for deterministic algorithms."
+    },
+    {
+      "old": "assume all number values finite",
+      "new": "Validate finite and domain range",
+      "status": "Correctness/security rule",
+      "source_id": "R04",
+      "caveat": "Current math predicates have an isolated feature probe; portable predicate also provided."
+    },
+    {
+      "old": "const makes all data immutable",
+      "new": "Binding immutability plus explicit ownership/freeze strategy",
+      "status": "Current documented language feature",
+      "source_id": "L01",
+      "caveat": "Nested contents can still mutate; probe target parser."
+    },
+    {
+      "old": "type casts sanitize remotes",
+      "new": "unknown + runtime validation",
+      "status": "Security rule",
+      "source_id": "L02",
+      "caveat": ":: and --!strict do not perform runtime checks."
+    },
+    {
+      "old": "any as universal repair",
+      "new": "Narrow unknown; local interfaces and tagged unions",
+      "status": "Engineering recommendation",
+      "source_id": "L02",
+      "caveat": "Use escape hatches only with isolated rationale; do not mute entire modules."
+    },
+    {
+      "old": "table.clone for deep snapshot",
+      "new": "Explicit copy depth and alias contract",
+      "status": "Library semantics",
+      "source_id": "L10",
+      "caveat": "Clone is shallow; cyclic graphs need an explicit policy."
+    },
+    {
+      "old": "table.freeze recursively freezes game state",
+      "new": "Freeze only documented boundary; preserve nested ownership",
+      "status": "Library semantics",
+      "source_id": "L10",
+      "caveat": "Shallow table freeze does not freeze Instances or nested tables."
+    },
+    {
+      "old": "explicit generic syntax f<number>()",
+      "new": "Current Luau f<<number>>() where supported",
+      "status": "Current documented syntax",
+      "source_id": "L06",
+      "caveat": "Do not import TypeScript syntax; probe actual parser."
+    },
+    {
+      "old": "always --!native all files",
+      "new": "Profile hot numeric code; file/function directive where supported",
+      "status": "Optional optimization",
+      "source_id": "L12",
+      "caveat": "@native does not recursively mark inner functions; no universal speedup."
+    },
+    {
+      "old": "if local/exact tables as universal baseline",
+      "new": "Treat current upstream experiments as gated",
+      "status": "Experimental in inspected 740",
+      "source_id": "G05",
+      "caveat": "Merged/release source is not universal Studio support."
+    },
+    {
+      "old": "LocalScript in ReplicatedStorage runs",
+      "new": "Script with RunContext Client or a valid LocalScript container",
+      "status": "Runtime placement",
+      "source_id": "R01",
+      "caveat": "LocalScript remains supported; class and placement both matter."
+    },
+    {
+      "old": "Client Script copied into every starter root",
+      "new": "One intentional entrypoint and correct host",
+      "status": "Duplicate-start risk",
+      "source_id": "R01",
+      "caveat": "Avoid both original and clone startup where applicable."
+    },
+    {
+      "old": "ReplicatedStorage for private server secrets",
+      "new": "Server-only storage/backend with appropriate rights",
+      "status": "Security boundary",
+      "source_id": "R02",
+      "caveat": "Replicated containers are visible to clients."
+    },
+    {
+      "old": "RemoteFunction for every interaction",
+      "new": "RemoteEvent request/ack where non-blocking semantics fit",
+      "status": "Architecture choice",
+      "source_id": "R03",
+      "caveat": "RemoteFunction is not deprecated universally; avoid server critical path waiting on client."
+    },
+    {
+      "old": "client sends final damage/reward",
+      "new": "Client intent, server computes and validates",
+      "status": "Security rule",
+      "source_id": "R04",
+      "caveat": "Validate state, identity, timing and target independently."
+    },
+    {
+      "old": "client cooldown only",
+      "new": "Server rate limiting + bounded registries",
+      "status": "Security rule",
+      "source_id": "R04",
+      "caveat": "Client UI feedback is not enforcement."
+    },
+    {
+      "old": "checking range means movement anti-cheat",
+      "new": "Separate movement authority/validation",
+      "status": "Security rule",
+      "source_id": "R05",
+      "caveat": "A replicated exploiter-controlled position can pass naive distance checks."
+    },
+    {
+      "old": "all remotes reliable cosmetic streams",
+      "new": "Choose reliable transitions vs lossy samples",
+      "status": "Protocol design",
+      "source_id": "R03",
+      "caveat": "Unreliable samples cannot carry sole economy or guaranteed state transitions."
+    },
+    {
+      "old": "replicated attributes arrive before remote",
+      "new": "Versioned reconciliation and missing-instance handling",
+      "status": "Replication rule",
+      "source_id": "R02",
+      "caveat": "Do not depend on an undocumented ordering guarantee."
+    },
+    {
+      "old": "WaitForChild once proves lifetime",
+      "new": "Streaming-aware lookup/cleanup/rebind",
+      "status": "Streaming contract",
+      "source_id": "R10",
+      "caveat": "Instance can stream out later; timeout is not permission to invent placeholder state."
+    },
+    {
+      "old": "GetDescendants every frame",
+      "new": "One-time scan + events/registries where correct",
+      "status": "Performance recommendation",
+      "source_id": "R20",
+      "caveat": "A bounded audit pass is not the same as hot-loop scanning."
+    },
+    {
+      "old": "Actors make all API writes thread-safe",
+      "new": "Read thread safety per member; serial commit",
+      "status": "Parallel contract",
+      "source_id": "R08",
+      "caveat": "ReadSafe is not parallel write permission."
+    },
+    {
+      "old": "task.spawn is multicore parallelism",
+      "new": "Actor/parallel model only when justified",
+      "status": "Concurrency distinction",
+      "source_id": "R08",
+      "caveat": "Coroutines and concurrent tasks are not proof of CPU parallel speedup."
+    },
+    {
+      "old": "old ray helpers for new code",
+      "new": "Workspace:Raycast + RaycastParams",
+      "status": "Modern API choice",
+      "source_id": "R27",
+      "caveat": "Direction includes range magnitude; check returned nil and filters."
+    },
+    {
+      "old": "body mover chosen by an old tutorial",
+      "new": "Evaluate current mover constraints",
+      "status": "Physics migration",
+      "source_id": "R28",
+      "caveat": "Do not substitute force/velocity/position constraints without matching physical intent."
+    },
+    {
+      "old": "load failure creates fresh profile",
+      "new": "Explicit unavailable/failed state and retry",
+      "status": "Data safety",
+      "source_id": "R21",
+      "caveat": "Do not overwrite a valid stored profile with defaults after a failed read."
+    },
+    {
+      "old": "last retry may write older state",
+      "new": "Serialize key operations and version/fence",
+      "status": "Data safety",
+      "source_id": "R22",
+      "caveat": "Independent retry loops can reorder writes."
+    },
+    {
+      "old": "UpdateAsync callback yields/sends rewards",
+      "new": "Pure non-yielding repeatable transform",
+      "status": "Data contract",
+      "source_id": "R21",
+      "caveat": "Callback can execute more than once; irreversible effects need a separate durable protocol."
+    },
+    {
+      "old": "purchase popup closed means grant",
+      "new": "Reviewed receipt processing and idempotency",
+      "status": "Purchase safety",
+      "source_id": "R22",
+      "caveat": "Client completion is not authoritative purchase fulfillment."
+    },
+    {
+      "old": "MemoryStore forever inventory",
+      "new": "Ephemeral cache/coordination + durable source",
+      "status": "Service distinction",
+      "source_id": "R34",
+      "caveat": "TTL/expiry must be tolerated; not a replacement for DataStore."
+    },
+    {
+      "old": "MessagingService equals durable transaction",
+      "new": "Publish invalidation/events around durable state",
+      "status": "Architecture choice",
+      "source_id": "R35",
+      "caveat": "Design for duplicates/late events; no invented exactly-once guarantee."
+    },
+    {
+      "old": "client Teleport() for new systems",
+      "new": "Server TeleportAsync and access settings",
+      "status": "Current guide deprecation",
+      "source_id": "R36",
+      "caveat": "Full test needs published Roblox client, not Studio alone."
+    },
+    {
+      "old": "raw user text fallback if filter fails",
+      "new": "Safe pending/error UI; current filter API",
+      "status": "Safety requirement",
+      "source_id": "R37",
+      "caveat": "Do not publish unfiltered text on service errors."
+    },
+    {
+      "old": "Lighting.Technology = Future in normal script",
+      "new": "LightingStyle + PrioritizeLightingQuality after exact permission check",
+      "status": "Current API supersession",
+      "source_id": "R16",
+      "caveat": "Current YAML says new members write None; Technology RobloxScriptSecurity."
+    },
+    {
+      "old": "pcall makes restricted property work",
+      "new": "Check security and required Studio setup",
+      "status": "API rule",
+      "source_id": "R16",
+      "caveat": "pcall catches denial; it does not grant rights."
+    },
+    {
+      "old": "PBR has only four relevant maps",
+      "new": "Read current five-map SurfaceAppearance guide",
+      "status": "Current graphics guide",
+      "source_id": "R18",
+      "caveat": "Emissive is included; supported behavior and mutability still need checking."
+    },
+    {
+      "old": "every texture map freely mutable at runtime",
+      "new": "Read pre-processing/mutation restrictions",
+      "status": "Material API contract",
+      "source_id": "R18",
+      "caveat": "Color tint support is different from replacing texture maps."
+    },
+    {
+      "old": "higher roughness = more mirror-like",
+      "new": "Use material reference and compare real response",
+      "status": "PBR review",
+      "source_id": "R18",
+      "caveat": "Do not compensate wrong roughness with fake Bloom."
+    },
+    {
+      "old": "all instances unique imported meshes",
+      "new": "Reuse supported content where appropriate",
+      "status": "Rendering recommendation",
+      "source_id": "R20",
+      "caveat": "Separate asset IDs can prevent intended batching; verify actual render statistics."
+    },
+    {
+      "old": "SLIM works in any unsaved local file",
+      "new": "Follow published/Team Create prerequisites",
+      "status": "Feature-specific setup",
+      "source_id": "R24",
+      "caveat": "No claim of successful cloud transcoding without a real result."
+    },
+    {
+      "old": "realism is maximum Bloom/DOF/noise",
+      "new": "Geometry→material→lighting→camera→effects",
+      "status": "Art-direction method",
+      "source_id": "R19",
+      "caveat": "Readability and low-tier performance are acceptance criteria."
+    },
+    {
+      "old": "Sound is the only audio architecture",
+      "new": "Evaluate modern AudioPlayer/Wire graph",
+      "status": "Modern option, not blanket deletion",
+      "source_id": "R13",
+      "caveat": "Legacy working audio need not be rewritten without a reason."
+    },
+    {
+      "old": "keyboard callback equals cross-platform input",
+      "new": "InputAction and device bindings where appropriate",
+      "status": "Current input system",
+      "source_id": "R12",
+      "caveat": "Touch UI and modal priorities still require implementation."
+    },
+    {
+      "old": "Roblox styling is full CSS",
+      "new": "StyleSheet/StyleRule contract and compatibility",
+      "status": "Current UI system",
+      "source_id": "R14",
+      "caveat": "Do not generate unsupported CSS properties/selectors."
+    },
+    {
+      "old": "all movement requires hardcoded Humanoid state overrides",
+      "new": "Evaluate opt-in CCL abilities",
+      "status": "Current beta option",
+      "source_id": "R40",
+      "caveat": "Do not enable CCL blindly on an existing game."
+    },
+    {
+      "old": "animation graph is just a local table",
+      "new": "Published graph asset + Animator + parameters",
+      "status": "Current animation workflow",
+      "source_id": "R41",
+      "caveat": "Preview and published support/authority mode differ."
+    },
+    {
+      "old": "script sync backs up every scene property",
+      "new": "Sync supported code roots; preserve separate metadata/place",
+      "status": "Current sync limitation",
+      "source_id": "R30",
+      "caveat": "Tags/attributes and arbitrary instances are not a complete disk backup."
+    },
+    {
+      "old": "generated model can mutate any Workspace child",
+      "new": "OnGenerate writes only its targetContainer",
+      "status": "Current procedural API",
+      "source_id": "R33",
+      "caveat": "Avoid irreversible side effects during cancellable generation."
+    },
+    {
+      "old": "toolbox generator harmless until Play",
+      "new": "Audit edit-time generators and capabilities",
+      "status": "Asset safety",
+      "source_id": "R33",
+      "caveat": "Procedural assets can modify a place while editing."
+    },
+    {
+      "old": "all supported API is automatically available in a sandbox",
+      "new": "Inspect exact capability and nesting contract",
+      "status": "Experimental security system",
+      "source_id": "R32",
+      "caveat": "Nested capability sets do not grant extra parent rights."
+    },
+    {
+      "old": "instance count proves GPU budget",
+      "new": "Real MicroProfiler / Scene Analysis / device evidence",
+      "status": "Measurement distinction",
+      "source_id": "R39",
+      "caveat": "SceneAudit helper explicitly does not measure draw calls."
+    },
+    {
+      "old": "60 FPS average proves smoothness",
+      "new": "Frame-time distribution and repeatable scenarios",
+      "status": "Measurement method",
+      "source_id": "R38",
+      "caveat": "Track spikes and separate CPU/GPU/bottleneck evidence."
+    },
+    {
+      "old": "all docs into one prompt",
+      "new": "Progressive local retrieval + full relevant subsection",
+      "status": "Agent workflow",
+      "source_id": "R00",
+      "caveat": "Index count is not file download count or measured model improvement."
+    }
+  ]
+}

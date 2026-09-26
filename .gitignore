@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.part
+*.tmp.sqlite
+.env
+.env.*
+*.zip
+.DS_Store
+Thumbs.db
+.toolchain/

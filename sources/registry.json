@@ -1,0 +1,546 @@
+{
+  "as_of": "2026-09-26",
+  "sources": [
+    {
+      "id": "L01",
+      "title": "Luau syntax",
+      "url": "https://luau.org/syntax/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Синтаксис, continue, выражения if, интерполяция, обобщённая итерация, const. Наличие в документации языка не заменяет проверку версии Studio."
+    },
+    {
+      "id": "L02",
+      "title": "Luau type checking",
+      "url": "https://luau.org/types/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Структурная постепенная типизация; strict; статическое приведение не является проверкой входных данных."
+    },
+    {
+      "id": "L03",
+      "title": "Basic types",
+      "url": "https://luau.org/types/basic-types/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "any, unknown, never, примитивы, singleton-типы, variadic packs."
+    },
+    {
+      "id": "L04",
+      "title": "Table types",
+      "url": "https://luau.org/types/tables/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Sealed/unsealed/generic — состояния типизации таблицы, а не runtime-заморозка."
+    },
+    {
+      "id": "L05",
+      "title": "Unions and intersections",
+      "url": "https://luau.org/types/unions-and-intersections/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Tagged unions, объединения и пересечения типов."
+    },
+    {
+      "id": "L06",
+      "title": "Generics",
+      "url": "https://luau.org/types/generics/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Параметры типов и явная инстанциация через <<...>>; проверять поддержку конкретным компилятором."
+    },
+    {
+      "id": "L07",
+      "title": "Type refinements",
+      "url": "https://luau.org/types/type-refinements/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Сужение типов по условиям, type, равенству и assert."
+    },
+    {
+      "id": "L08",
+      "title": "OOP typing",
+      "url": "https://luau.org/types/object-oriented-programs/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Метатаблицы, методы, self и необходимость явных аннотаций."
+    },
+    {
+      "id": "L09",
+      "title": "Type functions",
+      "url": "https://luau.org/types/type-functions/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Функции времени анализа типов; не обычная игровая логика."
+    },
+    {
+      "id": "L10",
+      "title": "Standard library",
+      "url": "https://luau.org/library/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Стандартная библиотека языка отделена от объектов Roblox и функций встраивающей среды."
+    },
+    {
+      "id": "L11",
+      "title": "Luau performance",
+      "url": "https://luau.org/performance/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Оптимизации языка и компилятора; улучшение микротеста не доказывает улучшение FPS."
+    },
+    {
+      "id": "L12",
+      "title": "Luau attributes",
+      "url": "https://luau.org/attributes/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Атрибуты функций — отдельная языковая возможность; не путать с Instance Attributes."
+    },
+    {
+      "id": "R00",
+      "title": "Roblox AI documentation index",
+      "url": "https://create.roblox.com/docs/llms.txt",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Видимый индекс: 2279 страниц; дата в документе 2026-09-25T18:51:47Z. Индекс не равен локально скачанному корпусу."
+    },
+    {
+      "id": "R01",
+      "title": "Script types and locations",
+      "url": "https://create.roblox.com/docs/scripting/locations",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Script определяется RunContext и местом; LocalScript не запускается в ReplicatedStorage."
+    },
+    {
+      "id": "R02",
+      "title": "Client-server runtime",
+      "url": "https://create.roblox.com/docs/projects/client-server",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Сервер и клиенты имеют отдельное состояние; Workspace клиента может быть неполным."
+    },
+    {
+      "id": "R03",
+      "title": "Remote events and callbacks",
+      "url": "https://create.roblox.com/docs/scripting/events/remote",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "RemoteEvent, RemoteFunction, UnreliableRemoteEvent имеют разные гарантии и режимы вызова."
+    },
+    {
+      "id": "R04",
+      "title": "Client-server security boundary",
+      "url": "https://create.roblox.com/docs/scripting/security/client-server-boundary",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Проверять тип, размер, диапазон, finite-числа, права и частоту действий на сервере."
+    },
+    {
+      "id": "R05",
+      "title": "Network ownership security",
+      "url": "https://create.roblox.com/docs/scripting/security/network-ownership",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Физика клиента не доказывает законность игрового действия."
+    },
+    {
+      "id": "R06",
+      "title": "Third-party asset vulnerabilities",
+      "url": "https://create.roblox.com/docs/scripting/security/third-party-vulnerabilities",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Ассеты и плагины требуют ревью кода и происхождения; визуально безобидный объект может содержать скрипты."
+    },
+    {
+      "id": "R07",
+      "title": "Task scheduler",
+      "url": "https://create.roblox.com/docs/scripting/scheduler",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "task.spawn запускает сразу через scheduler; task.defer откладывает. Автозамена старого spawn может изменить порядок."
+    },
+    {
+      "id": "R08",
+      "title": "Parallel Luau",
+      "url": "https://create.roblox.com/docs/scripting/multithreading",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Actors, сериализация/параллельные фазы, разрешения API, require до desynchronize."
+    },
+    {
+      "id": "R09",
+      "title": "Deferred events",
+      "url": "https://create.roblox.com/docs/scripting/events/deferred",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Нельзя полагаться на немедленный callback после изменения свойства; lifecycle должен учитывать очередь событий."
+    },
+    {
+      "id": "R10",
+      "title": "Instance streaming",
+      "url": "https://create.roblox.com/docs/workspace/streaming",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Объекты могут отсутствовать или выгружаться на клиенте; ожидание не создаёт гарантию существования."
+    },
+    {
+      "id": "R11",
+      "title": "Server authority",
+      "url": "https://create.roblox.com/docs/projects/server-authority",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "AuthorityMode.Server, фиксированная симуляция, Input Actions, prediction/rollback; отдельный путь архитектуры."
+    },
+    {
+      "id": "R12",
+      "title": "Input Action System",
+      "url": "https://create.roblox.com/docs/input/input-action-system",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "InputContext, InputAction, InputBinding; действия отделены от устройств и контекстов UI."
+    },
+    {
+      "id": "R13",
+      "title": "Audio objects",
+      "url": "https://create.roblox.com/docs/audio/objects",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Современный аудиограф: AudioPlayer, Wire, emitter/listener, output. Sound не единственная модель аудио."
+    },
+    {
+      "id": "R14",
+      "title": "UI styling",
+      "url": "https://create.roblox.com/docs/ui/styling",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "StyleSheet, StyleRule, StyleLink, tokens/themes; не обещать полную совместимость с CSS."
+    },
+    {
+      "id": "R15",
+      "title": "Global lighting",
+      "url": "https://create.roblox.com/docs/environment/lighting",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "LightingStyle Realistic/Soft; PrioritizeLightingQuality; разница яркости источника и общей экспозиции."
+    },
+    {
+      "id": "R16",
+      "title": "Lighting API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Lighting",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Проверять теги, security и capabilities по точному member; Technology помечена deprecated."
+    },
+    {
+      "id": "R17",
+      "title": "Materials",
+      "url": "https://create.roblox.com/docs/parts/materials",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "MaterialVariant — повторяемый материал; SurfaceAppearance — UV-развёртка конкретного меша."
+    },
+    {
+      "id": "R18",
+      "title": "PBR textures",
+      "url": "https://create.roblox.com/docs/art/modeling/surface-appearance",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Color/normal/roughness/metalness/emissive; OpenGL tangent-space normals; alpha modes и runtime-ограничения."
+    },
+    {
+      "id": "R19",
+      "title": "Post-processing",
+      "url": "https://create.roblox.com/docs/environment/post-processing-effects",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Постобработка — presentation-слой, не замена геометрии и света; эффекты возможны в Lighting/Camera."
+    },
+    {
+      "id": "R20",
+      "title": "Improve performance",
+      "url": "https://create.roblox.com/docs/performance-optimization/improve",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Измерять draw calls, плотность, уникальные меши и материалы, прозрачность, сложность и память."
+    },
+    {
+      "id": "R21",
+      "title": "Data stores",
+      "url": "https://create.roblox.com/docs/cloud-services/data-stores",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "UpdateAsync не разрешает yielding в transform; конкуренция, ошибки, metadata и cache важны."
+    },
+    {
+      "id": "R22",
+      "title": "Player data and purchasing",
+      "url": "https://create.roblox.com/docs/cloud-services/data-stores/player-data-purchasing",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Сериализация запросов по ключу, session locking, атомарность награды и записи. Сам официальный sample требует тестов."
+    },
+    {
+      "id": "R23",
+      "title": "Data store best practices",
+      "url": "https://create.roblox.com/docs/cloud-services/data-stores/best-practices",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Бюджеты, надёжность, тестирование и наблюдаемость хранения."
+    },
+    {
+      "id": "R24",
+      "title": "SLIM",
+      "url": "https://create.roblox.com/docs/workspace/streaming/slim",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Облачное создание LOD; требования streaming/publishing/Team Create; ограничения динамики и аватаров."
+    },
+    {
+      "id": "R25",
+      "title": "Pathfinding",
+      "url": "https://create.roblox.com/docs/characters/pathfinding",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Параметры агента, ComputeAsync, статус маршрута, waypoints, blocked и replanning."
+    },
+    {
+      "id": "R26",
+      "title": "Animations",
+      "url": "https://create.roblox.com/docs/animation/using",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Animator и AnimationTrack, размещение/права, репликация и жизненный цикл."
+    },
+    {
+      "id": "R27",
+      "title": "Raycasting",
+      "url": "https://create.roblox.com/docs/workspace/raycasting",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Направление луча содержит длину; фильтры и частичный мир клиента влияют на результат."
+    },
+    {
+      "id": "R28",
+      "title": "Physics network ownership",
+      "url": "https://create.roblox.com/docs/physics/network-ownership",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Сетевой владелец считает физику; серверная валидация всё равно нужна."
+    },
+    {
+      "id": "R29",
+      "title": "Native code generation",
+      "url": "https://create.roblox.com/docs/luau/native-code-gen",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Выбирать вычислительные hot paths после профиля; это не настройка графики."
+    },
+    {
+      "id": "G01",
+      "title": "Creator documentation repository",
+      "url": "https://github.com/Roblox/creator-docs",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_or_github_read",
+      "body_bundled": false,
+      "note": "README прочитан через GitHub; guides/tutorials/API YAML; проза CC BY 4.0, samples MIT."
+    },
+    {
+      "id": "G02",
+      "title": "Luau documentation repository",
+      "url": "https://github.com/luau-lang/site",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_or_github_read",
+      "body_bundled": false,
+      "note": "Официальные исходники сайта Luau. Лицензия MIT; pin зафиксирован отдельно."
+    },
+    {
+      "id": "G03",
+      "title": "Luau implementation",
+      "url": "https://github.com/luau-lang/luau",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_or_github_read",
+      "body_bundled": false,
+      "note": "Официальный compiler/runtime/analyzer. Самостоятельный CLI не запускает Roblox Engine."
+    },
+    {
+      "id": "G04",
+      "title": "Luau RFC process",
+      "url": "https://github.com/luau-lang/rfcs",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_or_github_read",
+      "body_bundled": false,
+      "note": "Merged RFC не означает включённую возможность в целевом движке. Полный репозиторий здесь не распространяется."
+    },
+    {
+      "id": "L13",
+      "title": "Compatibility with Lua",
+      "url": "https://luau.org/compatibility/",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Host и версии Lua нельзя смешивать; sandbox API и ограничения отличаются."
+    },
+    {
+      "id": "R30",
+      "title": "Script Sync",
+      "url": "https://create.roblox.com/docs/scripting/sync",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Двусторонний sync только поддерживаемых script/folder; метаданные tags/attributes не синхронизируются."
+    },
+    {
+      "id": "R31",
+      "title": "Build with a coding harness",
+      "url": "https://create.roblox.com/docs/ai/coding-harness",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Официальный workflow IDE + Script Sync + Studio MCP. Проверка доступности и beta в конкретной Studio."
+    },
+    {
+      "id": "R32",
+      "title": "Script capabilities",
+      "url": "https://create.roblox.com/docs/scripting/capabilities",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Experimental/client beta. Sandboxed containers, capability intersections, ограничения API."
+    },
+    {
+      "id": "R33",
+      "title": "Procedural models",
+      "url": "https://create.roblox.com/docs/parts/procedural-models",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Generator OnGenerate(params,targetContainer); temporary output, origin, Pause, cancellation, limitations."
+    },
+    {
+      "id": "R34",
+      "title": "Memory stores",
+      "url": "https://create.roblox.com/docs/cloud-services/memory-stores",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Ephemeral shared storage, TTL, budgets, hash/sorted/queue; no durable economy in cache only."
+    },
+    {
+      "id": "R35",
+      "title": "Cross-server messaging",
+      "url": "https://create.roblox.com/docs/cloud-services/cross-server-messaging",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Topic publish/subscribe; не подменяет durable transaction или identity checks."
+    },
+    {
+      "id": "R36",
+      "title": "Teleport between places",
+      "url": "https://create.roblox.com/docs/projects/teleport",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Server TeleportAsync; no Studio playtest; access control and retry lifecycle."
+    },
+    {
+      "id": "R37",
+      "title": "Text filtering",
+      "url": "https://create.roblox.com/docs/ui/text-filtering",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "User/external/generated uncontrolled text; FilterStringAsync and contextual result; no raw fallback."
+    },
+    {
+      "id": "R38",
+      "title": "MicroProfiler",
+      "url": "https://create.roblox.com/docs/performance-optimization/microprofiler",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Real task timings, profiler labels, captures, Assistant/MCP integration; not mere instance counts."
+    },
+    {
+      "id": "R39",
+      "title": "Scene Analysis",
+      "url": "https://create.roblox.com/docs/performance-optimization/scene-analysis",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Runtime scene composition, memory and draw-call views; current SceneAnalysisService through MCP."
+    },
+    {
+      "id": "R40",
+      "title": "Character Controller Library",
+      "url": "https://create.roblox.com/docs/characters/character-controller-library",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Opt-in AvatarAbilities beta, ability labels/conditions/conflicts and lifecycle; not blanket Humanoid migration."
+    },
+    {
+      "id": "R41",
+      "title": "Animation Graph Editor",
+      "url": "https://create.roblox.com/docs/animation/graph-editor",
+      "checked_on": "2026-09-26",
+      "retrieval": "web_read",
+      "body_bundled": false,
+      "note": "Clip/blend graphs, published assets, AnimationTrack:SetParameter, authority-dependent replication."
+    },
+    {
+      "id": "G05",
+      "title": "Luau upstream release 740 commit",
+      "url": "https://github.com/luau-lang/luau/commit/c0e346edd89066b44dca174c9f54ce84c746a540",
+      "checked_on": "2026-09-26",
+      "retrieval": "github_connector_read",
+      "body_bundled": false,
+      "note": "2026-09-25 release sync: exact-by-default tables and if local experimental; compiler is not bundled."
+    }
+  ],
+  "notice": "body_bundled=false означает, что в ZIP есть авторская методика/заметка и ссылка, а не полная копия страницы."
+}

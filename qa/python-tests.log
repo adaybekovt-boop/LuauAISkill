@@ -1,0 +1,89 @@
+test_empty_report_is_not_complete (test_distribution.CorpusChecks.test_empty_report_is_not_complete) ... ok
+test_missing_is_not_downloaded (test_distribution.CorpusChecks.test_missing_is_not_downloaded) ... ok
+test_report_without_bodies_cannot_pass (test_distribution.CorpusChecks.test_report_without_bodies_cannot_pass) ... ok
+test_escape_rejected (test_distribution.LinkChecks.test_escape_rejected) ... ok
+test_external_not_counted (test_distribution.LinkChecks.test_external_not_counted) ... ok
+test_missing_local (test_distribution.LinkChecks.test_missing_local) ... ok
+test_valid_local (test_distribution.LinkChecks.test_valid_local) ... ok
+test_publish_to_temporary_local_bare_repository (test_distribution.LocalGitRoundtrip.test_publish_to_temporary_local_bare_repository) ... Cloning into '/tmp/luau-skill-publish-1qdegvku/repo'...
+warning: You appear to have cloned an empty repository.
+done.
+To /tmp/tmpfho0pwsm/remote.git
+ * [new branch]      HEAD -> main
+ok
+test_changed_file (test_distribution.PublishValidation.test_changed_file) ... ok
+test_empty_remote_copy (test_distribution.PublishValidation.test_empty_remote_copy) ... ok
+test_env_refused_even_in_manifest (test_distribution.PublishValidation.test_env_refused_even_in_manifest) ... ok
+test_existing_remote_file_not_overwritten (test_distribution.PublishValidation.test_existing_remote_file_not_overwritten) ... ok
+test_matching_remote_file_allowed (test_distribution.PublishValidation.test_matching_remote_file_allowed) ... ok
+test_missing_file (test_distribution.PublishValidation.test_missing_file) ... ok
+test_symlink_refused (test_distribution.PublishValidation.test_symlink_refused) ... ok
+test_unlisted_file_not_published (test_distribution.PublishValidation.test_unlisted_file_not_published) ... ok
+test_verified_files (test_distribution.PublishValidation.test_verified_files) ... ok
+test_workflow_files_are_not_knowledge_documents (test_distribution.RetrievalScope.test_workflow_files_are_not_knowledge_documents) ... ok
+test_exact_member_boundaries (test_tools.ApiAndPackaging.test_exact_member_boundaries) ... ok
+test_last_member (test_tools.ApiAndPackaging.test_last_member) ... ok
+test_manifest_change_detected (test_tools.ApiAndPackaging.test_manifest_change_detected) ... ok
+test_manifest_extra_reported (test_tools.ApiAndPackaging.test_manifest_extra_reported) ... ok
+test_manifest_missing_reported (test_tools.ApiAndPackaging.test_manifest_missing_reported) ... ok
+test_member_regex_escaped (test_tools.ApiAndPackaging.test_member_regex_escaped) ... ok
+test_missing_member_is_none (test_tools.ApiAndPackaging.test_missing_member_is_none) ... ok
+test_no_luau_tool_is_not_run (test_tools.ApiAndPackaging.test_no_luau_tool_is_not_run) ... ok
+test_runner_command_failure (test_tools.ApiAndPackaging.test_runner_command_failure) ... ok
+test_runner_command_success (test_tools.ApiAndPackaging.test_runner_command_success) ... ok
+test_zip_crc_and_no_cache (test_tools.ApiAndPackaging.test_zip_crc_and_no_cache) ... ok
+test_existing_lfs_pointer_refused (test_tools.FetchFlow.test_existing_lfs_pointer_refused) ... ok
+test_mirror_checksum_failure (test_tools.FetchFlow.test_mirror_checksum_failure) ... ok
+test_mirror_complete_with_mocks (test_tools.FetchFlow.test_mirror_complete_with_mocks) ... ok
+test_mirror_lfs_pointer_refused (test_tools.FetchFlow.test_mirror_lfs_pointer_refused) ... ok
+test_mirror_license_required (test_tools.FetchFlow.test_mirror_license_required) ... ok
+test_mirror_partial_not_complete (test_tools.FetchFlow.test_mirror_partial_not_complete) ... ok
+test_mirror_verified_reuse (test_tools.FetchFlow.test_mirror_verified_reuse) ... ok
+test_missing_tree_refused (test_tools.FetchFlow.test_missing_tree_refused) ... ok
+test_nonrecursive_truncated_refused (test_tools.FetchFlow.test_nonrecursive_truncated_refused) ... ok
+test_tree_complete (test_tools.FetchFlow.test_tree_complete) ... ok
+test_truncated_fallback (test_tools.FetchFlow.test_truncated_fallback) ... ok
+test_atomic_replace (test_tools.FetchValidation.test_atomic_replace) ... ok
+test_binary_media_excluded (test_tools.FetchValidation.test_binary_media_excluded) ... ok
+test_blob_known_empty (test_tools.FetchValidation.test_blob_known_empty) ... ok
+test_explicit_https_port (test_tools.FetchValidation.test_explicit_https_port) ... ok
+test_host_rejection (test_tools.FetchValidation.test_host_rejection) ... ok
+test_index_exact_links (test_tools.FetchValidation.test_index_exact_links) ... ok
+test_index_invalid_no_links (test_tools.FetchValidation.test_index_invalid_no_links) ... ok
+test_json_roundtrip (test_tools.FetchValidation.test_json_roundtrip) ... ok
+test_license_selected (test_tools.FetchValidation.test_license_selected) ... ok
+test_luau_docs_selected (test_tools.FetchValidation.test_luau_docs_selected) ... ok
+test_luau_vendor_excluded (test_tools.FetchValidation.test_luau_vendor_excluded) ... ok
+test_official_urls (test_tools.FetchValidation.test_official_urls) ... ok
+test_redirect_rejects_before_follow (test_tools.FetchValidation.test_redirect_rejects_before_follow) ... ok
+test_redirect_same_host_retains_auth (test_tools.FetchValidation.test_redirect_same_host_retains_auth) ... ok
+test_redirect_strips_auth_cross_host (test_tools.FetchValidation.test_redirect_strips_auth_cross_host) ... ok
+test_roblox_asset_guides_included (test_tools.FetchValidation.test_roblox_asset_guides_included) ... ok
+test_safe_nested_path (test_tools.FetchValidation.test_safe_nested_path) ... ok
+test_symlink_escape (test_tools.FetchValidation.test_symlink_escape) ... ok
+test_symlink_not_selected (test_tools.FetchValidation.test_symlink_not_selected) ... ok
+test_translation_excluded (test_tools.FetchValidation.test_translation_excluded) ... ok
+test_unsafe_paths (test_tools.FetchValidation.test_unsafe_paths) ... ok
+test_yaml_selected (test_tools.FetchValidation.test_yaml_selected) ... ok
+test_chunk_line_integrity (test_tools.LocalIndex.test_chunk_line_integrity) ... ok
+test_empty_query (test_tools.LocalIndex.test_empty_query) ... ok
+test_english_api_search (test_tools.LocalIndex.test_english_api_search) ... ok
+test_evals_excluded (test_tools.LocalIndex.test_evals_excluded) ... ok
+test_fenced_block_not_split_at_blank (test_tools.LocalIndex.test_fenced_block_not_split_at_blank) ... ok
+test_index_counts (test_tools.LocalIndex.test_index_counts) ... ok
+test_missing_source_detected (test_tools.LocalIndex.test_missing_source_detected) ... ok
+test_no_match_returns_empty (test_tools.LocalIndex.test_no_match_returns_empty) ... ok
+test_ru_search (test_tools.LocalIndex.test_ru_search) ... ok
+test_stale_hash_detected (test_tools.LocalIndex.test_stale_hash_detected) ... ok
+test_synonym_expansion (test_tools.LocalIndex.test_synonym_expansion) ... ok
+test_user_query_does_not_inject_sql (test_tools.LocalIndex.test_user_query_does_not_inject_sql) ... ok
+test_evals_sources_and_references (test_tools.PackStructure.test_evals_sources_and_references) ... ok
+test_example_manifest_matches_files (test_tools.PackStructure.test_example_manifest_matches_files) ... ok
+test_handbook_index_exists (test_tools.PackStructure.test_handbook_index_exists) ... ok
+test_prompts_have_no_answer_key (test_tools.PackStructure.test_prompts_have_no_answer_key) ... ok
+test_registry_unique_and_real_ids (test_tools.PackStructure.test_registry_unique_and_real_ids) ... ok
+
+----------------------------------------------------------------------
+Ran 79 tests in 1.905s
+
+OK

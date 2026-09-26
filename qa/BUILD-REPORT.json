@@ -1,0 +1,53 @@
+{
+  "generated_at_utc": "2026-09-26T00:20:09.449815+00:00",
+  "status": "PASS_CORE_CHECKS",
+  "build_mode": "core-permitted",
+  "counts": {
+    "handbook_chapters": 48,
+    "recipes": 24,
+    "tracks": 10,
+    "agent_prompts": 10,
+    "luau_files": 26,
+    "evaluation_tasks": 96,
+    "registered_source_urls": 60
+  },
+  "python_tests": {
+    "status": "PASS",
+    "command": "python -m unittest discover -s tests -v",
+    "test_count": 79,
+    "exit_code": 0,
+    "log": "qa/python-tests.log",
+    "scope": "Python tooling tests; network flows use mocks; NOT live source downloads or Luau/Studio tests."
+  },
+  "relative_links": {
+    "status": "PASS",
+    "checked_file_links": 220,
+    "missing": [],
+    "outside_root": [],
+    "scope": "Authored relative Markdown file links only; not anchors or online URL availability."
+  },
+  "corpus": {
+    "status": "NOT_DOWNLOADED",
+    "checked_files": 0,
+    "errors": [
+      "Container network DNS/download transfer unavailable. Browser/connector text was used to research authored handbook. The collector is provided for a connected environment; live collection was not completed here."
+    ]
+  },
+  "index": {
+    "indexed_files": 142,
+    "chunks": 151,
+    "database": "indexes/knowledge.sqlite",
+    "note": "Index count is not upstream coverage. Read upstream/DOWNLOAD-REPORT.json for mirror status."
+  },
+  "example_checks": "qa/EXAMPLE-CHECKS.json",
+  "model_quality_evaluation": "NOT_RUN",
+  "roblox_studio": "NOT_RUN",
+  "live_github_workflow": "NOT_RUN_BY_THIS_BUILDER",
+  "remote_publication": "NOT_PERFORMED_BY_THIS_BUILDER",
+  "limits": [
+    "Core completeness is not official corpus completeness.",
+    "Missing Luau tools are recorded NOT_RUN, not PASS.",
+    "No FPS, visual-quality or model-quality improvement has been measured.",
+    "Network download tests use mocks; corpus integrity checks require actual local bodies."
+  ]
+}

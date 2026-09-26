@@ -1,0 +1,306 @@
+{
+  "notice": "No Luau compiler or Roblox Studio runtime was available during authoring. All examples require target-host verification.",
+  "examples": [
+    {
+      "path": "examples/pure/FiniteNumbers.luau",
+      "host": "pure Luau",
+      "description": "Finite and bounded numeric validation; no dependencies.",
+      "sources": [
+        "L10",
+        "R04"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/TokenBucket.luau",
+      "host": "pure Luau",
+      "description": "Bounded rate limiter with explicit injected clock and no remote-controlled keys.",
+      "sources": [
+        "R04",
+        "L10"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/Cleanup.luau",
+      "host": "pure Luau",
+      "description": "Own cleanup callbacks; reverse order; re-entrant destruction; aggregates errors.",
+      "sources": [
+        "R09",
+        "L10"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/Generation.luau",
+      "host": "pure Luau",
+      "description": "Invalidates late results. Does not cancel an already running external operation.",
+      "sources": [
+        "R07"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/BoundedQueue.luau",
+      "host": "pure Luau",
+      "description": "Fixed-capacity FIFO; overflow returns false, never creates an unbounded backlog.",
+      "sources": [
+        "L04",
+        "L06"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/Result.luau",
+      "host": "pure Luau",
+      "description": "Explicit tagged outcomes; runtime validation remains the caller's responsibility.",
+      "sources": [
+        "L05",
+        "L06"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/Backoff.luau",
+      "host": "pure Luau",
+      "description": "Delay calculation only. Does not make side-effecting operations safe to retry.",
+      "sources": [
+        "R22"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/ExponentialDamp.luau",
+      "host": "pure Luau",
+      "description": "Frame-rate-aware scalar damping; presentation only, not authoritative simulation.",
+      "sources": [
+        "L10"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/FrameStats.luau",
+      "host": "pure Luau",
+      "description": "Bounded samples of observed frame interval; not CPU/GPU timing.",
+      "sources": [
+        "R20"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/CombatState.luau",
+      "host": "pure Luau",
+      "description": "Small gameplay state machine. No hit detection, damage, networking or real-world instruction.",
+      "sources": [
+        "R04"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/pure/Reachability.luau",
+      "host": "pure Luau",
+      "description": "Bounded graph traversal for generated room connectivity; adjacency order belongs to caller.",
+      "sources": [
+        "L04"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/TaggedBinder.luau",
+      "host": "Roblox shared ModuleScript",
+      "description": "Idempotent attach/detach for CollectionService tags. Attach must be fast and non-yielding.",
+      "sources": [
+        "R01",
+        "R09",
+        "R10"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/CharacterBinding.luau",
+      "host": "Roblox shared ModuleScript",
+      "description": "Tracks one Player's character replacement. Callback must be non-yielding.",
+      "sources": [
+        "R01",
+        "R09"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/SecureInteract.server.luau",
+      "host": "Roblox Script / ServerScriptService / RunContext Server",
+      "description": "Limited demo: rate, schema, membership, alive, distance and line-of-sight checks. Not a complete anti-cheat.",
+      "sources": [
+        "R03",
+        "R04",
+        "R27"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/InteractAction.client.luau",
+      "host": "Roblox Script in ReplicatedStorage / RunContext Client",
+      "description": "Input Action demo for ordinary client architecture, not BindToSimulation.",
+      "sources": [
+        "R12",
+        "R03",
+        "R27"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/VisualLayer.luau",
+      "host": "Roblox client ModuleScript",
+      "description": "Owns only its own postprocess objects; never destroys unrelated Lighting effects.",
+      "sources": [
+        "R19",
+        "R16"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/LightingBaseline.luau",
+      "host": "Roblox serial ModuleScript; choose one owner (server OR client)",
+      "description": "Opt-in configuration using metadata checked at pinned docs SHA. Runtime not tested.",
+      "sources": [
+        "R15",
+        "R16"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/StyleExample.luau",
+      "host": "Roblox client ModuleScript",
+      "description": "Minimal native StyleSheet demo; single owner and explicit teardown.",
+      "sources": [
+        "R14"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/AudioGraph.luau",
+      "host": "Roblox client ModuleScript",
+      "description": "Routes a caller-prepared AudioPlayer to output; caller owns asset permissions and the player.",
+      "sources": [
+        "R13"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/SceneAudit.luau",
+      "host": "Roblox Studio read-only ModuleScript",
+      "description": "Counts instances; not draw calls, triangle counts, performance proof, or full security audit.",
+      "sources": [
+        "R20",
+        "R06"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/roblox/FrameIntervals.client.luau",
+      "host": "Roblox Script in ReplicatedStorage / RunContext Client",
+      "description": "Records render interval samples, not GPU/CPU measurements.",
+      "sources": [
+        "R20"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/feature-probes/const.luau",
+      "host": "isolated target-compiler probe",
+      "description": "Do not require from production bootstrap before target compiler accepts it.",
+      "sources": [
+        "L01"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/feature-probes/generic-instantiation.luau",
+      "host": "isolated target-compiler probe",
+      "description": "Tests explicit type arguments described by current Luau documentation.",
+      "sources": [
+        "L06"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/feature-probes/function-attributes.luau",
+      "host": "isolated target-compiler probe",
+      "description": "@native requests code generation; acceptance is not evidence of a measured speedup.",
+      "sources": [
+        "L12"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/feature-probes/math-finite.luau",
+      "host": "isolated target-host probe",
+      "description": "Current documented predicates; tests actual target availability.",
+      "sources": [
+        "L10"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    },
+    {
+      "path": "examples/tests/pure.spec.luau",
+      "host": "standalone Luau CLI with filesystem require",
+      "description": "Assertions for pure modules. Run with a compatible actual Luau binary.",
+      "sources": [
+        "G03"
+      ],
+      "syntax_compiled": false,
+      "runtime_tested": false,
+      "status": "authored; requires verification in target host"
+    }
+  ]
+}

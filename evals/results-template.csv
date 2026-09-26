@@ -1,0 +1,1 @@
+case_id,run_id,mode_A_or_B,model_exact,settings,project_commit,studio_version,device,criterion_1_0_2,criterion_2_0_2,criterion_3_0_2,critical_failure,total_0_6,runtime_status,evidence_path,tokens,latency_seconds,cost,reviewer,notes

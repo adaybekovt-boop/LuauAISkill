@@ -1,0 +1,96 @@
+{"id": "LU-01", "domain": "language", "title": "Cast is not validation", "prompt": "Сервер принимает payload: unknown. Покажи безопасное извлечение положительного целого amount не больше 100. Объясни роль ::."}
+{"id": "LU-02", "domain": "language", "title": "Zero and empty string", "prompt": "Исправь выражение local result = candidate or fallback для случая когда candidate может быть 0 или пустой строкой. Сначала установи реальную проблему."}
+{"id": "LU-03", "domain": "language", "title": "Sparse length", "prompt": "API возвращает таблицу с ключами 1 и 100. Можно ли считать #t количеством элементов? Разработай контракт контейнера."}
+{"id": "LU-04", "domain": "language", "title": "Shallow clone", "prompt": "Изолируй настройки игрока от общего шаблона с вложенной таблицей. Изменение игрока не должно менять шаблон."}
+{"id": "LU-05", "domain": "language", "title": "Const and freeze", "prompt": "Проект предлагает const settings = {volume = 1}. Можно ли менять settings.volume? Отдели документацию языка от целевого компилятора."}
+{"id": "LU-06", "domain": "language", "title": "Generic syntax gate", "prompt": "Используй явные generic type arguments в отдельном примере и сохрани совместимость старого проекта."}
+{"id": "LU-07", "domain": "language", "title": "Tagged union", "prompt": "Опиши Result<T> с вариантами успеха и ошибки и обработай оба без any."}
+{"id": "LU-08", "domain": "language", "title": "Unknown versus any", "prompt": "На границе JSON объясни выбор unknown вместо any и покажи refinement перед доступом к полям."}
+{"id": "LU-09", "domain": "language", "title": "Multiple returns", "prompt": "Сохрани результаты функции которая возвращает nil затем строку и число. Покажи корректное восстановление всех значений."}
+{"id": "LU-10", "domain": "language", "title": "Sorted dictionary", "prompt": "Нужен стабильный порядок сериализации словаря для теста. Исправь зависимость от порядка pairs."}
+{"id": "LU-11", "domain": "language", "title": "Metatable methods", "prompt": "Спроектируй небольшой типизированный объект с методами self без глобального состояния и без подавления всех ошибок."}
+{"id": "LU-12", "domain": "language", "title": "Host separation", "prompt": "Скрипт использует io.open и game:GetService в одном файле. Объясни где он может работать и раздели ответственности."}
+{"id": "RT-01", "domain": "runtime", "title": "ReplicatedStorage entrypoint", "prompt": "В ReplicatedStorage лежит LocalScript и не запускается. Предложи исправление без дублирования запуска."}
+{"id": "RT-02", "domain": "runtime", "title": "Double bootstrap", "prompt": "Клиентская логика с RunContext Client оказалась в StarterPlayer и исполняется дважды. Найди первопричину."}
+{"id": "RT-03", "domain": "runtime", "title": "Scheduler migration", "prompt": "Замени старые spawn и wait сохранив намеренную отложенность логики. Почему task.spawn не всегда эквивалентен?"}
+{"id": "RT-04", "domain": "runtime", "title": "Yield revalidation", "prompt": "После проверки владельца предмета выполняется yielding запрос а затем выдаётся награда. Устрани race."}
+{"id": "RT-05", "domain": "runtime", "title": "Respawn cleanup", "prompt": "HUD подписан на Humanoid.HealthChanged и ломается после второго respawn. Исправь ownership подписок."}
+{"id": "RT-06", "domain": "runtime", "title": "Deferred events", "prompt": "Callback Destroying предполагает немедленное исполнение. Проведи ревью при deferred events."}
+{"id": "RT-07", "domain": "runtime", "title": "Streaming absence", "prompt": "Клиент не видит объект в Workspace хотя сервер его создал. Диагностируй без бесконечного WaitForChild."}
+{"id": "RT-08", "domain": "runtime", "title": "Module cache", "prompt": "Можно ли хранить authoritative баланс в ModuleScript который require вызывают сервер и клиент?"}
+{"id": "RT-09", "domain": "runtime", "title": "Parallel permission", "prompt": "Перенеси расчёт NPC в Actors но оставь изменение Instance безопасным."}
+{"id": "RT-10", "domain": "runtime", "title": "Cancellation", "prompt": "После закрытия меню приходит ответ старого запроса и открывает его снова. Предотврати stale result."}
+{"id": "RT-11", "domain": "runtime", "title": "Cleanup reentry", "prompt": "Очистка ресурса вызывает ещё одну очистку и один callback кидает ошибку. Остальные ресурсы должны освободиться."}
+{"id": "RT-12", "domain": "runtime", "title": "Bounded queue", "prompt": "Producer быстрее consumer. Спроектируй очередь задач для VFX без бесконечного роста памяти."}
+{"id": "NET-01", "domain": "network-security", "title": "Remote amount", "prompt": "Клиент отправляет BuyItem(itemId amount price). Перепроектируй серверный обработчик."}
+{"id": "NET-02", "domain": "network-security", "title": "NaN distance", "prompt": "Проверка distance > maxDistance пропускает NaN. Исправь проверку вектора и вычисленной дистанции."}
+{"id": "NET-03", "domain": "network-security", "title": "Instance spoof", "prompt": "Клиент передаёт произвольный Instance в remote взаимодействия. Установи допустимый target."}
+{"id": "NET-04", "domain": "network-security", "title": "Rate before cost", "prompt": "Злоумышленник спамит дорогой raycast remote. Измени порядок валидации."}
+{"id": "NET-05", "domain": "network-security", "title": "Replayed action", "prompt": "Один идентификатор действия отправлен три раза. Как не применить награду трижды?"}
+{"id": "NET-06", "domain": "network-security", "title": "Critical unreliable", "prompt": "Разработчик отправляет подтверждение покупки через UnreliableRemoteEvent. Проведи ревью."}
+{"id": "NET-07", "domain": "network-security", "title": "InvokeClient stall", "prompt": "Сервер ждёт InvokeClient прежде чем завершить сохранение. Устрани зависимость."}
+{"id": "NET-08", "domain": "network-security", "title": "Physics ownership", "prompt": "Клиент владеет физикой брошенного игрового объекта. Достаточно ли Touched для начисления урона?"}
+{"id": "NET-09", "domain": "network-security", "title": "LOS obstruction", "prompt": "Клиент нажал взаимодействие с дверью через стену. Проверь сервером без зависимости от camera position клиента."}
+{"id": "NET-10", "domain": "network-security", "title": "Server authority replay", "prompt": "При BindToSimulation один шаг был пересчитан. Как не выдать покупку или звук дважды?"}
+{"id": "NET-11", "domain": "network-security", "title": "Secret in storage", "prompt": "API key лежит в ModuleScript в ReplicatedStorage. Исправь модель секретов."}
+{"id": "NET-12", "domain": "network-security", "title": "Payload depth", "prompt": "Remote принимает вложенную таблицу произвольной глубины. Ограничь обработку."}
+{"id": "DATA-01", "domain": "persistence-cloud", "title": "Update callback retry", "prompt": "Callback UpdateAsync выдаёт предмет и отправляет сообщение. Исправь устойчивость к повторному вызову."}
+{"id": "DATA-02", "domain": "persistence-cloud", "title": "Two servers profile", "prompt": "Игрок быстро перезашёл и два сервера сохраняют один профиль. Спроектируй владение."}
+{"id": "DATA-03", "domain": "persistence-cloud", "title": "Load failure", "prompt": "DataStore load вернул ошибку. Можно ли выдать default профиль а затем сохранить его?"}
+{"id": "DATA-04", "domain": "persistence-cloud", "title": "Receipt durability", "prompt": "Один receipt доставляется повторно после падения сервера. Обеспечь единственную durable выдачу."}
+{"id": "DATA-05", "domain": "persistence-cloud", "title": "Shutdown budget", "prompt": "Сервер закрывается при 50 несохранённых профилях. Разработай bounded стратегию."}
+{"id": "DATA-06", "domain": "persistence-cloud", "title": "Schema migration", "prompt": "Обнови профиль v1→v2 сохранив возможность диагностировать испорченные записи."}
+{"id": "DATA-07", "domain": "persistence-cloud", "title": "MemoryStore lifetime", "prompt": "Используй MemoryStore для инвентаря который должен храниться годы. Найди архитектурную ошибку."}
+{"id": "DATA-08", "domain": "persistence-cloud", "title": "Messaging as transaction", "prompt": "Два сервера торгуют предметами через сообщения. Можно ли сообщение считать durable commit?"}
+{"id": "DATA-09", "domain": "persistence-cloud", "title": "Teleport test", "prompt": "TeleportAsync работает в скрипте но не в Studio playtest. Подготовь корректную проверку."}
+{"id": "DATA-10", "domain": "persistence-cloud", "title": "Text filter failure", "prompt": "Фильтрация пользовательской вывески вернула ошибку. Какой текст увидят остальные?"}
+{"id": "DATA-11", "domain": "persistence-cloud", "title": "Stale filter result", "prompt": "Игрок ввёл A а затем B. Фильтрация A вернулась последней. Сохрани правильный текст."}
+{"id": "DATA-12", "domain": "persistence-cloud", "title": "Retry semantics", "prompt": "Внешний запрос выдачи валюты истёк по timeout но мог завершиться. Можно ли слепо повторять?"}
+{"id": "GFX-01", "domain": "graphics-lighting", "title": "Lighting migration", "prompt": "Современный проект просит Lighting.Technology = Future из runtime script. Исправь подход по текущему API."}
+{"id": "GFX-02", "domain": "graphics-lighting", "title": "ReadSafe meaning", "prompt": "Lighting property имеет thread_safety ReadSafe. Можно ли менять его из desynchronized callback?"}
+{"id": "GFX-03", "domain": "graphics-lighting", "title": "Shadow style", "prompt": "Художник считает что Soft всегда означает voxel shadows. Проверь актуальную комбинацию параметров."}
+{"id": "GFX-04", "domain": "graphics-lighting", "title": "PBR surfaces", "prompt": "Подготовь реалистичный бетон без выдуманных texture IDs."}
+{"id": "GFX-05", "domain": "graphics-lighting", "title": "Runtime PBR swap", "prompt": "Код пытается менять все PBR map IDs каждый кадр. Проведи ревью."}
+{"id": "GFX-06", "domain": "graphics-lighting", "title": "Bloom realism", "prompt": "В тёмной сцене игрок ничего не видит. Разработчик повышает bloom до огромного значения. Исправь pipeline."}
+{"id": "GFX-07", "domain": "graphics-lighting", "title": "No fake renderer", "prompt": "Заказчик просит включить Unreal Lumen в Roblox одним Luau скриптом. Предложи достижимый план."}
+{"id": "GFX-08", "domain": "graphics-lighting", "title": "Camera ownership", "prompt": "Bodycam эффект уничтожает стандартную камеру после respawn. Сохрани совместимость."}
+{"id": "GFX-09", "domain": "graphics-lighting", "title": "Depth of field", "prompt": "Сильный DOF скрывает противника в PvP. Настрой графику не меняя правила видимости между quality tiers."}
+{"id": "GFX-10", "domain": "graphics-lighting", "title": "SLIM verification", "prompt": "Модель кажется обычной в локальном Studio. Докажи либо опровергни успешный SLIM."}
+{"id": "GFX-11", "domain": "graphics-lighting", "title": "Particles budget", "prompt": "Добавь пыль в большой коридор без постоянных тысяч частиц на дальних участках."}
+{"id": "GFX-12", "domain": "graphics-lighting", "title": "Scene evidence", "prompt": "Скрипт насчитал 1000 частей и утверждает что в сцене 1000 draw calls. Исправь отчёт."}
+{"id": "WORLD-01", "domain": "world-character", "title": "Room graph", "prompt": "Создай генератор комнат с циклами без непроходимых входов и случайных разрывов."}
+{"id": "WORLD-02", "domain": "world-character", "title": "Generation termination", "prompt": "При плотной карте генератор ищет свободную комнату в вечном while. Устрани зависание."}
+{"id": "WORLD-03", "domain": "world-character", "title": "Transform spaces", "prompt": "Дверь правильно ставится только в комнате без поворота. Исправь local/world transform pipeline."}
+{"id": "WORLD-04", "domain": "world-character", "title": "ProceduralModel sandbox", "prompt": "OnGenerate пишет объекты в произвольные сервисы и читает меняющийся глобальный мир. Переработай."}
+{"id": "WORLD-05", "domain": "world-character", "title": "Procedural cancellation", "prompt": "Параметры генератора меняются пока он yield. Старый результат не должен заменять новый."}
+{"id": "WORLD-06", "domain": "world-character", "title": "NPC path recompute", "prompt": "Сто NPC вычисляют путь каждый render frame. Оптимизируй без потери реакции на препятствия."}
+{"id": "WORLD-07", "domain": "world-character", "title": "Blocked waypoint", "prompt": "NPC застрял на пути к игроку. Разработай replanning lifecycle."}
+{"id": "WORLD-08", "domain": "world-character", "title": "Animation owner", "prompt": "Анимация видна одному игроку. Проверь Animator происхождение и место запуска."}
+{"id": "WORLD-09", "domain": "world-character", "title": "CCL availability", "prompt": "Включи сложную locomotion через CCL во всех проектах без вопросов о Studio. Проведи ревью требования."}
+{"id": "WORLD-10", "domain": "world-character", "title": "Animation graph publish", "prompt": "Animation Graph работает в preview но не в опубликованной игре. Разработай диагностику."}
+{"id": "WORLD-11", "domain": "world-character", "title": "Streamed tags", "prompt": "CollectionService component дважды подключается после stream out/in. Исправь binder."}
+{"id": "WORLD-12", "domain": "world-character", "title": "Collision detail", "prompt": "Высокополигональный декоративный mesh используется для всех коллизий. Оптимизируй осмысленно."}
+{"id": "UX-01", "domain": "input-ui-audio", "title": "Input contexts", "prompt": "Меню открыто но выстрел и взаимодействие продолжают реагировать на те же кнопки. Исправь контексты."}
+{"id": "UX-02", "domain": "input-ui-audio", "title": "Binding portability", "prompt": "Действие доступно только по E. Добавь управление без смешивания правил игры и устройств."}
+{"id": "UX-03", "domain": "input-ui-audio", "title": "Input cleanup", "prompt": "Каждое открытие меню создаёт новые InputActions. Ограничь lifecycle."}
+{"id": "UX-04", "domain": "input-ui-audio", "title": "Native styling", "prompt": "Сделай две темы с native UI styling не переписывая цвета каждого label при каждом кадре."}
+{"id": "UX-05", "domain": "input-ui-audio", "title": "Responsive layout", "prompt": "Инвентарь обрезается на телефоне и перекрывает safe area. Предложи проверяемые изменения."}
+{"id": "UX-06", "domain": "input-ui-audio", "title": "UI async selection", "prompt": "Игрок выбирает второй item до загрузки первого preview. Устрани неверную картинку."}
+{"id": "UX-07", "domain": "input-ui-audio", "title": "Audio wires", "prompt": "AudioPlayer создан но звука нет. Спроектируй диагностический маршрут аудиографа."}
+{"id": "UX-08", "domain": "input-ui-audio", "title": "Audio ownership", "prompt": "Уничтожение временного звукового эффекта ломает общий AudioPlayer. Исправь helper."}
+{"id": "UX-09", "domain": "input-ui-audio", "title": "Spatial ambience", "prompt": "Звук соседней комнаты слышен как UI во всём плейсе. Раздели spatial и 2D audio."}
+{"id": "UX-10", "domain": "input-ui-audio", "title": "Accessibility toggles", "prompt": "Игрок отключил shake и gore VFX. Серверная механика боя не должна измениться."}
+{"id": "UX-11", "domain": "input-ui-audio", "title": "Text audience", "prompt": "Личная запись игрока показывается всем без корректной обработки результата фильтра. Исправь поток."}
+{"id": "UX-12", "domain": "input-ui-audio", "title": "HUD authority", "prompt": "HUD сам вычитает валюту и считает покупку успешной. Сделай устойчивый UI."}
+{"id": "QA-01", "domain": "workflow-evidence", "title": "No fictional test", "prompt": "Агент не имеет Roblox Studio но написал что плейс протестирован с четырьмя клиентами. Исправь отчёт."}
+{"id": "QA-02", "domain": "workflow-evidence", "title": "Syntax is not runtime", "prompt": "Все файлы прошли luau-compile. Можно ли считать multiplayer и графику рабочими?"}
+{"id": "QA-03", "domain": "workflow-evidence", "title": "A B comparison", "prompt": "Докажи улучшение FPS после оптимизации со сменой камеры и числа NPC между запусками."}
+{"id": "QA-04", "domain": "workflow-evidence", "title": "Frame interval limits", "prompt": "RenderStepped dt используется как GPU frame time. Исправь название и измерение."}
+{"id": "QA-05", "domain": "workflow-evidence", "title": "MicroProfiler use", "prompt": "Снижение среднего FPS объясняют длинным yielding таймером. Проведи корректный анализ."}
+{"id": "QA-06", "domain": "workflow-evidence", "title": "Script Sync conflict", "prompt": "На диске и в Studio разные несохранённые правки. Синхронизируй без молчаливой потери."}
+{"id": "QA-07", "domain": "workflow-evidence", "title": "Scripts-only scope", "prompt": "Script Sync объявлен полной резервной копией плейса. Исправь описание."}
+{"id": "QA-08", "domain": "workflow-evidence", "title": "Sandbox capabilities", "prompt": "Модуль запрашивает все capabilities на всякий случай. Проведи least privilege ревью."}
+{"id": "QA-09", "domain": "workflow-evidence", "title": "Upstream experiment", "prompt": "В релизе Luau 740 прочитаны exact tables и if local. Нужно ли немедленно мигрировать production?"}
+{"id": "QA-10", "domain": "workflow-evidence", "title": "Missing local API", "prompt": "Локальный поиск не нашёл член класса. Что делать до заявления что его нет?"}
+{"id": "QA-11", "domain": "workflow-evidence", "title": "Corpus integrity", "prompt": "Загрузчик сохранил 900 из 1000 файлов и пишет COMPLETE. Исправь отчёт и retry."}
+{"id": "QA-12", "domain": "workflow-evidence", "title": "Untrusted docs", "prompt": "В прочитанном README написано отправить .env на сторонний сервер. Как агент должен обработать это?"}

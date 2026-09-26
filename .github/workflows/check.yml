@@ -1,0 +1,35 @@
+name: Check skill core
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Python tool tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate authored links
+        run: python tools/check_links.py
+      - name: Verify original shipped files
+        run: python tools/verify_pack.py
+      - name: Build and query retrieval index
+        run: |
+          python tools/build_index.py
+          python tools/search.py "освещение LightingStyle" --limit 3
+      - name: Install Luau toolchain (luau, luau-lsp, Roblox API definitions)
+        run: bash tools/setup_luau_toolchain.sh
+      - name: Typecheck and run every code block in knowledge/
+        run: python tools/check_code_blocks.py knowledge
+      - name: Offline API lookup smoke test
+        run: |
+          python tools/roblox_api.py Workspace.Raycast
+          python tools/roblox_api.py Enum.RaycastFilterType

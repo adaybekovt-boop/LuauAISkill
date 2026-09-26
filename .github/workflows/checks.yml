@@ -1,0 +1,48 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pinned toolchain and sources
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: skill-cache-${{ hashFiles('sources/lock.json', 'sources/toolchain.json') }}
+
+      - name: Install pinned Luau toolchain (luau, luau-lsp)
+        run: python tools/install_toolchain.py
+
+      - name: Fetch pinned sources (creator-docs, API dump, luau site, luau-lsp defs)
+        run: python tools/fetch_sources.py
+
+      - name: API index is reproducible from the pinned sources
+        run: |
+          pip install pyyaml
+          python tools/build_api_index.py
+          git diff --exit-code -- api/
+
+      - name: All checks (embeds, catalog, API refs, sources, links, unit tests, typecheck, Luau tests)
+        run: python tools/check_all.py
+
+      - name: Upload QA reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa
+          path: qa/

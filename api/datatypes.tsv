@@ -1,0 +1,639 @@
+owner	member	kind	signature	flags
+Axes	Axes.new	constructor	(axes: Tuple)	
+Axes	Axes.X	property	bool	
+Axes	Axes.Y	property	bool	
+Axes	Axes.Z	property	bool	
+Axes	Axes.Top	property	bool	
+Axes	Axes.Bottom	property	bool	
+Axes	Axes.Left	property	bool	
+Axes	Axes.Right	property	bool	
+Axes	Axes.Back	property	bool	
+Axes	Axes.Front	property	bool	
+BrickColor	BrickColor.new	constructor	(val: number)	
+BrickColor	BrickColor.new	constructor	(r: number, g: number, b: number)	
+BrickColor	BrickColor.new	constructor	(name: string)	
+BrickColor	BrickColor.new	constructor	(color: Color3)	
+BrickColor	BrickColor.palette	constructor	(paletteValue: number)	
+BrickColor	BrickColor.random	constructor	()	
+BrickColor	BrickColor.White	constructor	()	
+BrickColor	BrickColor.Gray	constructor	()	
+BrickColor	BrickColor.DarkGray	constructor	()	
+BrickColor	BrickColor.Black	constructor	()	
+BrickColor	BrickColor.Red	constructor	()	
+BrickColor	BrickColor.Yellow	constructor	()	
+BrickColor	BrickColor.Green	constructor	()	
+BrickColor	BrickColor.Blue	constructor	()	
+BrickColor	BrickColor.Number	property	number	
+BrickColor	BrickColor.r	property	number	
+BrickColor	BrickColor.g	property	number	
+BrickColor	BrickColor.b	property	number	
+BrickColor	BrickColor.Name	property	string	
+BrickColor	BrickColor.Color	property	Color3	
+CFrame	CFrame.new	constructor	()	
+CFrame	CFrame.new	constructor	(pos: Vector3)	
+CFrame	CFrame.new	constructor	(pos: Vector3, lookAt: Vector3)	
+CFrame	CFrame.new	constructor	(x: number, y: number, z: number)	
+CFrame	CFrame.new	constructor	(x: number, y: number, z: number, qX: number, qY: number, qZ: number, qW: number)	
+CFrame	CFrame.new	constructor	(x: number, y: number, z: number, R00: number, R01: number, R02: number, R10: number, R11: number, R12: number, R20: number, R21: number, R22: number)	
+CFrame	CFrame.lookAt	constructor	(at: Vector3, lookAt: Vector3, up: Vector3)	
+CFrame	CFrame.lookAlong	constructor	(at: Vector3, direction: Vector3, up: Vector3)	
+CFrame	CFrame.fromRotationBetweenVectors	constructor	(from: Vector3, to: Vector3)	
+CFrame	CFrame.fromEulerAngles	constructor	(rx: number, ry: number, rz: number, order: RotationOrder)	
+CFrame	CFrame.fromEulerAnglesXYZ	constructor	(rx: number, ry: number, rz: number)	
+CFrame	CFrame.fromEulerAnglesYXZ	constructor	(rx: number, ry: number, rz: number)	
+CFrame	CFrame.Angles	constructor	(rx: number, ry: number, rz: number)	
+CFrame	CFrame.fromOrientation	constructor	(rx: number, ry: number, rz: number)	
+CFrame	CFrame.fromAxisAngle	constructor	(v: Vector3, r: number)	
+CFrame	CFrame.fromMatrix	constructor	(pos: Vector3, vX: Vector3, vY: Vector3, vZ: Vector3)	
+CFrame	CFrame.identity	constant	CFrame	
+CFrame	CFrame.identity	property	CFrame	
+CFrame	CFrame.Position	property	Vector3	
+CFrame	CFrame.Rotation	property	CFrame	
+CFrame	CFrame.X	property	number	
+CFrame	CFrame.Y	property	number	
+CFrame	CFrame.Z	property	number	
+CFrame	CFrame.LookVector	property	Vector3	
+CFrame	CFrame.RightVector	property	Vector3	
+CFrame	CFrame.UpVector	property	Vector3	
+CFrame	CFrame.XVector	property	Vector3	
+CFrame	CFrame.YVector	property	Vector3	
+CFrame	CFrame.ZVector	property	Vector3	
+CFrame	CFrame:Inverse	method	() -> CFrame	
+CFrame	CFrame:Lerp	method	(goal: CFrame, alpha: number) -> CFrame	
+CFrame	CFrame:Orthonormalize	method	() -> CFrame	
+CFrame	CFrame:ToWorldSpace	method	(...: Tuple<CFrame>) -> Tuple<CFrame>	
+CFrame	CFrame:ToObjectSpace	method	(...: Tuple<CFrame>) -> Tuple<CFrame>	
+CFrame	CFrame:PointToWorldSpace	method	(...: Tuple<Vector3>) -> Tuple<Vector3>	
+CFrame	CFrame:PointToObjectSpace	method	(...: Tuple<Vector3>) -> Tuple<Vector3>	
+CFrame	CFrame:VectorToWorldSpace	method	(...: Tuple<Vector3>) -> Tuple<Vector3>	
+CFrame	CFrame:VectorToObjectSpace	method	(...: Tuple<Vector3>) -> Tuple<Vector3>	
+CFrame	CFrame:GetComponents	method	() -> Tuple	
+CFrame	CFrame:ToEulerAngles	method	(order: RotationOrder) -> number, number, number	
+CFrame	CFrame:ToEulerAnglesXYZ	method	() -> number, number, number	
+CFrame	CFrame:ToEulerAnglesYXZ	method	() -> number, number, number	
+CFrame	CFrame:ToOrientation	method	() -> number, number, number	
+CFrame	CFrame:ToAxisAngle	method	() -> Vector3, number	
+CFrame	CFrame:components	method	() -> Tuple	
+CFrame	CFrame:FuzzyEq	method	(other: CFrame, epsilon: number) -> bool	
+CFrame	CFrame:AngleBetween	method	(other: CFrame) -> number	
+CFrame	CFrame * CFrame	operator	()	
+CFrame	CFrame * Vector3	operator	()	
+CFrame	CFrame + Vector3	operator	()	
+CFrame	CFrame - Vector3	operator	()	
+CatalogSearchParams	CatalogSearchParams.SearchKeyword	property	string	
+CatalogSearchParams	CatalogSearchParams.MinPrice	property	number	
+CatalogSearchParams	CatalogSearchParams.MaxPrice	property	number	
+CatalogSearchParams	CatalogSearchParams.SortType	property	CatalogSortType	
+CatalogSearchParams	CatalogSearchParams.SortAggregation	property	Enum.CatalogSortAggregation	
+CatalogSearchParams	CatalogSearchParams.CategoryFilter	property	CatalogCategoryFilter	
+CatalogSearchParams	CatalogSearchParams.SalesTypeFilter	property	Enum.SalesTypeFilter	
+CatalogSearchParams	CatalogSearchParams.BundleTypes	property	Array<BundleType>	
+CatalogSearchParams	CatalogSearchParams.AssetTypes	property	Array<AvatarAssetType>	
+CatalogSearchParams	CatalogSearchParams.IncludeOffSale	property	bool	
+CatalogSearchParams	CatalogSearchParams.CreatorName	property	string	
+CatalogSearchParams	CatalogSearchParams.CreatorType	property	Enum.CreatorTypeFilter	
+CatalogSearchParams	CatalogSearchParams.CreatorId	property	number	
+CatalogSearchParams	CatalogSearchParams.Limit	property	number	
+Collection	Collection.Enabled	property	bool	
+Collection	Collection:ForEach	method	(callback: function)	
+Collection	Collection:Destroy	method	()	
+Color3	Color3.new	constructor	(red: number, green: number, blue: number)	
+Color3	Color3.fromRGB	constructor	(red: number, green: number, blue: number)	
+Color3	Color3.fromHSV	constructor	(hue: number, saturation: number, value: number)	
+Color3	Color3.fromHex	constructor	(hex: string)	
+Color3	Color3.R	property	number	
+Color3	Color3.G	property	number	
+Color3	Color3.B	property	number	
+Color3	Color3:Lerp	method	(color: Color3, alpha: number) -> Color3	
+Color3	Color3:ToHSV	method	() -> number, number, number	
+Color3	Color3:ToHex	method	() -> string	
+Color3	Color3.toHSV	function	(color: Color3) -> number, number, number	deprecated
+ColorSequence	ColorSequence.new	constructor	(c: Color3)	
+ColorSequence	ColorSequence.new	constructor	(c0: Color3, c1: Color3)	
+ColorSequence	ColorSequence.new	constructor	(keypoints: Array)	
+ColorSequence	ColorSequence.Keypoints	property	Array	
+ColorSequenceKeypoint	ColorSequenceKeypoint.new	constructor	(time: number, color: Color3)	
+ColorSequenceKeypoint	ColorSequenceKeypoint.Time	property	number	
+ColorSequenceKeypoint	ColorSequenceKeypoint.Value	property	Color3	
+Content	Content.fromUri	constructor	(uri: string)	
+Content	Content.fromAssetId	constructor	(assetId: number)	
+Content	Content.fromObject	constructor	(object: Object)	
+Content	Content.none	constant	Content	
+Content	Content.none	property	Content	
+Content	Content.SourceType	property	Enum.ContentSourceType	
+Content	Content.Uri	property	string?	
+Content	Content.Object	property	Object?	
+Content	Content.Opaque	property	Opaque?	
+DateTime	DateTime.now	constructor	()	
+DateTime	DateTime.fromUnixTimestamp	constructor	(unixTimestamp: number)	
+DateTime	DateTime.fromUnixTimestampMillis	constructor	(unixTimestampMillis: number)	
+DateTime	DateTime.fromUniversalTime	constructor	(year: number, month: number, day: number, hour: number, minute: number, second: number, millisecond: number)	
+DateTime	DateTime.fromLocalTime	constructor	(year: number, month: number, day: number, hour: number, minute: number, second: number, millisecond: number)	
+DateTime	DateTime.fromIsoDate	constructor	(isoDate: string)	
+DateTime	DateTime.UnixTimestamp	property	number	
+DateTime	DateTime.UnixTimestampMillis	property	number	
+DateTime	DateTime:ToUniversalTime	method	() -> Dictionary	
+DateTime	DateTime:ToLocalTime	method	() -> Dictionary	
+DateTime	DateTime:ToIsoDate	method	() -> string	
+DateTime	DateTime:FormatUniversalTime	method	(format: string, locale: string) -> string	
+DateTime	DateTime:FormatLocalTime	method	(format: string, locale: string) -> string	
+DockWidgetPluginGuiInfo	DockWidgetPluginGuiInfo.new	constructor	(InitialDockState: InitialDockState, InitialEnabled: bool, InitialEnabledShouldOverrideRestore: bool, FloatingXSize: number, FloatingYSize: number, MinWidth: number, MinHeight: number)	
+DockWidgetPluginGuiInfo	DockWidgetPluginGuiInfo.InitialEnabled	property	bool	
+DockWidgetPluginGuiInfo	DockWidgetPluginGuiInfo.InitialEnabledShouldOverrideRestore	property	bool	
+DockWidgetPluginGuiInfo	DockWidgetPluginGuiInfo.FloatingXSize	property	number	
+DockWidgetPluginGuiInfo	DockWidgetPluginGuiInfo.FloatingYSize	property	number	
+DockWidgetPluginGuiInfo	DockWidgetPluginGuiInfo.MinWidth	property	number	
+DockWidgetPluginGuiInfo	DockWidgetPluginGuiInfo.MinHeight	property	number	
+Enum	Enum:GetEnumItems	method	() -> Array	
+Enum	Enum:FromName	method	(name: string) -> Enum | nil	
+Enum	Enum:FromValue	method	(value: number) -> Enum | nil	
+EnumItem	EnumItem.Name	property	string	
+EnumItem	EnumItem.Value	property	number	
+EnumItem	EnumItem.EnumType	property	Enum	
+Enums	Enums:GetEnums	method	() -> Array	
+Faces	Faces.new	constructor	(normalIds...: Tuple)	
+Faces	Faces.Top	property	bool	
+Faces	Faces.Bottom	property	bool	
+Faces	Faces.Left	property	bool	
+Faces	Faces.Right	property	bool	
+Faces	Faces.Back	property	bool	
+Faces	Faces.Front	property	bool	
+FloatCurveKey	FloatCurveKey.new	constructor	(time: number, value: number, Interpolation: KeyInterpolationMode)	
+FloatCurveKey	FloatCurveKey.Interpolation	property	KeyInterpolationMode	
+FloatCurveKey	FloatCurveKey.Time	property	number	
+FloatCurveKey	FloatCurveKey.Value	property	number	
+FloatCurveKey	FloatCurveKey.RightTangent	property	number	
+FloatCurveKey	FloatCurveKey.LeftTangent	property	number	
+Font	Font.new	constructor	(family: Content, weight: FontWeight, style: FontStyle)	
+Font	Font.fromEnum	constructor	(font: Font)	
+Font	Font.fromName	constructor	(name: string, weight: FontWeight, style: FontStyle)	
+Font	Font.fromId	constructor	(id: number, weight: FontWeight, style: FontStyle)	
+Font	Font.Family	property	Content	
+Font	Font.Weight	property	FontWeight	
+Font	Font.Style	property	FontStyle	
+Font	Font.Bold	property	bool	
+Instance	Instance.new	constructor	(className: string, parent: Instance?)	
+Instance	Instance.fromExisting	constructor	(existingInstance: Instance)	
+InstanceHandle	InstanceHandle.new	constructor	(instance: Instance?)	
+InstanceHandle	InstanceHandle:Get	method	() -> Instance?	
+InstanceHandle	InstanceHandle:Wait	method	(timeout: number?) -> Instance?	
+NumberRange	NumberRange.new	constructor	(value: number)	
+NumberRange	NumberRange.new	constructor	(minimum: number, maximum: number)	
+NumberRange	NumberRange.Min	property	number	
+NumberRange	NumberRange.Max	property	number	
+NumberSequence	NumberSequence.new	constructor	(n: number)	
+NumberSequence	NumberSequence.new	constructor	(n0: number, n1: number)	
+NumberSequence	NumberSequence.new	constructor	(Keypoints: Array)	
+NumberSequence	NumberSequence.Keypoints	property	Array	
+NumberSequenceKeypoint	NumberSequenceKeypoint.new	constructor	(time: number, value: number)	
+NumberSequenceKeypoint	NumberSequenceKeypoint.new	constructor	(time: number, value: number, envelope: number)	
+NumberSequenceKeypoint	NumberSequenceKeypoint.Envelope	property	number	
+NumberSequenceKeypoint	NumberSequenceKeypoint.Time	property	number	
+NumberSequenceKeypoint	NumberSequenceKeypoint.Value	property	number	
+OverlapParams	OverlapParams.new	constructor	()	
+OverlapParams	OverlapParams.ExcludeInstances	property	{Instance}?	
+OverlapParams	OverlapParams.IncludeInstances	property	{Instance}?	
+OverlapParams	OverlapParams.MaxParts	property	number	
+OverlapParams	OverlapParams.CollisionGroup	property	string	
+OverlapParams	OverlapParams.Tolerance	property	number	
+OverlapParams	OverlapParams.RespectCanCollide	property	bool	
+OverlapParams	OverlapParams.BruteForceAllSlow	property	bool	
+OverlapParams	OverlapParams.FilterDescendantsInstances	property	Array	superseded
+OverlapParams	OverlapParams.FilterType	property	RaycastFilterType	superseded
+OverlapParams	OverlapParams:AddToFilter	method	(instances: Instance | Array) -> ()	superseded
+Path2DControlPoint	Path2DControlPoint.new	constructor	()	
+Path2DControlPoint	Path2DControlPoint.new	constructor	(Position: UDim2)	
+Path2DControlPoint	Path2DControlPoint.new	constructor	(Position: UDim2, Left Tangent: UDim2, Right Tangent: UDim2)	
+Path2DControlPoint	Path2DControlPoint.Position	property	UDim2	
+Path2DControlPoint	Path2DControlPoint.LeftTangent	property	UDim2	
+Path2DControlPoint	Path2DControlPoint.RightTangent	property	UDim2	
+PathWaypoint	PathWaypoint.new	constructor	(position: Vector3, action: PathWaypointAction, label: string)	
+PathWaypoint	PathWaypoint.Action	property	PathWaypointAction	
+PathWaypoint	PathWaypoint.Position	property	Vector3	
+PathWaypoint	PathWaypoint.Label	property	string	
+PhysicalProperties	PhysicalProperties.new	constructor	(material: Material)	
+PhysicalProperties	PhysicalProperties.new	constructor	(density: number, friction: number, elasticity: number)	
+PhysicalProperties	PhysicalProperties.new	constructor	(density: number, friction: number, elasticity: number, frictionWeight: number, elasticityWeight: number)	
+PhysicalProperties	PhysicalProperties.new	constructor	(density: number, friction: number, elasticity: number, frictionWeight: number, elasticityWeight: number, acousticAbsorption: number)	
+PhysicalProperties	PhysicalProperties.AcousticAbsorption	property	number	
+PhysicalProperties	PhysicalProperties.Density	property	number	
+PhysicalProperties	PhysicalProperties.Friction	property	number	
+PhysicalProperties	PhysicalProperties.Elasticity	property	number	
+PhysicalProperties	PhysicalProperties.FrictionWeight	property	number	
+PhysicalProperties	PhysicalProperties.ElasticityWeight	property	number	
+RBXScriptConnection	RBXScriptConnection.Connected	property	bool	
+RBXScriptConnection	RBXScriptConnection:Disconnect	method	() -> ()	
+RBXScriptSignal	RBXScriptSignal:Connect	method	(func: function) -> RBXScriptConnection	
+RBXScriptSignal	RBXScriptSignal:ConnectParallel	method	(func: function) -> RBXScriptConnection	
+RBXScriptSignal	RBXScriptSignal:Once	method	(func: function) -> RBXScriptConnection	
+RBXScriptSignal	RBXScriptSignal:Wait	method	() -> Variant	
+Random	Random.new	constructor	(seed: number)	
+Random	Random:NextInteger	method	(min: number, max: number) -> number	
+Random	Random:NextNumber	method	() -> number	
+Random	Random:NextNumber	method	(min: number, max: number) -> number	
+Random	Random:Shuffle	method	(tb: table) -> ()	
+Random	Random:NextUnitVector	method	() -> Vector3	
+Random	Random:Clone	method	() -> Random	
+Ray	Ray.new	constructor	(Origin: Vector3, Direction: Vector3)	
+Ray	Ray.Unit	property	Ray	
+Ray	Ray.Origin	property	Vector3	
+Ray	Ray.Direction	property	Vector3	
+Ray	Ray:ClosestPoint	method	(point: Vector3) -> Vector3	
+Ray	Ray:Distance	method	(point: Vector3) -> number	
+RaycastParams	RaycastParams.new	constructor	()	
+RaycastParams	RaycastParams.ExcludeInstances	property	{Instance}?	
+RaycastParams	RaycastParams.IncludeInstances	property	{Instance}?	
+RaycastParams	RaycastParams.IgnoreWater	property	bool	
+RaycastParams	RaycastParams.CollisionGroup	property	string	
+RaycastParams	RaycastParams.RespectCanCollide	property	bool	
+RaycastParams	RaycastParams.BruteForceAllSlow	property	bool	
+RaycastParams	RaycastParams.FilterDescendantsInstances	property	Array	superseded
+RaycastParams	RaycastParams.FilterType	property	RaycastFilterType	superseded
+RaycastParams	RaycastParams:AddToFilter	method	(instances: Instance | Array) -> ()	superseded
+RaycastResult	RaycastResult.Distance	property	number	
+RaycastResult	RaycastResult.Instance	property	BasePart	
+RaycastResult	RaycastResult.Material	property	Material	
+RaycastResult	RaycastResult.Position	property	Vector3	
+RaycastResult	RaycastResult.Normal	property	Vector3	
+Rect	Rect.new	constructor	()	
+Rect	Rect.new	constructor	(min: Vector2, max: Vector2)	
+Rect	Rect.new	constructor	(minX: number, minY: number, maxX: number, maxY: number)	
+Rect	Rect.Width	property	number	
+Rect	Rect.Height	property	number	
+Rect	Rect.Min	property	Vector2	
+Rect	Rect.Max	property	Vector2	
+Region3	Region3.new	constructor	(min: Vector3, max: Vector3)	
+Region3	Region3.CFrame	property	CFrame	
+Region3	Region3.Size	property	Vector3	
+Region3	Region3:ExpandToGrid	method	(resolution: number) -> Region3	
+Region3int16	Region3int16.new	constructor	(min: Vector3int16, max: Vector3int16)	
+Region3int16	Region3int16.Min	property	Vector3int16	
+Region3int16	Region3int16.Max	property	Vector3int16	
+RotationCurveKey	RotationCurveKey.new	constructor	(time: number, cframe: CFrame, Interpolation: KeyInterpolationMode)	
+RotationCurveKey	RotationCurveKey.Interpolation	property	KeyInterpolationMode	
+RotationCurveKey	RotationCurveKey.Time	property	number	
+RotationCurveKey	RotationCurveKey.Value	property	CFrame	
+RotationCurveKey	RotationCurveKey.RightTangent	property	number	
+RotationCurveKey	RotationCurveKey.LeftTangent	property	number	
+Secret	Secret:AddPrefix	method	(prefix: string) -> Secret	
+Secret	Secret:AddSuffix	method	(suffix: string) -> Secret	
+SecurityCapabilities	SecurityCapabilities.new	constructor	(...: SecurityCapability)	
+SecurityCapabilities	SecurityCapabilities.fromCurrent	constructor	()	
+SecurityCapabilities	SecurityCapabilities:Add	method	(...: SecurityCapability) -> SecurityCapabilities	
+SecurityCapabilities	SecurityCapabilities:Add	method	(capabilities: SecurityCapabilities) -> SecurityCapabilities	
+SecurityCapabilities	SecurityCapabilities:Remove	method	(...: SecurityCapability) -> SecurityCapabilities	
+SecurityCapabilities	SecurityCapabilities:Remove	method	(capabilities: SecurityCapabilities) -> SecurityCapabilities	
+SecurityCapabilities	SecurityCapabilities:Contains	method	(...: SecurityCapability) -> boolean	
+SecurityCapabilities	SecurityCapabilities:Contains	method	(capabilities: SecurityCapabilities) -> boolean	
+SharedTable	SharedTable.new	constructor	()	
+SharedTable	SharedTable.new	constructor	(t: table)	
+SharedTable	SharedTable.clear	function	(st: SharedTable) -> ()	
+SharedTable	SharedTable.clone	function	(st: SharedTable, deep: boolean?) -> SharedTable	
+SharedTable	SharedTable.cloneAndFreeze	function	(st: SharedTable, deep: boolean?) -> SharedTable	
+SharedTable	SharedTable.increment	function	(st: SharedTable, key: string | number, delta: number) -> number	
+SharedTable	SharedTable.isFrozen	function	(st: SharedTable) -> boolean	
+SharedTable	SharedTable.size	function	(st: SharedTable) -> number	
+SharedTable	SharedTable.update	function	(st: SharedTable, key: string | number, f: function) -> ()	
+TweenInfo	TweenInfo.new	constructor	(time: number, easingStyle: EasingStyle, easingDirection: EasingDirection, repeatCount: number, reverses: bool, delayTime: number)	
+TweenInfo	TweenInfo.EasingDirection	property	EasingDirection	
+TweenInfo	TweenInfo.Time	property	number	
+TweenInfo	TweenInfo.DelayTime	property	number	
+TweenInfo	TweenInfo.RepeatCount	property	number	
+TweenInfo	TweenInfo.EasingStyle	property	EasingStyle	
+TweenInfo	TweenInfo.Reverses	property	bool	
+UDim	UDim.new	constructor	(Scale: number, Offset: number)	
+UDim	UDim.Scale	property	number	
+UDim	UDim.Offset	property	number	
+UDim	UDim + UDim	operator	()	
+UDim	UDim - UDim	operator	()	
+UDim2	UDim2.new	constructor	()	
+UDim2	UDim2.new	constructor	(xScale: number, xOffset: number, yScale: number, yOffset: number)	
+UDim2	UDim2.new	constructor	(x: UDim, y: UDim)	
+UDim2	UDim2.fromScale	constructor	(xScale: number, yScale: number)	
+UDim2	UDim2.fromOffset	constructor	(xOffset: number, yOffset: number)	
+UDim2	UDim2.X	property	UDim	
+UDim2	UDim2.Y	property	UDim	
+UDim2	UDim2.Width	property	UDim	
+UDim2	UDim2.Height	property	UDim	
+UDim2	UDim2:Lerp	method	(goal: UDim2, alpha: number) -> UDim2	
+UDim2	UDim2 + UDim2	operator	()	
+UDim2	UDim2 - UDim2	operator	()	
+User	User.fromId	constructor	(domainUserId: int64)	
+User	User.fromString	constructor	(userString: string)	
+User	User.Id	property	int64	
+User	User.DomainType	property	DomainType	
+User	User.DomainId	property	int64	
+User	User:ToString	method	() -> string	
+ValueCurveKey	ValueCurveKey.new	constructor	(time: number, value: any, Interpolation: KeyInterpolationMode)	
+ValueCurveKey	ValueCurveKey.Interpolation	property	KeyInterpolationMode	
+ValueCurveKey	ValueCurveKey.Time	property	number	
+ValueCurveKey	ValueCurveKey.Value	property	any	
+ValueCurveKey	ValueCurveKey.RightTangent	property	number	
+ValueCurveKey	ValueCurveKey.LeftTangent	property	number	
+Vector2	Vector2.new	constructor	(x: number, y: number)	
+Vector2	Vector2.zero	constant	Vector2	
+Vector2	Vector2.one	constant	Vector2	
+Vector2	Vector2.xAxis	constant	Vector2	
+Vector2	Vector2.yAxis	constant	Vector2	
+Vector2	Vector2.X	property	number	
+Vector2	Vector2.Y	property	number	
+Vector2	Vector2.Magnitude	property	number	
+Vector2	Vector2.Unit	property	Vector2	
+Vector2	Vector2:Cross	method	(other: Vector2) -> number	
+Vector2	Vector2:Abs	method	() -> Vector2	
+Vector2	Vector2:Ceil	method	() -> Vector2	
+Vector2	Vector2:Floor	method	() -> Vector2	
+Vector2	Vector2:Sign	method	() -> Vector2	
+Vector2	Vector2:Angle	method	(other: Vector2, isSigned: boolean) -> number	
+Vector2	Vector2:Dot	method	(v: Vector2) -> number	
+Vector2	Vector2:Lerp	method	(v: Vector2, alpha: number) -> Vector2	
+Vector2	Vector2:Max	method	(others...: Tuple) -> Vector2	
+Vector2	Vector2:Min	method	(others...: Tuple) -> Vector2	
+Vector2	Vector2:FuzzyEq	method	(other: Vector2, epsilon: number) -> bool	
+Vector2	Vector2 + Vector2	operator	()	
+Vector2	Vector2 - Vector2	operator	()	
+Vector2	Vector2 * Vector2	operator	()	
+Vector2	Vector2 / Vector2	operator	()	
+Vector2	Vector2 * number	operator	()	
+Vector2	Vector2 / number	operator	()	
+Vector2int16	Vector2int16.new	constructor	(x: number, y: number)	
+Vector2int16	Vector2int16.X	property	number	
+Vector2int16	Vector2int16.Y	property	number	
+Vector2int16	Vector2int16 + Vector2int16	operator	()	
+Vector2int16	Vector2int16 - Vector2int16	operator	()	
+Vector2int16	Vector2int16 * Vector2int16	operator	()	
+Vector2int16	Vector2int16 / Vector2int16	operator	()	
+Vector2int16	Vector2int16 * number	operator	()	
+Vector2int16	Vector2int16 / number	operator	()	
+Vector3	Vector3.new	constructor	(x: number, y: number, z: number)	
+Vector3	Vector3.FromNormalId	constructor	(normal: NormalId)	
+Vector3	Vector3.FromAxis	constructor	(axis: Axis)	
+Vector3	Vector3.zero	constant	Vector3	
+Vector3	Vector3.one	constant	Vector3	
+Vector3	Vector3.xAxis	constant	Vector3	
+Vector3	Vector3.yAxis	constant	Vector3	
+Vector3	Vector3.zAxis	constant	Vector3	
+Vector3	Vector3.zero	property	Vector3	
+Vector3	Vector3.one	property	Vector3	
+Vector3	Vector3.xAxis	property	Vector3	
+Vector3	Vector3.yAxis	property	Vector3	
+Vector3	Vector3.zAxis	property	Vector3	
+Vector3	Vector3.X	property	number	
+Vector3	Vector3.Y	property	number	
+Vector3	Vector3.Z	property	number	
+Vector3	Vector3.Magnitude	property	number	
+Vector3	Vector3.Unit	property	Vector3	
+Vector3	Vector3:Abs	method	() -> Vector3	
+Vector3	Vector3:Ceil	method	() -> Vector3	
+Vector3	Vector3:Floor	method	() -> Vector3	
+Vector3	Vector3:Sign	method	() -> Vector3	
+Vector3	Vector3:Cross	method	(other: Vector3) -> Vector3	
+Vector3	Vector3:Angle	method	(other: Vector3, axis: Vector3) -> number	
+Vector3	Vector3:Dot	method	(other: Vector3) -> number	
+Vector3	Vector3:FuzzyEq	method	(other: Vector3, epsilon: number) -> bool	
+Vector3	Vector3:Lerp	method	(goal: Vector3, alpha: number) -> Vector3	
+Vector3	Vector3:Max	method	(vector: Vector3) -> Vector3	
+Vector3	Vector3:Min	method	(vector: Vector3) -> Vector3	
+Vector3	Vector3 + Vector3	operator	()	
+Vector3	Vector3 - Vector3	operator	()	
+Vector3	Vector3 * Vector3	operator	()	
+Vector3	Vector3 / Vector3	operator	()	
+Vector3	Vector3 // Vector3	operator	()	
+Vector3	Vector3 * number	operator	()	
+Vector3	Vector3 / number	operator	()	
+Vector3	Vector3 // number	operator	()	
+Vector3int16	Vector3int16.new	constructor	(x: number, y: number, z: number)	
+Vector3int16	Vector3int16.X	property	number	
+Vector3int16	Vector3int16.Y	property	number	
+Vector3int16	Vector3int16.Z	property	number	
+Vector3int16	Vector3int16 + Vector3int16	operator	()	
+Vector3int16	Vector3int16 - Vector3int16	operator	()	
+Vector3int16	Vector3int16 * Vector3int16	operator	()	
+Vector3int16	Vector3int16 / Vector3int16	operator	()	
+Vector3int16	Vector3int16 * number	operator	()	
+Vector3int16	Vector3int16 / number	operator	()	
+bit32	bit32.arshift	function	(x: number, disp: number) -> number	
+bit32	bit32.band	function	(numbers: Tuple) -> number	
+bit32	bit32.bnot	function	(x: number) -> number	
+bit32	bit32.bor	function	(numbers: Tuple) -> number	
+bit32	bit32.btest	function	(numbers: Tuple) -> bool	
+bit32	bit32.bxor	function	(numbers: Tuple) -> number	
+bit32	bit32.byteswap	function	(x: number) -> number	
+bit32	bit32.countlz	function	(n: number) -> number	
+bit32	bit32.countrz	function	(n: number) -> number	
+bit32	bit32.extract	function	(n: number, field: number, width: number) -> number	
+bit32	bit32.replace	function	(n: number, v: number, field: number, width: number) -> number	
+bit32	bit32.lrotate	function	(x: number, disp: number) -> number	
+bit32	bit32.lshift	function	(x: number, disp: number) -> number	
+bit32	bit32.rrotate	function	(x: number, disp: number) -> number	
+bit32	bit32.rshift	function	(x: number, disp: number) -> number	
+buffer	buffer.create	function	(size: number) -> buffer	
+buffer	buffer.fromstring	function	(str: string) -> buffer	
+buffer	buffer.tostring	function	(b: buffer) -> string	
+buffer	buffer.len	function	(b: buffer) -> number	
+buffer	buffer.readbits	function	(b: buffer, bitOffset: number, bitCount: number) -> number	
+buffer	buffer.readi8	function	(b: buffer, offset: number) -> number	
+buffer	buffer.readu8	function	(b: buffer, offset: number) -> number	
+buffer	buffer.readi16	function	(b: buffer, offset: number) -> number	
+buffer	buffer.readu16	function	(b: buffer, offset: number) -> number	
+buffer	buffer.readi32	function	(b: buffer, offset: number) -> number	
+buffer	buffer.readu32	function	(b: buffer, offset: number) -> number	
+buffer	buffer.readf32	function	(b: buffer, offset: number) -> number	
+buffer	buffer.readf64	function	(b: buffer, offset: number) -> number	
+buffer	buffer.writebits	function	(b: buffer, bitOffset: number, bitCount: number, value: number) -> ()	
+buffer	buffer.writei8	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.writeu8	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.writei16	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.writeu16	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.writei32	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.writeu32	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.writef32	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.writef64	function	(b: buffer, offset: number, value: number) -> ()	
+buffer	buffer.readstring	function	(b: buffer, offset: number, count: number) -> string	
+buffer	buffer.writestring	function	(b: buffer, offset: number, value: string, count: number?) -> ()	
+buffer	buffer.copy	function	(target: buffer, targetOffset: number, source: buffer, sourceOffset: number?, count: number?) -> ()	
+buffer	buffer.fill	function	(b: buffer, offset: number, value: number, count: number?) -> ()	
+coroutine	coroutine.close	function	(co: thread) -> bool, Variant<string, void>	
+coroutine	coroutine.create	function	(f: function) -> thread	
+coroutine	coroutine.isyieldable	function	() -> bool	
+coroutine	coroutine.resume	function	(co: thread, ...: Variant) -> bool, Variant<Tuple, string>	
+coroutine	coroutine.running	function	() -> thread	
+coroutine	coroutine.status	function	(co: thread) -> string	
+coroutine	coroutine.wrap	function	(f: function) -> function	
+coroutine	coroutine.yield	function	(...: Tuple) -> Tuple<Variant>	
+debug	debug.traceback	function	(message: string, level: number) -> string	
+debug	debug.traceback	function	(thread: thread, message: string, level: number) -> string	
+debug	debug.info	function	(level: number, options: string) -> Tuple	
+debug	debug.info	function	(function: function, options: string) -> Tuple	
+debug	debug.info	function	(thread: thread, level: number, options: string) -> Tuple	
+debug	debug.profilebegin	function	(label: string) -> ()	
+debug	debug.profileend	function	() -> ()	
+debug	debug.getmemorycategory	function	() -> string	
+debug	debug.setmemorycategory	function	(tag: string) -> string	
+debug	debug.resetmemorycategory	function	() -> ()	
+debug	debug.dumpcodesize	function	() -> ()	
+math	math.e	property	number	
+math	math.huge	property	number	
+math	math.nan	property	number	
+math	math.phi	property	number	
+math	math.pi	property	number	
+math	math.sqrt2	property	number	
+math	math.tau	property	number	
+math	math.abs	function	(x: number) -> number	
+math	math.acos	function	(x: number) -> number	
+math	math.asin	function	(x: number) -> number	
+math	math.atan	function	(x: number) -> number	
+math	math.atan2	function	(y: number, x: number) -> number	
+math	math.ceil	function	(x: number) -> int	
+math	math.clamp	function	(x: number, min: number, max: number) -> number	
+math	math.cos	function	(x: number) -> number	
+math	math.cosh	function	(x: number) -> number	
+math	math.deg	function	(x: number) -> number	
+math	math.exp	function	(x: number) -> number	
+math	math.floor	function	(x: number) -> int	
+math	math.fmod	function	(x: number, y: number) -> number	
+math	math.frexp	function	(x: number) -> number, int	
+math	math.isfinite	function	(x: number) -> boolean	
+math	math.isinf	function	(x: number) -> boolean	
+math	math.isnan	function	(x: number) -> boolean	
+math	math.ldexp	function	(x: number, e: int) -> number	
+math	math.lerp	function	(a: number, b: number, t: number) -> number	
+math	math.log	function	(x: number, base: number) -> number	
+math	math.log10	function	(x: number) -> number	
+math	math.map	function	(x: number, inmin: number, inmax: number, outmin: number, outmax: number) -> number	
+math	math.max	function	(x: number, ...: number) -> number	
+math	math.min	function	(x: number, ...: number) -> number	
+math	math.modf	function	(x: number) -> number, number	
+math	math.noise	function	(x: number, y: number, z: number) -> number	
+math	math.pow	function	(x: number, y: number) -> number	
+math	math.rad	function	(x: number) -> number	
+math	math.random	function	(m: number, n: number) -> number	
+math	math.randomseed	function	(x: number) -> ()	
+math	math.round	function	(x: number) -> number	
+math	math.sign	function	(x: number) -> int	
+math	math.sin	function	(x: number) -> number	
+math	math.sinh	function	(x: number) -> number	
+math	math.sqrt	function	(x: number) -> number	
+math	math.tan	function	(x: number) -> number	
+math	math.tanh	function	(x: number) -> number	
+os	os.clock	function	() -> double	
+os	os.date	function	(formatString: string, time: int) -> Dictionary	
+os	os.difftime	function	(t2: int, t1: int) -> int	
+os	os.time	function	(time: table) -> int	
+string	string.byte	function	(s: string, i: number, j: number) -> int	
+string	string.char	function	(...: int) -> string	
+string	string.find	function	(s: string, pattern: string, init: number, plain: bool) -> number, number	
+string	string.format	function	(formatstring: string, ...: string) -> string	
+string	string.gmatch	function	(s: string, pattern: string) -> function	
+string	string.gsub	function	(s: string, pattern: string, replacement: Variant, replacements: number) -> string, number	
+string	string.len	function	(s: string) -> int	
+string	string.lower	function	(s: string) -> string	
+string	string.match	function	(s: string, pattern: string, init: number) -> string	
+string	string.pack	function	(format: string, ...: Variant) -> string	
+string	string.packsize	function	(format: string) -> number	
+string	string.rep	function	(s: string, n: int) -> string	
+string	string.reverse	function	(s: string) -> string	
+string	string.split	function	(s: string, separator: string) -> table	
+string	string.sub	function	(s: string, i: int, j: int) -> string	
+string	string.unpack	function	(format: string, data: string, readStart: string) -> Tuple	
+string	string.upper	function	(s: string) -> string	
+table	table.clear	function	(table: table) -> ()	
+table	table.clone	function	(t: table) -> table	
+table	table.concat	function	(t: Array, sep: string, i: int, j: int) -> string	
+table	table.create	function	(count: number, value: Variant) -> table	
+table	table.find	function	(haystack: table, needle: Variant, init: number) -> Variant	
+table	table.foreach	function	(t: table, f: function) -> ()	deprecated
+table	table.foreachi	function	(t: Array, f: function) -> ()	deprecated
+table	table.freeze	function	(t: table) -> table	
+table	table.getn	function	(t: Array) -> number	deprecated
+table	table.insert	function	(t: Array, pos: number, value: Variant) -> ()	
+table	table.insert	function	(t: Array, value: Variant) -> ()	
+table	table.isfrozen	function	(t: table) -> bool	
+table	table.maxn	function	(t: table) -> number	
+table	table.move	function	(src: table, a: number, b: number, t: number, dst: table) -> table	
+table	table.pack	function	(values...: Variant) -> Variant	
+table	table.remove	function	(t: Array, pos: number) -> Variant	
+table	table.sort	function	(t: Array, comp: function) -> ()	
+table	table.unpack	function	(list: table, i: number, j: number) -> Tuple	
+task	task.spawn	function	(functionOrThread: function | thread, ...: Variant) -> thread	
+task	task.defer	function	(functionOrThread: function | thread, ...: Variant) -> thread	
+task	task.delay	function	(duration: number, functionOrThread: function | thread, ...: Variant) -> thread	
+task	task.desynchronize	function	() -> ()	
+task	task.synchronize	function	() -> ()	
+task	task.wait	function	(duration: number) -> number	
+task	task.cancel	function	(thread: thread) -> ()	
+utf8	utf8.charpattern	property	string	
+utf8	utf8.char	function	(codepoints: Tuple<int>) -> string	
+utf8	utf8.codes	function	(str: string) -> function, string, int	
+utf8	utf8.codepoint	function	(str: string, i: int, j: int) -> Tuple<int>	
+utf8	utf8.len	function	(s: string, i: int, j: int) -> int	
+utf8	utf8.offset	function	(s: string, n: int, i: int) -> int?	
+utf8	utf8.graphemes	function	(str: string, i: number, j: number) -> function	
+utf8	utf8.nfcnormalize	function	(str: string) -> string	
+utf8	utf8.nfdnormalize	function	(str: string) -> string	
+vector	vector.zero	property	vector	
+vector	vector.one	property	vector	
+vector	vector.create	function	(x: number, y: number, z: number) -> vector	
+vector	vector.magnitude	function	(vec: vector) -> number	
+vector	vector.normalize	function	(vec: vector) -> vector	
+vector	vector.cross	function	(vec1: vector, vec2: vector) -> vector	
+vector	vector.dot	function	(vec1: vector, vec2: vector) -> number	
+vector	vector.angle	function	(vec1: vector, vec2: vector, axis: vector?) -> number	
+vector	vector.floor	function	(vec: vector) -> vector	
+vector	vector.ceil	function	(vec: vector) -> vector	
+vector	vector.abs	function	(vec: vector) -> vector	
+vector	vector.sign	function	(vec: vector) -> vector	
+vector	vector.clamp	function	(vec: vector, min: vector, max: vector) -> vector	
+vector	vector.lerp	function	(vec1: vector, vec2: vector, alpha: number) -> vector	
+vector	vector.max	function	(...: vector) -> vector	
+vector	vector.min	function	(...: vector) -> vector	
+Luau globals	_G	property	Array	
+Luau globals	_VERSION	property	string	
+Luau globals	assert	function	(value: Variant, errorMessage: string) -> Variant	
+Luau globals	collectgarbage	function	(operation: string) -> Variant	deprecated
+Luau globals	error	function	(message: Variant, level: int) -> ()	
+Luau globals	gcinfo	function	() -> number	
+Luau globals	getfenv	function	(stack: Variant) -> table	deprecated
+Luau globals	getmetatable	function	(t: Variant) -> Variant	
+Luau globals	ipairs	function	(t: Array) -> function, Array, int	
+Luau globals	loadstring	function	(contents: string, chunkname: string) -> Variant	
+Luau globals	newproxy	function	(addMetatable: bool) -> userdata	
+Luau globals	next	function	(t: table, lastKey: Variant) -> Variant, Variant	
+Luau globals	pairs	function	(t: table) -> function, table, Variant	
+Luau globals	pcall	function	(func: function, args: Tuple) -> bool, Variant	
+Luau globals	print	function	(params: Tuple) -> ()	
+Luau globals	rawequal	function	(v1: Variant, v2: Variant) -> bool	
+Luau globals	rawget	function	(t: table, index: Variant) -> Variant	
+Luau globals	rawlen	function	(t: table) -> number	
+Luau globals	rawset	function	(t: table, index: Variant, value: Variant) -> table	
+Luau globals	require	function	(module: ModuleScript | string | number) -> Variant	
+Luau globals	select	function	(index: Variant, args: Tuple) -> Tuple	
+Luau globals	setfenv	function	(f: Variant, fenv: table) -> Variant	deprecated
+Luau globals	setmetatable	function	(t: table, newMeta: Variant) -> table	
+Luau globals	tonumber	function	(arg: Variant, base: int) -> Variant	
+Luau globals	tostring	function	(e: Variant) -> string	
+Luau globals	type	function	(v: Variant) -> string	
+Luau globals	unpack	function	(list: table, i: int, j: int) -> Variant	
+Luau globals	xpcall	function	(f: function, err: function, args: Tuple) -> bool, Variant	
+Roblox globals	Enum	property	Enums	
+Roblox globals	game	property	DataModel	
+Roblox globals	plugin	property	Plugin	
+Roblox globals	shared	property	Array	
+Roblox globals	script	property	LuaSourceContainer	
+Roblox globals	workspace	property	Workspace	
+Roblox globals	delay	function	(delayTime: number, callback: function) -> ()	deprecated
+Roblox globals	DebuggerManager	function	() -> DebuggerManager	deprecated
+Roblox globals	elapsedTime	function	() -> number	deprecated
+Roblox globals	PluginManager	function	() -> PluginManager	
+Roblox globals	printidentity	function	(prefix: string) -> ()	deprecated
+Roblox globals	settings	function	() -> GlobalSettings	
+Roblox globals	spawn	function	(callback: function) -> ()	deprecated
+Roblox globals	stats	function	() -> Stats	deprecated
+Roblox globals	tick	function	() -> number	
+Roblox globals	time	function	() -> number	
+Roblox globals	typeof	function	(object: Variant) -> string	
+Roblox globals	UserSettings	function	() -> UserSettings	
+Roblox globals	version	function	() -> string	deprecated
+Roblox globals	wait	function	(seconds: number) -> number, number	deprecated
+Roblox globals	warn	function	(params: Tuple) -> ()	
+Roblox globals	ypcall	function	(f: function, args: Tuple) -> bool, Variant	deprecated,superseded

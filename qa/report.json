@@ -1,0 +1,63 @@
+{
+ "generated": "2026-09-26T11:14:16+00:00",
+ "results": [
+  {
+   "check": "embedded code up to date",
+   "status": "PASS",
+   "command": "tools/embed_code.py --check",
+   "tail": [
+    "embed_code: checked (0 file(s) stale)"
+   ]
+  },
+  {
+   "check": "legacy catalog rendered",
+   "status": "PASS",
+   "command": "tools/render_legacy.py --check",
+   "tail": [
+    "legacy catalog: 89 entries, 0 error(s)"
+   ]
+  },
+  {
+   "check": "API references",
+   "status": "PASS",
+   "command": "tools/check_api_refs.py",
+   "tail": [
+    "api-refs: 0 error(s), 0 warning(s)"
+   ]
+  },
+  {
+   "check": "source citations",
+   "status": "PASS",
+   "command": "tools/check_sources.py --check",
+   "tail": [
+    "sources: 379 resolved, 0 unresolved"
+   ]
+  },
+  {
+   "check": "links and anchors",
+   "status": "PASS",
+   "command": "tools/check_links.py",
+   "tail": [
+    "links: 441 checked, 0 broken"
+   ]
+  },
+  {
+   "check": "tool unit tests",
+   "status": "PASS",
+   "command": "-m unittest discover -s tests -q",
+   "tail": [
+    "Ran 23 tests in 0.321s",
+    "",
+    "OK"
+   ]
+  },
+  {
+   "check": "Luau typecheck + CLI tests",
+   "status": "PASS",
+   "command": "tools/check_code.py",
+   "tail": [
+    "{\"markdown\": {\"EMBEDDED\": 71, \"TYPECHECKED\": 45}, \"examples\": {\"TYPECHECKED\": 70}, \"cli_tests\": {\"CLI-EXECUTED\": 9}}"
+   ]
+  }
+ ]
+}

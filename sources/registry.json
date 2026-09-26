@@ -1,0 +1,4312 @@
+{
+ "generated_by": "tools/check_sources.py",
+ "entries": {
+  "api:AnalyticsService": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/service-map.md"
+   ]
+  },
+  "api:AnimationController.LoadAnimation": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnimationTrack.GetMarkerReachedSignal": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Animator.LoadAnimation": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AssetService.CreateMeshPartAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Atmosphere": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md"
+   ]
+  },
+  "api:AudioPlayer.Asset": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AudioPlayer.AssetId": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BadgeService.AwardBadge": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BadgeService.UserHasBadge": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.BreakJoints": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.CollisionGroupId": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.RotVelocity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.Velocity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BodyVelocity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Camera.CoordinateFrame": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Camera.Interpolate": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Chat.FilterStringForPlayerAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:CollectionService.GetInstanceAddedSignal": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:ColorGradingEffect.TonemapperPreset": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:ContentProvider.Preload": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:ContentProvider.PreloadAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:ContextActionService.BindActionToInputTypes": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DataStore.RemoveVersionAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DataStoreService.SetRateLimitForRequestType": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Enum.PathStatus": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Enum.RaycastFilterType": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/ai-failure-modes.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Enum.Technology": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GamePassService.PlayerHasPass": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GlobalDataStore.OnUpdate": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GroupService.GetRolesInGroupAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiButton.Activated": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiObject.BackgroundColor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiObject.Draggable": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiObject.TweenPosition": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiObject.TweenSize": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiService.TouchControlsEnabled": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Hint": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:HopperBin": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:HttpService.GetSecret": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Humanoid.AddCustomStatus": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Humanoid.ApplyDescription": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Humanoid.LoadAnimation": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Humanoid.PlayEmote": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Instance.Remove": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Instance.findFirstChild": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Instance.remove": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Lighting.ExtendLightRangeTo120": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Lighting.LightingStyle": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md",
+    "references/ai-failure-modes.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Lighting.Outlines": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Lighting.Technology": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:MarketplaceService.GetProductInfo": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:MarketplaceService.PlayerOwnsAsset": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:MarketplaceService.ProcessReceipt": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/ai-failure-modes.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:MarketplaceService.UserOwnsGamePassAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:MeshPart.MeshId": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/ai-failure-modes.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Message": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Model.GetPrimaryPartCFrame": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Model.MakeJoints": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Model.SetPrimaryPartCFrame": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Mouse.KeyDown": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:ParticleEmitter": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/limits.md"
+   ]
+  },
+  "api:Path.ComputeAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:PathfindingService.ComputeRawPathAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:PhysicsService.CreateCollisionGroup": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:PhysicsService.SetPartCollisionGroup": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.IsFriendsWith": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.IsFriendsWithAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.IsInGroup": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.IsInGroupAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.LoadCharacter": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.LoadCharacterAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.SaveNumber": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.WaitForDataReady": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Players": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/service-map.md"
+   ]
+  },
+  "api:Players.GetHumanoidDescriptionFromUserId": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:RaycastParams.ExcludeInstances": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:RaycastParams.FilterDescendantsInstances": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:RunService": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/service-map.md"
+   ]
+  },
+  "api:RunService.PreRender": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:RunService.PreSimulation": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:RunService.RenderStepped": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:RunService.Stepped": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:ScreenGui.ScreenInsets": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Script.Source": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/ai-failure-modes.md"
+   ]
+  },
+  "api:Sound.EmitterSize": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Sound.MaxDistance": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Sound.Pitch": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:StarterGui.ResetPlayerGuiOnSpawn": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:SurfaceAppearance.Color": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:SurfaceAppearance.ColorMap": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.ReserveServer": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.ReserveServerAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.Teleport": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.TeleportAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Terrain.SetCell": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Terrain.WriteVoxels": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TextChatService.ChatVersion": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TextLabel.FontSize": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TextLabel.TextWrap": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TextService.FilterStringAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TriangleMeshPart.CollisionFidelity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:UIDragDetector": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:UserInputService.ModalEnabled": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Workspace.FilteringEnabled": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Workspace.GetServerTimeNow": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Workspace.SignalBehavior": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Workspace.StreamingEnabled": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Workspace.StreamingIntegrityMode": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Workspace.StreamingPauseMode": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:WorldRoot.FindPartOnRay": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:WorldRoot.FindPartsInRegion3": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:WorldRoot.GetPartBoundsInBox": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:WorldRoot.Raycast": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:delay": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:spawn": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:table.foreach": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:table.getn": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:tick": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:wait": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:ypcall": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508",
+   "commit_date": "2026-09-24T17:25:17-05:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:animation/events": {
+   "url": "https://create.roblox.com/docs/animation/events",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:animation/graph-editor": {
+   "url": "https://create.roblox.com/docs/animation/graph-editor",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:animation/inverse-kinematics": {
+   "url": "https://create.roblox.com/docs/animation/inverse-kinematics",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:animation/using": {
+   "url": "https://create.roblox.com/docs/animation/using",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md",
+    "recipes/gameplay/melee-combat.md",
+    "references/debugging-playbook.md"
+   ]
+  },
+  "cd:art/modeling/material-reference": {
+   "url": "https://create.roblox.com/docs/art/modeling/material-reference",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md",
+    "recipes/graphics/industrial-warehouse.md",
+    "recipes/graphics/poolrooms.md"
+   ]
+  },
+  "cd:art/modeling/surface-appearance": {
+   "url": "https://create.roblox.com/docs/art/modeling/surface-appearance",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md",
+    "references/ai-failure-modes.md",
+    "references/anti-patterns.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:art/modeling/texture-specifications": {
+   "url": "https://create.roblox.com/docs/art/modeling/texture-specifications",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:audio/assets": {
+   "url": "https://create.roblox.com/docs/audio/assets",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md"
+   ]
+  },
+  "cd:audio/effects": {
+   "url": "https://create.roblox.com/docs/audio/effects",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md",
+    "recipes/graphics/poolrooms.md"
+   ]
+  },
+  "cd:audio/index": {
+   "url": "https://create.roblox.com/docs/audio",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md",
+    "recipes/gameplay/footsteps.md",
+    "recipes/graphics/cinematic-horror-interior.md"
+   ]
+  },
+  "cd:audio/objects": {
+   "url": "https://create.roblox.com/docs/audio/objects",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md",
+    "recipes/gameplay/footsteps.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/README.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:characters/character-controller-library/index": {
+   "url": "https://create.roblox.com/docs/characters/character-controller-library",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/13-character-controllers.md"
+   ]
+  },
+  "cd:characters/character-controller-library/quick-start": {
+   "url": "https://create.roblox.com/docs/characters/character-controller-library/quick-start",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/13-character-controllers.md"
+   ]
+  },
+  "cd:characters/index": {
+   "url": "https://create.roblox.com/docs/characters",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/13-character-controllers.md",
+    "recipes/gameplay/health-damage.md",
+    "recipes/gameplay/ragdoll.md"
+   ]
+  },
+  "cd:characters/pathfinding": {
+   "url": "https://create.roblox.com/docs/characters/pathfinding",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/12-procedural-generation.md",
+    "handbook/roblox/20-npc-ai.md",
+    "recipes/gameplay/npc-chase.md",
+    "recipes/gameplay/npc-patrol.md"
+   ]
+  },
+  "cd:chat/in-experience-text-chat": {
+   "url": "https://create.roblox.com/docs/chat/in-experience-text-chat",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:cloud-services/cross-server-messaging": {
+   "url": "https://create.roblox.com/docs/cloud-services/cross-server-messaging",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "recipes/gameplay/matchmaking-queue.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:cloud-services/data-stores-vs-memory-stores": {
+   "url": "https://create.roblox.com/docs/cloud-services/data-stores-vs-memory-stores",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md"
+   ]
+  },
+  "cd:cloud-services/data-stores/best-practices": {
+   "url": "https://create.roblox.com/docs/cloud-services/data-stores/best-practices",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/04-patterns-data.md",
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md",
+    "references/anti-patterns.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/README.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:cloud-services/data-stores/error-codes-and-limits": {
+   "url": "https://create.roblox.com/docs/cloud-services/data-stores/error-codes-and-limits",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md",
+    "references/anti-patterns.md",
+    "references/debugging-playbook.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:cloud-services/data-stores/index": {
+   "url": "https://create.roblox.com/docs/cloud-services/data-stores",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:cloud-services/data-stores/player-data-purchasing": {
+   "url": "https://create.roblox.com/docs/cloud-services/data-stores/player-data-purchasing",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/05-coroutines-task-errors.md",
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:cloud-services/data-stores/right-to-be-forgotten": {
+   "url": "https://create.roblox.com/docs/cloud-services/data-stores/right-to-be-forgotten",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md"
+   ]
+  },
+  "cd:cloud-services/data-stores/versioning-listing-and-caching": {
+   "url": "https://create.roblox.com/docs/cloud-services/data-stores/versioning-listing-and-caching",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md",
+    "references/ai-failure-modes.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:cloud-services/memory-stores/best-practices": {
+   "url": "https://create.roblox.com/docs/cloud-services/memory-stores/best-practices",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:cloud-services/memory-stores/hash-map": {
+   "url": "https://create.roblox.com/docs/cloud-services/memory-stores/hash-map",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "recipes/gameplay/matchmaking-queue.md"
+   ]
+  },
+  "cd:cloud-services/memory-stores/index": {
+   "url": "https://create.roblox.com/docs/cloud-services/memory-stores",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "recipes/gameplay/matchmaking-queue.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:cloud-services/memory-stores/per-partition-limits": {
+   "url": "https://create.roblox.com/docs/cloud-services/memory-stores/per-partition-limits",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md"
+   ]
+  },
+  "cd:cloud-services/memory-stores/queue": {
+   "url": "https://create.roblox.com/docs/cloud-services/memory-stores/queue",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md"
+   ]
+  },
+  "cd:cloud-services/memory-stores/sorted-map": {
+   "url": "https://create.roblox.com/docs/cloud-services/memory-stores/sorted-map",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "recipes/gameplay/matchmaking-queue.md"
+   ]
+  },
+  "cd:cloud-services/secrets": {
+   "url": "https://create.roblox.com/docs/cloud-services/secrets",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/01-runtime-architecture.md",
+    "handbook/roblox/04-security.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:effects/beams": {
+   "url": "https://create.roblox.com/docs/effects/beams",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/06-vfx-particles.md"
+   ]
+  },
+  "cd:effects/highlighting": {
+   "url": "https://create.roblox.com/docs/effects/highlighting",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/03-local-lights.md",
+    "handbook/graphics/06-vfx-particles.md",
+    "references/anti-patterns.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:effects/light-sources": {
+   "url": "https://create.roblox.com/docs/effects/light-sources",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md",
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/flickering-fluorescent.md",
+    "recipes/graphics/realistic-dark-corridor.md",
+    "recipes/graphics/realistic-flashlight.md"
+   ]
+  },
+  "cd:effects/particle-emitters": {
+   "url": "https://create.roblox.com/docs/effects/particle-emitters",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/06-vfx-particles.md"
+   ]
+  },
+  "cd:effects/trails": {
+   "url": "https://create.roblox.com/docs/effects/trails",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/06-vfx-particles.md"
+   ]
+  },
+  "cd:environment/atmosphere": {
+   "url": "https://create.roblox.com/docs/environment/atmosphere",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/fog.md",
+    "recipes/graphics/night-exterior.md",
+    "recipes/graphics/sunset.md"
+   ]
+  },
+  "cd:environment/clouds": {
+   "url": "https://create.roblox.com/docs/environment/clouds",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/night-exterior.md"
+   ]
+  },
+  "cd:environment/global-wind": {
+   "url": "https://create.roblox.com/docs/environment/global-wind",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "handbook/roblox/11-terrain.md"
+   ]
+  },
+  "cd:environment/lighting": {
+   "url": "https://create.roblox.com/docs/environment/lighting",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/industrial-warehouse.md",
+    "recipes/graphics/lighting-controller-presets.md",
+    "recipes/graphics/night-exterior.md",
+    "recipes/graphics/sunset.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/README.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:environment/post-processing-effects": {
+   "url": "https://create.roblox.com/docs/environment/post-processing-effects",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/camera-aesthetics.md"
+   ]
+  },
+  "cd:environment/skybox": {
+   "url": "https://create.roblox.com/docs/environment/skybox",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/night-exterior.md"
+   ]
+  },
+  "cd:input/gamepad": {
+   "url": "https://create.roblox.com/docs/input/gamepad",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md",
+    "recipes/gameplay/settings-menu.md"
+   ]
+  },
+  "cd:input/index": {
+   "url": "https://create.roblox.com/docs/input",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md"
+   ]
+  },
+  "cd:input/input-action-system": {
+   "url": "https://create.roblox.com/docs/input/input-action-system",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/05-server-authority.md",
+    "handbook/roblox/19-input.md",
+    "recipes/gameplay/sprint-crouch-stamina.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:input/mobile": {
+   "url": "https://create.roblox.com/docs/input/mobile",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md"
+   ]
+  },
+  "cd:input/mouse-and-keyboard": {
+   "url": "https://create.roblox.com/docs/input/mouse-and-keyboard",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md"
+   ]
+  },
+  "cd:luau/metatables": {
+   "url": "https://create.roblox.com/docs/luau/metatables",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/04-patterns-data.md"
+   ]
+  },
+  "cd:luau/native-code-gen": {
+   "url": "https://create.roblox.com/docs/luau/native-code-gen",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/06-performance-memory.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:luau/numbers": {
+   "url": "https://create.roblox.com/docs/luau/numbers",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/01-language-core.md"
+   ]
+  },
+  "cd:luau/tables": {
+   "url": "https://create.roblox.com/docs/luau/tables",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/01-language-core.md",
+    "handbook/luau/04-patterns-data.md"
+   ]
+  },
+  "cd:luau/type-checking": {
+   "url": "https://create.roblox.com/docs/luau/type-checking",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  },
+  "cd:luau/variables": {
+   "url": "https://create.roblox.com/docs/luau/variables",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md"
+   ]
+  },
+  "cd:matchmaking/index": {
+   "url": "https://create.roblox.com/docs/matchmaking",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "recipes/gameplay/matchmaking-queue.md"
+   ]
+  },
+  "cd:parts/materials": {
+   "url": "https://create.roblox.com/docs/parts/materials",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md",
+    "handbook/graphics/05-environment-art.md",
+    "recipes/graphics/industrial-warehouse.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:parts/meshes": {
+   "url": "https://create.roblox.com/docs/parts/meshes",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md"
+   ]
+  },
+  "cd:parts/procedural-models": {
+   "url": "https://create.roblox.com/docs/parts/procedural-models",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/12-procedural-generation.md"
+   ]
+  },
+  "cd:parts/terrain": {
+   "url": "https://create.roblox.com/docs/parts/terrain",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/11-terrain.md",
+    "recipes/graphics/poolrooms.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:parts/textures-decals": {
+   "url": "https://create.roblox.com/docs/parts/textures-decals",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md"
+   ]
+  },
+  "cd:performance-optimization/design": {
+   "url": "https://create.roblox.com/docs/performance-optimization/design",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/07-quality-tiers.md",
+    "handbook/roblox/08-performance.md",
+    "recipes/graphics/heavy-scene-performance-pass.md"
+   ]
+  },
+  "cd:performance-optimization/identify": {
+   "url": "https://create.roblox.com/docs/performance-optimization/identify",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md",
+    "recipes/graphics/heavy-scene-performance-pass.md"
+   ]
+  },
+  "cd:performance-optimization/improve": {
+   "url": "https://create.roblox.com/docs/performance-optimization/improve",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md",
+    "handbook/graphics/03-local-lights.md",
+    "handbook/graphics/04-materials-pbr.md",
+    "handbook/graphics/05-environment-art.md",
+    "handbook/graphics/06-vfx-particles.md",
+    "handbook/graphics/07-quality-tiers.md",
+    "handbook/roblox/08-performance.md",
+    "handbook/roblox/10-streaming.md",
+    "handbook/roblox/12-procedural-generation.md",
+    "handbook/roblox/16-animation.md",
+    "handbook/roblox/20-npc-ai.md",
+    "handbook/roblox/22-code-quality.md",
+    "recipes/gameplay/door-system.md",
+    "recipes/gameplay/npc-patrol.md",
+    "recipes/gameplay/object-pooling.md",
+    "recipes/gameplay/procedural-backrooms.md",
+    "recipes/gameplay/round-manager.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
+    "references/anti-patterns.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:performance-optimization/index": {
+   "url": "https://create.roblox.com/docs/performance-optimization",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md"
+   ]
+  },
+  "cd:performance-optimization/microprofiler/index": {
+   "url": "https://create.roblox.com/docs/performance-optimization/microprofiler",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md"
+   ]
+  },
+  "cd:performance-optimization/microprofiler/network": {
+   "url": "https://create.roblox.com/docs/performance-optimization/microprofiler/network",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/03-networking.md"
+   ]
+  },
+  "cd:performance-optimization/microprofiler/tag-table": {
+   "url": "https://create.roblox.com/docs/performance-optimization/microprofiler/tag-table",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md"
+   ]
+  },
+  "cd:performance-optimization/microprofiler/task-scheduler": {
+   "url": "https://create.roblox.com/docs/performance-optimization/microprofiler/task-scheduler",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/05-coroutines-task-errors.md"
+   ]
+  },
+  "cd:performance-optimization/microprofiler/use-microprofiler": {
+   "url": "https://create.roblox.com/docs/performance-optimization/microprofiler/use-microprofiler",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md",
+    "recipes/gameplay/object-pooling.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
+    "references/debugging-playbook.md"
+   ]
+  },
+  "cd:performance-optimization/scene-analysis": {
+   "url": "https://create.roblox.com/docs/performance-optimization/scene-analysis",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md"
+   ]
+  },
+  "cd:performance-optimization/test-on-hardware": {
+   "url": "https://create.roblox.com/docs/performance-optimization/test-on-hardware",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/07-quality-tiers.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/heavy-scene-performance-pass.md"
+   ]
+  },
+  "cd:physics/adaptive-timestepping": {
+   "url": "https://create.roblox.com/docs/physics/adaptive-timestepping",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md",
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:physics/assemblies": {
+   "url": "https://create.roblox.com/docs/physics/assemblies",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:physics/constraints/align-position": {
+   "url": "https://create.roblox.com/docs/physics/constraints/align-position",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:physics/constraints/ball-socket": {
+   "url": "https://create.roblox.com/docs/physics/constraints/ball-socket",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/15-combat.md",
+    "recipes/gameplay/ragdoll.md"
+   ]
+  },
+  "cd:physics/constraints/linear-velocity": {
+   "url": "https://create.roblox.com/docs/physics/constraints/linear-velocity",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:physics/constraints/no-collision": {
+   "url": "https://create.roblox.com/docs/physics/constraints/no-collision",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/ragdoll.md"
+   ]
+  },
+  "cd:physics/index": {
+   "url": "https://create.roblox.com/docs/physics",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:physics/mechanical-constraints": {
+   "url": "https://create.roblox.com/docs/physics/mechanical-constraints",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:physics/mover-constraints": {
+   "url": "https://create.roblox.com/docs/physics/mover-constraints",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md",
+    "handbook/roblox/15-combat.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/README.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:physics/network-ownership": {
+   "url": "https://create.roblox.com/docs/physics/network-ownership",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/04-security.md",
+    "handbook/roblox/09-physics.md",
+    "handbook/roblox/20-npc-ai.md",
+    "recipes/gameplay/npc-patrol.md",
+    "recipes/gameplay/projectile-weapon.md",
+    "recipes/gameplay/ragdoll.md",
+    "recipes/gameplay/sprint-crouch-stamina.md"
+   ]
+  },
+  "cd:physics/sleep-system": {
+   "url": "https://create.roblox.com/docs/physics/sleep-system",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md",
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:physics/units": {
+   "url": "https://create.roblox.com/docs/physics/units",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/05-environment-art.md",
+    "handbook/roblox/09-physics.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:players/index": {
+   "url": "https://create.roblox.com/docs/players",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md"
+   ]
+  },
+  "cd:production/monetization/developer-products": {
+   "url": "https://create.roblox.com/docs/production/monetization/developer-products",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md"
+   ]
+  },
+  "cd:production/publishing/accessibility": {
+   "url": "https://create.roblox.com/docs/production/publishing/accessibility",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/07-quality-tiers.md",
+    "handbook/roblox/14-camera.md",
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/bodycam-camera.md",
+    "recipes/gameplay/settings-menu.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/flickering-fluorescent.md"
+   ]
+  },
+  "cd:projects/assets/privacy": {
+   "url": "https://create.roblox.com/docs/projects/assets/privacy",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:projects/client-server": {
+   "url": "https://create.roblox.com/docs/projects/client-server",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/01-runtime-architecture.md",
+    "handbook/roblox/03-networking.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:projects/cross-platform": {
+   "url": "https://create.roblox.com/docs/projects/cross-platform",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/07-quality-tiers.md",
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:projects/data-model": {
+   "url": "https://create.roblox.com/docs/projects/data-model",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/01-runtime-architecture.md",
+    "references/service-map.md"
+   ]
+  },
+  "cd:projects/external-tools": {
+   "url": "https://create.roblox.com/docs/projects/external-tools",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/21-architecture.md",
+    "handbook/roblox/23-tooling-testing.md"
+   ]
+  },
+  "cd:projects/server-authority/index": {
+   "url": "https://create.roblox.com/docs/projects/server-authority",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/05-server-authority.md",
+    "handbook/roblox/19-input.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:projects/server-authority/techniques": {
+   "url": "https://create.roblox.com/docs/projects/server-authority/techniques",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/05-server-authority.md",
+    "handbook/roblox/15-combat.md",
+    "handbook/roblox/16-animation.md",
+    "recipes/gameplay/projectile-weapon.md"
+   ]
+  },
+  "cd:projects/teleport": {
+   "url": "https://create.roblox.com/docs/projects/teleport",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "recipes/gameplay/matchmaking-queue.md",
+    "references/ai-failure-modes.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/README.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/AnimationTrack": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AnimationTrack",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:reference/engine/classes/Animator": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Animator",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:reference/engine/classes/Atmosphere": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Atmosphere",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md",
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/fog.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/AudioEmitter": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AudioEmitter",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md",
+    "recipes/gameplay/footsteps.md"
+   ]
+  },
+  "cd:reference/engine/classes/AudioPlayer": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AudioPlayer",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md",
+    "recipes/gameplay/footsteps.md"
+   ]
+  },
+  "cd:reference/engine/classes/Beam": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Beam",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/06-vfx-particles.md"
+   ]
+  },
+  "cd:reference/engine/classes/BloomEffect": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/BloomEffect",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md"
+   ]
+  },
+  "cd:reference/engine/classes/Camera": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Camera",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/14-camera.md",
+    "recipes/gameplay/bodycam-camera.md",
+    "recipes/gameplay/hitscan-gun.md",
+    "recipes/graphics/camera-aesthetics.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/Clouds": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Clouds",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md"
+   ]
+  },
+  "cd:reference/engine/classes/CollectionService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/CollectionService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/21-architecture.md",
+    "recipes/gameplay/interaction-system.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/lighting-controller-presets.md"
+   ]
+  },
+  "cd:reference/engine/classes/ColorCorrectionEffect": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ColorCorrectionEffect",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/camera-aesthetics.md"
+   ]
+  },
+  "cd:reference/engine/classes/ColorGradingEffect": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ColorGradingEffect",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/camera-aesthetics.md"
+   ]
+  },
+  "cd:reference/engine/classes/ContentProvider": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ContentProvider",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/footsteps.md"
+   ]
+  },
+  "cd:reference/engine/classes/ContextActionService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ContextActionService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md",
+    "recipes/gameplay/inventory.md",
+    "recipes/gameplay/settings-menu.md"
+   ]
+  },
+  "cd:reference/engine/classes/ControllerManager": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ControllerManager",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/13-character-controllers.md"
+   ]
+  },
+  "cd:reference/engine/classes/DataStoreService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/DataStoreService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/save-system.md"
+   ]
+  },
+  "cd:reference/engine/classes/EditableImage": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/EditableImage",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/camera-aesthetics.md"
+   ]
+  },
+  "cd:reference/engine/classes/Explosion": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Explosion",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/06-vfx-particles.md"
+   ]
+  },
+  "cd:reference/engine/classes/ForceField": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ForceField",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/health-damage.md"
+   ]
+  },
+  "cd:reference/engine/classes/GlobalDataStore": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/GlobalDataStore",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md"
+   ]
+  },
+  "cd:reference/engine/classes/GroundController": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/GroundController",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/13-character-controllers.md"
+   ]
+  },
+  "cd:reference/engine/classes/GuiService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/GuiService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/07-quality-tiers.md",
+    "recipes/gameplay/bodycam-camera.md",
+    "recipes/gameplay/settings-menu.md",
+    "recipes/graphics/flickering-fluorescent.md"
+   ]
+  },
+  "cd:reference/engine/classes/Humanoid": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Humanoid",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/13-character-controllers.md",
+    "handbook/roblox/15-combat.md",
+    "handbook/roblox/20-npc-ai.md",
+    "recipes/gameplay/footsteps.md",
+    "recipes/gameplay/health-damage.md",
+    "recipes/gameplay/npc-chase.md",
+    "recipes/gameplay/npc-patrol.md",
+    "recipes/gameplay/ragdoll.md",
+    "recipes/gameplay/sprint-crouch-stamina.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/IKControl": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/IKControl",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:reference/engine/classes/InputAction": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/InputAction",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md",
+    "recipes/gameplay/sprint-crouch-stamina.md"
+   ]
+  },
+  "cd:reference/engine/classes/InputBinding": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/InputBinding",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md",
+    "recipes/gameplay/sprint-crouch-stamina.md"
+   ]
+  },
+  "cd:reference/engine/classes/InputContext": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/InputContext",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/19-input.md"
+   ]
+  },
+  "cd:reference/engine/classes/Instance": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Instance",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/22-code-quality.md"
+   ]
+  },
+  "cd:reference/engine/classes/Light": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Light",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/flickering-fluorescent.md"
+   ]
+  },
+  "cd:reference/engine/classes/Lighting": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Lighting",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md",
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/fog.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/lighting-controller-presets.md",
+    "recipes/graphics/realistic-dark-corridor.md",
+    "recipes/graphics/sunset.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/MarketplaceService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/MarketplaceService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/06-data-persistence.md",
+    "recipes/gameplay/save-system.md",
+    "references/ai-failure-modes.md"
+   ]
+  },
+  "cd:reference/engine/classes/MaterialService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/MaterialService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md"
+   ]
+  },
+  "cd:reference/engine/classes/MaterialVariant": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/MaterialVariant",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md"
+   ]
+  },
+  "cd:reference/engine/classes/MessagingService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/MessagingService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/Model": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Model",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/10-streaming.md"
+   ]
+  },
+  "cd:reference/engine/classes/Motor6D": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Motor6D",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/ragdoll.md"
+   ]
+  },
+  "cd:reference/engine/classes/ParticleEmitter": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ParticleEmitter",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/06-vfx-particles.md",
+    "recipes/gameplay/object-pooling.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/industrial-warehouse.md"
+   ]
+  },
+  "cd:reference/engine/classes/Path": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Path",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/20-npc-ai.md",
+    "recipes/gameplay/npc-patrol.md"
+   ]
+  },
+  "cd:reference/engine/classes/PathfindingLink": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/PathfindingLink",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/20-npc-ai.md"
+   ]
+  },
+  "cd:reference/engine/classes/PathfindingModifier": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/PathfindingModifier",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/20-npc-ai.md"
+   ]
+  },
+  "cd:reference/engine/classes/PathfindingService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/PathfindingService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/20-npc-ai.md",
+    "recipes/gameplay/npc-patrol.md"
+   ]
+  },
+  "cd:reference/engine/classes/PhysicsService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/PhysicsService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/Player": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Player",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/10-streaming.md",
+    "handbook/roblox/14-camera.md",
+    "handbook/roblox/15-combat.md",
+    "recipes/gameplay/hitscan-gun.md"
+   ]
+  },
+  "cd:reference/engine/classes/Players": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Players",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/04-security.md",
+    "recipes/gameplay/round-manager.md"
+   ]
+  },
+  "cd:reference/engine/classes/PointLight": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/PointLight",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/emergency-red-lighting.md"
+   ]
+  },
+  "cd:reference/engine/classes/ProximityPrompt": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ProximityPrompt",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/interaction-system.md"
+   ]
+  },
+  "cd:reference/engine/classes/ProximityPromptService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ProximityPromptService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/interaction-system.md"
+   ]
+  },
+  "cd:reference/engine/classes/RemoteEvent": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/RemoteEvent",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/03-networking.md",
+    "recipes/gameplay/network-rate-limiter.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/RemoteFunction": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/RemoteFunction",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/03-networking.md",
+    "recipes/gameplay/network-rate-limiter.md"
+   ]
+  },
+  "cd:reference/engine/classes/RunService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/RunService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/05-coroutines-task-errors.md",
+    "handbook/roblox/05-server-authority.md",
+    "handbook/roblox/14-camera.md",
+    "recipes/gameplay/bodycam-camera.md"
+   ]
+  },
+  "cd:reference/engine/classes/ScreenGui": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ScreenGui",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/inventory.md"
+   ]
+  },
+  "cd:reference/engine/classes/Sky": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Sky",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/night-exterior.md"
+   ]
+  },
+  "cd:reference/engine/classes/Sound": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Sound",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md"
+   ]
+  },
+  "cd:reference/engine/classes/SoundService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SoundService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md"
+   ]
+  },
+  "cd:reference/engine/classes/SpawnLocation": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SpawnLocation",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/round-manager.md"
+   ]
+  },
+  "cd:reference/engine/classes/SpotLight": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SpotLight",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/realistic-dark-corridor.md",
+    "recipes/graphics/realistic-flashlight.md"
+   ]
+  },
+  "cd:reference/engine/classes/SunRaysEffect": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SunRaysEffect",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/industrial-warehouse.md",
+    "recipes/graphics/sunset.md"
+   ]
+  },
+  "cd:reference/engine/classes/SurfaceAppearance": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SurfaceAppearance",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/03-local-lights.md",
+    "handbook/graphics/04-materials-pbr.md"
+   ]
+  },
+  "cd:reference/engine/classes/SurfaceLight": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SurfaceLight",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/03-local-lights.md",
+    "recipes/gameplay/procedural-backrooms.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/cinematic-horror-interior.md"
+   ]
+  },
+  "cd:reference/engine/classes/Team": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Team",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/health-damage.md"
+   ]
+  },
+  "cd:reference/engine/classes/TeleportOptions": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/TeleportOptions",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/matchmaking-queue.md"
+   ]
+  },
+  "cd:reference/engine/classes/TeleportService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/TeleportService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/07-cross-server.md",
+    "recipes/gameplay/matchmaking-queue.md"
+   ]
+  },
+  "cd:reference/engine/classes/Terrain": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Terrain",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/11-terrain.md",
+    "recipes/graphics/poolrooms.md"
+   ]
+  },
+  "cd:reference/engine/classes/TestService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/TestService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/23-tooling-testing.md"
+   ]
+  },
+  "cd:reference/engine/classes/TextService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/TextService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:reference/engine/classes/Texture": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Texture",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/poolrooms.md"
+   ]
+  },
+  "cd:reference/engine/classes/Tool": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Tool",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/gameplay/melee-combat.md"
+   ]
+  },
+  "cd:reference/engine/classes/Trail": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Trail",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/06-vfx-particles.md"
+   ]
+  },
+  "cd:reference/engine/classes/TweenService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/TweenService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/14-camera.md",
+    "recipes/gameplay/door-system.md",
+    "recipes/graphics/lighting-controller-presets.md"
+   ]
+  },
+  "cd:reference/engine/classes/UIGradient": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/UIGradient",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/camera-aesthetics.md"
+   ]
+  },
+  "cd:reference/engine/classes/UnreliableRemoteEvent": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/UnreliableRemoteEvent",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/03-networking.md",
+    "recipes/gameplay/hitscan-gun.md",
+    "recipes/gameplay/network-rate-limiter.md",
+    "recipes/graphics/realistic-flashlight.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/UserGameSettings": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/UserGameSettings",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/07-quality-tiers.md",
+    "recipes/graphics/graphics-presets.md"
+   ]
+  },
+  "cd:reference/engine/classes/UserInputService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/UserInputService",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/14-camera.md",
+    "handbook/roblox/19-input.md"
+   ]
+  },
+  "cd:reference/engine/classes/Wire": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Wire",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md",
+    "recipes/gameplay/footsteps.md"
+   ]
+  },
+  "cd:reference/engine/classes/Workspace": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Workspace",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/10-streaming.md",
+    "recipes/gameplay/procedural-backrooms.md",
+    "recipes/gameplay/projectile-weapon.md",
+    "recipes/gameplay/round-manager.md"
+   ]
+  },
+  "cd:reference/engine/classes/WorldRoot": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/WorldRoot",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md",
+    "handbook/roblox/12-procedural-generation.md",
+    "handbook/roblox/15-combat.md",
+    "recipes/gameplay/door-system.md",
+    "recipes/gameplay/hitscan-gun.md",
+    "recipes/gameplay/melee-combat.md",
+    "recipes/gameplay/npc-chase.md",
+    "recipes/gameplay/object-pooling.md",
+    "recipes/gameplay/projectile-weapon.md",
+    "recipes/gameplay/sprint-crouch-stamina.md"
+   ]
+  },
+  "cd:reference/engine/datatypes/CFrame": {
+   "url": "https://create.roblox.com/docs/reference/engine/datatypes/CFrame",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/datatypes/OverlapParams": {
+   "url": "https://create.roblox.com/docs/reference/engine/datatypes/OverlapParams",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:reference/engine/datatypes/Random": {
+   "url": "https://create.roblox.com/docs/reference/engine/datatypes/Random",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md",
+    "handbook/roblox/12-procedural-generation.md"
+   ]
+  },
+  "cd:reference/engine/datatypes/RaycastParams": {
+   "url": "https://create.roblox.com/docs/reference/engine/datatypes/RaycastParams",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md"
+   ]
+  },
+  "cd:reference/engine/datatypes/Region3": {
+   "url": "https://create.roblox.com/docs/reference/engine/datatypes/Region3",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/11-terrain.md"
+   ]
+  },
+  "cd:reference/engine/enums/AnimationPriority": {
+   "url": "https://create.roblox.com/docs/reference/engine/enums/AnimationPriority",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/16-animation.md"
+   ]
+  },
+  "cd:reference/engine/enums/HumanoidStateType": {
+   "url": "https://create.roblox.com/docs/reference/engine/enums/HumanoidStateType",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/13-character-controllers.md"
+   ]
+  },
+  "cd:reference/engine/enums/LightingStyle": {
+   "url": "https://create.roblox.com/docs/reference/engine/enums/LightingStyle",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md"
+   ]
+  },
+  "cd:reference/engine/enums/Technology": {
+   "url": "https://create.roblox.com/docs/reference/engine/enums/Technology",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/01-lighting.md"
+   ]
+  },
+  "cd:reference/engine/globals/LuaGlobals": {
+   "url": "https://create.roblox.com/docs/reference/engine/globals/LuaGlobals",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/01-language-core.md",
+    "handbook/luau/03-syntax-stdlib.md",
+    "recipes/gameplay/procedural-backrooms.md"
+   ]
+  },
+  "cd:reference/engine/globals/RobloxGlobals": {
+   "url": "https://create.roblox.com/docs/reference/engine/globals/RobloxGlobals",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md"
+   ]
+  },
+  "cd:reference/engine/libraries/buffer": {
+   "url": "https://create.roblox.com/docs/reference/engine/libraries/buffer",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md"
+   ]
+  },
+  "cd:reference/engine/libraries/math": {
+   "url": "https://create.roblox.com/docs/reference/engine/libraries/math",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md",
+    "handbook/roblox/12-procedural-generation.md"
+   ]
+  },
+  "cd:reference/engine/libraries/task": {
+   "url": "https://create.roblox.com/docs/reference/engine/libraries/task",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md",
+    "handbook/luau/05-coroutines-task-errors.md"
+   ]
+  },
+  "cd:reference/engine/libraries/vector": {
+   "url": "https://create.roblox.com/docs/reference/engine/libraries/vector",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md"
+   ]
+  },
+  "cd:resources/beyond-the-dark/building-architecture": {
+   "url": "https://create.roblox.com/docs/resources/beyond-the-dark/building-architecture",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/05-environment-art.md"
+   ]
+  },
+  "cd:resources/plant-reference-project": {
+   "url": "https://create.roblox.com/docs/resources/plant-reference-project",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/21-architecture.md"
+   ]
+  },
+  "cd:scripting/attributes": {
+   "url": "https://create.roblox.com/docs/scripting/attributes",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/01-runtime-architecture.md",
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/03-networking.md",
+    "recipes/gameplay/interaction-system.md",
+    "recipes/gameplay/inventory.md",
+    "recipes/gameplay/npc-chase.md",
+    "recipes/gameplay/round-manager.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/realistic-flashlight.md"
+   ]
+  },
+  "cd:scripting/events/bindable": {
+   "url": "https://create.roblox.com/docs/scripting/events/bindable",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/05-coroutines-task-errors.md"
+   ]
+  },
+  "cd:scripting/events/deferred": {
+   "url": "https://create.roblox.com/docs/scripting/events/deferred",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/05-coroutines-task-errors.md",
+    "handbook/roblox/02-lifecycle-events.md",
+    "handbook/roblox/05-server-authority.md",
+    "references/anti-patterns.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:scripting/events/remote": {
+   "url": "https://create.roblox.com/docs/scripting/events/remote",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/04-patterns-data.md",
+    "handbook/roblox/03-networking.md",
+    "recipes/gameplay/inventory.md",
+    "recipes/gameplay/network-rate-limiter.md",
+    "references/ai-failure-modes.md",
+    "references/debugging-playbook.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:scripting/locations": {
+   "url": "https://create.roblox.com/docs/scripting/locations",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/01-runtime-architecture.md",
+    "handbook/roblox/21-architecture.md",
+    "handbook/roblox/22-code-quality.md",
+    "references/ai-failure-modes.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:scripting/module": {
+   "url": "https://create.roblox.com/docs/scripting/module",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/21-architecture.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:scripting/multithreading": {
+   "url": "https://create.roblox.com/docs/scripting/multithreading",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/06-performance-memory.md",
+    "handbook/roblox/08-performance.md",
+    "handbook/roblox/11-terrain.md",
+    "handbook/roblox/12-procedural-generation.md",
+    "handbook/roblox/15-combat.md",
+    "handbook/roblox/20-npc-ai.md",
+    "references/anti-patterns.md"
+   ]
+  },
+  "cd:scripting/scheduler": {
+   "url": "https://create.roblox.com/docs/scripting/scheduler",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/05-coroutines-task-errors.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/README.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:scripting/security/access-control": {
+   "url": "https://create.roblox.com/docs/scripting/security/access-control",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/04-security.md",
+    "handbook/roblox/07-cross-server.md"
+   ]
+  },
+  "cd:scripting/security/client-server-boundary": {
+   "url": "https://create.roblox.com/docs/scripting/security/client-server-boundary",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/01-runtime-architecture.md",
+    "handbook/roblox/03-networking.md",
+    "handbook/roblox/04-security.md",
+    "handbook/roblox/15-combat.md",
+    "recipes/gameplay/health-damage.md",
+    "recipes/gameplay/interaction-system.md",
+    "recipes/gameplay/inventory.md",
+    "references/anti-patterns.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:scripting/security/defensive-design": {
+   "url": "https://create.roblox.com/docs/scripting/security/defensive-design",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/04-security.md"
+   ]
+  },
+  "cd:scripting/security/network-ownership": {
+   "url": "https://create.roblox.com/docs/scripting/security/network-ownership",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/04-security.md",
+    "handbook/roblox/05-server-authority.md",
+    "handbook/roblox/13-character-controllers.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:scripting/security/security-tactics": {
+   "url": "https://create.roblox.com/docs/scripting/security/security-tactics",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/04-security.md",
+    "handbook/roblox/15-combat.md",
+    "recipes/gameplay/hitscan-gun.md",
+    "recipes/gameplay/melee-combat.md",
+    "recipes/gameplay/network-rate-limiter.md",
+    "recipes/gameplay/sprint-crouch-stamina.md",
+    "references/anti-patterns.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:scripting/security/server-side-detection": {
+   "url": "https://create.roblox.com/docs/scripting/security/server-side-detection",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/04-security.md"
+   ]
+  },
+  "cd:scripting/security/third-party-vulnerabilities": {
+   "url": "https://create.roblox.com/docs/scripting/security/third-party-vulnerabilities",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/04-security.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:scripting/services": {
+   "url": "https://create.roblox.com/docs/scripting/services",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/01-runtime-architecture.md",
+    "handbook/roblox/22-code-quality.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/service-map.md"
+   ]
+  },
+  "cd:scripting/sync": {
+   "url": "https://create.roblox.com/docs/scripting/sync",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/23-tooling-testing.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:sound/dynamic-effects": {
+   "url": "https://create.roblox.com/docs/sound/dynamic-effects",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md"
+   ]
+  },
+  "cd:sound/groups": {
+   "url": "https://create.roblox.com/docs/sound/groups",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md"
+   ]
+  },
+  "cd:sound/index": {
+   "url": "https://create.roblox.com/docs/sound",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md"
+   ]
+  },
+  "cd:sound/objects": {
+   "url": "https://create.roblox.com/docs/sound/objects",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/17-audio.md"
+   ]
+  },
+  "cd:studio/debugging": {
+   "url": "https://create.roblox.com/docs/studio/debugging",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/23-tooling-testing.md",
+    "references/debugging-playbook.md"
+   ]
+  },
+  "cd:studio/developer-console": {
+   "url": "https://create.roblox.com/docs/studio/developer-console",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
+    "references/debugging-playbook.md"
+   ]
+  },
+  "cd:studio/device-simulator": {
+   "url": "https://create.roblox.com/docs/studio/device-simulator",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/23-tooling-testing.md"
+   ]
+  },
+  "cd:studio/material-generator": {
+   "url": "https://create.roblox.com/docs/studio/material-generator",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/04-materials-pbr.md"
+   ]
+  },
+  "cd:studio/mcp": {
+   "url": "https://create.roblox.com/docs/studio/mcp",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/23-tooling-testing.md"
+   ]
+  },
+  "cd:studio/network-simulator": {
+   "url": "https://create.roblox.com/docs/studio/network-simulator",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/15-combat.md",
+    "handbook/roblox/23-tooling-testing.md",
+    "recipes/gameplay/hitscan-gun.md",
+    "recipes/gameplay/network-rate-limiter.md"
+   ]
+  },
+  "cd:studio/optimization/memory-usage": {
+   "url": "https://create.roblox.com/docs/studio/optimization/memory-usage",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/06-performance-memory.md",
+    "handbook/roblox/08-performance.md"
+   ]
+  },
+  "cd:studio/optimization/scriptprofiler": {
+   "url": "https://create.roblox.com/docs/studio/optimization/scriptprofiler",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/06-performance-memory.md",
+    "handbook/roblox/08-performance.md",
+    "handbook/roblox/23-tooling-testing.md"
+   ]
+  },
+  "cd:studio/output": {
+   "url": "https://create.roblox.com/docs/studio/output",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "references/debugging-playbook.md"
+   ]
+  },
+  "cd:studio/properties": {
+   "url": "https://create.roblox.com/docs/studio/properties",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/02-lifecycle-events.md"
+   ]
+  },
+  "cd:studio/terrain-editor": {
+   "url": "https://create.roblox.com/docs/studio/terrain-editor",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/11-terrain.md"
+   ]
+  },
+  "cd:studio/testing-modes": {
+   "url": "https://create.roblox.com/docs/studio/testing-modes",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/23-tooling-testing.md",
+    "references/debugging-playbook.md",
+    "references/limits.md"
+   ]
+  },
+  "cd:tutorials/curriculums/environmental-art/develop-polished-assets": {
+   "url": "https://create.roblox.com/docs/tutorials/curriculums/environmental-art/develop-polished-assets",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/05-environment-art.md"
+   ]
+  },
+  "cd:tutorials/curriculums/environmental-art/greybox-your-environment": {
+   "url": "https://create.roblox.com/docs/tutorials/curriculums/environmental-art/greybox-your-environment",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/05-environment-art.md"
+   ]
+  },
+  "cd:tutorials/curriculums/environmental-art/optimize-your-experience": {
+   "url": "https://create.roblox.com/docs/tutorials/curriculums/environmental-art/optimize-your-experience",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/graphics/05-environment-art.md"
+   ]
+  },
+  "cd:tutorials/use-case-tutorials/lighting/enhance-indoor-environments": {
+   "url": "https://create.roblox.com/docs/tutorials/use-case-tutorials/lighting/enhance-indoor-environments",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/cinematic-horror-interior.md"
+   ]
+  },
+  "cd:ui/appearance-modifiers": {
+   "url": "https://create.roblox.com/docs/ui/appearance-modifiers",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/grid-table-layouts": {
+   "url": "https://create.roblox.com/docs/ui/grid-table-layouts",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/index": {
+   "url": "https://create.roblox.com/docs/ui",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/settings-menu.md"
+   ]
+  },
+  "cd:ui/labels": {
+   "url": "https://create.roblox.com/docs/ui/labels",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/list-flex-layouts": {
+   "url": "https://create.roblox.com/docs/ui/list-flex-layouts",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/on-screen-containers": {
+   "url": "https://create.roblox.com/docs/ui/on-screen-containers",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:ui/position-and-size": {
+   "url": "https://create.roblox.com/docs/ui/position-and-size",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/settings-menu.md"
+   ]
+  },
+  "cd:ui/proximity-prompts": {
+   "url": "https://create.roblox.com/docs/ui/proximity-prompts",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/door-system.md",
+    "recipes/gameplay/interaction-system.md"
+   ]
+  },
+  "cd:ui/rich-text": {
+   "url": "https://create.roblox.com/docs/ui/rich-text",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/scrolling-frames": {
+   "url": "https://create.roblox.com/docs/ui/scrolling-frames",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/size-modifiers": {
+   "url": "https://create.roblox.com/docs/ui/size-modifiers",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/inventory.md"
+   ]
+  },
+  "cd:ui/styling/css-comparisons": {
+   "url": "https://create.roblox.com/docs/ui/styling/css-comparisons",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/styling/index": {
+   "url": "https://create.roblox.com/docs/ui/styling",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:ui/text-filtering": {
+   "url": "https://create.roblox.com/docs/ui/text-filtering",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:workspace/camera/index": {
+   "url": "https://create.roblox.com/docs/workspace/camera",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/14-camera.md",
+    "recipes/gameplay/bodycam-camera.md"
+   ]
+  },
+  "cd:workspace/collisions": {
+   "url": "https://create.roblox.com/docs/workspace/collisions",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md",
+    "recipes/gameplay/door-system.md",
+    "recipes/gameplay/melee-combat.md"
+   ]
+  },
+  "cd:workspace/raycasting": {
+   "url": "https://create.roblox.com/docs/workspace/raycasting",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/09-physics.md",
+    "handbook/roblox/13-character-controllers.md",
+    "handbook/roblox/15-combat.md",
+    "recipes/gameplay/hitscan-gun.md",
+    "recipes/gameplay/interaction-system.md",
+    "recipes/gameplay/npc-chase.md",
+    "recipes/gameplay/projectile-weapon.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/README.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "cd:workspace/streaming/index": {
+   "url": "https://create.roblox.com/docs/workspace/streaming",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/10-streaming.md",
+    "recipes/gameplay/procedural-backrooms.md",
+    "recipes/graphics/fog.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
+    "references/debugging-playbook.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:workspace/streaming/slim": {
+   "url": "https://create.roblox.com/docs/workspace/streaming/slim",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/08-performance.md",
+    "handbook/roblox/10-streaming.md"
+   ]
+  },
+  "cd:workspace/streaming/techniques": {
+   "url": "https://create.roblox.com/docs/workspace/streaming/techniques",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/roblox/10-streaming.md",
+    "handbook/roblox/12-procedural-generation.md",
+    "recipes/gameplay/door-system.md"
+   ]
+  },
+  "luau:getting-started/compatibility": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/getting-started/compatibility.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/01-language-core.md"
+   ]
+  },
+  "luau:getting-started/syntax": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/getting-started/syntax.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/01-language-core.md",
+    "handbook/luau/03-syntax-stdlib.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
+   ]
+  },
+  "luau:guides/performance": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/guides/performance.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/01-language-core.md",
+    "handbook/luau/06-performance-memory.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "luau:guides/profile": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/guides/profile.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/06-performance-memory.md"
+   ]
+  },
+  "luau:reference/attributes": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/reference/attributes.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/03-syntax-stdlib.md"
+   ]
+  },
+  "luau:reference/library": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/reference/library.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/01-language-core.md",
+    "handbook/luau/03-syntax-stdlib.md",
+    "handbook/luau/04-patterns-data.md"
+   ]
+  },
+  "luau:types/basic-types": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/basic-types.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  },
+  "luau:types/generics": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/generics.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  },
+  "luau:types/object-oriented-programs": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/object-oriented-programs.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md",
+    "handbook/luau/04-patterns-data.md"
+   ]
+  },
+  "luau:types/overview": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/overview.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md",
+    "handbook/roblox/22-code-quality.md"
+   ]
+  },
+  "luau:types/refinements": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/refinements.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  },
+  "luau:types/roblox-types": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/roblox-types.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  },
+  "luau:types/tables": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/tables.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  },
+  "luau:types/type-functions": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/type-functions.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  },
+  "luau:types/unions-and-intersections": {
+   "url": "https://github.com/luau-lang/site/blob/07c3dcd990e170cce92bae9027e16c1377de5fb4/src/content/docs/types/unions-and-intersections.md",
+   "type": "official Luau documentation",
+   "repo_commit": "07c3dcd990e170cce92bae9027e16c1377de5fb4",
+   "commit_date": "2026-09-21T03:17:32-07:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "handbook/luau/02-types.md"
+   ]
+  }
+ }
+}

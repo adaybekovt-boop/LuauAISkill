@@ -1,0 +1,705 @@
+owner	member	kind	preferred	message
+AccessoryDescription	Puffiness	Property		
+AdGui	OnAdEvent	Callback		This callback has been deprecated and will never be called.
+AdService	ShowVideoAd	Function		`AdService.ShowVideoAd` has been decommissioned and is no longer operational.
+AdService	VideoAdClosed	Event		`AdService.VideoAdClosed` has been decommissioned and is no longer operational.
+AnalyticsService	ApiKey	Property		This property is deprecated. Do not use it for new work.
+AnalyticsService	FireCustomEvent	Function		This deprecated function is a variant of `AnalyticsService:LogCustomEvent()` which should be used instead.
+AnalyticsService	FireEvent	Function		This function has been deprecated in favor of more descriptive methods, including `AnalyticsService:LogCustomEvent()`, `AnalyticsService:LogEconomyEvent()`, and `AnalyticsService:LogProgressionEvent()`.
+AnalyticsService	FireInGameEconomyEvent	Function		This deprecated function is a variant of `AnalyticsService:LogEconomyEvent()` which should be used instead.
+AnalyticsService	FireLogEvent	Function		This method is deprecated. Do not use it for new work.
+AnalyticsService	FirePlayerProgressionEvent	Function		This deprecated function is a variant of `AnalyticsService:LogProgressionEvent()` which should be used instead.
+AnimationClipProvider	GetAnimationClip	Function	GetAnimationClipAsync	This function is deprecated and can lead to the game freezing until the animation is loaded. Developers are recommended to use `GetAnimationClipAsync` instead.
+AnimationClipProvider	GetAnimationClipById	Function	GetAnimationClipAsync	This function is deprecated and can lead to the game freezing until the animation is loaded. Developers are recommended to use `GetAnimationClipAsync` instead.
+AnimationClipProvider	GetAnimations	Function	GetAnimationsAsync	
+AnimationConstraint	C0	Property		
+AnimationConstraint	C1	Property		
+AnimationConstraint	Part0	Property		
+AnimationConstraint	Part1	Property		
+AnimationController	AnimationPlayed	Event	AnimationPlayed	
+AnimationController	GetPlayingAnimationTracks	Function	GetPlayingAnimationTracks	
+AnimationController	LoadAnimation	Function	LoadAnimation	This function is deprecated in favor of using `Animator:LoadAnimation()` directly (the `Animator` may be created while editing or at runtime).
+AnnotationsService	LoadResolvedAnnotations	Function		
+AssetImportService	UploadAssetFromContentAsync	Function	UploadVersionedAssetFromContentAsync	
+AssetImportService	UploadAssetFromPathAsync	Function	UploadVersionedAssetFromPathAsync	
+AssetService	GetAssetIdsForPackage	Function	GetAssetIdsForPackageAsync	Use `AssetService:GetAssetIdsForPackageAsync()` instead.
+AssetService	GetCreatorAssetID	Function	GetProductInfo	This item is deprecated and no longer functions correctly. Do not use it for new work.
+AssetService	SearchAudio	Function	SearchAudioAsync	Use `AssetService:SearchAudioAsync()` instead.
+Attachment	GetAxis	Function	Axis	This method is deprecated and should not be used in new work.
+Attachment	GetSecondaryAxis	Function	SecondaryAxis	This method is deprecated and should not be used in new work.
+Attachment	Rotation	Property	Orientation	This property is deprecated and should not be used in new work. See `Attachment.Orientation` instead.
+Attachment	SetAxis	Function	Axis	This method is deprecated and should not be used in new work.
+Attachment	SetSecondaryAxis	Function	SecondaryAxis	This method is deprecated and should not be used in new work.
+Attachment	WorldRotation	Property	WorldOrientation	This item has been superseded by `Attachment.WorldOrientation` which should be used in new work.
+AudioEmitter	SimulationFidelity	Property	AcousticSimulationEnabled	
+AudioListener	SimulationFidelity	Property	AcousticSimulationEnabled	
+AudioPlayer	AssetId	Property	Asset	This property is deprecated; use `AudioPlayer.Asset` instead.
+AudioSearchParams	AudioSubtype	Property	AudioSubType	Use `AudioSearchParams.AudioSubType` instead.
+AuroraScript		class		
+AuroraScriptObject		class		
+AuroraScriptService		class		
+AuroraService		class		
+AvatarEditorService	CheckApplyDefaultClothing	Function	CheckApplyDefaultClothingAsync	Deprecated in favor of `AvatarEditorService:CheckApplyDefaultClothingAsync()`. This method has the same behavior: it returns a new `HumanoidDescription` with the Shirt and Pants properties updated if necessary, or `nil` if default clothing was not needed. Default clothing is necessary if the HumanoidDescription does not currently have Shirt and Pants equipped and the body colors are too similar.
+AvatarEditorService	ConformToAvatarRules	Function	ConformToAvatarRulesAsync	Deprecated in favor of `AvatarEditorService:ConformToAvatarRulesAsync()`. Clones the given description and adjusts scale values, accessory counts, accessory adjustments, default clothing, and layered-clothing limits to comply with the platform Avatar rules. It also remaps classic face and classic head assets to their corresponding Dynamic Head asset IDs.
+AvatarEditorService	GetAvatarRules	Function	GetAvatarRulesAsync	Deprecated in favor of `AvatarEditorService:GetAvatarRulesAsync()`. This method has the same behavior: it returns a dictionary containing the platform Avatar rules. See `AvatarEditorService:GetAvatarRulesAsync()` for the response format.
+AvatarEditorService	GetBatchItemDetails	Function	GetBatchItemDetailsAsync	Deprecated in favor of `AvatarEditorService:GetBatchItemDetailsAsync()`. This method has the same behavior: it gets the item details for a list of items at once and returns an array of item details in the Item Details Response format.
+AvatarEditorService	GetFavorite	Function	GetFavoriteAsync	Deprecated in favor of `AvatarEditorService:GetFavoriteAsync()`. This method has the same behavior: it returns whether the `Players.LocalPlayer` has favorited the given bundle or asset.
+AvatarEditorService	GetInventory	Function	GetInventoryAsync	Deprecated in favor of `AvatarEditorService:GetInventoryAsync()`. This method has the same behavior: it returns an `InventoryPages` object with information about items owned by the `Players.LocalPlayer` that match the given `AvatarAssetType`. See `AvatarEditorService:GetInventoryAsync()` for the response format.
+AvatarEditorService	GetItemDetails	Function	GetItemDetailsAsync	Deprecated in favor of `AvatarEditorService:GetItemDetailsAsync()`. This method has the same behavior: it returns a table containing the item details for the given item. See `AvatarEditorService:GetItemDetailsAsync()` for the response format.
+AvatarEditorService	GetOutfitDetails	Function	GetOutfitDetailsAsync	Deprecated in favor of `AvatarEditorService:GetOutfitDetailsAsync()`. This method has the same behavior: it returns a table containing the outfit details for the given outfit. See `AvatarEditorService:GetOutfitDetailsAsync()` for the response format.
+AvatarEditorService	GetOutfits	Function	GetOutfitsAsync	Deprecated in favor of `AvatarEditorService:GetOutfitsAsync()`. This method has the same behavior: it returns outfit data for the `Players.LocalPlayer`. See `AvatarEditorService:GetOutfitsAsync()` for the response format.
+AvatarEditorService	GetRecommendedAssets	Function	GetRecommendedAssetsAsync	Deprecated in favor of `AvatarEditorService:GetRecommendedAssetsAsync()`. This method has the same behavior: it returns a list of recommended assets based on the given `AvatarAssetType` and context asset ID. See `AvatarEditorService:GetRecommendedAssetsAsync()` for the response format.
+AvatarEditorService	GetRecommendedBundles	Function	GetRecommendedBundlesAsync	Deprecated in favor of `AvatarEditorService:GetRecommendedBundlesAsync()`. This method has the same behavior: it returns a list of recommended bundles for a given bundle ID. See `AvatarEditorService:GetRecommendedBundlesAsync()` for the response format.
+AvatarEditorService	SearchCatalog	Function	SearchCatalogAsync	Deprecated in favor of `AvatarEditorService:SearchCatalogAsync()`. This method has the same behavior: it returns a `CatalogPages` object containing the result of the given search. See `AvatarEditorService:SearchCatalogAsync()` for details on the response format.
+BadgeService	AwardBadge	Function	AwardBadgeAsync	Use `BadgeService:AwardBadgeAsync()` instead.
+BadgeService	IsDisabled	Function		This function is deprecated. Do not use it for new work. Instead, it can be checked by calling BadgeService:GetBadgeInfoAsync() and checking the IsEnabled field.
+BadgeService	IsLegal	Function		This function is deprecated and will always return true. Do not use it for new work.
+BadgeService	UserHasBadge	Function		This method has been superseded by `BadgeService:UserHasBadgeAsync()` which should be used for new work instead.
+BasePart	BackParamA	Property		
+BasePart	BackParamB	Property		
+BasePart	BackSurfaceInput	Property		
+BasePart	BottomParamA	Property		
+BasePart	BottomParamB	Property		
+BasePart	BottomSurfaceInput	Property		
+BasePart	BreakJoints	Function		This method is deprecated. To break specific joints, iterate over the part's connections using `BasePart:GetJoints()` and call `Instance:Destroy()` on the joints you want to remove.
+BasePart	CollisionGroupId	Property	CollisionGroup	
+BasePart	Elasticity	Property		This is only one of multiple physics-related properties. It has been deprecated in favor of `BasePart.CustomPhysicalProperties`, which combines these properties into one.
+BasePart	Friction	Property		This is only one of multiple physics-related properties. It has been deprecated in favor of `BasePart.CustomPhysicalProperties`, which combines these properties into one.
+BasePart	FrontParamA	Property		
+BasePart	FrontParamB	Property		
+BasePart	FrontSurfaceInput	Property		
+BasePart	GetRenderCFrame	Function		This item is been deprecated since interpolation is now applied to the `CFrame` directly. Do not use it for new work.
+BasePart	GetRootPart	Function	AssemblyRootPart	
+BasePart	LeftParamA	Property		
+BasePart	LeftParamB	Property		
+BasePart	LeftSurfaceInput	Property		
+BasePart	LocalSimulationTouched	Event		This event is deprecated in favor of `BasePart.Touched`.
+BasePart	MakeJoints	Function		SurfaceType based joining is deprecated, do not use MakeJoints for new projects. `WeldConstraint` and `HingeConstraint` should be used instead.
+BasePart	OutfitChanged	Event		This event is deprecated. Do not use it for new work.
+BasePart	RightParamA	Property		
+BasePart	RightParamB	Property		
+BasePart	RightSurfaceInput	Property		
+BasePart	RotVelocity	Property	AssemblyAngularVelocity	This property is deprecated. Use `AssemblyAngularVelocity` instead.
+BasePart	SpecificGravity	Property	SpecificGravity	This item is deprecated. See `BasePart.CustomPhysicalProperties` to see how to configure the physical properties of BaseParts. Do not use it for new work.
+BasePart	StoppedTouching	Event	TouchEnded	This event is deprecated in favor of `BasePart.TouchEnded`, which should be used instead.
+BasePart	TopParamA	Property		
+BasePart	TopParamB	Property		
+BasePart	TopSurfaceInput	Property		
+BasePart	Velocity	Property	AssemblyLinearVelocity	This property is deprecated. Use `AssemblyLinearVelocity` instead.
+BasePart	breakJoints	Function	BreakJoints	This deprecated function is a variant of `BasePart:BreakJoints()` which should be used instead.
+BasePart	brickColor	Property	BrickColor	This deprecated property is an old Camel Case variant of the Pascal Case `BasePart.BrickColor`, which should be used instead.
+BasePart	getMass	Function	GetMass	This Camel Case property has been deprecated in favor of its Pascal Case variant, `BasePart:GetMass()`.
+BasePart	makeJoints	Function		This deprecated function is a variant of `BasePart:MakeJoints()` which should be used instead.
+BasePart	resize	Function	Resize	This deprecated function is a variant of `BasePart:Resize()` which should be used instead.
+BaseScript	LinkedSource	Property		This property is now replaced by [packages](../../../projects/assets/packages.md) which has greater functionality.
+BevelMesh		class		This object serves no purpose other than being an abstract class that `BlockMesh` and `CylinderMesh` inherit from. Note non-character beveled parts were removed in 2013. Developers looking for beveled edges are required to use either `UnionOperation` or `MeshPart`.
+BillboardGui	DistanceLowerLimit	Property		
+BillboardGui	DistanceUpperLimit	Property		
+BodyAngularVelocity		class		This object is deprecated and should not be used for new work. Use `AngularVelocity` instead, and see the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+BodyAngularVelocity	angularvelocity	Property	AngularVelocity	This deprecated property is a variant of `BodyAngularVelocity.AngularVelocity` which should be used instead.
+BodyAngularVelocity	maxTorque	Property	MaxTorque	This deprecated property is a variant of `BodyAngularVelocity.MaxTorque` which should be used instead.
+BodyForce		class		This object is deprecated and should not be used for new work. Use `VectorForce` instead, and see the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+BodyForce	force	Property	Force	This deprecated property is a variant of `BodyForce.Force` which should be used instead.
+BodyGyro		class		This object is deprecated and should not be used for new work. Use `AlignOrientation` instead, and see the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+BodyGyro	cframe	Property	CFrame	This property is a deprecated variant of `BodyGyro.CFrame` which should be used instead.
+BodyGyro	maxTorque	Property	MaxTorque	This property is a deprecated variant of `BodyGyro.MaxTorque` which should be used instead.
+BodyMover		class		This class has been deprecated. See the [mover constraints](../../../physics/mover-constraints.md) article for an overview of `BodyMover` replacements, as well as the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+BodyPosition		class		This object is deprecated and should not be used for new work. Use `AlignPosition` instead, and see the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+BodyPosition	lastForce	Function	GetLastForce	This property has been superseded by `BodyPosition:GetLastForce()` which should be used in new work instead,
+BodyPosition	maxForce	Property	MaxForce	This property is a deprecated variant of `BodyPosition.MaxForce` which should be used instead.
+BodyPosition	position	Property	Position	This is a deprecated variant of `BodyPosition.Position` which should be used instead.
+BodyThrust		class		This object is deprecated and should not be used for new work. Use `VectorForce` instead, and see the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+BodyThrust	force	Property	Force	This property is a deprecated variant of `BodyThrust.Force` which should be used instead.
+BodyThrust	location	Property	Location	This property is a deprecated variant of `BodyThrust.Location` which should be used instead.
+BodyVelocity		class		This object is deprecated and should not be used for new work. Use `LinearVelocity` instead, and see the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+BodyVelocity	maxForce	Property	MaxForce	This property is a deprecated variant of `BodyVelocity.MaxForce` which should be used instead.
+BodyVelocity	velocity	Property	Velocity	This property is a deprecated variant of `BodyVelocity.Velocity` which should be used instead.
+BoolValue	changed	Event	Changed	This event is a deprecated variant of `BoolValue.Changed` which should be used instead.
+BrickColorValue	changed	Event	Changed	This event is a deprecated variant of `BrickColorValue.Changed` which should be used instead.
+CFrameValue	changed	Event	Changed	This event is a deprecated variant of `CFrameValue.Changed` which should be used instead.
+Camera	CoordinateFrame	Property	CFrame	This item has been superseded by `Camera.CFrame` which should be used in all new work.
+Camera	GetLargestCutoffDistance	Function		This method is deprecated. Do not use it for new work.
+Camera	GetPanSpeed	Function		This method has been deprecated and no longer works. It should not be used in new work.
+Camera	GetTiltSpeed	Function		This method has been deprecated and no longer works.
+Camera	Interpolate	Function		This method has been deprecated. Instead use `TweenService` to smoothly animate the `Camera`, see the code snippets below for an example.
+Camera	PanUnits	Function		This method was used for legacy camera controls and has since been deprecated. Do not use in new work.
+Camera	SetCameraPanMode	Function		This method has been deprecated and should not be used in new work.
+Camera	TiltUnits	Function		This method was used for legacy camera controls and has been deprecated. Do not use in new work.
+Camera	focus	Property	Focus	This property is a deprecated variant of `Camera.Focus` which should be used instead.
+CaptureService	CaptureSaved	Event	UserCaptureSaved	This event has been superseded by the `CaptureService.UserCaptureSaved` event.
+Chat	FilterStringForPlayerAsync	Function	FilterStringAsync	This item has been superseded by `Chat:FilterStringAsync()` and `Chat:FilterStringForBroadcast()` which should be used in all new work
+ClickDetector	mouseClick	Event	MouseClick	This deprecated event is a variant of `ClickDetector.MouseClick`, which should be used instead.
+Collaborator	CollaboratorColor	Property	CollaboratorColor3	
+CollectionService	GetCollection	Function	GetTagged	This item has been superseded by a `CollectionService` tagging method. The equivalent function using the new method is `CollectionService:GetTagged()` which should be used in new work.
+CollectionService	ItemAdded	Event	GetInstanceAddedSignal	This item has been superseded by a `CollectionService` tagging method. There is currently no means of checking when a tag is added.
+CollectionService	ItemRemoved	Event	GetInstanceRemovedSignal	This item has been superseded by a `CollectionService` tagging method. There is currently no means of checking when a tag is removed.
+Color3Value	changed	Event	Changed	This deprecated event is a variant of `Color3Value.Changed` which should be used instead.
+Constraint	GetDebugAppliedForce	Function		This method should not be used in new work.
+Constraint	GetDebugAppliedTorque	Function		This method should not be used in new work.
+ContentProvider	Preload	Function	PreloadAsync	This item has been superseded by `ContentProvider:PreloadAsync()` which should be used in all new work.
+ContextActionService	BindActionToInputTypes	Function	BindAction	This item has been superseded by `ContextActionService:BindAction()` which should be used in all new work.
+Controller	bindButton	Function	BindButton	This function is a deprecated variant of `Controller:BindButton()` which should be used instead.
+Controller	getButton	Function	GetButton	This function is a deprecated variant of `Controller:GetButton()` which should be used instead.
+CustomEvent		class		`CustomEvent` have been superseded by `BindableEvent` and should not be used in new work.
+CustomEventReceiver		class		`CustomEvent` have been superseded by `BindableEvent` and should not be used in new work.
+CylinderMesh		class		This class is deprecated, and `CylinderMesh` are no longer supported. Do not use it for new work.
+CylindricalConstraint	SoftlockAngularServoUponReachingTarget	Property		This property should not be used in new work.
+DataModel	AllowedGearTypeChanged	Event		This item is deprecated . Do not use it for new work.
+DataModel	GameAvatarType	Property		
+DataModel	GearGenreSetting	Property		This property is deprecated and is no longer functional. It should not be used.
+DataModel	GetMessage	Function		This item is deprecated since the system was phased out a very long time ago, and recently the APIs for setting this message were removed.
+DataModel	GetRemoteBuildMode	Function		This item is deprecated. Use `RunService:IsServer()` to see if your code is running on the server.
+DataModel	IsGearTypeAllowed	Function		This property is deprecated and is no longer functional. It should not be used.
+DataModel	IsPioneerBuild	Property		
+DataModel	ItemChanged	Event		This function has been superseded by `Object.Changed`, which should be used in new work instead.
+DataModel	OnClose	Callback	BindToClose	This function is deprecated. It is recommended to use `DataModel:BindToClose()` instead.
+DataModel	PioneerSource	Property		
+DataModel	R15CollisionType	Property		
+DataModel	SavePlace	Function		This item is deprecated. Do not use it for new work.
+DataModel	VIPServerId	Property	PrivateServerId	This property has been deprecated. Use `DataModel.PrivateServerId` instead.
+DataModel	VIPServerOwnerId	Property	PrivateServerOwnerId	This property has been deprecated. Use `DataModel.PrivateServerOwnerId` instead.
+DataModel	lighting	Property		This item has been superseded by `ServiceProvider:GetService()`, which should be used instead.
+DataModel	workspace	Property	Workspace	This deprecated property is a variant of `DataModel.Workspace` which should be used instead.
+DataStore	RemoveVersionAsync	Function		This method is deprecated. Do not use it for new work.
+DataStoreService	LegacyNamingScheme	Property		
+Debris	MaxItems	Property		This property is deprecated and should not be used in new work.
+Debris	addItem	Function		This function is a deprecated variant of `Debris:AddItem()` which should be used instead.
+DebuggerManager	StepIn	Function		
+DebuggerManager	StepOut	Function		
+DebuggerManager	StepOver	Function		
+Decal	Shiny	Property		This non-functional property is deprecated and should not be used in new work.
+Decal	Specular	Property		This property no longer functions correctly and is deprecated. It should not be used in new work.
+DoubleConstrainedValue		class		The DoubleConstrainedValue object has been deprecated as developers can now use the `math.clamp()` function to constrain values.
+DoubleConstrainedValue	changed	Event	Changed	This event is a deprecated variant of `DoubleConstrainedValue.Changed` which has also been deprecated. Neither event should be used in new work.
+EditableMesh	GetFacesWithAttribute	Function		This method is deprecated. Do not use it for new work.
+EditableMesh	GetVerticesWithAttribute	Function		This method is deprecated. Do not use it for new work.
+Fire	size	Property	Size	This property is a deprecated variant of `Fire.Size` which should be used instead.
+Flag		class		The `Flag` and `FlagStand` objects were created to allow developers to make 'capture the flag' style games quickly. However they have been deprecated and developers are advised to design their own systems which will be more flexible and reliable.
+FlagStand		class		The FlagStand and Flag are deprecated objects that were used to make 'capture the flag' style games. Developers are advised to design their own systems which will be more flexible and reliable.
+FloorWire		class		The FloorWire object has been deprecated and should not be used in new work.
+FormFactorPart	FormFactor	Property		This property has been deprecated and should not be used in new work.
+FormFactorPart	formFactor	Property		This property has been deprecated and should not be used in new work.
+FunctionalTest		class		FunctionalTest has been deprecated, developers are advised to use `TestService` instead.
+GamePassService	PlayerHasPass	Function		
+GameSettings	VideoCaptureEnabled	Property		This property is deprecated. Do not use it for new work.
+GlobalDataStore	OnUpdate	Function		This function has been deprecated and should not be used in new work. You can use the `MessagingService` to publish and subscribe to topics to receive near real-time updates, completely replacing the need for this function.
+Glue		class		This joint type has been deprecated and should not be used in new work.
+GuiBase2d	Localize	Property	AutoLocalize	This item is deprecated. Do not use it for new work.
+GuiBase3d	Color	Property	Color3	This property has been deprecated in favor of `GuiBase3d.Color3`, which allows for greater color customization and should be used in new work instead.
+GuiMain		class		This deprecated class is the original name of the `ScreenGui`. It functions identically to the ScreenGui, and should not be used.
+GuiObject	BackgroundColor	Property		This property is deprecated in favor of the `Color3` property `GuiObject.BackgroundColor3`, which should be used in new work instead.
+GuiObject	BorderColor	Property		This property is deprecated in favor of the `Color3` property BorderColor3, which should be used in new work instead.
+GuiObject	DragBegin	Event		This property is deprecated. Use `UIDragDetector` instead, as it supports more input types and can be better customized.
+GuiObject	DragStopped	Event		This property is deprecated. Use `UIDragDetector` instead, as it supports more input types and can be better customized.
+GuiObject	Draggable	Property		This property is deprecated. Use `UIDragDetector` instead, as it supports more input types and can be better customized.
+GuiObject	Transparency	Property		This property is deprecated and indexing it will return `GuiObject.BackgroundTransparency`.
+GuiObject	TweenPosition	Function		This function is deprecated in favor of using `TweenService`, which allows for better customization using an object-oriented and event-based approach. - The `easingDirection`, `easingStyle`, and `time` parameters are handled by a `TweenInfo` - The `override` parameter is no longer relevant; tweens always override previous tweens on the same property. - The `callback` parameter is better suited by…
+GuiObject	TweenSize	Function		This function is deprecated in favor of using `TweenService`, which allows for better customization using an object-oriented and event-based approach. - The `easingDirection`, `easingStyle`, and `time` parameters are handled by a `TweenInfo` - The `override` parameter is no longer relevant; tweens always override previous tweens on the same property. - The `callback` parameter is better suited by…
+GuiObject	TweenSizeAndPosition	Function		This function is deprecated in favor of using `TweenService`, which allows for better customization using an object-oriented and event-based approach. - The `easingDirection`, `easingStyle`, and `time` parameters are handled by a `TweenInfo` - The `override` parameter is no longer relevant; tweens always override previous tweens on the same property. - The `callback` parameter is better suited by…
+GuiService	AddSelectionParent	Function	SelectionGroup	
+GuiService	AddSelectionTuple	Function	SelectionGroup	
+GuiService	BrowserWindowClosed	Event		
+GuiService	ErrorMessageChanged	Event	UiMessageChanged	
+GuiService	GetErrorMessage	Function	GetUiMessage	
+GuiService	IsModalDialog	Property		This item is deprecated. Do not use it for new work.
+GuiService	IsWindows	Property		This item is deprecated. Do not use it for new work.
+GuiService	OpenBrowserWindow	Function		
+GuiService	OpenNativeOverlay	Function		
+GuiService	RemoveSelectionGroup	Function	SelectionGroup	
+Hat		class		This class has been superseded by the `Accessory` class. Do not use it for new work.
+HingeConstraint	SoftlockServoUponReachingTarget	Property		This property should not be used in new work.
+Hint		class		With the introduction of Roblox's GUI features hints have been deprecated and `TextLabel` should be used instead for new work. The `TextLabel` object offers a wide range of features for displaying and customizing text that hints do not.
+Hole		class		A Hole is an unused type of surface joint. It should not be used in new work.
+Hopper		class		`Hopper` has been replaced by `StarterPack` and should not be used in new work.
+HopperBin		class		This deprecated class has been replaced by `Tool`. Please use Tool for new work instead.
+Humanoid	AddCustomStatus	Function		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	AddStatus	Function		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	AnimationPlayed	Event	AnimationPlayed	
+Humanoid	ApplyDescription	Function	ApplyDescriptionAsync	This method has been superseded by `Humanoid:ApplyDescriptionAsync()`.
+Humanoid	ApplyDescriptionReset	Function	ApplyDescriptionResetAsync	This method has been superseded by `Humanoid:ApplyDescriptionResetAsync()`.
+Humanoid	CollisionType	Property		
+Humanoid	CustomStatusAdded	Event		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	CustomStatusRemoved	Event		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	GetPlayingAnimationTracks	Function	GetPlayingAnimationTracks	
+Humanoid	GetStatuses	Function		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	HasCustomStatus	Function		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	HasStatus	Function		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	LeftLeg	Property		This instance only works with the old R6 rig. It will not work with the R15 rig and should not be used in new work not using the R6 rig.
+Humanoid	LoadAnimation	Function	LoadAnimation	This function is deprecated in favor of using `Animator:LoadAnimation()` directly (the `Animator` may be created while editing or at runtime).
+Humanoid	PlayEmote	Function	PlayEmoteAsync	This method has been superseded by `Humanoid:PlayEmoteAsync()`.
+Humanoid	RemoveCustomStatus	Function		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	RemoveStatus	Function		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	RightLeg	Property		This instance only works with the old R6 rig. It will not work with the R15 rig and should not be used in new work not using the R6 rig.
+Humanoid	StatusAdded	Event		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	StatusRemoved	Event		This item is deprecated, as it was a part of the unfinished RbxStatus library which would have allowed you to add conditions to a Humanoid. Do not use it for new work.
+Humanoid	Torso	Property		This instance only works with the old R6 rig. It will not work with the R15 rig and should not be used in new work not using the R6 rig.
+Humanoid	loadAnimation	Function	LoadAnimation	This deprecated method is a variant of `Humanoid:LoadAnimation()`. `Animator:LoadAnimation()` should be used instead.
+Humanoid	maxHealth	Property	MaxHealth	This deprecated property is a variant of `Humanoid.MaxHealth` which should be used instead.
+Humanoid	takeDamage	Function	TakeDamage	This deprecated method is a variant of `Humanoid:TakeDamage()`, which should be used instead.
+InputAction	Fire	Function	Fire	Use `InputBinding:Fire()` with a `InputBindingType` binding instead.
+InsertService	AllowInsertFreeModels	Property		This item was never released. Do not use it in new work.
+InsertService	ApproveAssetId	Function		This item is deprecated. Do not use it for new work.
+InsertService	ApproveAssetVersionId	Function		This item is deprecated. Do not use it for new work.
+InsertService	GetBaseCategories	Function	GetBaseSets	This item is deprecated. Do not use it for new work.
+InsertService	GetBaseSets	Function		[Sets have been removed](https://devforum.roblox.com/t/sunsetting-sets/189402) from Roblox.
+InsertService	GetCollection	Function		[Sets have been removed](https://devforum.roblox.com/t/sunsetting-sets/189402) from Roblox.
+InsertService	GetFreeDecals	Function	GetFreeDecalsAsync	Use `InsertService:GetFreeDecalsAsync()` instead.
+InsertService	GetFreeModels	Function	GetFreeModelsAsync	Use `InsertService:GetFreeModelsAsync()` instead.
+InsertService	GetUserCategories	Function	GetUserSets	This item is deprecated. Do not use it for new work.
+InsertService	GetUserSets	Function		[Sets have been removed](https://devforum.roblox.com/t/sunsetting-sets/189402) from Roblox.
+InsertService	Insert	Function		This function has been superseded by `InsertService:LoadAsset()` which should be used in all new work.
+InsertService	loadAsset	Function	LoadAsset	This function is a deprecated variant of `InsertService:LoadAsset()` which should be used instead.
+Instance	DataCost	Property		
+Instance	Remove	Function		This item is deprecated in favor of `Instance:Destroy()` and `Instance:ClearAllChildren()`. If you must remove an object from the game, and wish to use the object later, set its `Parent` property to `nil` instead of using this method.
+Instance	archivable	Property	Archivable	This deprecated property is a variant of `Instance.Archivable` which should be used instead.
+Instance	childAdded	Event	ChildAdded	This deprecated event is a variant of `Instance.ChildAdded` which should be used instead.
+Instance	children	Function	GetChildren	This item has been superseded by `Instance:GetChildren()` which should be used in all new work.
+Instance	clone	Function	Clone	This deprecated function is a variant of `Instance:Clone()` which should be used instead.
+Instance	destroy	Function	Destroy	This deprecated function is a variant of `Instance:Destroy()` which should be used instead.
+Instance	findFirstChild	Function	FindFirstChild	This deprecated function is a variant of `Instance:FindFirstChild()` which should be used instead.
+Instance	getChildren	Function	GetChildren	This deprecated function is a variant of `Instance:GetChildren()` which should be used instead.
+Instance	isDescendantOf	Function	IsDescendantOf	This deprecated function is a variant of `Instance:IsDescendantOf()` which should be used instead.
+Instance	remove	Function	Remove	This deprecated function is a variant of `Instance:Remove()` which has also been deprecated. Neither function should be used in new work.
+IntConstrainedValue		class		The IntConstrainedValue object has been deprecated as developers can now use the `math.clamp()` function to constrain values.
+IntConstrainedValue	changed	Event	Changed	This deprecated event is a variant of `IntConstrainedValue.Changed` which has also been deprecated. Neither event should be used in new work.
+IntValue	changed	Event	Changed	This deprecated event is a variant of `IntValue.Changed` which should be used instead.
+JointInstance	part1	Property	Part1	This deprecated property is a variant of `JointInstance.Part1` which should be used instead.
+JointsService		class		This service has been deprecated in favor of [constraints](../../../physics/mechanical-constraints.md) which should be used for surface connections instead
+KeyframeSequenceProvider	GetAnimations	Function	GetAnimationsAsync	
+KeyframeSequenceProvider	GetKeyframeSequence	Function	GetKeyframeSequenceAsync	This function is deprecated and can lead to the game freezing until the animation is loaded. Developers are recommended to use `KeyframeSequenceProvider:GetKeyframeSequenceAsync()` instead.
+KeyframeSequenceProvider	GetKeyframeSequenceById	Function	GetKeyframeSequenceAsync	This function is deprecated and can lead to the game freezing until the animation is loaded. Developers are recommended to use `KeyframeSequenceProvider:GetKeyframeSequenceAsync()` instead.
+LayerCollector	GetLayoutNodeTree	Function		This method should not be used for new work.
+Lighting	Outlines	Property		This item is no longer supported as the outlines feature was removed from the Roblox platform.
+Lighting	ShadowColor	Property		This item is deprecated and has no current functionality. Do not use it for new work.
+Lighting	getMinutesAfterMidnight	Function	GetMinutesAfterMidnight	This method is a deprecated variant of `Lighting:GetMinutesAfterMidnight()` which should be used instead.
+Lighting	setMinutesAfterMidnight	Function	SetMinutesAfterMidnight	This method is a deprecated variant of `Lighting:SetMinutesAfterMidnight()` which should be used instead.
+LocalizationService	GetTranslatorForPlayer	Function	GetTranslatorForPlayerAsync	This function has been deprecated by `LocalizationService:GetTranslatorForPlayerAsync()`, which functions similarly except that it yields until the cloud table has loaded. Please use it in new work instead.
+LocalizationTable	DevelopmentLanguage	Property	SourceLocaleId	This item has been superseded by `LocalizationTable.SourceLocaleId` which should be used in all new work.
+LocalizationTable	GetContents	Function	GetEntries	This item has been superseded by `LocalizationTable:GetEntries()` which should be used in all new work.
+LocalizationTable	GetString	Function	GetTranslator	This item has been superseded by `LocalizationTable:GetTranslator()` which should be used in all new work.
+LocalizationTable	RemoveKey	Function	RemoveEntry	This item has been superseded by `LocalizationTable:RemoveEntry()` which should be used in all new work
+LocalizationTable	Root	Property	RootLocalizationTable	This item is deprecated. Do not use it for new work.
+LocalizationTable	SetContents	Function	SetEntries	This item has been superseded by `LocalizationTable:SetEntries()` which should be used in all new work
+LocalizationTable	SetEntry	Function	SetEntryValue	This item has been superseded by `LocalizationTable:SetEntries()` which should be used in all new work.
+ManualGlue		class		
+ManualSurfaceJointInstance		class		
+ManualWeld		class		
+MarketplaceService	GetProductInfo	Function	GetProductInfoAsync	This method has been superseded by `MarketplaceService.GetProductInfoAsync`.
+MarketplaceService	PlayerOwnsAsset	Function	PlayerOwnsAssetAsync	This method has been superseded by `MarketplaceService:PlayerOwnsAssetAsync()`.
+MarketplaceService	PlayerOwnsBundle	Function	PlayerOwnsBundleAsync	This method has been superseded by `MarketplaceService:PlayerOwnsBundleAsync()`.
+MarketplaceService	PromptPremiumPurchase	Function	PromptRobloxSubscriptionPurchase	This method has been superseded by `MarketplaceService:PromptRobloxSubscriptionPurchase()`.
+MeshPart	HasJointOffset	Property		This property is deprecated and should not be used in new work.
+MeshPart	JointOffset	Property		This property is deprecated and should not be used in new work.
+MeshPart	MeshID	Property	MeshId	
+Message		class		With the introduction of Roblox's GUI features hints have been deprecated and `TextLabel` should be used instead for new work. The `TextLabel` object offers a wide range of features for displaying and customizing text that messages do not.
+Model	BreakJoints	Function		
+Model	GetModelCFrame	Function	GetPrimaryPartCFrame	This function has been deprecated as it did not provide reliable results. You can instead use `Model:GetPrimaryPartCFrame()` to retrieve the `CFrame` of the model's primary part.
+Model	GetModelSize	Function	GetExtentsSize	This item is deprecated. Do not use it for new work. Developers can instead use `Model.GetExtentsSize`.
+Model	GetPrimaryPartCFrame	Function	GetPivot	This function has been superseded by `PVInstance:GetPivot()` which acts as a replacement and does not change your code's behavior. Use `PVInstance:GetPivot()` for new work and migrate your existing `Model:GetPrimaryPartCFrame()` calls when convenient. Returns the `CFrame` of the model's `Model.PrimaryPart`. This function is equivalent to the following. Model.PrimaryPart.CFrame Note this function…
+Model	MakeJoints	Function		This joint type has been deprecated. Don't use it for new work. Use `WeldConstraint` and `HingeConstraint` instead.
+Model	ResetOrientationToIdentity	Function	SetPrimaryPartCFrame	This function has been deprecated; it remains to prevent legacy scripts from throwing errors, but it does nothing when called.
+Model	SetIdentityOrientation	Function	SetPrimaryPartCFrame	This function has been deprecated; it remains to prevent legacy scripts from throwing errors, but it does nothing when called.
+Model	SetPrimaryPartCFrame	Function	PivotTo	This function has been superseded by `PVInstance:PivotTo()` which acts as a more performant replacement and does not change your code's behavior. Use `PVInstance:PivotTo()` for new work and migrate your existing `Model:SetPrimaryPartCFrame()` calls when convenient. Sets the `BasePart.CFrame` of the model's `Model.PrimaryPart`. All other parts in the model will also be moved and will maintain thei…
+Model	breakJoints	Function	BreakJoints	This deprecated function is a variant of `Model:BreakJoints()` which should be used instead.
+Model	makeJoints	Function	MakeJoints	This deprecated function is a variant of `Model:MakeJoints()` which should be used instead.
+Model	move	Function	MoveTo	This item has been superseded by `Model:MoveTo()` which should be used in all new work
+Model	moveTo	Function	MoveTo	This deprecated function is a variant of `Model:MoveTo()` which should be used instead.
+ModuleScript	LinkedSource	Property		This property is now replaced by [packages](../../../projects/assets/packages.md) which has greater functionality.
+MotorFeature		class		A MotorFeature is an unused type of surface joint. It should not be used for new work.
+Mouse	KeyDown	Event	InputBegan	Mouse events have been superseded by `UserInputService` which should be used in all new work.
+Mouse	KeyUp	Event	InputEnded	Mouse events have been superseded by `UserInputService` which should be used in all new work.
+Mouse	hit	Property	Hit	This property is a deprecated variant of `Mouse.Hit` which should be used instead.
+Mouse	keyDown	Event	InputBegan	This event is a deprecated variant of `Mouse.KeyDown` which has also been deprecated. Neither event should be used in new work.
+Mouse	target	Property	Target	This property is a deprecated variant of `Mouse.Target` which should be used instead.
+NumberValue	changed	Event	Changed	This event is a deprecated variant of `NumberValue.Changed` which should be used instead.
+Object	className	Property	ClassName	This deprecated property is a variant of `Object.ClassName` which should be used instead.
+Object	isA	Function	IsA	This deprecated function is a variant of `Object:IsA()` which should be used instead.
+ObjectValue	changed	Event	Changed	This event is a deprecated variant of `ObjectValue.Changed` which should be used instead.
+OpenCloudApiV1		class		This class is deprecated and should not be used for new work. Use `HttpService` instead and see the [In-experience HTTP requests guide](../../../cloud-services/http-service.md).
+OpenCloudApiV1	CreateModel	Function		This method is deprecated. Do not use it for new work.
+OpenCloudApiV1	CreateUserNotificationAsync	Function		This method is deprecated. Do not use it for new work.
+OpenCloudService		class		This class is deprecated and should not be used for new work. Use `HttpService` instead and see the [In-experience HTTP requests guide](../../../cloud-services/http-service.md).
+OpenCloudService	GetApiV1	Function		This method is deprecated. Do not use it for new work.
+OpenCloudService	InvokeAsync	Function		This method is deprecated. Do not use it for new work.
+PartOperation	ManifoldMesh_DEPRECATED	Property		
+ParticleEmitter	VelocitySpread	Property	SpreadAngle	This property has been superseded by `ParticleEmitter.SpreadAngle` which should be used in all new work.
+Path	GetPointCoordinates	Function	GetWaypoints	This item has been superseded by `Path:GetWaypoints()` which should be used in all new work instead.
+PathfindingService	ComputeRawPathAsync	Function	FindPathAsync	This item has been superseded by `PathfindingService:FindPathAsync()` which should be used in all new work instead.
+PathfindingService	ComputeSmoothPathAsync	Function	FindPathAsync	This item has been superseded by `PathfindingService:FindPathAsync()` which should be used in all new work instead.
+PathfindingService	EmptyCutoff	Property		This property is deprecated, since the legacy pathfinding system using it has since been removed. Do not use it for new work.
+PhysicsService	CollisionGroupContainsPart	Function	CollisionGroup	This method has been deprecated. It's recommended that you query a part's collision group through its `BasePart.CollisionGroup` property.
+PhysicsService	CreateCollisionGroup	Function	RegisterCollisionGroup	This method has been superseded by `WorldRoot:RegisterCollisionGroup()` which should be used for all new work.
+PhysicsService	GetCollisionGroupId	Function	CollisionGroup	This method has been deprecated. It's recommended that you query collision groups by **name** through a part's `BasePart.CollisionGroup` property.
+PhysicsService	GetCollisionGroupName	Function	CollisionGroup	This method has been deprecated. It's recommended that you query collision groups by **name** through a part's `BasePart.CollisionGroup` property.
+PhysicsService	GetCollisionGroups	Function	GetRegisteredCollisionGroups	This method has been superseded by `WorldRoot:GetRegisteredCollisionGroups()` which should be used for all new work.
+PhysicsService	RemoveCollisionGroup	Function	UnregisterCollisionGroup	This method has been superseded by `WorldRoot:UnregisterCollisionGroup()` which should be used for all new work.
+PhysicsService	SetPartCollisionGroup	Function	CollisionGroup	This method has been deprecated. It's recommended that you set a part's collision group by **name** through its `BasePart.CollisionGroup` property.
+Plane		class		
+Player	AppearanceDidLoad	Property		
+Player	CharacterAppearance	Property	CharacterAppearanceId	This item is deprecated. Do not use it for new work.
+Player	DataComplexity	Property		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	DataComplexityLimit	Property		
+Player	DataReady	Property		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	GetFriendsOnline	Function	GetFriendsOnlineAsync	This method has been superseded by `Player:GetFriendsOnlineAsync()`.
+Player	GetRankInGroup	Function	GetRankInGroupAsync	This method has been superseded by `Player:GetRankInGroupAsync()`.
+Player	GetRankInGroupAsync	Function	GetRolesInGroupAsync	This method returns only the rank value of the member's highest public role. Use `GroupService:GetRolesInGroupAsync()` instead, which returns all public roles.
+Player	GetRoleInGroup	Function	GetRoleInGroupAsync	This method has been superseded by `Player.GetRoleInGroupAsync`.
+Player	GetRoleInGroupAsync	Function	GetRolesInGroupAsync	This method returns only the member's highest public role. Use `GroupService:GetRolesInGroupAsync()` instead, which returns all public roles.
+Player	IsBestFriendsWith	Function		This function is obsolete because the "best friends" feature was removed. Use `Player:IsFriendsWithAsync()` instead.
+Player	IsFriendsWith	Function	IsFriendsWithAsync	This method has been superseded by the `Player:IsFriendsWithAsync()` method which should be used for new work.
+Player	IsInGroup	Function	IsInGroupAsync	This method has been superseded by `Player.IsInGroupAsync`.
+Player	LoadBoolean	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	LoadCharacter	Function	LoadCharacterAsync	This method has been superseded by `Player:LoadCharacterAsync()`.
+Player	LoadCharacterAppearance	Function		This method is deprecated. Do not use it for new work.
+Player	LoadCharacterWithHumanoidDescription	Function	LoadCharacterWithHumanoidDescriptionAsync	This method has been superseded by `Player:LoadCharacterWithHumanoidDescriptionAsync()`.
+Player	LoadData	Function		
+Player	LoadInstance	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	LoadNumber	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	LoadString	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	SaveBoolean	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	SaveData	Function		
+Player	SaveInstance	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	SaveNumber	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	SaveString	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	SetUnder13	Function		
+Player	WaitForDataReady	Function		This item is deprecated, as it may have been used for a now obsolete data persistence method. Please save and load player data using `DataStoreService` for new work.
+Player	isFriendsWith	Function	IsFriendsWith	This method has been superseded by the `Player:IsFriendsWithAsync()` method which should be used for new work.
+Player	loadBoolean	Function	LoadBoolean	This deprecated function is a variant of `Player:LoadBoolean()` which has also been deprecated. Neither function should be used in new work.
+Player	loadInstance	Function	LoadInstance	This deprecated function is a variant of `Player:LoadInstance()` which has also been deprecated. Neither function should be used in new work.
+Player	loadNumber	Function	LoadNumber	This deprecated function is a variant of `Player:LoadNumber()` which has also been deprecated. Neither function should be used in new work.
+Player	loadString	Function	LoadString	This function is a deprecated variant of `Player:LoadString()` which has also been deprecated. Neither function should be used in new work.
+Player	saveBoolean	Function	SaveBoolean	This function is a deprecated variant of `Player:SaveBoolean()` which has also been deprecated. Neither function should be used in new work.
+Player	saveInstance	Function	SaveInstance	This function is a deprecated variant of `Player:SaveInstance()` which has also been deprecated. Neither function should be used in new work.
+Player	saveNumber	Function	SaveNumber	This function is a deprecated variant of `Player:SaveNumber()` which has also been deprecated. Neither function should be used in new work.
+Player	saveString	Function	SaveString	This function is a deprecated variant of `Player:SaveString()` which has also been deprecated. Neither function should be used in new work.
+Player	userId	Property	UserId	This property is a deprecated variant of `Player.UserId` which should be used instead.
+Player	waitForDataReady	Function	WaitForDataReady	This function is a deprecated variant of `Player:WaitForDataReady()` which has also been deprecated. Neither function should be used in new work.
+PlayerGui	GetTopbarTransparency	Function		
+PlayerGui	SetTopbarTransparency	Function		
+PlayerGui	TopbarTransparencyChangedSignal	Event		
+Players	CreateHumanoidModelFromDescription	Function	CreateHumanoidModelFromDescriptionAsync	This method has been superseded by `Players:CreateHumanoidModelFromDescriptionAsync()`.
+Players	CreateHumanoidModelFromUserId	Function	CreateHumanoidModelFromUserIdAsync	This method has been superseded by `Players:CreateHumanoidModelFromUserIdAsync()`.
+Players	GetCharacterAppearanceAsync	Function		This method is deprecated. Do not use it for new work.
+Players	GetHumanoidDescriptionFromOutfitId	Function	GetHumanoidDescriptionFromOutfitIdAsync	This method has been superseded by `Players:GetHumanoidDescriptionFromOutfitIdAsync()`.
+Players	GetHumanoidDescriptionFromUserId	Function	GetHumanoidDescriptionFromUserIdAsync	This method has been superseded by `Players.GetHumanoidDescriptionFromUserIdAsync`.
+Players	NumPlayers	Property	GetPlayers	This item is deprecated. Instead, of using this item, you should count the number of players returned by `Players:GetPlayers()`.
+Players	getPlayers	Function	GetPlayers	This function is a deprecated variant of `Players:GetPlayers()` which should be used instead.
+Players	localPlayer	Property	LocalPlayer	This property is a deprecated variant of `Players.LocalPlayer` which should be used instead.
+Players	numPlayers	Property	NumPlayers	This property is a deprecated variant of `Players.NumPlayers` which has also been deprecated. Neither property should be used in new work. Instead, you should count the number of players returned by `Players:GetPlayers()`.
+Players	playerFromCharacter	Function	GetPlayerFromCharacter	This function is a deprecated variant of `Players:GetPlayerFromCharacter()` which should be used in new work.
+Players	players	Function	GetPlayers	This item has been superseded by `Players:GetPlayers()` which should be used in all new work.
+Plugin	CreateDockWidgetPluginGui	Function	CreateDockWidgetPluginGuiAsync	This method has been superseded by `Plugin:CreateDockWidgetPluginGuiAsync()`.
+Plugin	GetStudioUserId	Function		
+Plugin	ImportFbxAnimation	Function	ImportFbxAnimationAsync	
+Plugin	ImportFbxRig	Function	ImportFbxRigAsync	This method has been superseded by `Plugin:ImportFbxRigAsync()`.
+Plugin	OpenScript	Function		
+Plugin	PromptSaveSelection	Function	PromptSaveSelectionAsync	This method has been superseded by `Plugin:PromptSaveSelectionAsync()`.
+PluginManager	CreatePlugin	Function		The steps to create a plugin have changed. To learn more, see `Plugin`.
+PluginManagerInterface	CreatePlugin	Function		The steps to create a plugin have changed. To learn more, see `Plugin`.
+PointsService		class		This class was once used to control an ancient achievement system since removed and deprecated. It and its members should not be used in new work.
+PointsService	AwardPoints	Function		This function was once part of the `PointService` class used to control an ancient achievement system since removed and deprecated. It should not be used in new work.
+PointsService	GetAwardablePoints	Function		This function was once part of the `PointService` class used to control an ancient achievement system since removed and deprecated. It should not be used in new work.
+PointsService	GetGamePointBalance	Function		This function was once part of the `PointService` class used to control an ancient achievement system since removed and deprecated. It should not be used in new work.
+PointsService	GetPointBalance	Function		This function was once part of the `PointService` class used to control an ancient achievement system since removed and deprecated. It should not be used in new work.
+Pose	MaskWeight	Property		This property is deprecated. Use the `AnimationTrack:AdjustWeight()` function when blending multiple animations.
+RayValue	changed	Event	Changed	This event is a deprecated variant of `RayValue.Changed` which should be used instead.
+RocketPropulsion		class		This object is deprecated and should not be used for new work. Use `LineForce` instead, and see the [legacy conversion notes](../../../physics/mover-constraints.md#legacy-mover-conversion).
+RocketPropulsion	fire	Function	Fire	This function is a deprecated variant of `RocketPropulsion:Fire()` which should be used instead.
+Rotate		class		This class works alongside the deprecated `SurfaceType` and should not be used for future work; use `HingeConstraint` instead.
+RotateP		class		This class works alongside the deprecated `SurfaceType` and should not be used for future work; use `HingeConstraint` instead.
+RotateV		class		This class works alongside the deprecated `SurfaceType` and should not be used for future work; use `HingeConstraint` instead.
+RunService	RenderStepped	Event		Fires every frame, prior to the frame being rendered. ##### Migration Note This event has been superseded by `RunService.PreRender` which should be used for new work.
+RunService	Reset	Function		This item is deprecated and should not be used in new work.
+RunService	Stepped	Event		Fires every frame, prior to the physics simulation. ##### Migration Note This event has been superseded by `RunService.PreSimulation` which should be used for new work.
+ScreenshotHud	ExperienceNameOverlayEnabled	Property		This property is deprecated. Do not use it for new work.
+ScreenshotHud	OverlayFont	Property		This property is deprecated. Do not use it for new work.
+ScreenshotHud	UsernameOverlayEnabled	Property		This property is deprecated. Do not use it for new work.
+SelectionBox	SurfaceColor	Property	SurfaceColor3	This property is deprecated in favor of `SelectionBox.SurfaceColor3` which uses the more precise `Color3` data type instead of a `BrickColor` used by this property.
+SelectionPartLasso		class		SelectionPartLasso has been deprecated. Developers are advised to use the `Beam` object instead.
+SelectionPointLasso		class		The SelectionPointLasso class is deprecated. It should not be used for new work.
+SelectionSphere	SurfaceColor	Property	SurfaceColor3	This property is deprecated in favor of `SelectionSphere.SurfaceColor3` which uses the more precise `Color3` data type instead of a `BrickColor` used by this property.
+SensorBase	Sense	Function		This method should not be used in new work.
+ServiceProvider	getService	Function	GetService	This deprecated function is a variant of `ServiceProvider:GetService()` which should be used instead.
+ServiceProvider	service	Function	GetService	This item has been superseded by `ServiceProvider:GetService()` which should be used in all new work.
+SkateboardPlatform		class		The SkateboardPlatform object has been deprecated and is no longer supported by Roblox. Developers looking to create skateboards or similar vehicles are advised to program their own systems. Additionally, the `VehicleSeat` object can be used to quickly create simple vehicles.
+SkateboardPlatform	equipped	Event	Equipped	This deprecated event is a variant of `SkateboardPlatform.Equipped` which has also been deprecated. Neither event should be used in new work.
+SkateboardPlatform	unequipped	Event	Unequipped	This deprecated event is a variant of `SkateboardPlatform.Unequipped` which has also been deprecated. Neither event should be used in new work.
+Skin		class		This object has been deprecated and superseded by `BodyColors`. The Skin object does not function on R15 characters and should not be used for new work. `BodyColors` functions with R15 characters and allows the colors of each limb to be set individually.
+SlidingBallConstraint	SoftlockServoUponReachingTarget	Property		This property should not be used in new work.
+Snap		class		
+SocialService	PromptLinkSharing	Function	PromptLinkSharingAsync	Use `SocialService:PromptLinkSharingAsync()` instead.
+Sound	EmitterSize	Property	RollOffMinDistance	This property has deprecated in favor of `Sound.RollOffMinDistance` and `Sound.RollOffMaxDistance` which should be used instead in new work.
+Sound	MaxDistance	Property	RollOffMaxDistance	This property has deprecated in favor of `Sound.RollOffMinDistance` and `Sound.RollOffMaxDistance` which should be used instead in new work.
+Sound	MinDistance	Property	RollOffMinDistance	MinDistance has been superseded by `Sound.EmitterSize`, whose name better describes this properties behavior.
+Sound	Pitch	Property	PlaybackSpeed	This property has been deprecated in favor of `Sound.PlaybackSpeed` whose name suits the behavior better.
+Sound	isPlaying	Property	IsPlaying	This deprecated property is a variant of `Sound.IsPlaying` which should be used instead.
+Sound	pause	Function	Pause	This deprecated function is a variant of `Sound:Pause()` which should be used instead.
+Sound	play	Function	Play	This deprecated function is a variant of `Sound:Play()` which should be used instead.
+Sound	stop	Function	Stop	This deprecated function is a variant of `Sound:Stop()` which should be used instead.
+Sound	xmlRead_MaxDistance_3	Property	RollOffMaxDistance	
+Sound	xmlRead_MinDistance_3	Property	RollOffMinDistance	
+StarterGui	ResetPlayerGuiOnSpawn	Property		This property is deprecated. Use `LayerCollector.ResetOnSpawn` to control the resetting behavior for individual `LayerCollector` objects.
+Stats	HeartbeatTimeMs	Property		Use `Stats.HeartbeatTime` instead.
+Stats	PhysicsStepTimeMs	Property		Use `Stats.PhysicsStepTime` instead.
+Status		class		Status is an unfinished object designed to store custom `Humanoid` statuses. It has been deprecated and should not be used by developers in new work. Developers looking to implement custom `Humanoid` statuses should use [Character Physics Controllers](https://devforum.roblox.com/t/releasing-character-physics-controllers/2623426), as they are written in Luau and are easily extendable.
+StringValue	changed	Event	Changed	This deprecated event is a variant of `StringValue.Changed` which should be used instead.
+Studio	UI Theme	Property		
+StudioService	DrawConstraintsOnTop	Property		This property is deprecated; constraints can no longer be drawn "on top" of other objects.
+StudioService	PromptImportFile	Function	PromptImportFileAsync	
+StudioService	PromptImportFiles	Function	PromptImportFilesAsync	
+SyncScriptBuilder	RawBytecode	Property	CompileTarget	
+Team	AutoColorCharacters	Property		This property is deprecated and no longer functions, it should not be used for new work.
+Team	Score	Property		This property is deprecated and should not be used in new work. For more information on how to handle leaderboards and scoring please see [this tutorial](../../../players/leaderboards.md).
+Teams	RebalanceTeams	Function		This function has been deprecated and no longer functions correctly. It should not be used. Developers should instead implement their own team sorting systems.
+TeleportService	CustomizedTeleportUI	Property		This item is deprecated since the default message it controls has been removed. Do not use it for new work.
+TeleportService	ReserveServer	Function	ReserveServerAsync	Use `TeleportService:ReserveServerAsync()` instead.
+TeleportService	TeleportPartyAsync	Function	TeleportAsync	Use `TeleportService:TeleportAsync()` instead. For a migration guide, see [Teleport between places](../../../projects/teleport.md#migrate-to-secure-teleports).
+TeleportService	TeleportToPlaceInstance	Function	TeleportAsync	Use `TeleportService:TeleportAsync()` instead. For a migration guide, see [Teleport between places](../../../projects/teleport.md#migrate-to-secure-teleports).
+TeleportService	TeleportToPrivateServer	Function	TeleportAsync	Use `TeleportService:TeleportAsync()` instead. For a migration guide, see [Teleport between places](../../../projects/teleport.md#migrate-to-secure-teleports).
+TeleportService	TeleportToSpawnByName	Function	TeleportAsync	Use `TeleportService:TeleportAsync()` instead. For a migration guide, see [Teleport between places](../../../projects/teleport.md#migrate-to-secure-teleports).
+Terrain	AutowedgeCell	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+Terrain	AutowedgeCells	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+Terrain	ConvertToSmooth	Function		Since all places now automatically use the new terrain engine, this method is obsolete.
+Terrain	GetCell	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+Terrain	GetWaterCell	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+Terrain	IsSmooth	Property		The legacy terrain engine has been removed, so this property will always be `true`.
+Terrain	SetCell	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+Terrain	SetCells	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+Terrain	SetWaterCell	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+TerrainRegion	ConvertToSmooth	Function		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+TerrainRegion	IsSmooth	Property		This item is a deprecated function of a legacy `Terrain` engine that has been removed. Do not use it for new work.
+TestService	Is30FpsThrottleEnabled	Property	ThrottlePhysicsToRealtime	This has been deprecated and directly renamed to `TestService.ThrottlePhysicsToRealtime` to better reflect its practical use.
+TestService	Run	Function	RunAsync	Use `TestService:RunAsync()` instead.
+TextBox	FontSize	Property	TextSize	This item has been superseded by `TextBox.TextSize` which should be used in all new work.
+TextBox	TextColor	Property		This item has been superseded by `TextBox.TextColor3` which should be used in all new work.
+TextBox	TextWrap	Property	TextWrapped	This item has been superseded by `TextBox.TextWrapped` which should be used in all new work.
+TextButton	FontSize	Property	TextSize	This property is deprecated in favor of `TextButton` which is an integer and not an enum and thus offers far more options for sizes.
+TextButton	TextColor	Property		This item has been superseded by `TextButton.TextColor3` which should be used in all new work.
+TextButton	TextWrap	Property	TextWrapped	This item has been superseded by `TextButton.TextWrapped` which should be used in all new work.
+TextFilterResult	GetChatForUserAsync	Function		This method is deprecated and returns an empty string. Text filtering pertaining to chat should be done through `TextChatService`, and experiences that do not properly filter player-generated chat text may be subject to moderation.
+TextLabel	FontSize	Property	TextSize	This property is deprecated in favor of `TextLabel` which is an integer and not an enum and thus offers far more options for sizes.
+TextLabel	TextColor	Property		This item has been superseded by `TextLabel.TextColor3` which should be used in all new work.
+TextLabel	TextWrap	Property	TextWrapped	This property is simply an alias for `TextLabel`. Use the past-tense version instead.
+TorsionSpringConstraint	LimitEnabled	Property	LimitsEnabled	This property is deprecated. Use `TorsionSpringConstraint.LimitsEnabled` instead.
+UIGridStyleLayout	ApplyLayout	Function		
+UIGridStyleLayout	SetCustomSortFunction	Function		This method is deprecated in favor of using other SortOrder means, such as by Name or LayoutOrder.
+UserInputService	GetUserCFrame	Function	GetUserCFrame	Use `VRService:GetUserCFrame()` instead.
+UserInputService	LegacyInputEventsEnabled	Property		
+UserInputService	ModalEnabled	Property	TouchControlsEnabled	This item has been superseded by `GuiService.TouchControlsEnabled` which should be used in all new work.
+UserInputService	UserCFrameChanged	Event	UserCFrameChanged	Use `VRService.UserCFrameChanged` instead.
+UserInputService	UserHeadCFrame	Property		This item has been superseded by `UserInputService:GetUserCFrame()` which should be used in all new work.
+Vector3Value	changed	Event	Changed	This deprecated event is a variant of `Vector3Value.Changed` which should be used instead.
+VoiceChatInternal	GetAndClearCallFailureMessage	Function		
+VoiceChatInternal	GetAudioProcessingSettings	Function		
+VoiceChatInternal	GetMicDevices	Function		
+VoiceChatInternal	GetParticipants	Function		
+VoiceChatInternal	GetVoiceChatApiVersion	Function		
+VoiceChatInternal	GetVoiceChatAvailable	Function		
+VoiceChatInternal	IsPublishPaused	Function		
+VoiceChatInternal	IsSubscribePaused	Function		
+VoiceChatInternal	JoinByGroupId	Function		
+VoiceChatInternal	JoinByGroupIdToken	Function		
+VoiceChatInternal	Leave	Function		
+VoiceChatInternal	ParticipantsStateChanged	Event		
+VoiceChatInternal	PlayerMicActivitySignalChange	Event		
+VoiceChatInternal	PublishPause	Function		
+VoiceChatInternal	SetMicDevice	Function		
+VoiceChatInternal	StateChanged	Event		
+VoiceChatInternal	SubscribePause	Function		
+VoiceChatInternal	SubscribePauseAll	Function		
+VoiceChatInternal	VoiceChatState	Property		
+Workspace	BreakJoints	Function		This method is deprecated. Do not use it for new work.
+Workspace	FilteringEnabled	Property		This property is discontinued.
+Workspace	InterpolationThrottling	Property		This property should not be used for new work.
+Workspace	MakeJoints	Function		This method is deprecated. Do not use it for new work.
+WorldRoot	FindPartOnRay	Function	Raycast	This function has been deprecated. Use `WorldRoot:Raycast()` along with `RaycastParams` for new work.
+WorldRoot	FindPartOnRayWithIgnoreList	Function	Raycast	This function has been deprecated. Use `WorldRoot:Raycast()` along with `RaycastParams` for new work.
+WorldRoot	FindPartOnRayWithWhitelist	Function	Raycast	This function has been deprecated. Use `WorldRoot:Raycast()` along with `RaycastParams` for new work.
+WorldRoot	FindPartsInRegion3	Function	GetPartBoundsInBox	This function has been deprecated. Use `WorldRoot:GetPartBoundsInBox()` along with `OverlapParams` for new work.
+WorldRoot	FindPartsInRegion3WithIgnoreList	Function	GetPartBoundsInBox	This function has been deprecated. Use `WorldRoot:GetPartBoundsInBox()` along with `OverlapParams` for new work.
+WorldRoot	FindPartsInRegion3WithWhiteList	Function	GetPartBoundsInBox	This function has been deprecated. Use `WorldRoot:GetPartBoundsInBox()` along with `OverlapParams` for new work.
+WorldRoot	IsRegion3Empty	Function	GetPartBoundsInBox	This function has been deprecated. Use `WorldRoot:GetPartBoundsInBox()` along with `OverlapParams` for new work.
+WorldRoot	IsRegion3EmptyWithIgnoreList	Function	GetPartBoundsInBox	This function has been deprecated. Use `WorldRoot:GetPartBoundsInBox()` along with `OverlapParams` for new work.
+WorldRoot	findPartOnRay	Function	Raycast	This deprecated function is a variant of `WorldRoot:FindPartOnRay()` which should be used instead.
+WorldRoot	findPartsInRegion3	Function	GetPartBoundsInBox	This deprecated function is a variant of `WorldRoot:FindPartsInRegion3()` which should be used instead.
+WrapLayer	Puffiness	Property		
+WrapLayer	ShrinkFactor	Property		
+WrapTarget	Stiffness	Property		
+Enum.AdEventType	VideoLoaded	EnumItem		
+Enum.AdEventType	VideoRemoved	EnumItem		
+Enum.AdEventType	UserCompletedVideo	EnumItem		
+Enum.AdEventType	RewardedAdLoaded	EnumItem		
+Enum.AdEventType	RewardedAdGrant	EnumItem		
+Enum.AdEventType	RewardedAdUnloaded	EnumItem		
+Enum.AlignType	Parallel	EnumItem		Use **PrimaryAxisParallel** instead.
+Enum.AlignType	Perpendicular	EnumItem		Use **PrimaryAxisPerpendicular** instead.
+Enum.CatalogCategoryFilter	Collectibles	EnumItem		
+Enum.DevTouchMovementMode	Thumbstick	EnumItem		Use `DynamicThumbstick` instead.
+Enum.DevTouchMovementMode	DPad	EnumItem		Use `DynamicThumbstick` instead.
+Enum.DevTouchMovementMode	Thumbpad	EnumItem		Use `DynamicThumbstick` instead.
+Enum.GearGenreSetting	AllGenres	EnumItem		
+Enum.GearGenreSetting	MatchingGenreOnly	EnumItem		
+Enum.GearType	MeleeWeapons	EnumItem		
+Enum.GearType	RangedWeapons	EnumItem		
+Enum.GearType	Explosives	EnumItem		
+Enum.GearType	PowerUps	EnumItem		
+Enum.GearType	NavigationEnhancers	EnumItem		
+Enum.GearType	MusicalInstruments	EnumItem		
+Enum.GearType	SocialItems	EnumItem		
+Enum.GearType	BuildingTools	EnumItem		
+Enum.GearType	Transport	EnumItem		
+Enum.KeyCode	World0	EnumItem		
+Enum.KeyCode	World1	EnumItem		
+Enum.KeyCode	World2	EnumItem		
+Enum.KeyCode	World3	EnumItem		
+Enum.KeyCode	World4	EnumItem		
+Enum.KeyCode	World5	EnumItem		
+Enum.KeyCode	World6	EnumItem		
+Enum.KeyCode	World7	EnumItem		
+Enum.KeyCode	World8	EnumItem		
+Enum.KeyCode	World9	EnumItem		
+Enum.KeyCode	World10	EnumItem		
+Enum.KeyCode	World11	EnumItem		
+Enum.KeyCode	World12	EnumItem		
+Enum.KeyCode	World13	EnumItem		
+Enum.KeyCode	World14	EnumItem		
+Enum.KeyCode	World15	EnumItem		
+Enum.KeyCode	World16	EnumItem		
+Enum.KeyCode	World17	EnumItem		
+Enum.KeyCode	World18	EnumItem		
+Enum.KeyCode	World19	EnumItem		
+Enum.KeyCode	World20	EnumItem		
+Enum.KeyCode	World21	EnumItem		
+Enum.KeyCode	World22	EnumItem		
+Enum.KeyCode	World23	EnumItem		
+Enum.KeyCode	World24	EnumItem		
+Enum.KeyCode	World25	EnumItem		
+Enum.KeyCode	World26	EnumItem		
+Enum.KeyCode	World27	EnumItem		
+Enum.KeyCode	World28	EnumItem		
+Enum.KeyCode	World29	EnumItem		
+Enum.KeyCode	World30	EnumItem		
+Enum.KeyCode	World31	EnumItem		
+Enum.KeyCode	World32	EnumItem		
+Enum.KeyCode	World33	EnumItem		
+Enum.KeyCode	World34	EnumItem		
+Enum.KeyCode	World35	EnumItem		
+Enum.KeyCode	World36	EnumItem		
+Enum.KeyCode	World37	EnumItem		
+Enum.KeyCode	World38	EnumItem		
+Enum.KeyCode	World39	EnumItem		
+Enum.KeyCode	World40	EnumItem		
+Enum.KeyCode	World41	EnumItem		
+Enum.KeyCode	World42	EnumItem		
+Enum.KeyCode	World43	EnumItem		
+Enum.KeyCode	World44	EnumItem		
+Enum.KeyCode	World45	EnumItem		
+Enum.KeyCode	World46	EnumItem		
+Enum.KeyCode	World47	EnumItem		
+Enum.KeyCode	World48	EnumItem		
+Enum.KeyCode	World49	EnumItem		
+Enum.KeyCode	World50	EnumItem		
+Enum.KeyCode	World51	EnumItem		
+Enum.KeyCode	World52	EnumItem		
+Enum.KeyCode	World53	EnumItem		
+Enum.KeyCode	World54	EnumItem		
+Enum.KeyCode	World55	EnumItem		
+Enum.KeyCode	World56	EnumItem		
+Enum.KeyCode	World57	EnumItem		
+Enum.KeyCode	World58	EnumItem		
+Enum.KeyCode	World59	EnumItem		
+Enum.KeyCode	World60	EnumItem		
+Enum.KeyCode	World61	EnumItem		
+Enum.KeyCode	World62	EnumItem		
+Enum.KeyCode	World63	EnumItem		
+Enum.KeyCode	World64	EnumItem		
+Enum.KeyCode	World65	EnumItem		
+Enum.KeyCode	World66	EnumItem		
+Enum.KeyCode	World67	EnumItem		
+Enum.KeyCode	World68	EnumItem		
+Enum.KeyCode	World69	EnumItem		
+Enum.KeyCode	World70	EnumItem		
+Enum.KeyCode	World71	EnumItem		
+Enum.KeyCode	World72	EnumItem		
+Enum.KeyCode	World73	EnumItem		
+Enum.KeyCode	World74	EnumItem		
+Enum.KeyCode	World75	EnumItem		
+Enum.KeyCode	World76	EnumItem		
+Enum.KeyCode	World77	EnumItem		
+Enum.KeyCode	World78	EnumItem		
+Enum.KeyCode	World79	EnumItem		
+Enum.KeyCode	World80	EnumItem		
+Enum.KeyCode	World81	EnumItem		
+Enum.KeyCode	World82	EnumItem		
+Enum.KeyCode	World83	EnumItem		
+Enum.KeyCode	World84	EnumItem		
+Enum.KeyCode	World85	EnumItem		
+Enum.KeyCode	World86	EnumItem		
+Enum.KeyCode	World87	EnumItem		
+Enum.KeyCode	World88	EnumItem		
+Enum.KeyCode	World89	EnumItem		
+Enum.KeyCode	World90	EnumItem		
+Enum.KeyCode	World91	EnumItem		
+Enum.KeyCode	World92	EnumItem		
+Enum.KeyCode	World93	EnumItem		
+Enum.KeyCode	World94	EnumItem		
+Enum.KeyCode	World95	EnumItem		
+Enum.KeyCode	MouseBackButton	EnumItem		This enum is deprecated and flagged for removal.
+Enum.KeyCode	MouseNoButton	EnumItem		This enum is deprecated and flagged for removal.
+Enum.KeyCode	MouseX	EnumItem		This enum is deprecated and flagged for removal.
+Enum.KeyCode	MouseY	EnumItem		This enum is deprecated and flagged for removal.
+Enum.MeshType	Prism	EnumItem		
+Enum.MeshType	Pyramid	EnumItem		
+Enum.MeshType	ParallelRamp	EnumItem		
+Enum.MeshType	RightAngleRamp	EnumItem		
+Enum.MeshType	CornerWedge	EnumItem		
+Enum.PathStatus	ClosestNoPath	EnumItem		
+Enum.PathStatus	ClosestOutOfRange	EnumItem		
+Enum.PathStatus	FailStartNotEmpty	EnumItem		
+Enum.PathStatus	FailFinishNotEmpty	EnumItem		
+Enum.PoseEasingStyle	Cubic	EnumItem		Use CubicV2 going forward, Cubic has a bug where the direction is reversed between the editor and runtime.
+Enum.RibbonTool	MaterialPicker	EnumItem		Deprecated in favor of Material Manager. Don't use.
+Enum.SecurityCapability	AssetRequire	EnumItem		Use `SecurityCapability.LoadUnownedAsset` instead.
+Enum.SecurityCapability	Avatar	EnumItem		Use `SecurityCapability.AvatarAppearance` instead.
+Enum.SortOrder	Custom	EnumItem		
+Enum.StateObjectFieldType	Boolean	EnumItem		
+Enum.StateObjectFieldType	CFrame	EnumItem		
+Enum.StateObjectFieldType	Color3	EnumItem		
+Enum.StateObjectFieldType	Float	EnumItem		
+Enum.StateObjectFieldType	Instance	EnumItem		
+Enum.StateObjectFieldType	Random	EnumItem		
+Enum.StateObjectFieldType	Vector2	EnumItem		
+Enum.StateObjectFieldType	Vector3	EnumItem		
+Enum.StateObjectFieldType	INVALID	EnumItem		
+Enum.Status	Poison	EnumItem		This option is deprecated.
+Enum.Status	Confusion	EnumItem		This option is deprecated.
+Enum.StreamingPauseMode	Default	EnumItem		
+Enum.StreamingPauseMode	Disabled	EnumItem		
+Enum.StreamingPauseMode	ClientPhysicsPause	EnumItem		
+Enum.Technology	Legacy	EnumItem		This option is deprecated and cannot be selected in Studio.
+Enum.Technology	Compatibility	EnumItem		This option is deprecated and cannot be selected in Studio.
+Enum.Technology	Unified	EnumItem		This option is deprecated and cannot be selected in Studio.
+Enum.UITheme	Light	EnumItem		This option is deprecated.
+Enum.UITheme	Dark	EnumItem		This option is deprecated.
+Color3	Color3.toHSV	datatype		This function is functionally equivalent to `Color3:ToHSV()`.
+OverlapParams	OverlapParams.FilterDescendantsInstances	datatype		An array of objects whose descendants are used in filtering candidates. Note that this property has been superseded by `OverlapParams.ExcludeInstances` and `OverlapParams.IncludeInstances` which should be used for new work.
+OverlapParams	OverlapParams.FilterType	datatype		Determines whether the `OverlapParams.FilterDescendantsInstances` array is used as an exclude or include list. Note that this property has been superseded by `OverlapParams.ExcludeInstances` and `OverlapParams.IncludeInstances` which should be used for new work.
+OverlapParams	OverlapParams:AddToFilter	datatype		Adds the instances provided to `OverlapParams.FilterDescendantsInstances`. Note that this property has been superseded by `OverlapParams.ExcludeInstances` and `OverlapParams.IncludeInstances` which should be used for new work.
+RaycastParams	RaycastParams.FilterDescendantsInstances	datatype		An array of objects whose descendants are used to filter raycasting candidates. Note that this property has been superseded by `RaycastParams.ExcludeInstances` and `RaycastParams.IncludeInstances` which should be used for new work.
+RaycastParams	RaycastParams.FilterType	datatype		Determines whether the `RaycastParams.FilterDescendantsInstances` array is used as an exclude or include list. Note that this property has been superseded by `RaycastParams.ExcludeInstances` and `RaycastParams.IncludeInstances` which should be used for new work.
+RaycastParams	RaycastParams:AddToFilter	datatype		Adds the instances provided to `RaycastParams.FilterDescendantsInstances`. Note that this property has been superseded by `RaycastParams.ExcludeInstances` and `RaycastParams.IncludeInstances` which should be used for new work.
+table	table.foreach	library		Iterates over the provided table, passing the key and value of each iteration over to the provided function. This function has been deprecated and is not recommended for use in new code; use a `for` loop instead.
+table	table.foreachi	library		This is similar to `table.foreach()` except that index-value pairs are passed, not key-value pairs. This function has been deprecated and is not recommended for use in new code; use a `for` loop instead.
+table	table.getn	library		Returns the number of elements in the table passed. This function has been deprecated and is not recommended for use in new code; use `#t` instead.
+Luau globals	collectgarbage	global		Performs the specified operation of the garbage collector. Note that Roblox's Luau sandbox only allows the `count` option to be used (the total memory in use by Luau, in kilobytes), as other options can interfere with existing processes. Effectively, this makes `LuaGlobals.gcinfo()` a superior alternative that should be used instead.
+Luau globals	getfenv	global		This function allows uncontrolled change of the global/function environment and disables script optimizations. Changes to the environment are not tracked by the script analysis tooling and may result in missing or incorrect warnings. As a replacement, consider using `debug.info()` instead.
+Luau globals	setfenv	global		This function allows uncontrolled change of the global/function environment and disables script optimizations. Changes to the environment are not tracked by the script analysis tooling and may result in missing or incorrect warnings.
+Roblox globals	delay	global		This method has been superseded by `task.delay()` and should not be used for future work.
+Roblox globals	DebuggerManager	global		The `DebuggerManager` is obsolete and serves little to no use case for developers.
+Roblox globals	elapsedTime	global		Returns how much time has elapsed since the current instance of Roblox was started. In Roblox Studio, this begins counting up from the moment Roblox Studio starts running, not just when opening a place.
+Roblox globals	printidentity	global		Prints `Current identity is [ID]` to the output, where [ID] corresponds to the current thread's security context level.
+Roblox globals	spawn	global		This method has been superseded by `task.spawn()` and should not be used for future work.
+Roblox globals	stats	global		Returns the `Stats` service. It is preferred that developers use `ServiceProvider:GetService()` to retrieve it instead.
+Roblox globals	version	global		Returns the current version of Roblox as a string. The integers in the version string are separated by periods, and each integers represent the following, in order: - Generation - The current generation of the application shell that is hosting the client. - Version - The current release version of Roblox. - Patch - The current patch number for this version of Roblox. - Commit - The ID of the last…
+Roblox globals	wait	global		This method has been superseded by `task.wait()` and should not be used for future work.
+Roblox globals	ypcall	global		Legacy function to work around an old task scheduling limitation of `LuaGlobals.pcall()`; should not be used for new work (use `LuaGlobals.pcall()` instead).

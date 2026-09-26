@@ -1,0 +1,1426 @@
+{
+ "schema": 1,
+ "checked_on": "2026-09-26",
+ "api_snapshot": "0.740.19",
+ "docs_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+ "status_legend": {
+  "deprecated": "tagged Deprecated in API metadata (still works unless noted)",
+  "superseded": "docs say a newer API should be used for new work",
+  "removed": "feature/enum item gone — old code errors or does nothing",
+  "restricted": "exists but game scripts may not write/call it (security/capability)",
+  "discouraged": "official docs recommend the newer system; old one still supported",
+  "outdated-fact": "a number/limit/behaviour models remember that changed",
+  "pattern": "not an API status — an obsolete or unsafe practice"
+ },
+ "entries": [
+  {
+   "id": "sched-wait",
+   "category": "scheduling",
+   "status": "deprecated",
+   "era": "2006-2021",
+   "old": "wait(n) / wait()",
+   "new": "task.wait(n) — or better, wait on an event/signal",
+   "why": "Legacy wait is throttled (30 Hz legacy scheduler, can resume late), deprecated.",
+   "when_ok": "Never in new code; migrating a working game can be gradual.",
+   "notes": "task.wait resumes on the next Heartbeat after the duration; returns elapsed time.",
+   "verify": [
+    "api:wait",
+    "cd:scripting/scheduler"
+   ],
+   "detect": "(?<![\\w.:])wait\\s*\\("
+  },
+  {
+   "id": "sched-spawn",
+   "category": "scheduling",
+   "status": "deprecated",
+   "era": "2006-2021",
+   "old": "spawn(f)",
+   "new": "task.defer(f) (same 'later' semantics) or task.spawn(f) (runs immediately)",
+   "why": "spawn had an implicit delay and throttling; deprecated.",
+   "when_ok": "",
+   "notes": "Changing spawn→task.spawn changes execution order; review re-entrancy.",
+   "verify": [
+    "api:spawn",
+    "cd:scripting/scheduler"
+   ],
+   "detect": "(?<![\\w.:])spawn\\s*\\("
+  },
+  {
+   "id": "sched-delay",
+   "category": "scheduling",
+   "status": "deprecated",
+   "era": "2006-2021",
+   "old": "delay(t, f)",
+   "new": "local th = task.delay(t, f) — keep th to task.cancel(th) on cleanup",
+   "why": "Deprecated; also uncancellable.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:delay"
+   ],
+   "detect": "(?<![\\w.:])delay\\s*\\("
+  },
+  {
+   "id": "sched-tick",
+   "category": "scheduling",
+   "status": "discouraged",
+   "era": "2006-2022",
+   "old": "tick()",
+   "new": "os.clock() for durations; workspace:GetServerTimeNow() for synced time; os.time()/DateTime for timestamps",
+   "why": "tick() depends on local timezone and isn't synced between machines.",
+   "when_ok": "Existing cosmetic use is harmless.",
+   "notes": "",
+   "verify": [
+    "api:tick",
+    "api:Workspace.GetServerTimeNow"
+   ],
+   "detect": "(?<![\\w.:])tick\\s*\\("
+  },
+  {
+   "id": "sched-while-wait",
+   "category": "scheduling",
+   "status": "pattern",
+   "era": "2008-2021",
+   "old": "while wait(0.1) do ... end   -- polling",
+   "new": "Event-driven (Changed, AttributeChanged, tags) or one Heartbeat accumulator for many objects",
+   "why": "Polling loops per object waste CPU and scale badly; wait() is deprecated.",
+   "when_ok": "A single low-rate loop (e.g. 1 Hz autosave) is fine with task.wait.",
+   "notes": "",
+   "verify": [
+    "cd:performance-optimization/improve"
+   ],
+   "detect": "while\\s+wait\\s*\\("
+  },
+  {
+   "id": "sched-stepped",
+   "category": "scheduling",
+   "status": "superseded",
+   "era": "2014-2023",
+   "old": "RunService.Stepped:Connect(fn)",
+   "new": "RunService.PreSimulation:Connect(fn)",
+   "why": "Docs: Stepped superseded by PreSimulation for new work.",
+   "when_ok": "Existing code keeps working.",
+   "notes": "",
+   "verify": [
+    "api:RunService.Stepped",
+    "api:RunService.PreSimulation"
+   ],
+   "detect": "\\.Stepped\\s*:\\s*Connect"
+  },
+  {
+   "id": "sched-renderstepped",
+   "category": "scheduling",
+   "status": "superseded",
+   "era": "2014-2023",
+   "old": "RunService.RenderStepped:Connect(fn)",
+   "new": "RunService.PreRender:Connect(fn) (client) — or BindToRenderStep with a priority for camera ordering",
+   "why": "Docs: RenderStepped superseded by PreRender.",
+   "when_ok": "Existing code keeps working.",
+   "notes": "",
+   "verify": [
+    "api:RunService.RenderStepped",
+    "api:RunService.PreRender"
+   ],
+   "detect": "\\.RenderStepped\\s*:\\s*Connect"
+  },
+  {
+   "id": "sched-coroutine-wrap",
+   "category": "scheduling",
+   "status": "pattern",
+   "era": "2012-2021",
+   "old": "coroutine.wrap(function() ... end)()  -- fire-and-forget",
+   "new": "task.spawn(function() ... end)",
+   "why": "Errors inside coroutine.wrap propagate to the resumer / are harder to trace; task.spawn reports errors with traceback via the scheduler.",
+   "when_ok": "Generators/iterators are a valid coroutine use.",
+   "notes": "",
+   "verify": [
+    "cd:scripting/scheduler"
+   ],
+   "detect": "coroutine\\.wrap\\s*\\(\\s*function"
+  },
+  {
+   "id": "lang-ypcall",
+   "category": "language",
+   "status": "deprecated",
+   "era": "2010-2018",
+   "old": "ypcall(f)",
+   "new": "pcall(f) (yield-safe in Luau)",
+   "why": "ypcall is a deprecated alias.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:ypcall"
+   ],
+   "detect": "\\bypcall\\s*\\("
+  },
+  {
+   "id": "lang-getfenv",
+   "category": "language",
+   "status": "discouraged",
+   "era": "2008-2020",
+   "old": "getfenv/setfenv/loadstring tricks",
+   "new": "Plain modules and explicit dependencies",
+   "why": "Disables Luau optimizations (imports, fastcalls, native codegen); loadstring is server-only and off by default; common in backdoors.",
+   "when_ok": "Never in new code.",
+   "notes": "",
+   "verify": [
+    "luau:guides/performance",
+    "cd:luau/native-code-gen"
+   ],
+   "detect": "\\b(getfenv|setfenv|loadstring)\\s*\\("
+  },
+  {
+   "id": "lang-table-getn",
+   "category": "language",
+   "status": "deprecated",
+   "era": "2006-2015",
+   "old": "table.getn(t) / table.foreach(t, f) / table.foreachi",
+   "new": "#t / for k, v in t do",
+   "why": "Lua 5.0-era functions kept for compatibility.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:table.getn",
+    "api:table.foreach"
+   ],
+   "detect": "table\\.(getn|foreach|foreachi)\\s*\\("
+  },
+  {
+   "id": "lang-g-shared",
+   "category": "language",
+   "status": "pattern",
+   "era": "2008-2020",
+   "old": "_G.Money = 5 / shared.Config",
+   "new": "ModuleScripts (require) — one per concern",
+   "why": "_G/shared are untyped global state; not replicated; ordering races between scripts.",
+   "when_ok": "Quick debugging in Studio command bar.",
+   "notes": "",
+   "verify": [
+    "cd:scripting/module"
+   ],
+   "detect": "\\b_G\\.|\\bshared\\."
+  },
+  {
+   "id": "lang-ternary",
+   "category": "language",
+   "status": "pattern",
+   "era": "2006-2022",
+   "old": "local v = cond and a or b",
+   "new": "local v = if cond then a else b",
+   "why": "and/or breaks when a is false/nil.",
+   "when_ok": "When a can never be falsy.",
+   "notes": "",
+   "verify": [
+    "luau:getting-started/syntax"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "lang-cframe-new-lookat",
+   "category": "language",
+   "status": "superseded",
+   "era": "2008-2020",
+   "old": "CFrame.new(pos, lookAtPos)",
+   "new": "CFrame.lookAt(pos, lookAtPos, up?)",
+   "why": "Docs: this overload has been replaced by CFrame.lookAt (handles up vector, degenerate cases).",
+   "when_ok": "Works still.",
+   "notes": "",
+   "verify": [
+    "cd:reference/engine/datatypes/CFrame"
+   ],
+   "detect": "CFrame\\.new\\s*\\([^()]*,[^()]*\\)\\s*$"
+  },
+  {
+   "id": "inst-new-parent",
+   "category": "instances",
+   "status": "pattern",
+   "era": "2008-2019",
+   "old": "Instance.new(\"Part\", workspace)  -- then set properties",
+   "new": "local p = Instance.new(\"Part\"); set properties; p.Parent = workspace  -- parent last",
+   "why": "Parenting first triggers replication/change events for every subsequent property set (slow, ordering issues).",
+   "when_ok": "Trivial one-offs in Studio command bar.",
+   "notes": "",
+   "verify": [
+    "cd:performance-optimization/improve"
+   ],
+   "detect": "Instance\\.new\\s*\\(\\s*[\\\"'][A-Za-z]+[\\\"']\\s*,"
+  },
+  {
+   "id": "inst-lowercase",
+   "category": "instances",
+   "status": "deprecated",
+   "era": "2006-2014",
+   "old": ":connect(), :wait(), :disconnect(), :remove(), :clone(), :destroy(), :findFirstChild(), .className",
+   "new": "PascalCase: :Connect(), :Wait(), :Disconnect(), :Destroy(), :Clone(), :FindFirstChild(), .ClassName",
+   "why": "Lowercase aliases are deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Instance.findFirstChild",
+    "api:Instance.remove"
+   ],
+   "detect": ":(connect|wait|disconnect|remove|clone|destroy|findFirstChild|getChildren)\\s*\\("
+  },
+  {
+   "id": "inst-remove",
+   "category": "instances",
+   "status": "deprecated",
+   "era": "2006-2014",
+   "old": "part:Remove()",
+   "new": "part:Destroy() (or part.Parent = nil to reuse)",
+   "why": "Remove is deprecated; Destroy locks parent and disconnects events.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Instance.Remove"
+   ],
+   "detect": ":Remove\\s*\\("
+  },
+  {
+   "id": "inst-getservice",
+   "category": "instances",
+   "status": "pattern",
+   "era": "2006-2019",
+   "old": "game.Players / game.Workspace.Map / game.ReplicatedStorage",
+   "new": "local Players = game:GetService(\"Players\") at the top; workspace global or GetService(\"Workspace\")",
+   "why": "Direct indexing breaks if a service is renamed/not yet created; GetService is the canonical accessor.",
+   "when_ok": "workspace is fine.",
+   "notes": "",
+   "verify": [
+    "cd:scripting/services"
+   ],
+   "detect": "\\bgame\\.(Players|ReplicatedStorage|ServerStorage|ServerScriptService|Lighting|RunService|UserInputService)\\b"
+  },
+  {
+   "id": "inst-setprimarypartcframe",
+   "category": "instances",
+   "status": "deprecated",
+   "era": "2010-2021",
+   "old": "model:SetPrimaryPartCFrame(cf) / model:GetPrimaryPartCFrame()",
+   "new": "model:PivotTo(cf) / model:GetPivot()",
+   "why": "Deprecated; PivotTo is faster and doesn't require PrimaryPart.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Model.SetPrimaryPartCFrame",
+    "api:Model.GetPrimaryPartCFrame"
+   ],
+   "detect": "(Set|Get)PrimaryPartCFrame"
+  },
+  {
+   "id": "inst-makejoints",
+   "category": "instances",
+   "status": "deprecated",
+   "era": "2006-2018",
+   "old": "model:MakeJoints() / BreakJoints() / surface-based welds",
+   "new": "WeldConstraint instances (or Weld with C0/C1); destroy them to break",
+   "why": "Surface joints and MakeJoints are deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Model.MakeJoints",
+    "api:BasePart.BreakJoints"
+   ],
+   "detect": ":(MakeJoints|BreakJoints)\\s*\\("
+  },
+  {
+   "id": "inst-message-hint",
+   "category": "ui",
+   "status": "deprecated",
+   "era": "2006-2014",
+   "old": "Instance.new(\"Message\") / Instance.new(\"Hint\")",
+   "new": "ScreenGui + TextLabel (client), or TextChatService system messages",
+   "why": "Deprecated classes.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Message",
+    "api:Hint"
+   ],
+   "detect": "Instance\\.new\\s*\\(\\s*[\\\"'](Message|Hint)[\\\"']"
+  },
+  {
+   "id": "inst-hopperbin",
+   "category": "instances",
+   "status": "deprecated",
+   "era": "2006-2013",
+   "old": "HopperBin",
+   "new": "Tool (RequiresHandle = false for handle-less tools)",
+   "why": "Deprecated class.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:HopperBin"
+   ],
+   "detect": "HopperBin"
+  },
+  {
+   "id": "inst-status",
+   "category": "instances",
+   "status": "deprecated",
+   "era": "2008-2012",
+   "old": "humanoid:AddCustomStatus()/AddStatus()",
+   "new": "Attributes or your own state table",
+   "why": "Deprecated unfinished library.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Humanoid.AddCustomStatus"
+   ],
+   "detect": ":Add(Custom)?Status\\s*\\("
+  },
+  {
+   "id": "phys-bodymovers",
+   "category": "physics",
+   "status": "deprecated",
+   "era": "2008-2021",
+   "old": "BodyVelocity / BodyGyro / BodyPosition / BodyForce / BodyAngularVelocity / BodyThrust / RocketPropulsion",
+   "new": "LinearVelocity / AlignOrientation / AlignPosition / VectorForce / AngularVelocity / VectorForce(+offset)/Torque / AlignPosition+AlignOrientation",
+   "why": "BodyMover classes are deprecated; mover constraints are attachment-based, more stable, and configurable.",
+   "when_ok": "Existing places keep working; migrate when touching the system.",
+   "notes": "Map: MaxForce→MaxForce/MaxTorque, P/D→Responsiveness/MaxVelocity; RelativeTo options differ. Retune feel.",
+   "verify": [
+    "api:BodyVelocity",
+    "cd:physics/mover-constraints"
+   ],
+   "detect": "Body(Velocity|Gyro|Position|Force|AngularVelocity|Thrust)|RocketPropulsion"
+  },
+  {
+   "id": "phys-velocity",
+   "category": "physics",
+   "status": "deprecated",
+   "era": "2008-2021",
+   "old": "part.Velocity / part.RotVelocity",
+   "new": "part.AssemblyLinearVelocity / part.AssemblyAngularVelocity (or ApplyImpulse)",
+   "why": "Deprecated; velocity is a property of the assembly.",
+   "when_ok": "",
+   "notes": "Write velocity/impulses on the network owner.",
+   "verify": [
+    "api:BasePart.Velocity",
+    "api:BasePart.RotVelocity"
+   ],
+   "detect": "\\.(Velocity|RotVelocity)\\s*="
+  },
+  {
+   "id": "phys-collision-groups",
+   "category": "physics",
+   "status": "deprecated",
+   "era": "2017-2022",
+   "old": "PhysicsService:CreateCollisionGroup / SetPartCollisionGroup / part.CollisionGroupId",
+   "new": "PhysicsService:RegisterCollisionGroup + CollisionGroupSetCollidable; part.CollisionGroup = \"Name\"",
+   "why": "Old API deprecated.",
+   "when_ok": "",
+   "notes": "Max 32 groups.",
+   "verify": [
+    "api:PhysicsService.CreateCollisionGroup",
+    "api:PhysicsService.SetPartCollisionGroup",
+    "api:BasePart.CollisionGroupId"
+   ],
+   "detect": "CreateCollisionGroup|SetPartCollisionGroup|CollisionGroupId"
+  },
+  {
+   "id": "phys-light-range-60",
+   "category": "rendering",
+   "status": "outdated-fact",
+   "era": "2008-2023",
+   "old": "'Light Range max is 60 studs'",
+   "new": "Range is clamped to 120 studs (ExtendLightRangeTo120 is unused)",
+   "why": "Engine limit changed.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Lighting.ExtendLightRangeTo120",
+    "cd:reference/engine/classes/Lighting"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "query-findpartonray",
+   "category": "queries",
+   "status": "deprecated",
+   "era": "2008-2020",
+   "old": "workspace:FindPartOnRay(Ray.new(o, d), ignore) / FindPartOnRayWithIgnoreList / WithWhitelist",
+   "new": "workspace:Raycast(origin, direction, params) → RaycastResult? (.Instance, .Position, .Normal, .Material, .Distance)",
+   "why": "Deprecated; Raycast supports params, collision groups, returns a result object.",
+   "when_ok": "",
+   "notes": "direction vector length = distance (max 15,000 studs).",
+   "verify": [
+    "api:WorldRoot.FindPartOnRay",
+    "api:WorldRoot.Raycast",
+    "cd:workspace/raycasting"
+   ],
+   "detect": "FindPartOnRay"
+  },
+  {
+   "id": "query-filter-blacklist",
+   "category": "queries",
+   "status": "removed",
+   "era": "2020-2023",
+   "old": "params.FilterType = Enum.RaycastFilterType.Blacklist / Whitelist",
+   "new": "params.ExcludeInstances = {...} / params.IncludeInstances = {...} (2026 API); or FilterType = Exclude / Include",
+   "why": "Enum items Blacklist/Whitelist no longer exist in Enum.RaycastFilterType (API 0.740 has only Exclude, Include) → code errors.",
+   "when_ok": "Never.",
+   "notes": "FilterDescendantsInstances + FilterType still work but are superseded by ExcludeInstances/IncludeInstances (can be combined; exclusion wins).",
+   "verify": [
+    "api:Enum.RaycastFilterType",
+    "api:RaycastParams.ExcludeInstances"
+   ],
+   "detect": "RaycastFilterType\\.(Blacklist|Whitelist)"
+  },
+  {
+   "id": "query-filterdescendants",
+   "category": "queries",
+   "status": "superseded",
+   "era": "2020-2025",
+   "old": "params.FilterDescendantsInstances = {char}; params.FilterType = Enum.RaycastFilterType.Exclude",
+   "new": "params.ExcludeInstances = {char}",
+   "why": "Docs: superseded by ExcludeInstances/IncludeInstances for new work.",
+   "when_ok": "Existing code keeps working.",
+   "notes": "",
+   "verify": [
+    "api:RaycastParams.FilterDescendantsInstances",
+    "api:RaycastParams.ExcludeInstances"
+   ],
+   "detect": "FilterDescendantsInstances"
+  },
+  {
+   "id": "query-region3",
+   "category": "queries",
+   "status": "deprecated",
+   "era": "2012-2021",
+   "old": "workspace:FindPartsInRegion3(Region3.new(a, b)) / IsRegion3Empty",
+   "new": "workspace:GetPartBoundsInBox(cframe, size, overlapParams) / GetPartBoundsInRadius / GetPartsInPart",
+   "why": "Deprecated; new queries support rotation, OverlapParams, collision groups, MaxParts.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:WorldRoot.FindPartsInRegion3",
+    "api:WorldRoot.GetPartBoundsInBox"
+   ],
+   "detect": "FindPartsInRegion3|IsRegion3Empty"
+  },
+  {
+   "id": "anim-humanoid-load",
+   "category": "animation",
+   "status": "deprecated",
+   "era": "2014-2021",
+   "old": "humanoid:LoadAnimation(anim) / animationController:LoadAnimation(anim)",
+   "new": "animator:LoadAnimation(anim) where animator = humanoid:FindFirstChildOfClass(\"Animator\")",
+   "why": "Deprecated in favour of Animator (explicit, replicates correctly).",
+   "when_ok": "",
+   "notes": "Load once per Animator and reuse tracks.",
+   "verify": [
+    "api:Humanoid.LoadAnimation",
+    "api:AnimationController.LoadAnimation",
+    "api:Animator.LoadAnimation"
+   ],
+   "detect": ":LoadAnimation\\s*\\("
+  },
+  {
+   "id": "anim-keyframereached",
+   "category": "animation",
+   "status": "pattern",
+   "era": "2014-2020",
+   "old": "track.KeyframeReached:Connect(function(name) if name == \"Hit\" ...)",
+   "new": "track:GetMarkerReachedSignal(\"Hit\"):Connect(fn) with animation events/markers",
+   "why": "Markers are explicit events in the Animation Editor; KeyframeReached relies on keyframe naming.",
+   "when_ok": "KeyframeReached still works.",
+   "notes": "Markers are cosmetic on clients — no authoritative damage from them.",
+   "verify": [
+    "api:AnimationTrack.GetMarkerReachedSignal"
+   ],
+   "detect": "KeyframeReached"
+  },
+  {
+   "id": "sec-filteringenabled",
+   "category": "security",
+   "status": "removed",
+   "era": "2008-2018",
+   "old": "workspace.FilteringEnabled = false  -- 'turn off FE'",
+   "new": "Always-on client/server boundary: server authority + RemoteEvents",
+   "why": "FilteringEnabled is deprecated and always effectively on; client changes never replicate (except owned physics).",
+   "when_ok": "Never.",
+   "notes": "Any tutorial that relies on FE off is obsolete.",
+   "verify": [
+    "api:Workspace.FilteringEnabled",
+    "cd:projects/client-server"
+   ],
+   "detect": "FilteringEnabled"
+  },
+  {
+   "id": "sec-client-currency",
+   "category": "security",
+   "status": "pattern",
+   "era": "2008-2018",
+   "old": "-- LocalScript\nplayer.leaderstats.Coins.Value += 10",
+   "new": "-- client: remote:FireServer(\"ClaimReward\", rewardId)\n-- server: validate eligibility, then coins += amount",
+   "why": "Pre-FE habit: client-side changes don't replicate and are trivially exploitable.",
+   "when_ok": "Never.",
+   "notes": "",
+   "verify": [
+    "cd:scripting/security/client-server-boundary"
+   ],
+   "detect": "leaderstats\\.[%w_]+\\.Value\\s*[+%-]?="
+  },
+  {
+   "id": "sec-remote-damage",
+   "category": "security",
+   "status": "pattern",
+   "era": "2012-now",
+   "old": "damageRemote:FireServer(target, 50) → server: target.Humanoid:TakeDamage(dmg)",
+   "new": "client sends intent (attack id, aim); server computes damage from server weapon stats + validation",
+   "why": "Client can send any target and any number.",
+   "when_ok": "Never.",
+   "notes": "",
+   "verify": [
+    "cd:scripting/security/client-server-boundary",
+    "cd:scripting/security/security-tactics"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "sec-invokeclient",
+   "category": "security",
+   "status": "pattern",
+   "era": "2012-now",
+   "old": "remoteFunction:InvokeClient(player) on the server critical path",
+   "new": "RemoteEvent push from the client with rate limits, or compute on the server",
+   "why": "Server yields forever if the client never returns; errors if client errors/disconnects.",
+   "when_ok": "Non-critical UI queries with timeout wrappers (rarely justified).",
+   "notes": "",
+   "verify": [
+    "cd:scripting/events/remote"
+   ],
+   "detect": ":InvokeClient\\s*\\("
+  },
+  {
+   "id": "sec-require-assetid",
+   "category": "security",
+   "status": "pattern",
+   "era": "2010-now",
+   "old": "require(123456789)  -- free model / 'admin' loader",
+   "new": "Code you own in the place (or packages you control); audit third-party models",
+   "why": "Remote module requires are a classic backdoor vector; only works on the server and pulls code you don't control.",
+   "when_ok": "Your own published MainModule with pinned versions and review.",
+   "notes": "",
+   "verify": [
+    "cd:scripting/security/third-party-vulnerabilities"
+   ],
+   "detect": "require\\s*\\(\\s*\\d{5,}"
+  },
+  {
+   "id": "sec-secrets-replicated",
+   "category": "security",
+   "status": "pattern",
+   "era": "2015-now",
+   "old": "local API_KEY = \"...\" in a ModuleScript in ReplicatedStorage",
+   "new": "HttpService:GetSecret(\"name\") in server code (Secrets store)",
+   "why": "Replicated modules can be decompiled by clients.",
+   "when_ok": "Never.",
+   "notes": "",
+   "verify": [
+    "cd:cloud-services/secrets",
+    "api:HttpService.GetSecret"
+   ],
+   "detect": "(api[_-]?key|token|secret)\\s*=\\s*[\\\"']"
+  },
+  {
+   "id": "async-loadcharacter",
+   "category": "players",
+   "status": "deprecated",
+   "era": "2006-2025",
+   "old": "player:LoadCharacter()",
+   "new": "player:LoadCharacterAsync()",
+   "why": "2025-26 *Async rename; old name deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Player.LoadCharacter",
+    "api:Player.LoadCharacterAsync"
+   ],
+   "detect": ":LoadCharacter\\s*\\("
+  },
+  {
+   "id": "async-group",
+   "category": "players",
+   "status": "deprecated",
+   "era": "2008-2025",
+   "old": "player:IsInGroup(id) / player:GetRankInGroup(id) / player:GetRoleInGroup(id)",
+   "new": "player:IsInGroupAsync(id); GroupService:GetRolesInGroupAsync(userId, groupId) (all public roles)",
+   "why": "*Async renames; GetRankInGroupAsync/GetRoleInGroupAsync also superseded by GroupService:GetRolesInGroupAsync.",
+   "when_ok": "",
+   "notes": "These yield: wrap in pcall, cache per session.",
+   "verify": [
+    "api:Player.IsInGroup",
+    "api:Player.IsInGroupAsync",
+    "api:GroupService.GetRolesInGroupAsync"
+   ],
+   "detect": ":(IsInGroup|GetRankInGroup|GetRoleInGroup)\\s*\\("
+  },
+  {
+   "id": "async-friends",
+   "category": "players",
+   "status": "deprecated",
+   "era": "2010-2025",
+   "old": "player:IsFriendsWith(userId) / GetFriendsOnline()",
+   "new": "player:IsFriendsWithAsync(userId) / GetFriendsOnlineAsync()",
+   "why": "*Async rename.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Player.IsFriendsWith",
+    "api:Player.IsFriendsWithAsync"
+   ],
+   "detect": ":(IsFriendsWith|GetFriendsOnline)\\s*\\("
+  },
+  {
+   "id": "async-humanoiddesc",
+   "category": "players",
+   "status": "deprecated",
+   "era": "2019-2025",
+   "old": "humanoid:ApplyDescription(desc) / Players:GetHumanoidDescriptionFromUserId(id) / CreateHumanoidModelFromUserId / humanoid:PlayEmote",
+   "new": "ApplyDescriptionAsync / GetHumanoidDescriptionFromUserIdAsync / CreateHumanoidModelFromUserIdAsync / PlayEmoteAsync",
+   "why": "*Async renames.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Humanoid.ApplyDescription",
+    "api:Players.GetHumanoidDescriptionFromUserId",
+    "api:Humanoid.PlayEmote"
+   ],
+   "detect": ":(ApplyDescription|GetHumanoidDescriptionFromUserId|CreateHumanoidModelFromUserId|PlayEmote)\\s*\\("
+  },
+  {
+   "id": "async-preload",
+   "category": "rendering",
+   "status": "deprecated",
+   "era": "2012-2020",
+   "old": "ContentProvider:Preload(id)",
+   "new": "ContentProvider:PreloadAsync({instancesOrIds}, callback?) — only for loading-screen/critical assets",
+   "why": "Deprecated; preloading everything slows joins.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:ContentProvider.Preload",
+    "api:ContentProvider.PreloadAsync"
+   ],
+   "detect": "ContentProvider:Preload\\s*\\("
+  },
+  {
+   "id": "money-productinfo",
+   "category": "monetization",
+   "status": "deprecated",
+   "era": "2012-2025",
+   "old": "MarketplaceService:GetProductInfo(id) / PlayerOwnsAsset(p, id) / PlayerOwnsBundle",
+   "new": "GetProductInfoAsync / PlayerOwnsAssetAsync / PlayerOwnsBundleAsync",
+   "why": "*Async renames.",
+   "when_ok": "",
+   "notes": "pcall + cache.",
+   "verify": [
+    "api:MarketplaceService.GetProductInfo",
+    "api:MarketplaceService.PlayerOwnsAsset"
+   ],
+   "detect": ":(GetProductInfo|PlayerOwnsAsset|PlayerOwnsBundle)\\s*\\("
+  },
+  {
+   "id": "money-gamepass",
+   "category": "monetization",
+   "status": "deprecated",
+   "era": "2012-2018",
+   "old": "GamePassService:PlayerHasPass(player, id)",
+   "new": "MarketplaceService:UserOwnsGamePassAsync(userId, passId) on the server",
+   "why": "Deprecated service method.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:GamePassService.PlayerHasPass",
+    "api:MarketplaceService.UserOwnsGamePassAsync"
+   ],
+   "detect": "PlayerHasPass"
+  },
+  {
+   "id": "money-receipt",
+   "category": "monetization",
+   "status": "pattern",
+   "era": "2014-now",
+   "old": "ProcessReceipt returns PurchaseGranted immediately after awarding in memory",
+   "new": "Record PurchaseId + grant in the profile, save durably, then PurchaseGranted; NotProcessedYet on failure; idempotent on repeat ids",
+   "why": "ProcessReceipt can re-run (rejoin/another server); granting without durable record duplicates or loses purchases.",
+   "when_ok": "Never.",
+   "notes": "",
+   "verify": [
+    "cd:cloud-services/data-stores/player-data-purchasing",
+    "api:MarketplaceService.ProcessReceipt"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "money-badge",
+   "category": "monetization",
+   "status": "deprecated",
+   "era": "2012-2025",
+   "old": "BadgeService:AwardBadge(userId, id) / UserHasBadge",
+   "new": "BadgeService:AwardBadgeAsync / UserHasBadgeAsync (server, pcall)",
+   "why": "*Async renames.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:BadgeService.AwardBadge",
+    "api:BadgeService.UserHasBadge"
+   ],
+   "detect": ":(AwardBadge|UserHasBadge)\\s*\\("
+  },
+  {
+   "id": "tp-client-teleport",
+   "category": "teleport",
+   "status": "deprecated",
+   "era": "2010-2022",
+   "old": "TeleportService:Teleport(placeId, player) from a LocalScript; TeleportPartyAsync; TeleportToPrivateServer; TeleportToPlaceInstance",
+   "new": "server-side TeleportService:TeleportAsync(placeId, players, TeleportOptions)",
+   "why": "Client teleports are deprecated and bypass 'Secure within universe' access control.",
+   "when_ok": "",
+   "notes": "TeleportOptions: ServerInstanceId, ReservedServerAccessCode, ShouldReserveServer, SetTeleportData.",
+   "verify": [
+    "api:TeleportService.Teleport",
+    "api:TeleportService.TeleportAsync",
+    "cd:projects/teleport"
+   ],
+   "detect": "TeleportService:(Teleport|TeleportPartyAsync|TeleportToPrivateServer|TeleportToPlaceInstance|TeleportToSpawnByName)\\s*\\("
+  },
+  {
+   "id": "tp-reserve",
+   "category": "teleport",
+   "status": "deprecated",
+   "era": "2015-2025",
+   "old": "TeleportService:ReserveServer(placeId)",
+   "new": "TeleportService:ReserveServerAsync(placeId) or TeleportOptions.ShouldReserveServer = true",
+   "why": "*Async rename.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:TeleportService.ReserveServer",
+    "api:TeleportService.ReserveServerAsync"
+   ],
+   "detect": ":ReserveServer\\s*\\("
+  },
+  {
+   "id": "data-player-save",
+   "category": "data",
+   "status": "deprecated",
+   "era": "2008-2014",
+   "old": "player:SaveNumber('Coins', n) / LoadNumber / DataReady / WaitForDataReady / SaveInstance",
+   "new": "DataStoreService profile per user key (UpdateAsync + session lock)",
+   "why": "Legacy Data Persistence API removed/deprecated.",
+   "when_ok": "Never.",
+   "notes": "",
+   "verify": [
+    "api:Player.SaveNumber",
+    "api:Player.WaitForDataReady",
+    "cd:cloud-services/data-stores/index"
+   ],
+   "detect": ":(Save|Load)(Number|String|Boolean|Instance)\\s*\\(|WaitForDataReady"
+  },
+  {
+   "id": "data-setasync-profile",
+   "category": "data",
+   "status": "pattern",
+   "era": "2014-now",
+   "old": "store:SetAsync(key, profile) on every change / on leave only",
+   "new": "load once, mutate in memory, UpdateAsync on autosave (60–300 s, jittered), leave, BindToClose, purchases; session lock",
+   "why": "SetAsync overwrites blindly (lost updates across servers), wastes budget, no lock.",
+   "when_ok": "SetAsync for brand-new keys or admin overwrite tools.",
+   "notes": "",
+   "verify": [
+    "cd:cloud-services/data-stores/best-practices",
+    "cd:cloud-services/data-stores/player-data-purchasing"
+   ],
+   "detect": ":SetAsync\\s*\\("
+  },
+  {
+   "id": "data-default-on-fail",
+   "category": "data",
+   "status": "pattern",
+   "era": "2014-now",
+   "old": "local ok, data = pcall(GetAsync); if not ok then data = DEFAULT end  -- then saved later",
+   "new": "mark profile errored: play with defaults but never save it; block purchases/trades; retry; tell the player",
+   "why": "Saving defaults after a failed load wipes the real profile.",
+   "when_ok": "Never.",
+   "notes": "",
+   "verify": [
+    "cd:cloud-services/data-stores/player-data-purchasing"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "data-onupdate",
+   "category": "data",
+   "status": "deprecated",
+   "era": "2014-2019",
+   "old": "dataStore:OnUpdate(key, fn)",
+   "new": "MessagingService publish/subscribe to signal changes; re-read the store",
+   "why": "Deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:GlobalDataStore.OnUpdate",
+    "cd:cloud-services/cross-server-messaging"
+   ],
+   "detect": ":OnUpdate\\s*\\("
+  },
+  {
+   "id": "data-old-limits",
+   "category": "data",
+   "status": "outdated-fact",
+   "era": "2016-2024",
+   "old": "'60 + numPlayers × 10 requests/min per server' and '6-second write cooldown per key'",
+   "new": "Server default read/write: 60 + 40 × players per minute (configurable via SetRateLimitForRequestType); experience-wide 300 + CCU×40 (read) / ×20 (write); per-key throughput 25 MB/min read, 4 MB/min write; 4 MB value limit",
+   "why": "Limit model changed; old numbers are wrong.",
+   "when_ok": "",
+   "notes": "Check GetRequestBudgetForRequestType at runtime.",
+   "verify": [
+    "cd:cloud-services/data-stores/error-codes-and-limits",
+    "api:DataStoreService.SetRateLimitForRequestType"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "data-datastore2",
+   "category": "data",
+   "status": "discouraged",
+   "era": "2018-2023",
+   "old": "DataStore2 library (one data store per player + backups pattern)",
+   "new": "Single-key-per-player profiles in few data stores; official DataStore2 migration tool for existing games",
+   "why": "Official best-practices: don't use DataStore2 for new experiences.",
+   "when_ok": "Existing games until migrated.",
+   "notes": "",
+   "verify": [
+    "cd:cloud-services/data-stores/best-practices"
+   ],
+   "detect": "DataStore2"
+  },
+  {
+   "id": "data-remove-version",
+   "category": "data",
+   "status": "deprecated",
+   "era": "2021-2025",
+   "old": "dataStore:RemoveVersionAsync(key, version)",
+   "new": "Rely on versioning retention; manage via Open Cloud / Data Stores Manager",
+   "why": "Deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:DataStore.RemoveVersionAsync"
+   ],
+   "detect": "RemoveVersionAsync"
+  },
+  {
+   "id": "light-technology",
+   "category": "rendering",
+   "status": "restricted",
+   "era": "2018-2025",
+   "old": "Lighting.Technology = Enum.Technology.Future  -- in a Script",
+   "new": "Set Lighting.LightingStyle = Realistic (and PrioritizeLightingQuality) in Studio's Properties window; runtime scripts can't change either",
+   "why": "Technology is RobloxScriptSecurity (scripts can't read/write) and deprecated; its successors are Studio/plugin-only writes (PluginOrOpenCloud capability).",
+   "when_ok": "Never at runtime.",
+   "notes": "Runtime graphics presets change post effects, lights, shadows toggles, Atmosphere, particle rates instead.",
+   "verify": [
+    "api:Lighting.Technology",
+    "api:Lighting.LightingStyle",
+    "cd:environment/lighting"
+   ],
+   "detect": "\\.Technology\\s*="
+  },
+  {
+   "id": "light-outlines",
+   "category": "rendering",
+   "status": "removed",
+   "era": "2006-2016",
+   "old": "Lighting.Outlines = true",
+   "new": "Highlight instances or modelled/decal outlines",
+   "why": "The outlines feature was removed; property deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Lighting.Outlines"
+   ],
+   "detect": "\\.Outlines\\s*="
+  },
+  {
+   "id": "light-fog-with-atmosphere",
+   "category": "rendering",
+   "status": "outdated-fact",
+   "era": "2006-2020",
+   "old": "Setting Lighting.FogEnd/FogStart while an Atmosphere exists",
+   "new": "Tune Atmosphere Density/Offset/Haze/Color",
+   "why": "Fog properties are ignored/hidden when Lighting contains an Atmosphere.",
+   "when_ok": "Places without Atmosphere (stylized) can still use fog.",
+   "notes": "",
+   "verify": [
+    "cd:reference/engine/classes/Atmosphere"
+   ],
+   "detect": "\\.Fog(End|Start|Color)\\s*="
+  },
+  {
+   "id": "light-compat-look",
+   "category": "rendering",
+   "status": "deprecated",
+   "era": "2018-2024",
+   "old": "Technology = Compatibility for the old Roblox look",
+   "new": "Voxel-style lighting + ColorGradingEffect.TonemapperPreset = Retro, lights ≤ 1 brightness",
+   "why": "Compatibility is deprecated and not selectable.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Enum.Technology",
+    "api:ColorGradingEffect.TonemapperPreset"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "render-highlight-31",
+   "category": "rendering",
+   "status": "outdated-fact",
+   "era": "2022-2024",
+   "old": "'Only 31 Highlights can be visible at once'",
+   "new": "Client renders up to 255 simultaneous Highlights (extras silently ignored)",
+   "why": "Limit changed.",
+   "when_ok": "",
+   "notes": "Still reuse Highlights for performance.",
+   "verify": [
+    "cd:effects/highlighting"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "render-surfaceappearance-swap",
+   "category": "rendering",
+   "status": "restricted",
+   "era": "2021-now",
+   "old": "surfaceAppearance.ColorMap = \"rbxassetid://...\" at runtime",
+   "new": "Prebuild SurfaceAppearance variants in Studio and clone/swap the whole MeshPart or SurfaceAppearance; tint with SurfaceAppearance.Color; EmissiveStrength/EmissiveTint are writable",
+   "why": "Map properties are PluginSecurity (docs: SurfaceAppearance can't generally be modified by scripts at runtime due to preprocessing).",
+   "when_ok": "Plugins / edit-time tools.",
+   "notes": "",
+   "verify": [
+    "api:SurfaceAppearance.ColorMap",
+    "api:SurfaceAppearance.Color",
+    "cd:art/modeling/surface-appearance"
+   ],
+   "detect": "\\.(ColorMap|NormalMap|RoughnessMap|MetalnessMap)\\s*="
+  },
+  {
+   "id": "render-meshid-runtime",
+   "category": "rendering",
+   "status": "restricted",
+   "era": "2017-now",
+   "old": "meshPart.MeshId = \"rbxassetid://...\" at runtime",
+   "new": "Clone a prebuilt MeshPart, or AssetService:CreateMeshPartAsync(meshContent) then ApplyMesh/replace",
+   "why": "MeshId/MeshContent writes are NotAccessibleSecurity for scripts.",
+   "when_ok": "Studio edit time.",
+   "notes": "",
+   "verify": [
+    "api:MeshPart.MeshId",
+    "api:AssetService.CreateMeshPartAsync"
+   ],
+   "detect": "\\.MeshId\\s*="
+  },
+  {
+   "id": "render-collisionfidelity-runtime",
+   "category": "physics",
+   "status": "restricted",
+   "era": "2018-now",
+   "old": "meshPart.CollisionFidelity = Enum.CollisionFidelity.Box in a Script",
+   "new": "Set CollisionFidelity in Studio before publishing (PluginOrOpenCloud-only write)",
+   "why": "Runtime scripts can't write it.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:TriangleMeshPart.CollisionFidelity"
+   ],
+   "detect": "\\.CollisionFidelity\\s*="
+  },
+  {
+   "id": "render-streamingenabled-runtime",
+   "category": "streaming",
+   "status": "restricted",
+   "era": "2018-now",
+   "old": "workspace.StreamingEnabled = true in a Script",
+   "new": "Set in Studio (write security PluginSecurity); design scripts for partial worlds",
+   "why": "Not scriptable.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Workspace.StreamingEnabled",
+    "cd:workspace/streaming/index"
+   ],
+   "detect": "\\.StreamingEnabled\\s*="
+  },
+  {
+   "id": "render-texture-realism",
+   "category": "rendering",
+   "status": "pattern",
+   "era": "2008-2020",
+   "old": "Decals/Textures with baked lighting for 'realism', SmoothPlastic + BrickColor palettes",
+   "new": "PBR: MaterialVariant (tileable) / SurfaceAppearance (unique meshes) + Realistic lighting",
+   "why": "Modern PBR pipeline gives physically consistent response.",
+   "when_ok": "Stylized games may keep flat textures.",
+   "notes": "",
+   "verify": [
+    "cd:parts/materials",
+    "cd:art/modeling/surface-appearance"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "audio-sound-props",
+   "category": "audio",
+   "status": "deprecated",
+   "era": "2008-2018",
+   "old": "sound.Pitch / MaxDistance / MinDistance / EmitterSize",
+   "new": "PlaybackSpeed / RollOffMaxDistance / RollOffMinDistance",
+   "why": "Deprecated aliases.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Sound.Pitch",
+    "api:Sound.MaxDistance",
+    "api:Sound.EmitterSize"
+   ],
+   "detect": "\\.(Pitch|MaxDistance|MinDistance|EmitterSize)\\s*="
+  },
+  {
+   "id": "audio-legacy-sound",
+   "category": "audio",
+   "status": "discouraged",
+   "era": "2008-2024",
+   "old": "Sound / SoundGroup / *SoundEffect for new audio systems",
+   "new": "Audio API: AudioPlayer → Wire → AudioEmitter / AudioDeviceOutput; AudioListener; effects (AudioReverb, AudioEqualizer...)",
+   "why": "Audio docs: Sound/SoundGroup/SoundEffect are now discouraged in favour of audio objects (not deprecated).",
+   "when_ok": "Existing projects and simple one-shots.",
+   "notes": "Audio API adds routing, voice, acoustic simulation (occlusion/diffraction/reverb).",
+   "verify": [
+    "cd:audio/objects",
+    "api:AudioPlayer.Asset"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "audio-assetid",
+   "category": "audio",
+   "status": "deprecated",
+   "era": "2024-2025",
+   "old": "audioPlayer.AssetId = \"...\"",
+   "new": "audioPlayer.Asset = \"rbxassetid://...\"",
+   "why": "Property renamed.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:AudioPlayer.AssetId",
+    "api:AudioPlayer.Asset"
+   ],
+   "detect": "AudioPlayer.*\\.AssetId|\\.AssetId\\s*="
+  },
+  {
+   "id": "ui-tween-methods",
+   "category": "ui",
+   "status": "deprecated",
+   "era": "2012-2020",
+   "old": "frame:TweenPosition(...) / TweenSize / TweenSizeAndPosition",
+   "new": "TweenService:Create(frame, TweenInfo.new(...), { Position = ..., Size = ... }):Play()",
+   "why": "Deprecated; TweenService is general and cancellable.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:GuiObject.TweenPosition",
+    "api:GuiObject.TweenSize"
+   ],
+   "detect": ":Tween(Position|Size|SizeAndPosition)\\s*\\("
+  },
+  {
+   "id": "ui-text-props",
+   "category": "ui",
+   "status": "deprecated",
+   "era": "2008-2016",
+   "old": "label.FontSize / TextWrap / TextColor / BackgroundColor / BorderColor",
+   "new": "TextSize / TextWrapped / TextColor3 / BackgroundColor3 / BorderColor3",
+   "why": "Deprecated aliases.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:TextLabel.FontSize",
+    "api:TextLabel.TextWrap",
+    "api:GuiObject.BackgroundColor"
+   ],
+   "detect": "\\.(FontSize|TextWrap|TextColor|BackgroundColor|BorderColor)\\s*="
+  },
+  {
+   "id": "ui-draggable",
+   "category": "ui",
+   "status": "deprecated",
+   "era": "2010-2023",
+   "old": "frame.Draggable = true",
+   "new": "UIDragDetector child",
+   "why": "Deprecated; UIDragDetector supports more inputs.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:GuiObject.Draggable",
+    "api:UIDragDetector"
+   ],
+   "detect": "\\.Draggable\\s*="
+  },
+  {
+   "id": "ui-guiinset",
+   "category": "ui",
+   "status": "pattern",
+   "era": "2016-2023",
+   "old": "Hard-coded 36-pixel topbar offset / IgnoreGuiInset juggling",
+   "new": "ScreenGui.ScreenInsets = CoreUISafeInsets (default) / DeviceSafeInsets / TopbarSafeInsets / None",
+   "why": "Topbar and device cutouts vary by device and over time.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:ScreenGui.ScreenInsets",
+    "cd:ui/on-screen-containers"
+   ],
+   "detect": "36\\)|GetGuiInset"
+  },
+  {
+   "id": "ui-resetplayergui",
+   "category": "ui",
+   "status": "deprecated",
+   "era": "2014-2018",
+   "old": "StarterGui.ResetPlayerGuiOnSpawn = false",
+   "new": "screenGui.ResetOnSpawn = false per ScreenGui",
+   "why": "Deprecated global switch.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:StarterGui.ResetPlayerGuiOnSpawn"
+   ],
+   "detect": "ResetPlayerGuiOnSpawn"
+  },
+  {
+   "id": "ui-mouseclick",
+   "category": "ui",
+   "status": "pattern",
+   "era": "2008-now",
+   "old": "button.MouseButton1Click:Connect(fn)",
+   "new": "button.Activated:Connect(fn)",
+   "why": "Activated works for mouse, touch and gamepad selection.",
+   "when_ok": "Mouse-only desktop tools.",
+   "notes": "",
+   "verify": [
+    "api:GuiButton.Activated"
+   ],
+   "detect": "MouseButton1Click"
+  },
+  {
+   "id": "input-mouse",
+   "category": "input",
+   "status": "deprecated",
+   "era": "2006-2016",
+   "old": "local mouse = player:GetMouse(); mouse.KeyDown:Connect(...); mouse.Button1Down",
+   "new": "UserInputService / ContextActionService / Input Action System (InputContext/InputAction/InputBinding)",
+   "why": "Mouse events are superseded by UserInputService; KeyDown deprecated.",
+   "when_ok": "Mouse.Hit for quick prototypes is still available.",
+   "notes": "",
+   "verify": [
+    "api:Mouse.KeyDown",
+    "cd:input/input-action-system"
+   ],
+   "detect": "GetMouse\\s*\\(|\\.KeyDown"
+  },
+  {
+   "id": "input-modalenabled",
+   "category": "input",
+   "status": "deprecated",
+   "era": "2014-2024",
+   "old": "UserInputService.ModalEnabled = true",
+   "new": "GuiService.TouchControlsEnabled = false (hide touch controls)",
+   "why": "Renamed/superseded.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:UserInputService.ModalEnabled",
+    "api:GuiService.TouchControlsEnabled"
+   ],
+   "detect": "ModalEnabled"
+  },
+  {
+   "id": "input-bindtypes",
+   "category": "input",
+   "status": "deprecated",
+   "era": "2014-2016",
+   "old": "ContextActionService:BindActionToInputTypes(...)",
+   "new": "ContextActionService:BindAction(name, fn, touchButton, ...inputs)",
+   "why": "Deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:ContextActionService.BindActionToInputTypes"
+   ],
+   "detect": "BindActionToInputTypes"
+  },
+  {
+   "id": "chat-legacy",
+   "category": "chat",
+   "status": "deprecated",
+   "era": "2016-2023",
+   "old": "Legacy Lua chat (Chat service ChatModules/ChatScript forks, Chat:Chat bubbles)",
+   "new": "TextChatService (TextChannels, TextChatCommands, BubbleChatConfiguration); filtering built in",
+   "why": "Legacy chat system is retired in favour of TextChatService; ChatVersion is not script-writable.",
+   "when_ok": "",
+   "notes": "Player.Chatted still exists for listening.",
+   "verify": [
+    "api:TextChatService.ChatVersion",
+    "cd:chat/in-experience-text-chat"
+   ],
+   "detect": "ChatService|ChatModules|:Chat\\s*\\("
+  },
+  {
+   "id": "chat-filter-player",
+   "category": "chat",
+   "status": "deprecated",
+   "era": "2016-2020",
+   "old": "Chat:FilterStringForPlayerAsync(text, player)",
+   "new": "TextService:FilterStringAsync(text, fromUserId) → GetNonChatStringForBroadcastAsync / GetNonChatStringForUserAsync",
+   "why": "Deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Chat.FilterStringForPlayerAsync",
+    "api:TextService.FilterStringAsync"
+   ],
+   "detect": "FilterStringForPlayerAsync"
+  },
+  {
+   "id": "layout-localscript-rs",
+   "category": "runtime",
+   "status": "pattern",
+   "era": "2008-now",
+   "old": "LocalScript placed in ReplicatedStorage or Workspace (never runs)",
+   "new": "Script with RunContext = Client in ReplicatedStorage (single entry), or LocalScript in StarterPlayerScripts",
+   "why": "LocalScripts only run in specific client containers.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "cd:scripting/locations"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "layout-scripts-in-parts",
+   "category": "runtime",
+   "status": "pattern",
+   "era": "2008-2021",
+   "old": "A Script copied into every door/lamp/coin model",
+   "new": "Tag instances + one module with a CollectionService binder",
+   "why": "Hundreds of script copies are hard to update and waste memory.",
+   "when_ok": "Creator Store assets that must be self-contained (set explicit RunContext).",
+   "notes": "",
+   "verify": [
+    "cd:scripting/locations",
+    "api:CollectionService.GetInstanceAddedSignal"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "layout-signalbehavior",
+   "category": "runtime",
+   "status": "pattern",
+   "era": "2006-2023",
+   "old": "Code assuming event handlers run immediately (Immediate signals)",
+   "new": "Code that works under SignalBehavior.Deferred (new templates, server authority)",
+   "why": "Deferred is recommended and will become the default.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Workspace.SignalBehavior",
+    "cd:scripting/events/deferred"
+   ],
+   "detect": ""
+  },
+  {
+   "id": "stream-pausemode",
+   "category": "streaming",
+   "status": "superseded",
+   "era": "2019-2022",
+   "old": "workspace.StreamingPauseMode",
+   "new": "Workspace.StreamingIntegrityMode = PauseOutsideLoadedArea (Studio setting); Player.GameplayPaused",
+   "why": "Superseded setting (both Studio-only).",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Workspace.StreamingPauseMode",
+    "api:Workspace.StreamingIntegrityMode"
+   ],
+   "detect": "StreamingPauseMode"
+  },
+  {
+   "id": "terrain-legacy-cells",
+   "category": "terrain",
+   "status": "removed",
+   "era": "2008-2016",
+   "old": "Terrain:SetCell / GetCell / SetCells / AutowedgeCell",
+   "new": "FillBlock/FillBall/WriteVoxels/ReadVoxels (smooth terrain)",
+   "why": "Legacy terrain engine removed.",
+   "when_ok": "Never.",
+   "notes": "",
+   "verify": [
+    "api:Terrain.SetCell",
+    "api:Terrain.WriteVoxels"
+   ],
+   "detect": ":(SetCell|GetCell|SetCells|AutowedgeCells?)\\s*\\("
+  },
+  {
+   "id": "path-old",
+   "category": "pathfinding",
+   "status": "deprecated",
+   "era": "2014-2019",
+   "old": "PathfindingService:ComputeRawPathAsync / ComputeSmoothPathAsync / FindPathAsync with ClosestNoPath checks",
+   "new": "PathfindingService:CreatePath(agentParams) then path:ComputeAsync(start, goal); Status Success/NoPath; Blocked event",
+   "why": "Deprecated methods and PathStatus values.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:PathfindingService.ComputeRawPathAsync",
+    "api:Enum.PathStatus",
+    "api:Path.ComputeAsync"
+   ],
+   "detect": "Compute(Raw|Smooth)PathAsync|ClosestNoPath|ClosestOutOfRange"
+  },
+  {
+   "id": "camera-old",
+   "category": "camera",
+   "status": "deprecated",
+   "era": "2008-2017",
+   "old": "camera.CoordinateFrame / camera.focus / camera:Interpolate(cf, focus, t)",
+   "new": "camera.CFrame / camera.Focus / TweenService on camera.CFrame (Scriptable)",
+   "why": "Deprecated.",
+   "when_ok": "",
+   "notes": "",
+   "verify": [
+    "api:Camera.CoordinateFrame",
+    "api:Camera.Interpolate"
+   ],
+   "detect": "CoordinateFrame|:Interpolate\\s*\\("
+  },
+  {
+   "id": "server-authority-opt",
+   "category": "security",
+   "status": "pattern",
+   "era": "2012-now",
+   "old": "Remote-based movement anti-cheat heuristics as the only defence in competitive games",
+   "new": "Consider engine server authority mode (AuthorityMode.Server, beta as of Sep 2026) with BindToSimulation + InputActions",
+   "why": "Official docs call server authority the most reliable movement-exploit fix.",
+   "when_ok": "Most non-competitive games: classic model + validation is fine.",
+   "notes": "Beta: prototype separately.",
+   "verify": [
+    "cd:projects/server-authority/index",
+    "cd:scripting/security/network-ownership"
+   ],
+   "detect": ""
+  }
+ ]
+}

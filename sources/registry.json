@@ -1380,7 +1380,9 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/04-materials-pbr.md"
+    "handbook/graphics/04-materials-pbr.md",
+    "recipes/graphics/industrial-warehouse.md",
+    "recipes/graphics/poolrooms.md"
    ]
   },
   "cd:art/modeling/surface-appearance": {
@@ -1425,7 +1427,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/roblox/17-audio.md"
+    "handbook/roblox/17-audio.md",
+    "recipes/graphics/poolrooms.md"
    ]
   },
   "cd:audio/index": {
@@ -1436,7 +1439,8 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/roblox/17-audio.md",
-    "recipes/gameplay/footsteps.md"
+    "recipes/gameplay/footsteps.md",
+    "recipes/graphics/cinematic-horror-interior.md"
    ]
   },
   "cd:audio/objects": {
@@ -1728,7 +1732,12 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/graphics/01-lighting.md",
-    "handbook/graphics/03-local-lights.md"
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/flickering-fluorescent.md",
+    "recipes/graphics/realistic-dark-corridor.md",
+    "recipes/graphics/realistic-flashlight.md"
    ]
   },
   "cd:effects/particle-emitters": {
@@ -1758,7 +1767,10 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/02-atmosphere-sky-post.md"
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/fog.md",
+    "recipes/graphics/night-exterior.md",
+    "recipes/graphics/sunset.md"
    ]
   },
   "cd:environment/clouds": {
@@ -1768,7 +1780,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/02-atmosphere-sky-post.md"
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/night-exterior.md"
    ]
   },
   "cd:environment/global-wind": {
@@ -1790,6 +1803,12 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/graphics/01-lighting.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/industrial-warehouse.md",
+    "recipes/graphics/lighting-controller-presets.md",
+    "recipes/graphics/night-exterior.md",
+    "recipes/graphics/sunset.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/README.md",
     "references/legacy-modernization/catalog.json"
@@ -1802,7 +1821,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/02-atmosphere-sky-post.md"
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/camera-aesthetics.md"
    ]
   },
   "cd:environment/skybox": {
@@ -1812,7 +1832,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/02-atmosphere-sky-post.md"
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/night-exterior.md"
    ]
   },
   "cd:input/gamepad": {
@@ -1822,7 +1843,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/roblox/19-input.md"
+    "handbook/roblox/19-input.md",
+    "recipes/gameplay/settings-menu.md"
    ]
   },
   "cd:input/index": {
@@ -1953,6 +1975,7 @@
    "cited_by": [
     "handbook/graphics/04-materials-pbr.md",
     "handbook/graphics/05-environment-art.md",
+    "recipes/graphics/industrial-warehouse.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1985,6 +2008,7 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/roblox/11-terrain.md",
+    "recipes/graphics/poolrooms.md",
     "references/limits.md"
    ]
   },
@@ -2006,7 +2030,8 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/graphics/07-quality-tiers.md",
-    "handbook/roblox/08-performance.md"
+    "handbook/roblox/08-performance.md",
+    "recipes/graphics/heavy-scene-performance-pass.md"
    ]
   },
   "cd:performance-optimization/identify": {
@@ -2016,7 +2041,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/roblox/08-performance.md"
+    "handbook/roblox/08-performance.md",
+    "recipes/graphics/heavy-scene-performance-pass.md"
    ]
   },
   "cd:performance-optimization/improve": {
@@ -2040,8 +2066,12 @@
     "handbook/roblox/22-code-quality.md",
     "recipes/gameplay/door-system.md",
     "recipes/gameplay/npc-patrol.md",
+    "recipes/gameplay/object-pooling.md",
     "recipes/gameplay/procedural-backrooms.md",
     "recipes/gameplay/round-manager.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
     "references/anti-patterns.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
@@ -2105,6 +2135,8 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/roblox/08-performance.md",
+    "recipes/gameplay/object-pooling.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
     "references/debugging-playbook.md"
    ]
   },
@@ -2125,7 +2157,9 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/07-quality-tiers.md"
+    "handbook/graphics/07-quality-tiers.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/heavy-scene-performance-pass.md"
    ]
   },
   "cd:physics/adaptive-timestepping": {
@@ -2294,7 +2328,10 @@
     "handbook/graphics/07-quality-tiers.md",
     "handbook/roblox/14-camera.md",
     "handbook/roblox/18-ui-ux.md",
-    "recipes/gameplay/bodycam-camera.md"
+    "recipes/gameplay/bodycam-camera.md",
+    "recipes/gameplay/settings-menu.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/flickering-fluorescent.md"
    ]
   },
   "cd:projects/assets/privacy": {
@@ -2425,6 +2462,9 @@
    "cited_by": [
     "handbook/graphics/01-lighting.md",
     "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/fog.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -2481,6 +2521,7 @@
     "handbook/roblox/14-camera.md",
     "recipes/gameplay/bodycam-camera.md",
     "recipes/gameplay/hitscan-gun.md",
+    "recipes/graphics/camera-aesthetics.md",
     "references/limits.md"
    ]
   },
@@ -2503,7 +2544,19 @@
    "cited_by": [
     "handbook/roblox/02-lifecycle-events.md",
     "handbook/roblox/21-architecture.md",
-    "recipes/gameplay/interaction-system.md"
+    "recipes/gameplay/interaction-system.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/lighting-controller-presets.md"
+   ]
+  },
+  "cd:reference/engine/classes/ColorCorrectionEffect": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ColorCorrectionEffect",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/camera-aesthetics.md"
    ]
   },
   "cd:reference/engine/classes/ColorGradingEffect": {
@@ -2513,7 +2566,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/02-atmosphere-sky-post.md"
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/camera-aesthetics.md"
    ]
   },
   "cd:reference/engine/classes/ContentProvider": {
@@ -2534,7 +2588,8 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/roblox/19-input.md",
-    "recipes/gameplay/inventory.md"
+    "recipes/gameplay/inventory.md",
+    "recipes/gameplay/settings-menu.md"
    ]
   },
   "cd:reference/engine/classes/ControllerManager": {
@@ -2555,6 +2610,16 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "recipes/gameplay/save-system.md"
+   ]
+  },
+  "cd:reference/engine/classes/EditableImage": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/EditableImage",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/camera-aesthetics.md"
    ]
   },
   "cd:reference/engine/classes/Explosion": {
@@ -2606,7 +2671,9 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/graphics/07-quality-tiers.md",
-    "recipes/gameplay/bodycam-camera.md"
+    "recipes/gameplay/bodycam-camera.md",
+    "recipes/gameplay/settings-menu.md",
+    "recipes/graphics/flickering-fluorescent.md"
    ]
   },
   "cd:reference/engine/classes/Humanoid": {
@@ -2688,7 +2755,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/03-local-lights.md"
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/flickering-fluorescent.md"
    ]
   },
   "cd:reference/engine/classes/Lighting": {
@@ -2700,6 +2768,12 @@
    "cited_by": [
     "handbook/graphics/01-lighting.md",
     "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/cinematic-horror-interior.md",
+    "recipes/graphics/fog.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/lighting-controller-presets.md",
+    "recipes/graphics/realistic-dark-corridor.md",
+    "recipes/graphics/sunset.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json",
     "references/limits.md"
@@ -2775,7 +2849,10 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/06-vfx-particles.md"
+    "handbook/graphics/06-vfx-particles.md",
+    "recipes/gameplay/object-pooling.md",
+    "recipes/graphics/graphics-presets.md",
+    "recipes/graphics/industrial-warehouse.md"
    ]
   },
   "cd:reference/engine/classes/Path": {
@@ -2864,7 +2941,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/03-local-lights.md"
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/emergency-red-lighting.md"
    ]
   },
   "cd:reference/engine/classes/ProximityPrompt": {
@@ -2941,7 +3019,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/02-atmosphere-sky-post.md"
+    "handbook/graphics/02-atmosphere-sky-post.md",
+    "recipes/graphics/night-exterior.md"
    ]
   },
   "cd:reference/engine/classes/Sound": {
@@ -2981,7 +3060,21 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/03-local-lights.md"
+    "handbook/graphics/03-local-lights.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/realistic-dark-corridor.md",
+    "recipes/graphics/realistic-flashlight.md"
+   ]
+  },
+  "cd:reference/engine/classes/SunRaysEffect": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SunRaysEffect",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/industrial-warehouse.md",
+    "recipes/graphics/sunset.md"
    ]
   },
   "cd:reference/engine/classes/SurfaceAppearance": {
@@ -3003,7 +3096,9 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/graphics/03-local-lights.md",
-    "recipes/gameplay/procedural-backrooms.md"
+    "recipes/gameplay/procedural-backrooms.md",
+    "recipes/graphics/backrooms-fluorescent-office.md",
+    "recipes/graphics/cinematic-horror-interior.md"
    ]
   },
   "cd:reference/engine/classes/Team": {
@@ -3044,7 +3139,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/roblox/11-terrain.md"
+    "handbook/roblox/11-terrain.md",
+    "recipes/graphics/poolrooms.md"
    ]
   },
   "cd:reference/engine/classes/TestService": {
@@ -3065,6 +3161,16 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/roblox/18-ui-ux.md"
+   ]
+  },
+  "cd:reference/engine/classes/Texture": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Texture",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/poolrooms.md"
    ]
   },
   "cd:reference/engine/classes/Tool": {
@@ -3095,7 +3201,18 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/roblox/14-camera.md",
-    "recipes/gameplay/door-system.md"
+    "recipes/gameplay/door-system.md",
+    "recipes/graphics/lighting-controller-presets.md"
+   ]
+  },
+  "cd:reference/engine/classes/UIGradient": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/UIGradient",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/camera-aesthetics.md"
    ]
   },
   "cd:reference/engine/classes/UnreliableRemoteEvent": {
@@ -3108,6 +3225,7 @@
     "handbook/roblox/03-networking.md",
     "recipes/gameplay/hitscan-gun.md",
     "recipes/gameplay/network-rate-limiter.md",
+    "recipes/graphics/realistic-flashlight.md",
     "references/limits.md"
    ]
   },
@@ -3118,7 +3236,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/graphics/07-quality-tiers.md"
+    "handbook/graphics/07-quality-tiers.md",
+    "recipes/graphics/graphics-presets.md"
    ]
   },
   "cd:reference/engine/classes/UserInputService": {
@@ -3170,6 +3289,7 @@
     "recipes/gameplay/hitscan-gun.md",
     "recipes/gameplay/melee-combat.md",
     "recipes/gameplay/npc-chase.md",
+    "recipes/gameplay/object-pooling.md",
     "recipes/gameplay/projectile-weapon.md",
     "recipes/gameplay/sprint-crouch-stamina.md"
    ]
@@ -3363,7 +3483,9 @@
     "recipes/gameplay/interaction-system.md",
     "recipes/gameplay/inventory.md",
     "recipes/gameplay/npc-chase.md",
-    "recipes/gameplay/round-manager.md"
+    "recipes/gameplay/round-manager.md",
+    "recipes/graphics/emergency-red-lighting.md",
+    "recipes/graphics/realistic-flashlight.md"
    ]
   },
   "cd:scripting/events/bindable": {
@@ -3644,6 +3766,7 @@
    "retrieved": "2026-09-26",
    "cited_by": [
     "handbook/roblox/08-performance.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
     "references/debugging-playbook.md"
    ]
   },
@@ -3785,6 +3908,16 @@
     "handbook/graphics/05-environment-art.md"
    ]
   },
+  "cd:tutorials/use-case-tutorials/lighting/enhance-indoor-environments": {
+   "url": "https://create.roblox.com/docs/tutorials/use-case-tutorials/lighting/enhance-indoor-environments",
+   "type": "official Roblox documentation",
+   "repo_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+   "commit_date": "2026-09-25T10:12:55+00:00",
+   "retrieved": "2026-09-26",
+   "cited_by": [
+    "recipes/graphics/cinematic-horror-interior.md"
+   ]
+  },
   "cd:ui/appearance-modifiers": {
    "url": "https://create.roblox.com/docs/ui/appearance-modifiers",
    "type": "official Roblox documentation",
@@ -3812,7 +3945,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/roblox/18-ui-ux.md"
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/settings-menu.md"
    ]
   },
   "cd:ui/labels": {
@@ -3854,7 +3988,8 @@
    "commit_date": "2026-09-25T10:12:55+00:00",
    "retrieved": "2026-09-26",
    "cited_by": [
-    "handbook/roblox/18-ui-ux.md"
+    "handbook/roblox/18-ui-ux.md",
+    "recipes/gameplay/settings-menu.md"
    ]
   },
   "cd:ui/proximity-prompts": {
@@ -3982,6 +4117,8 @@
    "cited_by": [
     "handbook/roblox/10-streaming.md",
     "recipes/gameplay/procedural-backrooms.md",
+    "recipes/graphics/fog.md",
+    "recipes/graphics/heavy-scene-performance-pass.md",
     "references/debugging-playbook.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"

@@ -26,6 +26,7 @@
 | 16 | [16-pitfalls-debugging-migration.md](16-pitfalls-debugging-migration.md) | словарь ошибок Output, типичные баги агентов, отладка, миграция deprecated → modern |
 | 17 | [17-performance.md](17-performance.md) | профилирование, Luau-оптимизации, движок, сеть, память, пулы, Parallel Luau |
 | 18 | [18-tooling-testing.md](18-tooling-testing.md) | Rojo, Wally, selene, StyLua, luau-lsp, проверка кода пакета, тесты, CI |
+| 19 | [19-code-review-casebook.md](19-code-review-casebook.md) | 7 разборов плохого кода: ревью по серьёзности и исправленные версии (монеты, магазин, сейвы, меч, HUD, NPC, дверь) |
 
 ## Задача → что читать
 
@@ -45,7 +46,8 @@
 | Эффекты, звук, атмосфера | 13 → `../handbook/20-graphics-pipeline.md` |
 | Архитектура большой игры | 14 → 05 → 18 |
 | Лагает, утечки памяти | 17 → 04 → 06 |
-| Ошибка в Output, «не работает» | 16 → 05 → тематический |
+| Ошибка в Output, «не работает» | 16 → 19 → 05 → тематический |
+| Ревью чужого кода | 19 → 00 (чек-лист) → 16 |
 | Старый код, free model | 16 (миграция, бэкдоры) → `../reference/modernization-matrix.md` |
 | Строки, паттерны, форматирование чисел и времени | 03 |
 | Типы и ошибки анализатора | 02 |

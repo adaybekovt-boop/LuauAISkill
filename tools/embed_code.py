@@ -5,6 +5,7 @@ In Markdown:
     <!-- code: examples/interaction/ServerScriptService/Interaction.server.luau -->
     <!-- /code -->
 Everything between the markers is replaced with a ```luau fence whose first line is `-- file: <path>`.
+`<!-- code: path#Name -->` embeds only the lines between `-- region Name` and `-- endregion` in that file.
 The .luau file is the single source of truth (typechecked by tools/check_code.py as part of its example project).
 
   python tools/embed_code.py          rewrite recipes in place
@@ -20,13 +21,25 @@ ROOT = Path(__file__).resolve().parents[1]
 BLOCK = re.compile(r"(<!-- code: (?P<path>[^ ]+) -->\n)(?P<body>.*?)(<!-- /code -->)", re.S)
 
 
+def extract(rel: str) -> str:
+    """Whole file, or `path#Name` = the lines between `-- region Name` and the next `-- endregion`."""
+    path, _, region = rel.partition("#")
+    src = ROOT / path
+    if not src.exists():
+        raise FileNotFoundError(f"embed target missing: {path}")
+    code = src.read_text(encoding="utf-8").rstrip("\n")
+    if not region:
+        return code
+    m = re.search(rf"^-- region {re.escape(region)}\n(.*?)^-- endregion", code, re.S | re.M)
+    if not m:
+        raise ValueError(f"region '{region}' not found in {path}")
+    return m.group(1).rstrip("\n")
+
+
 def render(match: re.Match) -> str:
     rel = match.group("path")
-    src = ROOT / rel
-    if not src.exists():
-        raise FileNotFoundError(f"embed target missing: {rel}")
-    code = src.read_text(encoding="utf-8").rstrip("\n")
-    return f"{match.group(1)}```luau\n-- file: {rel}\n{code}\n```\n{match.group(4)}"
+    label = rel.replace("#", " (region ") + (")" if "#" in rel else "")
+    return f"{match.group(1)}```luau\n-- file: {label}\n{extract(rel)}\n```\n{match.group(4)}"
 
 
 def main() -> int:

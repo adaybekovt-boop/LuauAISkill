@@ -139,7 +139,10 @@ def main() -> int:
         cname = c["Name"]
         ctags = [t for t in (c.get("Tags") or []) if isinstance(t, str)]
         cd = class_docs.get(cname, {})
-        classes_rows.append([cname, c.get("Superclass", ""), ",".join(t.lower() for t in ctags), cd.get("summary", "")])
+        # No creator-docs reference page → shipped in the engine but undocumented (often unreleased/in development).
+        class_undoc = cname not in class_docs
+        tag_list = [t.lower() for t in ctags] + (["undocumented"] if class_undoc else [])
+        classes_rows.append([cname, c.get("Superclass", ""), ",".join(tag_list), cd.get("summary", "")])
         if cd.get("summary"):
             summaries.append({"k": cname, "s": cd["summary"]})
         if "Deprecated" in ctags:
@@ -151,6 +154,9 @@ def main() -> int:
             d = docs.get(key, {})
             if d.get("superseded_hint") and "deprecated" not in flags:
                 flags.append("superseded")
+            scriptable = read in ("None", "PluginSecurity") and "notscriptable" not in flags and "hidden" not in flags
+            if (class_undoc or key not in docs) and scriptable and "deprecated" not in flags:
+                flags.append("undocumented")
             member_rows.append([cname, m["Name"], m["MemberType"], signature(m), read, write,
                                 m.get("ThreadSafety", ""), ",".join(flags)])
             if d.get("summary"):

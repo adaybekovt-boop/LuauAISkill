@@ -115,6 +115,8 @@ def verdict(m: dict) -> list[str]:
         notes.append(f"game scripts: {'NO (' + m['read'] + ')' if blocked else 'callable'}")
         if "yields" in flags:
             notes.append("Yields: never call inside UpdateAsync transforms, BindToSimulation or tight loops")
+    if "undocumented" in flags:
+        notes.append("UNDOCUMENTED: no creator-docs reference page (internal, unreleased or in development). Do not build game code on it until documented or announced.")
     if "sim" in flags:
         notes.append("Simulation Access: usable inside RunService:BindToSimulation")
     thread = m.get("thread", "")
@@ -142,7 +144,7 @@ def show_member(cls: str, member: str) -> int:
     s = summaries().get(f"{owner}.{member}")
     if s:
         print("  summary: " + s)
-    print("  docs: " + doc_url(owner, member))
+    print("  docs: " + ("(none)" if "undocumented" in m["flags"] else doc_url(owner, member)))
     return 0
 
 
@@ -151,6 +153,8 @@ def show_class(cls: str, show_all: bool) -> int:
     print(f"{cls}  superclass={c['superclass']}  tags={c['tags'] or '-'}")
     if c["summary"]:
         print("  " + c["summary"])
+    if "undocumented" in c["tags"]:
+        print("  " + "UNDOCUMENTED: no creator-docs reference page (internal, unreleased or in development). Do not build game code on it until documented or announced.")
     chain = [cls]
     while show_all and chain[-1] in classes() and classes()[chain[-1]]["superclass"]:
         chain.append(classes()[chain[-1]]["superclass"])
@@ -164,8 +168,9 @@ def show_class(cls: str, show_all: bool) -> int:
             sec = "" if m["read"] == "None" and m["write"] == "None" else f" [{m['read']}/{m['write']}]"
             po = " [plugin-only]" if "plugin-only" in flags else ""
             ns = " [NotScriptable]" if "notscriptable" in flags else ""
-            print(f"  {m['kind'][:4]:4} {name}: {m['type_or_signature']}{sec}{po}{ns}{mark}")
-    print("  docs: " + doc_url(cls))
+            ud = " [UNDOCUMENTED]" if "undocumented" in flags and "undocumented" not in c["tags"] else ""
+            print(f"  {m['kind'][:4]:4} {name}: {m['type_or_signature']}{sec}{po}{ns}{ud}{mark}")
+    print("  docs: " + ("(none)" if "undocumented" in c["tags"] else doc_url(cls)))
     return 0
 
 

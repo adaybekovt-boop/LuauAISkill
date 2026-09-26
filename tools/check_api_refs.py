@@ -7,6 +7,7 @@ Checks
   - library/datatype calls (`task.wait`, `buffer.readbits`, `RaycastParams.new`, `vector.create`...): must exist
   - `GetService("X")`: X must be a service;  `Instance.new("X")`: X must exist and be creatable
   - deprecated/superseded references outside an explicit legacy context
+  - undocumented engine APIs (present in the API dump, no creator-docs page) unless the line says "undocumented"
   - assignments to properties that game scripts cannot write (`Lighting.LightingStyle = ...`, `.Technology = ...`)
 
 Context markers (line or first line of a fenced block):
@@ -80,6 +81,8 @@ def check_line(text: str, ctx_legacy: bool, ctx_fake: bool, in_code: bool, restr
             out.append(("error", f"GetService(\"{name}\"): no such class"))
         elif c and "service" not in c["tags"] and not fake:
             out.append(("error", f"GetService(\"{name}\"): {name} is not a service"))
+        elif c and "undocumented" in c["tags"] and not fake:
+            out.append(("warn", f"GetService(\"{name}\"): undocumented service"))
     for m in NEW.finditer(text):
         name = m.group(1)
         c = api.classes().get(name)
@@ -123,6 +126,9 @@ def check_line(text: str, ctx_legacy: bool, ctx_fake: bool, in_code: bool, restr
             _, row = found
             if ("deprecated" in row["flags"] or "superseded" in row["flags"]) and not legacy:
                 out.append(("warn", f"{owner}{sep}{member}: deprecated/superseded ({row['flags']})"))
+            if "undocumented" in row["flags"] and not fake:
+                out.append(("warn", f"{owner}{sep}{member}: undocumented engine API (no creator-docs page); "
+                                    "say so on the same line if the mention is intentional"))
             continue
         if owner in LIBS or owner in dt_owners:
             key = f"{owner}.{member}"

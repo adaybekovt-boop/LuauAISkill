@@ -11,6 +11,8 @@ Related: [cross-server](07-cross-server.md) (MemoryStore/Messaging/Teleport), re
 | **Temporary distributed** | seconds–days (TTL ≤ 45 days) | `MemoryStoreService` (hash map, sorted map, queue) | matchmaking queues, global event counters, server browser, locks, caches |
 | **Cross-server signals** | fire-and-forget | `MessagingService` | "refresh your cache", global announcements, party invites |
 Never keep durable truth only in MemoryStore or Messaging.
+Watch item (undocumented): an engine-managed player data API (`PlayerDataService`, `Player:GetData()`, `PlayerDataRecord`) exists in
+the 0.740 API dump but is undocumented — don't use it until creator-docs documents it (`tools/api.py` flags it).
 
 ## Limits that matter (creator-docs, Sep 2026)
 | Item | Limit |

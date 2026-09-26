@@ -20,6 +20,7 @@ Lines marked FAKE show names that do not exist — never use them.
 | `Vector3.magnitude` / `.unit` lowercase | undocumented legacy aliases | `.Magnitude`, `.Unit` | `tools/api.py Vector3` |
 | `TweenService:Tween(part, 1, {...})` FAKE | wrong method/args | `TweenService:Create(inst, TweenInfo.new(1), goals):Play()` | `tools/api.py TweenService` |
 | `PathfindingService:FindPath(a, b)` FAKE; `FindPathAsync` legacy | wrong/old | `CreatePath(params)` + `path:ComputeAsync(a, b)` | npc chapter |
+| `Player:GetData()`, `PlayerDataService`, `PlayerDataRecord` (exist, undocumented in 0.740) | present in the engine dump without creator-docs pages → unreleased/in development; behaviour and availability unknown | DataStoreService + session-locked profiles ([save system](../recipes/gameplay/save-system.md)) | `tools/api.py PlayerDataService` prints UNDOCUMENTED |
 
 ## 2. Other engines / other languages leaking in
 | BAD | WHY | CORRECT | VERIFY |

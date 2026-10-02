@@ -39,6 +39,11 @@ Snapshot: **2026-10-02** · engine API **0.741.19** · creator-docs `578b33e` ·
   host discovery or acceptance; record those separately before a full release.
 - Python 3.10+ is enough for `tools/api.py`, `tools/search.py`, `tools/scan_legacy.py` (the API index is committed).
 
+## Remote MCP server
+[`mcp/`](mcp/README.md) is a Cloudflare Worker that serves this skill over MCP (API lookup, legacy scan, search,
+documents) to Claude Code, claude.ai, Cursor and other clients. It is rebuilt from the repository on every push via
+Workers Builds; its answers match the Python tools (parity-tested).
+
 ## Everyday tools
 ```text
 python tools/api.py Humanoid.LoadAnimation        # exists? deprecated? what replaces it?

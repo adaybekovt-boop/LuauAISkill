@@ -32,6 +32,11 @@ Roblox Studio / Luau и грамотно ставить свет в сценах
   проверить исправление (`handbook/roblox/24-studio-mcp-testing.md`).
 - Для `tools/api.py`, `tools/search.py`, `tools/scan_legacy.py` достаточно Python 3.10+ (индекс API уже в репозитории).
 
+## MCP-сервер
+[`mcp/`](mcp/README.md) — Cloudflare Worker, который отдаёт навык по MCP (поиск по API, сканер legacy-кода, поиск
+по знаниям, документы) для Claude Code, claude.ai, Cursor и других клиентов. Пересобирается из репозитория при
+каждом пуше через Workers Builds; ответы совпадают с Python-инструментами (есть тест на совпадение).
+
 ## Частые команды
 ```text
 python tools/api.py Humanoid.LoadAnimation     # существует? устарело? чем заменить?

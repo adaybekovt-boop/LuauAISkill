@@ -28,6 +28,8 @@ not to the user's project. Skill directory: `${CLAUDE_SKILL_DIR}` (if that still
 didn't substitute it: use the absolute path of this file's folder). Below, `$SKILL` means that directory. Run tools
 from the project's working directory with absolute paths, e.g. `python3 "$SKILL/tools/api.py" Lighting.LightingStyle`
 or `python3 "$SKILL/tools/scan_legacy.py" ./src` — never `python tools/...` from the project root.
+**MCP.** If the `luau-skill` MCP server is connected (tools `api_lookup`, `api_search`, `api_deprecated`,
+`scan_legacy`, `search_skill`, `read_skill_doc`), use those instead of the Python commands — same data, same output.
 
 ## Workflow (follow in order)
 1. **Inspect the project** before writing: structure (services/folders, Rojo or Studio-only), manifests and locks

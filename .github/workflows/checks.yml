@@ -48,3 +48,34 @@ jobs:
         with:
           name: qa
           path: qa/
+
+  mcp-worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: mcp
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: mcp/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck (data built from the repository)
+        run: npm run typecheck
+
+      - name: Protocol tests + parity with tools/*.py
+        run: npm test
+
+      - name: Worker bundle builds (no deploy)
+        run: npx wrangler deploy --dry-run --outdir .wrangler-dry

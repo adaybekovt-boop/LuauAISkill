@@ -5,9 +5,20 @@
 	"name": "luauaiskill",
 	"main": "mcp/src/index.ts",
 	"compatibility_date": "2026-09-01",
-	"compatibility_flags": ["nodejs_compat"],
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
 	// Installs the Worker's dependencies and rebuilds mcp/src/generated/data.js from this checkout before bundling.
 	"build": { "command": "npm ci --prefix mcp --no-audit --no-fund && node mcp/scripts/build-data.mjs" },
+	// OAuth grants/tokens + site sessions. No id: wrangler provisions the namespace on first deploy.
+	"kv_namespaces": [{ "binding": "OAUTH_KV" }],
+	// Registered users and subscription status (table created on first use).
+	"d1_databases": [{ "binding": "DB", "database_name": "luauaiskill-users" }],
+	"vars": {
+		// Public origin users and MCP clients see; OAuth metadata and redirect URIs are built from it.
+		"PUBLIC_URL": "https://luaumcp.tklabsskill.site",
+		// "registered": any signed-in Google user may use the MCP. "subscribed": an active subscription is required.
+		"ACCESS_POLICY": "registered"
+	},
+	// Secrets (wrangler secret put …): GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, CONSENT_SECRET, optional ADMIN_TOKEN.
 	"observability": { "enabled": true },
 	"workers_dev": true
 }

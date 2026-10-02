@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build:data": "node scripts/build-data.mjs",
-    "build:test": "npm run build:data && esbuild src/index.ts src/testing.ts --bundle --format=esm --platform=neutral --main-fields=module,main --conditions=workerd,worker,browser --outdir=.test-build --out-extension:.js=.mjs --log-level=warning",
+    "build:test": "npm run build:data && esbuild src/index.ts src/testing.ts --bundle --format=esm --platform=neutral --main-fields=module,main --conditions=workerd,worker,browser --outdir=.test-build --out-extension:.js=.mjs --alias:cloudflare:workers=./test/shims/cloudflare-workers.mjs --log-level=warning",
     "typecheck": "npm run build:data && tsc --noEmit",
     "test": "npm run build:test && node --test test/*.test.mjs",
     "dev": "wrangler dev",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@cfworker/json-schema": "^4.1.1",
+    "@cloudflare/workers-oauth-provider": "^1.2.1",
     "@modelcontextprotocol/sdk": "^1.30.0",
     "zod": "^4.0.0"
   },

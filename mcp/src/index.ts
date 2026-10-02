@@ -1,20 +1,23 @@
-// Cloudflare Worker entry: stateless MCP over Streamable HTTP at /mcp (a fresh server + transport per request,
-// JSON responses, no sessions, no Durable Objects). Everything served is read-only data built from the repo.
+// Cloudflare Worker entry. /mcp is an OAuth-protected resource (workers-oauth-provider): MCP clients discover the
+// authorization server, register, send the user through Google sign-in + consent on this site, and call /mcp with
+// a bearer token. Every MCP request re-checks the user's access in D1, so revoking or ending a subscription takes
+// effect immediately. The MCP server itself stays stateless (fresh server + transport per request, JSON responses).
+import { OAuthProvider } from "@cloudflare/workers-oauth-provider";
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
-import { meta } from "./generated/data.js";
-import { createServer, SERVER_NAME } from "./server";
+import { publicUrl, type AuthProps, type Env } from "./env";
+import { createServer } from "./server";
+import { siteHandler } from "./site";
+import { checkAccess } from "./users";
 
-export interface Env {
-	/** Optional. When set (wrangler secret put MCP_TOKEN), /mcp requires `Authorization: Bearer <token>`. */
-	MCP_TOKEN?: string;
-}
+export type { Env } from "./env";
+
+export const SCOPES = ["mcp:read"];
 
 const CORS: Record<string, string> = {
 	"Access-Control-Allow-Origin": "*",
 	"Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
 	"Access-Control-Allow-Headers": "Content-Type, Accept, Authorization, Mcp-Session-Id, Mcp-Protocol-Version, Last-Event-ID",
-	"Access-Control-Expose-Headers": "Mcp-Session-Id, Mcp-Protocol-Version",
-	"Access-Control-Max-Age": "86400",
+	"Access-Control-Expose-Headers": "Mcp-Session-Id, Mcp-Protocol-Version, WWW-Authenticate",
 };
 
 function withCors(res: Response): Response {
@@ -23,43 +26,19 @@ function withCors(res: Response): Response {
 	return out;
 }
 
-function json(body: unknown, status = 200): Response {
+function rpcError(status: number, code: number, message: string, extra: Record<string, string> = {}): Response {
 	return withCors(
-		new Response(JSON.stringify(body, null, 2), { status, headers: { "Content-Type": "application/json; charset=utf-8" } }),
+		new Response(JSON.stringify({ jsonrpc: "2.0", error: { code, message }, id: null }), {
+			status,
+			headers: { "Content-Type": "application/json", ...extra },
+		}),
 	);
 }
 
-// Constant-time comparison so the token can't be guessed byte by byte from response timing.
-function sameToken(a: string, b: string): boolean {
-	const enc = new TextEncoder();
-	const x = enc.encode(a);
-	const y = enc.encode(b);
-	let diff = x.length ^ y.length;
-	for (let i = 0; i < Math.max(x.length, y.length); i++) diff |= (x[i] ?? 0) ^ (y[i] ?? 0);
-	return diff === 0;
-}
-
-async function handleMcp(request: Request, env: Env): Promise<Response> {
-	if (env.MCP_TOKEN) {
-		const auth = request.headers.get("Authorization") ?? "";
-		const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
-		if (!sameToken(token, env.MCP_TOKEN)) {
-			return withCors(
-				new Response(JSON.stringify({ jsonrpc: "2.0", error: { code: -32001, message: "Unauthorized" }, id: null }), {
-					status: 401,
-					headers: { "Content-Type": "application/json", "WWW-Authenticate": 'Bearer realm="luau-skill"' },
-				}),
-			);
-		}
-	}
+export async function handleMcp(request: Request): Promise<Response> {
 	if (request.method === "GET" || request.method === "DELETE") {
 		// Stateless server: no standalone SSE stream and no sessions to terminate.
-		return withCors(
-			new Response(JSON.stringify({ jsonrpc: "2.0", error: { code: -32000, message: "Method not allowed" }, id: null }), {
-				status: 405,
-				headers: { "Content-Type": "application/json", Allow: "POST, OPTIONS" },
-			}),
-		);
+		return rpcError(405, -32000, "Method not allowed", { Allow: "POST, OPTIONS" });
 	}
 	const server = createServer();
 	const transport = new WebStandardStreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
@@ -72,26 +51,58 @@ async function handleMcp(request: Request, env: Env): Promise<Response> {
 	}
 }
 
-export default {
-	async fetch(request: Request, env: Env): Promise<Response> {
-		const url = new URL(request.url);
-		if (request.method === "OPTIONS") return withCors(new Response(null, { status: 204 }));
-		if (url.pathname === "/mcp" || url.pathname === "/mcp/") return handleMcp(request, env);
-		// Clients are often given the bare origin: accept MCP POSTs at "/" too (GET "/" stays the info page).
-		if (url.pathname === "/" && request.method === "POST") return handleMcp(request, env);
-		if (url.pathname === "/" || url.pathname === "/health") {
-			return json({
-				name: SERVER_NAME,
-				mcp_endpoint: `${url.origin}/mcp`,
-				transport: "streamable-http (stateless, JSON responses)",
-				auth: env.MCP_TOKEN ? "bearer token required" : "none",
-				skill_version: meta.skillVersion,
-				commit: meta.commit,
-				built_at: meta.builtAt,
-				engine_api: meta.apiClientVersion,
-				counts: meta.counts,
-			});
+const mcpApi = {
+	async fetch(request: Request, env: Env, ctx: ExecutionContext & { props?: AuthProps }): Promise<Response> {
+		const props = ctx.props;
+		if (!props?.userId) return rpcError(401, -32001, "Unauthorized");
+		const access = await checkAccess(env, props.userId);
+		if (!access.ok) {
+			const message =
+				access.reason === "subscription_required"
+					? `An active subscription is required. Manage it at ${publicUrl(env)}/account`
+					: `Access revoked. Sign in again at ${publicUrl(env)}`;
+			return rpcError(403, -32002, message);
 		}
-		return json({ error: "not found", mcp_endpoint: `${url.origin}/mcp` }, 404);
+		return handleMcp(request);
+	},
+};
+
+// The provider needs the public origin at construction; build one per origin and reuse it.
+const providers = new Map<string, OAuthProvider<Env>>();
+
+function provider(env: Env): OAuthProvider<Env> {
+	const origin = publicUrl(env);
+	let p = providers.get(origin);
+	if (!p) {
+		p = new OAuthProvider<Env>({
+			apiRoute: "/mcp",
+			apiHandler: mcpApi as never,
+			defaultHandler: siteHandler as never,
+			authorizeEndpoint: "/authorize",
+			tokenEndpoint: "/token",
+			clientRegistrationEndpoint: "/register",
+			scopesSupported: SCOPES,
+			requiredScopes: SCOPES,
+			resourceMetadata: {
+				resource: `${origin}/mcp`,
+				authorization_servers: [origin],
+				bearer_methods_supported: ["header"],
+				resource_name: "LuauAISkill MCP",
+			},
+			clientIdMetadataDocumentEnabled: true,
+			accessTokenTTL: 3600,
+			refreshTokenTTL: 30 * 24 * 3600,
+		});
+		providers.set(origin, p);
+	}
+	return p;
+}
+
+export default {
+	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+		if (request.method === "OPTIONS" && new URL(request.url).pathname.startsWith("/mcp")) {
+			return withCors(new Response(null, { status: 204 }));
+		}
+		return provider(env).fetch(request, env, ctx);
 	},
 };

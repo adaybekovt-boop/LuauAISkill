@@ -1,35 +1,25 @@
-// End-to-end: drive the Worker's fetch handler with real MCP JSON-RPC over Streamable HTTP (no network).
+// MCP protocol through the OAuth-protected endpoint: one real token from the full flow, then JSON-RPC calls.
 import assert from "node:assert/strict";
-import { test } from "node:test";
-import worker from "../.test-build/index.mjs";
+import { before, test } from "node:test";
+import { ORIGIN, connect, ctx, makeEnv, rpc, worker } from "./harness.mjs";
 
-const BASE = "https://mcp.example.test";
-const ACCEPT = "application/json, text/event-stream";
-let nextId = 1;
+let env;
+let token;
 
-async function rpc(method, params = {}, env = {}, headers = {}) {
-	const body = { jsonrpc: "2.0", id: nextId++, method, params };
-	const res = await worker.fetch(
-		new Request(`${BASE}/mcp`, {
-			method: "POST",
-			headers: { "Content-Type": "application/json", Accept: ACCEPT, "Mcp-Protocol-Version": "2025-06-18", ...headers },
-			body: JSON.stringify(body),
-		}),
-		env,
-	);
-	const text = await res.text();
-	return { status: res.status, headers: res.headers, json: text ? JSON.parse(text) : null };
-}
+before(async () => {
+	env = makeEnv();
+	token = (await connect(env)).accessToken;
+});
 
 async function call(name, args) {
-	const r = await rpc("tools/call", { name, arguments: args });
+	const r = await rpc(env, token, "tools/call", { name, arguments: args });
 	assert.equal(r.status, 200, JSON.stringify(r.json));
 	assert.ok(r.json.result, JSON.stringify(r.json));
 	return r.json.result;
 }
 
 test("initialize advertises tools, resources and instructions", async () => {
-	const r = await rpc("initialize", {
+	const r = await rpc(env, token, "initialize", {
 		protocolVersion: "2025-06-18",
 		capabilities: {},
 		clientInfo: { name: "test", version: "0" },
@@ -45,7 +35,7 @@ test("initialize advertises tools, resources and instructions", async () => {
 });
 
 test("tools/list exposes the read-only tool set with input schemas", async () => {
-	const r = await rpc("tools/list");
+	const r = await rpc(env, token, "tools/list");
 	const names = r.json.result.tools.map((t) => t.name).sort();
 	assert.deepEqual(names, [
 		"api_deprecated",
@@ -107,54 +97,31 @@ test("search_skill and read_skill_doc reach the knowledge", async () => {
 });
 
 test("invalid arguments are rejected by the schema", async () => {
-	const r = await rpc("tools/call", { name: "api_lookup", arguments: {} });
+	const r = await rpc(env, token, "tools/call", { name: "api_lookup", arguments: {} });
 	const err = r.json.error ?? (r.json.result?.isError ? r.json.result : null);
 	assert.ok(err, JSON.stringify(r.json));
 });
 
 test("resource skill://SKILL.md is readable", async () => {
-	const r = await rpc("resources/read", { uri: "skill://SKILL.md" });
+	const r = await rpc(env, token, "resources/read", { uri: "skill://SKILL.md" });
 	assert.match(r.json.result.contents[0].text, /Hard rules/);
 });
 
-test("optional bearer token guards /mcp", async () => {
-	const env = { MCP_TOKEN: "s3cret" };
-	let r = await rpc("tools/list", {}, env);
+test("a forged or foreign bearer token is rejected", async () => {
+	let r = await rpc(env, "not-a-real-token", "tools/list");
 	assert.equal(r.status, 401);
-	r = await rpc("tools/list", {}, env, { Authorization: "Bearer wrong" });
+	r = await rpc(makeEnv(), token, "tools/list"); // token from another deployment's KV
 	assert.equal(r.status, 401);
-	r = await rpc("tools/list", {}, env, { Authorization: "Bearer s3cret" });
-	assert.equal(r.status, 200);
 });
 
-test("MCP also answers at the bare origin", async () => {
-	const res = await worker.fetch(
-		new Request(`${BASE}/`, {
-			method: "POST",
-			headers: { "Content-Type": "application/json", Accept: ACCEPT },
-			body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "t", version: "0" } } }),
-		}),
-		{},
+test("GET /mcp with a token is not an SSE stream; OPTIONS preflight works", async () => {
+	let res = await worker.fetch(
+		new Request(`${ORIGIN}/mcp`, { method: "GET", headers: { Accept: "text/event-stream", Authorization: `Bearer ${token}` } }),
+		env,
+		ctx,
 	);
-	assert.equal(res.status, 200);
-	assert.equal((await res.json()).result.serverInfo.name, "luau-skill");
-});
-
-test("OAuth discovery says there is no authorization server", async () => {
-	for (const path of ["/.well-known/oauth-protected-resource", "/.well-known/oauth-authorization-server", "/.well-known/oauth-protected-resource/mcp"]) {
-		const res = await worker.fetch(new Request(`${BASE}${path}`), {});
-		assert.equal(res.status, 404, path);
-	}
-});
-
-test("health endpoint and GET /mcp", async () => {
-	let res = await worker.fetch(new Request(`${BASE}/`), {});
-	const info = await res.json();
-	assert.equal(info.name, "luau-skill");
-	assert.equal(info.mcp_endpoint, `${BASE}/mcp`);
-	assert.ok(info.counts.classes > 900);
-	res = await worker.fetch(new Request(`${BASE}/mcp`, { method: "GET", headers: { Accept: "text/event-stream" } }), {});
 	assert.equal(res.status, 405);
-	res = await worker.fetch(new Request(`${BASE}/mcp`, { method: "OPTIONS" }), {});
+	res = await worker.fetch(new Request(`${ORIGIN}/mcp`, { method: "OPTIONS" }), env, ctx);
 	assert.equal(res.status, 204);
+	assert.equal(res.headers.get("Access-Control-Allow-Origin"), "*");
 });

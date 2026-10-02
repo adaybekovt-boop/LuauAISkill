@@ -15,28 +15,40 @@ Related: [cross-server](07-cross-server.md) (MemoryStore/Messaging/Teleport), re
 | Kind | Lifetime | Store | Examples |
 |---|---|---|---|
 | **Persistent** | forever (versioned) | `DataStoreService` (standard; ordered for leaderboards) | profiles, inventory, currency, unlocks, purchase ids |
-| **Temporary distributed** | seconds–days (TTL ≤ 45 days) | `MemoryStoreService` (hash map, sorted map, queue) | matchmaking queues, global event counters, server browser, locks, caches |
+| **Temporary distributed** | seconds–days (TTL ≤ <!-- fact-value: memorystore-max-expiration -->3888000<!-- /fact-value --> seconds) | `MemoryStoreService` (hash map, sorted map, queue) | matchmaking queues, global event counters, server browser, locks, caches | <!-- fact-refs: memorystore-max-expiration -->
 | **Cross-server signals** | fire-and-forget | `MessagingService` | "refresh your cache", global announcements, party invites |
 Never keep durable truth only in MemoryStore or Messaging.
 Watch item (undocumented): an engine-managed player data API (`PlayerDataService`, `Player:GetData()`, `PlayerDataRecord`) exists in
 the 0.740/0.741 API dumps but is undocumented — don't use it until creator-docs documents it (`tools/api.py` flags it).
 
 ## Limits that matter (creator-docs, Sep 2026)
-| Item | Limit |
-|---|---|
-| Value size per key | 4,194,304 characters (JSON-serialized length) |
-| Key / data store name / scope | 50 characters each |
-| Metadata | 300 characters total |
-| Server default rate (per minute) | Standard read and write: `60 + 40 × players` each; list `5 + 2 × players`; ordered write `30 + 5 × players` — configurable with `DataStoreService:SetRateLimitForRequestType()`; check `GetRequestBudgetForRequestType()` |
-| Experience-wide rate (per minute) | read `300 + 40 × CCU`, write `300 + 20 × CCU`, list `300 + 2 × CCU` (shared with Open Cloud) |
-| Per-key throughput | read 25 MB/min, write 4 MB/min (rounded up per KB per request) |
-| Queue | 30 requests per queue; beyond → dropped with errors 301–306 |
-| Storage | 500 MB + 1 MB × lifetime users (compressed latest versions) |
-| `GetAsync` cache | 4 s local cache; `DataStoreGetOptions.UseCache = false` to bypass for verification |
-| Studio | needs "Enable Studio Access to API Services"; separate static lower limits; writes hit real data (use a test universe) |
-| `BindToClose` | ~30 s for all callbacks at shutdown |
-Supported values: nil, boolean, finite number, UTF-8 string, table of these, `buffer`. No Vector3/CFrame/Instance;
-no NaN/inf; mixed or sparse tables serialize badly.
+<!-- facts-table: datastore-value-size, datastore-key-length, datastore-name-length, datastore-scope-length, datastore-metadata-total, datastore-standard-read-server-rate, datastore-standard-write-server-rate, datastore-standard-list-server-rate, datastore-ordered-write-server-rate, datastore-read-experience-rate, datastore-write-experience-rate, datastore-list-experience-rate, datastore-key-read-throughput, datastore-key-write-throughput, datastore-queue-size, datastore-queue-overflow-error-codes, datastore-storage, datastore-cache-duration, bind-to-close-deadline -->
+| Fact ID / statement | Value | Unit / scope | Status |
+|---|---|---|---|
+| `datastore-value-size`: Maximum serialized data-store value size. | 4194304 | characters/key | documented |
+| `datastore-key-length`: Maximum data-store key length. | 50 | characters | documented |
+| `datastore-name-length`: Maximum data-store name length. | 50 | characters | documented |
+| `datastore-scope-length`: Maximum data-store scope length. | 50 | characters | documented |
+| `datastore-metadata-total`: Maximum total user-defined metadata size. | 300 | characters | documented |
+| `datastore-standard-read-server-rate`: Standard data-store read default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default |
+| `datastore-standard-write-server-rate`: Standard data-store write default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default |
+| `datastore-standard-list-server-rate`: Standard data-store list default server rate; configurable through SetRateLimitForRequestType. | 5 + 2 * players | requests/minute/server | default |
+| `datastore-ordered-write-server-rate`: Ordered data-store write default server rate; configurable through SetRateLimitForRequestType. | 30 + 5 * players | requests/minute/server | default |
+| `datastore-read-experience-rate`: Read experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 40 * concurrent_users | requests/minute/experience/data-store-type | documented |
+| `datastore-write-experience-rate`: Write experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 20 * concurrent_users | requests/minute/experience/data-store-type | documented |
+| `datastore-list-experience-rate`: List experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 2 * concurrent_users | requests/minute/experience/data-store-type | documented |
+| `datastore-key-read-throughput`: Per-key read throughput; each request is rounded up to the next kilobyte. | 25 | MB/minute/key | documented |
+| `datastore-key-write-throughput`: Per-key write throughput; each request is rounded up to the next kilobyte. | 4 | MB/minute/key | documented |
+| `datastore-queue-size`: Requests beyond the per-queue limit are dropped. | 30 | requests/queue | documented |
+| `datastore-queue-overflow-error-codes`: Error codes for entirely dropped requests when a throttling queue is full. | [301, 306] | inclusive error-code range | documented |
+| `datastore-storage`: Storage allowance measured using compressed latest key versions. | 500 + 1 * lifetime_users | MB/experience | documented |
+| `datastore-cache-duration`: Default GetAsync local-cache lifetime. | 4 | seconds | default |
+| `bind-to-close-deadline`: BindToClose callbacks have this time to complete. | 30 | seconds | documented |
+<!-- /facts-table -->
+
+Server budgets are configurable with `DataStoreService:SetRateLimitForRequestType()`; inspect `GetRequestBudgetForRequestType()` before spending them. Experience budgets are shared with Open Cloud. Use `DataStoreGetOptions.UseCache = false` for an uncached verification read.
+
+Studio requires "Enable Studio Access to API Services", has separate static lower limits, and writes to real data; use a test universe.
 
 ## Session model (per player)
 ```text
@@ -118,11 +130,17 @@ or play in read-only mode; on `"error"` use defaults marked non-saveable. The fu
 BindToClose, migrations, purchases, per-key queue) is in the recipe [save-system](../../recipes/gameplay/save-system.md).
 
 ## Developer products (`MarketplaceService.ProcessReceipt`)
+If the player/profile is unavailable or loading failed, return `NotProcessedYet` without granting. Remove any
+developer-product grant from `PromptProductPurchaseFinished`; a prompt closing is not a durable receipt.
+
 - Set the callback **once**, in one server Script. Return `Enum.ProductPurchaseDecision.PurchaseGranted` only
   after the grant **and** the `PurchaseId` are saved durably with the profile; otherwise return `NotProcessedYet`.
-- Idempotency: keep processed `PurchaseId`s in the profile (bounded list, e.g. last 100–1000) and check before
-  granting. The callback can run on two servers simultaneously (player rejoins) — session locking + id check make
-  that safe.
+- Idempotency: persist processed `PurchaseId`s with the grant and check them before granting. Do not prune receipt
+  IDs merely because the ledger reaches a count: a replay of an evicted receipt can grant twice. Keep durable
+  replay protection and plan storage capacity/migration before the profile reaches its storage budget. A
+  capacity failure must leave the receipt unacknowledged for a safe retry, not silently discard deduplication
+  history. The callback can run on two servers simultaneously (player rejoins); session ownership plus the
+  atomic durable ID check and grant protect that race.
 - The player must be in the server for the callback to fire; it is retried when they rejoin or buy again (no timer
   retries). If no callback is set, receipts are auto-acknowledged (and you lose the chance to grant).
 - Game passes: check ownership on the server with `MarketplaceService:UserOwnsGamePassAsync(userId, passId)` on join
@@ -136,6 +154,10 @@ Integer values only, `GetSortedAsync(ascending, pageSize ≤ 100)`. Write on mea
 not every kill. Cache pages for 60 s+ server-side.
 
 ## Testing data code
+Shutdown finalization must be idempotent: skip errored profiles that were never safely loaded, and skip a
+profile whose final save and release already completed. Serialize concurrent finalization attempts so
+PlayerRemoving and BindToClose cannot produce a stale duplicate save.
+
 - Pure logic (migrations, merge, validation) → unit tests with the Luau CLI.
 - Studio: separate test universe or scoped store names (`PlayerData_v1_TEST`); simulate failures by injecting a
   fake store object with the same methods (dependency injection).

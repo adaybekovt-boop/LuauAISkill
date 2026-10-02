@@ -2,7 +2,7 @@
 """Read-only scan of a Roblox/Luau project for legacy/deprecated/unsafe patterns.
 
 Uses the curated regexes in references/legacy-modernization/catalog.json plus the generated deprecated-member list
-(api/deprecated.tsv, for `:Method(` / `.Property` names that are unambiguous). Findings are REVIEW CANDIDATES
+(api/deprecated.tsv, including ambiguous names, which require receiver verification). Findings are REVIEW CANDIDATES
 (text matching can hit comments/strings), not proof. Nothing is modified.
 
   python tools/scan_legacy.py path/to/project_or_file.luau [--json] [--no-api]
@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
 csv.field_size_limit(10_000_000)
 
 
@@ -24,17 +25,11 @@ def load_rules(use_api: bool) -> list[tuple[str, re.Pattern, str]]:
     data = json.loads((ROOT / "references" / "legacy-modernization" / "catalog.json").read_text(encoding="utf-8"))
     rules = [(e["id"], re.compile(e["detect"]), e["new"]) for e in data["entries"] if e.get("detect")]
     if use_api:
-        # Deprecated member names that don't collide with non-deprecated members of other classes.
-        live, dead = set(), {}
-        with (ROOT / "api" / "members.tsv").open(encoding="utf-8") as f:
-            for r in csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE):
-                (dead.setdefault(r["member"], r) if "deprecated" in r["flags"] else live.add(r["member"]))
-        for name, r in dead.items():
-            if name in live or len(name) < 6 or not name[0].isupper():
-                continue
-            pref = next((f[7:] for f in r["flags"].split(",") if f.startswith("prefer=")), "see api/deprecated.tsv")
-            sep = ":" if r["kind"] in ("Function",) else "."
-            rules.append((f"api-deprecated:{r['class']}.{name}", re.compile(re.escape(sep + name) + r"\b"), pref))
+        # Every pinned row produces a lexical review candidate, including shared names.
+        # This is detection coverage, never receiver-type proof or an automatic rewrite.
+        import api
+        import classify_legacy
+        rules.extend(classify_legacy.generic_rule(row) for row in api.rows("deprecated.tsv"))
     return rules
 
 
@@ -57,12 +52,14 @@ def main() -> int:
             if line.lstrip().startswith("--"):
                 continue
             hits = [(rid, fix) for rid, rx, fix in rules if rx.search(line)]
-            # A curated catalog rule already explains the line; the generic API-deprecation hit would repeat it.
+            api_candidates = [rid.removeprefix("api-deprecated:") for rid, _ in hits if rid.startswith("api-deprecated:")]
+            # Keep one explanation family per line, but retain every generic candidate as
+            # machine-readable metadata. A curated hit must not erase another API on the line.
             if any(not rid.startswith("api-deprecated:") for rid, _ in hits):
                 hits = [(rid, fix) for rid, fix in hits if not rid.startswith("api-deprecated:")]
             for rid, fix in hits:
                 findings.append({"file": path.relative_to(base).as_posix(), "line": n, "rule": rid,
-                                 "code": line.strip()[:160], "suggest": fix})
+                                 "code": line.strip()[:160], "suggest": fix, "api_candidates": api_candidates})
     if a.json:
         print(json.dumps({"read_only": True, "findings": findings}, indent=1))
     else:

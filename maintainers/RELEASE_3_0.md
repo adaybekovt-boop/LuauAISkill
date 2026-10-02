@@ -58,3 +58,26 @@ Large generated indexes are lookup data, not files to inject wholesale into a pr
 tokenizer, the tool reports byte upper bounds explicitly; a release report must use `--require-tokenizer`.
 The router remains at most 500 lines; every handbook chapter starts with a five-line TL;DR. Recipe architecture and
 when-not-to-use guidance precede executable code. Runtime installation has no tokenizer dependency.
+
+## D1–D7 data-readiness protocol (2026-10-02)
+
+Run the scoped fact-mention checker and the semantic must-to-refs audit before adding data. Lexical overlap
+is only triage; explicit supporting quotes and reviewer rationales are required. The semantic audit can be
+run diagnostically with `--report-only`, but strict release validation must not use that option.
+
+Legacy coverage is defined by the pinned dump and documented game-script access. Reconcile denominator
+changes explicitly. External-code frequency/ranking is no longer a release gate. Missing authoritative
+migration evidence remains a source gap, never an invented automatic replacement.
+
+All existing development cases stay exposed in the permanent exposure ledger. Independently authored
+holdout cases require a custody seal bound to the final skill hash, at least thirty percent of the complete
+bank, and category coverage. Never tune knowledge or examples using heldout prompts, requirements, or
+answers. If a heldout failure informs an edit, retire that holdout and create a fresh independent one.
+`run_ab.py` freezes the split and its audit with the manifest, detects later split changes, and reports
+heldout-only completion statistics for full runs. A positive development result alone cannot satisfy D7.
+Full release additionally requires a positive heldout paired task-bootstrap confidence interval, no
+negative category point difference, and fewer fabricated testing claims on heldout cases.
+
+Receipt history must not be evicted merely to satisfy a record-count cap. The example now preserves the
+atomic balance-plus-deduplication record beyond the former cutoff; finite DataStore capacity still needs
+operational monitoring and a separately designed safe migration. CLI verification is not engine evidence.

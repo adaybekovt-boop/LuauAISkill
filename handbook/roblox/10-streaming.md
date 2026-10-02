@@ -30,7 +30,7 @@ Therefore on the client:
 ## Settings (all on `Workspace`, Studio-only)
 | Property | Meaning | Guidance |
 |---|---|---|
-| `StreamingMinRadius` (default 64) | always-kept radius, highest priority | raise carefully (memory + server bandwidth) |
+| `StreamingMinRadius` (default <!-- fact-value: streaming-min-radius-default -->64<!-- /fact-value -->) | always-kept radius, highest priority | raise carefully (memory + server bandwidth) |
 | `StreamingTargetRadius` | max stream-in distance | must be > min radius (buffer); lower for mobile-heavy games |
 | `StreamOutBehavior` | `LowMemory` (default: stream out only under memory pressure) / `Opportunistic` (stream out beyond target radius proactively) | Opportunistic for huge worlds |
 | `StreamingIntegrityMode` | what to do if the player enters an unloaded region | `PauseOutsideLoadedArea` recommended; `Player.GameplayPaused` indicates pause |

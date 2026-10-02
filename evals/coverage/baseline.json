@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-02T14:49:00Z",
+  "cases": 167,
+  "must_obligations": 526,
+  "semantic_audit": "not previously measured",
+  "reviewed_supported": 0,
+  "unreviewed": 526,
+  "case_files_sha256": {
+    "evals/cases/adversarial.jsonl": "f5db1ff589a0b8a3a03b6c97aa8084f9bb82310040db854acd2ed3d292a7a514",
+    "evals/cases/animation.jsonl": "fb5ce621f89ad237271f58c3cf6c517c113559456bf977ad7d4819a6678e91a9",
+    "evals/cases/api-freshness.jsonl": "e04b55edcbcb8ce3249005a397551194ad81ea641a637cdd967b70ae2df44bb3",
+    "evals/cases/architecture.jsonl": "b25ac99cbcad23521414e638ffd3da3ed07122e569accfdd50107255836700d9",
+    "evals/cases/combat.jsonl": "c945804a6ffffc884b4d409683b8544184ded93a079acce1099b084c8db5e402",
+    "evals/cases/datastores.jsonl": "6a3da9a9b981dbc835da491db638fdf56e09b6b41587b2c71801c5c4553d4073",
+    "evals/cases/debugging.jsonl": "e21827b0b2a6a9b4ace3d08b9c906104b58967884e7d4584766aa0327d56445f",
+    "evals/cases/graphics.jsonl": "edc5445793b717dca9419b973fc7e29fb348b073f8997dd035f23cb9bcfd73d7",
+    "evals/cases/lighting.jsonl": "1d0a6144923d546bcf65f8e66a5f76c225256c874c35f89dac90fad4c715ce3f",
+    "evals/cases/luau.jsonl": "c0b2644c05f7157d65bda86697dc7ea7d1fad4168f116642b67cc729c474a87f",
+    "evals/cases/negative-triggers.jsonl": "10dbaccb1c47c24c55aad318bd96914be0e43e928adbb5dc78d36413ac38ca09",
+    "evals/cases/networking.jsonl": "65adc70e909f4e04dea34c5c1ba39c7d51fe6fddc3a8c02bbcef782d2d1c7328",
+    "evals/cases/npc.jsonl": "4d41de1e19dd96e44786de7876573b0dd3a5dda853fee71c7606119a7958255e",
+    "evals/cases/performance.jsonl": "fec0964f776ef9183c66954e208eeab0b5504c141ec5acb928838bf1ea413322",
+    "evals/cases/security.jsonl": "0bec424c0f308f7e62192ce0158d0d1f08a9e0c114747104cebf52b547883791",
+    "evals/cases/streaming.jsonl": "69a584c520809852444bb6e046c7269e6f67adcc71401b829b66a00b9691dffa",
+    "evals/cases/ui.jsonl": "849e14a227ef272c35ee9a06c7a8175231267bc21a71b9baf968666c71cfa6cc"
+  }
+}

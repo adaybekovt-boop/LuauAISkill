@@ -17,6 +17,7 @@ export interface ApiData {
 	enums: Record<string, Record<string, EnumItemRow>>;
 	datatypes: Record<string, DatatypeRow>;
 	deprecated: Record<string, DeprecatedRow>;
+	deprecatedRows: DeprecatedRow[];
 	summaries: Record<string, string>;
 }
 

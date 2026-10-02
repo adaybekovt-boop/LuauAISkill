@@ -12,7 +12,7 @@ A bounded [official tutorial-code sample](tutorial-sample.json) measures 1,738 a
 
 | Rank | API | Score | Eval cases | Official code blocks | Curated guidance |
 |---|---|---:|---:|---:|---|
-| 1 | `wait` | 142 | 5 | 0 | [sched-wait](CATALOG.md#sched-wait--deprecated-seen-2006-2021) |
+| 1 | `wait` | 142 | 6 | 0 | [sched-wait](CATALOG.md#sched-wait--deprecated-seen-2006-2021) |
 | 2 | `Humanoid.LoadAnimation` | 122 | 4 | 0 | [anim-humanoid-load](CATALOG.md#anim-humanoid-load--deprecated-seen-2014-2021) |
 | 3 | `spawn` | 82 | 2 | 0 | [sched-spawn](CATALOG.md#sched-spawn--deprecated-seen-2006-2021) |
 | 4 | `BodyVelocity` | 62 | 1 | 0 | [phys-bodymovers](CATALOG.md#phys-bodymovers--deprecated-seen-2008-2021) |

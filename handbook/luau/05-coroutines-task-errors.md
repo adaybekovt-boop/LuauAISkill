@@ -69,6 +69,8 @@ loadPreview("sword", function(id: string) return id .. ".png" end, print)
 ```
 A token prevents stale commits; it does **not** undo side effects the operation already performed (a DataStore
 write that timed out may still have succeeded).
+Cancelling a scheduled thread does not perform application resource cleanup: explicitly disconnect its owned
+connections, clear retained state, and destroy temporary objects when cancelling the operation.
 
 ## Errors
 - `pcall(fn, a, b)` (no closure allocation) → `(true, ...)` or `(false, err)`. Wrap every `*Async` web call

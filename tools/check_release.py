@@ -73,7 +73,10 @@ def main() -> int:
     lock = json.loads((ROOT / 'sources/lock.json').read_text())
     age = (dt.datetime.now(dt.timezone.utc).date() - dt.date.fromisoformat(lock['fetched_on'])).days
     checks.append({'gate': 'snapshot at most 14 days old', 'status': 'PASS' if 0 <= age <= 14 else 'BLOCKED', 'age_days': age})
-    run('empirically ranked top-150 legacy coverage', [sys.executable, 'tools/check_legacy.py', '--check', '--release-gate'])
+    run('dump-derived relevant legacy coverage and curation', [sys.executable, 'tools/check_legacy.py', '--check', '--release-gate'])
+    run('fact mention bindings', [sys.executable, 'tools/check_fact_mentions.py'])
+    run('semantic must-to-refs coverage', [sys.executable, 'tools/check_eval_coverage.py'])
+    run('balanced evaluation and clean holdout', [sys.executable, 'tools/check_eval_bank.py', '--require-ready'])
     run('exact token accounting', [sys.executable, 'tools/check_content_budget.py', '--require-tokenizer'])
     run('all ten engine smoke receipts', [sys.executable, 'tools/check_engine_evidence.py'])
     if args.ab_run:

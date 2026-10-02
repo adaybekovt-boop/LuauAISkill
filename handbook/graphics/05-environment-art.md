@@ -17,10 +17,10 @@ would make avatars ~1.4 m — so **build to the avatar**, not to metres. Rules o
 avatars (verify with your rig and camera):
 | Element | Studs | Notes |
 |---|---|---|
-| Door opening | 4–5 wide × 8–9 tall | official environment-art sample keeps doorways/hallways ≥ 10 studs wide for third-person camera clearance |
+| Door opening | 4–5 wide × 8–9 tall | leave enough camera clearance and test the doorway in your game | <!-- fact-example: suggested scene dimensions, not a platform limit -->
 | Corridor | 8–12 wide (first person: 6–8 feels tight/claustrophobic) | wider for third-person cameras and combat |
 | Room ceiling | 10–14 | offices ~11–12; lower (8–9) = oppressive; halls/warehouses 20–40 |
-| Stair step | rise 0.8–1, run 1.5–2 | Humanoid climbs ≤ ~2 stud steps; use invisible ramps for smooth movement |
+| Stair step | rise 0.8–1, run 1.5–2 | test stair clearance for your chosen controller; use invisible ramps for smooth movement |
 | Railing / counter / table height | 3–3.5 / 3.5 / 2.5–3 | |
 | Chair seat | ~1.8–2 | |
 | Window sill | 2.5–3 | |

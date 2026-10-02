@@ -457,3 +457,111 @@ local results = InsertService:GetFreeModels(query, page)
 
 -- rule: asset-search-package-async
 local pages = AssetService:SearchAudio(params)
+
+-- rule: assembly-root-property
+BasePart:GetRootPart(value)
+
+-- rule: capture-saved-payload
+local old = CaptureService.CaptureSaved
+
+-- rule: stats-time-units
+local old = Stats.HeartbeatTimeMs
+
+-- rule: selection-brickcolor-color3
+local old = GuiBase3d.Color
+
+-- rule: input-binding-fire
+InputAction:Fire(value)
+
+-- rule: pose-maskweight-track
+local old = Pose.MaskWeight
+
+-- rule: script-linked-source-packages
+local old = BaseScript.LinkedSource
+
+-- rule: analytics-typed-events
+AnalyticsService:FireCustomEvent(value)
+
+-- rule: player-best-friends-retired
+Player:IsBestFriendsWith(value)
+
+-- rule: runtime-remote-build-mode
+DataModel:GetRemoteBuildMode(value)
+
+-- rule: datamodel-item-change
+local old = DataModel.ItemChanged
+
+-- rule: asset-insert-load
+InsertService:Insert(value)
+
+-- rule: asset-creator-id-retired
+AssetService:GetCreatorAssetID(value)
+
+-- rule: team-rebalance-retired
+Teams:RebalanceTeams(value)
+
+-- rule: retired-ad-callbacks
+local old = AdGui.OnAdEvent
+
+-- rule: removed-sets
+InsertService:GetBaseCategories(value)
+
+-- rule: removed-points-service
+PointsService:AwardPoints(value)
+
+-- rule: retired-noop-settings
+local old = DataModel.GearGenreSetting
+
+-- rule: surface-motor-inputs
+local old = BasePart.BackParamA
+
+-- rule: camera-discrete-pan-tilt
+Camera:PanUnits(value)
+
+-- rule: sensor-sense-update
+SensorBase:Sense(value)
+
+-- rule: ui-layout-automatic
+UIGridStyleLayout:ApplyLayout(value)
+
+-- rule: debris-fixed-capacity
+local old = Debris.MaxItems
+
+-- rule: team-score-value
+local old = Team.Score
+
+-- rule: retired-nonfunctional-properties
+local old = Decal.Shiny
+
+-- rule: insert-approval-noop
+local old = InsertService.AllowInsertFreeModels
+
+-- rule: mesh-engine-joint-offset
+local old = MeshPart.HasJointOffset
+
+-- rule: opencloud-deprecated-bridge
+OpenCloudApiV1:CreateModel(value)
+
+-- rule: obsolete-gear-change
+local old = DataModel.AllowedGearTypeChanged
+
+-- rule: editablemesh-typed-attribute-queries
+EditableMesh:GetFacesWithAttribute(value)
+
+-- rule: layered-fit-retired-tuning
+WrapLayer.Puffiness = value
+
+-- rule: animationconstraint-attachment-joints
+AnimationConstraint.C0 = value
+
+-- rule: hinge-softlock-retired
+HingeConstraint.SoftlockServoUponReachingTarget = value
+
+-- rule: capture-watermark-settings-retired
+ScreenshotHud.OverlayFont = value
+
+-- rule: topbar-transparency-setter-retired
+PlayerGui.SetTopbarTransparency = value
+
+-- rule: billboard-distance-scale-redesign
+BillboardGui.DistanceLowerLimit = value

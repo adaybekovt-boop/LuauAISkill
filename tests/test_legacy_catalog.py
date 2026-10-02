@@ -94,12 +94,72 @@ class RankedLegacyCatalog(unittest.TestCase):
         self.assertIsNone(rank_legacy.mention_pattern(row).search('part.Transparency = 1'))
         self.assertIsNotNone(rank_legacy.mention_pattern(row).search('GuiObject.Transparency'))
 
-    def test_provisional_ranking_blocks_release(self):
-        for tool in ('rank_legacy.py', 'check_legacy.py'):
-            res = subprocess.run([sys.executable, str(ROOT / 'tools' / tool), '--check', '--release-gate'],
-                                 capture_output=True, text=True)
-            self.assertNotEqual(res.returncode, 0)
-            self.assertIn('BLOCKED', res.stdout)
+    def test_external_corpus_is_not_a_release_gate(self):
+        res = subprocess.run([sys.executable, str(ROOT / 'tools/rank_legacy.py'), '--check', '--release-gate'],
+                             capture_output=True, text=True)
+        self.assertEqual(res.returncode, 0, res.stdout)
+        res = subprocess.run([sys.executable, str(ROOT / 'tools/check_legacy.py'), '--check', '--release-gate'],
+                             capture_output=True, text=True)
+        self.assertNotEqual(res.returncode, 0)
+        self.assertIn('D3 unresolved migration evidence', res.stdout)
+
+    def test_dump_coverage_executes_detectors_for_every_row(self):
+        import classify_legacy
+        report = classify_legacy.build()
+        self.assertEqual(report['detected_all_rows'], report['total_deprecated_rows'])
+        self.assertEqual(report['detected_relevant_rows'], report['relevant_rows'])
+        self.assertTrue(report['remaining_curation'])
+        self.assertEqual(report['unreviewed_rows'], 0)
+        self.assertTrue(all(r['curated_detector_verified'] for r in report['rows'] if r['relevant'] and r['classification'] == 'curated'))
+        self.assertEqual(report['ab_output_curation']['status'], 'not_measured')
+        self.assertTrue(all(r['fixture'] and r['source'] and r['scope_reason'] for r in report['rows']))
+
+    def test_semantic_changes_are_curated_not_renamed(self):
+        import classify_legacy
+        rows = {r['api']: r for r in classify_legacy.build()['rows']}
+        for name in ('CaptureService.CaptureSaved', 'Stats.HeartbeatTimeMs', 'BasePart.GetRootPart',
+                     'InputAction.Fire', 'SelectionBox.SurfaceColor', 'TeleportService.TeleportToSpawnByName'):
+            with self.subTest(api=name):
+                self.assertEqual(rows[name]['classification'], 'curated')
+                self.assertTrue(rows[name]['curated_detector_verified'])
+        self.assertEqual(rows['ClickDetector.mouseClick']['classification'], 'one_to_one')
+        self.assertFalse(rows['VoiceChatInternal.JoinByGroupId']['relevant'])
+
+    def test_dated_staff_evidence_is_pinned_and_scoped(self):
+        receipts = [r for e in self.entries.values() for r in e.get('reviewed_sources', [])]
+        self.assertEqual(len(receipts), 6)
+        for receipt in receipts:
+            self.assertEqual(render_legacy.validate_reviewed_source(receipt), [])
+            bad = dict(receipt, sha256='0' * 64)
+            self.assertIn('reviewed source artifact hash mismatch', render_legacy.validate_reviewed_source(bad))
+            source = json.loads((ROOT / receipt['artifact']).read_text())
+            self.assertTrue(source['scope'])
+            self.assertTrue(source['limitations'])
+            self.assertIn('not an HTML/screenshot archive', source['capture_method'])
+        self.assertTrue(render_legacy.validate_reviewed_source({'artifact': '../../escape.json', 'sha256': ''}))
+        self.assertNotIn('AccessoryDescription.Puffiness', self.entries['layered-fit-retired-tuning']['covers'])
+        self.assertNotIn('PlayerGui.GetTopbarTransparency', self.entries['topbar-transparency-setter-retired']['covers'])
+        self.assertEqual(self.entries['hinge-softlock-retired']['covers'], ['HingeConstraint.SoftlockServoUponReachingTarget'])
+
+    def test_scanner_metadata_preserves_all_dump_candidates_after_dedup(self):
+        import tempfile
+        import classify_legacy
+        rows = api.rows('deprecated.tsv')
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'all.luau'
+            path.write_text('\n'.join(classify_legacy.fixture(r) for r in rows))
+            res = subprocess.run([sys.executable, '-I', str(ROOT / 'tools/scan_legacy.py'), str(path), '--json'],
+                                 capture_output=True, text=True, check=True, cwd=directory)
+            candidates = {name for f in json.loads(res.stdout)['findings'] for name in f['api_candidates']}
+        self.assertEqual({rank_legacy.identifier(r) for r in rows} - candidates, set())
+
+    def test_shared_receiver_and_lowercase_names_are_detection_candidates(self):
+        import scan_legacy
+        rules = {rid: rx for rid, rx, _ in scan_legacy.load_rules(True)}
+        self.assertRegex('unknown.Transparency = 1', rules['api-deprecated:GuiObject.Transparency'])
+        self.assertRegex('mouse.hit', rules['api-deprecated:Mouse.hit'])
+        self.assertRegex('mouse["hit"]', rules['api-deprecated:Mouse.hit'])
+        self.assertRegex('local x = Enum.KeyCode.World0', rules['api-deprecated:Enum.KeyCode.World0'])
 
 
 class OfficialTutorialSample(unittest.TestCase):

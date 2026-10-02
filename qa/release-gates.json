@@ -4,12 +4,8 @@
   "checks": [
     {
       "gate": "aggregate checks",
-      "status": "PASS",
-      "command": [
-        "/tmp/luau-release-tools/bin/python",
-        "tools/check_all.py"
-      ],
-      "output": "PASS  embedded code up to date\nPASS  legacy catalog rendered\nPASS  ranked legacy coverage and fixtures\nPASS  pinned tutorial legacy sample\nPASS  legacy ranking reproducible\nPASS  engine smoke infrastructure (execution may remain pending)\nPASS  dated source-backed facts\nPASS  facts tables rendered\nPASS  content structure and token budget\nPASS  isolated packaging and foreign CWD\nPASS  API references\nPASS  source citations\nPASS  links and anchors\nPASS  tool unit tests\nPASS  Luau typecheck + CLI tests\nPASS  privileged recipe launcher typechecks\n\n16 passed, 0 failed, 0 skipped \u2192 qa/report.json\n"
+      "status": "BLOCKED",
+      "output": "NOT RUN"
     },
     {
       "gate": "snapshot at most 14 days old",
@@ -17,31 +13,59 @@
       "age_days": 0
     },
     {
-      "gate": "empirically ranked top-150 legacy coverage",
+      "gate": "dump-derived relevant legacy coverage and curation",
       "status": "BLOCKED",
       "command": [
-        "/tmp/luau-release-tools/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "tools/check_legacy.py",
         "--check",
         "--release-gate"
       ],
-      "output": "legacy coverage: 152 entries, 327/704 API rows, 150/150 top-ranked, 0 error(s)\nBLOCKED: no representative public/historical tutorial sample or measured model outputs\n"
+      "output": "legacy coverage: 188 entries, 428/704 API rows, 150/150 top-ranked, 0 error(s)\nBLOCKED: D3 unresolved migration evidence or actual A/B output curation not measured\n"
+    },
+    {
+      "gate": "fact mention bindings",
+      "status": "PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/check_fact_mentions.py"
+      ],
+      "output": "fact mentions: 189/189 scoped blocks bound; 0 gaps; 0 other table rows require review\n"
+    },
+    {
+      "gate": "semantic must-to-refs coverage",
+      "status": "BLOCKED",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/check_eval_coverage.py"
+      ],
+      "output": "D5: 868/900 reviewed supported; 96.4444%; counts={'supported': 868, 'missing': 13, 'ambiguous': 19, 'unreviewed': 0, 'invalid': 0}; gate_passed=False\n"
+    },
+    {
+      "gate": "balanced evaluation and clean holdout",
+      "status": "PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tools/check_eval_bank.py",
+        "--require-ready"
+      ],
+      "output": "{\n  \"valid\": true,\n  \"structural_valid\": true,\n  \"structural_errors\": [],\n  \"total\": 268,\n  \"categories\": {\n    \"adversarial\": {\n      \"count\": 21,\n      \"russian\": 3,\n      \"broken_code_fixtures\": 2\n    },\n    \"animation\": {\n      \"count\": 13,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"api-freshness\": {\n      \"count\": 20,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"architecture\": {\n      \"count\": 15,\n      \"russian\": 3,\n      \"broken_code_fixtures\": 2\n    },\n    \"combat\": {\n      \"count\": 13,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"datastores\": {\n      \"count\": 21,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"debugging\": {\n      \"count\": 16,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"graphics\": {\n      \"count\": 14,\n      \"russian\": 3,\n      \"broken_code_fixtures\": 2\n    },\n    \"lighting\": {\n      \"count\": 15,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"luau\": {\n      \"count\": 20,\n      \"russian\": 3,\n      \"broken_code_fixtures\": 2\n    },\n    \"negative-triggers\": {\n      \"count\": 13,\n      \"russian\": 3,\n      \"broken_code_fixtures\": 2\n    },\n    \"networking\": {\n      \"count\": 16,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"npc\": {\n      \"count\": 13,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"performance\": {\n      \"count\": 14,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"security\": {\n      \"count\": 18,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"streaming\": {\n      \"count\": 13,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    },\n    \"ui\": {\n      \"count\": 13,\n      \"russian\": 2,\n      \"broken_code_fixtures\": 2\n    }\n  },\n  \"clean_holdout_ids\": [\n    \"HLD-adversarial-01\",\n    \"HLD-adversarial-02\",\n    \"HLD-adversarial-03\",\n    \"HLD-adversarial-04\",\n    \"HLD-adversarial-05\",\n    \"HLD-animation-01\",\n    \"HLD-animation-02\",\n    \"HLD-animation-03\",\n    \"HLD-animation-04\",\n    \"HLD-animation-05\",\n    \"HLD-api-freshness-01\",\n    \"HLD-api-freshness-02\",\n    \"HLD-api-freshness-03\",\n    \"HLD-api-freshness-04\",\n    \"HLD-api-freshness-05\",\n    \"HLD-architecture-01\",\n    \"HLD-architecture-02\",\n    \"HLD-architecture-03\",\n    \"HLD-architecture-04\",\n    \"HLD-architecture-05\",\n    \"HLD-combat-01\",\n    \"HLD-combat-02\",\n    \"HLD-combat-03\",\n    \"HLD-combat-04\",\n    \"HLD-combat-05\",\n    \"HLD-datastores-01\",\n    \"HLD-datastores-02\",\n    \"HLD-datastores-03\",\n    \"HLD-datastores-04\",\n    \"HLD-datastores-05\",\n    \"HLD-debugging-01\",\n    \"HLD-debugging-02\",\n    \"HLD-debugging-03\",\n    \"HLD-debugging-04\",\n    \"HLD-debugging-05\",\n    \"HLD-graphics-01\",\n    \"HLD-graphics-02\",\n    \"HLD-graphics-03\",\n    \"HLD-graphics-04\",\n    \"HLD-graphics-05\",\n    \"HLD-lighting-01\",\n    \"HLD-lighting-02\",\n    \"HLD-lighting-03\",\n    \"HLD-lighting-04\",\n    \"HLD-lighting-05\",\n    \"HLD-luau-01\",\n    \"HLD-luau-02\",\n    \"HLD-luau-03\",\n    \"HLD-luau-04\",\n    \"HLD-luau-05\",\n    \"HLD-negative-triggers-01\",\n    \"HLD-negative-triggers-02\",\n    \"HLD-negative-triggers-03\",\n    \"HLD-negative-triggers-04\",\n    \"HLD-negative-triggers-05\",\n    \"HLD-networking-01\",\n    \"HLD-networking-02\",\n    \"HLD-networking-03\",\n    \"HLD-networking-04\",\n    \"HLD-networking-05\",\n    \"HLD-npc-01\",\n    \"HLD-npc-02\",\n    \"HLD-npc-03\",\n    \"HLD-npc-04\",\n    \"HLD-npc-05\",\n    \"HLD-performance-01\",\n    \"HLD-performance-02\",\n    \"HLD-performance-03\",\n    \"HLD-performance-04\",\n    \"HLD-performance-05\",\n    \"HLD-security-01\",\n    \"HLD-security-02\",\n    \"HLD-security-03\",\n    \"HLD-security-04\",\n    \"HLD-security-05\",\n    \"HLD-streaming-01\",\n    \"HLD-streaming-02\",\n    \"HLD-streaming-03\",\n    \"HLD-streaming-04\",\n    \"HLD-streaming-05\",\n    \"HLD-ui-01\",\n    \"HLD-ui-02\",\n    \"HLD-ui-03\",\n    \"HLD-ui-04\",\n    \"HLD-ui-05\"\n  ],\n  \"fraction\": 0.31716417910447764,\n  \"errors\": [],\n  \"seal_skill_sha256\": [\n    \"d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a\"\n  ],\n  \"provenance_limit\": \"Custody artifacts are operator attestations; independent access isolation must be audited.\"\n}\n"
     },
     {
       "gate": "exact token accounting",
       "status": "PASS",
       "command": [
-        "/tmp/luau-release-tools/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "tools/check_content_budget.py",
         "--require-tokenizer"
       ],
-      "output": "Router 147/500 lines; 39 chapter summaries; 12 flagged files; tiktoken/cl100k_base\n"
+      "output": "Router 156/500 lines; 39 chapter summaries; 25 flagged files; tiktoken/cl100k_base\n"
     },
     {
       "gate": "all ten engine smoke receipts",
       "status": "BLOCKED",
       "command": [
-        "/tmp/luau-release-tools/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "tools/check_engine_evidence.py"
       ],
       "output": "FAIL save-system: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL network-rate-limiter: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL inventory: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL interaction: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL hitscan-gun: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL round-manager: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL sprint-crouch-stamina: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL npc-patrol: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL settings-menu: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL lighting-presets: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nEngine release gate BLOCKED: 10 failure(s), 10 NOT RUN\n"
@@ -57,5 +81,5 @@
       "output": "claude-code-personal: pending or not bound to current package"
     }
   ],
-  "package_sha256": "f0f19e1503c2dfdd7db362d5a53643f448a9cf32c2802be360f54cde7296dbd6"
+  "package_sha256": "7ac1e9684c770524ac69ebff52488abb38d7e20f049c389a7b552fe862500cf4"
 }

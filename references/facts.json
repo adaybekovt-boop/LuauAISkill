@@ -9,6 +9,18 @@
     "https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993": {
       "file": "references/fact-sources/server-authority-release.json",
       "sha256": "765d2dd1c7ad36744e0b440b624176da5354d85a00d1c59bb3a31c164b38df0f"
+    },
+    "https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267": {
+      "file": "references/fact-sources/ccl-base-release.json",
+      "sha256": "a1763bd6e0fb5c6a5e24d957dcfc490044406720f0373b79045c3cb915f85681"
+    },
+    "https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739": {
+      "file": "references/fact-sources/ccl-abilities-beta.json",
+      "sha256": "ed9f45244b853af232ca58027cda7ec433257df96396ec50940088f5bd075fae"
+    },
+    "https://devforum.roblox.com/t/full-release-input-action-system-ias-newly-converted-player-scripts/4678416": {
+      "file": "references/fact-sources/input-action-release.json",
+      "sha256": "effa464014707d2717024a91beaf5f02c1b0c0f4357324e6547bcf93f357f8f8"
     }
   },
   "facts": [
@@ -1292,6 +1304,569 @@
       "expires_after": 90,
       "evidence": [
         "At most ten incomplete tasks are allowed per place."
+      ]
+    },
+    {
+      "id": "ccl-base-release-status",
+      "section": "Feature status",
+      "statement": "The base Character Controller Library was announced for live experiences.",
+      "value": "full release",
+      "unit": "release status",
+      "status": "ga",
+      "source": "https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267",
+      "checked_on": "2026-10-02",
+      "expires_after": 30,
+      "evidence": [
+        "[Full Release] The Future of Character Movement: Character Controller Library"
+      ],
+      "notes": "The base-library release is separate from later opt-in ability betas."
+    },
+    {
+      "id": "ccl-base-release-date",
+      "section": "Feature status",
+      "statement": "Date of the base Character Controller Library full-release announcement.",
+      "value": "2026-04-08",
+      "unit": "calendar date",
+      "status": "documented",
+      "source": "https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"published_on\": \"2026-04-08\""
+      ]
+    },
+    {
+      "id": "ccl-abilities-beta-status",
+      "section": "Feature status",
+      "statement": "CCL default abilities and Custom Abilities API were announced as a separate Studio beta.",
+      "value": "Studio beta",
+      "unit": "release status",
+      "status": "beta",
+      "source": "https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739",
+      "checked_on": "2026-10-02",
+      "expires_after": 30,
+      "evidence": [
+        "[Studio Beta] Expanding the Character Controller Library: New Default Abilities & Custom Abilities API"
+      ]
+    },
+    {
+      "id": "ccl-abilities-beta-date",
+      "section": "Feature status",
+      "statement": "Date of the CCL default/custom abilities Studio beta announcement.",
+      "value": "2026-09-10",
+      "unit": "calendar date",
+      "status": "documented",
+      "source": "https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"published_on\": \"2026-09-10\""
+      ]
+    },
+    {
+      "id": "input-action-release-status",
+      "section": "Feature status",
+      "statement": "The Input Action System was announced as fully released.",
+      "value": "full release",
+      "unit": "release status",
+      "status": "ga",
+      "source": "https://devforum.roblox.com/t/full-release-input-action-system-ias-newly-converted-player-scripts/4678416",
+      "checked_on": "2026-10-02",
+      "expires_after": 30,
+      "evidence": [
+        "[Full Release] Input Action System (IAS) & Newly Converted Player Scripts!"
+      ],
+      "notes": "This does not announce all related Studio tools or InputActionLabel as released."
+    },
+    {
+      "id": "input-action-label-beta",
+      "section": "Feature status",
+      "statement": "InputActionLabel is explicitly labeled beta in the pinned input guide.",
+      "value": "beta",
+      "unit": "release status",
+      "status": "beta",
+      "source": "cd:input/input-action-system",
+      "checked_on": "2026-10-02",
+      "expires_after": 30,
+      "evidence": [
+        "betaName=\"InputActionLabel\" leadIn=\"This class/object is currently in beta."
+      ]
+    },
+    {
+      "id": "lighting-technology-superseded",
+      "section": "Feature status",
+      "statement": "Lighting.Technology is superseded in documentation; the dump does not tag it Deprecated.",
+      "value": "superseded",
+      "unit": "documentation status",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/Lighting",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "This property has been superseded by `Class.Lighting.LightingStyle|LightingStyle`"
+      ],
+      "notes": "Check access separately: the pinned dump requires RobloxScriptSecurity. Documentation supersession and the Deprecated tag are distinct."
+    },
+    {
+      "id": "renderstepped-superseded",
+      "section": "Feature status",
+      "statement": "RenderStepped is superseded by PreRender for new work.",
+      "value": "PreRender",
+      "unit": "replacement event",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/RunService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "This event has been superseded by `Class.RunService.PreRender|PreRender` which should be used for new work."
+      ]
+    },
+    {
+      "id": "stepped-superseded",
+      "section": "Feature status",
+      "statement": "Stepped is superseded by PreSimulation for new work.",
+      "value": "PreSimulation",
+      "unit": "replacement event",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/RunService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "This event has been superseded by `Class.RunService.PreSimulation|PreSimulation` which should be used for new work."
+      ]
+    },
+    {
+      "id": "cross-game-developer-product-sales-disable-date",
+      "section": "Feature status",
+      "statement": "Scheduled disable date for cross-game developer-product sales in the pinned monetization guide.",
+      "value": "2026-05-30",
+      "unit": "calendar date",
+      "status": "documented",
+      "source": "cd:production/monetization/developer-products",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Starting May 30, 2026, cross-game developer product sales will be disabled."
+      ],
+      "notes": "A dated documentation policy statement, not a live transaction test."
+    },
+    {
+      "id": "cross-game-pass-sales-disable-date",
+      "section": "Feature status",
+      "statement": "Scheduled disable date for cross-game pass sales in the pinned monetization guide.",
+      "value": "2026-05-30",
+      "unit": "calendar date",
+      "status": "documented",
+      "source": "cd:production/monetization/passes",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Starting May 30, 2026, cross-game pass sales will be disabled."
+      ],
+      "notes": "A dated documentation policy statement, not a live transaction test."
+    },
+    {
+      "id": "spotlight-angle-maximum",
+      "section": "Rendering and physics",
+      "statement": "Maximum SpotLight cone angle.",
+      "value": 180,
+      "unit": "degrees",
+      "status": "documented",
+      "source": "cd:effects/light-sources",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The maximum value is `180` which illuminates a full half sphere from the apex."
+      ]
+    },
+    {
+      "id": "datastore-queue-overflow-error-codes",
+      "section": "Data stores",
+      "statement": "Error codes for entirely dropped requests when a throttling queue is full.",
+      "value": [
+        301,
+        306
+      ],
+      "unit": "inclusive error-code range",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Each queue has a limit of 30 requests. When the limit of a queue is reached, requests fail with an error code in the 301-306 range, indicating that the requests have been dropped entirely."
+      ]
+    },
+    {
+      "id": "microprofiler-server-capture-frames",
+      "section": "Luau and tooling",
+      "statement": "Maximum frames in a Developer Console server MicroProfiler capture.",
+      "value": 60,
+      "unit": "frames",
+      "status": "documented",
+      "source": "cd:performance-optimization/microprofiler/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "In the **Server** tab, specify the number of frames to capture (maximum 60)"
+      ]
+    },
+    {
+      "id": "dof-default-far-intensity",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for DepthOfFieldEffect.FarIntensity.",
+      "value": 0.75,
+      "unit": "property units",
+      "status": "default",
+      "source": "api:DepthOfFieldEffect.FarIntensity",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.75\""
+      ]
+    },
+    {
+      "id": "dof-default-focus-distance",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for DepthOfFieldEffect.FocusDistance.",
+      "value": 0.05,
+      "unit": "property units",
+      "status": "default",
+      "source": "api:DepthOfFieldEffect.FocusDistance",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.0500000007\""
+      ],
+      "notes": "Display rounded to hundredths; the reflected float is 0.0500000007."
+    },
+    {
+      "id": "dof-default-in-focus-radius",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for DepthOfFieldEffect.InFocusRadius.",
+      "value": 10,
+      "unit": "property units",
+      "status": "default",
+      "source": "api:DepthOfFieldEffect.InFocusRadius",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"10\""
+      ]
+    },
+    {
+      "id": "dof-default-near-intensity",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for DepthOfFieldEffect.NearIntensity.",
+      "value": 0.75,
+      "unit": "property units",
+      "status": "default",
+      "source": "api:DepthOfFieldEffect.NearIntensity",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.75\""
+      ]
+    },
+    {
+      "id": "atmosphere-density-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for Atmosphere.Density.",
+      "value": "0.395000011",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:Atmosphere.Density",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.395000011\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "atmosphere-offset-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for Atmosphere.Offset.",
+      "value": "0",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:Atmosphere.Offset",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "atmosphere-haze-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for Atmosphere.Haze.",
+      "value": "0",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:Atmosphere.Haze",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "atmosphere-color-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for Atmosphere.Color.",
+      "value": "0.7843, 0.6667, 0.4235",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:Atmosphere.Color",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.7843, 0.6667, 0.4235\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "atmosphere-glare-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for Atmosphere.Glare.",
+      "value": "0",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:Atmosphere.Glare",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "atmosphere-decay-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for Atmosphere.Decay.",
+      "value": "0.3608, 0.2353, 0.0549",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:Atmosphere.Decay",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.3608, 0.2353, 0.0549\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "bloom-effect-intensity-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for BloomEffect.Intensity.",
+      "value": "0.400000006",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:BloomEffect.Intensity",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.400000006\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "bloom-effect-size-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for BloomEffect.Size.",
+      "value": "24",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:BloomEffect.Size",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"24\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "bloom-effect-threshold-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for BloomEffect.Threshold.",
+      "value": "0.949999988",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:BloomEffect.Threshold",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.949999988\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "color-correction-effect-brightness-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for ColorCorrectionEffect.Brightness.",
+      "value": "0",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:ColorCorrectionEffect.Brightness",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "color-correction-effect-contrast-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for ColorCorrectionEffect.Contrast.",
+      "value": "0",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:ColorCorrectionEffect.Contrast",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "color-correction-effect-saturation-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for ColorCorrectionEffect.Saturation.",
+      "value": "0",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:ColorCorrectionEffect.Saturation",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "sun-rays-effect-intensity-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for SunRaysEffect.Intensity.",
+      "value": "0.25",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:SunRaysEffect.Intensity",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"0.25\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "sun-rays-effect-spread-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for SunRaysEffect.Spread.",
+      "value": "1",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:SunRaysEffect.Spread",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"1\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "blur-effect-size-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for BlurEffect.Size.",
+      "value": "24",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:BlurEffect.Size",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"24\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "material-variant-studs-per-tile-default",
+      "section": "Rendering and physics",
+      "statement": "Reflected default for MaterialVariant.StudsPerTile.",
+      "value": "10",
+      "unit": "reflected property value",
+      "status": "default",
+      "source": "api:MaterialVariant.StudsPerTile",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Default\": \"10\""
+      ],
+      "notes": "Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB."
+    },
+    {
+      "id": "particle-light-emission-endpoints",
+      "section": "Rendering and physics",
+      "statement": "Documented normal/additive blending endpoints for ParticleEmitter.LightEmission.",
+      "value": [
+        0,
+        1
+      ],
+      "unit": "blending endpoints",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/ParticleEmitter",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "A value of 0 uses normal blending mode while a value of 1 uses additive blending."
+      ]
+    },
+    {
+      "id": "particle-light-influence-range",
+      "section": "Rendering and physics",
+      "statement": "Defined range of ParticleEmitter.LightInfluence.",
+      "value": [
+        0,
+        1
+      ],
+      "unit": "influence factor",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/ParticleEmitter",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "It must be in the range of 0–1; behavior of values outside of this range are not defined."
+      ]
+    },
+    {
+      "id": "streaming-min-radius-default",
+      "section": "Rendering and physics",
+      "statement": "Default Workspace.StreamingMinRadius.",
+      "value": 64,
+      "unit": "studs",
+      "status": "default",
+      "source": "cd:reference/engine/classes/Workspace",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Defaults to 64 studs."
+      ]
+    },
+    {
+      "id": "input-action-manager-beta",
+      "section": "Feature status",
+      "statement": "Input Action Manager tool is explicitly labeled beta.",
+      "value": "beta",
+      "unit": "release status",
+      "status": "beta",
+      "source": "cd:input/input-action-system",
+      "checked_on": "2026-10-02",
+      "expires_after": 30,
+      "evidence": [
+        "betaName=\"Input Action Manager\" leadIn=\"This tool is currently in beta."
       ]
     }
   ]

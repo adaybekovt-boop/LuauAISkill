@@ -2,7 +2,7 @@
 
 API snapshot 0.741.19, creator-docs `578b33e83e51`, checked 2026-10-02. Statuses: **deprecated** = tagged Deprecated in API metadata (still works unless noted); **superseded** = docs say a newer API should be used for new work; **removed** = feature/enum item gone — old code errors or does nothing; **restricted** = exists but game scripts may not write/call it (security/capability); **discouraged** = official docs recommend the newer system; old one still supported; **outdated-fact** = a number/limit/behaviour models remember that changed; **pattern** = not an API status — an obsolete or unsafe practice.
 
-152 curated entries cover 327 distinct deprecated/superseded API rows. [Priority ranking](RANKING.md) is reproducible editorial triage, not measured public-code popularity or AI failure frequency. Representative public/historical tutorial code and model outputs were not sampled; current official tutorial code is measured separately. Empirical ranking evidence remains provisional.
+188 curated entries cover 428 distinct deprecated/superseded API rows. [Priority ranking](RANKING.md) is reproducible editorial triage, not measured public-code popularity or AI failure frequency. Representative public/historical tutorial code and model outputs were not sampled; current official tutorial code is measured separately. External-corpus ranking is not a release gate; see classification.json for dump-derived D3 coverage and unresolved migrations.
 
 Every entry has a detecting fixture; findings are review candidates, not proof of incorrect code. See [coverage report](coverage.json) and [fixtures](fixtures.luau).
 
@@ -332,6 +332,86 @@ Scan a project for these patterns: `python tools/scan_legacy.py <project-dir>`. 
 - DETECTING FIXTURE: `local pages = AssetService:SearchAudio(params)`
 - VERIFY: api:AssetService.GetAssetIdsForPackage, api:AssetService.SearchAudio, api:AssetService.GetAssetIdsForPackageAsync, api:AssetService.SearchAudioAsync, cd:reference/engine/classes/AssetService
 
+### `script-linked-source-packages` — deprecated
+- OLD: `BaseScript.LinkedSource / ModuleScript.LinkedSource`
+- NEW: `Migrate the linked-source workflow to Roblox packages`
+- WHY: Packages replace the old source-link property; this changes asset organization and update workflow rather than assigning a renamed field. Follow the pinned packages guide.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `BaseScript.LinkedSource`, `ModuleScript.LinkedSource`
+- DETECT: `[.:](?:LinkedSource)\b`
+- DETECTING FIXTURE: `local old = BaseScript.LinkedSource`
+- VERIFY: api:BaseScript.LinkedSource, api:ModuleScript.LinkedSource, cd:reference/engine/classes/BaseScript, cd:reference/engine/classes/ModuleScript, cd:projects/assets/packages
+
+### `datamodel-item-change` — deprecated
+- OLD: `DataModel.ItemChanged`
+- NEW: `Object.Changed on the specific observed instance`
+- WHY: Replace global legacy observation with a connection on each relevant object. Changed signal argument behavior depends on the class; do not assume a drop-in callback.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `DataModel.ItemChanged`
+- DETECT: `[.:](?:ItemChanged)\b`
+- DETECTING FIXTURE: `local old = DataModel.ItemChanged`
+- VERIFY: api:DataModel.ItemChanged, api:Object.Changed, cd:reference/engine/classes/DataModel
+
+### `asset-insert-load` — deprecated
+- OLD: `InsertService.Insert`
+- NEW: `InsertService:LoadAsset(assetId) for authorized asset loading`
+- WHY: Insert consumed an Instance and returned nothing; LoadAsset takes an asset ID and returns an asset container. Review permission, yielding, returned hierarchy and parenting; do not execute untrusted code.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `InsertService.Insert`
+- DETECT: `[.:](?:Insert)\b`
+- DETECTING FIXTURE: `InsertService:Insert(value)`
+- VERIFY: api:InsertService.Insert, api:InsertService.LoadAsset, cd:reference/engine/classes/InsertService
+
+### `asset-creator-id-retired` — deprecated
+- OLD: `AssetService.GetCreatorAssetID`
+- NEW: `Remove reliance on the broken method; select a documented product metadata query for the actual requirement`
+- WHY: The pinned preferred-name hint says GetProductInfo but does not establish the owning service, equivalent input or return shape. Do not synthesize AssetService:GetProductInfo or assume this retrieves a creator identifier.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `AssetService.GetCreatorAssetID`
+- DETECT: `[.:](?:GetCreatorAssetID)\b`
+- DETECTING FIXTURE: `AssetService:GetCreatorAssetID(value)`
+- VERIFY: api:AssetService.GetCreatorAssetID, cd:reference/engine/classes/AssetService
+
+### `removed-sets` — deprecated
+- OLD: `InsertService.GetBaseCategories / InsertService.GetBaseSets / InsertService.GetCollection / InsertService.GetUserCategories / InsertService.GetUserSets`
+- NEW: `Remove the retired Sets integration`
+- WHY: Sets were removed. The historical preferred names also point to removed methods, so following the rename chain cannot restore the feature.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `InsertService.GetBaseCategories`, `InsertService.GetBaseSets`, `InsertService.GetCollection`, `InsertService.GetUserCategories`, `InsertService.GetUserSets`
+- DETECT: `[.:](?:GetBaseCategories|GetBaseSets|GetCollection|GetUserCategories|GetUserSets)\b`
+- DETECTING FIXTURE: `InsertService:GetBaseCategories(value)`
+- VERIFY: api:InsertService.GetBaseCategories, api:InsertService.GetBaseSets, api:InsertService.GetCollection, api:InsertService.GetUserCategories, api:InsertService.GetUserSets, cd:reference/engine/classes/InsertService
+
+### `debris-fixed-capacity` — deprecated
+- OLD: `Debris.MaxItems`
+- NEW: `Remove MaxItems writes; design cleanup lifetime without changing the service capacity`
+- WHY: The pinned description says setting this property errors and capacity is hardcoded. Keep supported AddItem scheduling and reduce retained objects or manage explicit destruction; do not promise capacity tuning.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Debris.MaxItems`
+- DETECT: `[.:](?:MaxItems)\b`
+- DETECTING FIXTURE: `local old = Debris.MaxItems`
+- VERIFY: api:Debris.MaxItems, api:Debris.AddItem, cd:reference/engine/classes/Debris
+
+### `insert-approval-noop` — deprecated
+- OLD: `InsertService.AllowInsertFreeModels / InsertService.ApproveAssetId / InsertService.ApproveAssetVersionId`
+- NEW: `Remove the legacy approval calls; use current documented asset permissions`
+- WHY: The flag was never released and the approval methods have no effect. These calls cannot grant asset access or override ownership/security requirements.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `InsertService.AllowInsertFreeModels`, `InsertService.ApproveAssetId`, `InsertService.ApproveAssetVersionId`
+- DETECT: `[.:](?:AllowInsertFreeModels|ApproveAssetId|ApproveAssetVersionId)\b`
+- DETECTING FIXTURE: `local old = InsertService.AllowInsertFreeModels`
+- VERIFY: api:InsertService.AllowInsertFreeModels, api:InsertService.ApproveAssetId, api:InsertService.ApproveAssetVersionId, cd:reference/engine/classes/InsertService
+
+### `mesh-engine-joint-offset` — deprecated
+- OLD: `MeshPart.HasJointOffset / MeshPart.JointOffset`
+- NEW: `Remove scripted offset writes and use a supported rig/import workflow`
+- WHY: These legacy fields are engine managed and cannot be set by scripts. JointOffset is reset when a new mesh is applied; it is not a stable rig control.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `MeshPart.HasJointOffset`, `MeshPart.JointOffset`
+- DETECT: `[.:](?:HasJointOffset|JointOffset)\b`
+- DETECTING FIXTURE: `local old = MeshPart.HasJointOffset`
+- VERIFY: api:MeshPart.HasJointOffset, api:MeshPart.JointOffset, cd:reference/engine/classes/MeshPart
+
 ## runtime
 
 ### `layout-localscript-rs` — pattern (seen 2008-now)
@@ -363,6 +443,66 @@ Scan a project for these patterns: `python tools/scan_legacy.py <project-dir>`. 
 - DETECT: `\bSignalBehavior\.Immediate\b`
 - DETECTING FIXTURE: `workspace.SignalBehavior = Enum.SignalBehavior.Immediate`
 - VERIFY: api:Workspace.SignalBehavior, cd:scripting/events/deferred
+
+### `capture-saved-payload` — deprecated
+- OLD: `CaptureService.CaptureSaved`
+- NEW: `CaptureService.UserCaptureSaved`
+- WHY: The old event sends a captureInfo Dictionary; UserCaptureSaved sends a captureContentId ContentId. Rewrite the callback parameter and field accesses.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `CaptureService.CaptureSaved`
+- DETECT: `[.:](?:CaptureSaved)\b`
+- DETECTING FIXTURE: `local old = CaptureService.CaptureSaved`
+- VERIFY: api:CaptureService.CaptureSaved, api:CaptureService.UserCaptureSaved, cd:reference/engine/classes/CaptureService
+
+### `stats-time-units` — deprecated
+- OLD: `Stats.HeartbeatTimeMs / Stats.PhysicsStepTimeMs`
+- NEW: `Stats.HeartbeatTime / Stats.PhysicsStepTime`
+- WHY: HeartbeatTimeMs is milliseconds and HeartbeatTime is documented in seconds; convert display and thresholds. PhysicsStepTimeMs is milliseconds, but the pinned PhysicsStepTime documentation does not state its unit. Do not assume a scaling factor for PhysicsStepTime without additional authoritative evidence.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Stats.HeartbeatTimeMs`, `Stats.PhysicsStepTimeMs`
+- DETECT: `[.:](?:HeartbeatTimeMs|PhysicsStepTimeMs)\b`
+- DETECTING FIXTURE: `local old = Stats.HeartbeatTimeMs`
+- VERIFY: api:Stats.HeartbeatTimeMs, api:Stats.PhysicsStepTimeMs, api:Stats.HeartbeatTime, api:Stats.PhysicsStepTime, cd:reference/engine/classes/Stats
+
+### `analytics-typed-events` — deprecated
+- OLD: `AnalyticsService.FireCustomEvent / AnalyticsService.FireEvent / AnalyticsService.FireInGameEconomyEvent / AnalyticsService.FirePlayerProgressionEvent`
+- NEW: `Choose LogCustomEvent, LogEconomyEvent or LogProgressionEvent for the event meaning`
+- WHY: The old generic and legacy methods do not have interchangeable argument lists. Select the semantic event family, then rebuild arguments against its pinned signature; preserve player identity and event fields.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `AnalyticsService.FireCustomEvent`, `AnalyticsService.FireEvent`, `AnalyticsService.FireInGameEconomyEvent`, `AnalyticsService.FirePlayerProgressionEvent`
+- DETECT: `[.:](?:FireCustomEvent|FireEvent|FireInGameEconomyEvent|FirePlayerProgressionEvent)\b`
+- DETECTING FIXTURE: `AnalyticsService:FireCustomEvent(value)`
+- VERIFY: api:AnalyticsService.FireCustomEvent, api:AnalyticsService.FireEvent, api:AnalyticsService.FireInGameEconomyEvent, api:AnalyticsService.FirePlayerProgressionEvent, api:AnalyticsService.LogCustomEvent, api:AnalyticsService.LogEconomyEvent, api:AnalyticsService.LogProgressionEvent, cd:reference/engine/classes/AnalyticsService
+
+### `runtime-remote-build-mode` — deprecated
+- OLD: `DataModel.GetRemoteBuildMode`
+- NEW: `RunService:IsServer() when the question is server execution`
+- WHY: The old build-mode predicate is replaced by an execution-context query on another service. Ensure server/client context is actually the question.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `DataModel.GetRemoteBuildMode`
+- DETECT: `[.:](?:GetRemoteBuildMode)\b`
+- DETECTING FIXTURE: `DataModel:GetRemoteBuildMode(value)`
+- VERIFY: api:DataModel.GetRemoteBuildMode, api:RunService.IsServer, cd:reference/engine/classes/DataModel
+
+### `retired-noop-settings` — deprecated
+- OLD: `DataModel.GearGenreSetting / DataModel.IsGearTypeAllowed / DataModel.GetMessage / Decal.Specular / StudioService.DrawConstraintsOnTop / Team.AutoColorCharacters / TeleportService.CustomizedTeleportUI / Camera.GetPanSpeed / Camera.GetTiltSpeed`
+- NEW: `Remove calls and reliance on their old behavior`
+- WHY: Pinned deprecation notes say these features are removed, nonfunctional or no longer work. Do not invent replacement members; implement any still-required behavior separately from current documented APIs.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `DataModel.GearGenreSetting`, `DataModel.IsGearTypeAllowed`, `DataModel.GetMessage`, `Decal.Specular`, `StudioService.DrawConstraintsOnTop`, `Team.AutoColorCharacters`, `TeleportService.CustomizedTeleportUI`, `Camera.GetPanSpeed`, `Camera.GetTiltSpeed`
+- DETECT: `[.:](?:AutoColorCharacters|CustomizedTeleportUI|DrawConstraintsOnTop|GearGenreSetting|GetMessage|GetPanSpeed|GetTiltSpeed|IsGearTypeAllowed|Specular)\b`
+- DETECTING FIXTURE: `local old = DataModel.GearGenreSetting`
+- VERIFY: api:DataModel.GearGenreSetting, api:DataModel.IsGearTypeAllowed, api:DataModel.GetMessage, api:Decal.Specular, api:StudioService.DrawConstraintsOnTop, api:Team.AutoColorCharacters, api:TeleportService.CustomizedTeleportUI, api:Camera.GetPanSpeed, api:Camera.GetTiltSpeed, cd:reference/engine/classes/DataModel, cd:reference/engine/classes/Decal, cd:reference/engine/classes/StudioService, cd:reference/engine/classes/Team, cd:reference/engine/classes/TeleportService, cd:reference/engine/classes/Camera
+
+### `retired-nonfunctional-properties` — deprecated
+- OLD: `Decal.Shiny / FormFactorPart.FormFactor / FormFactorPart.formFactor / ScreenshotHud.UsernameOverlayEnabled`
+- NEW: `Remove the obsolete assignments`
+- WHY: The pinned descriptions identify nonfunctional settings or a retired resize-grid behavior. Keep desired modern rendering/resizing as explicit application behavior; there is no equivalent renamed property.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Decal.Shiny`, `FormFactorPart.FormFactor`, `FormFactorPart.formFactor`, `ScreenshotHud.UsernameOverlayEnabled`
+- DETECT: `[.:](?:FormFactor|Shiny|UsernameOverlayEnabled|formFactor)\b`
+- DETECTING FIXTURE: `local old = Decal.Shiny`
+- VERIFY: api:Decal.Shiny, api:FormFactorPart.FormFactor, api:FormFactorPart.formFactor, api:ScreenshotHud.UsernameOverlayEnabled, cd:reference/engine/classes/Decal, cd:reference/engine/classes/FormFactorPart, cd:reference/engine/classes/ScreenshotHud
 
 ## security
 
@@ -441,6 +581,16 @@ player.leaderstats.Coins.Value += 10
 - DETECT: `:SetNetworkOwner\s*\(`
 - DETECTING FIXTURE: `character.HumanoidRootPart:SetNetworkOwner(player)`
 - VERIFY: cd:projects/server-authority/index, cd:scripting/security/network-ownership
+
+### `opencloud-deprecated-bridge` — deprecated
+- OLD: `OpenCloudApiV1.CreateModel / OpenCloudApiV1.CreateUserNotificationAsync / OpenCloudService.GetApiV1 / OpenCloudService.InvokeAsync`
+- NEW: `Remove dependence on the deprecated in-engine bridge; design an authorized Open Cloud integration separately`
+- WHY: GetApiV1 and CreateUserNotificationAsync are documented to error. Other bridge/container calls are deprecated. External Open Cloud requests require their own supported endpoint, authentication and backend design; never embed credentials in client scripts.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `OpenCloudApiV1.CreateModel`, `OpenCloudApiV1.CreateUserNotificationAsync`, `OpenCloudService.GetApiV1`, `OpenCloudService.InvokeAsync`
+- DETECT: `[.:](?:CreateModel|CreateUserNotificationAsync|GetApiV1|InvokeAsync)\b`
+- DETECTING FIXTURE: `OpenCloudApiV1:CreateModel(value)`
+- VERIFY: api:OpenCloudApiV1.CreateModel, api:OpenCloudApiV1.CreateUserNotificationAsync, api:OpenCloudService.GetApiV1, api:OpenCloudService.InvokeAsync, cd:reference/engine/classes/OpenCloudApiV1, cd:reference/engine/classes/OpenCloudService
 
 ## physics
 
@@ -598,6 +748,48 @@ player.leaderstats.Coins.Value += 10
 - DETECTING FIXTURE: `align.AlignType = Enum.AlignType.Parallel`
 - VERIFY: api:Enum.AlignType.Parallel, api:Enum.AlignType.Perpendicular, api:Enum.AlignType.PrimaryAxisParallel, api:Enum.AlignType.PrimaryAxisPerpendicular, cd:reference/engine/enums/AlignType
 
+### `assembly-root-property` — deprecated
+- OLD: `BasePart.GetRootPart`
+- NEW: `part.AssemblyRootPart`
+- WHY: The replacement is a property read, not a method call. Remove parentheses; review nullable/root assembly behavior.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `BasePart.GetRootPart`
+- DETECT: `[.:](?:GetRootPart)\b`
+- DETECTING FIXTURE: `BasePart:GetRootPart(value)`
+- VERIFY: api:BasePart.GetRootPart, api:BasePart.AssemblyRootPart, cd:reference/engine/classes/BasePart
+
+### `surface-motor-inputs` — deprecated
+- OLD: `BasePart.BackParamA / BasePart.BackParamB / BasePart.BackSurfaceInput / BasePart.BottomParamA / BasePart.BottomParamB / BasePart.BottomSurfaceInput / BasePart.FrontParamA / BasePart.FrontParamB / BasePart.FrontSurfaceInput / BasePart.LeftParamA / BasePart.LeftParamB / BasePart.LeftSurfaceInput / BasePart.RightParamA / BasePart.RightParamB / BasePart.RightSurfaceInput / BasePart.TopParamA / BasePart.TopParamB / BasePart.TopSurfaceInput`
+- NEW: `Rebuild legacy surface motors with explicit attachments and a HingeConstraint motor`
+- WHY: Surface inputs encode constant or sinusoidal motor motion through face-specific parameters. Modern constraints need explicit attachment axes and motor settings; sine-driven motion needs deliberate time-varying control. Do not copy legacy amplitude/frequency fields onto constraints.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `BasePart.BackParamA`, `BasePart.BackParamB`, `BasePart.BackSurfaceInput`, `BasePart.BottomParamA`, `BasePart.BottomParamB`, `BasePart.BottomSurfaceInput`, `BasePart.FrontParamA`, `BasePart.FrontParamB`, `BasePart.FrontSurfaceInput`, `BasePart.LeftParamA`, `BasePart.LeftParamB`, `BasePart.LeftSurfaceInput`, `BasePart.RightParamA`, `BasePart.RightParamB`, `BasePart.RightSurfaceInput`, `BasePart.TopParamA`, `BasePart.TopParamB`, `BasePart.TopSurfaceInput`
+- DETECT: `[.:](?:BackParamA|BackParamB|BackSurfaceInput|BottomParamA|BottomParamB|BottomSurfaceInput|FrontParamA|FrontParamB|FrontSurfaceInput|LeftParamA|LeftParamB|LeftSurfaceInput|RightParamA|RightParamB|RightSurfaceInput|TopParamA|TopParamB|TopSurfaceInput)\b`
+- DETECTING FIXTURE: `local old = BasePart.BackParamA`
+- VERIFY: api:BasePart.BackParamA, api:BasePart.BackParamB, api:BasePart.BackSurfaceInput, api:BasePart.BottomParamA, api:BasePart.BottomParamB, api:BasePart.BottomSurfaceInput, api:BasePart.FrontParamA, api:BasePart.FrontParamB, api:BasePart.FrontSurfaceInput, api:BasePart.LeftParamA, api:BasePart.LeftParamB, api:BasePart.LeftSurfaceInput, api:BasePart.RightParamA, api:BasePart.RightParamB, api:BasePart.RightSurfaceInput, api:BasePart.TopParamA, api:BasePart.TopParamB, api:BasePart.TopSurfaceInput, api:HingeConstraint.AngularVelocity, api:HingeConstraint.ActuatorType, api:Constraint.Attachment0, api:Constraint.Attachment1, cd:reference/engine/classes/BasePart, cd:physics/constraints/hinge
+
+### `sensor-sense-update` — deprecated
+- OLD: `SensorBase.Sense`
+- NEW: `Use UpdateType OnRead automatic recomputation or set output properties in Manual mode`
+- WHY: Pinned documentation says OnRead recomputes on the next read and Manual does not recompute automatically. Sense is unnecessary in OnRead; Manual requires assigning outputs rather than calling Sense.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `SensorBase.Sense`
+- DETECT: `[.:](?:Sense)\b`
+- DETECTING FIXTURE: `SensorBase:Sense(value)`
+- VERIFY: api:SensorBase.Sense, api:SensorBase.UpdateType, cd:reference/engine/classes/SensorBase
+
+### `hinge-softlock-retired` — deprecated
+- OLD: `HingeConstraint.SoftlockServoUponReachingTarget`
+- NEW: `Remove reliance on the softlock flag; design and test the desired hinge holding behavior explicitly.`
+- WHY: Staff confirms that the hinge softlock is disabled regardless of the stored value. Toggling the flag cannot restore the former behavior.
+- OLD STILL OK WHEN: A serialized legacy value may remain, but it must not be treated as evidence the hinge will lock.
+- NOTES: This evidence is limited to HingeConstraint. Do not extrapolate to similarly named properties on other constraint classes or claim a parameter-for-parameter substitute. The pinned generic deprecation warning is clarified by the dated staff behavior statement.
+- API COVERAGE: `HingeConstraint.SoftlockServoUponReachingTarget`
+- DETECT: `[.:](?:SoftlockServoUponReachingTarget)\b`
+- DETECTING FIXTURE: `HingeConstraint.SoftlockServoUponReachingTarget = value`
+- VERIFY: api:HingeConstraint.SoftlockServoUponReachingTarget
+- REVIEWED SOURCE: [choconatto (Roblox Staff), 2024-06-14](https://devforum.roblox.com/t/softlockservouponreachingtarget-was-deprecated-despite-being-announced-4-months-ago/3022736/2); [hashed observation receipt](staff-evidence/hinge-softlock-disabled.json). Scope: HingeConstraint.SoftlockServoUponReachingTarget in the staff response to the reported hinge behavior.
+
 ## queries
 
 ### `query-findpartonray` — deprecated (seen 2008-2020)
@@ -746,6 +938,28 @@ player.leaderstats.Coins.Value += 10
 - DETECTING FIXTURE: `provider:GetAnimationClip(id)`
 - VERIFY: api:AnimationClipProvider.GetAnimationClip, api:AnimationClipProvider.GetAnimationClipById, api:AnimationClipProvider.GetAnimations, api:AnimationClipProvider.GetAnimationClipAsync, api:AnimationClipProvider.GetAnimationsAsync, cd:reference/engine/classes/AnimationClipProvider
 
+### `pose-maskweight-track` — deprecated
+- OLD: `Pose.MaskWeight`
+- NEW: `AnimationTrack:AdjustWeight()`
+- WHY: Blending is controlled on a playing animation track, not a stored Pose. Obtain the intended track and choose weight/fade behavior.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Pose.MaskWeight`
+- DETECT: `[.:](?:MaskWeight)\b`
+- DETECTING FIXTURE: `local old = Pose.MaskWeight`
+- VERIFY: api:Pose.MaskWeight, api:AnimationTrack.AdjustWeight, cd:reference/engine/classes/Pose
+
+### `animationconstraint-attachment-joints` — deprecated
+- OLD: `AnimationConstraint.C0 / AnimationConstraint.C1 / AnimationConstraint.Part0 / AnimationConstraint.Part1`
+- NEW: `Use the constraint attachment model for AJU rigs; redesign procedural joint updates rather than assigning the legacy fields.`
+- WHY: The current dump marks these fields readonly/deprecated and the staff migration post confirms attempts to set them error. Attachments determine the joint; there is no one-to-one assignment rewrite.
+- OLD STILL OK WHEN: Read-only legacy inspection requires checking the actual rig; never copy writable Motor6D property assumptions to AnimationConstraint.
+- NOTES: For AJU-enabled rigs, review the staff migration guidance before procedural animation changes. Attachment rest-pose mutation and local Transform animation are not interchangeable. The staff source supplies guidance absent from the pinned AnimationConstraint YAML.
+- API COVERAGE: `AnimationConstraint.C0`, `AnimationConstraint.C1`, `AnimationConstraint.Part0`, `AnimationConstraint.Part1`
+- DETECT: `[.:](?:C0|C1|Part0|Part1)\b`
+- DETECTING FIXTURE: `AnimationConstraint.C0 = value`
+- VERIFY: api:AnimationConstraint.C0, api:AnimationConstraint.C1, api:AnimationConstraint.Part0, api:AnimationConstraint.Part1, api:Constraint.Attachment0, api:Constraint.Attachment1, api:AnimationConstraint.Transform
+- REVIEWED SOURCE: [Homeomorph (Roblox Staff), 2026-05-27](https://devforum.roblox.com/t/avatar-joint-upgrade-aju-phase-2-rollout-updated-migration-recommendations/4656414/1); [hashed observation receipt](staff-evidence/aju-attachment-migration.json). Scope: AJU-enabled rigs using AnimationConstraint; legacy property writes are not an equivalent attachment migration.
+
 ## players
 
 ### `async-loadcharacter` — deprecated (seen 2006-2025)
@@ -890,6 +1104,56 @@ player.leaderstats.Coins.Value += 10
 - DETECTING FIXTURE: `local id = game.VIPServerId`
 - VERIFY: api:DataModel.VIPServerId, api:DataModel.VIPServerOwnerId, api:DataModel.PrivateServerId, api:DataModel.PrivateServerOwnerId, cd:reference/engine/classes/DataModel
 
+### `player-best-friends-retired` — deprecated
+- OLD: `Player.IsBestFriendsWith`
+- NEW: `Player:IsFriendsWithAsync(userId) only if ordinary friendship matches the feature`
+- WHY: Best-friend status was removed. Ordinary friendship is a different relation and the Async lookup yields; update product logic and error handling.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Player.IsBestFriendsWith`
+- DETECT: `[.:](?:IsBestFriendsWith)\b`
+- DETECTING FIXTURE: `Player:IsBestFriendsWith(value)`
+- VERIFY: api:Player.IsBestFriendsWith, api:Player.IsFriendsWithAsync, cd:reference/engine/classes/Player
+
+### `team-rebalance-retired` — deprecated
+- OLD: `Teams.RebalanceTeams`
+- NEW: `Implement a server-owned team allocation policy`
+- WHY: The old method no longer functions correctly. Decide balancing criteria, then validate and assign teams server-side instead of a mechanical API substitution.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Teams.RebalanceTeams`
+- DETECT: `[.:](?:RebalanceTeams)\b`
+- DETECTING FIXTURE: `Teams:RebalanceTeams(value)`
+- VERIFY: api:Teams.RebalanceTeams, cd:reference/engine/classes/Teams
+
+### `removed-points-service` — deprecated
+- OLD: `PointsService.AwardPoints / PointsService.GetAwardablePoints / PointsService.GetGamePointBalance / PointsService.GetPointBalance`
+- NEW: `Remove the retired platform achievement-points integration`
+- WHY: These APIs belong to an achievement system that was removed. A game-owned score is a new system requiring its own persistence and authority design, not an equivalent API replacement.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `PointsService.AwardPoints`, `PointsService.GetAwardablePoints`, `PointsService.GetGamePointBalance`, `PointsService.GetPointBalance`
+- DETECT: `[.:](?:AwardPoints|GetAwardablePoints|GetGamePointBalance|GetPointBalance)\b`
+- DETECTING FIXTURE: `PointsService:AwardPoints(value)`
+- VERIFY: api:PointsService.AwardPoints, api:PointsService.GetAwardablePoints, api:PointsService.GetGamePointBalance, api:PointsService.GetPointBalance, cd:reference/engine/classes/PointsService
+
+### `team-score-value` — deprecated
+- OLD: `Team.Score`
+- NEW: `Store the server-owned score in a dedicated value/attribute and build its display`
+- WHY: The deprecated field only stores a number and has no automatic scoring behavior. Decide replication, persistence and leaderboard display instead of assuming a new built-in Team score field.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Team.Score`
+- DETECT: `[.:](?:Score)\b`
+- DETECTING FIXTURE: `local old = Team.Score`
+- VERIFY: api:Team.Score, api:Instance.SetAttribute, cd:reference/engine/classes/Team, cd:players/leaderboards
+
+### `obsolete-gear-change` — deprecated
+- OLD: `DataModel.AllowedGearTypeChanged`
+- NEW: `Remove reliance on legacy gear-settings notifications`
+- WHY: The event signals an obsolete gear-setting operation. Define game-owned equipment permissions and their change notifications if the feature is still needed.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `DataModel.AllowedGearTypeChanged`
+- DETECT: `[.:](?:AllowedGearTypeChanged)\b`
+- DETECTING FIXTURE: `local old = DataModel.AllowedGearTypeChanged`
+- VERIFY: api:DataModel.AllowedGearTypeChanged, cd:reference/engine/classes/DataModel
+
 ## monetization
 
 ### `money-productinfo` — deprecated (seen 2012-2025)
@@ -963,6 +1227,16 @@ player.leaderstats.Coins.Value += 10
 - DETECTING FIXTURE: `MarketplaceService:PromptPremiumPurchase(player)`
 - VERIFY: api:MarketplaceService.PromptPremiumPurchase, api:MarketplaceService.PromptRobloxSubscriptionPurchase, cd:reference/engine/classes/MarketplaceService
 
+### `retired-ad-callbacks` — deprecated
+- OLD: `AdGui.OnAdEvent / AdService.ShowVideoAd / AdService.VideoAdClosed`
+- NEW: `Remove dependency on these retired ad calls/callbacks`
+- WHY: The video-ad methods were decommissioned and the callback will never be called. There is no drop-in replacement established by these rows; design any new monetization integration from current documentation.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `AdGui.OnAdEvent`, `AdService.ShowVideoAd`, `AdService.VideoAdClosed`
+- DETECT: `[.:](?:OnAdEvent|ShowVideoAd|VideoAdClosed)\b`
+- DETECTING FIXTURE: `local old = AdGui.OnAdEvent`
+- VERIFY: api:AdGui.OnAdEvent, api:AdService.ShowVideoAd, api:AdService.VideoAdClosed, cd:reference/engine/classes/AdGui, cd:reference/engine/classes/AdService
+
 ## teleport
 
 ### `tp-client-teleport` — deprecated (seen 2010-2022)
@@ -971,9 +1245,10 @@ player.leaderstats.Coins.Value += 10
 - WHY: Client teleports are deprecated and bypass 'Secure within universe' access control.
 - OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.
 - NOTES: TeleportOptions: ServerInstanceId, ReservedServerAccessCode, ShouldReserveServer, SetTeleportData.
-- DETECT: `TeleportService:(Teleport|TeleportPartyAsync|TeleportToPrivateServer|TeleportToPlaceInstance|TeleportToSpawnByName)\s*\(`
+- API COVERAGE: `TeleportService.TeleportPartyAsync`, `TeleportService.TeleportToPlaceInstance`, `TeleportService.TeleportToPrivateServer`, `TeleportService.TeleportToSpawnByName`
+- DETECT: `(?:TeleportService:(Teleport|TeleportPartyAsync|TeleportToPrivateServer|TeleportToPlaceInstance|TeleportToSpawnByName)\s*\()|[.:](?:TeleportPartyAsync|TeleportToPlaceInstance|TeleportToPrivateServer|TeleportToSpawnByName)\b`
 - DETECTING FIXTURE: `TeleportService:Teleport(placeId, player)`
-- VERIFY: api:TeleportService.Teleport, api:TeleportService.TeleportAsync, cd:projects/teleport
+- VERIFY: api:TeleportService.Teleport, api:TeleportService.TeleportAsync, cd:projects/teleport, api:TeleportService.TeleportPartyAsync, api:TeleportService.TeleportToPlaceInstance, api:TeleportService.TeleportToPrivateServer, api:TeleportService.TeleportToSpawnByName
 
 ### `tp-reserve` — deprecated (seen 2015-2025)
 - OLD: `TeleportService:ReserveServer(placeId)`
@@ -1196,6 +1471,38 @@ player.leaderstats.Coins.Value += 10
 - DETECTING FIXTURE: `emitter.VelocitySpread = 45`
 - VERIFY: api:ParticleEmitter.VelocitySpread, api:ParticleEmitter.SpreadAngle, cd:reference/engine/classes/ParticleEmitter
 
+### `selection-brickcolor-color3` — deprecated
+- OLD: `GuiBase3d.Color / SelectionBox.SurfaceColor / SelectionSphere.SurfaceColor`
+- NEW: `GuiBase3d.Color3 / SelectionBox.SurfaceColor3 / SelectionSphere.SurfaceColor3`
+- WHY: The replacement properties use Color3 rather than BrickColor. Convert an existing BrickColor with its Color property; do not assign a BrickColor to the new property.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `GuiBase3d.Color`, `SelectionBox.SurfaceColor`, `SelectionSphere.SurfaceColor`
+- DETECT: `[.:](?:Color|SurfaceColor)\b`
+- DETECTING FIXTURE: `local old = GuiBase3d.Color`
+- VERIFY: api:GuiBase3d.Color, api:SelectionBox.SurfaceColor, api:SelectionSphere.SurfaceColor, api:GuiBase3d.Color3, api:SelectionBox.SurfaceColor3, api:SelectionSphere.SurfaceColor3, cd:reference/engine/classes/GuiBase3d, cd:reference/engine/classes/SelectionBox, cd:reference/engine/classes/SelectionSphere
+
+### `editablemesh-typed-attribute-queries` — deprecated
+- OLD: `EditableMesh.GetFacesWithAttribute / EditableMesh.GetVerticesWithAttribute`
+- NEW: `Choose GetFacesWithColor/Normal/UV or GetVerticesWithColor/Normal/UV according to the attribute kind; use GetVertexFaces or GetFaceVertices for topology`
+- WHY: The old query accepted an ambiguous attribute identifier. Preserve its kind explicitly: IDs for vertices, faces, colors, normals and UVs are not interchangeable. Select the typed query for the caller intent; do not substitute a single generic method.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `EditableMesh.GetFacesWithAttribute`, `EditableMesh.GetVerticesWithAttribute`
+- DETECT: `[.:](?:GetFacesWithAttribute|GetVerticesWithAttribute)\b`
+- DETECTING FIXTURE: `EditableMesh:GetFacesWithAttribute(value)`
+- VERIFY: api:EditableMesh.GetFacesWithAttribute, api:EditableMesh.GetVerticesWithAttribute, api:EditableMesh.GetFacesWithColor, api:EditableMesh.GetFacesWithNormal, api:EditableMesh.GetFacesWithUV, api:EditableMesh.GetVerticesWithColor, api:EditableMesh.GetVerticesWithNormal, api:EditableMesh.GetVerticesWithUV, api:EditableMesh.GetVertexFaces, api:EditableMesh.GetFaceVertices, cd:reference/engine/classes/EditableMesh
+
+### `layered-fit-retired-tuning` — deprecated
+- OLD: `WrapLayer.Puffiness / WrapLayer.ShrinkFactor / WrapTarget.Stiffness`
+- NEW: `When the improved fitting algorithm is active, remove reliance on these tuning fields; validate clothing fit using the supported asset workflow.`
+- WHY: Staff explicitly says the listed fields are ignored under the new fitting algorithm; replacing them with guessed numeric controls would invent an equivalent API.
+- OLD STILL OK WHEN: Historical assets may retain serialized values, but they are not proof that the active fitting algorithm uses them.
+- NOTES: The dated post announces an upcoming rollout; this receipt does not independently establish universal rollout completion. Apply this guidance conditionally and test affected clothing. AccessoryDescription.Puffiness is not covered. Pinned old descriptions explain historical tuning; the dated staff note clarifies behavior under the new algorithm.
+- API COVERAGE: `WrapLayer.Puffiness`, `WrapLayer.ShrinkFactor`, `WrapTarget.Stiffness`
+- DETECT: `[.:](?:Puffiness|ShrinkFactor|Stiffness)\b`
+- DETECTING FIXTURE: `WrapLayer.Puffiness = value`
+- VERIFY: api:WrapLayer.Puffiness, api:WrapLayer.ShrinkFactor, api:WrapTarget.Stiffness
+- REVIEWED SOURCE: [erververv_roblox (Roblox Staff), 2025-03-14](https://devforum.roblox.com/t/coming-soon-improved-layered-clothing-fit/3550013/1); [hashed observation receipt](staff-evidence/improved-layered-fit.json). Scope: Applies to WrapLayer.Puffiness, WrapLayer.ShrinkFactor and WrapTarget.Stiffness when the improved fitting algorithm is active.
+
 ## audio
 
 ### `audio-sound-props` — deprecated (seen 2008-2018)
@@ -1295,10 +1602,10 @@ player.leaderstats.Coins.Value += 10
 - NEW: `UIDragDetector child`
 - WHY: Deprecated; UIDragDetector supports more inputs.
 - OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.
-- API COVERAGE: `GuiObject.Draggable`
-- DETECT: `\.Draggable\s*=`
+- API COVERAGE: `GuiObject.DragBegin`, `GuiObject.DragStopped`, `GuiObject.Draggable`
+- DETECT: `(?:\.Draggable\s*=)|[.:](?:DragBegin|DragStopped)\b`
 - DETECTING FIXTURE: `frame.Draggable = true`
-- VERIFY: api:GuiObject.Draggable, api:UIDragDetector, cd:reference/engine/classes/GuiObject
+- VERIFY: api:GuiObject.Draggable, api:UIDragDetector, cd:reference/engine/classes/GuiObject, api:GuiObject.DragBegin, api:GuiObject.DragStopped
 
 ### `ui-guiinset` — pattern (seen 2016-2023)
 - OLD: `Hard-coded 36-pixel topbar offset / IgnoreGuiInset juggling`
@@ -1400,6 +1707,52 @@ player.leaderstats.Coins.Value += 10
 - DETECTING FIXTURE: `layout:SetCustomSortFunction(compare)`
 - VERIFY: api:UIGridStyleLayout.SetCustomSortFunction, api:Enum.SortOrder.Custom, api:GuiObject.LayoutOrder, api:Enum.SortOrder.LayoutOrder, api:Enum.SortOrder.Name, cd:reference/engine/classes/UIGridStyleLayout, cd:reference/engine/enums/SortOrder
 
+### `ui-layout-automatic` — deprecated
+- OLD: `UIGridStyleLayout.ApplyLayout`
+- NEW: `Use supported Name or LayoutOrder sorting and automatic layout invalidation`
+- WHY: Pinned docs say sibling insertion/removal and Name or LayoutOrder changes trigger layout. Retire legacy custom-sort invalidation; changing to LayoutOrder requires making the ordering policy explicit.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `UIGridStyleLayout.ApplyLayout`
+- DETECT: `[.:](?:ApplyLayout)\b`
+- DETECTING FIXTURE: `UIGridStyleLayout:ApplyLayout(value)`
+- VERIFY: api:UIGridStyleLayout.ApplyLayout, api:GuiObject.LayoutOrder, api:UIGridStyleLayout.SortOrder, cd:reference/engine/classes/UIGridStyleLayout
+
+### `capture-watermark-settings-retired` — deprecated
+- OLD: `ScreenshotHud.OverlayFont / ScreenshotHud.ExperienceNameOverlayEnabled`
+- NEW: `Remove reliance on the old watermark settings for user-initiated captures and Selfie Mode images.`
+- WHY: Staff confirms these contexts no longer add the watermark; font/name-overlay settings do not provide a replacement capture-branding pipeline.
+- OLD STILL OK WHEN: Legacy serialized settings may remain; verify any different custom capture workflow independently.
+- NOTES: The staff statement explicitly scopes the affected captures. Do not generalize it to arbitrary developer-created overlays or invent another ScreenshotHud branding property.
+- API COVERAGE: `ScreenshotHud.OverlayFont`, `ScreenshotHud.ExperienceNameOverlayEnabled`
+- DETECT: `[.:](?:ExperienceNameOverlayEnabled|OverlayFont)\b`
+- DETECTING FIXTURE: `ScreenshotHud.OverlayFont = value`
+- VERIFY: api:ScreenshotHud.OverlayFont, api:ScreenshotHud.ExperienceNameOverlayEnabled
+- REVIEWED SOURCE: [merlin_codes (Roblox Staff), 2024-07-17](https://devforum.roblox.com/t/captures-apis-are-now-available/2838188/169); [hashed observation receipt](staff-evidence/capture-watermark-retired.json). Scope: ScreenshotHud.OverlayFont and ExperienceNameOverlayEnabled for user-initiated captures and Selfie Mode dev module images.
+
+### `topbar-transparency-setter-retired` — deprecated
+- OLD: `PlayerGui.SetTopbarTransparency`
+- NEW: `Stop relying on a transparency write when the new topbar is active.`
+- WHY: The staff rollout announcement says this setter no longer changes new-topbar transparency. Hiding a core UI feature is a different behavior, not a drop-in replacement.
+- OLD STILL OK WHEN: Historical topbar behavior must be checked separately; do not infer that this setter controls a current topbar.
+- NOTES: Conditional on the announced new topbar. The source does not establish removal of the getter or change signal, so those remain separate unresolved rows.
+- API COVERAGE: `PlayerGui.SetTopbarTransparency`
+- DETECT: `[.:](?:SetTopbarTransparency)\b`
+- DETECTING FIXTURE: `PlayerGui.SetTopbarTransparency = value`
+- VERIFY: api:PlayerGui.SetTopbarTransparency
+- REVIEWED SOURCE: [TheGamer101 (Roblox Staff), 2020-03-13](https://devforum.roblox.com/t/new-in-game-topbar/480226/1); [hashed observation receipt](staff-evidence/topbar-transparency-retired.json). Scope: PlayerGui.SetTopbarTransparency when the announced new in-game topbar is active.
+
+### `billboard-distance-scale-redesign` — deprecated
+- OLD: `BillboardGui.DistanceLowerLimit / BillboardGui.DistanceUpperLimit`
+- NEW: `Implement the intended distance-based sizing policy in a LocalScript.`
+- WHY: Staff explicitly recommends scripted behavior for these deprecated limits. This requires selecting and testing distance measurement and the scale/clamp policy; it is not a renamed field.
+- OLD STILL OK WHEN: Untouched historical UI may retain old values during a measured migration.
+- NOTES: Do not substitute MaxDistance, which is culling, or invent an equivalent scale formula. The staff post does not settle absolute versus camera-projected distance semantics.
+- API COVERAGE: `BillboardGui.DistanceLowerLimit`, `BillboardGui.DistanceUpperLimit`
+- DETECT: `[.:](?:DistanceLowerLimit|DistanceUpperLimit)\b`
+- DETECTING FIXTURE: `BillboardGui.DistanceLowerLimit = value`
+- VERIFY: api:BillboardGui.DistanceLowerLimit, api:BillboardGui.DistanceUpperLimit
+- REVIEWED SOURCE: [theburgerkingbuilder (Roblox Staff), 2025-08-28](https://devforum.roblox.com/t/billboardguicurrentdistance-doesnt-work/3649780/2); [hashed observation receipt](staff-evidence/billboard-distance-redesign.json). Scope: The post explicitly lists DistanceStep, DistanceLowerLimit and DistanceUpperLimit. This curation covers the two deprecated limit members in the pinned dump.
+
 ## input
 
 ### `input-mouse` — deprecated (seen 2006-2016)
@@ -1451,6 +1804,16 @@ player.leaderstats.Coins.Value += 10
 - DETECT: `Enum[.:]DevTouchMovementMode[.:]Thumbstick\b|Enum[.:]DevTouchMovementMode[.:]DPad\b|Enum[.:]DevTouchMovementMode[.:]Thumbpad\b`
 - DETECTING FIXTURE: `mode = Enum.DevTouchMovementMode.DPad`
 - VERIFY: api:Enum.DevTouchMovementMode.Thumbstick, api:Enum.DevTouchMovementMode.DPad, api:Enum.DevTouchMovementMode.Thumbpad, api:Enum.DevTouchMovementMode.DynamicThumbstick, cd:reference/engine/enums/DevTouchMovementMode
+
+### `input-binding-fire` — deprecated
+- OLD: `InputAction.Fire`
+- NEW: `InputBinding:Fire() with an InputBindingType binding`
+- WHY: This moves the call from InputAction to InputBinding. Configure the binding and route it to the action; a receiver rename on the action is incorrect.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `InputAction.Fire`
+- DETECT: `[.:](?:Fire)\b`
+- DETECTING FIXTURE: `InputAction:Fire(value)`
+- VERIFY: api:InputAction.Fire, api:InputBinding.Fire, cd:reference/engine/classes/InputAction
 
 ## chat
 
@@ -1580,3 +1943,13 @@ player.leaderstats.Coins.Value += 10
 - DETECT: `\.CoordinateFrame\b|\.focus\b|:Interpolate\s*\(`
 - DETECTING FIXTURE: `camera.CoordinateFrame = cf`
 - VERIFY: api:Camera.CoordinateFrame, api:Camera.Interpolate, cd:reference/engine/classes/Camera, api:Camera.focus
+
+### `camera-discrete-pan-tilt` — deprecated
+- OLD: `Camera.PanUnits / Camera.TiltUnits`
+- NEW: `Use a deliberate CFrame-based camera controller`
+- WHY: The old helpers rotate around camera Focus with distinct pan/tilt increments and tilt bounds. Recreate the intended orbit, input mapping and clamps explicitly; do not treat old unit arguments as radians.
+- OLD STILL OK WHEN: Legacy compatibility review only; do not use this API for new work.
+- API COVERAGE: `Camera.PanUnits`, `Camera.TiltUnits`
+- DETECT: `[.:](?:PanUnits|TiltUnits)\b`
+- DETECTING FIXTURE: `Camera:PanUnits(value)`
+- VERIFY: api:Camera.PanUnits, api:Camera.TiltUnits, api:Camera.CFrame, api:Camera.Focus, cd:reference/engine/classes/Camera

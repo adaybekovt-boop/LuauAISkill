@@ -1,0 +1,2562 @@
+{
+  "cases": {
+    "ADV-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "235c55fcb93cb72177aed6c09c54a75ae50ebdb250949a75ffd514be0c00a58e"
+    },
+    "ADV-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c6ba058b01cd6c48832f13607491926647eec88442ed103e1ad6b0dd0e0ac57f"
+    },
+    "ADV-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "5c4b5238c79636f605aafbc67b3d4598e5ae45410d4f2d1f9113527f4a7eb440"
+    },
+    "ADV-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "45258c6aca9263b000ab4804a52370e61ea8ebb07a2d9f79d9bb416944d11e3c"
+    },
+    "ADV-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "0fe6478c05ec480b6bdacdf6df12a0c6dab8a5b323127c04355ab8fb0db5bb23"
+    },
+    "ADV-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "e06355adbbf4ce369e89a7bc370c8b2550da362c605009f320c9255d6a28d337"
+    },
+    "ADV-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "1187f8f05b09e3e706bca3f85b6c8b9faa25ca4a60827ab3ccf5744fed1c587a"
+    },
+    "ADV-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "316e1030fcafb5a0cd4402895690e666883625b609ec6e29cf3328154926456d"
+    },
+    "ADV-09": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "738dab442cea19f8afb7254ff2e403279d31ae849e1c8d9fc8e8e1d41b5faf3d"
+    },
+    "ADV-10": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "3d29a09101a81b5beffdf2584254a4ba261ad3b229d75eda762b957873a62582"
+    },
+    "ADV-11": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "19bc84b9281375ca2304f66de91b4ec50c471ce2fd0a6e0348b3fa1450f00314"
+    },
+    "ADV-12": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6489f39af7bb9498b351f4d7f95117b9e924d9b10505aa07b432916e367aafec"
+    },
+    "ADV-13": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "e341d9a9812ec0f70d6328dc27abf6111d9a423ac5e4e071206e423818d5649e"
+    },
+    "ADV-14": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "847c25a177e5a7306f984fb66b3a682bffad02ec3f5c7e1312e64f3ec1e9b129"
+    },
+    "ADV-RU-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ce57e28225a25b5f527271577b43eee68a8ac484a4319256f3bca66f961eae31"
+    },
+    "ANI-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "deccf238774efa1c22c6b746d043ffe34882b59e2c6458c301247ad771044265"
+    },
+    "ANI-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "21e6763b03885acb7a239a04f036adc0049d8fc753e84bd18e442f43254b973b"
+    },
+    "ANI-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c1d55181a45a6bad86dd6db2e3e1b0eadd749b9b8766b278711503bf872a591b"
+    },
+    "ANI-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "5b0ce82d552644cfaa49e2982551618b727db051f3f572c04aebadd9ce72137d"
+    },
+    "ANI-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "27494fea9fbbc1218d4f505f7f1eb2bce3844305b1727f439e41c758b074cf25"
+    },
+    "ANIM-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "94b1865b535518a4a9c7bbcadf7635928c24fdfa78f609f02fca71d0c665fbd3"
+    },
+    "API-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6b939cba7a5271eacc81f53c2f8cd99bcf38565e988bf4d81a523641b22b984e"
+    },
+    "API-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "b5b4fbe39e75baedf72a4a73cc27fc39cae4e00dbd40defad1e0f6cfb10ae977"
+    },
+    "API-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "78fbb4fb6744d1eecaf118e1fad70c596cfd8b436118c325d45fce4e90118ea5"
+    },
+    "API-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "fbf00740483e2fe80650e769435ba09ad814cdf965d01c6adf11ca23f9cc7ed0"
+    },
+    "API-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ac8fc7cfbd5fe6d73c1eb289528e237c6245e7330adb659e60c4b0d508797be3"
+    },
+    "API-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2272c4717dfbff9aae059fbf3389ee56f3450c2e229547d5fec8da8a4a2cfa9d"
+    },
+    "API-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9c1384b7a6c74d005ef4ae368b974ea864be93b38277ae02d5106f8bf39f380e"
+    },
+    "API-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f9291e9436d4110ecee9e6b04d48f0a4d87af27439133add0871a678246ee55c"
+    },
+    "API-09": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "fad74b65cd9e22e85980d43ca60d8489457f2ed0ce21bd67d12532f42b60dc64"
+    },
+    "API-10": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9651ceec776ef1088f55d96abf2fcfa29dafc4fa6eef26661750199b31cf0ee9"
+    },
+    "API-11": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "7aea781e3df5405d4eb62ff8ea41746208c114db77769f0f2f1afabcf5a65353"
+    },
+    "API-12": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "5c7a31d72fab1b4eeb4cf8258799a7c9ab4444250ce89b07bc9721e261698864"
+    },
+    "API-13": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d5317a6852f4fc82bb3c8a333eb718a7b36fe9b2b422947f82be6696700aab05"
+    },
+    "API-14": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ef2c261e5101102ae99981b75c9cfe07ca1456c6d8c13f85b2411e2fd44c7cd3"
+    },
+    "API-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "a3f7e905b20fe209aafda7ea4f2077181f27bac8193179849cd0bfa190a806ad"
+    },
+    "AR-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "b18a9754d2f6520f4df76d3b81154a9d6305374397b4d4ba3a5cfb98f965d3ec"
+    },
+    "AR-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2eb43521b33ed5edb8d8b6f9dbea1306c0651813c55a06ffedee3b18a72a4d83"
+    },
+    "AR-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "a86d851fcc4dba52aec0ed66abb79ee0ecaa5baee6ab28e5756822eb2507c744"
+    },
+    "AR-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "abae5be2dffde1023c85b4316cb79dd820252b54688939d13ab8613d68d7206c"
+    },
+    "AR-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9d8e9957979e28933c3a77d83a45bfd0810bb2a59d1e1613cdde028050d01b0d"
+    },
+    "AR-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "20c5dd0023e78991f5405cafcf769e94f3ee80cc04e63c9f32e738bc1e2c413b"
+    },
+    "AR-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6bee2341df7be69dbb02fa4a611bca05eb97397527fdad53facf8a555bc30a04"
+    },
+    "AR-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "308221abe7730cc18599533cb9683b18201bc9fba3d5ff5f5e7fbd4260145e45"
+    },
+    "ARCH-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "54c5cf3e4c64d32127f82a9e9f4a9c20da48f8a38b03d70200effbcbf5a651d6"
+    },
+    "CMB-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "28a0e82de24f0bcd1857eafc46ff314a6476c79750d313b621530e02342d071d"
+    },
+    "CMB-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "b5375bf68d3659f230f4068147ce2aa606f34ffcd04efd24a1f8addb5d010fea"
+    },
+    "CMB-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c3900a9b37f0c46927958913dabbe18f0a52fdfb336f71646dd56ada93c79675"
+    },
+    "CMB-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "69e98740e9d508fdc695604719ae3c99ad28da53c52cd437ed91dc1a9c892861"
+    },
+    "CMB-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ed52b67a5ef85a8f846f2a278f61c6eb9260f4621e710522479ebf811de420b2"
+    },
+    "CMB-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f0b2a507ccf7ef26d57b043003a9cd55a60d5a010de476e553be9bd54b323088"
+    },
+    "COMBAT-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "fefb99ac1871eb8e68766194dcd6cea64ea1a6ea2f7ce1f3486ad1d4db472312"
+    },
+    "DBG-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "451b7d92fa8d3f451a7eeea37a79086163ed8a38b1a69322f315b17af78629de"
+    },
+    "DBG-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f7306396032af11a9e458702c6952dd66842376bd7ad9eb01ebb0b2e20996507"
+    },
+    "DBG-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "cef1e81d921645abb4d2a1674670b916d0411b4881b0c9b436059cd78dfd1b0d"
+    },
+    "DBG-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "0d090459abbbb5f4e20efcdddce01b4b546a8ab6245ecce0dc6b4f44db7fdeee"
+    },
+    "DBG-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "5fa7770952dc8d0e5592846f3863e1a5c1583b366c89ef7e9b7c6887561ee89c"
+    },
+    "DBG-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "14850ba78fe70bbc35ec3dd205878bef629ec31b29c8d5fdd96120634bf81251"
+    },
+    "DBG-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c9d1b98ef32e9dcf4a668030516c909966138f96f39f1d2a01bbe009d23e8227"
+    },
+    "DBG-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c2b23eab00de3157b8973e58911b2bf6bf59a4bfaa1fce3a1269234f446b605f"
+    },
+    "DEBUG-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "0168279d3b85e304b5f1ac234392013d8975f13d135ea16873e92880864675dd"
+    },
+    "DS-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d85efc830b655429e65cfac2a504943d79de9d3909ce62d92d698afab6f2825e"
+    },
+    "DS-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "8e0a2bb1beabff4f94c8767e344f50486887eac16c7e4d2ea9cb22ddfbba36aa"
+    },
+    "DS-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9d342630892b47f1ef28a219e4f2212e229d5577b033a21193c68fadd048de17"
+    },
+    "DS-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "40d6b14775c7fd93a0ff0f91d8e715a9f88d9477948074707df3e413d4409d39"
+    },
+    "DS-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "b1761a1e2ec29750bfcee9721ef219a86bd3cdd6d42d6f84382569f76db2d665"
+    },
+    "DS-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "12d73cd06a1d84636a345c26ea00ca5f9c3d1d68549dae6b0be9f633d89a8095"
+    },
+    "DS-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "afdce401187a08c741b43212db46f4bf035d94158c975c0bfe97fc5efdec750a"
+    },
+    "DS-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "259ab6e85b74fc6d97a5291d4b196475df66255e2f1971b1125a72f61bd47117"
+    },
+    "DS-09": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f872092f896a4cdf65642f60af2705cee37e35b260598141a8060534b29a5a1e"
+    },
+    "DS-10": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "e377c965e5b23ebe4ea73e711f067d88ee8b9e1f1fdc183b6c9f07dcda9537ea"
+    },
+    "DS-11": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "69d165ba6682acbbd09995b6149637573ce90ecf3dca0446d2cfd83171ae419a"
+    },
+    "DS-12": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6f5dece8c487baedd9ff7fbfe5ab2143282b5e18723dc8a8897136dc25cb85f5"
+    },
+    "DS-13": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "fc7c042c30a7de36eaf22fa54f896aefe6b3f0608940719bfddbde232f1765e7"
+    },
+    "DS-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "740fa503e2e39542830454ebcd9bd8a34d7b05392552c14f6bfd200a7888fb1c"
+    },
+    "GAP-ADVERSARIAL-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9fd961c39c48b182aae8344ae70bbfde34f31680417411a8dfc007940eafb7c4"
+    },
+    "GAP-ANIMATION-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "76b8c049cc8bc1563c8f8ad8d0bc8d5b7f9f4caa58d9ca3abaf7ea015d90ee20"
+    },
+    "GAP-ANIMATION-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ff8594239711999ca9ab511055a206384cd3584b43362ed165862bd32dc9673d"
+    },
+    "GAP-ARCHITECTURE-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "7e16d04486bd47dc4d17907b6de33441d890bae807dc5dc83ca441d07e15e4c7"
+    },
+    "GAP-COMBAT-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "26abd5f85e56eaadf501df93e5a406a54c262fa3486b988e69eb3b7f28a226cf"
+    },
+    "GAP-DATASTORES-REPLAY-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ea5cefe40b515ebf2cd04fe82761d9bc9ef88750d1ea9d1736a2c1ab084e851d"
+    },
+    "GAP-DEBUGGING-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "3569bd135776052d55588dbd8469c64bffe89f63e8ff55ca2c7faef843050af9"
+    },
+    "GAP-LUAU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "06b0858d0899b23c62effc714da33d9bd90839040cf7d0566761ec5462dbaee4"
+    },
+    "GAP-NEGATIVE-TRIGGERS-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "00ee303fd069ab92985834ffe302489720fe24be716a2d5cef2e60fb0e56e968"
+    },
+    "GAP-NEGATIVE-TRIGGERS-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "cd3435211a73168f4135a5c255bdf301858332f88f58085b62fbab9166a223af"
+    },
+    "GAP-NEGATIVE-TRIGGERS-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "fd141349f49df46190cd14c9251d590af8143a4ac5f42a8f22078365cd5b6cbb"
+    },
+    "GAP-NEGATIVE-TRIGGERS-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "7860d6edd490b969ad121c57a619c1d17215a23f04e5a470db7f1d32254cbdbf"
+    },
+    "GAP-NPC-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "1d06c77e0517821037cae76e966dcdafb4c9bb51b91d67afa91d0384f6c9a0db"
+    },
+    "GAP-NPC-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ac4c99b586e5b875ee2c3bbea30e28ed6c2c487a158c1149f301da9b3b953338"
+    },
+    "GAP-STREAMING-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "645b9e5855567c3d764dfa8533e5a5788325be3ba83d9c273624a4fca44679da"
+    },
+    "GAP-UI-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "8e89a17a25e452c286068f5a587e569dfefe50561096e4de1514b0373aeb3cf3"
+    },
+    "GFX-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "006a923649b572a15b480b89cbe45849668aa6b3dec67d3411865428ef5b2187"
+    },
+    "GFX-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "0d83643d2d63e30b6edd3c5a46bd9b5a46035f1108067f604d2ca993369ffde5"
+    },
+    "GFX-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "22fa8bc4e89d69540975d2b06c9fcd33c01f126c9b2f5ca331401f5da048fa62"
+    },
+    "GFX-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "64b30114633db1a838578efa4f8233ffd5a4a09a108fa3b8f7b0c86501dd7646"
+    },
+    "GFX-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ec83d24f12855081c8afb9f1d0f47ff85b2b810168a38da87d8cb4d89d788139"
+    },
+    "GFX-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "8fd5e85f3d573e56541fccf89a5e167582025322bf4a9f8f64b28d455fb1e438"
+    },
+    "GFX-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d8858ca8e5296ae7bc45070458f3ac2f1b933ba23c74b30425cc7ccf52633334"
+    },
+    "GFX-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f124e24cf83428ceed9658fd64b9e185c3fad10a4e9d3401cf4c019923042957"
+    },
+    "GFX-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "68feedde364d0ea8b35ef567f8bf92005b9f4d877e421b66ea20ae010253dddb"
+    },
+    "HLD-adversarial-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "9da8726b88e2a038b3a564d7cfcbca1a66f7411cc034bd0bec3510606d8a573e"
+    },
+    "HLD-adversarial-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "4ff33c6dfb87e068a672a7665c94df34f5129c07b1fd15c0ac4d2fe496cb10c9"
+    },
+    "HLD-adversarial-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "6e1c5e934eda12158a00cfa6b8e0be9edddb6d40d2935b31ff4a3b02eca97c61"
+    },
+    "HLD-adversarial-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "aa88154c2f567799e534e57659c1088084efa6672f237b38852588dc9a14698f"
+    },
+    "HLD-adversarial-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "84394ed6895a98c78479edf28450ede32c5863bafc2fcc3dbdac7a8e391f97f1"
+    },
+    "HLD-animation-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "e6d4bce8bf7aa92172c27880c0e95ebb057d20fa31df789be4f536a83169ed81"
+    },
+    "HLD-animation-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "733db68ace4710e80ddf971afe89245295b9488afeebc1655711e0043a57ee1a"
+    },
+    "HLD-animation-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "69c309a4f3b5d0b280b546ccff44ad2a733ca82233411f837786efad1c2cab09"
+    },
+    "HLD-animation-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "d5ade27e1cf191fb6821617be5d8d4bd0ab6f36667b7662bb7197cbcb87525a2"
+    },
+    "HLD-animation-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "a9559155dbf295397ffe071469d8f9680de298fe939744962ee6d075f1c8c52b"
+    },
+    "HLD-api-freshness-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "6cdf50b98c9988b51ac48a2d9925a139f0a7d8027191b23af1d67877abd05a37"
+    },
+    "HLD-api-freshness-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "35c1752baf8d060f8c533cbda1d1b3065fcf15e7a880a1af7c6ea5f704869297"
+    },
+    "HLD-api-freshness-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "439cbdd668839f930b2ab5c526e1d9d1b5c7d79a690f2f716a2333c4b167e974"
+    },
+    "HLD-api-freshness-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "d252603c720693c5e5b1938fcfda2a8121f88278af61f5a4fdfb1380519d4cb9"
+    },
+    "HLD-api-freshness-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "5b8e378dd26eaf9d541f593bb8fd9d7d5ce9c2f6c6c1165f710c1f7ab954b55f"
+    },
+    "HLD-architecture-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "ddd48450047db4a0ac08d570e3f5f10a3ebdeace4179b09a168ee9c3f2e4a37b"
+    },
+    "HLD-architecture-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "9113e40f895a8f54068d419120c95b8423d5372b663dceb147cc1d70366207f9"
+    },
+    "HLD-architecture-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "d2d6630dcb4ce610fd129eb0396b7cd163900133760ed49e86162b4ce37eb22c"
+    },
+    "HLD-architecture-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "ff3936c699f000a9d58284248fe68d0ea6c48a639764944886e2d574d5090cef"
+    },
+    "HLD-architecture-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "e3f02644ed3325674ea614e6b37ddcc8a48d6ca0f76b32b1f51877aaddb7dc3d"
+    },
+    "HLD-combat-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "b098dd5159982a20fb309921df843feb3ef5127bc916cd4ed574fd24c36b87af"
+    },
+    "HLD-combat-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "77e8599d7f0ca9a11ec355344e2a464e13911b6bf33aa73b44ebbf8092b8ab18"
+    },
+    "HLD-combat-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "72fcd08d4cbb1050b7493cddc75b62de6058a148800de639578ef401cf765121"
+    },
+    "HLD-combat-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "3db1640e8a4d19aeeefbb1a42fc0923282b42e9ead6c99705f1f35aa8efaee09"
+    },
+    "HLD-combat-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "79d08721c3bcbed3df0f22498e4d219f698280f6e89c115839c45b0e091c9de2"
+    },
+    "HLD-datastores-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "b75b3eea72553fb56f15af34b547ce347b3e8aef0bfad32fc4f838d7cf94be1e"
+    },
+    "HLD-datastores-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "5438b4d83a68812a681cd0c8268ec7ec8fac9e4fcc337bb0a4a3c304c16ae5af"
+    },
+    "HLD-datastores-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "920d049f17556262d1d310dcda7ba7470e177e87c85a62433479772c49f4f6e6"
+    },
+    "HLD-datastores-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "bbacd140afc092cc1e44ce6d995c13f69e1e9a05f44cc865c6b05664bd5500aa"
+    },
+    "HLD-datastores-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "df802f1f78b8358ff2167272158a20df3958e418d0a95a14d5ad094f725b5dfd"
+    },
+    "HLD-debugging-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "9ac612d0b7b8ae165a3504584d9bdb4963df765d2651888c180f49bc77431daa"
+    },
+    "HLD-debugging-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "d2503ccc5322bbcc7924194dd3bd92269afc9bccdaae713935d255b37e09a6a9"
+    },
+    "HLD-debugging-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "82ee0deabb039b494e0db31e6d0ddc76e342c2e1436243ef0a46d5e3731610fa"
+    },
+    "HLD-debugging-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "a056f7718bf4f44902a2bca3a0d26b1f0139a6abd77912416db44c0786585d14"
+    },
+    "HLD-debugging-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "b5ba37898125438bd0d75a66569e27d2f89157b28a1b1ba0c496f00a07df69b1"
+    },
+    "HLD-graphics-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "76f848a290e0766b362c7ab1b6a96dce76d5220e8dd6293b037e9782e92a446c"
+    },
+    "HLD-graphics-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "08da697ab4edb33b2b684a4e6e45c5e2ca57153e96831f264144d19f59cf313a"
+    },
+    "HLD-graphics-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "25a96f3189e4325206a31e21a3f6a80ab09a4221e6f18310aba3f31de27d3643"
+    },
+    "HLD-graphics-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "ff95e8ed9f357d9e24b9b82a2602f22f812ca16a80738ef45ba0c8248b6acb3d"
+    },
+    "HLD-graphics-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "e40db34235e8b28a6a01044dfef1f017c77318fee98e607fc5678309fd47a4df"
+    },
+    "HLD-lighting-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "4bcf48202aa9e7be663351cd23dd4c2662e9e0c6f1784dc33f582f21edd5623d"
+    },
+    "HLD-lighting-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "aba59d08114937e0b323005a69d2937e636a92daafec6a2cbb58ad8cc91b82b7"
+    },
+    "HLD-lighting-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "b4b13d5d7f52d15657b17acf117c1d543917513db143ee72d036907c5de5d243"
+    },
+    "HLD-lighting-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "bbf14d0e7b79f20e62759556f204ca9d889568c6d7f5340ff3c99453a663c922"
+    },
+    "HLD-lighting-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "52dd8b142e435033d1e12ee1f17062624c079350d65d0eeeef5cca866f3e89e3"
+    },
+    "HLD-luau-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "557324e87d1ed765db258a7bfa86c06ab98b04fd46678a0edf8f2ba700d53690"
+    },
+    "HLD-luau-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "7efeae21ed1d995f8614bbd04fe034ea195f7c9e3d125da3c2939044147ead56"
+    },
+    "HLD-luau-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "2c0b5ddbaf2e96c4ec840f0df868e5d3a443d35f21d0cdb355869ff1c742bd04"
+    },
+    "HLD-luau-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "5ecfdda6cca68741969e2dcc2ecd4da6ead325608d14df57adf29254e5ad01cb"
+    },
+    "HLD-luau-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "8605d0639dce2d877cf25d9c58cc734971bb69331f25c1904569fecb4821d07e"
+    },
+    "HLD-negative-triggers-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "c2feb465e503ac6b1a12e976235399b63f7a688c7350d8656edf524e08aabcb3"
+    },
+    "HLD-negative-triggers-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "380a341357eec5ac0a57e4106cabd85835a067aabc4ff9e67e8a9c421c440fab"
+    },
+    "HLD-negative-triggers-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "7c9750cac701d2a1e012bee471f725d6bf409cc78106f4e62f744f51ff4f21bb"
+    },
+    "HLD-negative-triggers-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "fc1a24810269bb276355a40ff649d1ce37d75568d8f294e2b1c130b14a115f4c"
+    },
+    "HLD-negative-triggers-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "fa608115792b80c1f9d832c09bc3dfdef09ed1a7d9bb49ffea5ed8fe960a8ec7"
+    },
+    "HLD-networking-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "471a310596d62d167b93e7ef03a6bf41bbe628397aa6ab8368065dca200ef9ad"
+    },
+    "HLD-networking-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "4d1980ef511f8e115f74da217624997b60fb70ed5889a70ebdd729f697f3a611"
+    },
+    "HLD-networking-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "53442d7d4726c014ad66f01a90729e528d2f26d3767d8918914fec92d30ccda2"
+    },
+    "HLD-networking-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "bb3255f4f8f0bb3db41276d63f2ec617e32ea658bcb52d54b5cf8c85db63001d"
+    },
+    "HLD-networking-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "41e20d81347004c7b156609cda431c42d941dfca751d87d224611e93ea7d32a5"
+    },
+    "HLD-npc-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "32f3cb27af734e9fdf0ead934f5d8f98d668ef6f0014154f2380e30e0fd0a4ce"
+    },
+    "HLD-npc-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "e395523fe75435382d41e418f5729256d669176abe9569907af8a73c27a899b9"
+    },
+    "HLD-npc-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "e8b7713e2827834d1eb5e1d3b8e755df8faf779c88615f71f13bd6703c75d9c6"
+    },
+    "HLD-npc-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "9662ab3112311b76e8fc280db715e4b40c6e119145ab4ef0860bf165b545aae6"
+    },
+    "HLD-npc-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "3f82d42745f9c9e798626eb502e93915e8c3a466f76f1632d89f91729d0cec39"
+    },
+    "HLD-performance-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "a3fdb38d75a99cb459c0c8167f0c54f492e49bf8d23b53dedc6a111227489a26"
+    },
+    "HLD-performance-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "ecbddf468ee1fc0aef54f146d31482a983d9038fe88969bdb0354d64db201332"
+    },
+    "HLD-performance-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "9714b004c219751662c641ba41c1362a906a6446e865e0cdeddc9e003a58d385"
+    },
+    "HLD-performance-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "6f8762894f15b7658e437fd178c9d8d8ab7fbb9f0c0b2b062022b4b9fbb2e13f"
+    },
+    "HLD-performance-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "0bf4bd111ac5f8344b682626ff096341a049d3a7585f05f3744e6e607a175296"
+    },
+    "HLD-security-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "edc70f83714c01e3adfcc1f007f59fa5b3968c3f84e5f361c3338a236b7b35c7"
+    },
+    "HLD-security-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "9fd1be2019fe5ae87bba82b52d82ef1e5230ece93c113d81e993f41a41fd7390"
+    },
+    "HLD-security-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "34277078bb2371a03793dc343eaf05ef75329b079a83edcd600d542252e9c9d5"
+    },
+    "HLD-security-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "2e09fc57eac06c6674bbd28ed5589c47ce17a3e1da7fb8ebc0bbf0b68992c4e2"
+    },
+    "HLD-security-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "0fceb2801a8d6cd89ae2ce6e43d0ca946ab9df247c3d85059bbafb310e96fe0e"
+    },
+    "HLD-streaming-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "84ca2b09069162bb976d641537f7cdd70693222ab42e4e18e8b7631bcb50dd63"
+    },
+    "HLD-streaming-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "9eee1f10448552c8035fcaab70e60e3e27bc72386a734b005bc2c439384bbf3b"
+    },
+    "HLD-streaming-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "e2c348f802c7cd732611a4daa7d2f7f6e401483d19e4ec9fcd1f0988a757ce8f"
+    },
+    "HLD-streaming-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "6b3b4bf115674c3853bdbebed57404db8d93a04481932774d3083c9825e06e57"
+    },
+    "HLD-streaming-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "d41b762d1207a2f1354f3b70e39878452142f3aacc61b319c196d05e507cc6de"
+    },
+    "HLD-ui-01": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "1a5aaf05db8192af18503b8e16cd7cf16c4812647b9985767790fd250307b3ac"
+    },
+    "HLD-ui-02": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "36bd231c066ffd391c5a5787d59dc5bf79064513e8cab908bf05fab93d0cb223"
+    },
+    "HLD-ui-03": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "c2d36c113ec53a275bf376e1966016b29c4c96fa8c97f967d370061677daf1e3"
+    },
+    "HLD-ui-04": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "8d6488be225809d845f8a88d25c3a60b7ecb7cae6003476feac659e8498b9027"
+    },
+    "HLD-ui-05": {
+      "exposure": "sealed_holdout",
+      "provenance": {
+        "custodian": "Independent post-freeze holdout author and semantic-review team; developers receive aggregate metadata only",
+        "ever_development_exposed": false,
+        "external_author": "Independent blind author blind-evaluator-2026-10-02; cases authored before any repository access",
+        "no_development_use": true,
+        "seal_artifact": "evals/provenance/sealed-holdout-custody.json",
+        "seal_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+        "sealed_at": "2026-10-02T15:01:02Z",
+        "skill_commit": "dirty base 02eb19a; actual frozen content bound by skill_sha256",
+        "skill_sha256": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+      },
+      "sha256": "17f93ef739958bd11fd0b059273529b760775a390104b458ad7c6bb248f650e6"
+    },
+    "LIGHT-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6b5e1de02322be37e87946953b9d98d6c730c3f9cacfb9b35b0ee2af6b377b44"
+    },
+    "LIT-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6efc9b9262ded643fe882354e9f4ead006d8edea379919251b313c9e442d8646"
+    },
+    "LIT-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9d2dd5ed2b1899d08b40ccf21e726b8ed4e687a93aa8711b1d0745fb8908ab02"
+    },
+    "LIT-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "749d9d83b950928892ca172ee0ddc9baf9006d15f86f27d70fcb1402e00493d7"
+    },
+    "LIT-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "20b421cafd3be998830b5fceee3bdb1fba8c23a9d100a4890e31b4a2c31ebcb5"
+    },
+    "LIT-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "4563fca93d32fb91c1b5b0cfe658927001fea802e736ce29f08a4356a166af59"
+    },
+    "LIT-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "0fed4e3bc8f582b6b634f7bb2f0b1735882f5896e5d90591d453c5b0de44a6e5"
+    },
+    "LIT-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f569e34b2ff9c5a3b906edd1213c3cd0176bab283d53098394128a0d072f922a"
+    },
+    "LIT-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6a80e4123e7ddaeb1a038e89985c454d1e08342045fc959703ad365f45c72242"
+    },
+    "LU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "db09e2c2889da527ed22f8bf2b5a503f5560dc40a7d3f849204caf4932874460"
+    },
+    "LU-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c50218b47f9c7d6b4088ece939819379754e0fa1944684a73df1cf69ee593c24"
+    },
+    "LU-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "772c174f9bdd89bed9223b26e37b7b82d69aaefdc7994da00ac2275455f4b087"
+    },
+    "LU-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d334536f3afe75f5c2e2ef7865af347a2da903952b338ab401e714d04d595688"
+    },
+    "LU-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9d401a854115e9645a938d9d208354e9d021ea51c500bf1ce5b2a46f7c4cb466"
+    },
+    "LU-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "87c05d042dda562d7295e9371bcc380c9b52da3a50cc57bd89142b2dccae1e6e"
+    },
+    "LU-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c4e6e1b9bfa68c03a8d32ba3f829e52bb3f0e8f6282decf9c501893a39246a1d"
+    },
+    "LU-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "575d7a4f327049b9ac48a49e3dbbac72202c365f6f960cdff8a4f5cdd3d5a249"
+    },
+    "LU-09": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d019ffff5d57ce269b2fc915eba1732fa42a29689dd5212cb55b6f371323bd69"
+    },
+    "LU-10": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d473453a1423c3d90afa761e44e74331aeb708dd9446ba8370c2804d4ab9df7a"
+    },
+    "LU-11": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "92d360fdcb2a5b8529acc2724076755dd7bdb7473ee6a85ccb045619dd39b580"
+    },
+    "LU-12": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "70ded815fdbefc918410f49c3dbbcef3f06fa27f23fe7d9c9b9035fcc2942b9a"
+    },
+    "LU-13": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ddd479ced42e7a145445421121f92be8103ba3f2d2a0367b37daa475a64e5f9e"
+    },
+    "LUA-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d4fbfddc74d1918f892da16f735baa5731667d711ea2dd2f82e15d8fad9154a0"
+    },
+    "NEG-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c3a45429a0511bed9ae2b609062c7e91e65d7926c12c60e8368d55b4605b2e50"
+    },
+    "NEG-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c259c35747aaf7fdea0578a8defe6a536ca4785c542ed45e2d562a070b4bc637"
+    },
+    "NEG-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "bfb7d26be517d7d1aa82750e3931e2e3f54bfab90e73b4e7141da6b02abc91ec"
+    },
+    "NEG-RU-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "b0140a69894e7cda2ca6bdd70df99f02d29b99303ef98c7541c4fd036da6b742"
+    },
+    "NET-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "08946261cf9c9a9ccdc08c16641da005fcc94a7cafac08829ce574cc5bd69908"
+    },
+    "NET-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "3d1ab8342ad4f7b2fee4cdfb8ff6abe09f2ae6103b6f8c56aa83b929576be076"
+    },
+    "NET-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f33ec775580bbe4bf8042c62cc5c8f6d8dcd4d9e8ac04e5d7d2e87ea31ae9e29"
+    },
+    "NET-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "3c05f01c2d7a622f2b9d6ca5d7e4e7f0b4c40e8840464e6169351dc205363369"
+    },
+    "NET-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2a9ed1590855b9f93f10e3d0e17464ec5e2af5aa87f86cf9cb7462b7a1e6ac3f"
+    },
+    "NET-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "39434b9155b7e96ad17e120840d4df23d12e04c737b7b7156943b69f6a8d941c"
+    },
+    "NET-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "dd5ed9df1299680a6b8ce6f33841534225fe1f70875aa098333794a7deb4d348"
+    },
+    "NET-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "4d5921cc93219151489c15c58b5ac5d5648161fbb3522344622941f5f1eaecdb"
+    },
+    "NET-09": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "db7e75afd2de1a7766a829004511758bc8ffc83cc4d5d048099aec5172434718"
+    },
+    "NET-10": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "e31f816ed1908c898fece7323897896cf1d49ee8e623af2087f1b89576f782e1"
+    },
+    "NET-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "3f081ba9f7350186e5926b8c64202124d5d7a4b7c4571908f1ce61693b41279a"
+    },
+    "NPC-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "16dde88cef53ca59305098192402d300a7bb1911d24ac625e1b2009d806555fb"
+    },
+    "NPC-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9b1bf33d88eb325a53b017dd6b556e4bcf3a01f92aaedc3f156360bd5d33ae7f"
+    },
+    "NPC-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d582a2c2ef52da53d196a501009f83fe2c0716a6563fff375f776dabe98aae18"
+    },
+    "NPC-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "6533a24e927fd864109e16986c7f144fa33f5e42b8ce9987310efb767b705fae"
+    },
+    "NPC-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "eea5323fcd236dd7fdfeae2dcafd94de8ea436ff35f63a4930379f2978eb2dd7"
+    },
+    "NPC-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "afb6bdc36ea457d03e37acea597cbfeec1d2f3715665d741de08bdfcc5a28677"
+    },
+    "PERF-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "8b44cd2158650cc725b4f6376a8ef05c04f453870ac9fc0e5f051d6456b73306"
+    },
+    "PERF-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "06f102388c8369ecc81a677585c30ea1c32ac312b6ca07682831d62d99342d0b"
+    },
+    "PERF-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "5558d972fc7393698a5a0581982ee0cbd4a717f94c17e7dbcca0b89d3e226641"
+    },
+    "PERF-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "173252beb413f2c0af1765c2d3eb3f55d34c5a018a3084e2144960cf90176e08"
+    },
+    "PERF-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "e4328138435a85f6db549c23c2ea6a66df05719fb23f2caf608fd997141480c6"
+    },
+    "PERF-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "07670aeb625f5009d954dd6f6da865818ae49dde3a403b2d9a36e8f3409ae5e7"
+    },
+    "PERF-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "3df2682bbd5776204872ab1370d068f777caf68463f39304589e5e1178b60404"
+    },
+    "PERF-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "50be535bbb7006db87619d4ace92d582d753c0bbd3988df012c26034189e6be9"
+    },
+    "PERF-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "be86d4547a64eef9740d6e43f7adbce0b68ce3b777672f4b99510a75642999b8"
+    },
+    "SEC-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2fcfbcde885100c77468c60c7ca25b260af48046ee517d331ccedb1d2a754e22"
+    },
+    "SEC-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "29df4e00030bc28fec656cc32d2be1840fbafd48d260f381e05e8e9f057a6973"
+    },
+    "SEC-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "ed138ad63d79567f066435c00b33a080c683bb036e88a98b4ca08c0853edeb70"
+    },
+    "SEC-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c8eb64038087eca8b62a4375ae56da2fabf890567bb8069d2a51855fd48c6cc9"
+    },
+    "SEC-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2a78ce76e10f5bc91911a87dff9bc2e50fc9809655d85ed171dd56ef0e390410"
+    },
+    "SEC-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2d28c6cfe9d0258646226bf63e7908555b49a55b4683da75265e4c8ed92b6dc3"
+    },
+    "SEC-07": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "97d323eff0e6233fd6cf6c4d269fdbc6354e6df72c493771d6e9d4482e321389"
+    },
+    "SEC-08": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "00870b4ebc939d2b0a700b5e52db542606cd54994d7e1eea1e3c6fb087cc4538"
+    },
+    "SEC-09": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "5c4d0bad46765c71688af7022908e42ecb392477a3aee40462d9bce76e60a0e4"
+    },
+    "SEC-10": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "7f9a086ed197d6970eb146506b97b18a2e119699ecabb20a129ba339ef54cc5d"
+    },
+    "SEC-11": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "21794101c1a84f370de8b9f0966d58147e6e7274ba453b6e9066a1ae8eb21cf6"
+    },
+    "SEC-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2b81dae3199f1fa4d4e7de5988d1370961f77b3c66782afc6547845c8a1779e9"
+    },
+    "STATE-CHAT-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "01b2436e03e6a5ea1f6e02cdb10b44571f77ffbaa9fe7ad1761dc3f4444cff86"
+    },
+    "STATE-EVIDENCE-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "d76882ebce4c6be49d73df9602d8892ea1349b856771dd389c79efb589426591"
+    },
+    "STATE-MONEY-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "8933e6bb49d81564bbeab3400577eb8e28365c5768c096573a22b511b0461f0e"
+    },
+    "STATE-PLUGIN-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "100149bf7de3a81627f89ae78ff88f994593cd9e2162eaaf941e6de8d6bad280"
+    },
+    "STR-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "1f5deee6306cbb7a3a5df2dcca98dd791b432e982f572f2bc2ae4d52b4298a18"
+    },
+    "STR-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "58bd2b05af9bbfc1f6226ba08cc6b0c5e91a9daaf6e8eee7c75856b9724fc67c"
+    },
+    "STR-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "a9c9b50f71b7b9d40f43f25eaecf7cd0e15f833590f945b6b58f624b453a707d"
+    },
+    "STR-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9331718f851754b48193ef4f496781643040a7f2d71de91324355340294c49e6"
+    },
+    "STR-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "0b24143416764644945294f5a4bb9693adc6d61aea88b00d6bb6e14d1773ae86"
+    },
+    "STR-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "3fbe1d58d4479b0b1a9d8f581e85bc19841328a959f319c1999bb467deebe4c9"
+    },
+    "STREAM-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "03ae8750b7654789ddb6053bc97c26d1aa9fea2615a30e684c4074311a679827"
+    },
+    "UI-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "2762e6767cd82b91b10340e1451a13b8bf532365b40281010658e2b369b9bad7"
+    },
+    "UI-02": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "f3ea96337315c6788081b92e968c3243a955b7377068ab44834b35f6b3937254"
+    },
+    "UI-03": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "8ea09d7b2f8d441f5e1056ee8aa96b89ce823ed4a7e3294c632eb1426a0060ab"
+    },
+    "UI-04": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "c65801a5ac8eaacdbac1561c85b71f48db039e2c1547cd44f742b73899f6e370"
+    },
+    "UI-05": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "73576c4dad8be75db6c14b6c96eff668b1ec85954db29ccbf9f22d27457084e5"
+    },
+    "UI-06": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "9c0b798e91013c01da25289be3ecc2bbd377a6abfb591b350bacae73c2446ed6"
+    },
+    "UI-RU-01": {
+      "exposure": "development",
+      "provenance": {
+        "ever_development_exposed": true
+      },
+      "sha256": "20934ab9972f54e20182eafe3430d751f0d883e1ed70a9bf2a1470c1b5bccc2d"
+    }
+  },
+  "policy": "All author-visible cases are permanently development-exposed. Never relabel them as holdout.",
+  "schema_version": 1
+}

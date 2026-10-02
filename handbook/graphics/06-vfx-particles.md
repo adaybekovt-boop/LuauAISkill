@@ -13,12 +13,12 @@ Related: [local lights](03-local-lights.md), [quality tiers](07-quality-tiers.md
 ## Objects
 | Object | Use | Key properties |
 |---|---|---|
-| `ParticleEmitter` (in a part = volume/surface emission; in an Attachment = point) | smoke, dust, sparks, rain, fire | `Rate`, `Lifetime` (NumberRange), `Speed`, `SpreadAngle`, `Acceleration`, `Drag`, `Size`/`Transparency` (NumberSequence), `Color` (ColorSequence), `LightEmission` (additive 0–1), `LightInfluence` (how scene light affects it 0–1), `Brightness`, `Orientation`, `Squash`, `ZOffset`, `FlipbookLayout`/`FlipbookMode` (texture must be 1024² for flipbooks), `Shape`/`ShapeStyle`, `LockedToPart`, `VelocityInheritance`, `TimeScale`, `WindAffectsDrag` |
+| `ParticleEmitter` (in a part = volume/surface emission; in an Attachment = point) | smoke, dust, sparks, rain, fire | `Rate`, `Lifetime` (NumberRange), `Speed`, `SpreadAngle`, `Acceleration`, `Drag`, `Size`/`Transparency` (NumberSequence), `Color` (ColorSequence), `LightEmission` (blending endpoints <!-- fact-value: particle-light-emission-endpoints -->[0, 1]<!-- /fact-value -->), `LightInfluence` (how scene light affects it <!-- fact-value: particle-light-influence-range -->[0, 1]<!-- /fact-value -->), `Brightness`, `Orientation`, `Squash`, `ZOffset`, `FlipbookLayout`/`FlipbookMode` (texture must be dimensions <!-- fact-value: particle-flipbook-texture -->[1024, 1024]<!-- /fact-value --> for flipbooks), `Shape`/`ShapeStyle`, `LockedToPart`, `VelocityInheritance`, `TimeScale`, `WindAffectsDrag` | <!-- fact-refs: particle-light-emission-endpoints, particle-light-influence-range, particle-flipbook-texture -->
 | `ParticleEmitter:Emit(n)` | one-shot bursts (impacts, muzzle flash) with `Rate = 0` | |
 | `Beam` (between two Attachments) | lasers, light shafts, ropes, tracers, electricity | `Width0/1`, `CurveSize0/1`, `Texture`, `TextureMode`, `TextureSpeed`, `LightEmission`, `FaceCamera`, `Segments` |
 | `Trail` (two attachments on a moving part) | sword swings, bullet streaks, tire marks | `Lifetime`, `MinLength`, `WidthScale`, `FaceCamera` |
 | `Decal` / `Texture` | blood splats, bullet holes, grime | each adds draw cost; pool/limit count |
-| `Highlight` | outlines / x-ray feedback | ≤ 255 active per client |
+| `Highlight` | outlines / x-ray feedback | ≤ <!-- fact-value: highlight-slots -->255<!-- /fact-value --> slots per client; disabled highlights still consume slots | <!-- fact-refs: highlight-slots -->
 | `Fire`/`Smoke`/`Sparkles`/`Explosion` | legacy quick effects | prefer ParticleEmitter for control; `Explosion` also applies physics/kills unless `DestroyJointRadiusPercent = 0` / `BlastPressure = 0` |
 
 ## Look-dev rules

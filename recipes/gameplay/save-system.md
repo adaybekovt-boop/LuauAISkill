@@ -42,8 +42,19 @@ Why each rule exists:
 | Refuse newer `schemaVersion` | during a rolling update an old server would load v4 data and save it back without the v4 fields |
 | `UpdateAsync` everywhere, pure transforms | `SetAsync` blindly overwrites; transforms may re-run and must not yield |
 | Save refreshes the lock; expiry ≫ autosave | crashed servers' locks expire; live servers keep theirs |
-| Purchase ids in the profile, bounded | `ProcessReceipt` can be called again (retries, rejoin on another server) → no double grant |
+| Permanent purchase ids in the profile | `ProcessReceipt` can be called again (retries, rejoin on another server) → no double grant |
 | Stagger + budget check | autosave bursts exhaust `60 + 40×players`/min and queue/drop requests |
+
+## Purchase history and capacity
+Keep every processed purchase ID with its grant in the same saved profile. Never truncate dedupe history: a
+late receipt can otherwise grant again after rejoin. The earlier bounded-list example was unsafe; removing its
+cap preserves retained IDs but cannot reconstruct IDs already discarded by a deployed older version. Reconcile
+such existing profiles from trustworthy purchase records before asserting replay safety.
+This profile is still limited by DataStore value capacity. Monitor serialized size and save failures, stop new
+sales before exhaustion, and use a reviewed migration preserving both balances and dedupe identities. A failed
+save must leave the receipt unacknowledged. Do not rotate keys or clear history to make room.
+Receipt grant callbacks must synchronously mutate only this profile, without yielding or external effects;
+acknowledgement follows its successful durable save. Do not run a separate wallet that also owns these coins.
 
 ## Code
 <!-- code: examples/data/ServerScriptService/Profiles/SessionLock.luau -->
@@ -116,14 +127,13 @@ export type Profile = {
 	coins: number,
 	inventory: { any },
 	settings: { [string]: any },
-	purchases: { string }, -- processed PurchaseIds, newest last (bounded)
+	purchases: { string }, -- permanent processed PurchaseIds; never evict dedupe history
 	stats: { playTime: number, joins: number },
 }
 
 local Schema = {}
 
 Schema.VERSION = 3
-Schema.MAX_PURCHASE_IDS = 200
 
 function Schema.template(): Profile
 	return {
@@ -189,15 +199,13 @@ function Schema.reconcile(data: { [string]: any }, template: { [string]: any })
 	end
 end
 
--- Records a PurchaseId; returns false if it was already processed. Keeps the list bounded.
+-- Records a PurchaseId; returns false if already processed. Never prune history: delayed receipts can replay.
+-- Monitor serialized profile size; storage exhaustion must defer purchases, not discard dedupe IDs.
 function Schema.recordPurchase(profile: Profile, purchaseId: string): boolean
 	if table.find(profile.purchases, purchaseId) then
 		return false
 	end
 	table.insert(profile.purchases, purchaseId)
-	while #profile.purchases > Schema.MAX_PURCHASE_IDS do
-		table.remove(profile.purchases, 1)
-	end
 	return true
 end
 

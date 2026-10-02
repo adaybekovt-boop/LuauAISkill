@@ -1,0 +1,101 @@
+{
+  "valid": false,
+  "structural_valid": true,
+  "structural_errors": [],
+  "total": 183,
+  "categories": {
+    "adversarial": {
+      "count": 16,
+      "russian": 2,
+      "broken_code_fixtures": 1
+    },
+    "animation": {
+      "count": 8,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "api-freshness": {
+      "count": 15,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "architecture": {
+      "count": 10,
+      "russian": 2,
+      "broken_code_fixtures": 1
+    },
+    "combat": {
+      "count": 8,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "datastores": {
+      "count": 16,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "debugging": {
+      "count": 11,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "graphics": {
+      "count": 9,
+      "russian": 2,
+      "broken_code_fixtures": 1
+    },
+    "lighting": {
+      "count": 10,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "luau": {
+      "count": 15,
+      "russian": 2,
+      "broken_code_fixtures": 1
+    },
+    "negative-triggers": {
+      "count": 8,
+      "russian": 2,
+      "broken_code_fixtures": 1
+    },
+    "networking": {
+      "count": 11,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "npc": {
+      "count": 8,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "performance": {
+      "count": 9,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "security": {
+      "count": 13,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "streaming": {
+      "count": 8,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    },
+    "ui": {
+      "count": 8,
+      "russian": 1,
+      "broken_code_fixtures": 1
+    }
+  },
+  "clean_holdout_ids": [],
+  "fraction": 0.0,
+  "errors": [
+    "clean holdout fraction below 30%",
+    "clean holdout does not cover every category"
+  ],
+  "seal_skill_sha256": [],
+  "provenance_limit": "Custody artifacts are operator attestations; independent access isolation must be audited."
+}

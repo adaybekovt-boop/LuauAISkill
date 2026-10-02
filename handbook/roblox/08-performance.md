@@ -152,3 +152,14 @@ cd:performance-optimization/microprofiler/use-microprofiler, cd:performance-opti
 cd:performance-optimization/scene-analysis, cd:scripting/multithreading, cd:physics/adaptive-timestepping,
 cd:physics/sleep-system, cd:studio/optimization/scriptprofiler, cd:studio/optimization/memory-usage,
 cd:studio/developer-console, cd:workspace/streaming/slim.
+
+## Diagnosing the retained-character fixture
+A Heartbeat connection created for each character keeps its captured character alive
+unless cleanup disconnects it. Disconnect that connection on character removal and
+also clean up remaining player-owned state on PlayerRemoving.
+A cache keyed by player name plus a fresh timestamp creates a new key on every update;
+it does not replace the previous sample and therefore grows without a bound. Store a
+bounded history or overwrite the current entry, and remove it when its owner leaves.
+Label unverified performance causes as hypotheses, not measured facts. Do not invent
+FPS gains, memory totals, or profiler timings; report numbers only from saved captures
+with the device, workload and before/after conditions.

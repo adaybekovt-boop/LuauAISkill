@@ -50,43 +50,43 @@ local busy: { [Player]: boolean } = {}
 local commands: { TextChatCommand } = {}
 local connections: { RBXScriptConnection } = {}
 local function authorized(player: Player): boolean
-    return Parser.allowed(player.UserId, owner, ADMINS)
+	return Parser.allowed(player.UserId, owner, ADMINS)
 end
 local function execute(source: TextSource, text: string)
-    local caller = Players:GetPlayerByUserId(source.UserId)
-    if not caller then return end
-    if not limiter:allow(caller, "command", os.clock()) or busy[caller] then return end
-    local command = Parser.parse(text)
-    if not command then return end
-    if command.verb == "respawn" then
-        -- Self-service only. Add your round/combat eligibility rule before enabling in a real game.
-        if caller:GetAttribute("AllowRespawnCommand") ~= true then return end
-        busy[caller] = true
-        local ok = pcall(function() caller:LoadCharacterAsync() end)
-        busy[caller] = nil
-        if not ok then warn("[Commands] Respawn failed for user", caller.UserId) end
-    elseif authorized(caller) and command.targetId then
-        local target = Players:GetPlayerByUserId(command.targetId)
-        if target and target ~= caller and not authorized(target) then
-            target:Kick("Removed by a moderator") -- static text only; input is UNFILTERED
-        end
-    end
+	local caller = Players:GetPlayerByUserId(source.UserId)
+	if not caller then return end
+	if not limiter:allow(caller, "command", os.clock()) or busy[caller] then return end
+	local command = Parser.parse(text)
+	if not command then return end
+	if command.verb == "respawn" then
+		-- Self-service only. Add your round/combat eligibility rule before enabling in a real game.
+		if caller:GetAttribute("AllowRespawnCommand") ~= true then return end
+		busy[caller] = true
+		local ok = pcall(function() caller:LoadCharacterAsync() end)
+		busy[caller] = nil
+		if not ok then warn("[Commands] Respawn failed for user", caller.UserId) end
+	elseif authorized(caller) and command.targetId then
+		local target = Players:GetPlayerByUserId(command.targetId)
+		if target and target ~= caller and not authorized(target) then
+			target:Kick("Removed by a moderator") -- static text only; input is UNFILTERED
+		end
+	end
 end
 for _, alias in { "/respawn", "/kick" } do
-    local command = Instance.new("TextChatCommand")
-    command.Name = "Secure" .. string.sub(alias, 2)
-    command.PrimaryAlias = alias
-    command.Parent = TextChatService
-    table.insert(commands, command)
-    table.insert(connections, command.Triggered:Connect(execute))
+	local command = Instance.new("TextChatCommand")
+	command.Name = "Secure" .. string.sub(alias, 2)
+	command.PrimaryAlias = alias
+	command.Parent = TextChatService
+	table.insert(commands, command)
+	table.insert(connections, command.Triggered:Connect(execute))
 end
 table.insert(connections, Players.PlayerRemoving:Connect(function(player)
-    limiter:forget(player); busy[player] = nil
+	limiter:forget(player); busy[player] = nil
 end))
 script.Destroying:Connect(function()
-    for _, c in connections do c:Disconnect() end
-    for _, command in commands do command:Destroy() end
-    for _, player in Players:GetPlayers() do limiter:forget(player) end
+	for _, c in connections do c:Disconnect() end
+	for _, command in commands do command:Destroy() end
+	for _, player in Players:GetPlayers() do limiter:forget(player) end
 end)
 ```
 <!-- /code -->
@@ -100,17 +100,17 @@ end)
 local Parser = {}
 export type Command = { verb: string, targetId: number? }
 function Parser.parse(text: string): Command?
-    if #text > 80 then return nil end
-    if string.match(text, "^/respawn%s*$") then return { verb = "respawn" } end
-    local idText = string.match(text, "^/kick%s+(%d+)%s*$")
-    local id = if idText then tonumber(idText) else nil
-    if id and id > 0 and id <= 9007199254740991 and id % 1 == 0 then
-        return { verb = "kick", targetId = id }
-    end
-    return nil
+	if #text > 80 then return nil end
+	if string.match(text, "^/respawn%s*$") then return { verb = "respawn" } end
+	local idText = string.match(text, "^/kick%s+(%d+)%s*$")
+	local id = if idText then tonumber(idText) else nil
+	if id and id > 0 and id <= 9007199254740991 and id % 1 == 0 then
+		return { verb = "kick", targetId = id }
+	end
+	return nil
 end
 function Parser.allowed(caller: number, owner: number, admins: { [number]: boolean }): boolean
-    return caller == owner and owner > 0 or admins[caller] == true
+	return caller == owner and owner > 0 or admins[caller] == true
 end
 return Parser
 ```

@@ -1,0 +1,5 @@
+{"markdown": {}, "examples": {"TYPECHECKED": 101}, "cli_typechecks": {"TYPECHECKED": 17}, "cli_tests": {"CLI-EXECUTED": 17}}
+Follow-up verification: permanent profile purchase IDs, October 2 2026
+data.spec: 9 passed, 0 failed
+receipts.spec: grants, retries, transfer sides, collisions, corruption, >1500 receipts, conflicts, failures, overflow passed
+embed_code: checked (0 file(s) stale)

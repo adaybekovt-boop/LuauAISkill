@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "id": "capture-watermark-retired",
+ "url": "https://devforum.roblox.com/t/captures-apis-are-now-available/2838188/169",
+ "author": "merlin_codes",
+ "staff_badge_observed": true,
+ "published_on": "2024-07-17",
+ "observed_on": "2026-10-02",
+ "quote": "watermarks no longer appear in user-initiated captures or in Selfie Mode dev module images.",
+ "quote_sha256": "5a3e56749ab0afbcc6ed38ca6a25b9d2039e6432f241ea5674623b9e88514d12",
+ "capture_method": "Read-only research worker directly inspected the primary post in the cloud browser DOM/accessibility tree and observed the Roblox Staff badge; this file is a short observation record, not an HTML/screenshot archive.",
+ "date_verification": "Post date cross-checked against the indexed primary post body and browser display.",
+ "scope": "ScreenshotHud.OverlayFont and ExperienceNameOverlayEnabled for user-initiated captures and Selfie Mode dev module images.",
+ "limitations": "Does not establish removal of every custom watermark or overlay in unrelated capture pipelines."
+}

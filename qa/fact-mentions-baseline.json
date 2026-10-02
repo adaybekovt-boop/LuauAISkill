@@ -1,0 +1,3471 @@
+{
+  "schema_version": 1,
+  "scope": "SKILL freshness including its heading; all limits.md numeric/status prose; handbook tables under limit headings/headers or rows with explicit limit cues",
+  "boundary": "Lexical fact-ID binding, not semantic entailment. Other numeric/status chapter table rows remain review candidates. Code fences, link destinations, API identifier digits are excluded. No claim of repository-wide fact coverage.",
+  "files_sha256": {
+    "SKILL.md": "b4789dacb48eb9dcda18c30e60e1fcbea1e525afbb66c0b5a858d9a589516cd0",
+    "references/limits.md": "51626afaadd2f6e0fd24452274e5eaa0a37d9fd0d826c4fc4037a0c84b854f9c",
+    "handbook/graphics/01-lighting.md": "c317d56e26c3d0c84773ff4dd5995c7b001f2dc3cbca16246542df78e8db192f",
+    "handbook/graphics/02-atmosphere-sky-post.md": "73d2285655ddf03886fce7f1db74903ebb6be6d0cf45b0fab89860a20ebcaede",
+    "handbook/graphics/03-local-lights.md": "7fa2aa5a1fd0acd89594620e0399880f22761e992df5147c771431bec94859e4",
+    "handbook/graphics/04-materials-pbr.md": "7160969fc44a8b7040d18952044b4801be2ef89ba684e4e6e08640e81632f1eb",
+    "handbook/graphics/05-environment-art.md": "98b4de63b9c5f8d3960f52b85c2380317cb3eeffc640c9b7d2bb13ded17d07a8",
+    "handbook/graphics/06-vfx-particles.md": "49b3d868cf4ecb985005f7cdd5958d61b7dd843ed7be7cfc3a907ae6b9ecaa46",
+    "handbook/graphics/07-quality-tiers.md": "80c5b1a63566e9646a26d2fc762dddfdc6ed27a00b70ce8010a31f14fe699840",
+    "handbook/luau/01-language-core.md": "d276830c656fa17b060a1362da902ed23ffdb6c01cdecb78331d1882c29f34ab",
+    "handbook/luau/02-types.md": "5e49f0ce8a26997a3acc6d56d70ab7c3ea6327f16f427088beb915d38d8cc908",
+    "handbook/luau/03-syntax-stdlib.md": "437440dfe95cf73df6986c788c7e78c3b7854178de613d0372922fd001be1e78",
+    "handbook/luau/04-patterns-data.md": "72c91682f199f7597d685f06b384874a18eb73192084753cd453d713586ebb62",
+    "handbook/luau/05-coroutines-task-errors.md": "87ad9dc9afda599725132b58a1734cdd7c9dbcb507e1160bc0eee2fe10bcced3",
+    "handbook/luau/06-performance-memory.md": "520c1d4839d18e2fcead07477809392f2bc16b0969bae261a6bce575e88b0a89",
+    "handbook/roblox/01-runtime-architecture.md": "aa936949c53348d441eaa28cf48d9267ea1a88d3543e5a81aa55ce4ff877fefd",
+    "handbook/roblox/02-lifecycle-events.md": "8dae044a7421daea79dbf1945f753e7f7385d8937774ce3bc600515f3f4ec7d9",
+    "handbook/roblox/03-networking.md": "65912cbbb4622552c6ddf0a67f1d53f4587a0961ba9f3bd03526afcc49e9632b",
+    "handbook/roblox/04-security.md": "a5ec222b915b04a0879850c3bddb9fbce8b7c6cce59aa246cf0ef5c9ead1db29",
+    "handbook/roblox/05-server-authority.md": "fe0dde83d2a909f12bba81d67500e424767012a829089dd6b5a7de36e08140c2",
+    "handbook/roblox/06-data-persistence.md": "7193674fce59ea576eb0d0318d76eecc591e76b845732377fef96f8d234073fb",
+    "handbook/roblox/07-cross-server.md": "50d74d9d0c92a63ee120f447570a1e8ae3659dbd97ae619d7b57d9b773ef24a1",
+    "handbook/roblox/08-performance.md": "e0316459a80985320a22a5b23316af9aae0fd7282bfd06e4217f1629d7223d9f",
+    "handbook/roblox/09-physics.md": "bfcb78142370a88ad817cf2cbd83e10cdb53937e0ed7eb769311c2b13808d8ef",
+    "handbook/roblox/10-streaming.md": "6ce54049056542f14971f1de2570ed6b22c0727aa9c910e3af99e674fbb3b5b1",
+    "handbook/roblox/11-terrain.md": "acb37f4525be9c156984f9976ab21c7014eb9bdbc9b65bf07ad0b945f29e4ec8",
+    "handbook/roblox/12-procedural-generation.md": "9f0d0a7ad36a062ac36e008f7d36159e4be461b0ed1fefe330c376d58f5b7dbe",
+    "handbook/roblox/13-character-controllers.md": "4b8ba77d250c6061fe23ba57e4f85c5944c9355ac530e98db807e0978a7c60f1",
+    "handbook/roblox/14-camera.md": "cd846541792a9f6df26456003272eca56e5133819921e5d52d183f6dcd2c7e38",
+    "handbook/roblox/15-combat.md": "401b65d1c322d4d09e4f5384d568faac035f5ea03585fa4611dca69f367c17a8",
+    "handbook/roblox/16-animation.md": "180ae45e3ddfa35bd717c57f08171faef96f3d7a20f063a94f05883329dd0897",
+    "handbook/roblox/17-audio.md": "da833ec76659437073ff18d8818f58b415a84338769860191f24ab41e095430f",
+    "handbook/roblox/18-ui-ux.md": "0930c20becb9426d72b70ac7a7c31733bf30cf13ff7779383cd8d3dd058aa5f2",
+    "handbook/roblox/19-input.md": "4e500fedc2fe16ff73be2433fe301a8ba0d9f3c16fbac942556de8f9c0e74538",
+    "handbook/roblox/20-npc-ai.md": "ebdc387514406a092c7d883d2ca104000661ca9b81f230826bb4663f9f66aac7",
+    "handbook/roblox/21-architecture.md": "4271bf51f324157e9308b20cf60d50c55b8829608c124d3cae161ccd8b2388da",
+    "handbook/roblox/22-code-quality.md": "e6df43e3933d805adc9fbc04cf03e2bc6729870f8a65597034eb85aa7ebd0509",
+    "handbook/roblox/23-tooling-testing.md": "ca23045834402ef07ede26977fc46f5e4394e554458d157a1c081f993d5a182c",
+    "handbook/roblox/24-studio-mcp-testing.md": "38a82eed6bcc72d2f7ecf5fd802dd66ec8a01416eb34df6b593347bc6b4b471b",
+    "handbook/roblox/25-monetization.md": "9249dff9715a97a1b0428e1b6e802685602e5b7379e49075a2501334ac7bc5c1",
+    "handbook/roblox/26-chat-leaderboards.md": "874cb305a38bebbb1ebb72f84aa23f86ffd25db0bfae48bf2d629da7d94d44b5"
+  },
+  "candidate_blocks": 128,
+  "covered_blocks": 89,
+  "unbound_blocks": 39,
+  "coverage_percent": 69.53,
+  "outside_scope_review_candidates": 115,
+  "rows": [
+    {
+      "path": "SKILL.md",
+      "line": 122,
+      "mentions": [
+        "0.741.19",
+        "2026",
+        "10",
+        "01"
+      ],
+      "fact_ids": [],
+      "text": "## Freshness snapshot (facts older models get wrong — verified against API 0.741.19 / docs 2026-10-01)",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 123,
+      "mentions": [
+        "120",
+        "255",
+        "−5",
+        "5"
+      ],
+      "fact_ids": [],
+      "text": "- Local light range max **120** studs; `Highlight` limit **255**; `ExposureCompensation` −5…5.",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 124,
+      "mentions": [
+        "deprecated"
+      ],
+      "fact_ids": [],
+      "text": "- `Lighting.Technology` is RobloxScriptSecurity + deprecated; `LightingStyle`/`PrioritizeLightingQuality` are Studio/plugin writes.",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 125,
+      "mentions": [
+        "removed"
+      ],
+      "fact_ids": [],
+      "text": "- `RaycastFilterType.Blacklist/Whitelist` removed → `Exclude/Include`; `RaycastParams.ExcludeInstances`/`IncludeInstances` exist.",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 129,
+      "mentions": [
+        "superseded"
+      ],
+      "fact_ids": [],
+      "text": "- `RenderStepped`/`Stepped` superseded by `PreRender`/`PreSimulation` for new work.",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 130,
+      "mentions": [
+        "2026",
+        "07",
+        "09",
+        "2026",
+        "04",
+        "08",
+        "2026",
+        "09",
+        "10",
+        "fully released",
+        "beta",
+        "stable",
+        "beta"
+      ],
+      "fact_ids": [],
+      "text": "- **Server authority mode is fully released (2026-07-09)**; the base Character Controller Library is released\n  (2026-04-08) — its Sprint/Crouch/ShiftLock defaults and custom-abilities API are a Studio beta (2026-09-10).\n  Audio API is the recommended audio system; Input Action System is stable (`InputActionLabel` beta).",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 133,
+      "mentions": [
+        "2026",
+        "09",
+        "29"
+      ],
+      "fact_ids": [],
+      "text": "- `Player.FrustumStreaming` (`Enum.FrustumStreamingMode`, server-set) streams the camera view beyond the radius (2026-09-29).",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 134,
+      "mentions": [
+        "2026",
+        "05",
+        "30",
+        "disabled"
+      ],
+      "fact_ids": [],
+      "text": "- Receipts: `ProcessReceipt` (`Enum.ProductPurchaseDecision`) and the newer `MarketplaceService:BindReceiptHandler`\n  (`Enum.ReceiptDecision.Processed`/`NotProcessedYet`) — different enums. Cross-game developer-product and pass sales are disabled since 2026-05-30 (use Robux transfers).",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 136,
+      "mentions": [
+        "2025"
+      ],
+      "fact_ids": [],
+      "text": "- Legacy chat was migrated to TextChatService (2025); `TextChatCommand.Triggered` passes **unfiltered** text.",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 137,
+      "mentions": [
+        "1",
+        "8"
+      ],
+      "fact_ids": [],
+      "text": "- Studio ships a built-in **MCP server** (stdio; every call takes `studio_id`; `set_active_studio` is gone);\n  `start_stop_play` starts a single play client — multiplayer automation is `StudioTestService:ExecuteMultiplayerTestAsync` (1–8 players, plugin security).",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 139,
+      "mentions": [
+        "4",
+        "60",
+        "40",
+        "4",
+        "30"
+      ],
+      "fact_ids": [],
+      "text": "- DataStore: 4 MB values, server budget `60 + 40 × players`/min per type, 4 s `GetAsync` cache, BindToClose ~30 s;\n  `BatchGetAsync` works on **ordered** stores only, N keys cost N reads.",
+      "covered": false
+    },
+    {
+      "path": "SKILL.md",
+      "line": 142,
+      "mentions": [
+        "0.741"
+      ],
+      "fact_ids": [],
+      "text": "- Undocumented in 0.741: `PlayerDataService` / `Player:GetData()` / `PlayerDataRecord`, `Player:GetFriendsInServerAsync`,\n  `ProjectService`, `TextDocument` — present in the dump, no docs; don't build on them.",
+      "covered": false
+    },
+    {
+      "path": "references/limits.md",
+      "line": 5,
+      "mentions": [
+        "general availability"
+      ],
+      "fact_ids": [],
+      "text": "Dated statements from pinned documentation and API metadata, not a live-platform guarantee. Units, scopes, approximate values, and default-vs-hard-limit qualifiers matter. A documented API or setup procedure alone does not establish general availability.",
+      "covered": false
+    },
+    {
+      "path": "references/limits.md",
+      "line": 15,
+      "mentions": [
+        "beta",
+        "beta",
+        "ga",
+        "general availability",
+        "deprecated",
+        "deprecated"
+      ],
+      "fact_ids": [],
+      "text": "Status: **documented** = explicit statement in the pinned source; **approximate** = the source qualifies the number as approximate; **default** = documented default, not an unconditional hard limit; **beta** = source explicitly calls the feature beta; **ga** = source explicitly announces general availability; **deprecated** = source explicitly marks the API deprecated.",
+      "covered": false
+    },
+    {
+      "path": "references/limits.md",
+      "line": 21,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "11",
+        "01",
+        "full release",
+        "beta",
+        "full release",
+        "ga"
+      ],
+      "fact_ids": [
+        "server-authority-release-status"
+      ],
+      "text": "| `server-authority-release-status`: Server authority was announced as a full release for all games. The dated announcement supersedes a stale beta sentence in the pinned network-ownership guide. This does not claim that every related feature is generally available. | full release | release status | ga | [pinned source](https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993) | 2026-10-02 / 2026-11-01 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 22,
+      "mentions": [
+        "2026",
+        "07",
+        "09",
+        "2026",
+        "10",
+        "02",
+        "2027",
+        "03",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-release-date"
+      ],
+      "text": "| `server-authority-release-date`: Date of the official server authority full-release announcement. | 2026-07-09 | calendar date | documented | [pinned source](https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993) | 2026-10-02 / 2027-03-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 28,
+      "mentions": [
+        "500",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "remote-client-send-rate"
+      ],
+      "text": "| `remote-client-send-rate`: RemoteEvent and UnreliableRemoteEvent client-to-server rate; shared among all remotes of the same type. | 500 | requests/second/client | approximate | cd:reference/engine/classes/RemoteEvent | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 29,
+      "mentions": [
+        "1000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "unreliable-remote-payload"
+      ],
+      "text": "| `unreliable-remote-payload`: UnreliableRemoteEvent payloads above this size are dropped. | 1000 | bytes | documented | cd:reference/engine/classes/UnreliableRemoteEvent | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 30,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "remote-function-callback"
+      ],
+      "text": "| `remote-function-callback`: Only the last callback assigned to a RemoteFunction executes. | 1 | effective callback/RemoteFunction | documented | cd:scripting/events/remote | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 31,
+      "mentions": [
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "deferred-reentrancy-depth"
+      ],
+      "text": "| `deferred-reentrancy-depth`: Deferred-event re-entrancy depth limit. | 10 | levels | documented | cd:scripting/events/deferred | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 37,
+      "mentions": [
+        "4194304",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-value-size"
+      ],
+      "text": "| `datastore-value-size`: Maximum serialized data-store value size. | 4194304 | characters/key | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 38,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-name-length"
+      ],
+      "text": "| `datastore-name-length`: Maximum data-store name length. | 50 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 39,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-key-length"
+      ],
+      "text": "| `datastore-key-length`: Maximum data-store key length. | 50 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 40,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-scope-length"
+      ],
+      "text": "| `datastore-scope-length`: Maximum data-store scope length. | 50 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 41,
+      "mentions": [
+        "300",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-metadata-total"
+      ],
+      "text": "| `datastore-metadata-total`: Maximum total user-defined metadata size. | 300 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 42,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-read-server-rate"
+      ],
+      "text": "| `datastore-standard-read-server-rate`: Standard data-store read default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 43,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-write-server-rate"
+      ],
+      "text": "| `datastore-standard-write-server-rate`: Standard data-store write default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 44,
+      "mentions": [
+        "5",
+        "2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-list-server-rate"
+      ],
+      "text": "| `datastore-standard-list-server-rate`: Standard data-store list default server rate; configurable through SetRateLimitForRequestType. | 5 + 2 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 45,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-remove-server-rate"
+      ],
+      "text": "| `datastore-standard-remove-server-rate`: Standard data-store remove default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 46,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-read-server-rate"
+      ],
+      "text": "| `datastore-ordered-read-server-rate`: Ordered data-store read default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 47,
+      "mentions": [
+        "30",
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-write-server-rate"
+      ],
+      "text": "| `datastore-ordered-write-server-rate`: Ordered data-store write default server rate; configurable through SetRateLimitForRequestType. | 30 + 5 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 48,
+      "mentions": [
+        "5",
+        "2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-list-server-rate"
+      ],
+      "text": "| `datastore-ordered-list-server-rate`: Ordered data-store list default server rate; configurable through SetRateLimitForRequestType. | 5 + 2 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 49,
+      "mentions": [
+        "30",
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-remove-server-rate"
+      ],
+      "text": "| `datastore-ordered-remove-server-rate`: Ordered data-store remove default server rate; configurable through SetRateLimitForRequestType. | 30 + 5 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 50,
+      "mentions": [
+        "300",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-read-experience-rate"
+      ],
+      "text": "| `datastore-read-experience-rate`: Read experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 40 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 51,
+      "mentions": [
+        "300",
+        "20",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-write-experience-rate"
+      ],
+      "text": "| `datastore-write-experience-rate`: Write experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 20 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 52,
+      "mentions": [
+        "300",
+        "2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-list-experience-rate"
+      ],
+      "text": "| `datastore-list-experience-rate`: List experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 2 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 53,
+      "mentions": [
+        "300",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-remove-experience-rate"
+      ],
+      "text": "| `datastore-remove-experience-rate`: Remove experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 40 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 54,
+      "mentions": [
+        "25",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-key-read-throughput"
+      ],
+      "text": "| `datastore-key-read-throughput`: Per-key read throughput; each request is rounded up to the next kilobyte. | 25 | MB/minute/key | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 55,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-key-write-throughput"
+      ],
+      "text": "| `datastore-key-write-throughput`: Per-key write throughput; each request is rounded up to the next kilobyte. | 4 | MB/minute/key | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 56,
+      "mentions": [
+        "30",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-queue-size"
+      ],
+      "text": "| `datastore-queue-size`: Requests beyond the per-queue limit are dropped. | 30 | requests/queue | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 57,
+      "mentions": [
+        "500",
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-storage"
+      ],
+      "text": "| `datastore-storage`: Storage allowance measured using compressed latest key versions. | 500 + 1 * lifetime_users | MB/experience | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 58,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-cache-duration"
+      ],
+      "text": "| `datastore-cache-duration`: Default GetAsync local-cache lifetime. | 4 | seconds | default | cd:cloud-services/data-stores/versioning-listing-and-caching | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 59,
+      "mentions": [
+        "30",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "bind-to-close-deadline"
+      ],
+      "text": "| `bind-to-close-deadline`: BindToClose callbacks have this time to complete. | 30 | seconds | documented | cd:cloud-services/data-stores/player-data-purchasing | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 60,
+      "mentions": [
+        "1",
+        "100",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "ordered-datastore-page-size"
+      ],
+      "text": "| `ordered-datastore-page-size`: OrderedDataStore GetSortedAsync page-size range. | [1, 100] | entries/page | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 61,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-supported-store"
+      ],
+      "text": "| `batch-get-supported-store`: GlobalDataStore BatchGetAsync currently supports ordered stores only. | OrderedDataStore | store type | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 62,
+      "mentions": [
+        "100",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-max-keys"
+      ],
+      "text": "| `batch-get-max-keys`: Default BatchGetAsync maximum keys per call; server-configured, not a fixed universal maximum. | 100 | keys/request | default | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 63,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-min-keys"
+      ],
+      "text": "| `batch-get-min-keys`: Minimum BatchGetAsync key count. | 1 | keys/request | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 64,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-read-budget"
+      ],
+      "text": "| `batch-get-read-budget`: BatchGetAsync read budget is charged by requested key count. | requested_keys | read requests | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 70,
+      "mentions": [
+        "64",
+        "1.2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-memory-quota"
+      ],
+      "text": "| `memorystore-memory-quota`: Game-wide memory quota. | 64 + 1.2 * users | KB/game | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 71,
+      "mentions": [
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-quota-decrease-delay"
+      ],
+      "text": "| `memorystore-quota-decrease-delay`: Traceback period before reevaluating memory quota downwards. | 8 | days | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 72,
+      "mentions": [
+        "1000",
+        "120",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-request-quota"
+      ],
+      "text": "| `memorystore-request-quota`: Game-wide request-unit quota. | 1000 + 120 * concurrent_users | request units/minute/game | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 73,
+      "mentions": [
+        "1000000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-structure-items"
+      ],
+      "text": "| `memorystore-structure-items`: Maximum sorted-map or queue item count. | 1000000 | items/structure | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 74,
+      "mentions": [
+        "100",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-structure-memory"
+      ],
+      "text": "| `memorystore-structure-memory`: Maximum sorted-map or queue size, including sorted-map keys. | 100 | MB/structure | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 75,
+      "mentions": [
+        "30000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-partition-rate"
+      ],
+      "text": "| `memorystore-partition-rate`: Approximate per-partition throttling onset; stay well below it. | 30000 | request units/minute/partition | approximate | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 76,
+      "mentions": [
+        "5000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-hash-key-write-rate"
+      ],
+      "text": "| `memorystore-hash-key-write-rate`: Approximate hash-map single-key write rate; UpdateAsync consumes read and write budgets. | 5000 | request units/minute/key | approximate | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 77,
+      "mentions": [
+        "15000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-hash-key-read-rate"
+      ],
+      "text": "| `memorystore-hash-key-read-rate`: Approximate hash-map single-key read rate; partition limits also apply. | 15000 | request units/minute/key | approximate | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 78,
+      "mentions": [
+        "3888000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-max-expiration"
+      ],
+      "text": "| `memorystore-max-expiration`: Maximum hash-map expiration time. | 3888000 | seconds | documented | cd:cloud-services/memory-stores/hash-map | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 79,
+      "mentions": [
+        "45",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-default-expiration"
+      ],
+      "text": "| `memorystore-default-expiration`: Documented default expiration for MemoryStoreQueue AddAsync and MemoryStoreSortedMap SetAsync. | 45 | days | default | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 85,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-message-size"
+      ],
+      "text": "| `messaging-message-size`: Maximum MessagingService message size. | 1 | kB/message | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 86,
+      "mentions": [
+        "600",
+        "240",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-send-rate"
+      ],
+      "text": "| `messaging-send-rate`: Messages sent per server. | 600 + 240 * players | messages/minute/server | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 87,
+      "mentions": [
+        "40",
+        "80",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-topic-receive-rate"
+      ],
+      "text": "| `messaging-topic-receive-rate`: Messages received per topic. | 40 + 80 * servers | messages/minute/topic | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 88,
+      "mentions": [
+        "400",
+        "200",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-game-receive-rate"
+      ],
+      "text": "| `messaging-game-receive-rate`: Messages received for the entire game. | 400 + 200 * servers | messages/minute/game | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 89,
+      "mentions": [
+        "20",
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-subscriptions"
+      ],
+      "text": "| `messaging-subscriptions`: Subscriptions allowed per server. | 20 + 8 * players | subscriptions/server | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 90,
+      "mentions": [
+        "240",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-subscribe-rate"
+      ],
+      "text": "| `messaging-subscribe-rate`: Subscribe requests per server. | 240 | requests/minute/server | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 91,
+      "mentions": [
+        "1",
+        "80",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-topic-length"
+      ],
+      "text": "| `messaging-topic-length`: MessagingService topic length range. | [1, 80] | characters/topic | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 97,
+      "mentions": [
+        "64",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-attribute-count"
+      ],
+      "text": "| `server-authority-attribute-count`: Server-authority replication includes only the first attributes up to this count. | 64 | attributes/instance | documented | cd:projects/server-authority/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 98,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-attribute-name-length"
+      ],
+      "text": "| `server-authority-attribute-name-length`: Server-authority replicated attribute name length. | 50 | characters/name | documented | cd:projects/server-authority/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 99,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-attribute-string-length"
+      ],
+      "text": "| `server-authority-attribute-string-length`: Server-authority replicated string attribute value length. | 50 | characters/value | documented | cd:projects/server-authority/index | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 105,
+      "mentions": [
+        "15000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "raycast-length"
+      ],
+      "text": "| `raycast-length`: Maximum raycast length. | 15000 | studs | documented | cd:workspace/raycasting | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 106,
+      "mentions": [
+        "32",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "collision-groups"
+      ],
+      "text": "| `collision-groups`: Current maximum collision groups. | 32 | groups | documented | cd:reference/engine/classes/PhysicsService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 107,
+      "mentions": [
+        "120",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "local-light-range"
+      ],
+      "text": "| `local-light-range`: Maximum PointLight, SpotLight and SurfaceLight range. | 120 | studs | documented | cd:reference/engine/classes/Lighting | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 108,
+      "mentions": [
+        "255",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31",
+        "disabled"
+      ],
+      "fact_ids": [
+        "highlight-slots"
+      ],
+      "text": "| `highlight-slots`: Client-side simultaneous Highlight slots; disabled highlights still consume slots. | 255 | instances/client | documented | cd:effects/highlighting | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 109,
+      "mentions": [
+        "1",
+        "120",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "camera-field-of-view"
+      ],
+      "text": "| `camera-field-of-view`: Vertical Camera FieldOfView clamp. | [1, 120] | degrees | documented | cd:reference/engine/classes/Camera | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 110,
+      "mentions": [
+        "70",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "camera-field-of-view-default"
+      ],
+      "text": "| `camera-field-of-view-default`: Default vertical Camera FieldOfView. | 70 | degrees | default | cd:reference/engine/classes/Camera | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 111,
+      "mentions": [
+        "-5",
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "lighting-exposure-range"
+      ],
+      "text": "| `lighting-exposure-range`: Lighting ExposureCompensation range. | [-5, 5] | exposure stops | documented | cd:reference/engine/classes/Lighting | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 112,
+      "mentions": [
+        "4096",
+        "4096",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "texture-resolution"
+      ],
+      "text": "| `texture-resolution`: Supported texture resolution ceiling; asset-specific budgets and requirements may be lower. | [4096, 4096] | pixels | documented | cd:art/modeling/texture-specifications | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 113,
+      "mentions": [
+        "1024",
+        "1024",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "particle-flipbook-texture"
+      ],
+      "text": "| `particle-flipbook-texture`: Texture dimensions required by the pinned FlipbookIncompatible default message. | [1024, 1024] | pixels | documented | api:ParticleEmitter.FlipbookIncompatible | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 114,
+      "mentions": [
+        "4",
+        "4",
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "terrain-voxel-size"
+      ],
+      "text": "| `terrain-voxel-size`: Terrain voxel dimensions. | [4, 4, 4] | studs | documented | cd:parts/terrain | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 115,
+      "mentions": [
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "humanoid-move-to-timeout"
+      ],
+      "text": "| `humanoid-move-to-timeout`: Humanoid MoveTo timeout if its goal is not reached; reissuing MoveTo resets it. | 8 | seconds | documented | cd:reference/engine/classes/Humanoid | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 116,
+      "mentions": [
+        "1.5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "frustum-stream-out-delay"
+      ],
+      "text": "| `frustum-stream-out-delay`: Opportunistic out-of-view stream-out delay beyond normal radius and active replication foci. | 1.5 | seconds | documented | cd:workspace/streaming/frustum | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 122,
+      "mentions": [
+        "64K",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "native-code-block-instructions"
+      ],
+      "text": "| `native-code-block-instructions`: Native compiler per-block instruction limit as documented. | 64K | instructions/block | documented | cd:luau/native-code-gen | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 123,
+      "mentions": [
+        "32K",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "native-code-function-blocks"
+      ],
+      "text": "| `native-code-function-blocks`: Native compiler per-function internal-block limit as documented. | 32K | blocks/function | documented | cd:luau/native-code-gen | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 124,
+      "mentions": [
+        "1000000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "native-code-module-instructions"
+      ],
+      "text": "| `native-code-module-instructions`: Native compiler instruction limit per script. | 1000000 | instructions/script | documented | cd:luau/native-code-gen | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 125,
+      "mentions": [
+        "10000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "script-sync-scripts"
+      ],
+      "text": "| `script-sync-scripts`: Maximum scripts per top-level synced instance. | 10000 | scripts/synced root | documented | cd:scripting/sync | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 126,
+      "mentions": [
+        "128",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "script-sync-roots"
+      ],
+      "text": "| `script-sync-roots`: Maximum top-level synced instances. | 128 | synced roots | documented | cd:scripting/sync | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 127,
+      "mentions": [
+        "300",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "text-to-speech-text-length"
+      ],
+      "text": "| `text-to-speech-text-length`: Text-to-speech text limit. | 300 | characters/request | documented | cd:audio/objects | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 128,
+      "mentions": [
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-multiclient-count"
+      ],
+      "text": "| `studio-multiclient-count`: Maximum simulated clients in Studio Server & Clients. | 8 | clients | documented | cd:studio/testing-modes | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 129,
+      "mentions": [
+        "1",
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-test-service-clients"
+      ],
+      "text": "| `studio-test-service-clients`: StudioTestService ExecuteMultiplayerTestAsync client-count range. | [1, 8] | clients | documented | cd:reference/engine/classes/StudioTestService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 130,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-test-service-sessions"
+      ],
+      "text": "| `studio-test-service-sessions`: Maximum simultaneous multiplayer test sessions per Studio instance. | 1 | session/Studio instance | documented | cd:reference/engine/classes/StudioTestService | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 131,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-test-service-security"
+      ],
+      "text": "| `studio-test-service-security`: ExecuteMultiplayerTestAsync requires plugin security. | PluginSecurity | API security | documented | api:StudioTestService.ExecuteMultiplayerTestAsync | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 132,
+      "mentions": [
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-mcp-script-search"
+      ],
+      "text": "| `studio-mcp-script-search`: Studio MCP script_search maximum results. | 10 | results | documented | cd:studio/mcp | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 133,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-mcp-script-grep"
+      ],
+      "text": "| `studio-mcp-script-grep`: Studio MCP script_grep maximum matches. | 50 | matches | documented | cd:studio/mcp | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 134,
+      "mentions": [
+        "200",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "text-channel-metadata"
+      ],
+      "text": "| `text-channel-metadata`: TextChannel SendAsync metadata limit; longer metadata prevents delivery to other users. | 200 | characters | documented | cd:reference/engine/classes/TextChannel | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 140,
+      "mentions": [
+        "28",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "physics-stud-length"
+      ],
+      "text": "| `physics-stud-length`: Metric length corresponding to one stud. | 28 | centimeters/stud | documented | cd:physics/units | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 141,
+      "mentions": [
+        "21.952",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "physics-mass-unit"
+      ],
+      "text": "| `physics-mass-unit`: Metric mass corresponding to one Roblox Mass Unit. | 21.952 | kilograms/RMU | documented | cd:physics/units | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 142,
+      "mentions": [
+        "196.2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "physics-default-gravity"
+      ],
+      "text": "| `physics-default-gravity`: Default gravity. | 196.2 | studs/second² | default | cd:physics/units | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 143,
+      "mentions": [
+        "9007199254740992",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "luau-exact-integers"
+      ],
+      "text": "| `luau-exact-integers`: Integers up to this magnitude are exactly representable by Luau numbers. | 9007199254740992 | integer magnitude | documented | [pinned source](https://luau.org/getting-started/syntax) | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 149,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-script-size"
+      ],
+      "text": "| `open-cloud-luau-script-size`: Maximum Open Cloud Luau Execution script size. | 4 | MB | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 150,
+      "mentions": [
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-runtime"
+      ],
+      "text": "| `open-cloud-luau-runtime`: Maximum Open Cloud Luau Execution script runtime. | 5 | minutes | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 151,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-return-size"
+      ],
+      "text": "| `open-cloud-luau-return-size`: Maximum JSON-serialized return value size. | 4 | MB | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 152,
+      "mentions": [
+        "450",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-log-retention-size"
+      ],
+      "text": "| `open-cloud-luau-log-retention-size`: Maximum retained log data; older logs are discarded on overflow. | 450 | KB | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 153,
+      "mentions": [
+        "24",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-task-retention"
+      ],
+      "text": "| `open-cloud-luau-task-retention`: Task information retention after completion. | 24 | hours | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 154,
+      "mentions": [
+        "429",
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-incomplete-tasks"
+      ],
+      "text": "| `open-cloud-luau-incomplete-tasks`: Maximum incomplete tasks per place; further creation returns HTTP 429. | 10 | tasks/place | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 54,
+      "mentions": [
+        "0",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| Toy/plastic materials | SmoothPlastic/Plastic everywhere, EnvironmentSpecularScale 0, no roughness variation | real materials/MaterialVariants/SurfaceAppearance, specular scale ≥ 0.5, roughness variety |",
+      "covered": false
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 43,
+      "mentions": [
+        "0.75",
+        "0.05",
+        "10",
+        "0.75",
+        "0.2"
+      ],
+      "fact_ids": [],
+      "text": "| `DepthOfFieldEffect` | Far 0.75, FocusDistance 0.05, InFocusRadius 10, Near 0.75 | cinematics, menus, photo mode; gameplay: FarIntensity ≤ 0.2 with large InFocusRadius | hides enemies/information; cost on mobile |",
+      "covered": false
+    },
+    {
+      "path": "handbook/graphics/03-local-lights.md",
+      "line": 18,
+      "mentions": [
+        "180"
+      ],
+      "fact_ids": [],
+      "text": "| `SpotLight` | cone, `Angle` (≤180), `Face`, `Range` | Attachment/BasePart | flashlights, street lamps, stage lights |",
+      "covered": false
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 20,
+      "mentions": [
+        "4",
+        "5",
+        "8",
+        "9",
+        "10"
+      ],
+      "fact_ids": [],
+      "text": "| Door opening | 4–5 wide × 8–9 tall | official environment-art sample keeps doorways/hallways ≥ 10 studs wide for third-person camera clearance |",
+      "covered": false
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 21,
+      "mentions": [
+        "255"
+      ],
+      "fact_ids": [],
+      "text": "| `Highlight` | outlines / x-ray feedback | ≤ 255 active per client |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/03-networking.md",
+      "line": 19,
+      "mentions": [
+        "1000",
+        "500"
+      ],
+      "fact_ids": [],
+      "text": "| `UnreliableRemoteEvent` | same API | may drop, may reorder | no | payload > **1000 bytes is dropped**; shares its own ≈500 req/s budget; for continuous cosmetic data |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/03-networking.md",
+      "line": 160,
+      "mentions": [
+        "500",
+        "10",
+        "20"
+      ],
+      "fact_ids": [],
+      "text": "| `FireServer` every `RenderStepped` | hits 500/s cap with other traffic; wasted bandwidth | send on change, cap at 10–20 Hz, unreliable |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/05-server-authority.md",
+      "line": 34,
+      "mentions": [
+        "64",
+        "50",
+        "50"
+      ],
+      "fact_ids": [],
+      "text": "| Attribute replication limits | first 64 attributes per Instance, name ≤ 50 chars, string values ≤ 50 chars |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 18,
+      "mentions": [
+        "45"
+      ],
+      "fact_ids": [],
+      "text": "| **Temporary distributed** | seconds–days (TTL ≤ 45 days) | `MemoryStoreService` (hash map, sorted map, queue) | matchmaking queues, global event counters, server browser, locks, caches |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 27,
+      "mentions": [
+        "4,194,304"
+      ],
+      "fact_ids": [],
+      "text": "| Value size per key | 4,194,304 characters (JSON-serialized length) |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 28,
+      "mentions": [
+        "50"
+      ],
+      "fact_ids": [],
+      "text": "| Key / data store name / scope | 50 characters each |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 29,
+      "mentions": [
+        "300"
+      ],
+      "fact_ids": [],
+      "text": "| Metadata | 300 characters total |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 30,
+      "mentions": [
+        "60",
+        "40",
+        "5",
+        "2",
+        "30",
+        "5"
+      ],
+      "fact_ids": [],
+      "text": "| Server default rate (per minute) | Standard read and write: `60 + 40 × players` each; list `5 + 2 × players`; ordered write `30 + 5 × players` — configurable with `DataStoreService:SetRateLimitForRequestType()`; check `GetRequestBudgetForRequestType()` |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 31,
+      "mentions": [
+        "300",
+        "40",
+        "300",
+        "20",
+        "300",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Experience-wide rate (per minute) | read `300 + 40 × CCU`, write `300 + 20 × CCU`, list `300 + 2 × CCU` (shared with Open Cloud) |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 32,
+      "mentions": [
+        "25",
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| Per-key throughput | read 25 MB/min, write 4 MB/min (rounded up per KB per request) |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 33,
+      "mentions": [
+        "30",
+        "301",
+        "306"
+      ],
+      "fact_ids": [],
+      "text": "| Queue | 30 requests per queue; beyond → dropped with errors 301–306 |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 34,
+      "mentions": [
+        "500",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| Storage | 500 MB + 1 MB × lifetime users (compressed latest versions) |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 35,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| `GetAsync` cache | 4 s local cache; `DataStoreGetOptions.UseCache = false` to bypass for verification |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 37,
+      "mentions": [
+        "30"
+      ],
+      "fact_ids": [],
+      "text": "| `BindToClose` | ~30 s for all callbacks at shutdown |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 56,
+      "mentions": [
+        "10",
+        "15"
+      ],
+      "fact_ids": [],
+      "text": "| **Lean** | camera offset + roll ≤ 10–15°, upper-torso animation; for PvP, send lean state to the server (hitbox/peek fairness) | motion sickness; collision of camera with walls |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 46,
+      "mentions": [
+        "10k",
+        "128"
+      ],
+      "fact_ids": [],
+      "text": "| **Script Sync** (built-in) | scripts on disk ↔ Studio, everything else in the place | Git for code, keeps Studio for building, works with Team Create | only Script/LocalScript/ModuleScript/Folder sync; attributes/tags on scripts are **not** synced (don't sync tagged scripts); limits 10k scripts per root, 128 roots |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/24-studio-mcp-testing.md",
+      "line": 27,
+      "mentions": [
+        "10",
+        "50"
+      ],
+      "fact_ids": [],
+      "text": "| Scripts | `script_read`, `multi_edit`, `script_search` (≤ 10 results), `script_grep` (≤ 50 matches) | `multi_edit` needs `datamodel_type` Edit and creates the script if missing |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/24-studio-mcp-testing.md",
+      "line": 32,
+      "mentions": [
+        "2026",
+        "04",
+        "50",
+        "beta"
+      ],
+      "fact_ids": [],
+      "text": "| Subagents | `subagent` type `explore` or `playtest` | playtest agent = Studio beta (2026-04), ≤ 50 turns, daily cap |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/24-studio-mcp-testing.md",
+      "line": 111,
+      "mentions": [
+        "60",
+        "256",
+        "2026",
+        "06",
+        "beta"
+      ],
+      "fact_ids": [],
+      "text": "| Frame breakdown | MicroProfiler dumps (`microprofile-<date>-<time>.html`); Developer Console server capture ≤ 60 frames | LibMP (MicroProfiler API, `.gprx`/buffers, ≤ 256 frames) is a **Studio beta** since 2026-06 |",
+      "covered": false
+    },
+    {
+      "path": "handbook/roblox/26-chat-leaderboards.md",
+      "line": 70,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| Global top N | `OrderedDataStore` (integer values) → `GetSortedAsync(ascending, pageSize ≤ 100, min?, max?)` → `DataStorePages`; read `GetCurrentPage()`, `AdvanceToNextPageAsync()` only while needed |",
+      "covered": false
+    }
+  ],
+  "review_candidates": [
+    {
+      "path": "SKILL.md",
+      "line": 1,
+      "mentions": [
+        "4.0",
+        "3.10",
+        "2.1.0",
+        "2026",
+        "10",
+        "02",
+        "0.741.19"
+      ],
+      "fact_ids": [],
+      "text": "---\nname: tk-luau-roblox\ndescription: >-\n  Modern Roblox Studio + Luau engineering: architecture, networking/security, DataStores, monetization, chat,\n  performance, combat, NPC AI, UI, audio, streaming, procedural generation, lighting/graphics, legacy-code\n  modernization and verification through the Studio MCP server. Includes a generated engine API index with a lookup\n  tool, a verified legacy→current catalog, typechecked end-to-end recipes and evals. Use for writing, reviewing,\n  debugging, testing or modernizing Roblox code (Luau, Rojo, RemoteEvents, DataStores) and for scene lighting/art\n  direction.\nlicense: Text CC-BY-4.0, code MIT (see NOTICE.md)\ncompatibility: Python 3.10+ for the bundled tools. Roblox Studio (optionally with its MCP server) for engine tests.\nmetadata:\n  version: \"2.1.0\"\n  snapshot: \"2026-10-02\"\n  engine-api: \"0.741.19\"\n  creator-docs: \"578b33e\"\n  luau-site: \"a60a627\"\n---"
+    },
+    {
+      "path": "SKILL.md",
+      "line": 38,
+      "mentions": [
+        "1",
+        "2",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "fact_ids": [],
+      "text": "1. **Inspect the project** before writing: structure (services/folders, Rojo or Studio-only), manifests and locks\n   (`default.project.json`, `wally.toml`, `pesde.toml`), frameworks already in use (Knit, Fusion, React, ECS, Blink/Zap,\n   ProfileStore… → [ecosystem](references/ecosystem.md)), Luau mode (`--!strict`?), target devices. Follow what exists.\n2. **Categorize** the task → pick 1–2 tracks from [tracks/INDEX.md](tracks/INDEX.md); load only those files.\n3. **Check API freshness** for every engine API you plan to use: `python3 \"$SKILL/tools/api.py\" Class.Member`\n   (existence, security, deprecation, writable by game scripts, yields, undocumented). Old code → `tools/scan_legacy.py`.\n4. **Inspect the architecture** the change touches: who owns the state (server/client), what replicates, lifetimes.\n5. **Choose the smallest correct design**: a recipe if one fits ([recipes/INDEX.md](recipes/INDEX.md)); no new\n   frameworks — but inside a project that already uses one, write code its way.\n6. **Implement** with `--!strict`, explicit cleanup, server authority, and code that reads like the project's code.\n7. **Validate client/server/security**: payload validation, rate limits, streaming (instances may be missing),\n   respawn/rejoin, failure paths (DataStore errors, receipt retries, teleport failures).\n8. **Test** with the strongest tool you actually have:\n   - always: typecheck / Luau CLI tests for pure logic;\n   - **Studio MCP tools connected** (`list_roblox_studios`, `execute_luau`, `start_stop_play`, …): run the\n     reproduce → fix → verify loop in [Studio MCP testing](handbook/roblox/24-studio-mcp-testing.md) — target the\n     place by `studio_id`, reproduce first, patch the durable source, re-run the same check, keep the artifacts;\n   - otherwise give the user exact Studio steps (Server & Clients for anything networked).\n9. **Report honestly** (template below): evidence level per claim, what ran, what didn't, assumptions, risks."
+    },
+    {
+      "path": "SKILL.md",
+      "line": 59,
+      "mentions": [
+        "deprecated",
+        "superseded",
+        "beta"
+      ],
+      "fact_ids": [],
+      "text": "- **Never invent APIs.** If `tools/api.py` says NOT FOUND, it doesn't exist. Mark `deprecated`, `superseded`,\n  `beta`, `plugin-only`, `undocumented` APIs as such when you mention them."
+    },
+    {
+      "path": "SKILL.md",
+      "line": 115,
+      "mentions": [
+        "deprecated"
+      ],
+      "fact_ids": [],
+      "text": "| `api.py Humanoid --all` / `Enum.KeyCode` / `--search Pathfinding` / `--deprecated Humanoid` | class listing, enums, search, deprecations |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 34,
+      "mentions": [
+        "14",
+        "00"
+      ],
+      "fact_ids": [],
+      "text": "| `ClockTime` / `TimeOfDay`, `GeographicLatitude` | sun/moon direction, sky colour | set the key light angle (low sun = long shadows, warm) | noon sun (14:00) flattens everything |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 35,
+      "mentions": [
+        "2",
+        "3",
+        "1",
+        "1.5",
+        "0",
+        "0.3"
+      ],
+      "fact_ids": [],
+      "text": "| `Brightness` | sun/moon (directional key light) intensity | day 2–3, overcast 1–1.5, night 0–0.3 | cranking it to fix dark interiors (sun doesn't reach them) |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 36,
+      "mentions": [
+        "−1",
+        "+0.5"
+      ],
+      "fact_ids": [],
+      "text": "| `ExposureCompensation` | whole-image exposure before tonemapping | final balance: −1…+0.5 | using ColorCorrection.Brightness instead (clips/looks cheap) |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 37,
+      "mentions": [
+        "0",
+        "1",
+        "1",
+        "0.2",
+        "0.6",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `EnvironmentDiffuseScale` (0–1) | image-based ambient light from the **sky** onto surfaces | 1 outdoors for natural fill; 0.2–0.6 interiors | 0 + high Ambient = flat plastic look |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 38,
+      "mentions": [
+        "0",
+        "1",
+        "1",
+        "0.2",
+        "0.5",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `EnvironmentSpecularScale` (0–1) | sky **reflections** on smooth/metal surfaces | 1 outdoors (metals look like metal); 0.2–0.5 in sealed interiors (otherwise bright sky reflects in a dark room) | 0 makes metal look like grey plastic |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 39,
+      "mentions": [
+        "70",
+        "130",
+        "20",
+        "40"
+      ],
+      "fact_ids": [],
+      "text": "| `OutdoorAmbient` | flat fill in areas open to the sky | 70–130 grey (day), 20–40 bluish (night) | too high → washed out exteriors |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 40,
+      "mentions": [
+        "0",
+        "30",
+        "1",
+        "128,128,128"
+      ],
+      "fact_ids": [],
+      "text": "| `Ambient` | flat fill **everywhere**, including enclosed interiors | 0–30 for realistic/horror interiors; higher only for stylized | the #1 cause of the \"cheap Roblox look\": grey (128,128,128) ambient kills contrast and hides light direction |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 43,
+      "mentions": [
+        "0.1",
+        "0.3",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| `ShadowSoftness` | penumbra softness (Realistic) | 0.1–0.3 crisp daylight; 0.5+ overcast | |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 51,
+      "mentions": [
+        "0",
+        "30"
+      ],
+      "fact_ids": [],
+      "text": "| Everything evenly lit, no depth | high `Ambient`/`OutdoorAmbient`, no key light direction | lower ambient (0–30 interior), add a motivated key (window/lamp), let shadows exist |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 52,
+      "mentions": [
+        "0",
+        "0",
+        "0.05",
+        "0.15"
+      ],
+      "fact_ids": [],
+      "text": "| Grey, milky image | Atmosphere `Haze`/`Density` too high, `ExposureCompensation` too high, ColorCorrection Brightness > 0 | reduce haze, lower exposure, keep CC Brightness ≈ 0, add slight Contrast (0.05–0.15) |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 53,
+      "mentions": [
+        "1.5",
+        "2",
+        "0.2",
+        "0.6"
+      ],
+      "fact_ids": [],
+      "text": "| Everything glows | Bloom `Threshold` too low / Intensity too high; Neon everywhere | Threshold ≥ ~1.5–2 so only emissives/brightest pixels bloom, Intensity 0.2–0.6 |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 55,
+      "mentions": [
+        "0",
+        "70",
+        "−0.1",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Oversaturated neon candy | saturated part colours + Saturation > 0 + saturated lights | desaturate base colours (real materials are rarely > 70 % saturated), CC Saturation −0.1…0, keep light colours near-white with slight temperature |"
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 56,
+      "mentions": [
+        "0.1",
+        "0.3"
+      ],
+      "fact_ids": [],
+      "text": "| Flat night | pure blue ambient everywhere | dark ambient, a single moon key (Brightness 0.1–0.3, cool), warm practical lights for contrast |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 15,
+      "mentions": [
+        "0.395",
+        "0.25",
+        "0.35",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.8"
+      ],
+      "fact_ids": [],
+      "text": "| `Density` [0.395] | amount of particles; obscures distant objects (and sky behind them) | clear day 0.25–0.35; hazy 0.4–0.5; fog 0.6–0.8 (combine with low Offset) |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 16,
+      "mentions": [
+        "0",
+        "0",
+        "0.25"
+      ],
+      "fact_ids": [],
+      "text": "| `Offset` [0] | light transmission camera↔sky: high = horizon silhouette, low = distant objects blend into sky | 0–0.25 for seamless open worlds; higher for crisp skylines |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 17,
+      "mentions": [
+        "0",
+        "0",
+        "2",
+        "3"
+      ],
+      "fact_ids": [],
+      "text": "| `Haze` [0] | haziness above horizon & into distance, tinted by `Color` | 0–2 typical; > 3 gets milky fast |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 18,
+      "mentions": [
+        "200,170,108"
+      ],
+      "fact_ids": [],
+      "text": "| `Color` [200,170,108] | atmosphere hue (visible with Haze) | match sky/sun colour: warm for sunset, blue-grey for overcast, green-grey for toxic |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 19,
+      "mentions": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| `Glare` [0] | glow around the sun (needs Haze > 0) | 0–1 subtle; high for desert/sunset drama |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 20,
+      "mentions": [
+        "92,60,14",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `Decay` [92,60,14] | hue away from the sun (needs Haze and Glare > 0) | darker/cooler than Color for gradient skies |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 40,
+      "mentions": [
+        "0.4",
+        "24",
+        "0.95",
+        "1.5",
+        "2.5",
+        "0.2",
+        "0.6",
+        "16",
+        "32"
+      ],
+      "fact_ids": [],
+      "text": "| `BloomEffect` | Intensity 0.4, Size 24, Threshold 0.95 | Threshold 1.5–2.5, Intensity 0.2–0.6, Size 16–32 → only lamps/emissives/sun glint bloom | low threshold = everything glows (amateur look) |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 41,
+      "mentions": [
+        "0",
+        "0",
+        "0",
+        "0.05",
+        "0.2",
+        "−0.2",
+        "0.05",
+        "255,245,235",
+        "235,242,255"
+      ],
+      "fact_ids": [],
+      "text": "| `ColorCorrectionEffect` | Brightness 0, Contrast 0, Saturation 0, TintColor white | Contrast 0.05–0.2, Saturation −0.2…0.05, TintColor very slight (e.g. 255,245,235 warm / 235,242,255 cool) | using Brightness for exposure (clips), strong tints |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 42,
+      "mentions": [
+        "2019"
+      ],
+      "fact_ids": [],
+      "text": "| `ColorGradingEffect` | TonemapperPreset Default | `Default` = modern vivid/high contrast; `Retro` = pre-2019 low-contrast look | not a LUT system; only presets |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 44,
+      "mentions": [
+        "0.25",
+        "1",
+        "0.02",
+        "0.1",
+        "0.2",
+        "0.6"
+      ],
+      "fact_ids": [],
+      "text": "| `SunRaysEffect` | Intensity 0.25, Spread 1 | Intensity 0.02–0.1, Spread 0.2–0.6 for realism | default is strong; rays through every tree |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 45,
+      "mentions": [
+        "24"
+      ],
+      "fact_ids": [],
+      "text": "| `BlurEffect` | Size 24 | menus/pauses (in Camera for local player) | leaving it on after closing menu |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 52,
+      "mentions": [
+        "12",
+        "13",
+        "2.5",
+        "3",
+        "110",
+        "1",
+        "1",
+        "0.3",
+        "0.1",
+        "0.5",
+        "0.08",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Clear midday | ClockTime 12–13, Brightness 2.5–3, OutdoorAmbient 110, EnvDiffuse 1, EnvSpec 1 | Density 0.3, Offset 0.1, Haze 0.5 | CC Contrast 0.08, Bloom thr 2 |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 53,
+      "mentions": [
+        "17.5",
+        "18.2",
+        "2",
+        "255,200,150",
+        "0.35",
+        "1.5",
+        "2.5",
+        "0.5",
+        "1",
+        "0.05"
+      ],
+      "fact_ids": [],
+      "text": "| Golden hour / sunset | ClockTime 17.5–18.2, Brightness 2, ColorShift_Top warm (255,200,150) subtle | Density 0.35, Haze 1.5–2.5, Glare 0.5–1, Color warm orange, Decay dark purple | CC TintColor slight warm, SunRays 0.05 |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 54,
+      "mentions": [
+        "13",
+        "1",
+        "1.3",
+        "0.6",
+        "0.45",
+        "2",
+        "3",
+        "−0.15",
+        "0.05"
+      ],
+      "fact_ids": [],
+      "text": "| Overcast / rain | ClockTime 13, Brightness 1–1.3, ShadowSoftness 0.6+ | Density 0.45, Haze 2–3, Color grey-blue | CC Saturation −0.15, Contrast 0.05; rain particles + wet materials (lower roughness) |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 55,
+      "mentions": [
+        "1",
+        "0.6",
+        "0.8",
+        "0",
+        "0.1",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Fog / mist | Brightness 1, low sun | Density 0.6–0.8, Offset 0–0.1, Haze 2 | keep exposure moderate; add ground fog cards sparingly |"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 56,
+      "mentions": [
+        "0",
+        "2",
+        "0.15",
+        "0.3",
+        "25,30,45",
+        "5,5,8",
+        "0.35",
+        "0.5",
+        "−0.2"
+      ],
+      "fact_ids": [],
+      "text": "| Moonlit night | ClockTime 0–2, Brightness 0.15–0.3, OutdoorAmbient (25,30,45), Ambient ~(5,5,8) | Density 0.35, Color cool, Haze 0.5 | CC Saturation −0.2, cool tint; warm practicals for contrast |"
+    },
+    {
+      "path": "handbook/graphics/04-materials-pbr.md",
+      "line": 17,
+      "mentions": [
+        "10",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| `MaterialVariant` in `MaterialService` (custom tileable PBR) | ColorMap/NormalMap/RoughnessMap/MetalnessMap (+emissive), `StudsPerTile` [10], `MaterialPattern` (`Regular` / `Organic` = less visible tiling), `BaseMaterial` (physics), `AlphaMode` | reusable walls, floors, terrain overrides; \"adaptive materials\" (parts reference the variant **by name** via `BasePart.MaterialVariant`) | swap `part.MaterialVariant = \"Name\"` (the scriptable property is tagged NotReplicated with a hidden serialized twin — verify runtime changes replicate in a 2-client test, or set it on each client); create variants at edit time |"
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 21,
+      "mentions": [
+        "8",
+        "12",
+        "6",
+        "8"
+      ],
+      "fact_ids": [],
+      "text": "| Corridor | 8–12 wide (first person: 6–8 feels tight/claustrophobic) | wider for third-person cameras and combat |"
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 22,
+      "mentions": [
+        "10",
+        "14",
+        "11",
+        "12",
+        "8",
+        "9",
+        "20",
+        "40"
+      ],
+      "fact_ids": [],
+      "text": "| Room ceiling | 10–14 | offices ~11–12; lower (8–9) = oppressive; halls/warehouses 20–40 |"
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 23,
+      "mentions": [
+        "0.8",
+        "1",
+        "1.5",
+        "2",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Stair step | rise 0.8–1, run 1.5–2 | Humanoid climbs ≤ ~2 stud steps; use invisible ramps for smooth movement |"
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 24,
+      "mentions": [
+        "3",
+        "3.5",
+        "3.5",
+        "2.5",
+        "3"
+      ],
+      "fact_ids": [],
+      "text": "| Railing / counter / table height | 3–3.5 / 3.5 / 2.5–3 | |"
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 25,
+      "mentions": [
+        "1.8",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Chair seat | ~1.8–2 | |"
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 26,
+      "mentions": [
+        "2.5",
+        "3"
+      ],
+      "fact_ids": [],
+      "text": "| Window sill | 2.5–3 | |"
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 27,
+      "mentions": [
+        "0.5",
+        "1",
+        "1",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Wall thickness | 0.5–1 (interior), 1–2 (exterior) | thin walls leak light and break shadows |"
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 16,
+      "mentions": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "1024²"
+      ],
+      "fact_ids": [],
+      "text": "| `ParticleEmitter` (in a part = volume/surface emission; in an Attachment = point) | smoke, dust, sparks, rain, fire | `Rate`, `Lifetime` (NumberRange), `Speed`, `SpreadAngle`, `Acceleration`, `Drag`, `Size`/`Transparency` (NumberSequence), `Color` (ColorSequence), `LightEmission` (additive 0–1), `LightInfluence` (how scene light affects it 0–1), `Brightness`, `Orientation`, `Squash`, `ZOffset`, `FlipbookLayout`/`FlipbookMode` (texture must be 1024² for flipbooks), `Shape`/`ShapeStyle`, `LockedToPart`, `VelocityInheritance`, `TimeScale`, `WindAffectsDrag` |"
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 17,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `ParticleEmitter:Emit(n)` | one-shot bursts (impacts, muzzle flash) with `Rate = 0` | |"
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 22,
+      "mentions": [
+        "0",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `Fire`/`Smoke`/`Sparkles`/`Explosion` | legacy quick effects | prefer ParticleEmitter for control; `Explosion` also applies physics/kills unless `DestroyJointRadiusPercent = 0` / `BlastPressure = 0` |"
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 29,
+      "mentions": [
+        "0.25",
+        "0.5",
+        "1",
+        "1.25"
+      ],
+      "fact_ids": [],
+      "text": "| Particle `Rate` multiplier | 0.25 | 0.5 | 1 | 1.25 |"
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 31,
+      "mentions": [
+        "0",
+        "1",
+        "2",
+        "4",
+        "6"
+      ],
+      "fact_ids": [],
+      "text": "| Shadowed local lights (your content) | 0–1 (flashlight only) | 2 | 4 | 6+ |"
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 37,
+      "mentions": [
+        "25",
+        "50",
+        "100",
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| Decoration density (grass cards, clutter props) | 25 % | 50 % | 100 % | 100 % |"
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 38,
+      "mentions": [
+        "0.5",
+        "0.75",
+        "1",
+        "1.5"
+      ],
+      "fact_ids": [],
+      "text": "| Your LOD swap distance | ×0.5 | ×0.75 | ×1 | ×1.5 |"
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 39,
+      "mentions": [
+        "40",
+        "80",
+        "150",
+        "250"
+      ],
+      "fact_ids": [],
+      "text": "| NPC animation distance (client) | 40 | 80 | 150 | 250 studs |"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 27,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Only `nil` and `false` are falsy | `0`, `\"\"`, `{}` are truthy. `x or default` breaks when `false` is valid → use `if x == nil then default else x`. |"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 28,
+      "mentions": [
+        "754",
+        "2^53",
+        "0.1",
+        "0.2",
+        "0.3"
+      ],
+      "fact_ids": [],
+      "text": "| One number type: IEEE-754 double | Integers exact to 2^53. Money/ids above that lose precision; store large ids as strings. `0.1 + 0.2 ~= 0.3`. |"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 29,
+      "mentions": [
+        "2025"
+      ],
+      "fact_ids": [],
+      "text": "| `NaN ~= NaN` | `n ~= n` detects NaN. `math.isnan/isinf/isfinite` exist (Luau 2025+, Roblox docs list them). |"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 83,
+      "mentions": [
+        "1",
+        "5.4",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| `local x <const> = 1` (5.4) | `const x = 1` (Luau const binding; binding only, value still mutable) |"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 86,
+      "mentions": [
+        "5.3",
+        "removed"
+      ],
+      "fact_ids": [],
+      "text": "| `math.pow` | removed in 5.3+, exists in Luau but use `^` |"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 88,
+      "mentions": [
+        "3.7",
+        "3"
+      ],
+      "fact_ids": [],
+      "text": "| `string.format(\"%d\", 3.7)` | truncates to `3` (no rounding) → `math.round` first if you mean rounding |"
+    },
+    {
+      "path": "handbook/luau/02-types.md",
+      "line": 28,
+      "mentions": [
+        "06"
+      ],
+      "fact_ids": [],
+      "text": "| `--!native` | request native codegen for the script (performance, not typing) — see [06](06-performance-memory.md) |"
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 16,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| Type annotations | `local hp: number = 100` | [types](02-types.md) |"
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 17,
+      "mentions": [
+        "100",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| `const` binding | `const MAX = 100` | binding cannot be reassigned; table contents still mutable; `const` is contextual (old `local const = 1` still parses) |"
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 18,
+      "mentions": [
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| Compound assignment | `n += 1`, `s ..= \"x\"` | statement only |"
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 20,
+      "mentions": [
+        "50"
+      ],
+      "fact_ids": [],
+      "text": "| If-expression | `local c = if hp > 50 then \"ok\" else \"low\"` | use instead of `a and b or c` |"
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 23,
+      "mentions": [
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Floor division | `x // 2` | floors toward −∞ |"
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 24,
+      "mentions": [
+        "deprecated",
+        "deprecated"
+      ],
+      "fact_ids": [],
+      "text": "| Function attributes | `@native local function hot() end`, `@deprecated` | `@native` = native codegen hint; `@deprecated` makes the linter warn callers |"
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 25,
+      "mentions": [
+        "5"
+      ],
+      "fact_ids": [],
+      "text": "| Explicit generic instantiation | `identity<<number>>(5)` | rarely needed |"
+    },
+    {
+      "path": "handbook/luau/04-patterns-data.md",
+      "line": 21,
+      "mentions": [
+        "12"
+      ],
+      "fact_ids": [],
+      "text": "| Polymorphism | table of handlers keyed by kind | `if kind == ... elseif` in 12 places |"
+    },
+    {
+      "path": "handbook/luau/05-coroutines-task-errors.md",
+      "line": 29,
+      "mentions": [
+        "05"
+      ],
+      "fact_ids": [],
+      "text": "| Fixed-rate deterministic simulation (server authority) | `RunService:BindToSimulation(fn, frequency)` ([05-server-authority](../roblox/05-server-authority.md)) |"
+    },
+    {
+      "path": "handbook/luau/05-coroutines-task-errors.md",
+      "line": 32,
+      "mentions": [
+        "0.5",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| Periodic low-rate work (every 0.5 s) | a single loop with `task.wait(0.5)` or accumulator on Heartbeat, not one thread per object |"
+    },
+    {
+      "path": "handbook/roblox/03-networking.md",
+      "line": 18,
+      "mentions": [
+        "500"
+      ],
+      "fact_ids": [],
+      "text": "| `RemoteEvent` | C→S `FireServer`, S→C `FireClient`/`FireAllClients` | reliable, ordered (per remote) | no | client→server ≈500 req/s per client **shared by all RemoteEvents**; handler on server gets `player` first |"
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 42,
+      "mentions": [
+        "1",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| **Numbers** | `x == x` (NaN), `math.isfinite`, integer `x % 1 == 0`, range | NaN passes `<`/`>` checks silently — test explicitly |"
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 45,
+      "mentions": [
+        "1",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| **Tables** | shape: exact keys, max length, max depth 1–2 | reject unknown keys |"
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 46,
+      "mentions": [
+        "2",
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| **Interaction** | distance from server-side character root to target ≤ range + latency slack (2–4 studs), target enabled, cooldown | use target's pivot/closest point for big objects |"
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 135,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| type/range/rate | ~0 | every remote call |"
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 136,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| distance | ~0 | every interaction/attack |"
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 139,
+      "mentions": [
+        "2",
+        "10",
+        "60"
+      ],
+      "fact_ids": [],
+      "text": "| per-frame movement validation of all players | medium–high | competitive games; sample 2–10 Hz, not 60 |"
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "line": 47,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| `updateInvalidatedFastClusters` (> 4 ms) | avatar/skinned mesh rebuilds | avoid resizing/re-parenting avatar parts; pool NPCs; animate via `Motor6D.Transform`, not C0/C1 |"
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "line": 65,
+      "mentions": [
+        "5",
+        "20"
+      ],
+      "fact_ids": [],
+      "text": "| Expensive work bound to `Heartbeat/PreRender` | run at 5–20 Hz with an accumulator; event-driven where possible |"
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "line": 66,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| One connection per object per frame (100 NPC scripts each on Heartbeat) | one manager loop iterating a registry; LOD tick rates by distance |"
+    },
+    {
+      "path": "handbook/roblox/09-physics.md",
+      "line": 98,
+      "mentions": [
+        "15,000"
+      ],
+      "fact_ids": [],
+      "text": "| Ray | `workspace:Raycast(origin, direction, params)` | direction length = distance (max 15,000 studs); returns `RaycastResult?` (`Instance`, `Position`, `Normal`, `Distance`, `Material`) |"
+    },
+    {
+      "path": "handbook/roblox/10-streaming.md",
+      "line": 33,
+      "mentions": [
+        "64"
+      ],
+      "fact_ids": [],
+      "text": "| `StreamingMinRadius` (default 64) | always-kept radius, highest priority | raise carefully (memory + server bandwidth) |"
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 29,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| Fill primitives | `FillBlock(cframe, size, material)`, `FillBall(center, r, material)`, `FillCylinder(cf, h, r, mat)`, `FillWedge(cf, size, mat)`, `FillRegion(region3, 4, mat)` |"
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 31,
+      "mentions": [
+        "4",
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| Bulk read/write | `ReadVoxels(region, 4)` / `WriteVoxels(region, 4, materials, occupancies)` (3D arrays `[x][y][z]`) |"
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 32,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| Channel read/write (incl. water) | `ReadVoxelChannels(region, 4, {\"SolidMaterial\",\"SolidOccupancy\",\"LiquidOccupancy\"})` / `WriteVoxelChannels` |"
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 33,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| Replace material | `ReplaceMaterial(region, 4, from, to)` |"
+    },
+    {
+      "path": "handbook/roblox/12-procedural-generation.md",
+      "line": 67,
+      "mentions": [
+        "5",
+        "15"
+      ],
+      "fact_ids": [],
+      "text": "| Classic maze (single path feel) | recursive backtracker / randomized Prim / Kruskal (union-find) | perfect maze = tree; add loops by removing extra walls (5–15 %) |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 17,
+      "mentions": [
+        "stable"
+      ],
+      "fact_ids": [],
+      "text": "| **Humanoid** (default) | stable | almost everything; well understood; animations/tools/seats work |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 18,
+      "mentions": [
+        "stable"
+      ],
+      "fact_ids": [],
+      "text": "| Humanoid + custom logic (WalkSpeed, states, forces) | stable | sprint/crouch/slide/vault/lean on top of Humanoid (this chapter) |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 19,
+      "mentions": [
+        "stable"
+      ],
+      "fact_ids": [],
+      "text": "| `ControllerManager` + `GroundController`/`AirController`/`ClimbController`/`SwimController` + sensors | stable API, physics-based | custom physical characters, vehicles-like creatures; more work |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 20,
+      "mentions": [
+        "2026",
+        "04",
+        "08",
+        "2026",
+        "09",
+        "10",
+        "2026",
+        "10",
+        "01",
+        "2026",
+        "04",
+        "20",
+        "full release",
+        "beta",
+        "Beta"
+      ],
+      "fact_ids": [],
+      "text": "| Character Controller Library (CCL, `require(\"@rbx/AvatarAbilities\")`) | base library **full release 2026-04-08** (staff announcement); the 2026-09-10 additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **Studio beta**. Docs @ 2026-10-01 still enable it via File → Beta Features → \"AvatarAbilities Character Controller Library\" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` since 2026-04-20 — check copied code |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 21,
+      "mentions": [
+        "stable"
+      ],
+      "fact_ids": [],
+      "text": "| Fully custom (anchored root + CFrame) | stable | top-down/2D games, NPC crowds; you own collisions |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 48,
+      "mentions": [
+        "16",
+        "24",
+        "26",
+        "+5",
+        "8",
+        "0.15",
+        "0.5",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| **Sprint** | WalkSpeed 16→24–26, FOV +5–8 (tween 0.15 s), stamina drain server-side; only while moving forward-ish (`MoveDirection:Dot(lookVector) > 0.5`) | restore on death/respawn; stop when stamina 0; debounce toggle vs hold per settings |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 49,
+      "mentions": [
+        "1",
+        "1.5",
+        "2",
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| **Stamina** | server authoritative number, regen after delay (1–1.5 s); client predicts for UI | don't replicate every frame — send on start/stop + periodic correction (2–4 Hz) |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 50,
+      "mentions": [
+        "8",
+        "−1.5"
+      ],
+      "fact_ids": [],
+      "text": "| **Crouch** | lower `HipHeight`/play crouch anim, WalkSpeed ~8, camera offset −1.5; stand only if upward `Blockcast` from root finds no ceiling | R15 collision comes from body parts; test low vents; crouch-jump rules |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 51,
+      "mentions": [
+        "0.6",
+        "0.9"
+      ],
+      "fact_ids": [],
+      "text": "| **Slide** | from sprint: impulse/`LinearVelocity` along forward on the ground, decay over 0.6–0.9 s, lower camera, cooldown | slopes accelerate; stop on wall hit (raycast ahead); server tolerance for burst speed |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 53,
+      "mentions": [
+        "20"
+      ],
+      "fact_ids": [],
+      "text": "| **Fall damage** | on `Freefall` start record Y (or use `AssemblyLinearVelocity.Y` at `Landed`); damage = f(fall height beyond threshold, e.g. > 20 studs) applied **by the server** (server can observe the character's state/velocity which replicate from the owner) | exploiters can cancel their own fall; water/trampolines exempt |"
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 55,
+      "mentions": [
+        "3",
+        "0.3",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| **Vault / mantle** | 3 raycasts forward (knee, chest, head) + one down from above the obstacle to find top & height; if knee hit & head clear & height ≤ max: play animation and move root along a curve over 0.3–0.5 s (client), with collisions allowed on the path check | never teleport through walls: validate target space with `Blockcast`/`GetPartBoundsInBox`; server movement validator must allow vault bursts |"
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "line": 93,
+      "mentions": [
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| FPS | LockFirstPerson + LockCenter; hide own body parts locally (`LocalTransparencyModifier = 1`) or use a viewmodel; layered offsets on `BindToRenderStep` after Camera |"
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "line": 94,
+      "mentions": [
+        "1.75",
+        "0.5",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Third-person shoulder | `Humanoid.CameraOffset = Vector3.new(1.75, 0.5, 0)` + `AutoRotate` rules; or Scriptable orbit with collision (spherecast from pivot to desired position, pull in on hit) |"
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "line": 98,
+      "mentions": [
+        "90",
+        "100",
+        "120",
+        "16",
+        "9"
+      ],
+      "fact_ids": [],
+      "text": "| Bodycam | vertical FOV ~90–100 (very wide, ≈120°+ horizontal on 16:9), camera anchored to chest/shoulder attachment with lag spring, strong handheld noise at low frequency, slight roll, fisheye-like feel via FOV + DepthOfField/ColorCorrection/grain overlay — see recipe; keep a comfort toggle |"
+    },
+    {
+      "path": "handbook/roblox/16-animation.md",
+      "line": 93,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Doesn't play at all | wrong rig type (R6 clip on R15), asset permission, priority lower than locomotion, weight 0, track not loaded yet |"
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 34,
+      "mentions": [
+        "1080",
+        "0.6",
+        "1.4"
+      ],
+      "fact_ids": [],
+      "text": "| Global scale per device | one `UIScale` at the root, value computed from viewport size (e.g. `math.clamp(viewport.Y / 1080, 0.6, 1.4)`) |"
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 42,
+      "mentions": [
+        "0.5,0.5"
+      ],
+      "fact_ids": [],
+      "text": "| Anchor points | set `AnchorPoint` (0.5,0.5 for centered) before positioning |"
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 86,
+      "mentions": [
+        "0.1",
+        "0.2"
+      ],
+      "fact_ids": [],
+      "text": "| Health/stamina bar | frame with inner fill sized by scale; tween size over 0.1–0.2 s; lag bar (white) trailing for damage feedback |"
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 88,
+      "mentions": [
+        "0.3",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| Tooltip | single reusable tooltip frame repositioned to hovered element; delay 0.3–0.5 s; gamepad: show on selection |"
+    },
+    {
+      "path": "handbook/roblox/19-input.md",
+      "line": 16,
+      "mentions": [
+        "stable",
+        "beta"
+      ],
+      "fact_ids": [],
+      "text": "| **Input Action System**: `InputContext` → `InputAction` → `InputBinding` (Instances, edit-time configurable) | current, stable (`InputActionLabel` and the Input Action Manager tool are beta) | new projects; cross-device bindings; required for server authority simulation input |"
+    },
+    {
+      "path": "handbook/roblox/19-input.md",
+      "line": 17,
+      "mentions": [
+        "stable"
+      ],
+      "fact_ids": [],
+      "text": "| `ContextActionService:BindAction(name, fn, createTouchButton, ...inputs)` | stable | action-style bindings in code, auto touch buttons, priority stacking (`BindActionAtPriority`) |"
+    },
+    {
+      "path": "handbook/roblox/19-input.md",
+      "line": 18,
+      "mentions": [
+        "stable"
+      ],
+      "fact_ids": [],
+      "text": "| `UserInputService` events (`InputBegan/Changed/Ended`, `GetMouseDelta`, `IsKeyDown`) | stable, low-level | raw input, mouse delta, device detection, text focus |"
+    },
+    {
+      "path": "handbook/roblox/19-input.md",
+      "line": 19,
+      "mentions": [
+        "deprecated"
+      ],
+      "fact_ids": [],
+      "text": "| `Player:GetMouse()` / `Mouse` object | legacy (events deprecated in favour of UIS) | avoid in new code |"
+    },
+    {
+      "path": "handbook/roblox/20-npc-ai.md",
+      "line": 82,
+      "mentions": [
+        "disabled"
+      ],
+      "fact_ids": [],
+      "text": "| Humanoid with unused states disabled | lower | most enemies |"
+    },
+    {
+      "path": "handbook/roblox/20-npc-ai.md",
+      "line": 84,
+      "mentions": [
+        "10",
+        "20"
+      ],
+      "fact_ids": [],
+      "text": "| Anchored root moved by CFrame along path (server at 10–20 Hz) + client-side interpolation/animation | lowest | crowds, ambient NPCs |"
+    },
+    {
+      "path": "handbook/roblox/21-architecture.md",
+      "line": 16,
+      "mentions": [
+        "1",
+        "2k",
+        "1",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| Prototype / jam (< 1–2k lines) | 1 server entry + 1 client entry + a handful of ModuleScripts; tags + binders for world objects |"
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 47,
+      "mentions": [
+        "7.7",
+        "7.7"
+      ],
+      "fact_ids": [],
+      "text": "| **Rojo** (community, 7.7+) | the file system (`default.project.json`), including models (`.rbxm/.model.json`) | full Git/CI, packages via Wally/pesde | builders must sync assets carefully; 7.7 adds explicit syncback (Studio → disk), not automatic two-way sync |"
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 73,
+      "mentions": [
+        "2",
+        "3",
+        "1",
+        "8"
+      ],
+      "fact_ids": [],
+      "text": "| Multi-client | replication, authority, two players interacting with the same object, late join, rejoin | Studio **Server & Clients** (2–3 clients) or scripted `StudioTestService:ExecuteMultiplayerTestAsync` (1–8) |"
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 75,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| Adversarial | invalid payloads (NaN, huge numbers, wrong types, other players' instances), spam 100 req/s, out-of-range interactions | command bar on a client in Server & Clients (`remote:FireServer(...)`) |"
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 76,
+      "mentions": [
+        "100",
+        "300"
+      ],
+      "fact_ids": [],
+      "text": "| Network | 100–300 ms latency, packet loss; unreliable remotes under loss | Network Simulator |"
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 78,
+      "mentions": [
+        "10"
+      ],
+      "fact_ids": [],
+      "text": "| Performance | frame time p95, memory growth over 10+ min, server heartbeat | MicroProfiler, Dev Console, target devices |"
+    },
+    {
+      "path": "handbook/roblox/25-monetization.md",
+      "line": 29,
+      "mentions": [
+        "deprecated"
+      ],
+      "fact_ids": [],
+      "text": "| `MarketplaceService.ProcessReceipt` (callback) | `Enum.ProductPurchaseDecision.PurchaseGranted` / `NotProcessedYet` | the classic path; docs now call it \"legacy\" but it is not deprecated and still works |"
+    }
+  ],
+  "errors": [
+    "SKILL.md:122: unbound numeric/status mention: 0.741.19, 2026, 10, 01",
+    "SKILL.md:123: unbound numeric/status mention: 120, 255, −5, 5",
+    "SKILL.md:124: unbound numeric/status mention: deprecated",
+    "SKILL.md:125: unbound numeric/status mention: removed",
+    "SKILL.md:129: unbound numeric/status mention: superseded",
+    "SKILL.md:130: unbound numeric/status mention: 2026, 07, 09, 2026, 04, 08, 2026, 09, 10, fully released, beta, stable, beta",
+    "SKILL.md:133: unbound numeric/status mention: 2026, 09, 29",
+    "SKILL.md:134: unbound numeric/status mention: 2026, 05, 30, disabled",
+    "SKILL.md:136: unbound numeric/status mention: 2025",
+    "SKILL.md:137: unbound numeric/status mention: 1, 8",
+    "SKILL.md:139: unbound numeric/status mention: 4, 60, 40, 4, 30",
+    "SKILL.md:142: unbound numeric/status mention: 0.741",
+    "references/limits.md:5: unbound numeric/status mention: general availability",
+    "references/limits.md:15: unbound numeric/status mention: beta, beta, ga, general availability, deprecated, deprecated",
+    "handbook/graphics/01-lighting.md:54: unbound numeric/status mention: 0, 0.5",
+    "handbook/graphics/02-atmosphere-sky-post.md:43: unbound numeric/status mention: 0.75, 0.05, 10, 0.75, 0.2",
+    "handbook/graphics/03-local-lights.md:18: unbound numeric/status mention: 180",
+    "handbook/graphics/05-environment-art.md:20: unbound numeric/status mention: 4, 5, 8, 9, 10",
+    "handbook/graphics/06-vfx-particles.md:21: unbound numeric/status mention: 255",
+    "handbook/roblox/03-networking.md:19: unbound numeric/status mention: 1000, 500",
+    "handbook/roblox/03-networking.md:160: unbound numeric/status mention: 500, 10, 20",
+    "handbook/roblox/05-server-authority.md:34: unbound numeric/status mention: 64, 50, 50",
+    "handbook/roblox/06-data-persistence.md:18: unbound numeric/status mention: 45",
+    "handbook/roblox/06-data-persistence.md:27: unbound numeric/status mention: 4,194,304",
+    "handbook/roblox/06-data-persistence.md:28: unbound numeric/status mention: 50",
+    "handbook/roblox/06-data-persistence.md:29: unbound numeric/status mention: 300",
+    "handbook/roblox/06-data-persistence.md:30: unbound numeric/status mention: 60, 40, 5, 2, 30, 5",
+    "handbook/roblox/06-data-persistence.md:31: unbound numeric/status mention: 300, 40, 300, 20, 300, 2",
+    "handbook/roblox/06-data-persistence.md:32: unbound numeric/status mention: 25, 4",
+    "handbook/roblox/06-data-persistence.md:33: unbound numeric/status mention: 30, 301, 306",
+    "handbook/roblox/06-data-persistence.md:34: unbound numeric/status mention: 500, 1",
+    "handbook/roblox/06-data-persistence.md:35: unbound numeric/status mention: 4",
+    "handbook/roblox/06-data-persistence.md:37: unbound numeric/status mention: 30",
+    "handbook/roblox/13-character-controllers.md:56: unbound numeric/status mention: 10, 15",
+    "handbook/roblox/23-tooling-testing.md:46: unbound numeric/status mention: 10k, 128",
+    "handbook/roblox/24-studio-mcp-testing.md:27: unbound numeric/status mention: 10, 50",
+    "handbook/roblox/24-studio-mcp-testing.md:32: unbound numeric/status mention: 2026, 04, 50, beta",
+    "handbook/roblox/24-studio-mcp-testing.md:111: unbound numeric/status mention: 60, 256, 2026, 06, beta",
+    "handbook/roblox/26-chat-leaderboards.md:70: unbound numeric/status mention: 100"
+  ]
+}

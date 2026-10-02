@@ -51,12 +51,15 @@ remotes and physics you let them own.
 | **Inventory** | item exists in *server* inventory, count ≥ requested, slot bounds | never accept item definitions from client |
 | **Economy** | price from server config; balance ≥ price; atomic debit+grant in same code path without yields | log transactions |
 | **Purchases (Robux)** | only `MarketplaceService.ProcessReceipt` (dev products) / `UserOwnsGamePassAsync` (passes) on server | never trust a client "I bought" remote |
-| **Replay/duplication** | per-action sequence or id; reject ids already processed; idempotent grants keyed by `PurchaseId` | bounded set with expiry |
+| **Replay/duplication** | per-action sequence or id; reject ids already processed; idempotent grants keyed by `PurchaseId` | ordinary request IDs may expire; durable purchase receipts must not be evicted solely by count or age |
 | **Impossible state** | dead players acting, actions during stun/loading, two items in one hand | state machine on server |
 | **Teleport (places)** | destination server re-validates access (group/role/progression/badge); default-deny | clients can teleport to any subplace in the universe |
 | **Admin commands** | `player.UserId` in server-side allowlist, or `player:IsInGroupAsync(groupId)` / `GroupService:GetRolesInGroupAsync(userId, groupId)` | never check names; never client-side admin |
 
 ## Movement and physics ownership
+Treat suspicious motion as evidence to log and review, not an automatic ban. Account for legitimate movement
+and latency first; use human review before irreversible punishment rather than instantly banning a speed sample.
+
 - Characters are client-owned: the server can't prevent a client from moving its character anywhere; it can only
   detect and correct. Official guidance: no universal solution; engine server authority mode (released 2026-07) is the real
   fix ([05](05-server-authority.md)).
@@ -113,11 +116,14 @@ print(allow)
 ```
 
 ## Secrets and code confidentiality
+Prefer the server Secrets store to literals in a ServerStorage module: the module is not replicated to clients,
+but a credential embedded in source can still leak through source access, copies, or version history.
+
 - Anything replicated is public, including ModuleScripts in ReplicatedStorage that only the server requires.
   Server-only logic → ServerScriptService/ServerStorage.
 - API keys: `HttpService:GetSecret("name")` (Secrets store, server only) — never string literals.
 - Unreleased content: keep in private test universes; don't ship hidden in production places.
-- Third-party models: audit for `require(assetId)`, `getfenv`, `loadstring`, obfuscated strings, hidden scripts
+- Third-party models: audit for `require(assetId)`, `getfenv`/`setfenv`, `loadstring`, obfuscated strings, hidden scripts
   in meshes/folders; prefer packages you control.
 
 ## Humanoid / tool abuse
@@ -140,6 +146,10 @@ print(allow)
 | full server-side simulation | high | server authority mode / critical physics objects only |
 
 ## Logging and monitoring
+For structured payloads, validate every field's type and range, reject unknown fields and mixed/sparse tables,
+and prefer flat payloads to recursively accepting arbitrary client tables. Static types never validate client
+input at runtime.
+
 Count rejections by reason per player (`rejected.Fire.range += 1`); log summaries, not every packet (log spam is
 itself a DoS vector). Use AnalyticsService/custom telemetry for trends.
 

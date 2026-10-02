@@ -15,8 +15,8 @@ recipes: [network rate limiter](../../recipes/gameplay/network-rate-limiter.md),
 | Primitive | Direction | Delivery | Yields caller | Limits / notes |
 |---|---|---|---|---|
 | Property/attribute replication | server → clients | reliable, eventual; per-type ordered; **not ordered relative to remotes** | no | automatic; subject to streaming |
-| `RemoteEvent` | C→S `FireServer`, S→C `FireClient`/`FireAllClients` | reliable, ordered (per remote) | no | client→server ≈500 req/s per client **shared by all RemoteEvents**; handler on server gets `player` first |
-| `UnreliableRemoteEvent` | same API | may drop, may reorder | no | payload > **1000 bytes is dropped**; shares its own ≈500 req/s budget; for continuous cosmetic data |
+| `RemoteEvent` | C→S `FireServer`, S→C `FireClient`/`FireAllClients` | reliable, ordered (per remote) | no | client→server ≈<!-- fact-value: remote-client-send-rate -->500<!-- /fact-value --> req/s per client **shared by all RemoteEvents**; handler on server gets `player` first | <!-- fact-refs: remote-client-send-rate -->
+| `UnreliableRemoteEvent` | same API | may drop, may reorder | no | payload > **<!-- fact-value: unreliable-remote-payload -->1000<!-- /fact-value --> bytes is dropped**; shares its own ≈<!-- fact-value: remote-client-send-rate -->500<!-- /fact-value --> req/s budget; for continuous cosmetic data | <!-- fact-refs: unreliable-remote-payload, remote-client-send-rate -->
 | `RemoteFunction` | C→S `InvokeServer` (OK), S→C `InvokeClient` (**avoid**) | reliable request/response | **yes** | only one `OnServerInvoke` callback (last assigned wins); client can delay/never answer |
 | `BindableEvent/Function` | same side only | local | Function yields | tables copied like remotes |
 
@@ -88,6 +88,21 @@ Players.PlayerRemoving:Connect(function(player: Player) lastUse[player] = nil en
 Silently dropping invalid requests is usually right (don't give exploiters an oracle); log aggregated counters for
 monitoring.
 
+## Intent-specific validation
+Apply the security chapter's validation catalog to the complete operation, not only its first argument:
+- A purchase handler looks up `itemId` in a server-owned catalog and obtains the price there. Rate-limit the
+  request, check the server balance, then debit and grant together without yielding in the in-memory commit.
+  Reject unknown item IDs and duplicate request IDs before repeating an economic effect.
+- A blink handler first validates that the requested position is a Vector3 with finite components (reject NaN
+  and infinity), enforces a server cooldown, and limits displacement from the server-observed character
+  position. Validate the destination's collision clearance and the required line of sight before moving.
+- A chest handler checks `typeof(target) == "Instance"`, its expected class with `IsA`, and containment with
+  `IsDescendantOf` against the server-owned chest container. Check server-side player distance and current chest
+  state; an already-open, disabled, or unavailable chest must not grant again.
+
+These are validation design patterns, not proof that the client's replicated position itself is trustworthy.
+Movement validation and server-authority decisions remain separate responsibilities.
+
 ## Rate limiting
 - Per player, per action. Token bucket (burst + sustained rate) is the standard: see
   `examples/lib/ReplicatedStorage/Lib/TokenBucket.luau`. Clear state on `PlayerRemoving`.
@@ -140,6 +155,9 @@ replicate on its own or when you move visuals client-side.
   late/duplicate replies.
 
 ## Remote organisation
+For a multiplexed command remote, dispatch through an explicit handler table keyed by a fixed validated action
+set, not `_G` or a client-chosen global function name.
+
 - Create remotes on the **server** at startup (or in Studio) under one folder (`ReplicatedStorage.Remotes`);
   clients `WaitForChild` them with a timeout. Never let clients create remotes (client-created Instances don't
   replicate).
@@ -157,7 +175,7 @@ replicate on its own or when you move visuals client-side.
 |---|---|---|
 | `remote.OnServerEvent:Connect(function(p, dmg) hum:TakeDamage(dmg) end)` | client picks damage | server computes damage from server weapon stats |
 | `InvokeClient` to ask client for its mouse position | server hangs if client never answers | client pushes aim with rate limit, or server-side raycast |
-| `FireServer` every `RenderStepped` | hits 500/s cap with other traffic; wasted bandwidth | send on change, cap at 10–20 Hz, unreliable |
+| `FireServer` every `RenderStepped` | hits <!-- fact-value: remote-client-send-rate -->500<!-- /fact-value -->/s cap with other traffic; wasted bandwidth | send on change; choose and profile a cosmetic update frequency, unreliable | <!-- fact-refs: remote-client-send-rate -->
 | One remote per player created at runtime | clutter, race conditions | fixed set of remotes, player is the implicit first arg |
 | Trusting `player` passed in payload | spoofable | only the engine-provided first argument is the sender |
 | Payload `{[inst]=true}` | keys become strings | array of instances |

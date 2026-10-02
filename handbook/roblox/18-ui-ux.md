@@ -116,3 +116,8 @@ cd:ui/text-filtering, cd:ui/styling/index, cd:ui/styling/css-comparisons, cd:ui/
 cd:projects/cross-platform, cd:production/publishing/accessibility, cd:reference/engine/classes/ScreenGui,
 cd:reference/engine/classes/TextService, cd:reference/engine/classes/GuiService,
 cd:reference/engine/classes/StyleRule, cd:production/localization/automatic-translations.
+
+## Constructing UI instances
+Create UI instances without the parent argument to `Instance.new`. Set properties and
+connect handlers before assigning `Parent` last, so partially configured controls do
+not enter a live layout tree. Apply this to buttons as well as their containers.

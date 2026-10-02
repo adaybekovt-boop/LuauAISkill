@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-02",
+  "boundary": "Manual scope adjudication only. These rows are not counted as source-backed engine facts. Any text change requires renewed review.",
+  "rows": [
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "c2980727e9e6ba01871ed8a64c1e873f115873ef91f706ade86d8b0a82007595",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "895fe6b75375ee43efa6cab512b2aff1306a64cffe9205466303c5c2942ad3af",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "140435c67b5b0ec9b6a08d06bec9e99413324a25bc467e2ff6eaab95cb93e94d",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "2a9cefccb3045793a02e6c851116aeaaea701465424a6fc8b1fe362194d47391",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "81a262d558a59c0f8c141ed92bbbc9daf0fed47462446e5851d5b7b408266e20",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "ecd294925992d86ede3b2d4ccf621306fb7cd1238f1d23e5e291d0dc3dcfce2f",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "084aa52a717f43aa152a31a702d3c75778d7e92d9a32b5ff758200e0b009f13b",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "e70261364edbf0313ea96d0876120e86d6063b349fff88ff4a27986994116a33",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "c4d89de7e9e36a550fcd46c8ccc89a8143755888508bfbeca0197847c137b4f4",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "5f4c583f3b45133eee7ac7e1efe6ae35ddb01f28bdd52d390bbefd89b49f9b15",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "334089c5d9a0de67f89edf6d65842ecc2ff02697261e08ee668fb0b65c4cd40b",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "aacf5144050c1adb2bdd9303524bfaaba31d41badced48657fdd942f89c9077d",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "2e6103e43f85e730dc3267a49e47cd1b1c197c935296b257272547e6f22f2b23",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "07be7902d2a25fc63fc6ee8a906a30bd4c375445f3413e50d2e4fe303cfcf571",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "c74143812f180ef53cbf22527ba9ba9644252312bb5aa12800bb4cc25b6f53a9",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "d49a75ef56ca7c8555477e35187e4f918410684ea00cd47a2736cb4dc272ac21",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "d514950d50d12139497ef0e3fb219fc0dba77259ec8fc0abb94c161ddee1e730",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "1d2a084e815192e76f57f992b4cad1d593ded66f542d4a37506d45906ea130f0",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "d25431c72c3ba6a17dc0f56aed63384dc07c484f60896a6befc232c0568ee867",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "c648d04d178ccf8a67e4e4f21194b827d839559498f3ceb2c76e8797da41889f",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "8aa38921d0944d4b9f4d29b07c66dbb54dc0fb7c44333814d9c70b6729fac9c3",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "77e846c44f94e5faa0713a59b8af0f4620244255523c1d37c18817306e5faa3c",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "4b61195f8472f128fcddc8d1a78a9b634523cacf018a5f3b35c054413f6009c5",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "061838dabb652d12535368c5e3dc6765ef06e4b68f3cb099def62b5c85c91e99",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "4d742e751d5ca7aad926dd1c90d9e969da9e6ad8cbb6d29e9c1f5ab22ffdc4e2",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "row_sha256": "ebc973454e9743f74765ee9eab33a15d9e4a837abfa8110a3f13bc1bc4c4a2d7",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "row_sha256": "46f94ea21b965d5c492e31265c39840b6083e5647acfcde9ffb412fc444b2866",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "row_sha256": "3cc0d4d96f2d41df06da8abb781fff6cac84b7d127a5a62ee145e5aeeb5e4696",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "row_sha256": "defcca81a48380b6e5fe7dd6e05270d3b178de32e08d8c24103a0bae2440f22d",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "row_sha256": "3e6b76c3279b209964cc80e933599953d2dfb9d74d78e20d2c7b85ef29c235ed",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "row_sha256": "6f90e69fc1a6d3faa1512aabaa3fd25d60218ab63656e729a5cba18774db689b",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "row_sha256": "5b2067f20d3c3fa663fd78e633c85302c4c3e05a4b83c01f8291ef4059e44cf8",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "row_sha256": "a5cb3d372cb0ffcaadcb63d5a86d7e8baca34a8453c47be7c585a23ab7e0987e",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "row_sha256": "cd2cc38fb448d5076a677846d47bc412c398843663668f98a4106b1679125462",
+      "classification": "other_product_version",
+      "reason": "Version/history of Lua or a third-party tool, outside Roblox engine/service limit tables."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "row_sha256": "5f63996d4611055fa87f5b83f259b5a841e3f901b1974dce528520d35c8f66b8",
+      "classification": "other_product_version",
+      "reason": "Version/history of Lua or a third-party tool, outside Roblox engine/service limit tables."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "row_sha256": "8ca6dfe4e4c391b5188e14a6370ffe964f40d7ef5bed846589fe9e4c54c01137",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/02-types.md",
+      "row_sha256": "9e77fc0239f15acffa5633b284b85b5e8a2e0aa7f7546938be27cf1a94bc6291",
+      "classification": "navigation_identifier",
+      "reason": "Numeric chapter label in a navigation link, not a fact claim."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "row_sha256": "234c2f12853a741a2e521d7536cc9f47b924f650febbb15de272a7e069a9747d",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "row_sha256": "8aad29a88711bd0eb80ebe12473e2436887b13c7edde6d4208c6fe7ec39f3154",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "row_sha256": "06b078644342f4ddb0e51eb529c92cc7da9bf40c23564f302b832c0e6b361755",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "row_sha256": "fd908cd120a3283385a9d25f46c6e8ed603bb67256f1b23c0a66a5873b2c22d5",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "row_sha256": "114145b42684675aea5c97d87ca6288237b7e979a2589d3e32aacdb24f63025b",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "row_sha256": "8a76c9294b01cd35109baf8a77f9b40ffd293b38b3c69c9239881c34307378d2",
+      "classification": "language_syntax",
+      "reason": "The @deprecated syntax/linter attribute is demonstrated; this is not a rollout/deprecation claim about an engine API."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "row_sha256": "aa00c60a2b856427ae6846d90b1195a65173da2d11b87a6da9e926cfdd99a0cd",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/04-patterns-data.md",
+      "row_sha256": "830ac2c6fad96fa7831d397ecacbae29c25216bb194ed01143c9c6647c7a0ac3",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/luau/05-coroutines-task-errors.md",
+      "row_sha256": "ce5f709a91c3ee0b40c8c0d95cf1d635ea05914f041b444301a9cbd81a699d72",
+      "classification": "navigation_identifier",
+      "reason": "Numeric chapter label in a navigation link, not a fact claim."
+    },
+    {
+      "path": "handbook/luau/05-coroutines-task-errors.md",
+      "row_sha256": "75f13f38abed191a86312c30ff9754db0a02835c3e22f83eb9a2a96cc1adc9ac",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "row_sha256": "24e83c75573c8053227d66573944ebb5edf7f2a03594e1d0ef737bf54a7eb8f9",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "row_sha256": "cd3cccbe40627922aad845dfcd6e5821a00e8be4ff185589241bcab53a4e87bd",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "row_sha256": "0ae307e1fdb98e41296bd0673fb95b89a21275be118ae956c4190250edadd8e4",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "row_sha256": "694ff9db68ad3eb9b260ddc256b86b4686402617b50c5e3f7cf485018424ee51",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "row_sha256": "321d00f9def40ddfd6259b987cb873bc0f9143c8b6b119f1eb1fcd462dcc9807",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "row_sha256": "0b4e20ff79c48c278acdc6ed44975e42abc1c403d80fdfa5eefc7e20ee7a647b",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "row_sha256": "243ac50a552c0ceca7b943a10bc58497b835323d3b293c493b062d3a40a68b16",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "row_sha256": "6f474221ad7ddf609b893ac3a1c103916febffa209d285267198a0dda82d4022",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "row_sha256": "74017ff83e400c6b5191e155de10650f213e21a357b2cd6ce8d7c273e1d557ea",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/12-procedural-generation.md",
+      "row_sha256": "ffe8c8334ee3addc9475a06ffc9c9c0c872112acf3f2671c1a32b96b84953af3",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "row_sha256": "bcc8f15621f9d743d41656db5e5e5678c65b57abd376be5dd2d8e21b360b13d0",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "row_sha256": "be6b6408ba2ff318127566b31034d96d747259c69044c0e6216bee41d19d5cef",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "row_sha256": "fde3fb701997395652ad13a58702444da5aab30183a323ea6b2032885e40ef90",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "row_sha256": "a488ad06761d7d1c8f7b5bdd03093488bb22e21cb15a1fac0e32a35ba9788095",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "row_sha256": "45665013b6becd67a8cec24eea6f70648f1d69730093a8450c91c9aec95bef1d",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "row_sha256": "6e8805d694eb4b6bf079d4ebed6ae35abb72781ac60b0f90de9bd3340919dc2e",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "row_sha256": "5431197debc94be60bb58846e1335f6d49c89532c2ae2188782a1679e6deabec",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "row_sha256": "689df1fb0164c8498e64e5cf628d9a4f08085bfd6f2e946db7887d5321fd5c22",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "row_sha256": "7328a96d2474a91ada627a15d0c4b08480b6318f879332946896a074a4decfc1",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/16-animation.md",
+      "row_sha256": "afd620fa3970c51a914b0b48aaee05822f74c51ba5feb53b936e314136385af4",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "row_sha256": "1901ec63419b0fafad30b2105c21b789f32e4347186b1bdbde971836880091ac",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "row_sha256": "ac228d69cb9a46076f642cdfb65122849563cf2e1c411ac5bf435dba0e292888",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "row_sha256": "506bd1115cc0e978b60fbb114540f091f05215948675e546b9f56c6c62695489",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "row_sha256": "08f0d7fdf8c5b1bf43a2d72f6a84d44dd6ffaf2db0e99b0c8110d5c64e436f22",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/20-npc-ai.md",
+      "row_sha256": "6873f913f669e0b88657ee323d8151d3a24e6799a0be3818d3cf9197e78e295f",
+      "classification": "runtime_state",
+      "reason": "Disabled describes chosen Humanoid runtime states, not platform rollout status."
+    },
+    {
+      "path": "handbook/roblox/20-npc-ai.md",
+      "row_sha256": "b9c72ef31d2d3a7aef93dcdebc38f38cd18578881fd240d781aa95edac5d3322",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/21-architecture.md",
+      "row_sha256": "328a98776b9eaaf9cb7e0c9a294fd32ce05e629095395ade4276e67a165bc7ff",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "row_sha256": "7a30904b199f97b8cb3c6a6605a59ae6cbfe9eefb9cba23e37f64e732527ce9a",
+      "classification": "other_product_version",
+      "reason": "Version/history of Lua or a third-party tool, outside Roblox engine/service limit tables."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "row_sha256": "76ec7958cea61774edb9f9a9a69c87fca7d045d9f64b9811c17f1ad0e5ace7c8",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "row_sha256": "f82549f42bc8fe912c2d0db876169ff70462886de9f6617b1e0f6a61146a7990",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "row_sha256": "c6b5d20f0cb738d156de19dec735668d8aa36ac0940731e56697b864c9fea832",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "row_sha256": "cef5699f75f2c0ea5fc8176cad831d49922b6970599a6034dfa0a5bad2f341c6",
+      "classification": "design_example",
+      "reason": "aesthetic tuning, not a platform limit"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "c057adda3e3417a8136d9953de4d8f35931dc5be6214a95c854cb19e5d04a6ae",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "0.25",
+        "0.35",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.8"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "9c9e023b97ab20075d210cec0416ec3aba35f2120b59616fd0318de114e463a7",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "0.25",
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "0ce1cc225c7666e571c649c7ec7b89ba55025d0768226ce0daffb328fd7576c6",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "2",
+        "3",
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "d1a1ff29ee6a9a4d6c52d39a0b30f66ee3dbd741ede0f8cea57be52165acfdd2",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "f548a1a300316d4a7522de9e7dd5ce0cb053c876c4fd9c965eb551d69e24e87c",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "39080ae4a50aa5609856741dd6761e07fa02f48620d44eb2e9a791194dfc0005",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "1.5",
+        "2.5",
+        "0.2",
+        "0.6",
+        "16",
+        "32"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "90d3233517729bf3a03c7c064a8acb2a68a4b4e07e04f0b2ce39eabd81c8a8b7",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "0.05",
+        "0.2",
+        "−0.2",
+        "255,245,235",
+        "235,242,255"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "d1e858115251b007c48072e8a8b838c864ce1c5afccfcbeab199f04cb3af66ad",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "0.2"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "row_sha256": "7b98a4a8819b4258bc281510c16993cb78a8e65cc5d66842b239e10c97239aed",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "0.02",
+        "0.1",
+        "0.2",
+        "0.6"
+      ]
+    },
+    {
+      "path": "handbook/graphics/04-materials-pbr.md",
+      "row_sha256": "672fa925a5e3498d4c5c7adfdec8613794a1fd459052d4568226df87c3d11281",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "2"
+      ]
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "row_sha256": "3e09a2e016437cf1335368f9cdf3e44df658d4ffe0c3a485d85a6852c84fe40f",
+      "classification": "design_example",
+      "reason": "suggested scene dimensions, not a platform limit"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "row_sha256": "12b2a8dde9eb42b91d2cff543d62b71e1bc462a732add7338579c083ae70a405",
+      "classification": "mixed_examples",
+      "reason": "IEEE standard designation and floating-point arithmetic demonstration; the exact-integer limit is fact-bound.",
+      "values": [
+        "754",
+        "0.1",
+        "0.2",
+        "0.3"
+      ]
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "row_sha256": "fd40edea394625a222ad67a439e7a4568cad2d417973ac4eb0b5c385574a59b1",
+      "classification": "design_example",
+      "reason": "camera tuning, not a platform limit"
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "row_sha256": "e7aab7c526dc8ea434dfdf5c00b695bdd15577298b9b65dd4a4c24cc27768970",
+      "classification": "mixed_examples",
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "values": [
+        "2",
+        "3"
+      ]
+    }
+  ]
+}

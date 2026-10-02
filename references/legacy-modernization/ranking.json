@@ -32,8 +32,8 @@
   "reason": "No representative public-code corpus was sampled; no frequency measurements are claimed."
  },
  "signals": {
-  "eval_cases": 167,
-  "eval_corpus_sha256": "4dac5dcf60461eabf789421cadb102fcf92606eb3359593c7cf96b8c2036b275",
+  "eval_cases": 183,
+  "eval_corpus_sha256": "2acd727c7c48748f0e59ec7f52d6cdb9b6e427e6e9140d023aaa77602cec6a1c",
   "deprecated_tsv_sha256": "647a715313cbe0672905ce1ba40f93e6e930b4d4c015b2960dec424745f6ba74",
   "score_formula": "20 * min(exact eval-case mentions, 5) + 10 * declared risk weight + 2 * has pinned deprecation message - 40 * restricted/undocumented"
  },
@@ -51,9 +51,10 @@
     "API-01",
     "AR-08",
     "LU-10",
-    "PERF-01"
+    "PERF-01",
+    "GAP-STREAMING-01"
    ],
-   "eval_case_count": 5,
+   "eval_case_count": 6,
    "accessibility": "documented",
    "has_pinned_deprecation_message": true,
    "public_code_frequency": null,

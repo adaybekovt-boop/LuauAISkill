@@ -135,6 +135,11 @@ print(CONFIG.sprint.speed)
 - Sizes: DataStore value ≤ 4 MB per key (JSON-encoded length); keep player profiles far below (tens of KB).
 
 ## Iterators
+For a leaderboard or top-N view of a dictionary, first build a dense array of records containing the key/name
+and score. Sort with a strict comparator: a greater score ranks first, and equal scores use the name as a
+deterministic tie-breaker. Never use a non-strict comparison for ties. Iterate only through the smaller of the
+requested count and the array length, so a short leaderboard does not index missing records.
+
 ```luau
 --!strict
 -- Custom stateless iterator over every n-th element.

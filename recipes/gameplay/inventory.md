@@ -572,3 +572,10 @@ World item: Part/Model tagged `Interactable`, attributes `InteractionType="Picku
 
 Sources: cd:scripting/events/remote, cd:scripting/security/client-server-boundary, cd:scripting/attributes,
 cd:reference/engine/classes/ContextActionService, cd:ui/size-modifiers, cd:reference/engine/classes/ScreenGui.
+
+## Completing cross-device hotbar input
+The sample hotbar key map demonstrates keyboard input; it is not a complete gamepad
+binding implementation. For a gamepad hotbar, bind previous-slot, next-slot and use-slot
+actions through ContextActionService or InputActions, keep an explicit selected slot,
+and send the same validated slot intent used by keyboard input. Provide touch buttons
+for these actions and verify controller navigation before claiming cross-device support.

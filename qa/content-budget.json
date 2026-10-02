@@ -1,6 +1,6 @@
 {
   "tokenizer": "tiktoken/cl100k_base",
-  "router_lines": 147,
+  "router_lines": 156,
   "chapters": 39,
   "errors": [],
   "files": [
@@ -31,7 +31,7 @@
     },
     {
       "file": "README.md",
-      "tokens": 1875,
+      "tokens": 2002,
       "over_8000": false
     },
     {
@@ -41,7 +41,7 @@
     },
     {
       "file": "SKILL.md",
-      "tokens": 3056,
+      "tokens": 3542,
       "over_8000": false
     },
     {
@@ -80,8 +80,13 @@
       "over_8000": false
     },
     {
+      "file": "evals/HOLDOUT.md",
+      "tokens": 793,
+      "over_8000": false
+    },
+    {
       "file": "evals/README.md",
-      "tokens": 2455,
+      "tokens": 2572,
       "over_8000": false
     },
     {
@@ -95,6 +100,61 @@
       "over_8000": false
     },
     {
+      "file": "evals/coverage/README.md",
+      "tokens": 736,
+      "over_8000": false
+    },
+    {
+      "file": "evals/coverage/baseline.json",
+      "tokens": 914,
+      "over_8000": false
+    },
+    {
+      "file": "evals/coverage/criterion-corrections.json",
+      "tokens": 402,
+      "over_8000": false
+    },
+    {
+      "file": "evals/coverage/holdout-reviews.json",
+      "tokens": 193552,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/report.json",
+      "tokens": 77742,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews-api.json",
+      "tokens": 22960,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews-visual.json",
+      "tokens": 29133,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews-world.json",
+      "tokens": 11579,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews.json",
+      "tokens": 364663,
+      "over_8000": true
+    },
+    {
+      "file": "evals/development-exposure.json",
+      "tokens": 1269,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixture-defects.json",
+      "tokens": 225,
+      "over_8000": false
+    },
+    {
       "file": "evals/fixtures/client-leaderstats.luau",
       "tokens": 86,
       "over_8000": false
@@ -105,8 +165,123 @@
       "over_8000": false
     },
     {
+      "file": "evals/fixtures/gap-adversarial-1.luau",
+      "tokens": 36,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/gap-architecture-1.luau",
+      "tokens": 43,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/gap-debugging-1.luau",
+      "tokens": 38,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/gap-luau-1.luau",
+      "tokens": 36,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/gap-negative-triggers-3.luau",
+      "tokens": 18,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/gap-npc-1.luau",
+      "tokens": 34,
+      "over_8000": false
+    },
+    {
       "file": "evals/fixtures/headbob-sin.luau",
       "tokens": 163,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/adversarial/admin.server.luau",
+      "tokens": 42,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/animation/run.client.luau",
+      "tokens": 73,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/api-freshness/ray.luau",
+      "tokens": 54,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/architecture/respawn.client.luau",
+      "tokens": 70,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/combat/damage.server.luau",
+      "tokens": 37,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/datastores/coins.server.luau",
+      "tokens": 57,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/debugging/character.client.luau",
+      "tokens": 32,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/graphics/impact.client.luau",
+      "tokens": 52,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/lighting/pulse.client.luau",
+      "tokens": 84,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/luau/lookup.luau",
+      "tokens": 43,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/negative-triggers/labels.py",
+      "tokens": 38,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/networking/transfer.server.luau",
+      "tokens": 69,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/npc/path.server.luau",
+      "tokens": 76,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/performance/tool.client.luau",
+      "tokens": 45,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/security/door.server.luau",
+      "tokens": 24,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/streaming/chest.client.luau",
+      "tokens": 42,
+      "over_8000": false
+    },
+    {
+      "file": "evals/fixtures/holdout/ui/panel.client.luau",
+      "tokens": 56,
       "over_8000": false
     },
     {
@@ -200,13 +375,33 @@
       "over_8000": false
     },
     {
+      "file": "evals/provenance/holdout-format-transformations.json",
+      "tokens": 397,
+      "over_8000": false
+    },
+    {
+      "file": "evals/provenance/holdout-import-before.json",
+      "tokens": 180596,
+      "over_8000": true
+    },
+    {
+      "file": "evals/provenance/sealed-holdout-custody.json",
+      "tokens": 4402,
+      "over_8000": false
+    },
+    {
+      "file": "evals/split.json",
+      "tokens": 41092,
+      "over_8000": true
+    },
+    {
       "file": "examples/chatcommands/ServerScriptService/ChatCommands.server.luau",
-      "tokens": 600,
+      "tokens": 585,
       "over_8000": false
     },
     {
       "file": "examples/chatcommands/ServerScriptService/Commands/Parser.luau",
-      "tokens": 200,
+      "tokens": 192,
       "over_8000": false
     },
     {
@@ -271,7 +466,7 @@
     },
     {
       "file": "examples/data/ServerScriptService/Profiles/Schema.luau",
-      "tokens": 790,
+      "tokens": 779,
       "over_8000": false
     },
     {
@@ -336,22 +531,22 @@
     },
     {
       "file": "examples/leaderboard/ServerScriptService/Boards/Rows.luau",
-      "tokens": 369,
+      "tokens": 355,
       "over_8000": false
     },
     {
       "file": "examples/leaderboard/ServerScriptService/Boards/Service.luau",
-      "tokens": 825,
+      "tokens": 808,
       "over_8000": false
     },
     {
       "file": "examples/leaderboard/ServerScriptService/LeaderboardServer.server.luau",
-      "tokens": 232,
+      "tokens": 228,
       "over_8000": false
     },
     {
       "file": "examples/leaderboard/StarterPlayer/StarterPlayerScripts/LeaderboardClient.client.luau",
-      "tokens": 557,
+      "tokens": 545,
       "over_8000": false
     },
     {
@@ -511,17 +706,17 @@
     },
     {
       "file": "examples/parallel/ServerScriptService/Parallel/Planner.luau",
-      "tokens": 454,
+      "tokens": 440,
       "over_8000": false
     },
     {
       "file": "examples/parallel/ServerScriptService/Parallel/Worker.server.luau",
-      "tokens": 183,
+      "tokens": 180,
       "over_8000": false
     },
     {
       "file": "examples/parallel/ServerScriptService/ParallelManager.server.luau",
-      "tokens": 1543,
+      "tokens": 1511,
       "over_8000": false
     },
     {
@@ -546,17 +741,17 @@
     },
     {
       "file": "examples/receipts/ServerScriptService/ReceiptServer.server.luau",
-      "tokens": 945,
+      "tokens": 922,
       "over_8000": false
     },
     {
       "file": "examples/receipts/ServerScriptService/Receipts/Ledger.luau",
-      "tokens": 743,
+      "tokens": 701,
       "over_8000": false
     },
     {
       "file": "examples/receipts/ServerScriptService/Receipts/TransferPrompt.luau",
-      "tokens": 303,
+      "tokens": 296,
       "over_8000": false
     },
     {
@@ -571,17 +766,17 @@
     },
     {
       "file": "examples/regression/ReplicatedStorage/Regression/Protocol.luau",
-      "tokens": 153,
+      "tokens": 148,
       "over_8000": false
     },
     {
       "file": "examples/regression/ServerScriptService/RegressionServer.server.luau",
-      "tokens": 1216,
+      "tokens": 1178,
       "over_8000": false
     },
     {
       "file": "examples/regression/StarterPlayer/StarterPlayerScripts/RegressionClient.client.luau",
-      "tokens": 322,
+      "tokens": 323,
       "over_8000": false
     },
     {
@@ -726,27 +921,27 @@
     },
     {
       "file": "examples/simulation/ReplicatedStorage/Dash/DashState.luau",
-      "tokens": 152,
+      "tokens": 146,
       "over_8000": false
     },
     {
       "file": "examples/simulation/ReplicatedStorage/Dash/Simulation.luau",
-      "tokens": 901,
+      "tokens": 884,
       "over_8000": false
     },
     {
       "file": "examples/simulation/ServerScriptService/DashServer.server.luau",
-      "tokens": 271,
+      "tokens": 262,
       "over_8000": false
     },
     {
       "file": "examples/simulation/StarterPlayer/StarterPlayerScripts/DashClient.client.luau",
-      "tokens": 531,
+      "tokens": 525,
       "over_8000": false
     },
     {
       "file": "examples/tests/chatcommands.spec.luau",
-      "tokens": 180,
+      "tokens": 179,
       "over_8000": false
     },
     {
@@ -756,7 +951,7 @@
     },
     {
       "file": "examples/tests/data.spec.luau",
-      "tokens": 1422,
+      "tokens": 1603,
       "over_8000": false
     },
     {
@@ -796,7 +991,7 @@
     },
     {
       "file": "examples/tests/receipts.spec.luau",
-      "tokens": 475,
+      "tokens": 991,
       "over_8000": false
     },
     {
@@ -831,57 +1026,57 @@
     },
     {
       "file": "examples/vehicle/ReplicatedStorage/Vehicle/Drive.luau",
-      "tokens": 183,
+      "tokens": 181,
       "over_8000": false
     },
     {
       "file": "examples/vehicle/ServerScriptService/VehicleServer.server.luau",
-      "tokens": 1391,
+      "tokens": 1375,
       "over_8000": false
     },
     {
       "file": "examples/vehicle/StarterPlayer/StarterPlayerScripts/VehicleClient.client.luau",
-      "tokens": 229,
+      "tokens": 225,
       "over_8000": false
     },
     {
       "file": "examples/viewmodel/ReplicatedStorage/Viewmodel/Sway.luau",
-      "tokens": 167,
+      "tokens": 164,
       "over_8000": false
     },
     {
       "file": "examples/viewmodel/StarterPlayer/StarterPlayerScripts/ViewmodelClient.client.luau",
-      "tokens": 1006,
+      "tokens": 983,
       "over_8000": false
     },
     {
       "file": "handbook/graphics/01-lighting.md",
-      "tokens": 2117,
+      "tokens": 2137,
       "over_8000": false
     },
     {
       "file": "handbook/graphics/02-atmosphere-sky-post.md",
-      "tokens": 1844,
+      "tokens": 2544,
       "over_8000": false
     },
     {
       "file": "handbook/graphics/03-local-lights.md",
-      "tokens": 1335,
+      "tokens": 1410,
       "over_8000": false
     },
     {
       "file": "handbook/graphics/04-materials-pbr.md",
-      "tokens": 1442,
+      "tokens": 1490,
       "over_8000": false
     },
     {
       "file": "handbook/graphics/05-environment-art.md",
-      "tokens": 1623,
+      "tokens": 1626,
       "over_8000": false
     },
     {
       "file": "handbook/graphics/06-vfx-particles.md",
-      "tokens": 1028,
+      "tokens": 1137,
       "over_8000": false
     },
     {
@@ -891,7 +1086,7 @@
     },
     {
       "file": "handbook/luau/01-language-core.md",
-      "tokens": 1755,
+      "tokens": 1861,
       "over_8000": false
     },
     {
@@ -906,17 +1101,17 @@
     },
     {
       "file": "handbook/luau/04-patterns-data.md",
-      "tokens": 1777,
+      "tokens": 1866,
       "over_8000": false
     },
     {
       "file": "handbook/luau/05-coroutines-task-errors.md",
-      "tokens": 1759,
+      "tokens": 1792,
       "over_8000": false
     },
     {
       "file": "handbook/luau/06-performance-memory.md",
-      "tokens": 1512,
+      "tokens": 1574,
       "over_8000": false
     },
     {
@@ -931,22 +1126,22 @@
     },
     {
       "file": "handbook/roblox/03-networking.md",
-      "tokens": 2385,
+      "tokens": 2752,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/04-security.md",
-      "tokens": 2436,
+      "tokens": 2579,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/05-server-authority.md",
-      "tokens": 1508,
+      "tokens": 1583,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/06-data-persistence.md",
-      "tokens": 2418,
+      "tokens": 3127,
       "over_8000": false
     },
     {
@@ -956,22 +1151,22 @@
     },
     {
       "file": "handbook/roblox/08-performance.md",
-      "tokens": 2638,
+      "tokens": 2781,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/09-physics.md",
-      "tokens": 2448,
+      "tokens": 2468,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/10-streaming.md",
-      "tokens": 1792,
+      "tokens": 1805,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/11-terrain.md",
-      "tokens": 1564,
+      "tokens": 1695,
       "over_8000": false
     },
     {
@@ -981,7 +1176,7 @@
     },
     {
       "file": "handbook/roblox/13-character-controllers.md",
-      "tokens": 2338,
+      "tokens": 2432,
       "over_8000": false
     },
     {
@@ -996,7 +1191,7 @@
     },
     {
       "file": "handbook/roblox/16-animation.md",
-      "tokens": 1725,
+      "tokens": 1883,
       "over_8000": false
     },
     {
@@ -1006,17 +1201,17 @@
     },
     {
       "file": "handbook/roblox/18-ui-ux.md",
-      "tokens": 2272,
+      "tokens": 2326,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/19-input.md",
-      "tokens": 1252,
+      "tokens": 1315,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/20-npc-ai.md",
-      "tokens": 1777,
+      "tokens": 1956,
       "over_8000": false
     },
     {
@@ -1026,27 +1221,27 @@
     },
     {
       "file": "handbook/roblox/22-code-quality.md",
-      "tokens": 1032,
+      "tokens": 1120,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/23-tooling-testing.md",
-      "tokens": 2069,
+      "tokens": 2170,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/24-studio-mcp-testing.md",
-      "tokens": 3218,
+      "tokens": 3274,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/25-monetization.md",
-      "tokens": 2085,
+      "tokens": 2114,
       "over_8000": false
     },
     {
       "file": "handbook/roblox/26-chat-leaderboards.md",
-      "tokens": 1738,
+      "tokens": 1813,
       "over_8000": false
     },
     {
@@ -1066,7 +1261,7 @@
     },
     {
       "file": "maintainers/RELEASE_3_0.md",
-      "tokens": 763,
+      "tokens": 1106,
       "over_8000": false
     },
     {
@@ -1085,6 +1280,11 @@
       "over_8000": false
     },
     {
+      "file": "maintainers/fact-mention-review.json",
+      "tokens": 9144,
+      "over_8000": true
+    },
+    {
       "file": "maintainers/host-acceptance.json",
       "tokens": 308,
       "over_8000": false
@@ -1100,13 +1300,18 @@
       "over_8000": false
     },
     {
+      "file": "maintainers/source-browser-corroboration.json",
+      "tokens": 683,
+      "over_8000": false
+    },
+    {
       "file": "recipes/INDEX.md",
       "tokens": 1719,
       "over_8000": false
     },
     {
       "file": "recipes/gameplay/authorized-chat-commands.md",
-      "tokens": 1709,
+      "tokens": 1686,
       "over_8000": false
     },
     {
@@ -1116,7 +1321,7 @@
     },
     {
       "file": "recipes/gameplay/constraint-vehicle.md",
-      "tokens": 2906,
+      "tokens": 2884,
       "over_8000": false
     },
     {
@@ -1126,7 +1331,7 @@
     },
     {
       "file": "recipes/gameplay/first-person-viewmodel.md",
-      "tokens": 2184,
+      "tokens": 2158,
       "over_8000": false
     },
     {
@@ -1136,7 +1341,7 @@
     },
     {
       "file": "recipes/gameplay/friend-global-leaderboard.md",
-      "tokens": 3231,
+      "tokens": 3184,
       "over_8000": false
     },
     {
@@ -1151,7 +1356,7 @@
     },
     {
       "file": "recipes/gameplay/idempotent-receipts.md",
-      "tokens": 3352,
+      "tokens": 3340,
       "over_8000": false
     },
     {
@@ -1161,7 +1366,7 @@
     },
     {
       "file": "recipes/gameplay/inventory.md",
-      "tokens": 5611,
+      "tokens": 5702,
       "over_8000": false
     },
     {
@@ -1176,7 +1381,7 @@
     },
     {
       "file": "recipes/gameplay/multiplayer-regression-harness.md",
-      "tokens": 3254,
+      "tokens": 3212,
       "over_8000": false
     },
     {
@@ -1201,7 +1406,7 @@
     },
     {
       "file": "recipes/gameplay/parallel-npc-planning.md",
-      "tokens": 3335,
+      "tokens": 3286,
       "over_8000": false
     },
     {
@@ -1226,17 +1431,17 @@
     },
     {
       "file": "recipes/gameplay/save-system.md",
-      "tokens": 5965,
+      "tokens": 6134,
       "over_8000": false
     },
     {
       "file": "recipes/gameplay/server-authority-dash.md",
-      "tokens": 3129,
+      "tokens": 3091,
       "over_8000": false
     },
     {
       "file": "recipes/gameplay/settings-menu.md",
-      "tokens": 4106,
+      "tokens": 4234,
       "over_8000": false
     },
     {
@@ -1321,7 +1526,7 @@
     },
     {
       "file": "references/ai-failure-modes.md",
-      "tokens": 3415,
+      "tokens": 3467,
       "over_8000": false
     },
     {
@@ -1331,12 +1536,27 @@
     },
     {
       "file": "references/debugging-playbook.md",
-      "tokens": 2227,
+      "tokens": 2443,
       "over_8000": false
     },
     {
       "file": "references/ecosystem.md",
       "tokens": 1906,
+      "over_8000": false
+    },
+    {
+      "file": "references/fact-sources/ccl-abilities-beta.json",
+      "tokens": 160,
+      "over_8000": false
+    },
+    {
+      "file": "references/fact-sources/ccl-base-release.json",
+      "tokens": 147,
+      "over_8000": false
+    },
+    {
+      "file": "references/fact-sources/input-action-release.json",
+      "tokens": 151,
       "over_8000": false
     },
     {
@@ -1346,12 +1566,12 @@
     },
     {
       "file": "references/facts.json",
-      "tokens": 12445,
+      "tokens": 18058,
       "over_8000": true
     },
     {
       "file": "references/legacy-modernization/CATALOG.md",
-      "tokens": 30935,
+      "tokens": 39460,
       "over_8000": true
     },
     {
@@ -1361,22 +1581,27 @@
     },
     {
       "file": "references/legacy-modernization/README.md",
-      "tokens": 1715,
+      "tokens": 2139,
       "over_8000": false
     },
     {
       "file": "references/legacy-modernization/catalog.json",
-      "tokens": 38033,
+      "tokens": 47890,
+      "over_8000": true
+    },
+    {
+      "file": "references/legacy-modernization/classification.json",
+      "tokens": 147941,
       "over_8000": true
     },
     {
       "file": "references/legacy-modernization/coverage.json",
-      "tokens": 6232,
-      "over_8000": false
+      "tokens": 8183,
+      "over_8000": true
     },
     {
       "file": "references/legacy-modernization/fixtures.luau",
-      "tokens": 2672,
+      "tokens": 3289,
       "over_8000": false
     },
     {
@@ -1386,8 +1611,43 @@
     },
     {
       "file": "references/legacy-modernization/ranking.json",
-      "tokens": 88272,
+      "tokens": 88287,
       "over_8000": true
+    },
+    {
+      "file": "references/legacy-modernization/source-gaps.json",
+      "tokens": 8522,
+      "over_8000": true
+    },
+    {
+      "file": "references/legacy-modernization/staff-evidence/aju-attachment-migration.json",
+      "tokens": 297,
+      "over_8000": false
+    },
+    {
+      "file": "references/legacy-modernization/staff-evidence/billboard-distance-redesign.json",
+      "tokens": 275,
+      "over_8000": false
+    },
+    {
+      "file": "references/legacy-modernization/staff-evidence/capture-watermark-retired.json",
+      "tokens": 268,
+      "over_8000": false
+    },
+    {
+      "file": "references/legacy-modernization/staff-evidence/hinge-softlock-disabled.json",
+      "tokens": 282,
+      "over_8000": false
+    },
+    {
+      "file": "references/legacy-modernization/staff-evidence/improved-layered-fit.json",
+      "tokens": 280,
+      "over_8000": false
+    },
+    {
+      "file": "references/legacy-modernization/staff-evidence/topbar-transparency-retired.json",
+      "tokens": 283,
+      "over_8000": false
     },
     {
       "file": "references/legacy-modernization/tutorial-sample.json",
@@ -1396,8 +1656,8 @@
     },
     {
       "file": "references/limits.md",
-      "tokens": 6095,
-      "over_8000": false
+      "tokens": 8751,
+      "over_8000": true
     },
     {
       "file": "references/service-map.md",
@@ -1411,7 +1671,7 @@
     },
     {
       "file": "sources/registry.json",
-      "tokens": 127490,
+      "tokens": 153850,
       "over_8000": true
     },
     {
@@ -1435,13 +1695,38 @@
       "over_8000": false
     },
     {
+      "file": "tests/test_eval_bank.py",
+      "tokens": 912,
+      "over_8000": false
+    },
+    {
+      "file": "tests/test_eval_coverage.py",
+      "tokens": 1148,
+      "over_8000": false
+    },
+    {
+      "file": "tests/test_fact_mentions.py",
+      "tokens": 2648,
+      "over_8000": false
+    },
+    {
       "file": "tests/test_facts.py",
       "tokens": 3042,
       "over_8000": false
     },
     {
+      "file": "tests/test_holdout_isolation.py",
+      "tokens": 385,
+      "over_8000": false
+    },
+    {
+      "file": "tests/test_knowledge_budget.py",
+      "tokens": 289,
+      "over_8000": false
+    },
+    {
       "file": "tests/test_legacy_catalog.py",
-      "tokens": 1720,
+      "tokens": 2600,
       "over_8000": false
     },
     {
@@ -1461,7 +1746,7 @@
     },
     {
       "file": "tests/test_run_ab.py",
-      "tokens": 6071,
+      "tokens": 6357,
       "over_8000": false
     },
     {
@@ -1491,7 +1776,7 @@
     },
     {
       "file": "tools/check_all.py",
-      "tokens": 973,
+      "tokens": 1048,
       "over_8000": false
     },
     {
@@ -1506,12 +1791,27 @@
     },
     {
       "file": "tools/check_content_budget.py",
-      "tokens": 886,
+      "tokens": 988,
       "over_8000": false
     },
     {
       "file": "tools/check_engine_evidence.py",
       "tokens": 4910,
+      "over_8000": false
+    },
+    {
+      "file": "tools/check_eval_bank.py",
+      "tokens": 1923,
+      "over_8000": false
+    },
+    {
+      "file": "tools/check_eval_coverage.py",
+      "tokens": 2129,
+      "over_8000": false
+    },
+    {
+      "file": "tools/check_fact_mentions.py",
+      "tokens": 3492,
       "over_8000": false
     },
     {
@@ -1521,7 +1821,7 @@
     },
     {
       "file": "tools/check_legacy.py",
-      "tokens": 1965,
+      "tokens": 2056,
       "over_8000": false
     },
     {
@@ -1541,12 +1841,17 @@
     },
     {
       "file": "tools/check_release.py",
-      "tokens": 1320,
+      "tokens": 1386,
       "over_8000": false
     },
     {
       "file": "tools/check_sources.py",
       "tokens": 1325,
+      "over_8000": false
+    },
+    {
+      "file": "tools/classify_legacy.py",
+      "tokens": 2258,
       "over_8000": false
     },
     {
@@ -1571,22 +1876,22 @@
     },
     {
       "file": "tools/rank_legacy.py",
-      "tokens": 1579,
+      "tokens": 1707,
       "over_8000": false
     },
     {
       "file": "tools/render_facts.py",
-      "tokens": 965,
+      "tokens": 1456,
       "over_8000": false
     },
     {
       "file": "tools/render_legacy.py",
-      "tokens": 1283,
+      "tokens": 1793,
       "over_8000": false
     },
     {
       "file": "tools/run_ab.py",
-      "tokens": 10131,
+      "tokens": 10686,
       "over_8000": true
     },
     {
@@ -1596,7 +1901,7 @@
     },
     {
       "file": "tools/scan_legacy.py",
-      "tokens": 948,
+      "tokens": 850,
       "over_8000": false
     },
     {
@@ -1727,23 +2032,83 @@
       "over_8000": true
     },
     {
+      "file": "evals/coverage/holdout-reviews.json",
+      "tokens": 193552,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/report.json",
+      "tokens": 77742,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews-api.json",
+      "tokens": 22960,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews-visual.json",
+      "tokens": 29133,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews-world.json",
+      "tokens": 11579,
+      "over_8000": true
+    },
+    {
+      "file": "evals/coverage/reviews.json",
+      "tokens": 364663,
+      "over_8000": true
+    },
+    {
+      "file": "evals/provenance/holdout-import-before.json",
+      "tokens": 180596,
+      "over_8000": true
+    },
+    {
+      "file": "evals/split.json",
+      "tokens": 41092,
+      "over_8000": true
+    },
+    {
+      "file": "maintainers/fact-mention-review.json",
+      "tokens": 9144,
+      "over_8000": true
+    },
+    {
       "file": "references/facts.json",
-      "tokens": 12445,
+      "tokens": 18058,
       "over_8000": true
     },
     {
       "file": "references/legacy-modernization/CATALOG.md",
-      "tokens": 30935,
+      "tokens": 39460,
       "over_8000": true
     },
     {
       "file": "references/legacy-modernization/catalog.json",
-      "tokens": 38033,
+      "tokens": 47890,
+      "over_8000": true
+    },
+    {
+      "file": "references/legacy-modernization/classification.json",
+      "tokens": 147941,
+      "over_8000": true
+    },
+    {
+      "file": "references/legacy-modernization/coverage.json",
+      "tokens": 8183,
       "over_8000": true
     },
     {
       "file": "references/legacy-modernization/ranking.json",
-      "tokens": 88272,
+      "tokens": 88287,
+      "over_8000": true
+    },
+    {
+      "file": "references/legacy-modernization/source-gaps.json",
+      "tokens": 8522,
       "over_8000": true
     },
     {
@@ -1752,13 +2117,18 @@
       "over_8000": true
     },
     {
+      "file": "references/limits.md",
+      "tokens": 8751,
+      "over_8000": true
+    },
+    {
       "file": "sources/registry.json",
-      "tokens": 127490,
+      "tokens": 153850,
       "over_8000": true
     },
     {
       "file": "tools/run_ab.py",
-      "tokens": 10131,
+      "tokens": 10686,
       "over_8000": true
     }
   ]

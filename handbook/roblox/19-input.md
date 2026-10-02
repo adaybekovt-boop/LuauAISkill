@@ -13,10 +13,10 @@ Related: [UI/UX](18-ui-ux.md), [server authority](05-server-authority.md) (requi
 ## Choose the API
 | API | Status | Use |
 |---|---|---|
-| **Input Action System**: `InputContext` → `InputAction` → `InputBinding` (Instances, edit-time configurable) | current, stable (`InputActionLabel` and the Input Action Manager tool are beta) | new projects; cross-device bindings; required for server authority simulation input |
-| `ContextActionService:BindAction(name, fn, createTouchButton, ...inputs)` | stable | action-style bindings in code, auto touch buttons, priority stacking (`BindActionAtPriority`) |
-| `UserInputService` events (`InputBegan/Changed/Ended`, `GetMouseDelta`, `IsKeyDown`) | stable, low-level | raw input, mouse delta, device detection, text focus |
-| `Player:GetMouse()` / `Mouse` object | legacy (events deprecated in favour of UIS) | avoid in new code |
+| **Input Action System**: `InputContext` → `InputAction` → `InputBinding` (Instances, edit-time configurable) | current, <!-- fact-value: input-action-release-status -->full release<!-- /fact-value --> (`InputActionLabel`: <!-- fact-value: input-action-label-beta -->beta<!-- /fact-value -->; Input Action Manager tool: <!-- fact-value: input-action-manager-beta -->beta<!-- /fact-value -->) | new projects; cross-device bindings; required for server authority simulation input | <!-- fact-refs: input-action-release-status, input-action-label-beta, input-action-manager-beta -->
+| `ContextActionService:BindAction(name, fn, createTouchButton, ...inputs)` | established service | action-style bindings in code, auto touch buttons, priority stacking (`BindActionAtPriority`) |
+| `UserInputService` events (`InputBegan/Changed/Ended`, `GetMouseDelta`, `IsKeyDown`) | low-level service | raw input, mouse delta, device detection, text focus |
+| `Player:GetMouse()` / `Mouse` object | legacy input interface; prefer UIS for new work | avoid in new code |
 Client-only: all input APIs work in LocalScripts / client Scripts.
 
 ## Input Action System essentials

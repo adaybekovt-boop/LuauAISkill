@@ -61,13 +61,15 @@ end)
 - Never echo `unfilteredText` (or parts of it) to other players; if a command's argument must be shown (a team name,
   a sign text) filter it with `TextService:FilterStringAsync` and the right `GetNonChatStringFor…` method.
 - Rate-limit commands that cost server work, like any remote.
+- For an amount-taking command, validate a finite number, require an integer where applicable, and reject or
+  clamp it to server-configured bounds before acting. If text filtering fails, send no raw-text fallback.
 - The default emote/mute commands come from `TextChatService.CreateDefaultCommands` (Studio property).
 
 ## Leaderboards
 | Need | Approach |
 |---|---|
 | Live, per-server scores | `leaderstats` folder (server-owned `IntValue`s) or a custom UI fed by server attributes |
-| Global top N | `OrderedDataStore` (integer values) → `GetSortedAsync(ascending, pageSize ≤ 100, min?, max?)` → `DataStorePages`; read `GetCurrentPage()`, `AdvanceToNextPageAsync()` only while needed |
+| Global top N | `OrderedDataStore` (integer values) → `GetSortedAsync(ascending, pageSize, min?, max?)` → `DataStorePages`; read `GetCurrentPage()`, `AdvanceToNextPageAsync()` only while needed; page size maximum <!-- fact-value: ordered-datastore-page-size[1] -->100<!-- /fact-value --> | <!-- fact-refs: ordered-datastore-page-size -->
 | Friends leaderboard | `player:GetFriendsWhoPlayedAsync()` → user ids of friends who played this experience → `orderedStore:BatchGetAsync(keys)` |
 - `BatchGetAsync` works **only on ordered stores** (standard stores throw); ≥ 1 key, default max 100 per call; each
   requested key costs one read from the ordered-store budget; missing keys are omitted from the result (result shape:

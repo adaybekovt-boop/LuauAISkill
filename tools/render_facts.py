@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -59,6 +60,42 @@ def render(data: dict) -> str:
     return "\n".join(lines)
 
 
+TABLE_BLOCK = re.compile(r"<!-- facts-table: ([a-z0-9, -]+) -->.*?<!-- /facts-table -->", re.S)
+VALUE_BLOCK = re.compile(r"<!-- fact-value: ([a-z0-9-]+)(?:\[([0-9]+)\])? -->.*?<!-- /fact-value -->", re.S)
+
+
+def render_embedded(text: str, data: dict) -> str:
+    """Only replace explicit generated blocks; preserve unrelated chapter edits."""
+    facts = {fact["id"]: fact for fact in data["facts"]}
+
+    def table(match):
+        ids = [fid.strip() for fid in match[1].split(",")]
+        if len(ids) != len(set(ids)):
+            raise ValueError("duplicate fact id in embedded table")
+        lines = [f"<!-- facts-table: {', '.join(ids)} -->",
+                 "| Fact ID / statement | Value | Unit / scope | Status |",
+                 "|---|---|---|---|"]
+        for fid in ids:
+            fact = facts[fid]
+            lines.append("| " + " | ".join(cell(v) for v in
+                         (f"`{fid}`: {fact['statement']}", fact["value"], fact["unit"], fact["status"])) + " |")
+        return "\n".join(lines + ["<!-- /facts-table -->"])
+
+    def value(match):
+        item = facts[match[1]]["value"]
+        suffix = ""
+        if match[2] is not None:
+            item = item[int(match[2])]
+            suffix = f"[{match[2]}]"
+        return f"<!-- fact-value: {match[1]}{suffix} -->{cell(item)}<!-- /fact-value -->"
+
+    return VALUE_BLOCK.sub(value, TABLE_BLOCK.sub(table, text))
+
+
+def embedded_paths(root: Path):
+    return [root / "SKILL.md", *sorted((root / "handbook").rglob("*.md"))]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
@@ -79,6 +116,14 @@ def main() -> int:
                 return 1
         else:
             target.write_text(output, encoding="utf-8")
+        for path in embedded_paths(ROOT):
+            original = path.read_text(encoding="utf-8")
+            updated = render_embedded(original, data)
+            if original != updated:
+                if args.check:
+                    print(f"{path.relative_to(ROOT)} has stale fact blocks: run python tools/render_facts.py")
+                    return 1
+                path.write_text(updated, encoding="utf-8")
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f"ERROR {error}", file=sys.stderr)
         return 1

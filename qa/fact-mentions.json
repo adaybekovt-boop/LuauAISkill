@@ -1,0 +1,4848 @@
+{
+  "schema_version": 1,
+  "scope": "SKILL freshness including its heading; all limits.md numeric/status prose; handbook tables under limit headings/headers or rows with explicit limit cues",
+  "boundary": "Lexical fact-ID/numeric/status-polarity support binding, not semantic entailment. A matching number or status does not establish that its subject, scope, or qualifiers match the cited fact. Every other numeric/status chapter table row needs content-addressed scope adjudication. Code fences, link destinations, API identifier digits are excluded. No claim of repository-wide fact coverage.",
+  "files_sha256": {
+    "SKILL.md": "d22ac7b7fa0670b1de5a64025e1361430e6b657dd255d7d6f0366e4d5330a7b2",
+    "references/limits.md": "1a973bcf53455c2742e6c48a43e7c7e012f8eea811335bf55e91ec43c53b0d14",
+    "handbook/graphics/01-lighting.md": "f0aff36c23e7b1f520dc8613eb1f2d32ae5811bc9a5410e90ba3df2d3ffc2984",
+    "handbook/graphics/02-atmosphere-sky-post.md": "e42e5c9e54e5b420750b1cd54232f76e869527d4ab4e06c652ee8f8104deba6f",
+    "handbook/graphics/03-local-lights.md": "2dd54886008f082e6d5519c104d5e041c3fc84e83007444318755b4f8fcc2077",
+    "handbook/graphics/04-materials-pbr.md": "5b0012697c114ee26e933073bee43931ad983ceeccdaaea2dd581701c0e8a8a7",
+    "handbook/graphics/05-environment-art.md": "d37575a4e876f575526d5e275b8e84df8fe06d440c2b261a8768fe0d28de38b0",
+    "handbook/graphics/06-vfx-particles.md": "0ce653cff9d986ee4ec1fbfeda800887e4313b94492220367ceeaec30281eb8b",
+    "handbook/graphics/07-quality-tiers.md": "80c5b1a63566e9646a26d2fc762dddfdc6ed27a00b70ce8010a31f14fe699840",
+    "handbook/luau/01-language-core.md": "4abfac195ac73199793b32edf1c2e45cc37c3ea1d5ecbb50c6d557661a76eba5",
+    "handbook/luau/02-types.md": "5e49f0ce8a26997a3acc6d56d70ab7c3ea6327f16f427088beb915d38d8cc908",
+    "handbook/luau/03-syntax-stdlib.md": "437440dfe95cf73df6986c788c7e78c3b7854178de613d0372922fd001be1e78",
+    "handbook/luau/04-patterns-data.md": "bc3bdeadd188ffe48eed682e346e631ef23a43cf95e8c0a17e87661a84111ce0",
+    "handbook/luau/05-coroutines-task-errors.md": "92f33d1ade3439564322d986d8dfada48b26a1957b2ea6f0763ead3895040c12",
+    "handbook/luau/06-performance-memory.md": "9b1ee3c83a4283c338f490c11d678b30bb19be11bfc9589cb0882d71147b4a5a",
+    "handbook/roblox/01-runtime-architecture.md": "aa936949c53348d441eaa28cf48d9267ea1a88d3543e5a81aa55ce4ff877fefd",
+    "handbook/roblox/02-lifecycle-events.md": "8dae044a7421daea79dbf1945f753e7f7385d8937774ce3bc600515f3f4ec7d9",
+    "handbook/roblox/03-networking.md": "3d5065a6f416138f237db81085e9ce76ccf1f3945fdcab22ff8fecad946ab22a",
+    "handbook/roblox/04-security.md": "79ce981069263509aacdc898b339209290a69fdbf44ccdd69511fd952b5460fe",
+    "handbook/roblox/05-server-authority.md": "ad7b5cb616df7f8f9acfb5142a8a18a770192a4e3f38ba0748f566aa4bce172e",
+    "handbook/roblox/06-data-persistence.md": "2c4cc2db39773b0cc9f140b545a5afdb171aed0bd838a2041af86059e9537cc7",
+    "handbook/roblox/07-cross-server.md": "50d74d9d0c92a63ee120f447570a1e8ae3659dbd97ae619d7b57d9b773ef24a1",
+    "handbook/roblox/08-performance.md": "97853b15f884ad0b8f75c6594f38f84ec0b3d59e54af31b83060c36d712bdd03",
+    "handbook/roblox/09-physics.md": "c0b8cc3c1ddee909a24df31aa804eb99e793d630878d881c30dfbe794a2bd0fe",
+    "handbook/roblox/10-streaming.md": "a79aad96f78bc476aab2c773bf5af9459febd0db9d755110dab4803daa21e48d",
+    "handbook/roblox/11-terrain.md": "0e24463e2be59ae718815807abcb7178f1c8a2ebabf361dd038591b0b9848ceb",
+    "handbook/roblox/12-procedural-generation.md": "9f0d0a7ad36a062ac36e008f7d36159e4be461b0ed1fefe330c376d58f5b7dbe",
+    "handbook/roblox/13-character-controllers.md": "0c301d5aa75a1a13a4f639eebf600887968389f2f6ca5a585f71928cd9fb5552",
+    "handbook/roblox/14-camera.md": "cd846541792a9f6df26456003272eca56e5133819921e5d52d183f6dcd2c7e38",
+    "handbook/roblox/15-combat.md": "401b65d1c322d4d09e4f5384d568faac035f5ea03585fa4611dca69f367c17a8",
+    "handbook/roblox/16-animation.md": "600b72198c9167ce740e37d3397f8c847a870f97b623fd75011e41c4f50787d0",
+    "handbook/roblox/17-audio.md": "da833ec76659437073ff18d8818f58b415a84338769860191f24ab41e095430f",
+    "handbook/roblox/18-ui-ux.md": "0ac282d8c90e335088d5c5f9a97884247ee453c43d453cb612a3d42e104470e7",
+    "handbook/roblox/19-input.md": "07d04fae04f6fb7f57cce892cfede7ca1a0ff389ee74066db2b3f9e9b19106ea",
+    "handbook/roblox/20-npc-ai.md": "e4306599e19db10413f8113465b966e795dcf5b39635f8c9bea8e3b8c6265d9d",
+    "handbook/roblox/21-architecture.md": "4271bf51f324157e9308b20cf60d50c55b8829608c124d3cae161ccd8b2388da",
+    "handbook/roblox/22-code-quality.md": "bdf745932b8761224f3b62584fdc5af43c6e1e64639742d41ae19c0fdfc23525",
+    "handbook/roblox/23-tooling-testing.md": "d1dbdbf5de7c62fc45771f650eebec02e0dbeb7d8ec7839dd6f3742e8e1e3737",
+    "handbook/roblox/24-studio-mcp-testing.md": "2e19b94c9b44c89aa8931082076508eedf9759c93b950070f18e217be79ed48c",
+    "handbook/roblox/25-monetization.md": "ae6db5d4dfed3cd750ee02a46d19e6f0c19655badf6f23e103609824ab15fbb6",
+    "handbook/roblox/26-chat-leaderboards.md": "298f14c74a16906a63a658d0237c91910fc854c31e6f2f21aa7f43bdb366554f"
+  },
+  "candidate_blocks": 189,
+  "covered_blocks": 189,
+  "unbound_blocks": 0,
+  "coverage_percent": 100.0,
+  "explicit_non_fact_exclusions": [
+    {
+      "path": "references/limits.md",
+      "line": 5,
+      "reason": "Generated glossary/provenance explanation, not a platform status claim",
+      "text": "Dated statements from pinned documentation and API metadata, not a live-platform guarantee. Units, scopes, approximate values, and default-vs-hard-limit qualifiers matter. A documented API or setup procedure alone does not establish general availability."
+    },
+    {
+      "path": "references/limits.md",
+      "line": 15,
+      "reason": "Generated glossary/provenance explanation, not a platform status claim",
+      "text": "Status: **documented** = explicit statement in the pinned source; **approximate** = the source qualifies the number as approximate; **default** = documented default, not an unconditional hard limit; **beta** = source explicitly calls the feature beta; **ga** = source explicitly announces general availability; **deprecated** = source explicitly marks the API deprecated."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 54,
+      "reason": "aesthetic tuning, not a platform limit",
+      "text": "| Toy/plastic materials | SmoothPlastic/Plastic everywhere, EnvironmentSpecularScale 0, no roughness variation | real materials/MaterialVariants/SurfaceAppearance, specular scale ≥ 0.5, roughness variety | <!-- fact-example: aesthetic tuning, not a platform limit -->"
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 15,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "0.25",
+        "0.35",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.8"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 16,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "0.25",
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 17,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "2",
+        "3",
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 19,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 20,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "0"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 40,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "1.5",
+        "2.5",
+        "0.2",
+        "0.6",
+        "16",
+        "32"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 41,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "0.05",
+        "0.2",
+        "−0.2",
+        "255,245,235",
+        "235,242,255"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 43,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "0.2"
+      ]
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 44,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "0.02",
+        "0.1",
+        "0.2",
+        "0.6"
+      ]
+    },
+    {
+      "path": "handbook/graphics/04-materials-pbr.md",
+      "line": 17,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "2"
+      ]
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 20,
+      "reason": "suggested scene dimensions, not a platform limit",
+      "text": "| Door opening | 4–5 wide × 8–9 tall | leave enough camera clearance and test the doorway in your game | <!-- fact-example: suggested scene dimensions, not a platform limit -->"
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 28,
+      "reason": "IEEE standard designation and floating-point arithmetic demonstration; the exact-integer limit is fact-bound.",
+      "numeric_examples": [
+        "754",
+        "0.1",
+        "0.2",
+        "0.3"
+      ]
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 56,
+      "reason": "camera tuning, not a platform limit",
+      "text": "| **Lean** | camera offset + roll ≤ 10–15°, upper-torso animation; for PvP, send lean state to the server (hitbox/peek fairness) | motion sickness; collision of camera with walls | <!-- fact-example: camera tuning, not a platform limit -->"
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 73,
+      "reason": "Illustrative aesthetic/test/code values; not additional platform limits.",
+      "numeric_examples": [
+        "2",
+        "3"
+      ]
+    }
+  ],
+  "adjudicated_non_limit_rows": [
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 34,
+      "mentions": [
+        "14",
+        "00"
+      ],
+      "fact_ids": [],
+      "text": "| `ClockTime` / `TimeOfDay`, `GeographicLatitude` | sun/moon direction, sky colour | set the key light angle (low sun = long shadows, warm) | noon sun (14:00) flattens everything |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 35,
+      "mentions": [
+        "2",
+        "3",
+        "1",
+        "1.5",
+        "0",
+        "0.3"
+      ],
+      "fact_ids": [],
+      "text": "| `Brightness` | sun/moon (directional key light) intensity | day 2–3, overcast 1–1.5, night 0–0.3 | cranking it to fix dark interiors (sun doesn't reach them) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 36,
+      "mentions": [
+        "−1",
+        "+0.5"
+      ],
+      "fact_ids": [],
+      "text": "| `ExposureCompensation` | whole-image exposure before tonemapping | final balance: −1…+0.5 | using ColorCorrection.Brightness instead (clips/looks cheap) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 37,
+      "mentions": [
+        "0",
+        "1",
+        "1",
+        "0.2",
+        "0.6",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `EnvironmentDiffuseScale` (suggested tuning 0–1) | image-based ambient light from the **sky** onto surfaces | 1 outdoors for natural fill; 0.2–0.6 interiors | 0 + high Ambient = flat plastic look |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 38,
+      "mentions": [
+        "0",
+        "1",
+        "1",
+        "0.2",
+        "0.5",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `EnvironmentSpecularScale` (suggested tuning 0–1) | sky **reflections** on smooth/metal surfaces | 1 outdoors (metals look like metal); 0.2–0.5 in sealed interiors (otherwise bright sky reflects in a dark room) | 0 makes metal look like grey plastic |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 39,
+      "mentions": [
+        "70",
+        "130",
+        "20",
+        "40"
+      ],
+      "fact_ids": [],
+      "text": "| `OutdoorAmbient` | flat fill in areas open to the sky | 70–130 grey (day), 20–40 bluish (night) | too high → washed out exteriors |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 40,
+      "mentions": [
+        "0",
+        "30",
+        "1",
+        "128,128,128"
+      ],
+      "fact_ids": [],
+      "text": "| `Ambient` | flat fill **everywhere**, including enclosed interiors | 0–30 for realistic/horror interiors; higher only for stylized | the #1 cause of the \"cheap Roblox look\": grey (128,128,128) ambient kills contrast and hides light direction |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 43,
+      "mentions": [
+        "0.1",
+        "0.3",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| `ShadowSoftness` | penumbra softness (Realistic) | 0.1–0.3 crisp daylight; 0.5+ overcast | |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 51,
+      "mentions": [
+        "0",
+        "30"
+      ],
+      "fact_ids": [],
+      "text": "| Everything evenly lit, no depth | high `Ambient`/`OutdoorAmbient`, no key light direction | lower ambient (0–30 interior), add a motivated key (window/lamp), let shadows exist |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 52,
+      "mentions": [
+        "0",
+        "0",
+        "0.05",
+        "0.15"
+      ],
+      "fact_ids": [],
+      "text": "| Grey, milky image | Atmosphere `Haze`/`Density` too high, `ExposureCompensation` too high, ColorCorrection Brightness > 0 | reduce haze, lower exposure, keep CC Brightness ≈ 0, add slight Contrast (0.05–0.15) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 53,
+      "mentions": [
+        "1.5",
+        "2",
+        "0.2",
+        "0.6"
+      ],
+      "fact_ids": [],
+      "text": "| Everything glows | Bloom `Threshold` too low / Intensity too high; Neon everywhere | Threshold ≥ ~1.5–2 so only emissives/brightest pixels bloom, Intensity 0.2–0.6 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 55,
+      "mentions": [
+        "0",
+        "70",
+        "−0.1",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Oversaturated neon candy | saturated part colours + Saturation > 0 + saturated lights | desaturate base colours (real materials are rarely > 70 % saturated), CC Saturation −0.1…0, keep light colours near-white with slight temperature |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/01-lighting.md",
+      "line": 56,
+      "mentions": [
+        "0.1",
+        "0.3"
+      ],
+      "fact_ids": [],
+      "text": "| Flat night | pure blue ambient everywhere | dark ambient, a single moon key (Brightness 0.1–0.3, cool), warm practical lights for contrast |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 52,
+      "mentions": [
+        "12",
+        "13",
+        "2.5",
+        "3",
+        "110",
+        "1",
+        "1",
+        "0.3",
+        "0.1",
+        "0.5",
+        "0.08",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Clear midday | ClockTime 12–13, Brightness 2.5–3, OutdoorAmbient 110, EnvDiffuse 1, EnvSpec 1 | Density 0.3, Offset 0.1, Haze 0.5 | CC Contrast 0.08, Bloom thr 2 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 53,
+      "mentions": [
+        "17.5",
+        "18.2",
+        "2",
+        "255,200,150",
+        "0.35",
+        "1.5",
+        "2.5",
+        "0.5",
+        "1",
+        "0.05"
+      ],
+      "fact_ids": [],
+      "text": "| Golden hour / sunset | ClockTime 17.5–18.2, Brightness 2, ColorShift_Top warm (255,200,150) subtle | Density 0.35, Haze 1.5–2.5, Glare 0.5–1, Color warm orange, Decay dark purple | CC TintColor slight warm, SunRays 0.05 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 54,
+      "mentions": [
+        "13",
+        "1",
+        "1.3",
+        "0.6",
+        "0.45",
+        "2",
+        "3",
+        "−0.15",
+        "0.05"
+      ],
+      "fact_ids": [],
+      "text": "| Overcast / rain | ClockTime 13, Brightness 1–1.3, ShadowSoftness 0.6+ | Density 0.45, Haze 2–3, Color grey-blue | CC Saturation −0.15, Contrast 0.05; rain particles + wet materials (lower roughness) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 55,
+      "mentions": [
+        "1",
+        "0.6",
+        "0.8",
+        "0",
+        "0.1",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Fog / mist | Brightness 1, low sun | Density 0.6–0.8, Offset 0–0.1, Haze 2 | keep exposure moderate; add ground fog cards sparingly |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 56,
+      "mentions": [
+        "0",
+        "2",
+        "0.15",
+        "0.3",
+        "25,30,45",
+        "5,5,8",
+        "0.35",
+        "0.5",
+        "−0.2"
+      ],
+      "fact_ids": [],
+      "text": "| Moonlit night | ClockTime 0–2, Brightness 0.15–0.3, OutdoorAmbient (25,30,45), Ambient ~(5,5,8) | Density 0.35, Color cool, Haze 0.5 | CC Saturation −0.2, cool tint; warm practicals for contrast |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 21,
+      "mentions": [
+        "8",
+        "12",
+        "6",
+        "8"
+      ],
+      "fact_ids": [],
+      "text": "| Corridor | 8–12 wide (first person: 6–8 feels tight/claustrophobic) | wider for third-person cameras and combat |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 22,
+      "mentions": [
+        "10",
+        "14",
+        "11",
+        "12",
+        "8",
+        "9",
+        "20",
+        "40"
+      ],
+      "fact_ids": [],
+      "text": "| Room ceiling | 10–14 | offices ~11–12; lower (8–9) = oppressive; halls/warehouses 20–40 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 23,
+      "mentions": [
+        "0.8",
+        "1",
+        "1.5",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Stair step | rise 0.8–1, run 1.5–2 | test stair clearance for your chosen controller; use invisible ramps for smooth movement |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 24,
+      "mentions": [
+        "3",
+        "3.5",
+        "3.5",
+        "2.5",
+        "3"
+      ],
+      "fact_ids": [],
+      "text": "| Railing / counter / table height | 3–3.5 / 3.5 / 2.5–3 | |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 25,
+      "mentions": [
+        "1.8",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Chair seat | ~1.8–2 | |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 26,
+      "mentions": [
+        "2.5",
+        "3"
+      ],
+      "fact_ids": [],
+      "text": "| Window sill | 2.5–3 | |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/05-environment-art.md",
+      "line": 27,
+      "mentions": [
+        "0.5",
+        "1",
+        "1",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Wall thickness | 0.5–1 (interior), 1–2 (exterior) | thin walls leak light and break shadows |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 17,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `ParticleEmitter:Emit(n)` | one-shot bursts (impacts, muzzle flash) with `Rate = 0` | |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 22,
+      "mentions": [
+        "0",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| `Fire`/`Smoke`/`Sparkles`/`Explosion` | legacy quick effects | prefer ParticleEmitter for control; `Explosion` also applies physics/kills unless `DestroyJointRadiusPercent = 0` / `BlastPressure = 0` |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 29,
+      "mentions": [
+        "0.25",
+        "0.5",
+        "1",
+        "1.25"
+      ],
+      "fact_ids": [],
+      "text": "| Particle `Rate` multiplier | 0.25 | 0.5 | 1 | 1.25 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 31,
+      "mentions": [
+        "0",
+        "1",
+        "2",
+        "4",
+        "6"
+      ],
+      "fact_ids": [],
+      "text": "| Shadowed local lights (your content) | 0–1 (flashlight only) | 2 | 4 | 6+ |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 37,
+      "mentions": [
+        "25",
+        "50",
+        "100",
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| Decoration density (grass cards, clutter props) | 25 % | 50 % | 100 % | 100 % |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 38,
+      "mentions": [
+        "0.5",
+        "0.75",
+        "1",
+        "1.5"
+      ],
+      "fact_ids": [],
+      "text": "| Your LOD swap distance | ×0.5 | ×0.75 | ×1 | ×1.5 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/graphics/07-quality-tiers.md",
+      "line": 39,
+      "mentions": [
+        "40",
+        "80",
+        "150",
+        "250"
+      ],
+      "fact_ids": [],
+      "text": "| NPC animation distance (client) | 40 | 80 | 150 | 250 studs |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 27,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Only `nil` and `false` are falsy | `0`, `\"\"`, `{}` are truthy. `x or default` breaks when `false` is valid → use `if x == nil then default else x`. |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 86,
+      "mentions": [
+        "1",
+        "5.4",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| `local x <const> = 1` (5.4) | `const x = 1` (Luau const binding; binding only, value still mutable) |",
+      "classification": "other_product_version",
+      "reason": "Version/history of Lua or a third-party tool, outside Roblox engine/service limit tables."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 89,
+      "mentions": [
+        "5.3",
+        "removed"
+      ],
+      "fact_ids": [],
+      "text": "| `math.pow` | removed in 5.3+, exists in Luau but use `^` |",
+      "classification": "other_product_version",
+      "reason": "Version/history of Lua or a third-party tool, outside Roblox engine/service limit tables."
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 91,
+      "mentions": [
+        "3.7",
+        "3"
+      ],
+      "fact_ids": [],
+      "text": "| `string.format(\"%d\", 3.7)` | truncates to `3` (no rounding) → `math.round` first if you mean rounding |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/02-types.md",
+      "line": 28,
+      "mentions": [
+        "06"
+      ],
+      "fact_ids": [],
+      "text": "| `--!native` | request native codegen for the script (performance, not typing) — see [06](06-performance-memory.md) |",
+      "classification": "navigation_identifier",
+      "reason": "Numeric chapter label in a navigation link, not a fact claim."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 16,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| Type annotations | `local hp: number = 100` | [types](02-types.md) |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 17,
+      "mentions": [
+        "100",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| `const` binding | `const MAX = 100` | binding cannot be reassigned; table contents still mutable; `const` is contextual (old `local const = 1` still parses) |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 18,
+      "mentions": [
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| Compound assignment | `n += 1`, `s ..= \"x\"` | statement only |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 20,
+      "mentions": [
+        "50"
+      ],
+      "fact_ids": [],
+      "text": "| If-expression | `local c = if hp > 50 then \"ok\" else \"low\"` | use instead of `a and b or c` |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 23,
+      "mentions": [
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| Floor division | `x // 2` | floors toward −∞ |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 24,
+      "mentions": [
+        "deprecated",
+        "deprecated"
+      ],
+      "fact_ids": [],
+      "text": "| Function attributes | `@native local function hot() end`, `@deprecated` | `@native` = native codegen hint; `@deprecated` makes the linter warn callers |",
+      "classification": "language_syntax",
+      "reason": "The @deprecated syntax/linter attribute is demonstrated; this is not a rollout/deprecation claim about an engine API."
+    },
+    {
+      "path": "handbook/luau/03-syntax-stdlib.md",
+      "line": 25,
+      "mentions": [
+        "5"
+      ],
+      "fact_ids": [],
+      "text": "| Explicit generic instantiation | `identity<<number>>(5)` | rarely needed |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/luau/04-patterns-data.md",
+      "line": 21,
+      "mentions": [
+        "12"
+      ],
+      "fact_ids": [],
+      "text": "| Polymorphism | table of handlers keyed by kind | `if kind == ... elseif` in 12 places |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/luau/05-coroutines-task-errors.md",
+      "line": 29,
+      "mentions": [
+        "05"
+      ],
+      "fact_ids": [],
+      "text": "| Fixed-rate deterministic simulation (server authority) | `RunService:BindToSimulation(fn, frequency)` ([05-server-authority](../roblox/05-server-authority.md)) |",
+      "classification": "navigation_identifier",
+      "reason": "Numeric chapter label in a navigation link, not a fact claim."
+    },
+    {
+      "path": "handbook/luau/05-coroutines-task-errors.md",
+      "line": 32,
+      "mentions": [
+        "0.5",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| Periodic low-rate work (every 0.5 s) | a single loop with `task.wait(0.5)` or accumulator on Heartbeat, not one thread per object |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 42,
+      "mentions": [
+        "1",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| **Numbers** | `x == x` (NaN), `math.isfinite`, integer `x % 1 == 0`, range | NaN passes `<`/`>` checks silently — test explicitly |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 45,
+      "mentions": [
+        "1",
+        "2"
+      ],
+      "fact_ids": [],
+      "text": "| **Tables** | shape: exact keys, max length, max depth 1–2 | reject unknown keys |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 46,
+      "mentions": [
+        "2",
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| **Interaction** | distance from server-side character root to target ≤ range + latency slack (2–4 studs), target enabled, cooldown | use target's pivot/closest point for big objects |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 141,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| type/range/rate | ~0 | every remote call |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 142,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| distance | ~0 | every interaction/attack |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/04-security.md",
+      "line": 145,
+      "mentions": [
+        "2",
+        "10",
+        "60"
+      ],
+      "fact_ids": [],
+      "text": "| per-frame movement validation of all players | medium–high | competitive games; sample 2–10 Hz, not 60 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "line": 47,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| `updateInvalidatedFastClusters` (> 4 ms) | avatar/skinned mesh rebuilds | avoid resizing/re-parenting avatar parts; pool NPCs; animate via `Motor6D.Transform`, not C0/C1 |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "line": 65,
+      "mentions": [
+        "5",
+        "20"
+      ],
+      "fact_ids": [],
+      "text": "| Expensive work bound to `Heartbeat/PreRender` | run at 5–20 Hz with an accumulator; event-driven where possible |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/08-performance.md",
+      "line": 66,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| One connection per object per frame (100 NPC scripts each on Heartbeat) | one manager loop iterating a registry; LOD tick rates by distance |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/12-procedural-generation.md",
+      "line": 67,
+      "mentions": [
+        "5",
+        "15"
+      ],
+      "fact_ids": [],
+      "text": "| Classic maze (single path feel) | recursive backtracker / randomized Prim / Kruskal (union-find) | perfect maze = tree; add loops by removing extra walls (5–15 %) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 48,
+      "mentions": [
+        "16",
+        "24",
+        "26",
+        "+5",
+        "8",
+        "0.15",
+        "0.5",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| **Sprint** | WalkSpeed 16→24–26, FOV +5–8 (tween 0.15 s), stamina drain server-side; only while moving forward-ish (`MoveDirection:Dot(lookVector) > 0.5`) | restore on death/respawn; stop when stamina 0; debounce toggle vs hold per settings |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 49,
+      "mentions": [
+        "1",
+        "1.5",
+        "2",
+        "4"
+      ],
+      "fact_ids": [],
+      "text": "| **Stamina** | server authoritative number, regen after delay (1–1.5 s); client predicts for UI | don't replicate every frame — send on start/stop + periodic correction (2–4 Hz) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 50,
+      "mentions": [
+        "8",
+        "−1.5"
+      ],
+      "fact_ids": [],
+      "text": "| **Crouch** | lower `HipHeight`/play crouch anim, WalkSpeed ~8, camera offset −1.5; stand only if upward `Blockcast` from root finds no ceiling | R15 collision comes from body parts; test low vents; crouch-jump rules |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 51,
+      "mentions": [
+        "0.6",
+        "0.9"
+      ],
+      "fact_ids": [],
+      "text": "| **Slide** | from sprint: impulse/`LinearVelocity` along forward on the ground, decay over 0.6–0.9 s, lower camera, cooldown | slopes accelerate; stop on wall hit (raycast ahead); server tolerance for burst speed |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 53,
+      "mentions": [
+        "20"
+      ],
+      "fact_ids": [],
+      "text": "| **Fall damage** | on `Freefall` start record Y (or use `AssemblyLinearVelocity.Y` at `Landed`); damage = f(fall height beyond threshold, e.g. > 20 studs) applied **by the server** (server can observe the character's state/velocity which replicate from the owner) | exploiters can cancel their own fall; water/trampolines exempt |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 55,
+      "mentions": [
+        "3",
+        "0.3",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| **Vault / mantle** | 3 raycasts forward (knee, chest, head) + one down from above the obstacle to find top & height; if knee hit & head clear & height ≤ max: play animation and move root along a curve over 0.3–0.5 s (client), with collisions allowed on the path check | never teleport through walls: validate target space with `Blockcast`/`GetPartBoundsInBox`; server movement validator must allow vault bursts |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "line": 93,
+      "mentions": [
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| FPS | LockFirstPerson + LockCenter; hide own body parts locally (`LocalTransparencyModifier = 1`) or use a viewmodel; layered offsets on `BindToRenderStep` after Camera |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "line": 94,
+      "mentions": [
+        "1.75",
+        "0.5",
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Third-person shoulder | `Humanoid.CameraOffset = Vector3.new(1.75, 0.5, 0)` + `AutoRotate` rules; or Scriptable orbit with collision (spherecast from pivot to desired position, pull in on hit) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/14-camera.md",
+      "line": 98,
+      "mentions": [
+        "90",
+        "100",
+        "120",
+        "16",
+        "9"
+      ],
+      "fact_ids": [],
+      "text": "| Bodycam | vertical FOV ~90–100 (very wide, ≈120°+ horizontal on 16:9), camera anchored to chest/shoulder attachment with lag spring, strong handheld noise at low frequency, slight roll, fisheye-like feel via FOV + DepthOfField/ColorCorrection/grain overlay — see recipe; keep a comfort toggle |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/16-animation.md",
+      "line": 103,
+      "mentions": [
+        "0"
+      ],
+      "fact_ids": [],
+      "text": "| Doesn't play at all | wrong rig type (R6 clip on R15), asset permission, priority lower than locomotion, weight 0, track not loaded yet |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 34,
+      "mentions": [
+        "1080",
+        "0.6",
+        "1.4"
+      ],
+      "fact_ids": [],
+      "text": "| Global scale per device | one `UIScale` at the root, value computed from viewport size (e.g. `math.clamp(viewport.Y / 1080, 0.6, 1.4)`) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 42,
+      "mentions": [
+        "0.5,0.5"
+      ],
+      "fact_ids": [],
+      "text": "| Anchor points | set `AnchorPoint` (0.5,0.5 for centered) before positioning |",
+      "classification": "code_example",
+      "reason": "Literal in an illustrative programming/configuration example, not a platform limit table."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 86,
+      "mentions": [
+        "0.1",
+        "0.2"
+      ],
+      "fact_ids": [],
+      "text": "| Health/stamina bar | frame with inner fill sized by scale; tween size over 0.1–0.2 s; lag bar (white) trailing for damage feedback |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/18-ui-ux.md",
+      "line": 88,
+      "mentions": [
+        "0.3",
+        "0.5"
+      ],
+      "fact_ids": [],
+      "text": "| Tooltip | single reusable tooltip frame repositioned to hovered element; delay 0.3–0.5 s; gamepad: show on selection |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/20-npc-ai.md",
+      "line": 92,
+      "mentions": [
+        "disabled"
+      ],
+      "fact_ids": [],
+      "text": "| Humanoid with unused states disabled | lower | most enemies |",
+      "classification": "runtime_state",
+      "reason": "Disabled describes chosen Humanoid runtime states, not platform rollout status."
+    },
+    {
+      "path": "handbook/roblox/20-npc-ai.md",
+      "line": 94,
+      "mentions": [
+        "10",
+        "20"
+      ],
+      "fact_ids": [],
+      "text": "| Anchored root moved by CFrame along path (server at 10–20 Hz) + client-side interpolation/animation | lowest | crowds, ambient NPCs |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/21-architecture.md",
+      "line": 16,
+      "mentions": [
+        "1",
+        "2k",
+        "1",
+        "1"
+      ],
+      "fact_ids": [],
+      "text": "| Prototype / jam (< 1–2k lines) | 1 server entry + 1 client entry + a handful of ModuleScripts; tags + binders for world objects |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 47,
+      "mentions": [
+        "7.7",
+        "7.7"
+      ],
+      "fact_ids": [],
+      "text": "| **Rojo** (community, 7.7+) | the file system (`default.project.json`), including models (`.rbxm/.model.json`) | full Git/CI, packages via Wally/pesde | builders must sync assets carefully; 7.7 adds explicit syncback (Studio → disk), not automatic two-way sync |",
+      "classification": "other_product_version",
+      "reason": "Version/history of Lua or a third-party tool, outside Roblox engine/service limit tables."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 75,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [],
+      "text": "| Adversarial | invalid payloads (NaN, huge numbers, wrong types, other players' instances), spam 100 req/s, out-of-range interactions | command bar on a client in Server & Clients (`remote:FireServer(...)`) |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 76,
+      "mentions": [
+        "100",
+        "300"
+      ],
+      "fact_ids": [],
+      "text": "| Network | 100–300 ms latency, packet loss; unreliable remotes under loss | Network Simulator |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 78,
+      "mentions": [
+        "10"
+      ],
+      "fact_ids": [],
+      "text": "| Performance | frame time p95, memory growth over 10+ min, server heartbeat | MicroProfiler, Dev Console, target devices |",
+      "classification": "design_example",
+      "reason": "Project-specific tuning or workload example; not an engine maximum, default, or rollout status."
+    }
+  ],
+  "outside_scope_review_candidates": 0,
+  "rows": [
+    {
+      "path": "SKILL.md",
+      "line": 127,
+      "mentions": [
+        "120",
+        "255",
+        "-5",
+        "5",
+        "disabled"
+      ],
+      "fact_ids": [
+        "highlight-slots",
+        "lighting-exposure-range",
+        "local-light-range"
+      ],
+      "text": "- Local light range max **<!-- fact-value: local-light-range -->120<!-- /fact-value -->** studs; `Highlight` slots **<!-- fact-value: highlight-slots -->255<!-- /fact-value -->** per client (disabled highlights consume slots); `ExposureCompensation` range <!-- fact-value: lighting-exposure-range -->[-5, 5]<!-- /fact-value -->.",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 128,
+      "mentions": [
+        "superseded",
+        "Deprecated"
+      ],
+      "fact_ids": [
+        "lighting-technology-superseded"
+      ],
+      "text": "- `Lighting.Technology` is RobloxScriptSecurity and superseded in documentation; the dump does not tag it Deprecated. `LightingStyle`/`PrioritizeLightingQuality` are Studio/plugin writes. <!-- fact-refs: lighting-technology-superseded -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 133,
+      "mentions": [
+        "superseded"
+      ],
+      "fact_ids": [
+        "renderstepped-superseded",
+        "stepped-superseded"
+      ],
+      "text": "- `RenderStepped`/`Stepped` superseded by `PreRender`/`PreSimulation` for new work. <!-- fact-refs: renderstepped-superseded, stepped-superseded -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 134,
+      "mentions": [
+        "2026",
+        "07",
+        "09",
+        "fully released"
+      ],
+      "fact_ids": [
+        "server-authority-release-date",
+        "server-authority-release-status"
+      ],
+      "text": "- **Server authority mode is fully released (<!-- fact-value: server-authority-release-date -->2026-07-09<!-- /fact-value -->)**. <!-- fact-refs: server-authority-release-status -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 135,
+      "mentions": [
+        "2026",
+        "04",
+        "08",
+        "2026",
+        "09",
+        "10",
+        "full release",
+        "beta"
+      ],
+      "fact_ids": [
+        "ccl-abilities-beta-date",
+        "ccl-abilities-beta-status",
+        "ccl-base-release-date",
+        "ccl-base-release-status"
+      ],
+      "text": "- The base Character Controller Library is a **<!-- fact-value: ccl-base-release-status -->full release<!-- /fact-value -->** (<!-- fact-value: ccl-base-release-date -->2026-04-08<!-- /fact-value -->); its new default/custom abilities are a separate **<!-- fact-value: ccl-abilities-beta-status -->Studio beta<!-- /fact-value -->** (<!-- fact-value: ccl-abilities-beta-date -->2026-09-10<!-- /fact-value -->). See [character controllers](handbook/roblox/13-character-controllers.md) for setup and migration.",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 136,
+      "mentions": [
+        "full release",
+        "beta"
+      ],
+      "fact_ids": [
+        "input-action-label-beta",
+        "input-action-release-status"
+      ],
+      "text": "- Audio API is the recommended audio system; Input Action System is **<!-- fact-value: input-action-release-status -->full release<!-- /fact-value -->** (`InputActionLabel` is <!-- fact-value: input-action-label-beta -->beta<!-- /fact-value -->).",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 138,
+      "mentions": [
+        "2026",
+        "05",
+        "30",
+        "disabled"
+      ],
+      "fact_ids": [
+        "cross-game-developer-product-sales-disable-date",
+        "cross-game-pass-sales-disable-date"
+      ],
+      "text": "- Receipts: `ProcessReceipt` (`Enum.ProductPurchaseDecision`) and `MarketplaceService:BindReceiptHandler`\n  (`Enum.ReceiptDecision.Processed`/`NotProcessedYet`) use different enums. Pinned docs schedule cross-game developer-product/pass sales to be disabled from <!-- fact-value: cross-game-developer-product-sales-disable-date -->2026-05-30<!-- /fact-value --> (use Robux transfers). <!-- fact-refs: cross-game-pass-sales-disable-date -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 141,
+      "mentions": [
+        "1",
+        "8"
+      ],
+      "fact_ids": [
+        "studio-test-service-clients"
+      ],
+      "text": "- Studio ships a built-in **MCP server** (stdio; every call takes `studio_id`; use the current tool list).\n  `start_stop_play` starts a single play client; multiplayer automation is `StudioTestService:ExecuteMultiplayerTestAsync` (<!-- fact-value: studio-test-service-clients -->[1, 8]<!-- /fact-value --> players, plugin security).",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "SKILL.md",
+      "line": 143,
+      "mentions": [
+        "4194304",
+        "60",
+        "40",
+        "30",
+        "5",
+        "4",
+        "30"
+      ],
+      "fact_ids": [
+        "bind-to-close-deadline",
+        "datastore-cache-duration",
+        "datastore-ordered-write-server-rate",
+        "datastore-standard-read-server-rate",
+        "datastore-standard-write-server-rate",
+        "datastore-value-size"
+      ],
+      "text": "- DataStore values: <!-- fact-value: datastore-value-size -->4194304<!-- /fact-value --> serialized characters. Standard read/write default server budgets: <!-- fact-value: datastore-standard-read-server-rate -->60 + 40 * players<!-- /fact-value --> per minute each; ordered writes: <!-- fact-value: datastore-ordered-write-server-rate -->30 + 5 * players<!-- /fact-value --> per minute. <!-- fact-refs: datastore-standard-write-server-rate -->\n  `GetAsync` cache: <!-- fact-value: datastore-cache-duration -->4<!-- /fact-value --> s; `BindToClose`: about <!-- fact-value: bind-to-close-deadline -->30<!-- /fact-value --> s. `BatchGetAsync` supports ordered stores; requested keys consume read budget.",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 21,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "11",
+        "01",
+        "full release",
+        "beta",
+        "full release",
+        "ga"
+      ],
+      "fact_ids": [
+        "server-authority-release-status"
+      ],
+      "text": "| `server-authority-release-status`: Server authority was announced as a full release for all games. The dated announcement supersedes a stale beta sentence in the pinned network-ownership guide. This does not claim that every related feature is generally available. | full release | release status | ga | [pinned source](https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993) | 2026-10-02 / 2026-11-01 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 22,
+      "mentions": [
+        "2026",
+        "07",
+        "09",
+        "2026",
+        "10",
+        "02",
+        "2027",
+        "03",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-release-date"
+      ],
+      "text": "| `server-authority-release-date`: Date of the official server authority full-release announcement. | 2026-07-09 | calendar date | documented | [pinned source](https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993) | 2026-10-02 / 2027-03-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 23,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "11",
+        "01",
+        "full release",
+        "ga"
+      ],
+      "fact_ids": [
+        "ccl-base-release-status"
+      ],
+      "text": "| `ccl-base-release-status`: The base Character Controller Library was announced for live experiences. The base-library release is separate from later opt-in ability betas. | full release | release status | ga | [pinned source](https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267) | 2026-10-02 / 2026-11-01 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 24,
+      "mentions": [
+        "2026",
+        "04",
+        "08",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "ccl-base-release-date"
+      ],
+      "text": "| `ccl-base-release-date`: Date of the base Character Controller Library full-release announcement. | 2026-04-08 | calendar date | documented | [pinned source](https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 25,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "11",
+        "01",
+        "beta",
+        "beta",
+        "beta",
+        "beta"
+      ],
+      "fact_ids": [
+        "ccl-abilities-beta-status"
+      ],
+      "text": "| `ccl-abilities-beta-status`: CCL default abilities and Custom Abilities API were announced as a separate Studio beta. | Studio beta | release status | beta | [pinned source](https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739) | 2026-10-02 / 2026-11-01 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 26,
+      "mentions": [
+        "2026",
+        "09",
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31",
+        "beta",
+        "beta"
+      ],
+      "fact_ids": [
+        "ccl-abilities-beta-date"
+      ],
+      "text": "| `ccl-abilities-beta-date`: Date of the CCL default/custom abilities Studio beta announcement. | 2026-09-10 | calendar date | documented | [pinned source](https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 27,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "11",
+        "01",
+        "fully released",
+        "full release",
+        "ga"
+      ],
+      "fact_ids": [
+        "input-action-release-status"
+      ],
+      "text": "| `input-action-release-status`: The Input Action System was announced as fully released. This does not announce all related Studio tools or InputActionLabel as released. | full release | release status | ga | [pinned source](https://devforum.roblox.com/t/full-release-input-action-system-ias-newly-converted-player-scripts/4678416) | 2026-10-02 / 2026-11-01 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 28,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "11",
+        "01",
+        "beta",
+        "beta",
+        "beta",
+        "beta"
+      ],
+      "fact_ids": [
+        "input-action-label-beta"
+      ],
+      "text": "| `input-action-label-beta`: InputActionLabel is explicitly labeled beta in the pinned input guide. | beta | release status | beta | cd:input/input-action-system | 2026-10-02 / 2026-11-01 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 29,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31",
+        "superseded",
+        "superseded",
+        "Deprecated",
+        "Deprecated",
+        "superseded"
+      ],
+      "fact_ids": [
+        "lighting-technology-superseded"
+      ],
+      "text": "| `lighting-technology-superseded`: Lighting.Technology is superseded in documentation; the dump does not tag it Deprecated. Check access separately: the pinned dump requires RobloxScriptSecurity. Documentation supersession and the Deprecated tag are distinct. | superseded | documentation status | documented | cd:reference/engine/classes/Lighting | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 30,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31",
+        "superseded",
+        "superseded"
+      ],
+      "fact_ids": [
+        "renderstepped-superseded"
+      ],
+      "text": "| `renderstepped-superseded`: RenderStepped is superseded by PreRender for new work. | PreRender | replacement event | documented | cd:reference/engine/classes/RunService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 31,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31",
+        "superseded",
+        "superseded"
+      ],
+      "fact_ids": [
+        "stepped-superseded"
+      ],
+      "text": "| `stepped-superseded`: Stepped is superseded by PreSimulation for new work. | PreSimulation | replacement event | documented | cd:reference/engine/classes/RunService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 32,
+      "mentions": [
+        "2026",
+        "05",
+        "30",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "cross-game-developer-product-sales-disable-date"
+      ],
+      "text": "| `cross-game-developer-product-sales-disable-date`: Scheduled disable date for cross-game developer-product sales in the pinned monetization guide. A dated documentation policy statement, not a live transaction test. | 2026-05-30 | calendar date | documented | cd:production/monetization/developer-products | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 33,
+      "mentions": [
+        "2026",
+        "05",
+        "30",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "cross-game-pass-sales-disable-date"
+      ],
+      "text": "| `cross-game-pass-sales-disable-date`: Scheduled disable date for cross-game pass sales in the pinned monetization guide. A dated documentation policy statement, not a live transaction test. | 2026-05-30 | calendar date | documented | cd:production/monetization/passes | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 34,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "11",
+        "01",
+        "beta",
+        "beta",
+        "beta",
+        "beta"
+      ],
+      "fact_ids": [
+        "input-action-manager-beta"
+      ],
+      "text": "| `input-action-manager-beta`: Input Action Manager tool is explicitly labeled beta. | beta | release status | beta | cd:input/input-action-system | 2026-10-02 / 2026-11-01 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 40,
+      "mentions": [
+        "500",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "remote-client-send-rate"
+      ],
+      "text": "| `remote-client-send-rate`: RemoteEvent and UnreliableRemoteEvent client-to-server rate; shared among all remotes of the same type. | 500 | requests/second/client | approximate | cd:reference/engine/classes/RemoteEvent | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 41,
+      "mentions": [
+        "1000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "unreliable-remote-payload"
+      ],
+      "text": "| `unreliable-remote-payload`: UnreliableRemoteEvent payloads above this size are dropped. | 1000 | bytes | documented | cd:reference/engine/classes/UnreliableRemoteEvent | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 42,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "remote-function-callback"
+      ],
+      "text": "| `remote-function-callback`: Only the last callback assigned to a RemoteFunction executes. | 1 | effective callback/RemoteFunction | documented | cd:scripting/events/remote | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 43,
+      "mentions": [
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "deferred-reentrancy-depth"
+      ],
+      "text": "| `deferred-reentrancy-depth`: Deferred-event re-entrancy depth limit. | 10 | levels | documented | cd:scripting/events/deferred | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 49,
+      "mentions": [
+        "4194304",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-value-size"
+      ],
+      "text": "| `datastore-value-size`: Maximum serialized data-store value size. | 4194304 | characters/key | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 50,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-name-length"
+      ],
+      "text": "| `datastore-name-length`: Maximum data-store name length. | 50 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 51,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-key-length"
+      ],
+      "text": "| `datastore-key-length`: Maximum data-store key length. | 50 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 52,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-scope-length"
+      ],
+      "text": "| `datastore-scope-length`: Maximum data-store scope length. | 50 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 53,
+      "mentions": [
+        "300",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-metadata-total"
+      ],
+      "text": "| `datastore-metadata-total`: Maximum total user-defined metadata size. | 300 | characters | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 54,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-read-server-rate"
+      ],
+      "text": "| `datastore-standard-read-server-rate`: Standard data-store read default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 55,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-write-server-rate"
+      ],
+      "text": "| `datastore-standard-write-server-rate`: Standard data-store write default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 56,
+      "mentions": [
+        "5",
+        "2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-list-server-rate"
+      ],
+      "text": "| `datastore-standard-list-server-rate`: Standard data-store list default server rate; configurable through SetRateLimitForRequestType. | 5 + 2 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 57,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-standard-remove-server-rate"
+      ],
+      "text": "| `datastore-standard-remove-server-rate`: Standard data-store remove default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 58,
+      "mentions": [
+        "60",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-read-server-rate"
+      ],
+      "text": "| `datastore-ordered-read-server-rate`: Ordered data-store read default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 59,
+      "mentions": [
+        "30",
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-write-server-rate"
+      ],
+      "text": "| `datastore-ordered-write-server-rate`: Ordered data-store write default server rate; configurable through SetRateLimitForRequestType. | 30 + 5 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 60,
+      "mentions": [
+        "5",
+        "2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-list-server-rate"
+      ],
+      "text": "| `datastore-ordered-list-server-rate`: Ordered data-store list default server rate; configurable through SetRateLimitForRequestType. | 5 + 2 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 61,
+      "mentions": [
+        "30",
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-ordered-remove-server-rate"
+      ],
+      "text": "| `datastore-ordered-remove-server-rate`: Ordered data-store remove default server rate; configurable through SetRateLimitForRequestType. | 30 + 5 * players | requests/minute/server | default | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 62,
+      "mentions": [
+        "300",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-read-experience-rate"
+      ],
+      "text": "| `datastore-read-experience-rate`: Read experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 40 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 63,
+      "mentions": [
+        "300",
+        "20",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-write-experience-rate"
+      ],
+      "text": "| `datastore-write-experience-rate`: Write experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 20 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 64,
+      "mentions": [
+        "300",
+        "2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-list-experience-rate"
+      ],
+      "text": "| `datastore-list-experience-rate`: List experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 2 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 65,
+      "mentions": [
+        "300",
+        "40",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-remove-experience-rate"
+      ],
+      "text": "| `datastore-remove-experience-rate`: Remove experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 40 * concurrent_users | requests/minute/experience/data-store-type | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 66,
+      "mentions": [
+        "25",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-key-read-throughput"
+      ],
+      "text": "| `datastore-key-read-throughput`: Per-key read throughput; each request is rounded up to the next kilobyte. | 25 | MB/minute/key | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 67,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-key-write-throughput"
+      ],
+      "text": "| `datastore-key-write-throughput`: Per-key write throughput; each request is rounded up to the next kilobyte. | 4 | MB/minute/key | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 68,
+      "mentions": [
+        "30",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-queue-size"
+      ],
+      "text": "| `datastore-queue-size`: Requests beyond the per-queue limit are dropped. | 30 | requests/queue | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 69,
+      "mentions": [
+        "500",
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-storage"
+      ],
+      "text": "| `datastore-storage`: Storage allowance measured using compressed latest key versions. | 500 + 1 * lifetime_users | MB/experience | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 70,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-cache-duration"
+      ],
+      "text": "| `datastore-cache-duration`: Default GetAsync local-cache lifetime. | 4 | seconds | default | cd:cloud-services/data-stores/versioning-listing-and-caching | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 71,
+      "mentions": [
+        "30",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "bind-to-close-deadline"
+      ],
+      "text": "| `bind-to-close-deadline`: BindToClose callbacks have this time to complete. | 30 | seconds | documented | cd:cloud-services/data-stores/player-data-purchasing | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 72,
+      "mentions": [
+        "1",
+        "100",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "ordered-datastore-page-size"
+      ],
+      "text": "| `ordered-datastore-page-size`: OrderedDataStore GetSortedAsync page-size range. | [1, 100] | entries/page | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 73,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-supported-store"
+      ],
+      "text": "| `batch-get-supported-store`: GlobalDataStore BatchGetAsync currently supports ordered stores only. | OrderedDataStore | store type | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 74,
+      "mentions": [
+        "100",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-max-keys"
+      ],
+      "text": "| `batch-get-max-keys`: Default BatchGetAsync maximum keys per call; server-configured, not a fixed universal maximum. | 100 | keys/request | default | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 75,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-min-keys"
+      ],
+      "text": "| `batch-get-min-keys`: Minimum BatchGetAsync key count. | 1 | keys/request | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 76,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "batch-get-read-budget"
+      ],
+      "text": "| `batch-get-read-budget`: BatchGetAsync read budget is charged by requested key count. | requested_keys | read requests | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 77,
+      "mentions": [
+        "301",
+        "306",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "datastore-queue-overflow-error-codes"
+      ],
+      "text": "| `datastore-queue-overflow-error-codes`: Error codes for entirely dropped requests when a throttling queue is full. | [301, 306] | inclusive error-code range | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 83,
+      "mentions": [
+        "64",
+        "1.2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-memory-quota"
+      ],
+      "text": "| `memorystore-memory-quota`: Game-wide memory quota. | 64 + 1.2 * users | KB/game | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 84,
+      "mentions": [
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-quota-decrease-delay"
+      ],
+      "text": "| `memorystore-quota-decrease-delay`: Traceback period before reevaluating memory quota downwards. | 8 | days | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 85,
+      "mentions": [
+        "1000",
+        "120",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-request-quota"
+      ],
+      "text": "| `memorystore-request-quota`: Game-wide request-unit quota. | 1000 + 120 * concurrent_users | request units/minute/game | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 86,
+      "mentions": [
+        "1000000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-structure-items"
+      ],
+      "text": "| `memorystore-structure-items`: Maximum sorted-map or queue item count. | 1000000 | items/structure | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 87,
+      "mentions": [
+        "100",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-structure-memory"
+      ],
+      "text": "| `memorystore-structure-memory`: Maximum sorted-map or queue size, including sorted-map keys. | 100 | MB/structure | documented | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 88,
+      "mentions": [
+        "30000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-partition-rate"
+      ],
+      "text": "| `memorystore-partition-rate`: Approximate per-partition throttling onset; stay well below it. | 30000 | request units/minute/partition | approximate | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 89,
+      "mentions": [
+        "5000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-hash-key-write-rate"
+      ],
+      "text": "| `memorystore-hash-key-write-rate`: Approximate hash-map single-key write rate; UpdateAsync consumes read and write budgets. | 5000 | request units/minute/key | approximate | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 90,
+      "mentions": [
+        "15000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-hash-key-read-rate"
+      ],
+      "text": "| `memorystore-hash-key-read-rate`: Approximate hash-map single-key read rate; partition limits also apply. | 15000 | request units/minute/key | approximate | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 91,
+      "mentions": [
+        "3888000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-max-expiration"
+      ],
+      "text": "| `memorystore-max-expiration`: Maximum hash-map expiration time. | 3888000 | seconds | documented | cd:cloud-services/memory-stores/hash-map | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 92,
+      "mentions": [
+        "45",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "memorystore-default-expiration"
+      ],
+      "text": "| `memorystore-default-expiration`: Documented default expiration for MemoryStoreQueue AddAsync and MemoryStoreSortedMap SetAsync. | 45 | days | default | cd:cloud-services/memory-stores/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 98,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-message-size"
+      ],
+      "text": "| `messaging-message-size`: Maximum MessagingService message size. | 1 | kB/message | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 99,
+      "mentions": [
+        "600",
+        "240",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-send-rate"
+      ],
+      "text": "| `messaging-send-rate`: Messages sent per server. | 600 + 240 * players | messages/minute/server | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 100,
+      "mentions": [
+        "40",
+        "80",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-topic-receive-rate"
+      ],
+      "text": "| `messaging-topic-receive-rate`: Messages received per topic. | 40 + 80 * servers | messages/minute/topic | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 101,
+      "mentions": [
+        "400",
+        "200",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-game-receive-rate"
+      ],
+      "text": "| `messaging-game-receive-rate`: Messages received for the entire game. | 400 + 200 * servers | messages/minute/game | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 102,
+      "mentions": [
+        "20",
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-subscriptions"
+      ],
+      "text": "| `messaging-subscriptions`: Subscriptions allowed per server. | 20 + 8 * players | subscriptions/server | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 103,
+      "mentions": [
+        "240",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-subscribe-rate"
+      ],
+      "text": "| `messaging-subscribe-rate`: Subscribe requests per server. | 240 | requests/minute/server | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 104,
+      "mentions": [
+        "1",
+        "80",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "messaging-topic-length"
+      ],
+      "text": "| `messaging-topic-length`: MessagingService topic length range. | [1, 80] | characters/topic | documented | cd:reference/engine/classes/MessagingService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 110,
+      "mentions": [
+        "64",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-attribute-count"
+      ],
+      "text": "| `server-authority-attribute-count`: Server-authority replication includes only the first attributes up to this count. | 64 | attributes/instance | documented | cd:projects/server-authority/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 111,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-attribute-name-length"
+      ],
+      "text": "| `server-authority-attribute-name-length`: Server-authority replicated attribute name length. | 50 | characters/name | documented | cd:projects/server-authority/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 112,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "server-authority-attribute-string-length"
+      ],
+      "text": "| `server-authority-attribute-string-length`: Server-authority replicated string attribute value length. | 50 | characters/value | documented | cd:projects/server-authority/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 118,
+      "mentions": [
+        "15000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "raycast-length"
+      ],
+      "text": "| `raycast-length`: Maximum raycast length. | 15000 | studs | documented | cd:workspace/raycasting | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 119,
+      "mentions": [
+        "32",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "collision-groups"
+      ],
+      "text": "| `collision-groups`: Current maximum collision groups. | 32 | groups | documented | cd:reference/engine/classes/PhysicsService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 120,
+      "mentions": [
+        "120",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "local-light-range"
+      ],
+      "text": "| `local-light-range`: Maximum PointLight, SpotLight and SurfaceLight range. | 120 | studs | documented | cd:reference/engine/classes/Lighting | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 121,
+      "mentions": [
+        "255",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31",
+        "disabled"
+      ],
+      "fact_ids": [
+        "highlight-slots"
+      ],
+      "text": "| `highlight-slots`: Client-side simultaneous Highlight slots; disabled highlights still consume slots. | 255 | instances/client | documented | cd:effects/highlighting | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 122,
+      "mentions": [
+        "1",
+        "120",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "camera-field-of-view"
+      ],
+      "text": "| `camera-field-of-view`: Vertical Camera FieldOfView clamp. | [1, 120] | degrees | documented | cd:reference/engine/classes/Camera | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 123,
+      "mentions": [
+        "70",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "camera-field-of-view-default"
+      ],
+      "text": "| `camera-field-of-view-default`: Default vertical Camera FieldOfView. | 70 | degrees | default | cd:reference/engine/classes/Camera | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 124,
+      "mentions": [
+        "-5",
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "lighting-exposure-range"
+      ],
+      "text": "| `lighting-exposure-range`: Lighting ExposureCompensation range. | [-5, 5] | exposure stops | documented | cd:reference/engine/classes/Lighting | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 125,
+      "mentions": [
+        "4096",
+        "4096",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "texture-resolution"
+      ],
+      "text": "| `texture-resolution`: Supported texture resolution ceiling; asset-specific budgets and requirements may be lower. | [4096, 4096] | pixels | documented | cd:art/modeling/texture-specifications | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 126,
+      "mentions": [
+        "1024",
+        "1024",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "particle-flipbook-texture"
+      ],
+      "text": "| `particle-flipbook-texture`: Texture dimensions required by the pinned FlipbookIncompatible default message. | [1024, 1024] | pixels | documented | api:ParticleEmitter.FlipbookIncompatible | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 127,
+      "mentions": [
+        "4",
+        "4",
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "terrain-voxel-size"
+      ],
+      "text": "| `terrain-voxel-size`: Terrain voxel dimensions. | [4, 4, 4] | studs | documented | cd:parts/terrain | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 128,
+      "mentions": [
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "humanoid-move-to-timeout"
+      ],
+      "text": "| `humanoid-move-to-timeout`: Humanoid MoveTo timeout if its goal is not reached; reissuing MoveTo resets it. | 8 | seconds | documented | cd:reference/engine/classes/Humanoid | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 129,
+      "mentions": [
+        "1.5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "frustum-stream-out-delay"
+      ],
+      "text": "| `frustum-stream-out-delay`: Opportunistic out-of-view stream-out delay beyond normal radius and active replication foci. | 1.5 | seconds | documented | cd:workspace/streaming/frustum | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 130,
+      "mentions": [
+        "180",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "spotlight-angle-maximum"
+      ],
+      "text": "| `spotlight-angle-maximum`: Maximum SpotLight cone angle. | 180 | degrees | documented | cd:effects/light-sources | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 131,
+      "mentions": [
+        "0.75",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "dof-default-far-intensity"
+      ],
+      "text": "| `dof-default-far-intensity`: Reflected default for DepthOfFieldEffect.FarIntensity. | 0.75 | property units | default | api:DepthOfFieldEffect.FarIntensity | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 132,
+      "mentions": [
+        "0.0500000007",
+        "0.05",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "dof-default-focus-distance"
+      ],
+      "text": "| `dof-default-focus-distance`: Reflected default for DepthOfFieldEffect.FocusDistance. Display rounded to hundredths; the reflected float is 0.0500000007. | 0.05 | property units | default | api:DepthOfFieldEffect.FocusDistance | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 133,
+      "mentions": [
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "dof-default-in-focus-radius"
+      ],
+      "text": "| `dof-default-in-focus-radius`: Reflected default for DepthOfFieldEffect.InFocusRadius. | 10 | property units | default | api:DepthOfFieldEffect.InFocusRadius | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 134,
+      "mentions": [
+        "0.75",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "dof-default-near-intensity"
+      ],
+      "text": "| `dof-default-near-intensity`: Reflected default for DepthOfFieldEffect.NearIntensity. | 0.75 | property units | default | api:DepthOfFieldEffect.NearIntensity | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 135,
+      "mentions": [
+        "0.395000011",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "atmosphere-density-default"
+      ],
+      "text": "| `atmosphere-density-default`: Reflected default for Atmosphere.Density. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.395000011 | reflected property value | default | api:Atmosphere.Density | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 136,
+      "mentions": [
+        "0",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "atmosphere-offset-default"
+      ],
+      "text": "| `atmosphere-offset-default`: Reflected default for Atmosphere.Offset. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:Atmosphere.Offset | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 137,
+      "mentions": [
+        "0",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "atmosphere-haze-default"
+      ],
+      "text": "| `atmosphere-haze-default`: Reflected default for Atmosphere.Haze. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:Atmosphere.Haze | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 138,
+      "mentions": [
+        "0.7843",
+        "0.6667",
+        "0.4235",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "atmosphere-color-default"
+      ],
+      "text": "| `atmosphere-color-default`: Reflected default for Atmosphere.Color. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.7843, 0.6667, 0.4235 | reflected property value | default | api:Atmosphere.Color | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 139,
+      "mentions": [
+        "0",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "atmosphere-glare-default"
+      ],
+      "text": "| `atmosphere-glare-default`: Reflected default for Atmosphere.Glare. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:Atmosphere.Glare | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 140,
+      "mentions": [
+        "0.3608",
+        "0.2353",
+        "0.0549",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "atmosphere-decay-default"
+      ],
+      "text": "| `atmosphere-decay-default`: Reflected default for Atmosphere.Decay. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.3608, 0.2353, 0.0549 | reflected property value | default | api:Atmosphere.Decay | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 141,
+      "mentions": [
+        "0.400000006",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "bloom-effect-intensity-default"
+      ],
+      "text": "| `bloom-effect-intensity-default`: Reflected default for BloomEffect.Intensity. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.400000006 | reflected property value | default | api:BloomEffect.Intensity | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 142,
+      "mentions": [
+        "24",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "bloom-effect-size-default"
+      ],
+      "text": "| `bloom-effect-size-default`: Reflected default for BloomEffect.Size. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 24 | reflected property value | default | api:BloomEffect.Size | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 143,
+      "mentions": [
+        "0.949999988",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "bloom-effect-threshold-default"
+      ],
+      "text": "| `bloom-effect-threshold-default`: Reflected default for BloomEffect.Threshold. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.949999988 | reflected property value | default | api:BloomEffect.Threshold | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 144,
+      "mentions": [
+        "0",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "color-correction-effect-brightness-default"
+      ],
+      "text": "| `color-correction-effect-brightness-default`: Reflected default for ColorCorrectionEffect.Brightness. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:ColorCorrectionEffect.Brightness | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 145,
+      "mentions": [
+        "0",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "color-correction-effect-contrast-default"
+      ],
+      "text": "| `color-correction-effect-contrast-default`: Reflected default for ColorCorrectionEffect.Contrast. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:ColorCorrectionEffect.Contrast | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 146,
+      "mentions": [
+        "0",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "color-correction-effect-saturation-default"
+      ],
+      "text": "| `color-correction-effect-saturation-default`: Reflected default for ColorCorrectionEffect.Saturation. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:ColorCorrectionEffect.Saturation | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 147,
+      "mentions": [
+        "0.25",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "sun-rays-effect-intensity-default"
+      ],
+      "text": "| `sun-rays-effect-intensity-default`: Reflected default for SunRaysEffect.Intensity. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.25 | reflected property value | default | api:SunRaysEffect.Intensity | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 148,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "sun-rays-effect-spread-default"
+      ],
+      "text": "| `sun-rays-effect-spread-default`: Reflected default for SunRaysEffect.Spread. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 1 | reflected property value | default | api:SunRaysEffect.Spread | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 149,
+      "mentions": [
+        "24",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "blur-effect-size-default"
+      ],
+      "text": "| `blur-effect-size-default`: Reflected default for BlurEffect.Size. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 24 | reflected property value | default | api:BlurEffect.Size | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 150,
+      "mentions": [
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "material-variant-studs-per-tile-default"
+      ],
+      "text": "| `material-variant-studs-per-tile-default`: Reflected default for MaterialVariant.StudsPerTile. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 10 | reflected property value | default | api:MaterialVariant.StudsPerTile | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 151,
+      "mentions": [
+        "0",
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "particle-light-emission-endpoints"
+      ],
+      "text": "| `particle-light-emission-endpoints`: Documented normal/additive blending endpoints for ParticleEmitter.LightEmission. | [0, 1] | blending endpoints | documented | cd:reference/engine/classes/ParticleEmitter | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 152,
+      "mentions": [
+        "0",
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "particle-light-influence-range"
+      ],
+      "text": "| `particle-light-influence-range`: Defined range of ParticleEmitter.LightInfluence. | [0, 1] | influence factor | documented | cd:reference/engine/classes/ParticleEmitter | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 153,
+      "mentions": [
+        "64",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "streaming-min-radius-default"
+      ],
+      "text": "| `streaming-min-radius-default`: Default Workspace.StreamingMinRadius. | 64 | studs | default | cd:reference/engine/classes/Workspace | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 159,
+      "mentions": [
+        "64K",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "native-code-block-instructions"
+      ],
+      "text": "| `native-code-block-instructions`: Native compiler per-block instruction limit as documented. | 64K | instructions/block | documented | cd:luau/native-code-gen | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 160,
+      "mentions": [
+        "32K",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "native-code-function-blocks"
+      ],
+      "text": "| `native-code-function-blocks`: Native compiler per-function internal-block limit as documented. | 32K | blocks/function | documented | cd:luau/native-code-gen | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 161,
+      "mentions": [
+        "1000000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "native-code-module-instructions"
+      ],
+      "text": "| `native-code-module-instructions`: Native compiler instruction limit per script. | 1000000 | instructions/script | documented | cd:luau/native-code-gen | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 162,
+      "mentions": [
+        "10000",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "script-sync-scripts"
+      ],
+      "text": "| `script-sync-scripts`: Maximum scripts per top-level synced instance. | 10000 | scripts/synced root | documented | cd:scripting/sync | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 163,
+      "mentions": [
+        "128",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "script-sync-roots"
+      ],
+      "text": "| `script-sync-roots`: Maximum top-level synced instances. | 128 | synced roots | documented | cd:scripting/sync | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 164,
+      "mentions": [
+        "300",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "text-to-speech-text-length"
+      ],
+      "text": "| `text-to-speech-text-length`: Text-to-speech text limit. | 300 | characters/request | documented | cd:audio/objects | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 165,
+      "mentions": [
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-multiclient-count"
+      ],
+      "text": "| `studio-multiclient-count`: Maximum simulated clients in Studio Server & Clients. | 8 | clients | documented | cd:studio/testing-modes | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 166,
+      "mentions": [
+        "1",
+        "8",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-test-service-clients"
+      ],
+      "text": "| `studio-test-service-clients`: StudioTestService ExecuteMultiplayerTestAsync client-count range. | [1, 8] | clients | documented | cd:reference/engine/classes/StudioTestService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 167,
+      "mentions": [
+        "1",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-test-service-sessions"
+      ],
+      "text": "| `studio-test-service-sessions`: Maximum simultaneous multiplayer test sessions per Studio instance. | 1 | session/Studio instance | documented | cd:reference/engine/classes/StudioTestService | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 168,
+      "mentions": [
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-test-service-security"
+      ],
+      "text": "| `studio-test-service-security`: ExecuteMultiplayerTestAsync requires plugin security. | PluginSecurity | API security | documented | api:StudioTestService.ExecuteMultiplayerTestAsync | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 169,
+      "mentions": [
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-mcp-script-search"
+      ],
+      "text": "| `studio-mcp-script-search`: Studio MCP script_search maximum results. | 10 | results | documented | cd:studio/mcp | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 170,
+      "mentions": [
+        "50",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "studio-mcp-script-grep"
+      ],
+      "text": "| `studio-mcp-script-grep`: Studio MCP script_grep maximum matches. | 50 | matches | documented | cd:studio/mcp | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 171,
+      "mentions": [
+        "200",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "text-channel-metadata"
+      ],
+      "text": "| `text-channel-metadata`: TextChannel SendAsync metadata limit; longer metadata prevents delivery to other users. | 200 | characters | documented | cd:reference/engine/classes/TextChannel | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 172,
+      "mentions": [
+        "60",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "microprofiler-server-capture-frames"
+      ],
+      "text": "| `microprofiler-server-capture-frames`: Maximum frames in a Developer Console server MicroProfiler capture. | 60 | frames | documented | cd:performance-optimization/microprofiler/index | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 178,
+      "mentions": [
+        "28",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "physics-stud-length"
+      ],
+      "text": "| `physics-stud-length`: Metric length corresponding to one stud. | 28 | centimeters/stud | documented | cd:physics/units | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 179,
+      "mentions": [
+        "21.952",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "physics-mass-unit"
+      ],
+      "text": "| `physics-mass-unit`: Metric mass corresponding to one Roblox Mass Unit. | 21.952 | kilograms/RMU | documented | cd:physics/units | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 180,
+      "mentions": [
+        "196.2",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "physics-default-gravity"
+      ],
+      "text": "| `physics-default-gravity`: Default gravity. | 196.2 | studs/second² | default | cd:physics/units | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 181,
+      "mentions": [
+        "9007199254740992",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "luau-exact-integers"
+      ],
+      "text": "| `luau-exact-integers`: Integers up to this magnitude are exactly representable by Luau numbers. | 9007199254740992 | integer magnitude | documented | [pinned source](https://luau.org/getting-started/syntax) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 187,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-script-size"
+      ],
+      "text": "| `open-cloud-luau-script-size`: Maximum Open Cloud Luau Execution script size. | 4 | MB | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 188,
+      "mentions": [
+        "5",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-runtime"
+      ],
+      "text": "| `open-cloud-luau-runtime`: Maximum Open Cloud Luau Execution script runtime. | 5 | minutes | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 189,
+      "mentions": [
+        "4",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-return-size"
+      ],
+      "text": "| `open-cloud-luau-return-size`: Maximum JSON-serialized return value size. | 4 | MB | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 190,
+      "mentions": [
+        "450",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-log-retention-size"
+      ],
+      "text": "| `open-cloud-luau-log-retention-size`: Maximum retained log data; older logs are discarded on overflow. | 450 | KB | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 191,
+      "mentions": [
+        "24",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-task-retention"
+      ],
+      "text": "| `open-cloud-luau-task-retention`: Task information retention after completion. | 24 | hours | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "references/limits.md",
+      "line": 192,
+      "mentions": [
+        "429",
+        "10",
+        "2026",
+        "10",
+        "02",
+        "2026",
+        "12",
+        "31"
+      ],
+      "fact_ids": [
+        "open-cloud-luau-incomplete-tasks"
+      ],
+      "text": "| `open-cloud-luau-incomplete-tasks`: Maximum incomplete tasks per place; further creation returns HTTP 429. | 10 | tasks/place | documented | [pinned source](https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json) | 2026-10-02 / 2026-12-31 |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 15,
+      "mentions": [
+        "0.395000011",
+        "0.25",
+        "0.35",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.8"
+      ],
+      "fact_ids": [
+        "atmosphere-density-default"
+      ],
+      "text": "| `Density` [<!-- fact-value: atmosphere-density-default -->0.395000011<!-- /fact-value -->] | amount of particles; obscures distant objects (and sky behind them) | clear day 0.25–0.35; hazy 0.4–0.5; fog 0.6–0.8 (combine with low Offset) | <!-- fact-examples: {\"values\": [\"0.25\", \"0.35\", \"0.4\", \"0.5\", \"0.6\", \"0.8\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 16,
+      "mentions": [
+        "0",
+        "0",
+        "0.25"
+      ],
+      "fact_ids": [
+        "atmosphere-offset-default"
+      ],
+      "text": "| `Offset` [<!-- fact-value: atmosphere-offset-default -->0<!-- /fact-value -->] | light transmission camera↔sky: high = horizon silhouette, low = distant objects blend into sky | 0–0.25 for seamless open worlds; higher for crisp skylines | <!-- fact-examples: {\"values\": [\"0.25\", \"0\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 17,
+      "mentions": [
+        "0",
+        "0",
+        "2",
+        "3"
+      ],
+      "fact_ids": [
+        "atmosphere-haze-default"
+      ],
+      "text": "| `Haze` [<!-- fact-value: atmosphere-haze-default -->0<!-- /fact-value -->] | haziness above horizon & into distance, tinted by `Color` | 0–2 typical; > 3 gets milky fast | <!-- fact-examples: {\"values\": [\"2\", \"3\", \"0\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 18,
+      "mentions": [
+        "0.7843",
+        "0.6667",
+        "0.4235"
+      ],
+      "fact_ids": [
+        "atmosphere-color-default"
+      ],
+      "text": "| `Color` [<!-- fact-value: atmosphere-color-default -->0.7843, 0.6667, 0.4235<!-- /fact-value -->] | atmosphere hue (visible with Haze) | match sky/sun colour: warm for sunset, blue-grey for overcast, green-grey for toxic |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 19,
+      "mentions": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "fact_ids": [
+        "atmosphere-glare-default"
+      ],
+      "text": "| `Glare` [<!-- fact-value: atmosphere-glare-default -->0<!-- /fact-value -->] | glow around the sun (needs Haze > 0) | 0–1 subtle; high for desert/sunset drama | <!-- fact-examples: {\"values\": [\"1\", \"0\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 20,
+      "mentions": [
+        "0.3608",
+        "0.2353",
+        "0.0549",
+        "0"
+      ],
+      "fact_ids": [
+        "atmosphere-decay-default"
+      ],
+      "text": "| `Decay` [<!-- fact-value: atmosphere-decay-default -->0.3608, 0.2353, 0.0549<!-- /fact-value -->] | hue away from the sun (needs Haze and Glare > 0) | darker/cooler than Color for gradient skies | <!-- fact-examples: {\"values\": [\"0\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 40,
+      "mentions": [
+        "0.400000006",
+        "24",
+        "0.949999988",
+        "1.5",
+        "2.5",
+        "0.2",
+        "0.6",
+        "16",
+        "32"
+      ],
+      "fact_ids": [
+        "bloom-effect-intensity-default",
+        "bloom-effect-size-default",
+        "bloom-effect-threshold-default"
+      ],
+      "text": "| `BloomEffect` | Intensity <!-- fact-value: bloom-effect-intensity-default -->0.400000006<!-- /fact-value -->, Size <!-- fact-value: bloom-effect-size-default -->24<!-- /fact-value -->, Threshold <!-- fact-value: bloom-effect-threshold-default -->0.949999988<!-- /fact-value --> | Threshold 1.5–2.5, Intensity 0.2–0.6, Size 16–32 → only lamps/emissives/sun glint bloom | low threshold = everything glows (amateur look) | <!-- fact-examples: {\"values\": [\"1.5\", \"2.5\", \"0.2\", \"0.6\", \"16\", \"32\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 41,
+      "mentions": [
+        "0",
+        "0",
+        "0",
+        "0.05",
+        "0.2",
+        "−0.2",
+        "0.05",
+        "255,245,235",
+        "235,242,255"
+      ],
+      "fact_ids": [
+        "color-correction-effect-brightness-default",
+        "color-correction-effect-contrast-default",
+        "color-correction-effect-saturation-default"
+      ],
+      "text": "| `ColorCorrectionEffect` | Brightness <!-- fact-value: color-correction-effect-brightness-default -->0<!-- /fact-value -->, Contrast <!-- fact-value: color-correction-effect-contrast-default -->0<!-- /fact-value -->, Saturation <!-- fact-value: color-correction-effect-saturation-default -->0<!-- /fact-value -->, TintColor white | Contrast 0.05–0.2, Saturation −0.2…0.05, TintColor very slight (e.g. 255,245,235 warm / 235,242,255 cool) | using Brightness for exposure (clips), strong tints | <!-- fact-examples: {\"values\": [\"0.05\", \"0.2\", \"−0.2\", \"255,245,235\", \"235,242,255\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 43,
+      "mentions": [
+        "0.75",
+        "0.05",
+        "10",
+        "0.75",
+        "0.2"
+      ],
+      "fact_ids": [
+        "dof-default-far-intensity",
+        "dof-default-focus-distance",
+        "dof-default-in-focus-radius",
+        "dof-default-near-intensity"
+      ],
+      "text": "| `DepthOfFieldEffect` | FarIntensity <!-- fact-value: dof-default-far-intensity -->0.75<!-- /fact-value -->, FocusDistance <!-- fact-value: dof-default-focus-distance -->0.05<!-- /fact-value -->, InFocusRadius <!-- fact-value: dof-default-in-focus-radius -->10<!-- /fact-value -->, NearIntensity <!-- fact-value: dof-default-near-intensity -->0.75<!-- /fact-value --> | cinematics, menus, photo mode; gameplay: FarIntensity ≤ 0.2 with large InFocusRadius | hides enemies/information; cost on mobile | <!-- fact-refs: dof-default-far-intensity, dof-default-focus-distance, dof-default-in-focus-radius, dof-default-near-intensity --> <!-- fact-examples: {\"values\": [\"0.2\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 44,
+      "mentions": [
+        "0.25",
+        "1",
+        "0.02",
+        "0.1",
+        "0.2",
+        "0.6"
+      ],
+      "fact_ids": [
+        "sun-rays-effect-intensity-default",
+        "sun-rays-effect-spread-default"
+      ],
+      "text": "| `SunRaysEffect` | Intensity <!-- fact-value: sun-rays-effect-intensity-default -->0.25<!-- /fact-value -->, Spread <!-- fact-value: sun-rays-effect-spread-default -->1<!-- /fact-value --> | Intensity 0.02–0.1, Spread 0.2–0.6 for realism | default is strong; rays through every tree | <!-- fact-examples: {\"values\": [\"0.02\", \"0.1\", \"0.2\", \"0.6\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/02-atmosphere-sky-post.md",
+      "line": 45,
+      "mentions": [
+        "24"
+      ],
+      "fact_ids": [
+        "blur-effect-size-default"
+      ],
+      "text": "| `BlurEffect` | Size <!-- fact-value: blur-effect-size-default -->24<!-- /fact-value --> | menus/pauses (in Camera for local player) | leaving it on after closing menu |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/03-local-lights.md",
+      "line": 18,
+      "mentions": [
+        "180"
+      ],
+      "fact_ids": [
+        "spotlight-angle-maximum"
+      ],
+      "text": "| `SpotLight` | cone, `Angle` (≤<!-- fact-value: spotlight-angle-maximum -->180<!-- /fact-value -->), `Face`, `Range` | Attachment/BasePart | flashlights, street lamps, stage lights | <!-- fact-refs: spotlight-angle-maximum -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/04-materials-pbr.md",
+      "line": 17,
+      "mentions": [
+        "10",
+        "2"
+      ],
+      "fact_ids": [
+        "material-variant-studs-per-tile-default"
+      ],
+      "text": "| `MaterialVariant` in `MaterialService` (custom tileable PBR) | ColorMap/NormalMap/RoughnessMap/MetalnessMap (+emissive), `StudsPerTile` [<!-- fact-value: material-variant-studs-per-tile-default -->10<!-- /fact-value -->], `MaterialPattern` (`Regular` / `Organic` = less visible tiling), `BaseMaterial` (physics), `AlphaMode` | reusable walls, floors, terrain overrides; \"adaptive materials\" (parts reference the variant **by name** via `BasePart.MaterialVariant`) | swap `part.MaterialVariant = \"Name\"` (the scriptable property is tagged NotReplicated with a hidden serialized twin — verify runtime changes replicate in a 2-client test, or set it on each client); create variants at edit time | <!-- fact-examples: {\"values\": [\"2\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 16,
+      "mentions": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "1024",
+        "1024"
+      ],
+      "fact_ids": [
+        "particle-flipbook-texture",
+        "particle-light-emission-endpoints",
+        "particle-light-influence-range"
+      ],
+      "text": "| `ParticleEmitter` (in a part = volume/surface emission; in an Attachment = point) | smoke, dust, sparks, rain, fire | `Rate`, `Lifetime` (NumberRange), `Speed`, `SpreadAngle`, `Acceleration`, `Drag`, `Size`/`Transparency` (NumberSequence), `Color` (ColorSequence), `LightEmission` (blending endpoints <!-- fact-value: particle-light-emission-endpoints -->[0, 1]<!-- /fact-value -->), `LightInfluence` (how scene light affects it <!-- fact-value: particle-light-influence-range -->[0, 1]<!-- /fact-value -->), `Brightness`, `Orientation`, `Squash`, `ZOffset`, `FlipbookLayout`/`FlipbookMode` (texture must be dimensions <!-- fact-value: particle-flipbook-texture -->[1024, 1024]<!-- /fact-value --> for flipbooks), `Shape`/`ShapeStyle`, `LockedToPart`, `VelocityInheritance`, `TimeScale`, `WindAffectsDrag` | <!-- fact-refs: particle-light-emission-endpoints, particle-light-influence-range, particle-flipbook-texture -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/graphics/06-vfx-particles.md",
+      "line": 21,
+      "mentions": [
+        "255",
+        "disabled"
+      ],
+      "fact_ids": [
+        "highlight-slots"
+      ],
+      "text": "| `Highlight` | outlines / x-ray feedback | ≤ <!-- fact-value: highlight-slots -->255<!-- /fact-value --> slots per client; disabled highlights still consume slots | <!-- fact-refs: highlight-slots -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/luau/01-language-core.md",
+      "line": 28,
+      "mentions": [
+        "754",
+        "9007199254740992",
+        "0.1",
+        "0.2",
+        "0.3"
+      ],
+      "fact_ids": [
+        "luau-exact-integers"
+      ],
+      "text": "| One number type: IEEE-754 double | Integers exact to <!-- fact-value: luau-exact-integers -->9007199254740992<!-- /fact-value -->. Money/ids above that lose precision; store large ids as strings. `0.1 + 0.2 ~= 0.3`. | <!-- fact-refs: luau-exact-integers --> <!-- fact-examples: {\"values\": [\"754\", \"0.1\", \"0.2\", \"0.3\"], \"reason\": \"IEEE standard designation and floating-point arithmetic demonstration; the exact-integer limit is fact-bound.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/03-networking.md",
+      "line": 18,
+      "mentions": [
+        "500"
+      ],
+      "fact_ids": [
+        "remote-client-send-rate"
+      ],
+      "text": "| `RemoteEvent` | C→S `FireServer`, S→C `FireClient`/`FireAllClients` | reliable, ordered (per remote) | no | client→server ≈<!-- fact-value: remote-client-send-rate -->500<!-- /fact-value --> req/s per client **shared by all RemoteEvents**; handler on server gets `player` first | <!-- fact-refs: remote-client-send-rate -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/03-networking.md",
+      "line": 19,
+      "mentions": [
+        "1000",
+        "500"
+      ],
+      "fact_ids": [
+        "remote-client-send-rate",
+        "unreliable-remote-payload"
+      ],
+      "text": "| `UnreliableRemoteEvent` | same API | may drop, may reorder | no | payload > **<!-- fact-value: unreliable-remote-payload -->1000<!-- /fact-value --> bytes is dropped**; shares its own ≈<!-- fact-value: remote-client-send-rate -->500<!-- /fact-value --> req/s budget; for continuous cosmetic data | <!-- fact-refs: unreliable-remote-payload, remote-client-send-rate -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/03-networking.md",
+      "line": 178,
+      "mentions": [
+        "500"
+      ],
+      "fact_ids": [
+        "remote-client-send-rate"
+      ],
+      "text": "| `FireServer` every `RenderStepped` | hits <!-- fact-value: remote-client-send-rate -->500<!-- /fact-value -->/s cap with other traffic; wasted bandwidth | send on change; choose and profile a cosmetic update frequency, unreliable | <!-- fact-refs: remote-client-send-rate -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/05-server-authority.md",
+      "line": 34,
+      "mentions": [
+        "64",
+        "50",
+        "50"
+      ],
+      "fact_ids": [
+        "server-authority-attribute-count",
+        "server-authority-attribute-name-length",
+        "server-authority-attribute-string-length"
+      ],
+      "text": "| Attribute replication limits | first <!-- fact-value: server-authority-attribute-count -->64<!-- /fact-value --> attributes per Instance, name ≤ <!-- fact-value: server-authority-attribute-name-length -->50<!-- /fact-value --> chars, string values ≤ <!-- fact-value: server-authority-attribute-string-length -->50<!-- /fact-value --> chars | <!-- fact-refs: server-authority-attribute-count, server-authority-attribute-name-length, server-authority-attribute-string-length -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 18,
+      "mentions": [
+        "3888000"
+      ],
+      "fact_ids": [
+        "memorystore-max-expiration"
+      ],
+      "text": "| **Temporary distributed** | seconds–days (TTL ≤ <!-- fact-value: memorystore-max-expiration -->3888000<!-- /fact-value --> seconds) | `MemoryStoreService` (hash map, sorted map, queue) | matchmaking queues, global event counters, server browser, locks, caches | <!-- fact-refs: memorystore-max-expiration -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 28,
+      "mentions": [
+        "4194304"
+      ],
+      "fact_ids": [
+        "datastore-value-size"
+      ],
+      "text": "| `datastore-value-size`: Maximum serialized data-store value size. | 4194304 | characters/key | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 29,
+      "mentions": [
+        "50"
+      ],
+      "fact_ids": [
+        "datastore-key-length"
+      ],
+      "text": "| `datastore-key-length`: Maximum data-store key length. | 50 | characters | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 30,
+      "mentions": [
+        "50"
+      ],
+      "fact_ids": [
+        "datastore-name-length"
+      ],
+      "text": "| `datastore-name-length`: Maximum data-store name length. | 50 | characters | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 31,
+      "mentions": [
+        "50"
+      ],
+      "fact_ids": [
+        "datastore-scope-length"
+      ],
+      "text": "| `datastore-scope-length`: Maximum data-store scope length. | 50 | characters | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 32,
+      "mentions": [
+        "300"
+      ],
+      "fact_ids": [
+        "datastore-metadata-total"
+      ],
+      "text": "| `datastore-metadata-total`: Maximum total user-defined metadata size. | 300 | characters | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 33,
+      "mentions": [
+        "60",
+        "40"
+      ],
+      "fact_ids": [
+        "datastore-standard-read-server-rate"
+      ],
+      "text": "| `datastore-standard-read-server-rate`: Standard data-store read default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 34,
+      "mentions": [
+        "60",
+        "40"
+      ],
+      "fact_ids": [
+        "datastore-standard-write-server-rate"
+      ],
+      "text": "| `datastore-standard-write-server-rate`: Standard data-store write default server rate; configurable through SetRateLimitForRequestType. | 60 + 40 * players | requests/minute/server | default |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 35,
+      "mentions": [
+        "5",
+        "2"
+      ],
+      "fact_ids": [
+        "datastore-standard-list-server-rate"
+      ],
+      "text": "| `datastore-standard-list-server-rate`: Standard data-store list default server rate; configurable through SetRateLimitForRequestType. | 5 + 2 * players | requests/minute/server | default |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 36,
+      "mentions": [
+        "30",
+        "5"
+      ],
+      "fact_ids": [
+        "datastore-ordered-write-server-rate"
+      ],
+      "text": "| `datastore-ordered-write-server-rate`: Ordered data-store write default server rate; configurable through SetRateLimitForRequestType. | 30 + 5 * players | requests/minute/server | default |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 37,
+      "mentions": [
+        "300",
+        "40"
+      ],
+      "fact_ids": [
+        "datastore-read-experience-rate"
+      ],
+      "text": "| `datastore-read-experience-rate`: Read experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 40 * concurrent_users | requests/minute/experience/data-store-type | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 38,
+      "mentions": [
+        "300",
+        "20"
+      ],
+      "fact_ids": [
+        "datastore-write-experience-rate"
+      ],
+      "text": "| `datastore-write-experience-rate`: Write experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 20 * concurrent_users | requests/minute/experience/data-store-type | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 39,
+      "mentions": [
+        "300",
+        "2"
+      ],
+      "fact_ids": [
+        "datastore-list-experience-rate"
+      ],
+      "text": "| `datastore-list-experience-rate`: List experience rate for each data-store type; game-server and Open Cloud usage share its budget. | 300 + 2 * concurrent_users | requests/minute/experience/data-store-type | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 40,
+      "mentions": [
+        "25"
+      ],
+      "fact_ids": [
+        "datastore-key-read-throughput"
+      ],
+      "text": "| `datastore-key-read-throughput`: Per-key read throughput; each request is rounded up to the next kilobyte. | 25 | MB/minute/key | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 41,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [
+        "datastore-key-write-throughput"
+      ],
+      "text": "| `datastore-key-write-throughput`: Per-key write throughput; each request is rounded up to the next kilobyte. | 4 | MB/minute/key | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 42,
+      "mentions": [
+        "30"
+      ],
+      "fact_ids": [
+        "datastore-queue-size"
+      ],
+      "text": "| `datastore-queue-size`: Requests beyond the per-queue limit are dropped. | 30 | requests/queue | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 43,
+      "mentions": [
+        "301",
+        "306"
+      ],
+      "fact_ids": [
+        "datastore-queue-overflow-error-codes"
+      ],
+      "text": "| `datastore-queue-overflow-error-codes`: Error codes for entirely dropped requests when a throttling queue is full. | [301, 306] | inclusive error-code range | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 44,
+      "mentions": [
+        "500",
+        "1"
+      ],
+      "fact_ids": [
+        "datastore-storage"
+      ],
+      "text": "| `datastore-storage`: Storage allowance measured using compressed latest key versions. | 500 + 1 * lifetime_users | MB/experience | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 45,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [
+        "datastore-cache-duration"
+      ],
+      "text": "| `datastore-cache-duration`: Default GetAsync local-cache lifetime. | 4 | seconds | default |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/06-data-persistence.md",
+      "line": 46,
+      "mentions": [
+        "30"
+      ],
+      "fact_ids": [
+        "bind-to-close-deadline"
+      ],
+      "text": "| `bind-to-close-deadline`: BindToClose callbacks have this time to complete. | 30 | seconds | documented |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/09-physics.md",
+      "line": 98,
+      "mentions": [
+        "15000"
+      ],
+      "fact_ids": [
+        "raycast-length"
+      ],
+      "text": "| Ray | `workspace:Raycast(origin, direction, params)` | direction length = distance (max <!-- fact-value: raycast-length -->15000<!-- /fact-value --> studs); returns `RaycastResult?` (`Instance`, `Position`, `Normal`, `Distance`, `Material`) | <!-- fact-refs: raycast-length -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/10-streaming.md",
+      "line": 33,
+      "mentions": [
+        "64"
+      ],
+      "fact_ids": [
+        "streaming-min-radius-default"
+      ],
+      "text": "| `StreamingMinRadius` (default <!-- fact-value: streaming-min-radius-default -->64<!-- /fact-value -->) | always-kept radius, highest priority | raise carefully (memory + server bandwidth) |",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 29,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [
+        "terrain-voxel-size"
+      ],
+      "text": "| Fill primitives | `FillBlock(cframe, size, material)`, `FillBall(center, r, material)`, `FillCylinder(cf, h, r, mat)`, `FillWedge(cf, size, mat)`, `FillRegion(region3, resolution, mat)` Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 31,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [
+        "terrain-voxel-size"
+      ],
+      "text": "| Bulk read/write | `ReadVoxels(region, resolution)` / `WriteVoxels(region, resolution, materials, occupancies)` (3D arrays `[x][y][z]`) Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 32,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [
+        "terrain-voxel-size"
+      ],
+      "text": "| Channel read/write (incl. water) | `ReadVoxelChannels(region, resolution, {\"SolidMaterial\",\"SolidOccupancy\",\"LiquidOccupancy\"})` / `WriteVoxelChannels` Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/11-terrain.md",
+      "line": 33,
+      "mentions": [
+        "4"
+      ],
+      "fact_ids": [
+        "terrain-voxel-size"
+      ],
+      "text": "| Replace material | `ReplaceMaterial(region, resolution, from, to)` Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/13-character-controllers.md",
+      "line": 20,
+      "mentions": [
+        "2026",
+        "04",
+        "08",
+        "2026",
+        "09",
+        "10",
+        "full release",
+        "beta",
+        "Beta"
+      ],
+      "fact_ids": [
+        "ccl-abilities-beta-date",
+        "ccl-abilities-beta-status",
+        "ccl-base-release-date",
+        "ccl-base-release-status"
+      ],
+      "text": "| Character Controller Library (CCL, `require(\"@rbx/AvatarAbilities\")`) | base library **<!-- fact-value: ccl-base-release-status -->full release<!-- /fact-value --> <!-- fact-value: ccl-base-release-date -->2026-04-08<!-- /fact-value -->** (staff announcement); the <!-- fact-value: ccl-abilities-beta-date -->2026-09-10<!-- /fact-value --> additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **<!-- fact-value: ccl-abilities-beta-status -->Studio beta<!-- /fact-value -->**. Pinned docs still enable it via File → Beta Features → \"AvatarAbilities Character Controller Library\" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` — check copied code | <!-- fact-refs: ccl-base-release-status, ccl-base-release-date, ccl-abilities-beta-status, ccl-abilities-beta-date -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/19-input.md",
+      "line": 16,
+      "mentions": [
+        "full release",
+        "beta",
+        "beta"
+      ],
+      "fact_ids": [
+        "input-action-label-beta",
+        "input-action-manager-beta",
+        "input-action-release-status"
+      ],
+      "text": "| **Input Action System**: `InputContext` → `InputAction` → `InputBinding` (Instances, edit-time configurable) | current, <!-- fact-value: input-action-release-status -->full release<!-- /fact-value --> (`InputActionLabel`: <!-- fact-value: input-action-label-beta -->beta<!-- /fact-value -->; Input Action Manager tool: <!-- fact-value: input-action-manager-beta -->beta<!-- /fact-value -->) | new projects; cross-device bindings; required for server authority simulation input | <!-- fact-refs: input-action-release-status, input-action-label-beta, input-action-manager-beta -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 46,
+      "mentions": [
+        "10000",
+        "128"
+      ],
+      "fact_ids": [
+        "script-sync-roots",
+        "script-sync-scripts"
+      ],
+      "text": "| **Script Sync** (built-in) | scripts on disk ↔ Studio, everything else in the place | Git for code, keeps Studio for building, works with Team Create | only Script/LocalScript/ModuleScript/Folder sync; attributes/tags on scripts are **not** synced (don't sync tagged scripts); limits <!-- fact-value: script-sync-scripts -->10000<!-- /fact-value --> scripts per root, <!-- fact-value: script-sync-roots -->128<!-- /fact-value --> roots | <!-- fact-refs: script-sync-scripts, script-sync-roots -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/23-tooling-testing.md",
+      "line": 73,
+      "mentions": [
+        "2",
+        "3",
+        "1",
+        "8"
+      ],
+      "fact_ids": [
+        "studio-test-service-clients"
+      ],
+      "text": "| Multi-client | replication, authority, two players interacting with the same object, late join, rejoin | Studio **Server & Clients** (2–3 clients) or scripted `StudioTestService:ExecuteMultiplayerTestAsync` (<!-- fact-value: studio-test-service-clients -->[1, 8]<!-- /fact-value --> clients) | <!-- fact-refs: studio-test-service-clients --> <!-- fact-examples: {\"values\": [\"2\", \"3\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/24-studio-mcp-testing.md",
+      "line": 27,
+      "mentions": [
+        "10",
+        "50"
+      ],
+      "fact_ids": [
+        "studio-mcp-script-grep",
+        "studio-mcp-script-search"
+      ],
+      "text": "| Scripts | `script_read`, `multi_edit`, `script_search` (≤ <!-- fact-value: studio-mcp-script-search -->10<!-- /fact-value --> results), `script_grep` (≤ <!-- fact-value: studio-mcp-script-grep -->50<!-- /fact-value --> matches) | `multi_edit` needs `datamodel_type` Edit and creates the script if missing | <!-- fact-refs: studio-mcp-script-search, studio-mcp-script-grep -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/24-studio-mcp-testing.md",
+      "line": 111,
+      "mentions": [
+        "60"
+      ],
+      "fact_ids": [
+        "microprofiler-server-capture-frames"
+      ],
+      "text": "| Frame breakdown | MicroProfiler dumps (`microprofile-<date>-<time>.html`); Developer Console server capture ≤ <!-- fact-value: microprofiler-server-capture-frames -->60<!-- /fact-value --> frames | verify any LibMP tooling and capture allowance in your actual Studio session | <!-- fact-refs: microprofiler-server-capture-frames -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    },
+    {
+      "path": "handbook/roblox/26-chat-leaderboards.md",
+      "line": 72,
+      "mentions": [
+        "100"
+      ],
+      "fact_ids": [
+        "ordered-datastore-page-size"
+      ],
+      "text": "| Global top N | `OrderedDataStore` (integer values) → `GetSortedAsync(ascending, pageSize, min?, max?)` → `DataStorePages`; read `GetCurrentPage()`, `AdvanceToNextPageAsync()` only while needed; page size maximum <!-- fact-value: ordered-datastore-page-size[1] -->100<!-- /fact-value --> | <!-- fact-refs: ordered-datastore-page-size -->",
+      "unsupported_statuses": [],
+      "unsupported_numbers": [],
+      "covered": true
+    }
+  ],
+  "review_candidates": [],
+  "errors": []
+}

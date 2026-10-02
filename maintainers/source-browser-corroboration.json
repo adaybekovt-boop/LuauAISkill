@@ -1,0 +1,42 @@
+{
+  "checked_on": "2026-10-02",
+  "method": "Direct official DevForum page inspection in the cloud browser, including visible Roblox Staff badges. Read-only corroboration of existing extracts; no screenshot or HTML capture retained. This record is reviewer provenance, not independent cryptographic proof of the remote page.",
+  "announcements": [
+    {
+      "url": "https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993",
+      "author": "welblander",
+      "roblox_staff_badge_observed": true,
+      "post_date": "2026-07-09",
+      "extract_file": "references/fact-sources/server-authority-release.json",
+      "extract_sha256": "765d2dd1c7ad36744e0b440b624176da5354d85a00d1c59bb3a31c164b38df0f",
+      "finding": "Full-release announcement corroborated."
+    },
+    {
+      "url": "https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267",
+      "author": "m0bsterlobster",
+      "roblox_staff_badge_observed": true,
+      "post_date": "2026-04-08",
+      "extract_file": "references/fact-sources/ccl-base-release.json",
+      "extract_sha256": "a1763bd6e0fb5c6a5e24d957dcfc490044406720f0373b79045c3cb915f85681",
+      "finding": "Base library released for live experiences; expanded abilities are separate."
+    },
+    {
+      "url": "https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739",
+      "author": "m0bsterlobster",
+      "roblox_staff_badge_observed": true,
+      "post_date": "2026-09-10",
+      "extract_file": "references/fact-sources/ccl-abilities-beta.json",
+      "extract_sha256": "ed9f45244b853af232ca58027cda7ec433257df96396ec50940088f5bd075fae",
+      "finding": "Expanded default/custom abilities are a separate Studio Beta."
+    },
+    {
+      "url": "https://devforum.roblox.com/t/full-release-input-action-system-ias-newly-converted-player-scripts/4678416",
+      "author": "missmandypanda",
+      "roblox_staff_badge_observed": true,
+      "post_date": "2026-06-11",
+      "extract_file": "references/fact-sources/input-action-release.json",
+      "extract_sha256": "effa464014707d2717024a91beaf5f02c1b0c0f4357324e6547bcf93f357f8f8",
+      "finding": "IAS full release is separate from phased migration of default player scripts; future migration dates are not release facts."
+    }
+  ]
+}

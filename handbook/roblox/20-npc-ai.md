@@ -75,6 +75,16 @@ sight on flat ground (cheaper). `Enum.PathStatus` values other than `Success` an
   `PathfindingLink` (two attachments) for jumps/teleporters/ladders with custom labels in `Costs`.
 - Navmesh is computed around static geometry; moving doors → mark with modifiers or re-plan on `Blocked`.
 
+## Bounded navigation and target lifetime
+A movement wait must have a deadline and a failure path. Poll progress with a timeout or use the non-blocking
+mover in the patrol recipe; do not wait indefinitely on `MoveToFinished`. On timeout or a blocked waypoint ahead,
+invalidate the old path generation, then replan through the per-NPC cooldown and shared concurrency budget.
+Stop after the configured retry limit and return to a safe idle/patrol/search state instead of spinning.
+If a target disappears or dies, clear its instance reference and stop pursuing that stale target. Search the last
+known position or choose another valid target; replan only for a currently valid goal. When removing an NPC or
+replacing its path, disconnect the old blocked/movement connections and invalidate pending path computations.
+The patrol recipe's `Mover.destroy` and generation token show how late results are discarded.
+
 ## Movement options for NPCs
 | Option | Cost | Use |
 |---|---|---|

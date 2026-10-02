@@ -1082,10 +1082,19 @@
    "verify": [
     "api:TeleportService.Teleport",
     "api:TeleportService.TeleportAsync",
-    "cd:projects/teleport"
+    "cd:projects/teleport",
+    "api:TeleportService.TeleportPartyAsync",
+    "api:TeleportService.TeleportToPlaceInstance",
+    "api:TeleportService.TeleportToPrivateServer",
+    "api:TeleportService.TeleportToSpawnByName"
    ],
-   "detect": "TeleportService:(Teleport|TeleportPartyAsync|TeleportToPrivateServer|TeleportToPlaceInstance|TeleportToSpawnByName)\\s*\\(",
-   "covers": [],
+   "detect": "(?:TeleportService:(Teleport|TeleportPartyAsync|TeleportToPrivateServer|TeleportToPlaceInstance|TeleportToSpawnByName)\\s*\\()|[.:](?:TeleportPartyAsync|TeleportToPlaceInstance|TeleportToPrivateServer|TeleportToSpawnByName)\\b",
+   "covers": [
+    "TeleportService.TeleportPartyAsync",
+    "TeleportService.TeleportToPlaceInstance",
+    "TeleportService.TeleportToPrivateServer",
+    "TeleportService.TeleportToSpawnByName"
+   ],
    "fixture": "TeleportService:Teleport(placeId, player)"
   },
   {
@@ -1619,10 +1628,14 @@
    "verify": [
     "api:GuiObject.Draggable",
     "api:UIDragDetector",
-    "cd:reference/engine/classes/GuiObject"
+    "cd:reference/engine/classes/GuiObject",
+    "api:GuiObject.DragBegin",
+    "api:GuiObject.DragStopped"
    ],
-   "detect": "\\.Draggable\\s*=",
+   "detect": "(?:\\.Draggable\\s*=)|[.:](?:DragBegin|DragStopped)\\b",
    "covers": [
+    "GuiObject.DragBegin",
+    "GuiObject.DragStopped",
     "GuiObject.Draggable"
    ],
    "fixture": "frame.Draggable = true"
@@ -3605,6 +3618,861 @@
     "AssetService.SearchAudio"
    ],
    "fixture": "local pages = AssetService:SearchAudio(params)"
+  },
+  {
+   "id": "assembly-root-property",
+   "category": "physics",
+   "status": "deprecated",
+   "old": "BasePart.GetRootPart",
+   "new": "part.AssemblyRootPart",
+   "why": "The replacement is a property read, not a method call. Remove parentheses; review nullable/root assembly behavior.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:BasePart.GetRootPart",
+    "api:BasePart.AssemblyRootPart",
+    "cd:reference/engine/classes/BasePart"
+   ],
+   "detect": "[.:](?:GetRootPart)\\b",
+   "covers": [
+    "BasePart.GetRootPart"
+   ],
+   "fixture": "BasePart:GetRootPart(value)"
+  },
+  {
+   "id": "capture-saved-payload",
+   "category": "runtime",
+   "status": "deprecated",
+   "old": "CaptureService.CaptureSaved",
+   "new": "CaptureService.UserCaptureSaved",
+   "why": "The old event sends a captureInfo Dictionary; UserCaptureSaved sends a captureContentId ContentId. Rewrite the callback parameter and field accesses.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:CaptureService.CaptureSaved",
+    "api:CaptureService.UserCaptureSaved",
+    "cd:reference/engine/classes/CaptureService"
+   ],
+   "detect": "[.:](?:CaptureSaved)\\b",
+   "covers": [
+    "CaptureService.CaptureSaved"
+   ],
+   "fixture": "local old = CaptureService.CaptureSaved"
+  },
+  {
+   "id": "stats-time-units",
+   "category": "runtime",
+   "status": "deprecated",
+   "old": "Stats.HeartbeatTimeMs / Stats.PhysicsStepTimeMs",
+   "new": "Stats.HeartbeatTime / Stats.PhysicsStepTime",
+   "why": "HeartbeatTimeMs is milliseconds and HeartbeatTime is documented in seconds; convert display and thresholds. PhysicsStepTimeMs is milliseconds, but the pinned PhysicsStepTime documentation does not state its unit. Do not assume a scaling factor for PhysicsStepTime without additional authoritative evidence.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Stats.HeartbeatTimeMs",
+    "api:Stats.PhysicsStepTimeMs",
+    "api:Stats.HeartbeatTime",
+    "api:Stats.PhysicsStepTime",
+    "cd:reference/engine/classes/Stats"
+   ],
+   "detect": "[.:](?:HeartbeatTimeMs|PhysicsStepTimeMs)\\b",
+   "covers": [
+    "Stats.HeartbeatTimeMs",
+    "Stats.PhysicsStepTimeMs"
+   ],
+   "fixture": "local old = Stats.HeartbeatTimeMs"
+  },
+  {
+   "id": "selection-brickcolor-color3",
+   "category": "rendering",
+   "status": "deprecated",
+   "old": "GuiBase3d.Color / SelectionBox.SurfaceColor / SelectionSphere.SurfaceColor",
+   "new": "GuiBase3d.Color3 / SelectionBox.SurfaceColor3 / SelectionSphere.SurfaceColor3",
+   "why": "The replacement properties use Color3 rather than BrickColor. Convert an existing BrickColor with its Color property; do not assign a BrickColor to the new property.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:GuiBase3d.Color",
+    "api:SelectionBox.SurfaceColor",
+    "api:SelectionSphere.SurfaceColor",
+    "api:GuiBase3d.Color3",
+    "api:SelectionBox.SurfaceColor3",
+    "api:SelectionSphere.SurfaceColor3",
+    "cd:reference/engine/classes/GuiBase3d",
+    "cd:reference/engine/classes/SelectionBox",
+    "cd:reference/engine/classes/SelectionSphere"
+   ],
+   "detect": "[.:](?:Color|SurfaceColor)\\b",
+   "covers": [
+    "GuiBase3d.Color",
+    "SelectionBox.SurfaceColor",
+    "SelectionSphere.SurfaceColor"
+   ],
+   "fixture": "local old = GuiBase3d.Color"
+  },
+  {
+   "id": "input-binding-fire",
+   "category": "input",
+   "status": "deprecated",
+   "old": "InputAction.Fire",
+   "new": "InputBinding:Fire() with an InputBindingType binding",
+   "why": "This moves the call from InputAction to InputBinding. Configure the binding and route it to the action; a receiver rename on the action is incorrect.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:InputAction.Fire",
+    "api:InputBinding.Fire",
+    "cd:reference/engine/classes/InputAction"
+   ],
+   "detect": "[.:](?:Fire)\\b",
+   "covers": [
+    "InputAction.Fire"
+   ],
+   "fixture": "InputAction:Fire(value)"
+  },
+  {
+   "id": "pose-maskweight-track",
+   "category": "animation",
+   "status": "deprecated",
+   "old": "Pose.MaskWeight",
+   "new": "AnimationTrack:AdjustWeight()",
+   "why": "Blending is controlled on a playing animation track, not a stored Pose. Obtain the intended track and choose weight/fade behavior.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Pose.MaskWeight",
+    "api:AnimationTrack.AdjustWeight",
+    "cd:reference/engine/classes/Pose"
+   ],
+   "detect": "[.:](?:MaskWeight)\\b",
+   "covers": [
+    "Pose.MaskWeight"
+   ],
+   "fixture": "local old = Pose.MaskWeight"
+  },
+  {
+   "id": "script-linked-source-packages",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "BaseScript.LinkedSource / ModuleScript.LinkedSource",
+   "new": "Migrate the linked-source workflow to Roblox packages",
+   "why": "Packages replace the old source-link property; this changes asset organization and update workflow rather than assigning a renamed field. Follow the pinned packages guide.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:BaseScript.LinkedSource",
+    "api:ModuleScript.LinkedSource",
+    "cd:reference/engine/classes/BaseScript",
+    "cd:reference/engine/classes/ModuleScript",
+    "cd:projects/assets/packages"
+   ],
+   "detect": "[.:](?:LinkedSource)\\b",
+   "covers": [
+    "BaseScript.LinkedSource",
+    "ModuleScript.LinkedSource"
+   ],
+   "fixture": "local old = BaseScript.LinkedSource"
+  },
+  {
+   "id": "analytics-typed-events",
+   "category": "runtime",
+   "status": "deprecated",
+   "old": "AnalyticsService.FireCustomEvent / AnalyticsService.FireEvent / AnalyticsService.FireInGameEconomyEvent / AnalyticsService.FirePlayerProgressionEvent",
+   "new": "Choose LogCustomEvent, LogEconomyEvent or LogProgressionEvent for the event meaning",
+   "why": "The old generic and legacy methods do not have interchangeable argument lists. Select the semantic event family, then rebuild arguments against its pinned signature; preserve player identity and event fields.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:AnalyticsService.FireCustomEvent",
+    "api:AnalyticsService.FireEvent",
+    "api:AnalyticsService.FireInGameEconomyEvent",
+    "api:AnalyticsService.FirePlayerProgressionEvent",
+    "api:AnalyticsService.LogCustomEvent",
+    "api:AnalyticsService.LogEconomyEvent",
+    "api:AnalyticsService.LogProgressionEvent",
+    "cd:reference/engine/classes/AnalyticsService"
+   ],
+   "detect": "[.:](?:FireCustomEvent|FireEvent|FireInGameEconomyEvent|FirePlayerProgressionEvent)\\b",
+   "covers": [
+    "AnalyticsService.FireCustomEvent",
+    "AnalyticsService.FireEvent",
+    "AnalyticsService.FireInGameEconomyEvent",
+    "AnalyticsService.FirePlayerProgressionEvent"
+   ],
+   "fixture": "AnalyticsService:FireCustomEvent(value)"
+  },
+  {
+   "id": "player-best-friends-retired",
+   "category": "players",
+   "status": "deprecated",
+   "old": "Player.IsBestFriendsWith",
+   "new": "Player:IsFriendsWithAsync(userId) only if ordinary friendship matches the feature",
+   "why": "Best-friend status was removed. Ordinary friendship is a different relation and the Async lookup yields; update product logic and error handling.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Player.IsBestFriendsWith",
+    "api:Player.IsFriendsWithAsync",
+    "cd:reference/engine/classes/Player"
+   ],
+   "detect": "[.:](?:IsBestFriendsWith)\\b",
+   "covers": [
+    "Player.IsBestFriendsWith"
+   ],
+   "fixture": "Player:IsBestFriendsWith(value)"
+  },
+  {
+   "id": "runtime-remote-build-mode",
+   "category": "runtime",
+   "status": "deprecated",
+   "old": "DataModel.GetRemoteBuildMode",
+   "new": "RunService:IsServer() when the question is server execution",
+   "why": "The old build-mode predicate is replaced by an execution-context query on another service. Ensure server/client context is actually the question.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:DataModel.GetRemoteBuildMode",
+    "api:RunService.IsServer",
+    "cd:reference/engine/classes/DataModel"
+   ],
+   "detect": "[.:](?:GetRemoteBuildMode)\\b",
+   "covers": [
+    "DataModel.GetRemoteBuildMode"
+   ],
+   "fixture": "DataModel:GetRemoteBuildMode(value)"
+  },
+  {
+   "id": "datamodel-item-change",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "DataModel.ItemChanged",
+   "new": "Object.Changed on the specific observed instance",
+   "why": "Replace global legacy observation with a connection on each relevant object. Changed signal argument behavior depends on the class; do not assume a drop-in callback.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:DataModel.ItemChanged",
+    "api:Object.Changed",
+    "cd:reference/engine/classes/DataModel"
+   ],
+   "detect": "[.:](?:ItemChanged)\\b",
+   "covers": [
+    "DataModel.ItemChanged"
+   ],
+   "fixture": "local old = DataModel.ItemChanged"
+  },
+  {
+   "id": "asset-insert-load",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "InsertService.Insert",
+   "new": "InsertService:LoadAsset(assetId) for authorized asset loading",
+   "why": "Insert consumed an Instance and returned nothing; LoadAsset takes an asset ID and returns an asset container. Review permission, yielding, returned hierarchy and parenting; do not execute untrusted code.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:InsertService.Insert",
+    "api:InsertService.LoadAsset",
+    "cd:reference/engine/classes/InsertService"
+   ],
+   "detect": "[.:](?:Insert)\\b",
+   "covers": [
+    "InsertService.Insert"
+   ],
+   "fixture": "InsertService:Insert(value)"
+  },
+  {
+   "id": "asset-creator-id-retired",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "AssetService.GetCreatorAssetID",
+   "new": "Remove reliance on the broken method; select a documented product metadata query for the actual requirement",
+   "why": "The pinned preferred-name hint says GetProductInfo but does not establish the owning service, equivalent input or return shape. Do not synthesize AssetService:GetProductInfo or assume this retrieves a creator identifier.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:AssetService.GetCreatorAssetID",
+    "cd:reference/engine/classes/AssetService"
+   ],
+   "detect": "[.:](?:GetCreatorAssetID)\\b",
+   "covers": [
+    "AssetService.GetCreatorAssetID"
+   ],
+   "fixture": "AssetService:GetCreatorAssetID(value)"
+  },
+  {
+   "id": "team-rebalance-retired",
+   "category": "players",
+   "status": "deprecated",
+   "old": "Teams.RebalanceTeams",
+   "new": "Implement a server-owned team allocation policy",
+   "why": "The old method no longer functions correctly. Decide balancing criteria, then validate and assign teams server-side instead of a mechanical API substitution.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Teams.RebalanceTeams",
+    "cd:reference/engine/classes/Teams"
+   ],
+   "detect": "[.:](?:RebalanceTeams)\\b",
+   "covers": [
+    "Teams.RebalanceTeams"
+   ],
+   "fixture": "Teams:RebalanceTeams(value)"
+  },
+  {
+   "id": "retired-ad-callbacks",
+   "category": "monetization",
+   "status": "deprecated",
+   "old": "AdGui.OnAdEvent / AdService.ShowVideoAd / AdService.VideoAdClosed",
+   "new": "Remove dependency on these retired ad calls/callbacks",
+   "why": "The video-ad methods were decommissioned and the callback will never be called. There is no drop-in replacement established by these rows; design any new monetization integration from current documentation.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:AdGui.OnAdEvent",
+    "api:AdService.ShowVideoAd",
+    "api:AdService.VideoAdClosed",
+    "cd:reference/engine/classes/AdGui",
+    "cd:reference/engine/classes/AdService"
+   ],
+   "detect": "[.:](?:OnAdEvent|ShowVideoAd|VideoAdClosed)\\b",
+   "covers": [
+    "AdGui.OnAdEvent",
+    "AdService.ShowVideoAd",
+    "AdService.VideoAdClosed"
+   ],
+   "fixture": "local old = AdGui.OnAdEvent"
+  },
+  {
+   "id": "removed-sets",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "InsertService.GetBaseCategories / InsertService.GetBaseSets / InsertService.GetCollection / InsertService.GetUserCategories / InsertService.GetUserSets",
+   "new": "Remove the retired Sets integration",
+   "why": "Sets were removed. The historical preferred names also point to removed methods, so following the rename chain cannot restore the feature.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:InsertService.GetBaseCategories",
+    "api:InsertService.GetBaseSets",
+    "api:InsertService.GetCollection",
+    "api:InsertService.GetUserCategories",
+    "api:InsertService.GetUserSets",
+    "cd:reference/engine/classes/InsertService"
+   ],
+   "detect": "[.:](?:GetBaseCategories|GetBaseSets|GetCollection|GetUserCategories|GetUserSets)\\b",
+   "covers": [
+    "InsertService.GetBaseCategories",
+    "InsertService.GetBaseSets",
+    "InsertService.GetCollection",
+    "InsertService.GetUserCategories",
+    "InsertService.GetUserSets"
+   ],
+   "fixture": "InsertService:GetBaseCategories(value)"
+  },
+  {
+   "id": "removed-points-service",
+   "category": "players",
+   "status": "deprecated",
+   "old": "PointsService.AwardPoints / PointsService.GetAwardablePoints / PointsService.GetGamePointBalance / PointsService.GetPointBalance",
+   "new": "Remove the retired platform achievement-points integration",
+   "why": "These APIs belong to an achievement system that was removed. A game-owned score is a new system requiring its own persistence and authority design, not an equivalent API replacement.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:PointsService.AwardPoints",
+    "api:PointsService.GetAwardablePoints",
+    "api:PointsService.GetGamePointBalance",
+    "api:PointsService.GetPointBalance",
+    "cd:reference/engine/classes/PointsService"
+   ],
+   "detect": "[.:](?:AwardPoints|GetAwardablePoints|GetGamePointBalance|GetPointBalance)\\b",
+   "covers": [
+    "PointsService.AwardPoints",
+    "PointsService.GetAwardablePoints",
+    "PointsService.GetGamePointBalance",
+    "PointsService.GetPointBalance"
+   ],
+   "fixture": "PointsService:AwardPoints(value)"
+  },
+  {
+   "id": "retired-noop-settings",
+   "category": "runtime",
+   "status": "deprecated",
+   "old": "DataModel.GearGenreSetting / DataModel.IsGearTypeAllowed / DataModel.GetMessage / Decal.Specular / StudioService.DrawConstraintsOnTop / Team.AutoColorCharacters / TeleportService.CustomizedTeleportUI / Camera.GetPanSpeed / Camera.GetTiltSpeed",
+   "new": "Remove calls and reliance on their old behavior",
+   "why": "Pinned deprecation notes say these features are removed, nonfunctional or no longer work. Do not invent replacement members; implement any still-required behavior separately from current documented APIs.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:DataModel.GearGenreSetting",
+    "api:DataModel.IsGearTypeAllowed",
+    "api:DataModel.GetMessage",
+    "api:Decal.Specular",
+    "api:StudioService.DrawConstraintsOnTop",
+    "api:Team.AutoColorCharacters",
+    "api:TeleportService.CustomizedTeleportUI",
+    "api:Camera.GetPanSpeed",
+    "api:Camera.GetTiltSpeed",
+    "cd:reference/engine/classes/DataModel",
+    "cd:reference/engine/classes/Decal",
+    "cd:reference/engine/classes/StudioService",
+    "cd:reference/engine/classes/Team",
+    "cd:reference/engine/classes/TeleportService",
+    "cd:reference/engine/classes/Camera"
+   ],
+   "detect": "[.:](?:AutoColorCharacters|CustomizedTeleportUI|DrawConstraintsOnTop|GearGenreSetting|GetMessage|GetPanSpeed|GetTiltSpeed|IsGearTypeAllowed|Specular)\\b",
+   "covers": [
+    "DataModel.GearGenreSetting",
+    "DataModel.IsGearTypeAllowed",
+    "DataModel.GetMessage",
+    "Decal.Specular",
+    "StudioService.DrawConstraintsOnTop",
+    "Team.AutoColorCharacters",
+    "TeleportService.CustomizedTeleportUI",
+    "Camera.GetPanSpeed",
+    "Camera.GetTiltSpeed"
+   ],
+   "fixture": "local old = DataModel.GearGenreSetting"
+  },
+  {
+   "id": "surface-motor-inputs",
+   "category": "physics",
+   "status": "deprecated",
+   "old": "BasePart.BackParamA / BasePart.BackParamB / BasePart.BackSurfaceInput / BasePart.BottomParamA / BasePart.BottomParamB / BasePart.BottomSurfaceInput / BasePart.FrontParamA / BasePart.FrontParamB / BasePart.FrontSurfaceInput / BasePart.LeftParamA / BasePart.LeftParamB / BasePart.LeftSurfaceInput / BasePart.RightParamA / BasePart.RightParamB / BasePart.RightSurfaceInput / BasePart.TopParamA / BasePart.TopParamB / BasePart.TopSurfaceInput",
+   "new": "Rebuild legacy surface motors with explicit attachments and a HingeConstraint motor",
+   "why": "Surface inputs encode constant or sinusoidal motor motion through face-specific parameters. Modern constraints need explicit attachment axes and motor settings; sine-driven motion needs deliberate time-varying control. Do not copy legacy amplitude/frequency fields onto constraints.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:BasePart.BackParamA",
+    "api:BasePart.BackParamB",
+    "api:BasePart.BackSurfaceInput",
+    "api:BasePart.BottomParamA",
+    "api:BasePart.BottomParamB",
+    "api:BasePart.BottomSurfaceInput",
+    "api:BasePart.FrontParamA",
+    "api:BasePart.FrontParamB",
+    "api:BasePart.FrontSurfaceInput",
+    "api:BasePart.LeftParamA",
+    "api:BasePart.LeftParamB",
+    "api:BasePart.LeftSurfaceInput",
+    "api:BasePart.RightParamA",
+    "api:BasePart.RightParamB",
+    "api:BasePart.RightSurfaceInput",
+    "api:BasePart.TopParamA",
+    "api:BasePart.TopParamB",
+    "api:BasePart.TopSurfaceInput",
+    "api:HingeConstraint.AngularVelocity",
+    "api:HingeConstraint.ActuatorType",
+    "api:Constraint.Attachment0",
+    "api:Constraint.Attachment1",
+    "cd:reference/engine/classes/BasePart",
+    "cd:physics/constraints/hinge"
+   ],
+   "detect": "[.:](?:BackParamA|BackParamB|BackSurfaceInput|BottomParamA|BottomParamB|BottomSurfaceInput|FrontParamA|FrontParamB|FrontSurfaceInput|LeftParamA|LeftParamB|LeftSurfaceInput|RightParamA|RightParamB|RightSurfaceInput|TopParamA|TopParamB|TopSurfaceInput)\\b",
+   "covers": [
+    "BasePart.BackParamA",
+    "BasePart.BackParamB",
+    "BasePart.BackSurfaceInput",
+    "BasePart.BottomParamA",
+    "BasePart.BottomParamB",
+    "BasePart.BottomSurfaceInput",
+    "BasePart.FrontParamA",
+    "BasePart.FrontParamB",
+    "BasePart.FrontSurfaceInput",
+    "BasePart.LeftParamA",
+    "BasePart.LeftParamB",
+    "BasePart.LeftSurfaceInput",
+    "BasePart.RightParamA",
+    "BasePart.RightParamB",
+    "BasePart.RightSurfaceInput",
+    "BasePart.TopParamA",
+    "BasePart.TopParamB",
+    "BasePart.TopSurfaceInput"
+   ],
+   "fixture": "local old = BasePart.BackParamA"
+  },
+  {
+   "id": "camera-discrete-pan-tilt",
+   "category": "camera",
+   "status": "deprecated",
+   "old": "Camera.PanUnits / Camera.TiltUnits",
+   "new": "Use a deliberate CFrame-based camera controller",
+   "why": "The old helpers rotate around camera Focus with distinct pan/tilt increments and tilt bounds. Recreate the intended orbit, input mapping and clamps explicitly; do not treat old unit arguments as radians.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Camera.PanUnits",
+    "api:Camera.TiltUnits",
+    "api:Camera.CFrame",
+    "api:Camera.Focus",
+    "cd:reference/engine/classes/Camera"
+   ],
+   "detect": "[.:](?:PanUnits|TiltUnits)\\b",
+   "covers": [
+    "Camera.PanUnits",
+    "Camera.TiltUnits"
+   ],
+   "fixture": "Camera:PanUnits(value)"
+  },
+  {
+   "id": "sensor-sense-update",
+   "category": "physics",
+   "status": "deprecated",
+   "old": "SensorBase.Sense",
+   "new": "Use UpdateType OnRead automatic recomputation or set output properties in Manual mode",
+   "why": "Pinned documentation says OnRead recomputes on the next read and Manual does not recompute automatically. Sense is unnecessary in OnRead; Manual requires assigning outputs rather than calling Sense.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:SensorBase.Sense",
+    "api:SensorBase.UpdateType",
+    "cd:reference/engine/classes/SensorBase"
+   ],
+   "detect": "[.:](?:Sense)\\b",
+   "covers": [
+    "SensorBase.Sense"
+   ],
+   "fixture": "SensorBase:Sense(value)"
+  },
+  {
+   "id": "ui-layout-automatic",
+   "category": "ui",
+   "status": "deprecated",
+   "old": "UIGridStyleLayout.ApplyLayout",
+   "new": "Use supported Name or LayoutOrder sorting and automatic layout invalidation",
+   "why": "Pinned docs say sibling insertion/removal and Name or LayoutOrder changes trigger layout. Retire legacy custom-sort invalidation; changing to LayoutOrder requires making the ordering policy explicit.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:UIGridStyleLayout.ApplyLayout",
+    "api:GuiObject.LayoutOrder",
+    "api:UIGridStyleLayout.SortOrder",
+    "cd:reference/engine/classes/UIGridStyleLayout"
+   ],
+   "detect": "[.:](?:ApplyLayout)\\b",
+   "covers": [
+    "UIGridStyleLayout.ApplyLayout"
+   ],
+   "fixture": "UIGridStyleLayout:ApplyLayout(value)"
+  },
+  {
+   "id": "debris-fixed-capacity",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "Debris.MaxItems",
+   "new": "Remove MaxItems writes; design cleanup lifetime without changing the service capacity",
+   "why": "The pinned description says setting this property errors and capacity is hardcoded. Keep supported AddItem scheduling and reduce retained objects or manage explicit destruction; do not promise capacity tuning.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Debris.MaxItems",
+    "api:Debris.AddItem",
+    "cd:reference/engine/classes/Debris"
+   ],
+   "detect": "[.:](?:MaxItems)\\b",
+   "covers": [
+    "Debris.MaxItems"
+   ],
+   "fixture": "local old = Debris.MaxItems"
+  },
+  {
+   "id": "team-score-value",
+   "category": "players",
+   "status": "deprecated",
+   "old": "Team.Score",
+   "new": "Store the server-owned score in a dedicated value/attribute and build its display",
+   "why": "The deprecated field only stores a number and has no automatic scoring behavior. Decide replication, persistence and leaderboard display instead of assuming a new built-in Team score field.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Team.Score",
+    "api:Instance.SetAttribute",
+    "cd:reference/engine/classes/Team",
+    "cd:players/leaderboards"
+   ],
+   "detect": "[.:](?:Score)\\b",
+   "covers": [
+    "Team.Score"
+   ],
+   "fixture": "local old = Team.Score"
+  },
+  {
+   "id": "retired-nonfunctional-properties",
+   "category": "runtime",
+   "status": "deprecated",
+   "old": "Decal.Shiny / FormFactorPart.FormFactor / FormFactorPart.formFactor / ScreenshotHud.UsernameOverlayEnabled",
+   "new": "Remove the obsolete assignments",
+   "why": "The pinned descriptions identify nonfunctional settings or a retired resize-grid behavior. Keep desired modern rendering/resizing as explicit application behavior; there is no equivalent renamed property.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:Decal.Shiny",
+    "api:FormFactorPart.FormFactor",
+    "api:FormFactorPart.formFactor",
+    "api:ScreenshotHud.UsernameOverlayEnabled",
+    "cd:reference/engine/classes/Decal",
+    "cd:reference/engine/classes/FormFactorPart",
+    "cd:reference/engine/classes/ScreenshotHud"
+   ],
+   "detect": "[.:](?:FormFactor|Shiny|UsernameOverlayEnabled|formFactor)\\b",
+   "covers": [
+    "Decal.Shiny",
+    "FormFactorPart.FormFactor",
+    "FormFactorPart.formFactor",
+    "ScreenshotHud.UsernameOverlayEnabled"
+   ],
+   "fixture": "local old = Decal.Shiny"
+  },
+  {
+   "id": "insert-approval-noop",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "InsertService.AllowInsertFreeModels / InsertService.ApproveAssetId / InsertService.ApproveAssetVersionId",
+   "new": "Remove the legacy approval calls; use current documented asset permissions",
+   "why": "The flag was never released and the approval methods have no effect. These calls cannot grant asset access or override ownership/security requirements.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:InsertService.AllowInsertFreeModels",
+    "api:InsertService.ApproveAssetId",
+    "api:InsertService.ApproveAssetVersionId",
+    "cd:reference/engine/classes/InsertService"
+   ],
+   "detect": "[.:](?:AllowInsertFreeModels|ApproveAssetId|ApproveAssetVersionId)\\b",
+   "covers": [
+    "InsertService.AllowInsertFreeModels",
+    "InsertService.ApproveAssetId",
+    "InsertService.ApproveAssetVersionId"
+   ],
+   "fixture": "local old = InsertService.AllowInsertFreeModels"
+  },
+  {
+   "id": "mesh-engine-joint-offset",
+   "category": "instances",
+   "status": "deprecated",
+   "old": "MeshPart.HasJointOffset / MeshPart.JointOffset",
+   "new": "Remove scripted offset writes and use a supported rig/import workflow",
+   "why": "These legacy fields are engine managed and cannot be set by scripts. JointOffset is reset when a new mesh is applied; it is not a stable rig control.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:MeshPart.HasJointOffset",
+    "api:MeshPart.JointOffset",
+    "cd:reference/engine/classes/MeshPart"
+   ],
+   "detect": "[.:](?:HasJointOffset|JointOffset)\\b",
+   "covers": [
+    "MeshPart.HasJointOffset",
+    "MeshPart.JointOffset"
+   ],
+   "fixture": "local old = MeshPart.HasJointOffset"
+  },
+  {
+   "id": "opencloud-deprecated-bridge",
+   "category": "security",
+   "status": "deprecated",
+   "old": "OpenCloudApiV1.CreateModel / OpenCloudApiV1.CreateUserNotificationAsync / OpenCloudService.GetApiV1 / OpenCloudService.InvokeAsync",
+   "new": "Remove dependence on the deprecated in-engine bridge; design an authorized Open Cloud integration separately",
+   "why": "GetApiV1 and CreateUserNotificationAsync are documented to error. Other bridge/container calls are deprecated. External Open Cloud requests require their own supported endpoint, authentication and backend design; never embed credentials in client scripts.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:OpenCloudApiV1.CreateModel",
+    "api:OpenCloudApiV1.CreateUserNotificationAsync",
+    "api:OpenCloudService.GetApiV1",
+    "api:OpenCloudService.InvokeAsync",
+    "cd:reference/engine/classes/OpenCloudApiV1",
+    "cd:reference/engine/classes/OpenCloudService"
+   ],
+   "detect": "[.:](?:CreateModel|CreateUserNotificationAsync|GetApiV1|InvokeAsync)\\b",
+   "covers": [
+    "OpenCloudApiV1.CreateModel",
+    "OpenCloudApiV1.CreateUserNotificationAsync",
+    "OpenCloudService.GetApiV1",
+    "OpenCloudService.InvokeAsync"
+   ],
+   "fixture": "OpenCloudApiV1:CreateModel(value)"
+  },
+  {
+   "id": "obsolete-gear-change",
+   "category": "players",
+   "status": "deprecated",
+   "old": "DataModel.AllowedGearTypeChanged",
+   "new": "Remove reliance on legacy gear-settings notifications",
+   "why": "The event signals an obsolete gear-setting operation. Define game-owned equipment permissions and their change notifications if the feature is still needed.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:DataModel.AllowedGearTypeChanged",
+    "cd:reference/engine/classes/DataModel"
+   ],
+   "detect": "[.:](?:AllowedGearTypeChanged)\\b",
+   "covers": [
+    "DataModel.AllowedGearTypeChanged"
+   ],
+   "fixture": "local old = DataModel.AllowedGearTypeChanged"
+  },
+  {
+   "id": "editablemesh-typed-attribute-queries",
+   "category": "rendering",
+   "status": "deprecated",
+   "old": "EditableMesh.GetFacesWithAttribute / EditableMesh.GetVerticesWithAttribute",
+   "new": "Choose GetFacesWithColor/Normal/UV or GetVerticesWithColor/Normal/UV according to the attribute kind; use GetVertexFaces or GetFaceVertices for topology",
+   "why": "The old query accepted an ambiguous attribute identifier. Preserve its kind explicitly: IDs for vertices, faces, colors, normals and UVs are not interchangeable. Select the typed query for the caller intent; do not substitute a single generic method.",
+   "when_ok": "Legacy compatibility review only; do not use this API for new work.",
+   "verify": [
+    "api:EditableMesh.GetFacesWithAttribute",
+    "api:EditableMesh.GetVerticesWithAttribute",
+    "api:EditableMesh.GetFacesWithColor",
+    "api:EditableMesh.GetFacesWithNormal",
+    "api:EditableMesh.GetFacesWithUV",
+    "api:EditableMesh.GetVerticesWithColor",
+    "api:EditableMesh.GetVerticesWithNormal",
+    "api:EditableMesh.GetVerticesWithUV",
+    "api:EditableMesh.GetVertexFaces",
+    "api:EditableMesh.GetFaceVertices",
+    "cd:reference/engine/classes/EditableMesh"
+   ],
+   "detect": "[.:](?:GetFacesWithAttribute|GetVerticesWithAttribute)\\b",
+   "covers": [
+    "EditableMesh.GetFacesWithAttribute",
+    "EditableMesh.GetVerticesWithAttribute"
+   ],
+   "fixture": "EditableMesh:GetFacesWithAttribute(value)"
+  },
+  {
+   "id": "layered-fit-retired-tuning",
+   "category": "rendering",
+   "status": "deprecated",
+   "old": "WrapLayer.Puffiness / WrapLayer.ShrinkFactor / WrapTarget.Stiffness",
+   "new": "When the improved fitting algorithm is active, remove reliance on these tuning fields; validate clothing fit using the supported asset workflow.",
+   "why": "Staff explicitly says the listed fields are ignored under the new fitting algorithm; replacing them with guessed numeric controls would invent an equivalent API.",
+   "when_ok": "Historical assets may retain serialized values, but they are not proof that the active fitting algorithm uses them.",
+   "notes": "The dated post announces an upcoming rollout; this receipt does not independently establish universal rollout completion. Apply this guidance conditionally and test affected clothing. AccessoryDescription.Puffiness is not covered. Pinned old descriptions explain historical tuning; the dated staff note clarifies behavior under the new algorithm.",
+   "verify": [
+    "api:WrapLayer.Puffiness",
+    "api:WrapLayer.ShrinkFactor",
+    "api:WrapTarget.Stiffness"
+   ],
+   "detect": "[.:](?:Puffiness|ShrinkFactor|Stiffness)\\b",
+   "fixture": "WrapLayer.Puffiness = value",
+   "covers": [
+    "WrapLayer.Puffiness",
+    "WrapLayer.ShrinkFactor",
+    "WrapTarget.Stiffness"
+   ],
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/improved-layered-fit.json",
+     "sha256": "1c95d90971503c8439f2a242f1ed3b88f303e0e7a5b5aa6252c11dfe6e229227"
+    }
+   ]
+  },
+  {
+   "id": "animationconstraint-attachment-joints",
+   "category": "animation",
+   "status": "deprecated",
+   "old": "AnimationConstraint.C0 / AnimationConstraint.C1 / AnimationConstraint.Part0 / AnimationConstraint.Part1",
+   "new": "Use the constraint attachment model for AJU rigs; redesign procedural joint updates rather than assigning the legacy fields.",
+   "why": "The current dump marks these fields readonly/deprecated and the staff migration post confirms attempts to set them error. Attachments determine the joint; there is no one-to-one assignment rewrite.",
+   "when_ok": "Read-only legacy inspection requires checking the actual rig; never copy writable Motor6D property assumptions to AnimationConstraint.",
+   "notes": "For AJU-enabled rigs, review the staff migration guidance before procedural animation changes. Attachment rest-pose mutation and local Transform animation are not interchangeable. The staff source supplies guidance absent from the pinned AnimationConstraint YAML.",
+   "verify": [
+    "api:AnimationConstraint.C0",
+    "api:AnimationConstraint.C1",
+    "api:AnimationConstraint.Part0",
+    "api:AnimationConstraint.Part1",
+    "api:Constraint.Attachment0",
+    "api:Constraint.Attachment1",
+    "api:AnimationConstraint.Transform"
+   ],
+   "detect": "[.:](?:C0|C1|Part0|Part1)\\b",
+   "fixture": "AnimationConstraint.C0 = value",
+   "covers": [
+    "AnimationConstraint.C0",
+    "AnimationConstraint.C1",
+    "AnimationConstraint.Part0",
+    "AnimationConstraint.Part1"
+   ],
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/aju-attachment-migration.json",
+     "sha256": "7f91b19d8c75e1afb3a9d5e79c267bb1dc4f4b7b7d6db29766e932d143907bc2"
+    }
+   ]
+  },
+  {
+   "id": "hinge-softlock-retired",
+   "category": "physics",
+   "status": "deprecated",
+   "old": "HingeConstraint.SoftlockServoUponReachingTarget",
+   "new": "Remove reliance on the softlock flag; design and test the desired hinge holding behavior explicitly.",
+   "why": "Staff confirms that the hinge softlock is disabled regardless of the stored value. Toggling the flag cannot restore the former behavior.",
+   "when_ok": "A serialized legacy value may remain, but it must not be treated as evidence the hinge will lock.",
+   "notes": "This evidence is limited to HingeConstraint. Do not extrapolate to similarly named properties on other constraint classes or claim a parameter-for-parameter substitute. The pinned generic deprecation warning is clarified by the dated staff behavior statement.",
+   "verify": [
+    "api:HingeConstraint.SoftlockServoUponReachingTarget"
+   ],
+   "detect": "[.:](?:SoftlockServoUponReachingTarget)\\b",
+   "fixture": "HingeConstraint.SoftlockServoUponReachingTarget = value",
+   "covers": [
+    "HingeConstraint.SoftlockServoUponReachingTarget"
+   ],
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/hinge-softlock-disabled.json",
+     "sha256": "aefa53cb95082a172298dbf2d892cb62006d19eedf1ecb31f095ae7aac4b1c37"
+    }
+   ]
+  },
+  {
+   "id": "capture-watermark-settings-retired",
+   "category": "ui",
+   "status": "deprecated",
+   "old": "ScreenshotHud.OverlayFont / ScreenshotHud.ExperienceNameOverlayEnabled",
+   "new": "Remove reliance on the old watermark settings for user-initiated captures and Selfie Mode images.",
+   "why": "Staff confirms these contexts no longer add the watermark; font/name-overlay settings do not provide a replacement capture-branding pipeline.",
+   "when_ok": "Legacy serialized settings may remain; verify any different custom capture workflow independently.",
+   "notes": "The staff statement explicitly scopes the affected captures. Do not generalize it to arbitrary developer-created overlays or invent another ScreenshotHud branding property.",
+   "verify": [
+    "api:ScreenshotHud.OverlayFont",
+    "api:ScreenshotHud.ExperienceNameOverlayEnabled"
+   ],
+   "detect": "[.:](?:ExperienceNameOverlayEnabled|OverlayFont)\\b",
+   "fixture": "ScreenshotHud.OverlayFont = value",
+   "covers": [
+    "ScreenshotHud.OverlayFont",
+    "ScreenshotHud.ExperienceNameOverlayEnabled"
+   ],
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/capture-watermark-retired.json",
+     "sha256": "8d3f45c771390efd6a7b34d21868e184d471bbefd1e234398e00eaa0e347e498"
+    }
+   ]
+  },
+  {
+   "id": "topbar-transparency-setter-retired",
+   "category": "ui",
+   "status": "deprecated",
+   "old": "PlayerGui.SetTopbarTransparency",
+   "new": "Stop relying on a transparency write when the new topbar is active.",
+   "why": "The staff rollout announcement says this setter no longer changes new-topbar transparency. Hiding a core UI feature is a different behavior, not a drop-in replacement.",
+   "when_ok": "Historical topbar behavior must be checked separately; do not infer that this setter controls a current topbar.",
+   "notes": "Conditional on the announced new topbar. The source does not establish removal of the getter or change signal, so those remain separate unresolved rows.",
+   "verify": [
+    "api:PlayerGui.SetTopbarTransparency"
+   ],
+   "detect": "[.:](?:SetTopbarTransparency)\\b",
+   "fixture": "PlayerGui.SetTopbarTransparency = value",
+   "covers": [
+    "PlayerGui.SetTopbarTransparency"
+   ],
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/topbar-transparency-retired.json",
+     "sha256": "732ef053957a5580cd3b17e8f4f2e2622a5ca68275d190bda354ec84dce5b1d2"
+    }
+   ]
+  },
+  {
+   "id": "billboard-distance-scale-redesign",
+   "category": "ui",
+   "status": "deprecated",
+   "old": "BillboardGui.DistanceLowerLimit / BillboardGui.DistanceUpperLimit",
+   "new": "Implement the intended distance-based sizing policy in a LocalScript.",
+   "why": "Staff explicitly recommends scripted behavior for these deprecated limits. This requires selecting and testing distance measurement and the scale/clamp policy; it is not a renamed field.",
+   "when_ok": "Untouched historical UI may retain old values during a measured migration.",
+   "notes": "Do not substitute MaxDistance, which is culling, or invent an equivalent scale formula. The staff post does not settle absolute versus camera-projected distance semantics.",
+   "verify": [
+    "api:BillboardGui.DistanceLowerLimit",
+    "api:BillboardGui.DistanceUpperLimit"
+   ],
+   "detect": "[.:](?:DistanceLowerLimit|DistanceUpperLimit)\\b",
+   "fixture": "BillboardGui.DistanceLowerLimit = value",
+   "covers": [
+    "BillboardGui.DistanceLowerLimit",
+    "BillboardGui.DistanceUpperLimit"
+   ],
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/billboard-distance-redesign.json",
+     "sha256": "ea0d2ff55fc68f6d0b7d59a6735742e56819706c9deb501c6dc4400b0cf6c0ca"
+    }
+   ]
   }
  ],
  "ranking": {

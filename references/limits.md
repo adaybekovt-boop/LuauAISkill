@@ -20,6 +20,18 @@ Status: **documented** = explicit statement in the pinned source; **approximate*
 |---|---|---|---|---|---|
 | `server-authority-release-status`: Server authority was announced as a full release for all games. The dated announcement supersedes a stale beta sentence in the pinned network-ownership guide. This does not claim that every related feature is generally available. | full release | release status | ga | [pinned source](https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993) | 2026-10-02 / 2026-11-01 |
 | `server-authority-release-date`: Date of the official server authority full-release announcement. | 2026-07-09 | calendar date | documented | [pinned source](https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993) | 2026-10-02 / 2027-03-31 |
+| `ccl-base-release-status`: The base Character Controller Library was announced for live experiences. The base-library release is separate from later opt-in ability betas. | full release | release status | ga | [pinned source](https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267) | 2026-10-02 / 2026-11-01 |
+| `ccl-base-release-date`: Date of the base Character Controller Library full-release announcement. | 2026-04-08 | calendar date | documented | [pinned source](https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267) | 2026-10-02 / 2026-12-31 |
+| `ccl-abilities-beta-status`: CCL default abilities and Custom Abilities API were announced as a separate Studio beta. | Studio beta | release status | beta | [pinned source](https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739) | 2026-10-02 / 2026-11-01 |
+| `ccl-abilities-beta-date`: Date of the CCL default/custom abilities Studio beta announcement. | 2026-09-10 | calendar date | documented | [pinned source](https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739) | 2026-10-02 / 2026-12-31 |
+| `input-action-release-status`: The Input Action System was announced as fully released. This does not announce all related Studio tools or InputActionLabel as released. | full release | release status | ga | [pinned source](https://devforum.roblox.com/t/full-release-input-action-system-ias-newly-converted-player-scripts/4678416) | 2026-10-02 / 2026-11-01 |
+| `input-action-label-beta`: InputActionLabel is explicitly labeled beta in the pinned input guide. | beta | release status | beta | cd:input/input-action-system | 2026-10-02 / 2026-11-01 |
+| `lighting-technology-superseded`: Lighting.Technology is superseded in documentation; the dump does not tag it Deprecated. Check access separately: the pinned dump requires RobloxScriptSecurity. Documentation supersession and the Deprecated tag are distinct. | superseded | documentation status | documented | cd:reference/engine/classes/Lighting | 2026-10-02 / 2026-12-31 |
+| `renderstepped-superseded`: RenderStepped is superseded by PreRender for new work. | PreRender | replacement event | documented | cd:reference/engine/classes/RunService | 2026-10-02 / 2026-12-31 |
+| `stepped-superseded`: Stepped is superseded by PreSimulation for new work. | PreSimulation | replacement event | documented | cd:reference/engine/classes/RunService | 2026-10-02 / 2026-12-31 |
+| `cross-game-developer-product-sales-disable-date`: Scheduled disable date for cross-game developer-product sales in the pinned monetization guide. A dated documentation policy statement, not a live transaction test. | 2026-05-30 | calendar date | documented | cd:production/monetization/developer-products | 2026-10-02 / 2026-12-31 |
+| `cross-game-pass-sales-disable-date`: Scheduled disable date for cross-game pass sales in the pinned monetization guide. A dated documentation policy statement, not a live transaction test. | 2026-05-30 | calendar date | documented | cd:production/monetization/passes | 2026-10-02 / 2026-12-31 |
+| `input-action-manager-beta`: Input Action Manager tool is explicitly labeled beta. | beta | release status | beta | cd:input/input-action-system | 2026-10-02 / 2026-11-01 |
 
 ## Networking
 
@@ -62,6 +74,7 @@ Status: **documented** = explicit statement in the pinned source; **approximate*
 | `batch-get-max-keys`: Default BatchGetAsync maximum keys per call; server-configured, not a fixed universal maximum. | 100 | keys/request | default | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |
 | `batch-get-min-keys`: Minimum BatchGetAsync key count. | 1 | keys/request | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |
 | `batch-get-read-budget`: BatchGetAsync read budget is charged by requested key count. | requested_keys | read requests | documented | cd:reference/engine/classes/GlobalDataStore | 2026-10-02 / 2026-12-31 |
+| `datastore-queue-overflow-error-codes`: Error codes for entirely dropped requests when a throttling queue is full. | [301, 306] | inclusive error-code range | documented | cd:cloud-services/data-stores/error-codes-and-limits | 2026-10-02 / 2026-12-31 |
 
 ## Memory stores
 
@@ -114,6 +127,30 @@ Status: **documented** = explicit statement in the pinned source; **approximate*
 | `terrain-voxel-size`: Terrain voxel dimensions. | [4, 4, 4] | studs | documented | cd:parts/terrain | 2026-10-02 / 2026-12-31 |
 | `humanoid-move-to-timeout`: Humanoid MoveTo timeout if its goal is not reached; reissuing MoveTo resets it. | 8 | seconds | documented | cd:reference/engine/classes/Humanoid | 2026-10-02 / 2026-12-31 |
 | `frustum-stream-out-delay`: Opportunistic out-of-view stream-out delay beyond normal radius and active replication foci. | 1.5 | seconds | documented | cd:workspace/streaming/frustum | 2026-10-02 / 2026-12-31 |
+| `spotlight-angle-maximum`: Maximum SpotLight cone angle. | 180 | degrees | documented | cd:effects/light-sources | 2026-10-02 / 2026-12-31 |
+| `dof-default-far-intensity`: Reflected default for DepthOfFieldEffect.FarIntensity. | 0.75 | property units | default | api:DepthOfFieldEffect.FarIntensity | 2026-10-02 / 2026-12-31 |
+| `dof-default-focus-distance`: Reflected default for DepthOfFieldEffect.FocusDistance. Display rounded to hundredths; the reflected float is 0.0500000007. | 0.05 | property units | default | api:DepthOfFieldEffect.FocusDistance | 2026-10-02 / 2026-12-31 |
+| `dof-default-in-focus-radius`: Reflected default for DepthOfFieldEffect.InFocusRadius. | 10 | property units | default | api:DepthOfFieldEffect.InFocusRadius | 2026-10-02 / 2026-12-31 |
+| `dof-default-near-intensity`: Reflected default for DepthOfFieldEffect.NearIntensity. | 0.75 | property units | default | api:DepthOfFieldEffect.NearIntensity | 2026-10-02 / 2026-12-31 |
+| `atmosphere-density-default`: Reflected default for Atmosphere.Density. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.395000011 | reflected property value | default | api:Atmosphere.Density | 2026-10-02 / 2026-12-31 |
+| `atmosphere-offset-default`: Reflected default for Atmosphere.Offset. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:Atmosphere.Offset | 2026-10-02 / 2026-12-31 |
+| `atmosphere-haze-default`: Reflected default for Atmosphere.Haze. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:Atmosphere.Haze | 2026-10-02 / 2026-12-31 |
+| `atmosphere-color-default`: Reflected default for Atmosphere.Color. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.7843, 0.6667, 0.4235 | reflected property value | default | api:Atmosphere.Color | 2026-10-02 / 2026-12-31 |
+| `atmosphere-glare-default`: Reflected default for Atmosphere.Glare. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:Atmosphere.Glare | 2026-10-02 / 2026-12-31 |
+| `atmosphere-decay-default`: Reflected default for Atmosphere.Decay. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.3608, 0.2353, 0.0549 | reflected property value | default | api:Atmosphere.Decay | 2026-10-02 / 2026-12-31 |
+| `bloom-effect-intensity-default`: Reflected default for BloomEffect.Intensity. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.400000006 | reflected property value | default | api:BloomEffect.Intensity | 2026-10-02 / 2026-12-31 |
+| `bloom-effect-size-default`: Reflected default for BloomEffect.Size. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 24 | reflected property value | default | api:BloomEffect.Size | 2026-10-02 / 2026-12-31 |
+| `bloom-effect-threshold-default`: Reflected default for BloomEffect.Threshold. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.949999988 | reflected property value | default | api:BloomEffect.Threshold | 2026-10-02 / 2026-12-31 |
+| `color-correction-effect-brightness-default`: Reflected default for ColorCorrectionEffect.Brightness. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:ColorCorrectionEffect.Brightness | 2026-10-02 / 2026-12-31 |
+| `color-correction-effect-contrast-default`: Reflected default for ColorCorrectionEffect.Contrast. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:ColorCorrectionEffect.Contrast | 2026-10-02 / 2026-12-31 |
+| `color-correction-effect-saturation-default`: Reflected default for ColorCorrectionEffect.Saturation. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0 | reflected property value | default | api:ColorCorrectionEffect.Saturation | 2026-10-02 / 2026-12-31 |
+| `sun-rays-effect-intensity-default`: Reflected default for SunRaysEffect.Intensity. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 0.25 | reflected property value | default | api:SunRaysEffect.Intensity | 2026-10-02 / 2026-12-31 |
+| `sun-rays-effect-spread-default`: Reflected default for SunRaysEffect.Spread. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 1 | reflected property value | default | api:SunRaysEffect.Spread | 2026-10-02 / 2026-12-31 |
+| `blur-effect-size-default`: Reflected default for BlurEffect.Size. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 24 | reflected property value | default | api:BlurEffect.Size | 2026-10-02 / 2026-12-31 |
+| `material-variant-studs-per-tile-default`: Reflected default for MaterialVariant.StudsPerTile. Reflection default, not a claim about a Studio tool insertion preset. Color components are normalized RGB. | 10 | reflected property value | default | api:MaterialVariant.StudsPerTile | 2026-10-02 / 2026-12-31 |
+| `particle-light-emission-endpoints`: Documented normal/additive blending endpoints for ParticleEmitter.LightEmission. | [0, 1] | blending endpoints | documented | cd:reference/engine/classes/ParticleEmitter | 2026-10-02 / 2026-12-31 |
+| `particle-light-influence-range`: Defined range of ParticleEmitter.LightInfluence. | [0, 1] | influence factor | documented | cd:reference/engine/classes/ParticleEmitter | 2026-10-02 / 2026-12-31 |
+| `streaming-min-radius-default`: Default Workspace.StreamingMinRadius. | 64 | studs | default | cd:reference/engine/classes/Workspace | 2026-10-02 / 2026-12-31 |
 
 ## Luau and tooling
 
@@ -132,6 +169,7 @@ Status: **documented** = explicit statement in the pinned source; **approximate*
 | `studio-mcp-script-search`: Studio MCP script_search maximum results. | 10 | results | documented | cd:studio/mcp | 2026-10-02 / 2026-12-31 |
 | `studio-mcp-script-grep`: Studio MCP script_grep maximum matches. | 50 | matches | documented | cd:studio/mcp | 2026-10-02 / 2026-12-31 |
 | `text-channel-metadata`: TextChannel SendAsync metadata limit; longer metadata prevents delivery to other users. | 200 | characters | documented | cd:reference/engine/classes/TextChannel | 2026-10-02 / 2026-12-31 |
+| `microprofiler-server-capture-frames`: Maximum frames in a Developer Console server MicroProfiler capture. | 60 | frames | documented | cd:performance-optimization/microprofiler/index | 2026-10-02 / 2026-12-31 |
 
 ## Units and numeric precision
 

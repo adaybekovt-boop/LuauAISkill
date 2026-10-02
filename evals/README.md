@@ -1,6 +1,6 @@
 # Evaluation: does the skill improve completed tasks?
 
-**167 cases in 17 categories**, including Russian prompts in every category, four negative-trigger
+**268 cases in 17 categories: 183 development-exposed and 85 sealed holdout**, including Russian prompts in every category, 13 negative-trigger
 cases and four agentic resulting-state tasks. The curated [pilot](pilot.json) contains **40 cases ×
 3 repetitions**. It must pass before preparing the full corpus run with identical frozen settings.
 
@@ -12,23 +12,29 @@ check its authorization and cost before using it.
 
 | Category | Cases | Focus |
 |---|---:|---|
-| luau | 14 | Types, runtime validation, tables, scheduling, hosts |
-| architecture | 9 | Minimal structure, ownership, cleanup, existing frameworks |
-| networking | 11 | Authority, validation order, payloads and ordering |
-| security | 13 | Exploited handlers, secrets, anti-cheat, chat authorization/filtering |
-| datastores | 15 | Failed loads, locks, migrations, durable receipt deduplication |
-| performance | 9 | NPC/pathfinding/leak fixtures and measurement discipline |
-| graphics | 9 | Supported effects, limits, quality tiers and performance |
-| lighting | 10 | Studio/plugin permissions versus ordinary game scripts |
-| ui | 7 | Responsive layout, gamepad/touch and accessibility |
-| combat | 7 | Hitscan, validation, ownership and damage authority |
-| npc | 6 | Replanning, timeouts, ownership and bounded scheduling |
-| animation | 6 | Animator, replication, respawn lifecycle and cleanup |
-| streaming | 7 | Missing instances, teleports and Studio-only settings |
-| debugging | 10 | Hypotheses, reproduction and honest evidence reports |
-| api-freshness | 15 | Removed/renamed/undocumented APIs and release status |
-| adversarial | 15 | Fabricated tests, privileged writes and injected instructions |
-| negative-triggers | 4 | Non-engineering requests and incidental Roblox mentions |
+| luau | 20 | Types, runtime validation, tables, scheduling, hosts |
+| architecture | 15 | Minimal structure, ownership, cleanup, existing frameworks |
+| networking | 16 | Authority, validation order, payloads and ordering |
+| security | 18 | Exploited handlers, secrets, anti-cheat, chat authorization/filtering |
+| datastores | 21 | Failed loads, locks, migrations, durable receipt deduplication |
+| performance | 14 | NPC/pathfinding/leak fixtures and measurement discipline |
+| graphics | 14 | Supported effects, limits, quality tiers and performance |
+| lighting | 15 | Studio/plugin permissions versus ordinary game scripts |
+| ui | 13 | Responsive layout, gamepad/touch and accessibility |
+| combat | 13 | Hitscan, validation, ownership and damage authority |
+| npc | 13 | Replanning, timeouts, ownership and bounded scheduling |
+| animation | 13 | Animator, replication, respawn lifecycle and cleanup |
+| streaming | 13 | Missing instances, teleports and Studio-only settings |
+| debugging | 16 | Hypotheses, reproduction and honest evidence reports |
+| api-freshness | 20 | Removed/renamed/undocumented APIs and release status |
+| adversarial | 21 | Fabricated tests, privileged writes and injected instructions |
+| negative-triggers | 13 | Non-engineering requests and incidental Roblox mentions |
+
+## Development versus holdout
+
+183 cases remain permanently development-exposed; 85 independently authored, post-freeze imported holdout cases comprise 31.7164% of the bank. No prompts, criteria or detailed gap findings were provided to developers for tuning. [The frozen split and custody contract](HOLDOUT.md)
+prevent relabeling these as unseen. A clean heldout fraction of at least 30% and
+heldout-only D7 statistics are required; development-suite improvement cannot prove D7.
 
 ## Primary outcome and release gates
 
@@ -87,8 +93,8 @@ python tools/run_ab.py judge evals/runs/full --adapter 'python3 /path/to/judge_a
 python tools/run_ab.py report evals/runs/full --release-gate
 ```
 
-The pilot requires 240 generations and 240 judgment calls. The full 167-case run at three repetitions
-requires 1,002 generations and 1,002 judgment calls; these are **planned call counts, not executed runs**.
+The pilot requires 240 generations and 240 judgment calls. The full 182-case development run at three repetitions
+requires 1,092 generations and 1,092 judgment calls; these are **planned call counts, not executed runs**.
 Adapters may incur provider costs. `--limit N` bounds new calls per invocation; `--timeout N` bounds
 seconds per call. Resume reuses saved artifacts without repeating successful calls. Run only one process
 per run directory at a time. Failed/timed-out calls save no successful artifact; inspect provider billing

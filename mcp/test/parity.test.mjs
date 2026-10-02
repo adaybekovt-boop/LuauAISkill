@@ -2,7 +2,8 @@
 // Skipped when python3 isn't available.
 import assert from "node:assert/strict";
 import { execFileSync, spawnSync } from "node:child_process";
-import { readFileSync, readdirSync } from "node:fs";
+import { mkdtempSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
@@ -75,14 +76,36 @@ test("scan_legacy matches tools/scan_legacy.py on every fixture", { skip: !hasPy
 			const expected = JSON.parse(execFileSync("python3", [join(ROOT, "tools", "scan_legacy.py"), "--json", file], { cwd: ROOT, encoding: "utf8" })).findings;
 			const actual = lib.scan(readFileSync(file, "utf8"), name);
 			assert.deepEqual(
-				actual.map((f) => [f.line, f.rule, f.suggest]),
-				expected.map((f) => [f.line, f.rule, f.suggest]),
+				actual.map((f) => [f.line, f.rule, f.suggest, f.api_candidates]),
+				expected.map((f) => [f.line, f.rule, f.suggest, f.api_candidates]),
 				`findings for ${name}`,
 			);
 			compared++;
 		}
 	}
 	assert.ok(compared >= 10, `compared ${compared} fixtures`);
+});
+
+test("scan_legacy matches on every generic rule shape", { skip: !hasPython }, () => {
+	const code = [
+		'local bv = Instance.new("BodyVelocity")',
+		"local f = Enum.RaycastFilterType.Blacklist",
+		"local t = tick() + elapsedTime()",
+		'local v = part["Velocity"]',
+		"model:SetPrimaryPartCFrame(cf)",
+		'settings().Studio["UI Theme"] = x',
+		"local ok = player:IsInGroup(1) and humanoid:LoadAnimation(a)",
+		"-- spawn(f) in a comment",
+	].join("\n");
+	const file = join(mkdtempSync(join(tmpdir(), "scan-")), "shapes.luau");
+	writeFileSync(file, code);
+	const expected = JSON.parse(execFileSync("python3", [join(ROOT, "tools", "scan_legacy.py"), "--json", file], { cwd: ROOT, encoding: "utf8" })).findings;
+	const actual = lib.scan(code, "shapes.luau");
+	assert.ok(expected.length >= 6, `python findings ${expected.length}`);
+	assert.deepEqual(
+		actual.map((f) => [f.line, f.rule, f.suggest, f.api_candidates]),
+		expected.map((f) => [f.line, f.rule, f.suggest, f.api_candidates]),
+	);
 });
 
 test("search_skill finds the same top documents as tools/search.py for core queries", { skip: !hasPython }, () => {

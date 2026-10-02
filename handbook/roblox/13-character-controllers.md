@@ -14,11 +14,11 @@ recipes [sprint/crouch/stamina](../../recipes/gameplay/sprint-crouch-stamina.md)
 ## Choose the controller
 | Option | Status | Use when |
 |---|---|---|
-| **Humanoid** (default) | stable | almost everything; well understood; animations/tools/seats work |
-| Humanoid + custom logic (WalkSpeed, states, forces) | stable | sprint/crouch/slide/vault/lean on top of Humanoid (this chapter) |
-| `ControllerManager` + `GroundController`/`AirController`/`ClimbController`/`SwimController` + sensors | stable API, physics-based | custom physical characters, vehicles-like creatures; more work |
-| Character Controller Library (CCL, `require("@rbx/AvatarAbilities")`) | base library **full release 2026-04-08** (staff announcement); the 2026-09-10 additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **Studio beta**. Docs @ 2026-10-01 still enable it via File → Beta Features → "AvatarAbilities Character Controller Library" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` since 2026-04-20 — check copied code |
-| Fully custom (anchored root + CFrame) | stable | top-down/2D games, NPC crowds; you own collisions |
+| **Humanoid** (default) | traditional engine controller | almost everything; well understood; animations/tools/seats work |
+| Humanoid + custom logic (WalkSpeed, states, forces) | composition atop Humanoid | sprint/crouch/slide/vault/lean on top of Humanoid (this chapter) |
+| `ControllerManager` + `GroundController`/`AirController`/`ClimbController`/`SwimController` + sensors | documented physics-based API | custom physical characters, vehicles-like creatures; more work |
+| Character Controller Library (CCL, `require("@rbx/AvatarAbilities")`) | base library **<!-- fact-value: ccl-base-release-status -->full release<!-- /fact-value --> <!-- fact-value: ccl-base-release-date -->2026-04-08<!-- /fact-value -->** (staff announcement); the <!-- fact-value: ccl-abilities-beta-date -->2026-09-10<!-- /fact-value --> additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **<!-- fact-value: ccl-abilities-beta-status -->Studio beta<!-- /fact-value -->**. Pinned docs still enable it via File → Beta Features → "AvatarAbilities Character Controller Library" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` — check copied code | <!-- fact-refs: ccl-base-release-status, ccl-base-release-date, ccl-abilities-beta-status, ccl-abilities-beta-date -->
+| Fully custom (anchored root + CFrame) | project-defined | top-down/2D games, NPC crowds; you own collisions |
 
 ## Humanoid essentials
 - `WalkSpeed` (default 16 studs/s), `JumpHeight` (7.2) or `JumpPower` (50) depending on `UseJumpPower`,
@@ -53,7 +53,7 @@ Client-set `WalkSpeed` is local; the server should not trust it but can't read i
 | **Fall damage** | on `Freefall` start record Y (or use `AssemblyLinearVelocity.Y` at `Landed`); damage = f(fall height beyond threshold, e.g. > 20 studs) applied **by the server** (server can observe the character's state/velocity which replicate from the owner) | exploiters can cancel their own fall; water/trampolines exempt |
 | **Ladder** | simplest: TrussPart or ladder geometry Humanoid can climb (rungs); custom: climb volume → `LinearVelocity` along ladder axis while in zone, disable when leaving | Humanoid climbing is picky about rung spacing |
 | **Vault / mantle** | 3 raycasts forward (knee, chest, head) + one down from above the obstacle to find top & height; if knee hit & head clear & height ≤ max: play animation and move root along a curve over 0.3–0.5 s (client), with collisions allowed on the path check | never teleport through walls: validate target space with `Blockcast`/`GetPartBoundsInBox`; server movement validator must allow vault bursts |
-| **Lean** | camera offset + roll ≤ 10–15°, upper-torso animation; for PvP, send lean state to the server (hitbox/peek fairness) | motion sickness; collision of camera with walls |
+| **Lean** | camera offset + roll ≤ 10–15°, upper-torso animation; for PvP, send lean state to the server (hitbox/peek fairness) | motion sickness; collision of camera with walls | <!-- fact-example: camera tuning, not a platform limit -->
 | **Footsteps** | stride-distance based, material table from `FloorMaterial`, play on each character locally (see below) | time-based loops desync with speed |
 | **Head bob / sway** | driven by stride phase and velocity, spring-damped, reduced-motion toggle ([camera](14-camera.md)) | pure `sin(time)` bob feels fake and nauseating |
 

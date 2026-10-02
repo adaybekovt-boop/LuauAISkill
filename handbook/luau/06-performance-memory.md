@@ -101,3 +101,9 @@ Never leave per-frame `print` in production (Output/console spam is expensive). 
 
 Sources: luau:guides/performance, luau:guides/profile, cd:luau/native-code-gen, cd:scripting/multithreading,
 cd:studio/optimization/memory-usage, cd:studio/optimization/scriptprofiler.
+
+## Separating native and engine costs
+Native compilation accelerates eligible Luau instructions, not engine rendering,
+physics, or the engine implementation behind an API call. Measure the relevant
+subsystem before adding native annotations; a rendering bottleneck needs a rendering
+change rather than a claim that native compilation will improve it.

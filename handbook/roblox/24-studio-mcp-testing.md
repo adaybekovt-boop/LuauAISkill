@@ -24,12 +24,12 @@ Related: [tooling & testing](23-tooling-testing.md) (evidence labels, Studio tes
 ## Tools (built-in server, stdio, local to the user's machine)
 | Group | Tools | Notes |
 |---|---|---|
-| Scripts | `script_read`, `multi_edit`, `script_search` (≤ 10 results), `script_grep` (≤ 50 matches) | `multi_edit` needs `datamodel_type` Edit and creates the script if missing |
+| Scripts | `script_read`, `multi_edit`, `script_search` (≤ <!-- fact-value: studio-mcp-script-search -->10<!-- /fact-value --> results), `script_grep` (≤ <!-- fact-value: studio-mcp-script-grep -->50<!-- /fact-value --> matches) | `multi_edit` needs `datamodel_type` Edit and creates the script if missing | <!-- fact-refs: studio-mcp-script-search, studio-mcp-script-grep -->
 | Data model | `search_game_tree` (flat JSON, path/type/keyword filters, depth), `inspect_instance` | readable properties, attributes, child summary |
 | Luau | `execute_luau` (`datamodel_type` Edit / Client / Server) | returns result or error; runs with **plugin security** |
 | Playtest | `get_studio_state`, `start_stop_play`, `get_console_output`, `screen_capture` (optional camera position/target) | `start_stop_play` starts **one** play client |
 | Input | `character_navigation` (position or instance, speed multiplier), `user_keyboard_input`, `user_mouse_input` | ordered action lists; can target UI instances |
-| Subagents | `subagent` type `explore` or `playtest` | playtest agent = Studio beta (2026-04), ≤ 50 turns, daily cap |
+| Subagents | `subagent` type `explore` or `playtest` | availability and execution allowances depend on the connected Studio session; discover its actual tools |
 | Assets | `search_asset`, `insert_asset`, `upload_image`, `store_image`, `generate_mesh`, `generate_material`, `generate_procedural_model` + `wait_job_finished` | uploads/inserts change the user's place and inventory — ask first |
 | Docs/session | `http_get` (Roblox docs URLs only), `skill`, `list_roblox_studios` | |
 
@@ -108,7 +108,7 @@ need a server + several clients:
 |---|---|---|
 | What uses memory? | `SceneAnalysisService` `GetScriptMemoryAsync`, `GetInstanceCompositionAsync`, `GetTriangleCompositionAsync`, `GetAudioMemoryAsync`, `GetAnimationMemoryAsync`, `GetUnparentedInstancesAsync` | no player selector — runs where you call it; an unparented instance isn't automatically a leak: measure before/after a repeated scenario |
 | Which Luau is hot? | `ScriptProfilerService` `ServerStart/Stop/RequestData`, `ClientStart(player)/ClientStop/ClientRequestData` → `OnNewData(player, json)`, `DeserializeJSON` | plugin security; per-peer by design |
-| Frame breakdown | MicroProfiler dumps (`microprofile-<date>-<time>.html`); Developer Console server capture ≤ 60 frames | LibMP (MicroProfiler API, `.gprx`/buffers, ≤ 256 frames) is a **Studio beta** since 2026-06 |
+| Frame breakdown | MicroProfiler dumps (`microprofile-<date>-<time>.html`); Developer Console server capture ≤ <!-- fact-value: microprofiler-server-capture-frames -->60<!-- /fact-value --> frames | verify any LibMP tooling and capture allowance in your actual Studio session | <!-- fact-refs: microprofiler-server-capture-frames -->
 | Looks right? | `screen_capture` | proves what was visible at one moment — not server state, persistence or other clients |
 Never present numbers without the capture they came from (device, peer, scenario, baseline).
 

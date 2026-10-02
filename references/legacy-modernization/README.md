@@ -1,6 +1,6 @@
 # Legacy modernization: recognizing Roblox code eras and migrating safely
 
-Files: [CATALOG.md](CATALOG.md) (152 source-checked legacy→current entries, generated from `catalog.json`),
+Files: [CATALOG.md](CATALOG.md) (188 source-checked legacy→current entries, generated from `catalog.json`),
 `api/deprecated.tsv` (every deprecated/superseded member from the API dump), `tools/scan_legacy.py` (project scanner).
 
 ## Recognize the era of a codebase
@@ -48,8 +48,8 @@ cd:audio/objects, cd:cloud-services/data-stores/best-practices, cd:projects/tele
   identifier mentions are a relevance proxy, not generated-model error rates. Member names shared
   by multiple API owners need an explicit owner in the prompt to count; remaining matches are lexical.
 - No representative public/historical-tutorial or generated-model-output corpus was sampled. Frequencies are null,
-  not zero. **The empirical-ranking release gate is blocked**, even though static top-150 coverage passes.
-- 152 grouped entries explicitly cover 327 deprecated/superseded rows, including all 150 top-ranked rows.
+  not zero. External-corpus ranking is not a release gate.
+- 188 grouped entries explicitly cover 428 deprecated/superseded rows, including all 150 top-ranked rows.
   [coverage.json](coverage.json) records the exact join. Every entry has old/new/why/when_ok/detect,
   API and/or pinned-document verification, and a positive [fixture](fixtures.luau). Every declared API coverage
   also has a generated API-shaped regex fixture checked independently of the entry example.
@@ -58,8 +58,7 @@ cd:audio/objects, cd:cloud-services/data-stores/best-practices, cd:projects/tele
 
 Regenerate in order: `python tools/sample_legacy_tutorials.py`, `python tools/rank_legacy.py`, `python tools/check_legacy.py`,
 `python tools/render_legacy.py`. CI checks use `--check` on each. `python tools/check_legacy.py --release-gate`
-also fails until empirical ranking evidence is actually supplied and reviewed; static coverage alone cannot
-turn that gate green. These checks execute Python detectors, not the Luau snippets or Roblox Studio.
+checks the dump-derived classification and actual A/B output curation evidence. Unresolved replacements and unmeasured A/B evidence keep D3 blocked. These checks execute Python detectors, not the Luau snippets or Roblox Studio.
 
 Server authority status uses the dated [Roblox staff full-release announcement, July 9, 2026](https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993),
 which supersedes stale beta wording in the pinned documentation. The base Character Controller Library is
@@ -80,3 +79,31 @@ Repeated examples are not independent projects, and a reference may intentionall
 Backtick interpolation, variable aliases and dynamically indexed APIs can be missed. Counts are displayed
 beside the editorial score but do not change that risk-first ordering. Model-output and historical-corpus
 evidence are still missing, so the empirical release gate remains blocked.
+
+## Dump-derived D3 coverage
+
+[classification.json](classification.json) retains every pinned row, relevance/exclusion reason,
+replacement classification, source text and executed scanner fixture. Regenerate with
+`python tools/classify_legacy.py`; `--check` rejects stale output. The supplied 431-member estimate
+is not reproducible from these inputs: the explicit owner+member documentation-flag/security predicate
+yields 407 conservative game-script candidates. This is not proof every member has a documentation entry.
+AnimationConstraint C0/C1/Part0/Part1 are direct dump members (not inherited JointInstance members),
+but absent from its pinned YAML; they remain included, with later dated staff migration guidance rather than silently excluded. Do not report this denominator change as a coverage improvement.
+Using the same fixtures, scanner detection improved from 376/407 to 407/407. All 704 pinned rows,
+including excluded classes/enums/globals, have generic candidate detection. Shared member names
+are intentionally flagged as ambiguous; verify receiver type. Detection does not prove a safe migration.
+
+One-to-one classification requires equal kind/signature, a current same-owner target and explicit
+alias evidence (or individually reviewed preferred rename). Unknown semantics remain unresolved,
+and no generated model-output curation is claimed before a real A/B run.
+
+[source-gaps.json](source-gaps.json) records the completed pinned-document review of remaining unresolved members, with excerpts and source hashes. These are source gaps, not an unreviewed backlog.
+
+## Dated staff migration evidence
+
+Catalog entries can link `reviewed_sources` receipts in `staff-evidence/`. Each receipt records the
+primary post URL, observed Roblox Staff attribution, publication/observation dates, an exact short
+quote, capture method, scope and limitations. The catalog pins the receipt SHA-256; validation checks
+that hash, the quote hash and required attribution fields. These are short browser-observation records,
+not full-page archives or a fresh online-availability check. Conditional rollout statements remain conditional.
+Resolved rows remain in `source-gaps.json` as history with their scoped resolution.

@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "id": "hinge-softlock-disabled",
+ "url": "https://devforum.roblox.com/t/softlockservouponreachingtarget-was-deprecated-despite-being-announced-4-months-ago/3022736/2",
+ "author": "choconatto",
+ "staff_badge_observed": true,
+ "published_on": "2024-06-14",
+ "observed_on": "2026-10-02",
+ "quote": "the soft-lock property is now always disabled regardless of its actual value.",
+ "quote_sha256": "88944b06b03dbfc842031df9531126174f0d0fd5c64086fd9f39ab8055643709",
+ "capture_method": "Read-only research worker directly inspected the primary post in the cloud browser DOM/accessibility tree and observed the Roblox Staff badge; this file is a short observation record, not an HTML/screenshot archive.",
+ "date_verification": "Post date cross-checked against the indexed primary post body and browser display.",
+ "scope": "HingeConstraint.SoftlockServoUponReachingTarget in the staff response to the reported hinge behavior.",
+ "limitations": "Other softlock classes are not named; do not extrapolate this statement to CylindricalConstraint or SlidingBallConstraint."
+}

@@ -32,6 +32,12 @@ Read when: writing or reviewing any code. These are defaults; follow the project
 13. **Honest reporting**: never claim code was run in Studio unless it was; say what was verified and how.
 
 ## Cleanup
+### Module state and startup
+Expose an explicit `start()` for modules that create connections, loops, or world state. Require-time side
+effects make initialization order and isolated tests fragile; pure constant/configuration modules need no
+startup phase. Own shared state in a ModuleScript with a small typed API, not `_G`: global mutation hides
+ownership, readers can race initialization order, and a global key does not provide a checked module contract.
+
 Ownership: whoever creates it destroys it. Patterns:
 ```luau
 --!strict

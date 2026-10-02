@@ -1,0 +1,11 @@
+BLOCKED  aggregate checks
+PASS  snapshot at most 14 days old
+BLOCKED  dump-derived relevant legacy coverage and curation
+PASS  fact mention bindings
+BLOCKED  semantic must-to-refs coverage
+PASS  balanced evaluation and clean holdout
+PASS  exact token accounting
+BLOCKED  all ten engine smoke receipts
+BLOCKED  real full A/B evidence after passing pilot
+BLOCKED  actual host installs and upload
+Full release: BLOCKED

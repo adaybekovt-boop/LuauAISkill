@@ -109,3 +109,7 @@ Sources: api:Lighting.LightingStyle, api:Script.Source, api:MeshPart.MeshId, api
 cd:scripting/events/remote, cd:scripting/locations, cd:cloud-services/data-stores/versioning-listing-and-caching,
 cd:reference/engine/classes/MarketplaceService, cd:projects/teleport, cd:studio/mcp,
 cd:reference/engine/classes/StudioTestService, cd:reference/engine/classes/TextChatCommand, cd:art/modeling/surface-appearance.
+
+## Case-sensitive orientation members
+Use the documented `CFrame.LookVector` spelling for the forward direction; do not preserve undocumented
+`lookVector` casing when modernizing code. Verify the current datatype member with `python tools/api.py CFrame.LookVector`.

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "total_cases": 268,
+  "development_cases": 183,
+  "holdout_cases": 85,
+  "holdout_fraction": 0.31716417910447764,
+  "holdout_per_category": {
+    "adversarial": 5,
+    "animation": 5,
+    "api-freshness": 5,
+    "architecture": 5,
+    "combat": 5,
+    "datastores": 5,
+    "debugging": 5,
+    "graphics": 5,
+    "lighting": 5,
+    "luau": 5,
+    "negative-triggers": 5,
+    "networking": 5,
+    "npc": 5,
+    "performance": 5,
+    "security": 5,
+    "streaming": 5,
+    "ui": 5
+  },
+  "semantic_counts": {
+    "development": {
+      "supported": 558,
+      "missing": 0,
+      "ambiguous": 1,
+      "unreviewed": 0,
+      "invalid": 0
+    },
+    "holdout": {
+      "supported": 310,
+      "missing": 13,
+      "ambiguous": 18,
+      "unreviewed": 0,
+      "invalid": 0
+    }
+  },
+  "overall_coverage_percent": 96.4444,
+  "semantic_gate_passed": false,
+  "structural_holdout_gate_passed": true,
+  "criterion_corrections": {
+    "development": {
+      "accepted_source_correction": 1,
+      "pending_adjudication": 1
+    },
+    "holdout": {
+      "accepted": 0,
+      "pending": 0
+    }
+  },
+  "format_transformations": {
+    "refs_metadata_added": 85,
+    "fixture_defect_metadata_added": 17,
+    "fixture_bytes_changed": 0,
+    "fake_markers_added": 0,
+    "prompt_or_criterion_changes": 0
+  },
+  "skill_sha256_before": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a",
+  "skill_sha256_after": "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a",
+  "seal_skill_sha256": [
+    "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+  ],
+  "proof_sha256": "16bc4e1a687bcc268a9d72ee52d0c9adf9d9f9e3eee1246069e0e390cf532925",
+  "original_archive_sha256": "8f60cbb3e32f6f100d335730702ca9bae20269de0e4790b0a1df5620bb562285",
+  "preservation": {
+    "development_cases_unchanged": true,
+    "development_reviews_unchanged": true,
+    "development_exposure_list_unchanged": true,
+    "original_holdout_archive_unchanged": true,
+    "original_holdout_substantive_fields_unchanged": true,
+    "fixtures_byte_identical": true,
+    "frozen_skill_unchanged": true
+  },
+  "checks": {
+    "check_eval_bank_require_ready": 0,
+    "check_eval_coverage_report_only": 0,
+    "check_api_refs": 0,
+    "check_sources_check": 0,
+    "check_links": 0
+  },
+  "artifacts": {
+    "custody": "evals/provenance/sealed-holdout-custody.json",
+    "format_transformations": "evals/provenance/holdout-format-transformations.json",
+    "semantic_reviews": "evals/coverage/holdout-reviews.json",
+    "master_reviews": "evals/coverage/reviews.json",
+    "coverage": "evals/coverage/report.json",
+    "bank": "qa/heldout-bank.json",
+    "original_archive": "/workspace/shared/luau-sealed-holdout/sealed-holdout.zip"
+  },
+  "limitations": [
+    "Static structural and semantic evidence audit only; no real A/B, model evaluation, or Roblox engine execution.",
+    "Semantic integrity checks validate exact evidence; support judgments are independent human-style agent reviews, not execution proof.",
+    "Custody attestation and hashes are not cryptographic proof of non-exposure.",
+    "Unresolved heldout obligations remain unchanged and may not be used to tune this frozen candidate."
+  ]
+}

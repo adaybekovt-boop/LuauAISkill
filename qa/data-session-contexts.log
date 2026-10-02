@@ -1,0 +1,4 @@
+TYPECHECKED examples/regression/PluginLauncher.lua.txt: PluginSecurity / old solver
+TYPECHECKED examples/regression/PluginLauncher.lua.txt: PluginSecurity / new solver
+TYPECHECKED regression fixture signatures: PluginSecurity old + new; runtime API security None verified
+Studio execution: NOT RUN (static gate only)

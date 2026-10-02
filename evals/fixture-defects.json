@@ -1,0 +1,13 @@
+{
+  "evals/fixtures/remote-damage-trust.luau": "Client chooses damage without server validation",
+  "evals/fixtures/invoke-client.luau": "Server depends on client reply",
+  "evals/fixtures/touched-bullet.luau": "Client-owned Touched damage authority",
+  "evals/fixtures/state-plugin.luau": "Privileged properties written by ordinary game script",
+  "evals/fixtures/headbob-sin.luau": "Unbounded headbob phase/inappropriate timing",
+  "evals/fixtures/streaming-direct-index.luau": "Direct indexing assumes streamed instance exists",
+  "evals/fixtures/npc-loop-per-npc.luau": "Unbounded per-NPC scheduling",
+  "evals/fixtures/datastore-lost-data.luau": "Failed load leads to destructive save",
+  "evals/fixtures/lighting-script.luau": "Fabricated and privileged lighting properties",
+  "evals/fixtures/ui-offset-layout.luau": "Fixed offsets break responsive layout",
+  "evals/fixtures/legacy-grab-bag.luau": "Deprecated APIs require modernization"
+}

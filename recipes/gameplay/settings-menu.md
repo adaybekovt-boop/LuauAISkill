@@ -399,3 +399,13 @@ end
 
 Sources: cd:ui/index, cd:ui/position-and-size, cd:reference/engine/classes/GuiService,
 cd:reference/engine/classes/ContextActionService, cd:production/publishing/accessibility, cd:input/gamepad.
+
+## Accessibility integration obligations
+Offer a flash-reduction preference and have the owning effect controller suppress
+flashing bursts when enabled. This recipe's current schema does not implement that
+controller; wire and verify it before claiming flash reduction is supported.
+Use colour-blind-safe cues: pair colour with text, shape, icons, or patterns so colour
+is never the sole carrier of information. Verify selected, disabled, and warning states.
+Camera shake and bobbing should each have a user-controlled intensity slider where
+those effects are present; the included ViewBobbing toggle is a minimal on/off example,
+not an implementation of a bob-intensity slider.

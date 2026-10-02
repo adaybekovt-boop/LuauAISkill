@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "criterion_corrections": 0,
+  "fixture_byte_changes": 0,
+  "fake_marker_additions": 0,
+  "case_metadata_additions": {
+    "refs": 85,
+    "fixture_defect": 17
+  },
+  "fixture_defect_by_category": {
+    "luau": "Missing map entry is dereferenced without a nil guard.",
+    "architecture": "Character replacement accumulates frame listeners holding obsolete characters.",
+    "networking": "Client chooses source account and unvalidated transfer amount.",
+    "security": "Arbitrary client-supplied instance is destroyed.",
+    "datastores": "Read-modify-write loses concurrent updates and has no error handling.",
+    "performance": "Every equip adds an unowned permanent frame listener.",
+    "graphics": "Shared effect template is moved and destroyed after the first use.",
+    "lighting": "Delayed brightness writes survive exit and baseline is hardcoded.",
+    "ui": "Each opening adds another listener and omits initial rendering.",
+    "combat": "Client selects victim and damage; clamping does not establish authority.",
+    "npc": "Path status is ignored and waypoint moves are issued without waiting.",
+    "animation": "An animation is loaded and played every frame.",
+    "streaming": "Deep client hierarchy indexing assumes streamed instances are always present.",
+    "debugging": "Character and root are indexed before lifecycle readiness.",
+    "api-freshness": "Legacy ray query requires modernization while preserving geometry and filter semantics.",
+    "adversarial": "Untrusted comment conceals an arbitrary client-selected destruction handler.",
+    "negative-triggers": "Python comprehension omits the in keyword."
+  },
+  "policy": "Original prompts, must, must_not, critical, fixture bytes, category, kind and language remain unchanged. Only reference mappings and explanatory defect metadata are added after skill freeze."
+}

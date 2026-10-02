@@ -34,8 +34,8 @@ Read when: any scene's mood/lighting. Next: [atmosphere, sky, post](02-atmospher
 | `ClockTime` / `TimeOfDay`, `GeographicLatitude` | sun/moon direction, sky colour | set the key light angle (low sun = long shadows, warm) | noon sun (14:00) flattens everything |
 | `Brightness` | sun/moon (directional key light) intensity | day 2–3, overcast 1–1.5, night 0–0.3 | cranking it to fix dark interiors (sun doesn't reach them) |
 | `ExposureCompensation` | whole-image exposure before tonemapping | final balance: −1…+0.5 | using ColorCorrection.Brightness instead (clips/looks cheap) |
-| `EnvironmentDiffuseScale` (0–1) | image-based ambient light from the **sky** onto surfaces | 1 outdoors for natural fill; 0.2–0.6 interiors | 0 + high Ambient = flat plastic look |
-| `EnvironmentSpecularScale` (0–1) | sky **reflections** on smooth/metal surfaces | 1 outdoors (metals look like metal); 0.2–0.5 in sealed interiors (otherwise bright sky reflects in a dark room) | 0 makes metal look like grey plastic |
+| `EnvironmentDiffuseScale` (suggested tuning 0–1) | image-based ambient light from the **sky** onto surfaces | 1 outdoors for natural fill; 0.2–0.6 interiors | 0 + high Ambient = flat plastic look |
+| `EnvironmentSpecularScale` (suggested tuning 0–1) | sky **reflections** on smooth/metal surfaces | 1 outdoors (metals look like metal); 0.2–0.5 in sealed interiors (otherwise bright sky reflects in a dark room) | 0 makes metal look like grey plastic |
 | `OutdoorAmbient` | flat fill in areas open to the sky | 70–130 grey (day), 20–40 bluish (night) | too high → washed out exteriors |
 | `Ambient` | flat fill **everywhere**, including enclosed interiors | 0–30 for realistic/horror interiors; higher only for stylized | the #1 cause of the "cheap Roblox look": grey (128,128,128) ambient kills contrast and hides light direction |
 | `ColorShift_Top` / `_Bottom` | tint on surfaces facing toward/away from sun | subtle warm top / cool bottom for sunsets | saturated shifts look toxic |
@@ -51,7 +51,7 @@ Values above are starting points for art direction, not platform rules; always j
 | Everything evenly lit, no depth | high `Ambient`/`OutdoorAmbient`, no key light direction | lower ambient (0–30 interior), add a motivated key (window/lamp), let shadows exist |
 | Grey, milky image | Atmosphere `Haze`/`Density` too high, `ExposureCompensation` too high, ColorCorrection Brightness > 0 | reduce haze, lower exposure, keep CC Brightness ≈ 0, add slight Contrast (0.05–0.15) |
 | Everything glows | Bloom `Threshold` too low / Intensity too high; Neon everywhere | Threshold ≥ ~1.5–2 so only emissives/brightest pixels bloom, Intensity 0.2–0.6 |
-| Toy/plastic materials | SmoothPlastic/Plastic everywhere, EnvironmentSpecularScale 0, no roughness variation | real materials/MaterialVariants/SurfaceAppearance, specular scale ≥ 0.5, roughness variety |
+| Toy/plastic materials | SmoothPlastic/Plastic everywhere, EnvironmentSpecularScale 0, no roughness variation | real materials/MaterialVariants/SurfaceAppearance, specular scale ≥ 0.5, roughness variety | <!-- fact-example: aesthetic tuning, not a platform limit -->
 | Oversaturated neon candy | saturated part colours + Saturation > 0 + saturated lights | desaturate base colours (real materials are rarely > 70 % saturated), CC Saturation −0.1…0, keep light colours near-white with slight temperature |
 | Flat night | pure blue ambient everywhere | dark ambient, a single moon key (Brightness 0.1–0.3, cool), warm practical lights for contrast |
 | Interior lit by the sky through walls | thin/leaky walls, EnvironmentDiffuseScale high | thicker walls/ceilings, lower env diffuse indoors, `CastShadow` on blockers |

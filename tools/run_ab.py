@@ -112,7 +112,8 @@ def load_cases(root: Path = ROOT) -> list[dict]:
             seen.add(case["id"])
             case["rendered_prompt"] = case["prompt"]
             if case.get("fixture"):
-                case["rendered_prompt"] += "\n\n```luau\n" + checked_text(root, case["fixture"]).rstrip() + "\n```"
+                language = {".py": "python", ".lua": "lua"}.get(Path(case["fixture"]).suffix, "luau")
+                case["rendered_prompt"] += "\n\n```" + language + "\n" + checked_text(root, case["fixture"]).rstrip() + "\n```"
             case["initial_files"] = {name: checked_text(root, source)
                                      for name, source in case.get("project", {}).items()}
             for name in case["initial_files"]:
@@ -163,6 +164,16 @@ def snapshot_skill(root: Path) -> dict[str, str]:
     return files
 
 
+def holdout_snapshot(root: Path) -> dict:
+    """Freeze split provenance as well as cases; absent split never means clean holdout."""
+    path = root / "evals/split.json"
+    if not path.is_file():
+        return {"split": None, "audit": {"valid": False, "fraction": 0.0, "clean_holdout_ids": [],
+                                          "reason": "No independently sealed holdout supplied"}}
+    from check_eval_bank import audit
+    return {"split": read_json(path), "audit": audit(root)}
+
+
 def prepare(root: Path, output: Path, config: dict, phase: str, pilot: Path | None = None) -> dict:
     validate_config(config)
     if output.exists():
@@ -204,7 +215,7 @@ def prepare(root: Path, output: Path, config: dict, phase: str, pilot: Path | No
                 "rubric": rubric, "judge_instructions": JUDGE_INSTRUCTIONS,
                 "judge_prompt_sha256": digest([rubric, JUDGE_INSTRUCTIONS]),
                 "runner_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-                "pilot_evidence": pilot_evidence}
+                "pilot_evidence": pilot_evidence, "holdout": holdout_snapshot(root)}
     output.mkdir(parents=True)
     write_json(output / "private/skill.json", skill)
     write_json(output / "manifest.json", manifest)
@@ -240,6 +251,7 @@ def current_inputs(run: Path, root: Path = ROOT) -> dict[str, bool]:
     rubric = (root / "evals/RUBRIC.md").read_text(encoding="utf-8")
     return {"skill": manifest["skill_sha256"] == digest(snapshot_skill(root)),
             "dataset": manifest["dataset_sha256"] == digest(cases),
+            "holdout": manifest.get("holdout") == holdout_snapshot(root),
             "judge_prompt": manifest["judge_prompt_sha256"] == digest([rubric, JUDGE_INSTRUCTIONS]),
             "runner": manifest["runner_sha256"] == hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
 
@@ -684,8 +696,30 @@ def report(run: Path, save: bool = True, root: Path = ROOT) -> dict:
     else:
         result["conclusion"] = "pending external generation/judging; no measured quality result"
     overall = result["overall"]
+    split_audit = manifest.get("holdout", {}).get("audit", {})
+    heldout_ids = set(split_audit.get("clean_holdout_ids", []))
+    heldout_tasks = [task for task in tasks if task["id"] in heldout_ids]
+    heldout_complete = (status == "COMPLETE" and manifest["phase"] == "full"
+                        and split_audit.get("valid") is True and bool(heldout_ids)
+                        and split_audit.get("seal_skill_sha256") == [manifest["skill_sha256"]]
+                        and len(heldout_tasks) == len(heldout_ids))
+    result["holdout"] = {"audit": split_audit, "overall": None, "categories": {},
+                         "status": "COMPLETE" if heldout_complete else "PENDING"}
+    if heldout_complete:
+        result["holdout"]["overall"] = summarize(heldout_tasks, config)
+        result["holdout"]["categories"] = {
+            category: summarize([task for task in heldout_tasks if task["category"] == category], config)
+            for category in sorted({task["category"] for task in heldout_tasks})}
+    heldout = result["holdout"]["overall"]
+    full_categories = {case["category"] for case in manifest["cases"]}
+    heldout_pass = (heldout is not None and heldout["task_bootstrap_95ci"][0] > 0
+                    and set(result["holdout"]["categories"]) == full_categories
+                    and all(scope["paired_delta"] >= 0 for scope in result["holdout"]["categories"].values())
+                    and heldout["hard_gate_failure_pairs"]["skill"]["fabricated_tests"]
+                        < heldout["hard_gate_failure_pairs"]["baseline"]["fabricated_tests"])
     criteria = {
         "real_complete_evidence": status == "COMPLETE",
+        "heldout_effect_proven": manifest["phase"] == "pilot" or heldout_pass,
         "current_inputs_match": all(freshness.values()),
         "pilot_evidence_verified": manifest["phase"] == "pilot" or pilot_verified,
         "negative_triggers_clean": overall is not None and overall["negative_trigger_failure_pairs"]["skill"] == 0,

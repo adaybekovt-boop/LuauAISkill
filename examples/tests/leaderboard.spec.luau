@@ -1,7 +1,7 @@
 --!strict
 local Rows = require("../leaderboard/ServerScriptService/Boards/Rows")
 local rows = Rows.sorted({ ["2"] = { value = 10 }, ["1"] = { value = 10 }, bad = { value = 9 },
-    ["3"] = { value = 0/0 }, ["4"] = { value = -1 } }, 20)
+	["3"] = { value = 0/0 }, ["4"] = { value = -1 } }, 20)
 assert(#rows == 2 and rows[1].userId == 1 and rows[2].userId == 2)
 local friends = {}; for i = 1, 150 do table.insert(friends, i) end
 local keys, partial = Rows.keys(1, friends)

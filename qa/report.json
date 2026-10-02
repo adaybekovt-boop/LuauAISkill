@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T12:39:10+00:00",
+ "generated": "2026-10-02T15:45:01+00:00",
  "results": [
   {
    "check": "embedded code up to date",
@@ -14,15 +14,15 @@
    "status": "PASS",
    "command": "tools/render_legacy.py --check",
    "tail": [
-    "legacy catalog: 152 entries, 0 error(s)"
+    "legacy catalog: 188 entries, 0 error(s)"
    ]
   },
   {
-   "check": "ranked legacy coverage and fixtures",
+   "check": "dump-derived legacy detection and fixtures",
    "status": "PASS",
    "command": "tools/check_legacy.py --check",
    "tail": [
-    "legacy coverage: 152 entries, 327/704 API rows, 150/150 top-ranked, 0 error(s)"
+    "legacy coverage: 188 entries, 428/704 API rows, 150/150 top-ranked, 0 error(s)"
    ]
   },
   {
@@ -54,7 +54,7 @@
    "status": "PASS",
    "command": "tools/check_facts.py",
    "tail": [
-    "facts: 89 checked, 0 error(s)"
+    "facts: 127 checked, 0 error(s)"
    ]
   },
   {
@@ -62,7 +62,33 @@
    "status": "PASS",
    "command": "tools/render_facts.py --check",
    "tail": [
-    "facts table: 89 entries, current"
+    "facts table: 127 entries, current"
+   ]
+  },
+  {
+   "check": "fact-mention bindings",
+   "status": "PASS",
+   "command": "tools/check_fact_mentions.py --output qa/fact-mentions.json",
+   "tail": [
+    "fact mentions: 189/189 scoped blocks bound; 0 gaps; 0 other table rows require review"
+   ]
+  },
+  {
+   "check": "eval semantic coverage audit (unresolved reported)",
+   "status": "PASS",
+   "command": "tools/check_eval_coverage.py --report-only",
+   "tail": [
+    "D5: 868/900 reviewed supported; 96.4444%; counts={'supported': 868, 'missing': 13, 'ambiguous': 19, 'unreviewed': 0, 'invalid': 0}; gate_passed=False"
+   ]
+  },
+  {
+   "check": "eval bank and split integrity (readiness reported)",
+   "status": "PASS",
+   "command": "tools/check_eval_bank.py",
+   "tail": [
+    "  ],",
+    "  \"provenance_limit\": \"Custody artifacts are operator attestations; independent access isolation must be audited.\"",
+    "}"
    ]
   },
   {
@@ -70,7 +96,7 @@
    "status": "PASS",
    "command": "tools/check_content_budget.py",
    "tail": [
-    "Router 147/500 lines; 39 chapter summaries; 12 flagged files; tiktoken/cl100k_base"
+    "Router 156/500 lines; 39 chapter summaries; 25 flagged files; tiktoken/cl100k_base"
    ]
   },
   {
@@ -94,7 +120,7 @@
    "status": "PASS",
    "command": "tools/check_sources.py --check",
    "tail": [
-    "sources: 874 resolved, 0 unresolved"
+    "sources: 1063 resolved, 0 unresolved"
    ]
   },
   {
@@ -102,7 +128,7 @@
    "status": "PASS",
    "command": "tools/check_links.py",
    "tail": [
-    "links: 675 checked, 0 broken"
+    "links: 687 checked, 0 broken"
    ]
   },
   {
@@ -110,7 +136,7 @@
    "status": "PASS",
    "command": "-m unittest discover -s tests -q",
    "tail": [
-    "Ran 153 tests in 20.045s",
+    "Ran 209 tests in 23.448s",
     "",
     "OK"
    ]

@@ -1,0 +1,740 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "case_id": "ANI-02",
+      "must_index": 0,
+      "must": "owner plays its own character (replicates)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The replication table explicitly assigns player-character playback to its owning client and replicated NPC playback to the server; cosmetic local NPC playback is separately qualified.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/16-animation.md",
+          "quote": "| Player character | **owning client** (LocalScript), via its Animator | yes, to server & others (Animator on a client-owned character) |\n| NPC | server | yes, to all clients (costs server CPU + bandwidth) |\n| NPC, cosmetic-only"
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-02",
+      "must_index": 1,
+      "must": "server plays NPC animations",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The replication table explicitly assigns player-character playback to its owning client and replicated NPC playback to the server; cosmetic local NPC playback is separately qualified.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/16-animation.md",
+          "quote": "| Player character | **owning client** (LocalScript), via its Animator | yes, to server & others (Animator on a client-owned character) |\n| NPC | server | yes, to all clients (costs server CPU + bandwidth) |\n| NPC, cosmetic-only"
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-02",
+      "must_index": 2,
+      "must": "asset ownership/permissions",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The asset permission paragraph names same user/group ownership or sharing to the universe and explains failed loading without permission.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/16-animation.md",
+          "quote": "- Asset permission: the animation must be usable by the experience — created by the same user/group, or shared to\n  the universe/collaborator via Creator Dashboard → Permissions. Otherwise it silently fails to load\n  (Output warning). Most common \"animation doesn't play\" cause after wrong rig type (R6 vs R15)."
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-03",
+      "must_index": 0,
+      "must": "stride-phase driven, amplitude from speed",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Head-bob guidance ties phase to distance, amplitude to speed, and start/stop transitions to springs rather than a time-only sine wave.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/14-camera.md",
+          "quote": "## Head bob (don't default to sin(time))\n- Drive from **stride phase** (distance travelled / stride length), amplitude from horizontal speed, zero when\n  airborne/idle; vertical bob ×2 frequency of lateral sway. Small: 0.05–0.15 studs vertical, 0.5–1.0° roll.\n- Smooth amplitude in/out with springs when starting/stopping.\n- Provide a \"view bobbing\" toggle; default low. Many players get motion sick."
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-03",
+      "must_index": 1,
+      "must": "springs/smoothing",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Head-bob guidance ties phase to distance, amplitude to speed, and start/stop transitions to springs rather than a time-only sine wave.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/14-camera.md",
+          "quote": "## Head bob (don't default to sin(time))\n- Drive from **stride phase** (distance travelled / stride length), amplitude from horizontal speed, zero when\n  airborne/idle; vertical bob ×2 frequency of lateral sway. Small: 0.05–0.15 studs vertical, 0.5–1.0° roll.\n- Smooth amplitude in/out with springs when starting/stopping.\n- Provide a \"view bobbing\" toggle; default low. Many players get motion sick."
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-03",
+      "must_index": 2,
+      "must": "reduced motion option",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The comfort section explicitly provides a Reduced Motion control and small, smoothed motion amplitudes.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/14-camera.md",
+          "quote": "## Comfort (motion sickness)\nRisky: large FOV changes, head bob, rolling, camera-induced acceleration not caused by player input, high-frequency\nshake, forced camera turns. Mitigations: small amplitudes, springs (no instant snaps), a Reduced Motion / camera\nshake slider, never move the camera in ways the player didn't cause except brief impacts, stable horizon by\ndefault, FOV ≥ 70 in first person, allow FOV setting."
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-03",
+      "must_index": 3,
+      "must": "layer after default camera with restore",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The ordered render bindings restore the previous base before the default camera and apply the layer afterward, preventing accumulation.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/bodycam-camera.md",
+          "quote": "RenderStep Camera-1  \"BodycamRestore\": put back the default camera's own last CFrame (prevents feedback drift)\nRenderStep Camera    default camera computes this frame\nRenderStep Camera+1  \"BodycamLayer\":\n    position = head CFrame × chest MOUNT − stride bob\n    rotation = lagged(real rotation, sharpness 10)  → swing on fast turns\n             × drift (math.noise, 0.7°, ~0.3 Hz) × roll (stride phase, 0.9°)\n    FOV = 90 + spring(sprint kick 6)\nReduced Motion (GuiService.ReducedMotionEnabled)"
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-03",
+      "must_index": 4,
+      "must": "PreRender not RenderStepped",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The registry-rendered scheduling fact explicitly identifies PreRender as the replacement for RenderStepped. Priority-ordered camera layering still uses BindToRenderStep as the recipe explains; a RenderStepped connection is not required.",
+      "evidence": [
+        {
+          "ref": "references/limits.md",
+          "quote": "| `renderstepped-superseded`: RenderStepped is superseded by PreRender for new work. | PreRender | replacement event | documented | cd:reference/engine/classes/RunService | 2026-10-02 / 2026-12-31 |"
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-04",
+      "must_index": 0,
+      "must": "asset permissions/ownership (group vs user)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The animation chapter distinguishes same-user/group ownership from permission sharing, providing the group-versus-user nuance missing from the debugging row alone.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/16-animation.md",
+          "quote": "- Asset permission: the animation must be usable by the experience — created by the same user/group, or shared to\n  the universe/collaborator via Creator Dashboard → Permissions. Otherwise it silently fails to load\n  (Output warning). Most common \"animation doesn't play\" cause after wrong rig type (R6 vs R15)."
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-04",
+      "must_index": 1,
+      "must": "R6 vs R15 mismatch",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The debugging row names R6 versus R15 mismatch and directs checking and correcting rig type.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "| Animation doesn't play | asset permission (not owned/shared), R6 vs R15 mismatch, priority too low, track not loaded, played on wrong Animator | Output warnings \"Failed to load animation\"; check rig type | share/upload under same owner; correct rig; Action priority |"
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-05",
+      "must_index": 0,
+      "must": "stride distance not timer",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The explicit rationale replaces timed footsteps with distance accumulation so cadence follows motion speed.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/footsteps.md",
+          "quote": "- **Stride distance, not a timer** — steps stay in sync with animation at any speed; a timer loop \"tap-dances\" when\n  speed changes and keeps stepping while sliding."
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-05",
+      "must_index": 1,
+      "must": "FloorMaterial table",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture maps FloorMaterial to material-named asset templates and a Default fallback, which supplies the requested material lookup rather than a single sound.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/footsteps.md",
+          "quote": "ReplicatedStorage.Footsteps/<MaterialName>/AudioPlayer templates (your uploaded assets) + Default/\nClient: every player character + models tagged \"Footsteps\" (NPCs) within 90 studs of the camera\n  per character: AudioEmitter on the root + 3 round-robin AudioPlayers wired to it\n  PostSimulation (one loop): distance += horizontal speed · dt → step when distance ≥ stride(speed)\n     → template for Humanoid.FloorMaterial → random variant, pitch ±8 %, volume by speed (× 0.5 crouched, local)\n  Landed state with fast fall → heavier landing step"
+        }
+      ]
+    },
+    {
+      "case_id": "ANI-05",
+      "must_index": 2,
+      "must": "client-side for all characters",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Each client computes cosmetic footsteps for replicated characters; this directly supplies client-side playback for all characters.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/footsteps.md",
+          "quote": "- **Client-side for everyone**: footsteps are cosmetic; each client computes them from replicated motion, so there\n  is no network traffic and no server audio cost."
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-01",
+      "must_index": 0,
+      "must": "FSM with grace period",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The FSM explicitly includes an investigation grace period before chase.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-chase.md",
+          "quote": "  Brain (pure FSM):\n     sees target: first 0.6 s → Investigate (turn/walk toward) → then Chase (run)"
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-01",
+      "must_index": 1,
+      "must": "noise events not audio",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The recipe explicitly separates hearing events from audio and derives them from gameplay movement.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-chase.md",
+          "quote": "- **Hearing is gameplay data**, not audio: sprinting (speed > 18) is loud, walking quiet, crouch-walking silent.\n  Players can reason about it."
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-01",
+      "must_index": 2,
+      "must": "last known position + search",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Lost-sight behavior uses the last observed position and search, not continuous knowledge of the target.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-chase.md",
+          "quote": "- **Last known position, not omniscience** — after losing sight it goes where it last saw you, then searches."
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-01",
+      "must_index": 3,
+      "must": "one manager, budgets",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "One server manager time-slices thinking and bounds concurrent pathfinding and per-NPC replans; this supplies actual budgets rather than only mentioning a manager.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-patrol.md",
+          "quote": "Server: NpcService (ONE Heartbeat connection)\n   each frame: round-robin, ≤ 8 thinks and ≤ 1 ms\n   think interval by distance to nearest player: <60 → 0.1 s · <150 → 0.3 s · <300 → 1 s · beyond → sleep (stop)\n   think: perceive → Brain.think → act (Patrol: next route point when arrived) → Mover.update\n   Mover: ComputeAsync in its own thread (generation token, ≤ 4 concurrent, ≥ 0.75 s between replans per NPC)\n          waypoint following by distance checks (no MoveToFinished:Wait) · Blocked → replan\n          no progress 1.5 s → jump + replan · 3× → give up (brain moves on)"
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-05",
+      "must_index": 3,
+      "must": "no Humanoid per NPC unless needed",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cost/use table reserves Humanoids for capabilities such as climbing and offers AnimationController or anchored-root alternatives for cheaper crowds.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "## Movement options for NPCs\n| Option | Cost | Use |\n|---|---|---|\n| Humanoid + `MoveTo` | highest (stepHumanoid) | few smart NPCs needing climbing/jumping/tools |\n| Humanoid with unused states disabled | lower | most enemies |\n| AnimationController + `AlignPosition`/`LinearVelocity` on root | lower | many mobs, flying creatures |\n| Anchored root moved by CFrame along path (server at 10–20 Hz) + client-side interpolation/animation | lowest | crowds, ambient NPCs |"
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-RU-01",
+      "must_index": 1,
+      "must": "handle blocked path and movement timeout",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "This measured gap is now closed by explicit timeout/blocked-path handling, cooldown and retry limits, safe terminal states, connection cleanup and generation invalidation.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "## Bounded navigation and target lifetime\nA movement wait must have a deadline and a failure path. Poll progress with a timeout or use the non-blocking\nmover in the patrol recipe; do not wait indefinitely on `MoveToFinished`. On timeout or a blocked waypoint ahead,\ninvalidate the old path generation, then replan through the per-NPC cooldown and shared concurrency budget.\nStop after the configured retry limit and return to a safe idle/patrol/search state instead of spinning.\nIf a target disappears or dies, clear its instance reference and stop pursuing that stale target. Search the last\nknown position or choose another valid target; replan only for a currently valid goal. When removing an NPC or\nreplacing its path, disconnect the old blocked/movement connections and invalidate pending path computations.\nThe patrol recipe's `Mover.destroy` and generation token show how late results are discarded."
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-RU-01",
+      "must_index": 2,
+      "must": "bounded retry/replan",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "This measured gap is now closed by explicit timeout/blocked-path handling, cooldown and retry limits, safe terminal states, connection cleanup and generation invalidation.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "## Bounded navigation and target lifetime\nA movement wait must have a deadline and a failure path. Poll progress with a timeout or use the non-blocking\nmover in the patrol recipe; do not wait indefinitely on `MoveToFinished`. On timeout or a blocked waypoint ahead,\ninvalidate the old path generation, then replan through the per-NPC cooldown and shared concurrency budget.\nStop after the configured retry limit and return to a safe idle/patrol/search state instead of spinning.\nIf a target disappears or dies, clear its instance reference and stop pursuing that stale target. Search the last\nknown position or choose another valid target; replan only for a currently valid goal. When removing an NPC or\nreplacing its path, disconnect the old blocked/movement connections and invalidate pending path computations.\nThe patrol recipe's `Mover.destroy` and generation token show how late results are discarded."
+        }
+      ]
+    },
+    {
+      "case_id": "NPC-RU-01",
+      "must_index": 3,
+      "must": "cleanup connections",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "This measured gap is now closed by explicit timeout/blocked-path handling, cooldown and retry limits, safe terminal states, connection cleanup and generation invalidation.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "## Bounded navigation and target lifetime\nA movement wait must have a deadline and a failure path. Poll progress with a timeout or use the non-blocking\nmover in the patrol recipe; do not wait indefinitely on `MoveToFinished`. On timeout or a blocked waypoint ahead,\ninvalidate the old path generation, then replan through the per-NPC cooldown and shared concurrency budget.\nStop after the configured retry limit and return to a safe idle/patrol/search state instead of spinning.\nIf a target disappears or dies, clear its instance reference and stop pursuing that stale target. Search the last\nknown position or choose another valid target; replan only for a currently valid goal. When removing an NPC or\nreplacing its path, disconnect the old blocked/movement connections and invalidate pending path computations.\nThe patrol recipe's `Mover.destroy` and generation token show how late results are discarded."
+        }
+      ]
+    },
+    {
+      "case_id": "GAP-NPC-02",
+      "must_index": 0,
+      "must": "bound waits with timeout",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The new targeted navigation guidance bounds waits and explicitly clears missing/dead targets before selecting or replanning a valid goal.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "## Bounded navigation and target lifetime\nA movement wait must have a deadline and a failure path. Poll progress with a timeout or use the non-blocking\nmover in the patrol recipe; do not wait indefinitely on `MoveToFinished`. On timeout or a blocked waypoint ahead,\ninvalidate the old path generation, then replan through the per-NPC cooldown and shared concurrency budget.\nStop after the configured retry limit and return to a safe idle/patrol/search state instead of spinning.\nIf a target disappears or dies, clear its instance reference and stop pursuing that stale target. Search the last\nknown position or choose another valid target; replan only for a currently valid goal. When removing an NPC or\nreplacing its path, disconnect the old blocked/movement connections and invalidate pending path computations.\nThe patrol recipe's `Mover.destroy` and generation token show how late results are discarded."
+        }
+      ]
+    },
+    {
+      "case_id": "GAP-NPC-02",
+      "must_index": 1,
+      "must": "handle missing target and replan",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The new targeted navigation guidance bounds waits and explicitly clears missing/dead targets before selecting or replanning a valid goal.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "## Bounded navigation and target lifetime\nA movement wait must have a deadline and a failure path. Poll progress with a timeout or use the non-blocking\nmover in the patrol recipe; do not wait indefinitely on `MoveToFinished`. On timeout or a blocked waypoint ahead,\ninvalidate the old path generation, then replan through the per-NPC cooldown and shared concurrency budget.\nStop after the configured retry limit and return to a safe idle/patrol/search state instead of spinning.\nIf a target disappears or dies, clear its instance reference and stop pursuing that stale target. Search the last\nknown position or choose another valid target; replan only for a currently valid goal. When removing an NPC or\nreplacing its path, disconnect the old blocked/movement connections and invalidate pending path computations.\nThe patrol recipe's `Mover.destroy` and generation token show how late results are discarded."
+        }
+      ]
+    },
+    {
+      "case_id": "STR-04",
+      "must_index": 0,
+      "must": "seeded deterministic generation",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Seed reproducibility and a versioned generator directly support deterministic generation.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/procedural-backrooms.md",
+          "quote": "- **Deterministic from a seed**: a bug report with the seed reproduces the exact layout. `Layout.VERSION` must\n  change whenever generation changes."
+        }
+      ]
+    },
+    {
+      "case_id": "STR-04",
+      "must_index": 1,
+      "must": "connectivity checked on data",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Connectivity is established by BFS on layout tables rather than testing instantiated geometry.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/procedural-backrooms.md",
+          "quote": "- **Data first**: connectivity is proven on tables (BFS) — no raycasts or physics to \"check\" a maze."
+        }
+      ]
+    },
+    {
+      "case_id": "STR-04",
+      "must_index": 2,
+      "must": "budgets",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The builder limits work per frame and unloads distant chunks, making the budget operational.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/procedural-backrooms.md",
+          "quote": "   every 1 s: chunks within 2 of any player → build (≤ 120 parts per frame); beyond 3 → destroy"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-01",
+      "must_index": 0,
+      "must": "no Touched bullets",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The chapter expressly rejects Touched bullets because tunneling and ownership make them unreliable.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "- Thick projectiles: `Spherecast` per step. Don't use `Touched` for bullets (tunneling, ownership)."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-01",
+      "must_index": 1,
+      "must": "server raycast (hitscan) or kinematic projectile with casts between frames",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The authoritative projectile row advances velocity/position on the server and casts between previous and next positions.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "| Server-simulated kinematic projectile (no physics): position/velocity/gravity advanced each Heartbeat, raycast from previous to next position | rockets, arrows, grenades that matter; authoritative |\n| Client-rendered visuals:"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-01",
+      "must_index": 2,
+      "must": "validate origin/direction/rate",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The numbered validation pipeline covers shot cadence, finite direction, a bounded origin and authoritative raycasts.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "## Hitscan\nClient: raycast from camera/muzzle for instant tracer + predicted hit marker; send `Fire(origin, direction, shotId)`\n(optionally claimed target). Server validation:\n1. rate: time since last shot ≥ weapon interval (with small tolerance); ammo > 0; not reloading; alive.\n2. origin within ~4–8 studs of the server-side character head/root (latency slack).\n3. direction finite, unit-ish; spread within weapon spread (+tolerance).\n4. server raycast (optionally lag-compensated) from origin along direction up to weapon range; excluding shooter.\n5. hit must be an enemy character part, alive, not same team; static geometry between origin and hit → reject.\n6. apply damage (headshot multiplier from server-side part name/type), notify attacker & victim."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-01",
+      "must_index": 3,
+      "must": "damage from server config",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The common damage service explicitly requires the amount to come from server configuration and never from remotes; the projectile recipe already links to this service, now included directly in declared refs.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/health-damage.md",
+          "quote": "- `amount` always comes from server config; the function never takes numbers from remotes."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-02",
+      "must_index": 0,
+      "must": "client prediction + server raycast",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture explicitly combines immediate client prediction with authoritative raycasts and validates head proximity, wall occlusion, fire rate and server ammo before damage.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/hitscan-gun.md",
+          "quote": "Client: Activated → local gate (ammo attr, rpm) → aim: camera ray finds target point → origin = head,\n        dir = (target - head).Unit → local raycast → tracer now → HitscanFire:FireServer(origin, dir)\nServer: flood guard → equipped Hitscan tool → not reloading, rpm (15 % tolerance) → origin ≤ 8 studs from server\n        head AND not through a wall → ammo (server attribute) → server raycast from origin → falloff × headshot\n        → Damage.apply → HitConfirm to shooter · ShotFx (unreliable) to all for tracers"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-02",
+      "must_index": 1,
+      "must": "origin near head, not through walls",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture explicitly combines immediate client prediction with authoritative raycasts and validates head proximity, wall occlusion, fire rate and server ammo before damage.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/hitscan-gun.md",
+          "quote": "Client: Activated → local gate (ammo attr, rpm) → aim: camera ray finds target point → origin = head,\n        dir = (target - head).Unit → local raycast → tracer now → HitscanFire:FireServer(origin, dir)\nServer: flood guard → equipped Hitscan tool → not reloading, rpm (15 % tolerance) → origin ≤ 8 studs from server\n        head AND not through a wall → ammo (server attribute) → server raycast from origin → falloff × headshot\n        → Damage.apply → HitConfirm to shooter · ShotFx (unreliable) to all for tracers"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-02",
+      "must_index": 2,
+      "must": "rate/ammo on server",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture explicitly combines immediate client prediction with authoritative raycasts and validates head proximity, wall occlusion, fire rate and server ammo before damage.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/hitscan-gun.md",
+          "quote": "Client: Activated → local gate (ammo attr, rpm) → aim: camera ray finds target point → origin = head,\n        dir = (target - head).Unit → local raycast → tracer now → HitscanFire:FireServer(origin, dir)\nServer: flood guard → equipped Hitscan tool → not reloading, rpm (15 % tolerance) → origin ≤ 8 studs from server\n        head AND not through a wall → ammo (server attribute) → server raycast from origin → falloff × headshot\n        → Damage.apply → HitConfirm to shooter · ShotFx (unreliable) to all for tracers"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-02",
+      "must_index": 3,
+      "must": "lag compensation trade-off explained",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The recipe explains bounded rewind, present-world LOS and victim shot-behind-walls complaints, and explicitly marks compensation as not implemented.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/hitscan-gun.md",
+          "quote": "## Lag compensation (not implemented here — add when PvP at 100+ ms feels unfair)\n1. Server records every character's root CFrame at 20–30 Hz in a ring buffer (last ~1 s).\n2. On a shot: `rewind = math.min(player:GetNetworkPing() / 2 + interpolationDelay, 0.3)` — measure your\n   interpolation delay; don't guess it in code comments.\n3. Test the ray against hitboxes reconstructed at `now - rewind` (math: ray vs oriented boxes, or temporary\n   CanQuery parts in a separate folder), then still require LOS against static geometry **now**.\n4. Cap rewind; reject targets that moved implausibly. Victims at high ping will sometimes be \"shot behind walls\" —\n   that's the trade-off; document it."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-03",
+      "must_index": 0,
+      "must": "player characters are client-owned",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Player physics ownership makes server velocity writes unreliable; the section provides victim constraints or owner-applied impulse and documents exploitability.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "## Knockback and stun on player characters\n- Players own their character physics; setting `AssemblyLinearVelocity` from the server on another player's root\n  is unreliable. Reliable options: (a) server creates a short-lived `LinearVelocity`/`VectorForce` constraint on\n  the victim root (constraints replicate; the owning client simulates it), destroyed after 0.2–0.4 s; (b)\n  `FireClient(victim, \"Knockback\", impulse)` and the victim applies `ApplyImpulse` locally — exploitable (victim can\n  ignore), fine for PvE."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-03",
+      "must_index": 1,
+      "must": "constraint (LinearVelocity) on the victim or owner-applied impulse",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Player physics ownership makes server velocity writes unreliable; the section provides victim constraints or owner-applied impulse and documents exploitability.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "## Knockback and stun on player characters\n- Players own their character physics; setting `AssemblyLinearVelocity` from the server on another player's root\n  is unreliable. Reliable options: (a) server creates a short-lived `LinearVelocity`/`VectorForce` constraint on\n  the victim root (constraints replicate; the owning client simulates it), destroyed after 0.2–0.4 s; (b)\n  `FireClient(victim, \"Knockback\", impulse)` and the victim applies `ApplyImpulse` locally — exploitable (victim can\n  ignore), fine for PvE."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-04",
+      "must_index": 0,
+      "must": "server state machine with timings as data",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Server state records include attack IDs and dedupe sets, with durations held in per-weapon configuration.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "Store per-character server state `{ state, stateEnds, attackId, comboIndex, lastHitIds }`. One damage per target per\nattack id (dedupe set). Durations are data (config per weapon), not magic numbers in handlers."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-04",
+      "must_index": 1,
+      "must": "one hit per target per attack",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Server state records include attack IDs and dedupe sets, with durations held in per-weapon configuration.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "Store per-character server state `{ state, stateEnds, attackId, comboIndex, lastHitIds }`. One damage per target per\nattack id (dedupe set). Durations are data (config per weapon), not magic numbers in handlers."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-04",
+      "must_index": 2,
+      "must": "parry window with latency tolerance",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The parry rule is server-evaluated with explicit ping-based tolerance, rather than trusting a client hit/defense declaration.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "Timing windows are server-evaluated with latency tolerance: parry succeeds if the server receives `BlockStart` ≤\n`parryWindow + ping/2` before the hit resolves. Keep windows generous (150–250 ms) for playability. I-frames:\nserver ignores hits while `state == Dodge`."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-05",
+      "must_index": 0,
+      "must": "BreakJointsOnDeath false",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture describes preserving joints, attachments at Motor6D C0/C1, ball-socket and no-collision constraints, and owner-side Physics transition for living knockdowns.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/ragdoll.md",
+          "quote": "CharacterAdded (server): Humanoid.BreakJointsOnDeath = false\nDied (server): Ragdoll.enable(character)\n    for each Motor6D: Attachment at C0 on Part0, Attachment at C1 on Part1 → BallSocketConstraint (limits)\n                      + NoCollisionConstraint(Part0, Part1) → Motor6D.Enabled = false → limbs CanCollide\n    root CanCollide = false\nKnock-down (alive): Ragdoll.knockDown(character, seconds) → same + RagdollState remote → owner client\n    Humanoid:ChangeState(Physics) … later GettingUp; server re-enables Motor6Ds and removes constraints\nNPCs (server-owned): the server changes the Humanoid state itself"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-05",
+      "must_index": 1,
+      "must": "BallSocketConstraints at Motor6D C0/C1",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture describes preserving joints, attachments at Motor6D C0/C1, ball-socket and no-collision constraints, and owner-side Physics transition for living knockdowns.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/ragdoll.md",
+          "quote": "CharacterAdded (server): Humanoid.BreakJointsOnDeath = false\nDied (server): Ragdoll.enable(character)\n    for each Motor6D: Attachment at C0 on Part0, Attachment at C1 on Part1 → BallSocketConstraint (limits)\n                      + NoCollisionConstraint(Part0, Part1) → Motor6D.Enabled = false → limbs CanCollide\n    root CanCollide = false\nKnock-down (alive): Ragdoll.knockDown(character, seconds) → same + RagdollState remote → owner client\n    Humanoid:ChangeState(Physics) … later GettingUp; server re-enables Motor6Ds and removes constraints\nNPCs (server-owned): the server changes the Humanoid state itself"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-05",
+      "must_index": 2,
+      "must": "NoCollisionConstraints",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture describes preserving joints, attachments at Motor6D C0/C1, ball-socket and no-collision constraints, and owner-side Physics transition for living knockdowns.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/ragdoll.md",
+          "quote": "CharacterAdded (server): Humanoid.BreakJointsOnDeath = false\nDied (server): Ragdoll.enable(character)\n    for each Motor6D: Attachment at C0 on Part0, Attachment at C1 on Part1 → BallSocketConstraint (limits)\n                      + NoCollisionConstraint(Part0, Part1) → Motor6D.Enabled = false → limbs CanCollide\n    root CanCollide = false\nKnock-down (alive): Ragdoll.knockDown(character, seconds) → same + RagdollState remote → owner client\n    Humanoid:ChangeState(Physics) … later GettingUp; server re-enables Motor6Ds and removes constraints\nNPCs (server-owned): the server changes the Humanoid state itself"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-05",
+      "must_index": 3,
+      "must": "owner sets Physics state for alive knock-downs",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The architecture describes preserving joints, attachments at Motor6D C0/C1, ball-socket and no-collision constraints, and owner-side Physics transition for living knockdowns.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/ragdoll.md",
+          "quote": "CharacterAdded (server): Humanoid.BreakJointsOnDeath = false\nDied (server): Ragdoll.enable(character)\n    for each Motor6D: Attachment at C0 on Part0, Attachment at C1 on Part1 → BallSocketConstraint (limits)\n                      + NoCollisionConstraint(Part0, Part1) → Motor6D.Enabled = false → limbs CanCollide\n    root CanCollide = false\nKnock-down (alive): Ragdoll.knockDown(character, seconds) → same + RagdollState remote → owner client\n    Humanoid:ChangeState(Physics) … later GettingUp; server re-enables Motor6Ds and removes constraints\nNPCs (server-owned): the server changes the Humanoid state itself"
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-06",
+      "must_index": 0,
+      "must": "TakeDamage respects ForceField",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The damage paragraph explicitly distinguishes TakeDamage ForceField protection from direct Health assignment for custom rules.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "- Server: `humanoid:TakeDamage(n)` respects `ForceField`; or set `Health` directly for custom rules. Clamp, round\n  once, log source (`attacker`, weapon, attackId) in a server-side \"last damage\" record for kill credit."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-06",
+      "must_index": 1,
+      "must": "direct set for custom rules",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The damage paragraph explicitly distinguishes TakeDamage ForceField protection from direct Health assignment for custom rules.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "- Server: `humanoid:TakeDamage(n)` respects `ForceField`; or set `Health` directly for custom rules. Clamp, round\n  once, log source (`attacker`, weapon, attackId) in a server-side \"last damage\" record for kill credit."
+        }
+      ]
+    },
+    {
+      "case_id": "CMB-06",
+      "must_index": 2,
+      "must": "one damage entry point",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The single damage entry point centralizes team, invulnerability, protection and multiplier rules so weapon handlers cannot omit them.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/health-damage.md",
+          "quote": "Why one entry point:\n- Every rule (teams, i-frames, spawn protection, damage multipliers, logging) lives in one place; weapons can't\n  forget a check."
+        }
+      ]
+    },
+    {
+      "case_id": "COMBAT-RU-01",
+      "must_index": 2,
+      "must": "server validates cadence/ammo/state/origin/direction",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The server pipeline validates timing/ammo/reload/alive state, bounded origin and finite direction, casts within weapon range, checks geometry and computes damage itself.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "## Hitscan\nClient: raycast from camera/muzzle for instant tracer + predicted hit marker; send `Fire(origin, direction, shotId)`\n(optionally claimed target). Server validation:\n1. rate: time since last shot ≥ weapon interval (with small tolerance); ammo > 0; not reloading; alive.\n2. origin within ~4–8 studs of the server-side character head/root (latency slack).\n3. direction finite, unit-ish; spread within weapon spread (+tolerance).\n4. server raycast (optionally lag-compensated) from origin along direction up to weapon range; excluding shooter.\n5. hit must be an enemy character part, alive, not same team; static geometry between origin and hit → reject.\n6. apply damage (headshot multiplier from server-side part name/type), notify attacker & victim."
+        }
+      ]
+    },
+    {
+      "case_id": "GAP-COMBAT-01",
+      "must_index": 0,
+      "must": "server validates hit and damage",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The authoritative hitscan pipeline checks rate, weapon range and enemy hit validity before calculating and applying damage.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "## Hitscan\nClient: raycast from camera/muzzle for instant tracer + predicted hit marker; send `Fire(origin, direction, shotId)`\n(optionally claimed target). Server validation:\n1. rate: time since last shot ≥ weapon interval (with small tolerance); ammo > 0; not reloading; alive.\n2. origin within ~4–8 studs of the server-side character head/root (latency slack).\n3. direction finite, unit-ish; spread within weapon spread (+tolerance).\n4. server raycast (optionally lag-compensated) from origin along direction up to weapon range; excluding shooter.\n5. hit must be an enemy character part, alive, not same team; static geometry between origin and hit → reject.\n6. apply damage (headshot multiplier from server-side part name/type), notify attacker & victim."
+        }
+      ]
+    },
+    {
+      "case_id": "GAP-COMBAT-01",
+      "must_index": 1,
+      "must": "validate range and fire rate",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The authoritative hitscan pipeline checks rate, weapon range and enemy hit validity before calculating and applying damage.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/15-combat.md",
+          "quote": "## Hitscan\nClient: raycast from camera/muzzle for instant tracer + predicted hit marker; send `Fire(origin, direction, shotId)`\n(optionally claimed target). Server validation:\n1. rate: time since last shot ≥ weapon interval (with small tolerance); ammo > 0; not reloading; alive.\n2. origin within ~4–8 studs of the server-side character head/root (latency slack).\n3. direction finite, unit-ish; spread within weapon spread (+tolerance).\n4. server raycast (optionally lag-compensated) from origin along direction up to weapon range; excluding shooter.\n5. hit must be an enemy character part, alive, not same team; static geometry between origin and hit → reject.\n6. apply damage (headshot multiplier from server-side part name/type), notify attacker & victim."
+        }
+      ]
+    }
+  ]
+}

@@ -70,12 +70,20 @@ readiness report; version 2.1.0 remains in force until every criterion passes.
 | Source citations (`cd:`, `luau:`, `api:`) | all resolve against pinned sources | `python tools/check_sources.py` |
 | Links and anchors | checked | `python tools/check_links.py` |
 | Tool unit tests | `tests/` (Python unittest), including evidence rejection and evaluation integrity | `python -m unittest discover -s tests` |
-| Dated machine facts | 89 source-backed entries; expired/missing/changed evidence fails CI | `python tools/check_facts.py` |
+| Dated machine facts | Source-backed registry; expired/missing/changed evidence fails CI; scoped numeric/status bindings checked separately | `python tools/check_facts.py` |
 | Release smoke infrastructure | 10 executable fixtures; 0 actual engine runs | `python tools/check_engine_evidence.py --allow-pending` |
-| Ranked legacy coverage | 150/150 provisional top rows; 152 detecting fixtures; empirical ranking still incomplete | `python tools/check_legacy.py --check` |
+| Dump-derived legacy coverage | All relevant rows detected; unresolved semantic migrations remain explicit; external-corpus ranking is not a release gate | `python tools/check_legacy.py --check` |
 | **Roblox Studio / live servers** | **nothing was run in Studio or live** | follow each recipe's "How to test" |
 Visual presets are art-direction starting points; property names/types are validated, the look is not
 screenshot-verified.
+
+## Data-readiness gates
+
+`python tools/check_all.py` checks local infrastructure and emits unresolved coverage/readiness diagnostics.
+It does not claim completion of D1–D7. `python tools/check_release.py` additionally requires strict semantic
+coverage, clean heldout evidence, all engine receipts, and actual host acceptance. The independent heldout
+suite must remain unavailable for data tuning; see [custody rules](evals/HOLDOUT.md). No real A/B uplift or
+Studio execution is claimed by a passing local check. `VERSION` remains 2.1.0.
 
 ## Updating to newer Roblox versions (non-destructive)
 ```text

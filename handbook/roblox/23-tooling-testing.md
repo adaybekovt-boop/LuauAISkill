@@ -43,7 +43,7 @@ An AI without Studio access must never write "tested in Studio"; with Studio MCP
 | Workflow | Source of truth | Pros | Cons |
 |---|---|---|---|
 | Studio only (+ Team Create, version history, packages) | place file in the cloud | zero setup | weak diff/review, no CI |
-| **Script Sync** (built-in) | scripts on disk ↔ Studio, everything else in the place | Git for code, keeps Studio for building, works with Team Create | only Script/LocalScript/ModuleScript/Folder sync; attributes/tags on scripts are **not** synced (don't sync tagged scripts); limits 10k scripts per root, 128 roots |
+| **Script Sync** (built-in) | scripts on disk ↔ Studio, everything else in the place | Git for code, keeps Studio for building, works with Team Create | only Script/LocalScript/ModuleScript/Folder sync; attributes/tags on scripts are **not** synced (don't sync tagged scripts); limits <!-- fact-value: script-sync-scripts -->10000<!-- /fact-value --> scripts per root, <!-- fact-value: script-sync-roots -->128<!-- /fact-value --> roots | <!-- fact-refs: script-sync-scripts, script-sync-roots -->
 | **Rojo** (community, 7.7+) | the file system (`default.project.json`), including models (`.rbxm/.model.json`) | full Git/CI, packages via Wally/pesde | builders must sync assets carefully; 7.7 adds explicit syncback (Studio → disk), not automatic two-way sync |
 Script Sync naming: `name.luau` ModuleScript · `name.server.luau` Script(Server) · `name.client.luau` Script(Client) ·
 `name.local.luau` LocalScript · `name.legacy.luau` Script(Legacy) · `name.plugin.luau` Script(Plugin) · folder =
@@ -70,7 +70,7 @@ required by this skill.
 | Syntax/types | every file strict-typechecks | luau-lsp / luau-analyze |
 | Unit | pure modules (validation, math, state machines, inventory ops, migrations, RNG/hash, rate limiter) | `luau` CLI / Lune / in-Studio runner |
 | Integration (single client) | bootstrap, remotes wiring, UI flows, tags/binders | Studio Play |
-| Multi-client | replication, authority, two players interacting with the same object, late join, rejoin | Studio **Server & Clients** (2–3 clients) or scripted `StudioTestService:ExecuteMultiplayerTestAsync` (1–8) |
+| Multi-client | replication, authority, two players interacting with the same object, late join, rejoin | Studio **Server & Clients** (2–3 clients) or scripted `StudioTestService:ExecuteMultiplayerTestAsync` (<!-- fact-value: studio-test-service-clients -->[1, 8]<!-- /fact-value --> clients) | <!-- fact-refs: studio-test-service-clients --> <!-- fact-examples: {"values": ["2", "3"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
 | Server engine in CI | modules with real engine types, migrations on a copy | Open Cloud Luau Execution (test universe) |
 | Adversarial | invalid payloads (NaN, huge numbers, wrong types, other players' instances), spam 100 req/s, out-of-range interactions | command bar on a client in Server & Clients (`remote:FireServer(...)`) |
 | Network | 100–300 ms latency, packet loss; unreliable remotes under loss | Network Simulator |

@@ -12,12 +12,12 @@ Read when: mood, depth, weather, time of day, cinematic look. Prereq: [lighting]
 ## Atmosphere (`Atmosphere` in Lighting) — API defaults in brackets
 | Property | Effect | Guidance |
 |---|---|---|
-| `Density` [0.395] | amount of particles; obscures distant objects (and sky behind them) | clear day 0.25–0.35; hazy 0.4–0.5; fog 0.6–0.8 (combine with low Offset) |
-| `Offset` [0] | light transmission camera↔sky: high = horizon silhouette, low = distant objects blend into sky | 0–0.25 for seamless open worlds; higher for crisp skylines |
-| `Haze` [0] | haziness above horizon & into distance, tinted by `Color` | 0–2 typical; > 3 gets milky fast |
-| `Color` [200,170,108] | atmosphere hue (visible with Haze) | match sky/sun colour: warm for sunset, blue-grey for overcast, green-grey for toxic |
-| `Glare` [0] | glow around the sun (needs Haze > 0) | 0–1 subtle; high for desert/sunset drama |
-| `Decay` [92,60,14] | hue away from the sun (needs Haze and Glare > 0) | darker/cooler than Color for gradient skies |
+| `Density` [<!-- fact-value: atmosphere-density-default -->0.395000011<!-- /fact-value -->] | amount of particles; obscures distant objects (and sky behind them) | clear day 0.25–0.35; hazy 0.4–0.5; fog 0.6–0.8 (combine with low Offset) | <!-- fact-examples: {"values": ["0.25", "0.35", "0.4", "0.5", "0.6", "0.8"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `Offset` [<!-- fact-value: atmosphere-offset-default -->0<!-- /fact-value -->] | light transmission camera↔sky: high = horizon silhouette, low = distant objects blend into sky | 0–0.25 for seamless open worlds; higher for crisp skylines | <!-- fact-examples: {"values": ["0.25", "0"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `Haze` [<!-- fact-value: atmosphere-haze-default -->0<!-- /fact-value -->] | haziness above horizon & into distance, tinted by `Color` | 0–2 typical; > 3 gets milky fast | <!-- fact-examples: {"values": ["2", "3", "0"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `Color` [<!-- fact-value: atmosphere-color-default -->0.7843, 0.6667, 0.4235<!-- /fact-value -->] | atmosphere hue (visible with Haze) | match sky/sun colour: warm for sunset, blue-grey for overcast, green-grey for toxic |
+| `Glare` [<!-- fact-value: atmosphere-glare-default -->0<!-- /fact-value -->] | glow around the sun (needs Haze > 0) | 0–1 subtle; high for desert/sunset drama | <!-- fact-examples: {"values": ["1", "0"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `Decay` [<!-- fact-value: atmosphere-decay-default -->0.3608, 0.2353, 0.0549<!-- /fact-value -->] | hue away from the sun (needs Haze and Glare > 0) | darker/cooler than Color for gradient skies | <!-- fact-examples: {"values": ["0"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
 Atmosphere replaces legacy fog. For **interiors**, Atmosphere still applies over distance — long corridors fade into
 Atmosphere colour, which is great for liminal depth (dim warm haze) but set Density low if interiors are short.
 
@@ -37,12 +37,12 @@ with quality tiers if needed (toggle `Enabled` on low).
 ## Post-processing (in `Lighting` = everyone; in `Camera` = that player only)
 | Effect | Defaults | Realistic guidance | Pitfalls |
 |---|---|---|---|
-| `BloomEffect` | Intensity 0.4, Size 24, Threshold 0.95 | Threshold 1.5–2.5, Intensity 0.2–0.6, Size 16–32 → only lamps/emissives/sun glint bloom | low threshold = everything glows (amateur look) |
-| `ColorCorrectionEffect` | Brightness 0, Contrast 0, Saturation 0, TintColor white | Contrast 0.05–0.2, Saturation −0.2…0.05, TintColor very slight (e.g. 255,245,235 warm / 235,242,255 cool) | using Brightness for exposure (clips), strong tints |
-| `ColorGradingEffect` | TonemapperPreset Default | `Default` = modern vivid/high contrast; `Retro` = pre-2019 low-contrast look | not a LUT system; only presets |
-| `DepthOfFieldEffect` | Far 0.75, FocusDistance 0.05, InFocusRadius 10, Near 0.75 | cinematics, menus, photo mode; gameplay: FarIntensity ≤ 0.2 with large InFocusRadius | hides enemies/information; cost on mobile |
-| `SunRaysEffect` | Intensity 0.25, Spread 1 | Intensity 0.02–0.1, Spread 0.2–0.6 for realism | default is strong; rays through every tree |
-| `BlurEffect` | Size 24 | menus/pauses (in Camera for local player) | leaving it on after closing menu |
+| `BloomEffect` | Intensity <!-- fact-value: bloom-effect-intensity-default -->0.400000006<!-- /fact-value -->, Size <!-- fact-value: bloom-effect-size-default -->24<!-- /fact-value -->, Threshold <!-- fact-value: bloom-effect-threshold-default -->0.949999988<!-- /fact-value --> | Threshold 1.5–2.5, Intensity 0.2–0.6, Size 16–32 → only lamps/emissives/sun glint bloom | low threshold = everything glows (amateur look) | <!-- fact-examples: {"values": ["1.5", "2.5", "0.2", "0.6", "16", "32"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `ColorCorrectionEffect` | Brightness <!-- fact-value: color-correction-effect-brightness-default -->0<!-- /fact-value -->, Contrast <!-- fact-value: color-correction-effect-contrast-default -->0<!-- /fact-value -->, Saturation <!-- fact-value: color-correction-effect-saturation-default -->0<!-- /fact-value -->, TintColor white | Contrast 0.05–0.2, Saturation −0.2…0.05, TintColor very slight (e.g. 255,245,235 warm / 235,242,255 cool) | using Brightness for exposure (clips), strong tints | <!-- fact-examples: {"values": ["0.05", "0.2", "−0.2", "255,245,235", "235,242,255"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `ColorGradingEffect` | TonemapperPreset Default | `Default` = modern vivid/high contrast; `Retro` = older low-contrast look | not a LUT system; only presets |
+| `DepthOfFieldEffect` | FarIntensity <!-- fact-value: dof-default-far-intensity -->0.75<!-- /fact-value -->, FocusDistance <!-- fact-value: dof-default-focus-distance -->0.05<!-- /fact-value -->, InFocusRadius <!-- fact-value: dof-default-in-focus-radius -->10<!-- /fact-value -->, NearIntensity <!-- fact-value: dof-default-near-intensity -->0.75<!-- /fact-value --> | cinematics, menus, photo mode; gameplay: FarIntensity ≤ 0.2 with large InFocusRadius | hides enemies/information; cost on mobile | <!-- fact-refs: dof-default-far-intensity, dof-default-focus-distance, dof-default-in-focus-radius, dof-default-near-intensity --> <!-- fact-examples: {"values": ["0.2"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `SunRaysEffect` | Intensity <!-- fact-value: sun-rays-effect-intensity-default -->0.25<!-- /fact-value -->, Spread <!-- fact-value: sun-rays-effect-spread-default -->1<!-- /fact-value --> | Intensity 0.02–0.1, Spread 0.2–0.6 for realism | default is strong; rays through every tree | <!-- fact-examples: {"values": ["0.02", "0.1", "0.2", "0.6"], "reason": "Illustrative aesthetic/test/code values; not additional platform limits."} -->
+| `BlurEffect` | Size <!-- fact-value: blur-effect-size-default -->24<!-- /fact-value --> | menus/pauses (in Camera for local player) | leaving it on after closing menu |
 Stacking: one of each type is normal; multiple ColorCorrection effects multiply — keep one "base grade" in Lighting
 and add temporary ones (damage flash, dream) in Camera on the client, tweened in/out and destroyed afterwards.
 

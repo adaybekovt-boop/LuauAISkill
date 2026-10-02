@@ -27,6 +27,16 @@ AdjustSpeed`. The `Animator` lives under the rig's `Humanoid` or `AnimationContr
 | NPC, cosmetic-only / many NPCs | clients (each client creates/plays locally) | no (by design; cheaper) |
 | Viewmodel / first-person arms | local client only | no |
 Don't play the same animation from both server and client on the same rig (double playback/fighting).
+For animation replication, create the `Animator` on the server first and let it replicate to clients.
+Tracks loaded through a locally created `Animator` do not replicate (cd:reference/engine/classes/Animator).
+
+## Character-lifetime cleanup
+Track caches belong to a specific character and its `Animator`. On character removal, stop the old tracks,
+disconnect marker/completion and per-frame connections, destroy owned tracks, and clear cached references.
+On respawn, bind to the new character's `Animator` and rebuild that character's tracks. Inspect duplicate
+`CharacterAdded` or controller-start connections when an animation plays twice; a new character must not
+reuse the old controller's handlers. See [lifecycle](02-lifecycle-events.md) for the existing-character and
+future-character binding pattern.
 
 ## Track API essentials
 - `track:Play(fadeTime = 0.1, weight = 1, speed = 1)`, `Stop(fadeTime)`, `AdjustWeight(w, fade)`,

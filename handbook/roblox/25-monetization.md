@@ -26,7 +26,7 @@ handling), [security](04-security.md).
 ## Receipt APIs (two families, different enums)
 | API | Return enum | Notes |
 |---|---|---|
-| `MarketplaceService.ProcessReceipt` (callback) | `Enum.ProductPurchaseDecision.PurchaseGranted` / `NotProcessedYet` | the classic path; docs now call it "legacy" but it is not deprecated and still works |
+| `MarketplaceService.ProcessReceipt` (callback) | `Enum.ProductPurchaseDecision.PurchaseGranted` / `NotProcessedYet` | the classic path; docs now call it "legacy" and remains the compatible callback path |
 | `MarketplaceService:BindReceiptHandler(receiptType, handler, filter?)` → `RBXScriptConnection` | `Enum.ReceiptDecision.Processed` / `NotProcessedYet` | newer; `Enum.ReceiptType.DeveloperProduct`, `RobuxTransferSender`, `RobuxTransferReceiver` |
 - `BindReceiptHandler` for developer products: **filtered** (array of product ids → that handler only) or
   **catch-all** (no filter → every product not claimed by a filtered handler). A bound handler takes precedence;
@@ -81,6 +81,9 @@ documented replacement for cross-game sales.
 - Eligibility to buy: `PolicyService` (below) exposes `IsEligibleToPurchaseSubscription`.
 
 ## Paid random items (loot boxes, spins, gacha, re-rolls)
+The server rolls and grants the reward after validating payment and eligibility; a client submits intent and
+displays the result, but never selects an authoritative outcome.
+
 Policy (Terms of Use + Community Standards):
 - "Paid" includes **in-game currency that can be bought with Robux** — keys, tickets, re-roll tokens count.
 - Show **all outcomes and numerical odds** before the player spends; percentages must sum to 100 % (rounding

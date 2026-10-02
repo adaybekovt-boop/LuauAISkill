@@ -95,7 +95,7 @@ makeHover(p, Vector3.new(0, 20, 0))
 ## Spatial queries
 | Query | API | Notes |
 |---|---|---|
-| Ray | `workspace:Raycast(origin, direction, params)` | direction length = distance (max 15,000 studs); returns `RaycastResult?` (`Instance`, `Position`, `Normal`, `Distance`, `Material`) |
+| Ray | `workspace:Raycast(origin, direction, params)` | direction length = distance (max <!-- fact-value: raycast-length -->15000<!-- /fact-value --> studs); returns `RaycastResult?` (`Instance`, `Position`, `Normal`, `Distance`, `Material`) | <!-- fact-refs: raycast-length -->
 | Swept sphere / box / part | `Spherecast(pos, radius, dir, params)`, `Blockcast(cf, size, dir, params)`, `Shapecast(part, dir, params)` | **don't detect parts initially overlapping** the shape; good for melee sweeps, thick bullets, character-sized probes |
 | Overlap | `GetPartBoundsInBox(cf, size, overlapParams)`, `GetPartBoundsInRadius(pos, r, op)`, `GetPartsInPart(part, op)` | bounds versions test AABBs (cheap, coarse); `GetPartsInPart` uses true geometry |
 Params:

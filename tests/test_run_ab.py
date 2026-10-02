@@ -72,6 +72,31 @@ class Protocol(unittest.TestCase):
             ab.generate(self.run, "fixture")
             ab.judge(self.run, "fixture")
 
+    def test_full_without_clean_holdout_cannot_claim_effect(self):
+        # Fixture provenance is mocked as real to exercise gate logic, not model evidence.
+        self.fill(source="external")
+        full = self.base / "full-no-holdout"
+        ab.prepare(self.root, full, config(), "full", self.run)
+        old = self.run
+        self.run = full
+        self.fill(source="external")
+        self.run = old
+        result = ab.report(full, root=self.root)
+        self.assertEqual(result["status"], "COMPLETE")
+        self.assertEqual(result["release_gate"], "BLOCKED")
+        self.assertFalse(result["release_criteria"]["heldout_effect_proven"])
+        self.assertIsNone(result["holdout"]["overall"])
+
+    def test_non_luau_fixture_keeps_its_language(self):
+        path = self.root / "evals/cases/test.jsonl"
+        cases = [json.loads(line) for line in path.read_text().splitlines()]
+        (self.root / "broken.py").write_text("print(1 / 0)\n")
+        cases[0]["fixture"] = "broken.py"
+        path.write_text("\n".join(json.dumps(case) for case in cases))
+        rendered = ab.load_cases(self.root)[0]["rendered_prompt"]
+        self.assertIn("```python\n", rendered)
+        self.assertNotIn("```luau\n", rendered)
+
     def test_prepare_is_pending_and_network_free(self):
         result = ab.report(self.run, root=self.root)
         self.assertEqual(result["status"], "PENDING")

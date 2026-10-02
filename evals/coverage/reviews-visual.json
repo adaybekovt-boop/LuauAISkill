@@ -1,0 +1,1859 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "case_id": "GFX-01",
+      "must_index": 0,
+      "must": "Technology not scriptable/deprecated",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: Technology not scriptable/deprecated.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "## Hard facts first (verified Sep 2026)\n- `Lighting.Technology` is **not** available to scripts (RobloxScriptSecurity) and deprecated. Its successors:\n  `Lighting.LightingStyle` (`Realistic` | `Soft`) and `Lighting.PrioritizeLightingQuality` (bool). Both are\n  **Studio/plugin-only writes** (PluginOrOpenCloud capability; docs: \"modifiable only in the Properties window\")."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-01",
+      "must_index": 2,
+      "must": "Ambient 128 flattens",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: Ambient 128 flattens.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "| `OutdoorAmbient` | flat fill in areas open to the sky | 70–130 grey (day), 20–40 bluish (night) | too high → washed out exteriors |\n| `Ambient` | flat fill **everywhere**, including enclosed interiors | 0–30 for realistic/horror interiors; higher only for stylized | the #1 cause of the \"cheap Roblox look\": grey (128,128,128) ambient kills contrast and hides light direction |\n| `ColorShift_Top` / `_Bottom` | tint on surfaces facing toward/away from sun | subtle warm top / cool bottom for sunsets | saturated shifts look toxic |\n| `GlobalShadows` | sun/moon shadows | on (almost always) | off → floating objects |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-01",
+      "must_index": 3,
+      "must": "bloom threshold too low",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: bloom threshold too low.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "| Grey, milky image | Atmosphere `Haze`/`Density` too high, `ExposureCompensation` too high, ColorCorrection Brightness > 0 | reduce haze, lower exposure, keep CC Brightness ≈ 0, add slight Contrast (0.05–0.15) |\n| Everything glows | Bloom `Threshold` too low / Intensity too high; Neon everywhere | Threshold ≥ ~1.5–2 so only emissives/brightest pixels bloom, Intensity 0.2–0.6 |\n| Toy/plastic materials | SmoothPlastic/Plastic everywhere, EnvironmentSpecularScale 0, no roughness variation | real materials/MaterialVariants/SurfaceAppearance, specular scale ≥ 0.5, roughness variety | <!-- fact-example: aesthetic tuning, not a platform limit -->\n| Oversaturated neon candy | saturated part colours + Saturation > 0 + saturated lights | desaturate base colours (real materials are rarely > 70 % saturated), CC Saturation −0.1…0, keep light colours near-white with slight temperature |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-01",
+      "must_index": 4,
+      "must": "fog ignored with Atmosphere",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: fog ignored with Atmosphere.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "  with `TonemapperPreset.Retro` and light brightness ≤ 1.\n- When an `Atmosphere` exists in Lighting, the legacy `FogStart/FogEnd/FogColor` are ignored/hidden.\n- Local light range is clamped to **120 studs** (PointLight/SpotLight/SurfaceLight).\n- `ExposureCompensation` range −5…5; +1 doubles exposure, −1 halves it."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-01",
+      "must_index": 5,
+      "must": "use Studio for LightingStyle",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: use Studio for LightingStyle.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "  **Studio/plugin-only writes** (PluginOrOpenCloud capability; docs: \"modifiable only in the Properties window\").\n  Game scripts can read them. So: pick the lighting style in Studio; runtime \"graphics presets\" change other things.\n- `Realistic` = most advanced lighting + shadows (the old \"Future\" look: per-pixel local-light shadows, specular,\n  PBR response). `Soft` = flat, retro Roblox look; with `PrioritizeLightingQuality = true`, Soft uses shadow maps"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-01",
+      "must_index": 1,
+      "must": "GlobalIllumination does not exist",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: GlobalIllumination does not exist.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "|---|---|---|---|\n| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |\n| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |\n| `Instance.new(\"Shader\")`, `material.Shader`, custom HLSL/GLSL FAKE | Roblox has no user shaders | materials/MaterialVariant/SurfaceAppearance, post effects, `EditableImage`/`EditableMesh` (CPU-side, budgeted) | `tools/api.py --search Shader` (none) |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-02",
+      "must_index": 0,
+      "must": "not available to creators",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: not available to creators.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "|---|---|---|---|\n| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |\n| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |\n| `Instance.new(\"Shader\")`, `material.Shader`, custom HLSL/GLSL FAKE | Roblox has no user shaders | materials/MaterialVariant/SurfaceAppearance, post effects, `EditableImage`/`EditableMesh` (CPU-side, budgeted) | `tools/api.py --search Shader` (none) |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-02",
+      "must_index": 1,
+      "must": "what exists instead: LightingStyle Realistic, materials, post effects",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "This row supplies Realistic and post effects; the adjacent custom-shader row supplies materials/MaterialVariant/SurfaceAppearance alternatives.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "|---|---|---|---|\n| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |\n| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |\n| `Instance.new(\"Shader\")`, `material.Shader`, custom HLSL/GLSL FAKE | Roblox has no user shaders | materials/MaterialVariant/SurfaceAppearance, post effects, `EditableImage`/`EditableMesh` (CPU-side, budgeted) | `tools/api.py --search Shader` (none) |"
+        },
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |\n| `Instance.new(\"Shader\")`, `material.Shader`, custom HLSL/GLSL FAKE | Roblox has no user shaders | materials/MaterialVariant/SurfaceAppearance, post effects, `EditableImage`/`EditableMesh` (CPU-side, budgeted) | `tools/api.py --search Shader` (none) |\n| `InputService`, `game:GetService(\"Input\")` FAKE | wrong service name | `UserInputService`, `ContextActionService`, InputAction instances | `tools/api.py UserInputService` |\n| `Instance.new(\"UIFlexLayout\")` FAKE | flex is a property set | `UIListLayout` (`HorizontalFlex`, `Wraps`) + `UIFlexItem` | ui chapter |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-03",
+      "must_index": 0,
+      "must": "check Ambient/OutdoorAmbient, exposure, haze, bloom, CC brightness",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: check Ambient/OutdoorAmbient, exposure, haze, bloom, CC brightness.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "| Everything evenly lit, no depth | high `Ambient`/`OutdoorAmbient`, no key light direction | lower ambient (0–30 interior), add a motivated key (window/lamp), let shadows exist |\n| Grey, milky image | Atmosphere `Haze`/`Density` too high, `ExposureCompensation` too high, ColorCorrection Brightness > 0 | reduce haze, lower exposure, keep CC Brightness ≈ 0, add slight Contrast (0.05–0.15) |\n| Everything glows | Bloom `Threshold` too low / Intensity too high; Neon everywhere | Threshold ≥ ~1.5–2 so only emissives/brightest pixels bloom, Intensity 0.2–0.6 |\n| Toy/plastic materials | SmoothPlastic/Plastic everywhere, EnvironmentSpecularScale 0, no roughness variation | real materials/MaterialVariants/SurfaceAppearance, specular scale ≥ 0.5, roughness variety | <!-- fact-example: aesthetic tuning, not a platform limit -->"
+        },
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "|---|---|---|\n| Everything evenly lit, no depth | high `Ambient`/`OutdoorAmbient`, no key light direction | lower ambient (0–30 interior), add a motivated key (window/lamp), let shadows exist |\n| Grey, milky image | Atmosphere `Haze`/`Density` too high, `ExposureCompensation` too high, ColorCorrection Brightness > 0 | reduce haze, lower exposure, keep CC Brightness ≈ 0, add slight Contrast (0.05–0.15) |\n| Everything glows | Bloom `Threshold` too low / Intensity too high; Neon everywhere | Threshold ≥ ~1.5–2 so only emissives/brightest pixels bloom, Intensity 0.2–0.6 |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-03",
+      "must_index": 1,
+      "must": "materials/roughness",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: materials/roughness.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "| Everything glows | Bloom `Threshold` too low / Intensity too high; Neon everywhere | Threshold ≥ ~1.5–2 so only emissives/brightest pixels bloom, Intensity 0.2–0.6 |\n| Toy/plastic materials | SmoothPlastic/Plastic everywhere, EnvironmentSpecularScale 0, no roughness variation | real materials/MaterialVariants/SurfaceAppearance, specular scale ≥ 0.5, roughness variety | <!-- fact-example: aesthetic tuning, not a platform limit -->\n| Oversaturated neon candy | saturated part colours + Saturation > 0 + saturated lights | desaturate base colours (real materials are rarely > 70 % saturated), CC Saturation −0.1…0, keep light colours near-white with slight temperature |\n| Flat night | pure blue ambient everywhere | dark ambient, a single moon key (Brightness 0.1–0.3, cool), warm practical lights for contrast |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-03",
+      "must_index": 2,
+      "must": "one change at a time with fixed shots",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: one change at a time with fixed shots.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "3. Classify frame bars (orange/blue/red) → pick the top label by total time.\n4. Form one hypothesis; change one thing; recapture under identical conditions.\n5. Keep the change only if the metric improved and visuals/gameplay are unchanged. Record numbers.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-04",
+      "must_index": 0,
+      "must": "no: map properties are plugin-only",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: no: map properties are plugin-only.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/04-materials-pbr.md",
+          "quote": "| `MaterialVariant` in `MaterialService` (custom tileable PBR) | ColorMap/NormalMap/RoughnessMap/MetalnessMap (+emissive), `StudsPerTile` [<!-- fact-value: material-variant-studs-per-tile-default -->10<!-- /fact-value -->], `MaterialPattern` (`Regular` / `Organic` = less visible tiling), `BaseMaterial` (physics), `AlphaMode` | reusable walls, floors, terrain overrides; \"adaptive materials\" (parts reference the variant **by name** via `BasePart.MaterialVariant`) | swap `part.MaterialVariant = \"Name\"` (the scriptable property is tagged NotReplicated with a hidden serialized twin — verify runtime changes replicate in a 2-client test, or set it on each client); create variants at edit time | <!-- fact-examples: {\"values\": [\"2\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->\n| `SurfaceAppearance` under a `MeshPart` | unique UV-mapped PBR: ColorMap, NormalMap, RoughnessMap, MetalnessMap, `EmissiveMaskContent` + `EmissiveStrength`/`EmissiveTint`, `AlphaMode` (`Overlay` default, `Transparency`, `TintMask`, `Opaque`), `Color` tint | hero props, characters, unique meshes | **maps are PluginSecurity — not readable/swappable by game scripts**; `Color`, `EmissiveStrength`, `EmissiveTint` are writable |\nMaterial overrides in `MaterialService` replace a base material globally (the only way to customize **terrain**\nmaterials; `TerrainDetail` for top/side/bottom)."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-04",
+      "must_index": 1,
+      "must": "prebuilt variants / MaterialVariant / Color tint",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: prebuilt variants / MaterialVariant / Color tint.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/04-materials-pbr.md",
+          "quote": "| `BasePart.Material` (`Enum.Material`: Concrete, Brick, Metal, DiamondPlate, Wood, WoodPlanks, Fabric, Slate, Plastic, SmoothPlastic, Neon, Glass, ...) + `Color` | built-in tileable PBR materials | blockout, generic surfaces | writable |\n| `MaterialVariant` in `MaterialService` (custom tileable PBR) | ColorMap/NormalMap/RoughnessMap/MetalnessMap (+emissive), `StudsPerTile` [<!-- fact-value: material-variant-studs-per-tile-default -->10<!-- /fact-value -->], `MaterialPattern` (`Regular` / `Organic` = less visible tiling), `BaseMaterial` (physics), `AlphaMode` | reusable walls, floors, terrain overrides; \"adaptive materials\" (parts reference the variant **by name** via `BasePart.MaterialVariant`) | swap `part.MaterialVariant = \"Name\"` (the scriptable property is tagged NotReplicated with a hidden serialized twin — verify runtime changes replicate in a 2-client test, or set it on each client); create variants at edit time | <!-- fact-examples: {\"values\": [\"2\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->\n| `SurfaceAppearance` under a `MeshPart` | unique UV-mapped PBR: ColorMap, NormalMap, RoughnessMap, MetalnessMap, `EmissiveMaskContent` + `EmissiveStrength`/`EmissiveTint`, `AlphaMode` (`Overlay` default, `Transparency`, `TintMask`, `Opaque`), `Color` tint | hero props, characters, unique meshes | **maps are PluginSecurity — not readable/swappable by game scripts**; `Color`, `EmissiveStrength`, `EmissiveTint` are writable |\nMaterial overrides in `MaterialService` replace a base material globally (the only way to customize **terrain**"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-05",
+      "must_index": 0,
+      "must": "scales own content (particles, lights, post)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: scales own content (particles, lights, post).",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/07-quality-tiers.md",
+          "quote": "  hint.\n- **You** control your content cost: particle rates, number of active lights/shadows, post effects, decoration\n  density, animated props, NPC animation LOD, AI tick rates, UI effects, render distance of your own LOD systems.\n- `Lighting.LightingStyle`/`PrioritizeLightingQuality` are Studio-time choices, not runtime tiers."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-05",
+      "must_index": 1,
+      "must": "engine quality level not readable",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: engine quality level not readable.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/07-quality-tiers.md",
+          "quote": "- The **engine** already scales rendering with the user's graphics quality (1–10 or Automatic): draw distance,\n  shadows (off below level 4), texture quality, effects. Game scripts **cannot** read the current engine quality\n  (`UserGameSettings.GraphicsQualityLevel` is RobloxScriptSecurity) and must not fight it. The user's saved choice\n  (`UserSettings():GetService(\"UserGameSettings\").SavedQualityLevel`, often `Automatic`) is readable — use only as a"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-05",
+      "must_index": 2,
+      "must": "gameplay visibility identical across tiers",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: gameplay visibility identical across tiers.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/07-quality-tiers.md",
+          "quote": "| UI blur/CanvasGroup effects | off | minimal | on | on |\nGameplay-relevant visuals (enemy visibility, interactables, readable darkness) must be **identical** across tiers —\ntiers never create competitive advantages (e.g. fog off on low letting players see farther).\n"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-05",
+      "must_index": 3,
+      "must": "adaptive with hysteresis optional",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: adaptive with hysteresis optional.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/07-quality-tiers.md",
+          "quote": "   (e.g. 33 ms target on mobile, 16.7 ms desktop) for N seconds, step down one tier; step up only after a long stable\n   period (hysteresis, e.g. 60 s) and never while the player is in a heavy moment. Never oscillate.\n3. Player override in a settings menu (persist via server DataStore or local-only); the override wins over adaptive.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-06",
+      "must_index": 0,
+      "must": "low sun via ClockTime/latitude",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: low sun via ClockTime/latitude.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/sunset.md",
+          "quote": "<!-- /code -->\n- **Sun angle**: the exact `ClockTime` for \"just above the horizon\" depends on `GeographicLatitude`; start at 18.1\n  with latitude 30 and nudge in 0.05 steps until shadows are ~4–6× object height.\n- **Atmosphere** does the sky colour: warm `Color`, purple-ish `Decay`, `Glare` 0.5–0.8 for the sun bloom, `Haze`"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-06",
+      "must_index": 1,
+      "must": "Atmosphere colour/decay/glare",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: Atmosphere colour/decay/glare.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/sunset.md",
+          "quote": "  with latitude 30 and nudge in 0.05 steps until shadows are ~4–6× object height.\n- **Atmosphere** does the sky colour: warm `Color`, purple-ish `Decay`, `Glare` 0.5–0.8 for the sun bloom, `Haze`\n  1.5–2 for depth; `Offset` 0.2–0.3 to keep distant mountains as silhouettes.\n- **SunRays** only when the sun is visible through gaps (trees, windows): Intensity ≤ 0.1."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-06",
+      "must_index": 2,
+      "must": "modest exposure",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: modest exposure.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/sunset.md",
+          "quote": "\t\tEnvironmentSpecularScale = 1,\n\t\tExposureCompensation = 0,\n\t\tShadowSoftness = 0.15,\n\t\tColorShift_Top = rgb(60, 30, 10), -- subtle warm tint on sun-facing surfaces"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-06",
+      "must_index": 3,
+      "must": "values as starting points",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: values as starting points.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/sunset.md",
+          "quote": "## When NOT to use\nDo not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.\n\n## Architecture"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-07",
+      "must_index": 0,
+      "must": "distortion/CA not available",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: distortion/CA not available.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/camera-aesthetics.md",
+          "quote": "| Wide-angle bodycam | yes | FOV 85–95 vertical + camera motion recipe |\n| Lens (barrel) distortion, chromatic aberration, custom shaders | **no** | not available to creators; fake CA with a faint coloured double overlay image at most |\n| Low frame rate \"CCTV stutter\" | partly | move a Scriptable camera at 8–12 Hz while the game runs at full rate |\n"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-07",
+      "must_index": 1,
+      "must": "offer what's possible: grade, blur, retro tonemapper, overlays, camera motion",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: offer what's possible: grade, blur, retro tonemapper, overlays, camera motion.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/camera-aesthetics.md",
+          "quote": "-- Camera \"looks\": Bodycam, CCTV, VHS — post effects parented to the CAMERA (local to this player) + a UI overlay.\n-- What Roblox can do: colour grade, contrast, blur, bloom, retro tonemapping, UI overlays (vignette, text, your own\n-- grain/scanline images), camera motion (bodycam recipe). What it can't: lens distortion, chromatic aberration,\n-- custom shaders. Grain/scanlines need images YOU upload: set StringValue ReplicatedStorage.CameraLookAssets.Grain /"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-08",
+      "must_index": 1,
+      "must": "flat warm fluorescent light is correct here",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: flat warm fluorescent light is correct here.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/backrooms-fluorescent-office.md",
+          "quote": "-- file: examples/lighting/ReplicatedStorage/LightingPresets.luau (region BackroomsOffice)\n-- Sealed fluorescent office: the one mood where fairly flat, warm fill is correct (motivated by a ceiling full of\n-- panels); slight overexposure and low contrast sell the camcorder look.\nPresets.BackroomsOffice = {"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-08",
+      "must_index": 2,
+      "must": "emissive panels + few SurfaceLights without shadows",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: emissive panels + few SurfaceLights without shadows.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/backrooms-fluorescent-office.md",
+          "quote": "<!-- /code -->\n- **Local lights**: every panel emissive; `SurfaceLight` (Face Bottom, Angle 120, Range ~22, Brightness ~1.4,\n  **Shadows off**) on every other lit panel — the grid produces the even wash; shadows would cost a lot and add\n  little in this look. Flickering panels tagged `FlickerLight` ([flickering fluorescent](flickering-fluorescent.md))."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-08",
+      "must_index": 3,
+      "must": "haze for distance",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: haze for distance.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/backrooms-fluorescent-office.md",
+          "quote": "  little in this look. Flickering panels tagged `FlickerLight` ([flickering fluorescent](flickering-fluorescent.md)).\n- **Distance**: Atmosphere haze hides the streaming edge; keep `Density` ≈ 0.25 so rooms 150+ studs away fade.\n- **Post**: slight overexposure (+0.3), low contrast, warm tint; optional [camera look](camera-aesthetics.md) VHS/\n  Bodycam overlay."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-08",
+      "must_index": 0,
+      "must": "answer in Russian",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: answer in Russian.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "**SKILL.md → [tracks/INDEX.md](tracks/INDEX.md) (pick a track) → handbook chapters → a recipe → references / `api/`**.\nAnswer in the user's language; keep API names exact. Skill text is English for precision and token economy.\n\nActivate this engineering workflow only for Roblox/Luau engineering or scene-art work. An incidental mention"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-RU-01",
+      "must_index": 0,
+      "must": "answer in Russian",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: answer in Russian.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "**SKILL.md → [tracks/INDEX.md](tracks/INDEX.md) (pick a track) → handbook chapters → a recipe → references / `api/`**.\nAnswer in the user's language; keep API names exact. Skill text is English for precision and token economy.\n\nActivate this engineering workflow only for Roblox/Luau engineering or scene-art work. An incidental mention"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-RU-01",
+      "must_index": 1,
+      "must": "real supported effects",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: real supported effects.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |\n| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |\n| `Instance.new(\"Shader\")`, `material.Shader`, custom HLSL/GLSL FAKE | Roblox has no user shaders | materials/MaterialVariant/SurfaceAppearance, post effects, `EditableImage`/`EditableMesh` (CPU-side, budgeted) | `tools/api.py --search Shader` (none) |\n| `InputService`, `game:GetService(\"Input\")` FAKE | wrong service name | `UserInputService`, `ContextActionService`, InputAction instances | `tools/api.py UserInputService` |"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-RU-01",
+      "must_index": 2,
+      "must": "device/quality tiers",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: device/quality tiers.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/07-quality-tiers.md",
+          "quote": "\n## Tier table (starting point)\n| Knob | Low | Medium | High | Ultra |\n|---|---|---|---|---|"
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-RU-01",
+      "must_index": 3,
+      "must": "measure on target devices",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: measure on target devices.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/07-quality-tiers.md",
+          "quote": "- Do not assume the script can override all engine graphics settings.\n- Select tiers from measured device performance.\n- Keep gameplay rules independent of visual quality.\n- Measure CPU and GPU separately when reducing cost."
+        }
+      ]
+    },
+    {
+      "case_id": "GFX-RU-01",
+      "must_index": 4,
+      "must": "no fake ray tracing or shader API",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: no fake ray tracing or shader API.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |\n| `Instance.new(\"Shader\")`, `material.Shader`, custom HLSL/GLSL FAKE | Roblox has no user shaders | materials/MaterialVariant/SurfaceAppearance, post effects, `EditableImage`/`EditableMesh` (CPU-side, budgeted) | `tools/api.py --search Shader` (none) |\n| `InputService`, `game:GetService(\"Input\")` FAKE | wrong service name | `UserInputService`, `ContextActionService`, InputAction instances | `tools/api.py UserInputService` |\n| `Instance.new(\"UIFlexLayout\")` FAKE | flex is a property set | `UIListLayout` (`HorizontalFlex`, `Wraps`) + `UIFlexItem` | ui chapter |"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-01",
+      "must_index": 0,
+      "must": "no: Studio/plugin-only write",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: no: Studio/plugin-only write.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "  `Lighting.LightingStyle` (`Realistic` | `Soft`) and `Lighting.PrioritizeLightingQuality` (bool). Both are\n  **Studio/plugin-only writes** (PluginOrOpenCloud capability; docs: \"modifiable only in the Properties window\").\n  Game scripts can read them. So: pick the lighting style in Studio; runtime \"graphics presets\" change other things.\n- `Realistic` = most advanced lighting + shadows (the old \"Future\" look: per-pixel local-light shadows, specular,"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-01",
+      "must_index": 1,
+      "must": "set in Studio Properties",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: set in Studio Properties.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "  **Studio/plugin-only writes** (PluginOrOpenCloud capability; docs: \"modifiable only in the Properties window\").\n  Game scripts can read them. So: pick the lighting style in Studio; runtime \"graphics presets\" change other things.\n- `Realistic` = most advanced lighting + shadows (the old \"Future\" look: per-pixel local-light shadows, specular,\n  PBR response). `Soft` = flat, retro Roblox look; with `PrioritizeLightingQuality = true`, Soft uses shadow maps"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-02",
+      "must_index": 0,
+      "must": "120 studs",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: 120 studs.",
+      "evidence": [
+        {
+          "ref": "references/limits.md",
+          "quote": "| `collision-groups`: Current maximum collision groups. | 32 | groups | documented | cd:reference/engine/classes/PhysicsService | 2026-10-02 / 2026-12-31 |\n| `local-light-range`: Maximum PointLight, SpotLight and SurfaceLight range. | 120 | studs | documented | cd:reference/engine/classes/Lighting | 2026-10-02 / 2026-12-31 |\n| `highlight-slots`: Client-side simultaneous Highlight slots; disabled highlights still consume slots. | 255 | instances/client | documented | cd:effects/highlighting | 2026-10-02 / 2026-12-31 |\n| `camera-field-of-view`: Vertical Camera FieldOfView clamp. | [1, 120] | degrees | documented | cd:reference/engine/classes/Camera | 2026-10-02 / 2026-12-31 |"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-03",
+      "must_index": 0,
+      "must": "pools of light via SpotLights",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: pools of light via SpotLights.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/realistic-dark-corridor.md",
+          "quote": "<!-- /code -->\n- **Pools**: `SpotLight` pointing down from each fixture (Angle 70–90, Range 14–18, Brightness 2–3) → hard-edged\n  pools; every other one `Shadows = true`. Fixture `Neon` so bloom catches it.\n- **Door spill**: `SurfaceLight` on the door gap, narrow, warm; the only warm light in a cool corridor."
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-03",
+      "must_index": 1,
+      "must": "very low ambient",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: very low ambient.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/realistic-dark-corridor.md",
+          "quote": "\t\tBrightness = 0,\n\t\tAmbient = rgb(3, 3, 4),\n\t\tOutdoorAmbient = rgb(0, 0, 0),\n\t\tEnvironmentDiffuseScale = 0,"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-03",
+      "must_index": 2,
+      "must": "few shadowed lights",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: few shadowed lights.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/realistic-dark-corridor.md",
+          "quote": "- **Pools**: `SpotLight` pointing down from each fixture (Angle 70–90, Range 14–18, Brightness 2–3) → hard-edged\n  pools; every other one `Shadows = true`. Fixture `Neon` so bloom catches it.\n- **Door spill**: `SurfaceLight` on the door gap, narrow, warm; the only warm light in a cool corridor.\n- **Exit sign**: small green/red `Neon` part + tiny `PointLight` (Range 6, Brightness 0.5)."
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-03",
+      "must_index": 3,
+      "must": "fixture glow, exposure last",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The ordered workflow places fixture lighting before exposure; the corridor recipe separately calls for Neon fixture glow.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "7. **Atmosphere & sky** ([02](02-atmosphere-sky-post.md)): depth, colour of distance, mood.\n8. **Exposure**: `ExposureCompensation` to put mid-greys where you want them.\n9. **Post**: small ColorCorrection contrast/tint, Bloom with high threshold, optional ColorGrading preset,\n   DepthOfField only for cinematic/menus."
+        },
+        {
+          "ref": "recipes/graphics/realistic-dark-corridor.md",
+          "quote": "- **Pools**: `SpotLight` pointing down from each fixture (Angle 70–90, Range 14–18, Brightness 2–3) → hard-edged\n  pools; every other one `Shadows = true`. Fixture `Neon` so bloom catches it.\n- **Door spill**: `SurfaceLight` on the door gap, narrow, warm; the only warm light in a cool corridor.\n- **Exit sign**: small green/red `Neon` part + tiny `PointLight` (Range 6, Brightness 0.5)."
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-04",
+      "must_index": 0,
+      "must": "effects parented to Camera on the client",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: effects parented to Camera on the client.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/02-atmosphere-sky-post.md",
+          "quote": "\n## Post-processing (in `Lighting` = everyone; in `Camera` = that player only)\n| Effect | Defaults | Realistic guidance | Pitfalls |\n|---|---|---|---|"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-04",
+      "must_index": 1,
+      "must": "tween in/out, destroy after",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: tween in/out, destroy after.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/02-atmosphere-sky-post.md",
+          "quote": "Stacking: one of each type is normal; multiple ColorCorrection effects multiply — keep one \"base grade\" in Lighting\nand add temporary ones (damage flash, dream) in Camera on the client, tweened in/out and destroyed afterwards.\n\n## Weather and time recipes (starting points)"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-05",
+      "must_index": 0,
+      "must": "SpotLight core + wide spill",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: SpotLight core + wide spill.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/realistic-flashlight.md",
+          "quote": "  every PreRender: position = camera × hold offset (right hand, below eye); rotation lerps toward the camera (hand lag)\n  core SpotLight: Angle 32, Brightness 2.6, Range 55, Shadows ON  (the one shadowed light the player carries)\n  spill SpotLight: Angle 85, Brightness 0.5, Range 30, Shadows off\n  toggle (F / DPadUp / touch) → Toggle remote; pitch → Pitch unreliable remote, ≤ 5/s, only on > 3° change"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-05",
+      "must_index": 1,
+      "must": "shadows on for own light",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: shadows on for own light.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/realistic-flashlight.md",
+          "quote": "  every PreRender: position = camera × hold offset (right hand, below eye); rotation lerps toward the camera (hand lag)\n  core SpotLight: Angle 32, Brightness 2.6, Range 55, Shadows ON  (the one shadowed light the player carries)\n  spill SpotLight: Angle 85, Brightness 0.5, Range 30, Shadows off\n  toggle (F / DPadUp / touch) → Toggle remote; pitch → Pitch unreliable remote, ≤ 5/s, only on > 3° change"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-05",
+      "must_index": 2,
+      "must": "lag/spring",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: lag/spring.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/realistic-flashlight.md",
+          "quote": "| Range | throw distance | 40–70 (engine clamps at 120) |\n| lag sharpness (18) | hand inertia | 12 (heavy) – 25 (snappy) |\n| Colour | mood | incandescent (255, 236, 205) · LED (240, 245, 255) |\nScene support: the flashlight looks best with low Ambient and some specular surfaces (wet floors, varnish)."
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-05",
+      "must_index": 3,
+      "must": "others see it via replicated state",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: others see it via replicated state.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/realistic-flashlight.md",
+          "quote": "```\nWhy: the owner needs zero latency (local part), others need a plausible beam (replicated state, local light), and\nshadow cost stays at one moving shadowed light per client.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-06",
+      "must_index": 0,
+      "must": "client-side single loop",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: client-side single loop.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/flickering-fluorescent.md",
+          "quote": "Server/procgen/Studio: tag the panel part \"FlickerLight\" (lights are its descendants). Nothing replicates per frame.\nClient: Binder collects panels → ONE loop at 30 Hz animates only panels within 80 studs of the camera\n   per-panel program (seeded from its position → same on every client):\n     stable 3–12 s → burst 0.15–1.2 s of irregular toggles every 30–120 ms → stable …"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-06",
+      "must_index": 1,
+      "must": "distance culling",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: distance culling.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/flickering-fluorescent.md",
+          "quote": "```\nWhy: cosmetic → client-only (no network); deterministic seed keeps players' views similar; distance culling keeps\ncost flat no matter how many panels exist; material swap makes the bloom flicker with the light.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-06",
+      "must_index": 2,
+      "must": "seeded pattern",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: seeded pattern.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/flickering-fluorescent.md",
+          "quote": "```\nWhy: cosmetic → client-only (no network); deterministic seed keeps players' views similar; distance culling keeps\ncost flat no matter how many panels exist; material swap makes the bloom flicker with the light.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-06",
+      "must_index": 3,
+      "must": "photosensitivity",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: photosensitivity.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/flickering-fluorescent.md",
+          "quote": "## Photosensitivity\nKeep flicker local to fixtures (never flash the whole screen), keep bursts short and rare, respect Reduced Motion,\nand consider a \"reduce flashing\" setting that disables bursts entirely. Full-screen flashes above ~3 per second are a\nknown seizure risk."
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-07",
+      "must_index": 0,
+      "must": "with Atmosphere present legacy fog is ignored",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: with Atmosphere present legacy fog is ignored.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/02-atmosphere-sky-post.md",
+          "quote": "| `Decay` [<!-- fact-value: atmosphere-decay-default -->0.3608, 0.2353, 0.0549<!-- /fact-value -->] | hue away from the sun (needs Haze and Glare > 0) | darker/cooler than Color for gradient skies | <!-- fact-examples: {\"values\": [\"0\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->\nAtmosphere replaces legacy fog. For **interiors**, Atmosphere still applies over distance — long corridors fade into\nAtmosphere colour, which is great for liminal depth (dim warm haze) but set Density low if interiors are short.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-07",
+      "must_index": 1,
+      "must": "use Atmosphere Density/Haze",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: use Atmosphere Density/Haze.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/02-atmosphere-sky-post.md",
+          "quote": "|---|---|---|\n| `Density` [<!-- fact-value: atmosphere-density-default -->0.395000011<!-- /fact-value -->] | amount of particles; obscures distant objects (and sky behind them) | clear day 0.25–0.35; hazy 0.4–0.5; fog 0.6–0.8 (combine with low Offset) | <!-- fact-examples: {\"values\": [\"0.25\", \"0.35\", \"0.4\", \"0.5\", \"0.6\", \"0.8\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->\n| `Offset` [<!-- fact-value: atmosphere-offset-default -->0<!-- /fact-value -->] | light transmission camera↔sky: high = horizon silhouette, low = distant objects blend into sky | 0–0.25 for seamless open worlds; higher for crisp skylines | <!-- fact-examples: {\"values\": [\"0.25\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->\n| `Haze` [<!-- fact-value: atmosphere-haze-default -->0<!-- /fact-value -->] | haziness above horizon & into distance, tinted by `Color` | 0–2 typical; > 3 gets milky fast | <!-- fact-examples: {\"values\": [\"2\", \"3\"], \"reason\": \"Illustrative aesthetic/test/code values; not additional platform limits.\"} -->"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-08",
+      "must_index": 0,
+      "must": "one owner per property",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: one owner per property.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/lighting-controller-presets.md",
+          "quote": "## Server-wide changes (day/night, story events)\nGive each property exactly one owner. For a day/night cycle, don't write `ClockTime` from the server every frame (it\nwould replicate constantly); publish the cycle once and let every client compute the same time:\n"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-08",
+      "must_index": 2,
+      "must": "don't write same property on both sides",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: don't write same property on both sides.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/lighting-controller-presets.md",
+          "quote": "   hysteresis: the new zone must win 2 checks in a row → then TweenService blend 1.5 s (cancel running tweens first)\nOwnership: only this client script writes these properties; the server never touches them (it would overwrite).\nStudio-only properties (LightingStyle, PrioritizeLightingQuality) are chosen in Studio, never in presets.\n```"
+        }
+      ]
+    },
+    {
+      "case_id": "LIT-08",
+      "must_index": 1,
+      "must": "server owns authoritative cycle/time inputs; clients derive visual ClockTime and own zone properties",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The recipe publishes authoritative cycle metadata from the server, computes time on each client, and excludes ClockTime from competing zone presets. Corrected an overprescriptive evaluation criterion; see criterion-corrections.json.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/lighting-controller-presets.md",
+          "quote": "Give each property exactly one owner. For a day/night cycle, don't write `ClockTime` from the server every frame (it\nwould replicate constantly); publish the cycle once and let every client compute the same time:\n\n```luau\n--!strict\n-- Server (once, or when the cycle changes): the cycle definition is shared state.\nlocal Workspace = game:GetService(\"Workspace\")\nWorkspace:SetAttribute(\"DayStart\", Workspace:GetServerTimeNow())\nWorkspace:SetAttribute(\"DayLength\", 20 * 60) -- real seconds per in-game day\n```\n\n```luau\n--!strict\n-- Client: derive ClockTime from server time at 10 Hz (the sun moves ~0.03° per update on a 20-minute day — invisible).\nlocal Lighting = game:GetService(\"Lighting\")\nlocal RunService = game:GetService(\"RunService\")\nlocal Workspace = game:GetService(\"Workspace\")\n\nlocal START_HOUR = 6\nlocal accumulator = 0\nRunService.PreRender:Connect(function(dt: number)\n\taccumulator += dt\n\tif accumulator < 0.1 then\n\t\treturn\n\tend\n\taccumulator = 0\n\tlocal start = Workspace:GetAttribute(\"DayStart\")\n\tlocal length = Workspace:GetAttribute(\"DayLength\")\n\tif type(start) ~= \"number\" or type(length) ~= \"number\" or length <= 0 then\n\t\treturn\n\tend\n\tlocal days = (Workspace:GetServerTimeNow() - start) / length\n\tLighting.ClockTime = (START_HOUR + days * 24) % 24\nend)\n```\nWith a cycle running, remove `ClockTime` (and anything else the cycle owns) from the client presets. Server\ngameplay that depends on night (spawning monsters) computes the same formula from the attributes — it never reads\n`Lighting`."
+        }
+      ]
+    },
+    {
+      "case_id": "LIGHT-RU-01",
+      "must_index": 0,
+      "must": "answer in Russian",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: answer in Russian.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "**SKILL.md → [tracks/INDEX.md](tracks/INDEX.md) (pick a track) → handbook chapters → a recipe → references / `api/`**.\nAnswer in the user's language; keep API names exact. Skill text is English for precision and token economy.\n\nActivate this engineering workflow only for Roblox/Luau engineering or scene-art work. An incidental mention"
+        }
+      ]
+    },
+    {
+      "case_id": "LIGHT-RU-01",
+      "must_index": 1,
+      "must": "plugin execution privilege differs from game scripts",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: plugin execution privilege differs from game scripts.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/24-studio-mcp-testing.md",
+          "quote": "## Rules for using it safely and honestly\n1. **Plugin security ≠ game script.** `execute_luau` can call PluginSecurity APIs (e.g. `StudioTestService`,\n   `ScriptProfilerService`). Success there proves nothing about what a game `Script` may call — check\n   `python3 \"$SKILL/tools/api.py\" Class.Member` (\"game scripts: …\") before putting the call in game code."
+        }
+      ]
+    },
+    {
+      "case_id": "LIGHT-RU-01",
+      "must_index": 2,
+      "must": "LightingStyle cannot be written by ordinary scripts",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: LightingStyle cannot be written by ordinary scripts.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "  `Lighting.LightingStyle` (`Realistic` | `Soft`) and `Lighting.PrioritizeLightingQuality` (bool). Both are\n  **Studio/plugin-only writes** (PluginOrOpenCloud capability; docs: \"modifiable only in the Properties window\").\n  Game scripts can read them. So: pick the lighting style in Studio; runtime \"graphics presets\" change other things.\n- `Realistic` = most advanced lighting + shadows (the old \"Future\" look: per-pixel local-light shadows, specular,"
+        }
+      ]
+    },
+    {
+      "case_id": "LIGHT-RU-01",
+      "must_index": 3,
+      "must": "Studio configuration and writable runtime alternatives",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: Studio configuration and writable runtime alternatives.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "## Runtime lighting changes (what scripts may change)\nScripts can change: `ClockTime`, `Brightness`, `ExposureCompensation`, `Ambient`, `OutdoorAmbient`,\n`EnvironmentDiffuseScale/SpecularScale`, `ColorShift_*`, `GlobalShadows`, `ShadowSoftness`, `GeographicLatitude`,\nAtmosphere/Sky/Clouds properties, post effects, local lights. Not: `LightingStyle`, `PrioritizeLightingQuality`,"
+        }
+      ]
+    },
+    {
+      "case_id": "STATE-PLUGIN-01",
+      "must_index": 0,
+      "must": "edits durable project file",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: edits durable project file.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/24-studio-mcp-testing.md",
+          "quote": "   editing. Runtime changes made during play are discarded when it stops — they are never a fix.\n4. **Patch the source of truth.** If the project uses Rojo or Script Sync, the disk is authoritative: edit the files,\n   let sync apply them, then re-test. A `multi_edit` on a Rojo-managed script is overwritten on the next sync.\n5. **Bounded waits.** A yielding `execute_luau` can't resume while the DataModel is paused (debugger); use polling"
+        }
+      ]
+    },
+    {
+      "case_id": "STATE-PLUGIN-01",
+      "must_index": 1,
+      "must": "removes privileged LightingStyle write from game code",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: removes privileged LightingStyle write from game code.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "  `Lighting.LightingStyle` (`Realistic` | `Soft`) and `Lighting.PrioritizeLightingQuality` (bool). Both are\n  **Studio/plugin-only writes** (PluginOrOpenCloud capability; docs: \"modifiable only in the Properties window\").\n  Game scripts can read them. So: pick the lighting style in Studio; runtime \"graphics presets\" change other things.\n- `Realistic` = most advanced lighting + shadows (the old \"Future\" look: per-pixel local-light shadows, specular,"
+        }
+      ]
+    },
+    {
+      "case_id": "STATE-PLUGIN-01",
+      "must_index": 2,
+      "must": "keeps valid writable settings",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: keeps valid writable settings.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "## Runtime lighting changes (what scripts may change)\nScripts can change: `ClockTime`, `Brightness`, `ExposureCompensation`, `Ambient`, `OutdoorAmbient`,\n`EnvironmentDiffuseScale/SpecularScale`, `ColorShift_*`, `GlobalShadows`, `ShadowSoftness`, `GeographicLatitude`,\nAtmosphere/Sky/Clouds properties, post effects, local lights. Not: `LightingStyle`, `PrioritizeLightingQuality`,"
+        }
+      ]
+    },
+    {
+      "case_id": "STATE-PLUGIN-01",
+      "must_index": 3,
+      "must": "explains separate Studio configuration",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: explains separate Studio configuration.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/01-lighting.md",
+          "quote": "  **Studio/plugin-only writes** (PluginOrOpenCloud capability; docs: \"modifiable only in the Properties window\").\n  Game scripts can read them. So: pick the lighting style in Studio; runtime \"graphics presets\" change other things.\n- `Realistic` = most advanced lighting + shadows (the old \"Future\" look: per-pixel local-light shadows, specular,\n  PBR response). `Soft` = flat, retro Roblox look; with `PrioritizeLightingQuality = true`, Soft uses shadow maps"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-01",
+      "must_index": 0,
+      "must": "scale-based size/position + constraints",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: scale-based size/position + constraints.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "|---|---|\n| Size relative to screen | `UDim2` **scale** for containers; offset for small fixed details (borders, padding) |\n| Keep proportions (square icons, cards) | `UIAspectRatioConstraint` |\n| Min/max sizes | `UISizeConstraint`, `UITextSizeConstraint` (with `TextScaled`) |"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-01",
+      "must_index": 1,
+      "must": "Activated instead of MouseButton1Click",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: Activated instead of MouseButton1Click.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "## Input across devices\n- Buttons: use `GuiButton.Activated` (works for mouse, touch, gamepad select) — not `MouseButton1Click` alone.\n- Gamepad: every interactive element `Selectable = true`; set `GuiService.SelectedObject` when a menu opens;\n  `NextSelectionUp/Down/Left/Right` or `SelectionGroup` for navigation; close with ButtonB; show button glyphs"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-01",
+      "must_index": 2,
+      "must": "Selectable + gamepad selection",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: Selectable + gamepad selection.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "- Buttons: use `GuiButton.Activated` (works for mouse, touch, gamepad select) — not `MouseButton1Click` alone.\n- Gamepad: every interactive element `Selectable = true`; set `GuiService.SelectedObject` when a menu opens;\n  `NextSelectionUp/Down/Left/Right` or `SelectionGroup` for navigation; close with ButtonB; show button glyphs\n  (`UserInputService:GetImageForKeyCode`, `InputActionLabel` beta)."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-01",
+      "must_index": 3,
+      "must": "ScreenInsets/safe area",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: ScreenInsets/safe area.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "## Safe areas and insets\n`ScreenGui.ScreenInsets`: `CoreUISafeInsets` (default; clear of top bar + notches — use for interactive UI),\n`DeviceSafeInsets` (clear of notches only), `TopbarSafeInsets` (lives beside the top bar controls, flexes\nhorizontally), `None` (fullscreen, backgrounds only). `ScreenGui.SafeAreaCompatibility` handles cutout extension."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-01",
+      "must_index": 4,
+      "must": "no parent-in-constructor",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: no parent-in-constructor.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "## Constructing UI instances\nCreate UI instances without the parent argument to `Instance.new`. Set properties and\nconnect handlers before assigning `Parent` last, so partially configured controls do\nnot enter a live layout tree. Apply this to buttons as well as their containers."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-02",
+      "must_index": 0,
+      "must": "server authority; client renders snapshots",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: server authority; client renders snapshots.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/inventory.md",
+          "quote": "Evidence: pure model TYPECHECKED + CLI-EXECUTED (`examples/tests/inventory.spec.luau`, 6 tests) · service/client\nTYPECHECKED · **not run in Studio**. Side: server authority, client view.\nNeeds: [interaction system](interaction-system.md) (pickups), `examples/lib`. Persistence: [save system](save-system.md).\n"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-02",
+      "must_index": 1,
+      "must": "ResetOnSpawn false",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: ResetOnSpawn false.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/inventory.md",
+          "quote": "  consumed) and when hurt (heals 25, consumed); right-click drop → pickups appear in front; a second player can pick\n  them up; respawn → hotbar persists (`ResetOnSpawn=false`, server state unchanged).\n- Adversarial (temporary client script): `InventoryAction:FireServer(\"Use\", 0/0)`, `(\"Use\", 99)`, `(\"Move\", 1, 1.5)`,\n  `(\"Spawn\", \"Keycard\")`, 100 calls in a loop → all rejected or rate limited, no server errors."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-02",
+      "must_index": 2,
+      "must": "input via ContextActionService/InputActions incl. gamepad",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The integration section now describes gamepad actions and touch bindings explicitly while honestly identifying keyboard-only sample code.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/inventory.md",
+          "quote": "The sample hotbar key map demonstrates keyboard input; it is not a complete gamepad\nbinding implementation. For a gamepad hotbar, bind previous-slot, next-slot and use-slot\nactions through ContextActionService or InputActions, keep an explicit selected slot,\nand send the same validated slot intent used by keyboard input. Provide touch buttons"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-03",
+      "must_index": 0,
+      "must": "TextScaled + UITextSizeConstraint or AutomaticSize",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: TextScaled + UITextSizeConstraint or AutomaticSize.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "- Prefer fixed `TextSize` per style + `TextWrapped`; `TextScaled` produces inconsistent sizes across labels — if\n  used, always add `UITextSizeConstraint` (max) and apply per group.\n- `RichText = true` for inline styling; escape user strings (`<`, `>`, `&`) before inserting into rich text.\n- Measure text: `TextService:GetTextBoundsAsync(params)`."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-03",
+      "must_index": 1,
+      "must": "scale layout",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: scale layout.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "|---|---|\n| Size relative to screen | `UDim2` **scale** for containers; offset for small fixed details (borders, padding) |\n| Keep proportions (square icons, cards) | `UIAspectRatioConstraint` |\n| Min/max sizes | `UISizeConstraint`, `UITextSizeConstraint` (with `TextScaled`) |"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-03",
+      "must_index": 2,
+      "must": "GuiService.PreferredTextSize",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: GuiService.PreferredTextSize.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "`@` queries above.\n- [ ] Readable text size and contrast; scale with `PreferredTextSize`; don't encode information by color alone.\n- [ ] Reduced motion setting respected (`ReducedMotionEnabled`: camera shake, bob, UI animations).\n- [ ] All actions reachable by gamepad and touch."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-04",
+      "must_index": 0,
+      "must": "reduced motion (GuiService.ReducedMotionEnabled)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: reduced motion (GuiService.ReducedMotionEnabled).",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "## Accessibility checklist\n- Respect `GuiService.ReducedMotionEnabled` as the default for camera shake/bobbing (the bodycam recipe does);\n  `PreferredTextSize` and `PreferredTransparency` for text size and panel opacity.\n- Subtitles toggle drives your caption system; show captions for important sounds by default."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-04",
+      "must_index": 1,
+      "must": "camera shake/bob sliders",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: camera shake/bob sliders.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "is never the sole carrier of information. Verify selected, disabled, and warning states.\nCamera shake and bobbing should each have a user-controlled intensity slider where\nthose effects are present; the included ViewBobbing toggle is a minimal on/off example,\nnot an implementation of a bob-intensity slider."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-04",
+      "must_index": 2,
+      "must": "subtitles/captions",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: subtitles/captions.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "  `PreferredTextSize` and `PreferredTransparency` for text size and panel opacity.\n- Subtitles toggle drives your caption system; show captions for important sounds by default.\n- Every control reachable with a gamepad; visible selection; no hover-only information.\n- Test in Studio's Device Emulator (phone portrait/landscape) and with a controller."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-04",
+      "must_index": 3,
+      "must": "flash reduction",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: flash reduction.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "## Accessibility integration obligations\nOffer a flash-reduction preference and have the owning effect controller suppress\nflashing bursts when enabled. This recipe's current schema does not implement that\ncontroller; wire and verify it before claiming flash reduction is supported."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-04",
+      "must_index": 4,
+      "must": "colour-blind-safe cues",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: colour-blind-safe cues.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "controller; wire and verify it before claiming flash reduction is supported.\nUse colour-blind-safe cues: pair colour with text, shape, icons, or patterns so colour\nis never the sole carrier of information. Verify selected, disabled, and warning states.\nCamera shake and bobbing should each have a user-controlled intensity slider where"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-05",
+      "must_index": 0,
+      "must": "InputContext priority/Sink or disable gameplay context",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: InputContext priority/Sink or disable gameplay context.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/19-input.md",
+          "quote": "- Give every action a keyboard/mouse, gamepad and touch binding.\n- Menu open → enable `MenuContext` with `Sink`/higher `Priority` (or disable `PlayContext`) → gameplay stops reacting.\n\n## ContextActionService pattern"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-05",
+      "must_index": 1,
+      "must": "handle Cancel/End",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: handle Cancel/End.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/19-input.md",
+          "quote": "```\nAlways handle `Cancel`/`End` (focus loss, menu opening, rebinding) — otherwise sprint stays \"held\".\n\n## UserInputService essentials"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-05",
+      "must_index": 2,
+      "must": "gameProcessedEvent for UIS",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: gameProcessedEvent for UIS.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/19-input.md",
+          "quote": "## UserInputService essentials\n- `InputBegan(input, gameProcessedEvent)`: **ignore when `gameProcessedEvent` is true** (typing in chat/TextBox,\n  clicking UI).\n- Mouse: `UserInputService.MouseBehavior` (`Default`, `LockCenter`, `LockCurrentPosition`), `GetMouseDelta()`,"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-06",
+      "must_index": 0,
+      "must": "schema + sanitize on server",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: schema + sanitize on server.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "  disagree about valid values.\n- **Server sanitizes** even though settings are \"harmless\": saved junk (huge strings, NaN, extra keys) bloats\n  profiles and crashes other code later.\n- **Client asks for its settings** instead of the server pushing on join → no race with the handler connecting."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-06",
+      "must_index": 1,
+      "must": "debounced saves",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: debounced saves.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "SettingsClient: menu rows generated from Schema · buttons only (−/+, toggle, cycle) → mouse/touch/gamepad\n                apply immediately · save 1 s after the last change (debounce) · M / gamepad Select / touch button\nSettingsServer: SaveSettings (flood-limited) → sanitize → persistence hook\n                SettingsSync: client asks after its handler is connected → server sends saved settings"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-06",
+      "must_index": 2,
+      "must": "other systems read settings; one owner per property",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: other systems read settings; one owner per property.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/settings-menu.md",
+          "quote": "  (`GuiService.SelectedObject`).\n- **Other systems read ClientSettings** rather than the menu writing everything → camera/audio/graphics stay the\n  single owners of their properties (the FOV line in `apply` is only for projects without a custom camera).\n"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-RU-01",
+      "must_index": 0,
+      "must": "answer in Russian",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: answer in Russian.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "**SKILL.md → [tracks/INDEX.md](tracks/INDEX.md) (pick a track) → handbook chapters → a recipe → references / `api/`**.\nAnswer in the user's language; keep API names exact. Skill text is English for precision and token economy.\n\nActivate this engineering workflow only for Roblox/Luau engineering or scene-art work. An incidental mention"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-RU-01",
+      "must_index": 1,
+      "must": "inspect existing UI structure",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: inspect existing UI structure.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "## Workflow (follow in order)\n1. **Inspect the project** before writing: structure (services/folders, Rojo or Studio-only), manifests and locks\n   (`default.project.json`, `wally.toml`, `pesde.toml`), frameworks already in use (Knit, Fusion, React, ECS, Blink/Zap,\n   ProfileStore… → [ecosystem](references/ecosystem.md)), Luau mode (`--!strict`?), target devices. Follow what exists."
+        }
+      ]
+    },
+    {
+      "case_id": "UI-RU-01",
+      "must_index": 2,
+      "must": "responsive sizing and safe areas",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: responsive sizing and safe areas.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "## Safe areas and insets\n`ScreenGui.ScreenInsets`: `CoreUISafeInsets` (default; clear of top bar + notches — use for interactive UI),\n`DeviceSafeInsets` (clear of notches only), `TopbarSafeInsets` (lives beside the top bar controls, flexes\nhorizontally), `None` (fullscreen, backgrounds only). `ScreenGui.SafeAreaCompatibility` handles cutout extension."
+        },
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "|---|---|\n| Size relative to screen | `UDim2` **scale** for containers; offset for small fixed details (borders, padding) |\n| Keep proportions (square icons, cards) | `UIAspectRatioConstraint` |\n| Min/max sizes | `UISizeConstraint`, `UITextSizeConstraint` (with `TextScaled`) |"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-RU-01",
+      "must_index": 3,
+      "must": "gamepad focus/navigation",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: gamepad focus/navigation.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "- Gamepad: every interactive element `Selectable = true`; set `GuiService.SelectedObject` when a menu opens;\n  `NextSelectionUp/Down/Left/Right` or `SelectionGroup` for navigation; close with ButtonB; show button glyphs\n  (`UserInputService:GetImageForKeyCode`, `InputActionLabel` beta).\n- Touch: hit targets ≥ 44–48 px; avoid bottom-left/right thumb zones used by the default joystick/jump button;"
+        }
+      ]
+    },
+    {
+      "case_id": "UI-RU-01",
+      "must_index": 4,
+      "must": "touch and device-emulator verification",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: touch and device-emulator verification.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "| Anchor points | set `AnchorPoint` (0.5,0.5 for centered) before positioning |\nTest in Studio's Device Emulator: phone portrait/landscape, tablet, 4K desktop, console (10-foot UI, larger text),\nand with the top bar/chat open. Text must stay ≥ ~14 px effective on phones.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "GAP-UI-01",
+      "must_index": 0,
+      "must": "provide explicit gamepad selection navigation",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: provide explicit gamepad selection navigation.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "- Gamepad: every interactive element `Selectable = true`; set `GuiService.SelectedObject` when a menu opens;\n  `NextSelectionUp/Down/Left/Right` or `SelectionGroup` for navigation; close with ButtonB; show button glyphs\n  (`UserInputService:GetImageForKeyCode`, `InputActionLabel` beta).\n- Touch: hit targets ≥ 44–48 px; avoid bottom-left/right thumb zones used by the default joystick/jump button;"
+        }
+      ]
+    },
+    {
+      "case_id": "GAP-UI-01",
+      "must_index": 1,
+      "must": "verify touch and gamepad interaction",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: verify touch and gamepad interaction.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/18-ui-ux.md",
+          "quote": "- [ ] Reduced motion setting respected (`ReducedMotionEnabled`: camera shake, bob, UI animations).\n- [ ] All actions reachable by gamepad and touch.\n- [ ] Captions/visual cues for important audio.\n- [ ] No flashing effects above ~3 Hz full-screen."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-01",
+      "must_index": 0,
+      "must": "one manager loop with budget and LOD",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: one manager loop with budget and LOD.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-patrol.md",
+          "quote": "|---|---|---|\n| per-NPC `while true do ... task.wait() end` | 100 NPCs = 100 threads doing full work every frame | one loop, budgeted, LOD |\n| `MoveToFinished:Wait()` inside the loop | blocks that NPC's logic up to 8 s; can't react | distance checks each think |\n| `ComputeAsync` every frame | pathfinding is the most expensive call | throttled + capped |"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-01",
+      "must_index": 1,
+      "must": "throttled pathfinding, no MoveToFinished:Wait in loop",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: throttled pathfinding, no MoveToFinished:Wait in loop.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-patrol.md",
+          "quote": "| `MoveToFinished:Wait()` inside the loop | blocks that NPC's logic up to 8 s; can't react | distance checks each think |\n| `ComputeAsync` every frame | pathfinding is the most expensive call | throttled + capped |\n| client-owned NPC physics | exploiters fling NPCs; jitter | `root:SetNetworkOwner(nil)` |\n"
+        },
+        {
+          "ref": "recipes/gameplay/npc-patrol.md",
+          "quote": "| per-NPC `while true do ... task.wait() end` | 100 NPCs = 100 threads doing full work every frame | one loop, budgeted, LOD |\n| `MoveToFinished:Wait()` inside the loop | blocks that NPC's logic up to 8 s; can't react | distance checks each think |\n| `ComputeAsync` every frame | pathfinding is the most expensive call | throttled + capped |\n| client-owned NPC physics | exploiters fling NPCs; jitter | `root:SetNetworkOwner(nil)` |"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-01",
+      "must_index": 2,
+      "must": "task.* not wait",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: task.* not wait.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-patrol.md",
+          "quote": "\tinFlight += 1\n\ttask.spawn(function()\n\t\tlocal path = PathfindingService:CreatePath(m.agent)\n\t\tlocal ok = pcall(path.ComputeAsync, path, m.root.Position, goal)"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-01",
+      "must_index": 3,
+      "must": "SetNetworkOwner(nil)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: SetNetworkOwner(nil).",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/npc-patrol.md",
+          "quote": "| `ComputeAsync` every frame | pathfinding is the most expensive call | throttled + capped |\n| client-owned NPC physics | exploiters fling NPCs; jitter | `root:SetNetworkOwner(nil)` |\n\n## Code"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-02",
+      "must_index": 0,
+      "must": "no ComputeAsync every Heartbeat",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: no ComputeAsync every Heartbeat.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "Rules: thinking at 2–10 Hz is plenty; perception queries are the expensive part — cache and amortize; pathfinding is\n`ComputeAsync` (yields; worker threads) — rate-limit re-paths per NPC (e.g. ≥ 0.5–1 s and only if target moved\n> N studs).\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-02",
+      "must_index": 1,
+      "must": "replan on interval/target moved",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: replan on interval/target moved.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "Rules: thinking at 2–10 Hz is plenty; perception queries are the expensive part — cache and amortize; pathfinding is\n`ComputeAsync` (yields; worker threads) — rate-limit re-paths per NPC (e.g. ≥ 0.5–1 s and only if target moved\n> N studs).\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-02",
+      "must_index": 2,
+      "must": "direct MoveTo when visible",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: direct MoveTo when visible.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/20-npc-ai.md",
+          "quote": "- Pathfinding: cap concurrent `ComputeAsync` jobs (queue), reuse paths for NPCs heading to the same goal, prefer\n  direct movement when visible.\n- Parallel Luau for pure computations (vision cones, utility scores) with results applied serially.\n- Pool NPC models; avoid re-creating Humanoids."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-03",
+      "must_index": 0,
+      "must": "Heartbeat connection per character never disconnected",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: Heartbeat connection per character never disconnected.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "## Diagnosing the retained-character fixture\nA Heartbeat connection created for each character keeps its captured character alive\nunless cleanup disconnects it. Disconnect that connection on character removal and\nalso clean up remaining player-owned state on PlayerRemoving."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-03",
+      "must_index": 1,
+      "must": "table keyed by name+tick grows forever",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: table keyed by name+tick grows forever.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "also clean up remaining player-owned state on PlayerRemoving.\nA cache keyed by player name plus a fresh timestamp creates a new key on every update;\nit does not replace the previous sample and therefore grows without a bound. Store a\nbounded history or overwrite the current entry, and remove it when its owner leaves."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-03",
+      "must_index": 2,
+      "must": "disconnect on character removal / PlayerRemoving",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: disconnect on character removal / PlayerRemoving.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "A Heartbeat connection created for each character keeps its captured character alive\nunless cleanup disconnects it. Disconnect that connection on character removal and\nalso clean up remaining player-owned state on PlayerRemoving.\nA cache keyed by player name plus a fresh timestamp creates a new key on every update;"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-04",
+      "must_index": 0,
+      "must": "measure: MicroProfiler on device, identify the bound",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: measure: MicroProfiler on device, identify the bound.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "|---|---|---|\n| MicroProfiler | Ctrl+F6 (Studio/desktop client); mobile: Settings → MicroProfiler On → browse `http://<device-ip>:1338` | which engine task made this frame long; your `debug.profilebegin` labels |\n| Developer Console | F9 (client), server tabs if permitted | Memory (LuaHeap, InstanceCount, PlaceScriptMemory, PhysicsParts, Graphics*), Network, Scripts rate, Log |\n| Render Stats | Shift+F2 (client) / Studio Render Stats | draw calls, triangles, timing |"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-04",
+      "must_index": 1,
+      "must": "one change at a time",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: one change at a time.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "3. Classify frame bars (orange/blue/red) → pick the top label by total time.\n4. Form one hypothesis; change one thing; recapture under identical conditions.\n5. Keep the change only if the metric improved and visuals/gameplay are unchanged. Record numbers.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-04",
+      "must_index": 2,
+      "must": "no guesses as facts",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: no guesses as facts.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "bounded history or overwrite the current entry, and remove it when its owner leaves.\nLabel unverified performance causes as hypotheses, not measured facts. Do not invent\nFPS gains, memory totals, or profiler timings; report numbers only from saved captures\nwith the device, workload and before/after conditions."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-05",
+      "must_index": 0,
+      "must": "only helps numeric Luau hot paths",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: only helps numeric Luau hot paths.",
+      "evidence": [
+        {
+          "ref": "handbook/luau/06-performance-memory.md",
+          "quote": "- `--!native` at top of a server Script/ModuleScript or `@native` on specific functions compiles to machine code.\n  Helps numeric/table/buffer-heavy code; does little for code dominated by engine API calls.\n- Annotate parameters (`v: Vector3`, `b: buffer`) — native code specializes on annotations.\n- Limits: total native code size per game; functions > 64K instructions per block, > 32K blocks, 1M instructions"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-05",
+      "must_index": 1,
+      "must": "measure",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: measure.",
+      "evidence": [
+        {
+          "ref": "handbook/luau/06-performance-memory.md",
+          "quote": "## Order of work\n1. Measure (MicroProfiler / Script Profiler / Luau heap). 2. Remove work (don't run it, run it less often, run\nit for fewer objects). 3. Only then micro-optimize the remaining hot path. 4. Measure again.\nMicro-optimizations below matter only in code that runs thousands of times per frame."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-05",
+      "must_index": 2,
+      "must": "limits apply",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: limits apply.",
+      "evidence": [
+        {
+          "ref": "handbook/luau/06-performance-memory.md",
+          "quote": "- Annotate parameters (`v: Vector3`, `b: buffer`) — native code specializes on annotations.\n- Limits: total native code size per game; functions > 64K instructions per block, > 32K blocks, 1M instructions\n  per module fail to compile. Don't put `--!native` everywhere (startup time + memory).\n- Breakpoints disable native execution of that function. `debug.dumpcodesize()` (command bar, Server view) shows"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-05",
+      "must_index": 3,
+      "must": "doesn't speed up engine/rendering",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: doesn't speed up engine/rendering.",
+      "evidence": [
+        {
+          "ref": "handbook/luau/06-performance-memory.md",
+          "quote": "## Separating native and engine costs\nNative compilation accelerates eligible Luau instructions, not engine rendering,\nphysics, or the engine implementation behind an API call. Measure the relevant\nsubsystem before adding native annotations; a rendering bottleneck needs a rendering"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-06",
+      "must_index": 0,
+      "must": "shadows only on key lights",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: shadows only on key lights.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/03-local-lights.md",
+          "quote": "   optional rim/backlight to separate characters from background.\n3. **Shadow budget**: only key lights cast shadows (`Shadows = true`); fills never. Target a handful of shadowed\n   lights visible at once (mobile: fewer).\n4. **Colour temperature**: pick a palette — warm tungsten (255,200,150) vs cool fluorescent (220,235,255) vs"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-06",
+      "must_index": 1,
+      "must": "fills without shadows, smaller ranges",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: fills without shadows, smaller ranges.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/03-local-lights.md",
+          "quote": "   sodium-vapour orange (255,170,90) vs moonlight blue. Contrast warm vs cool areas; avoid rainbow lighting.\n5. **Falloff**: smaller Range + higher Brightness = pools of light and darkness (moody); large Range + low Brightness\n   = even wash (bright offices). Pools of light are the backbone of horror and liminal spaces.\n6. **Fixtures glow**: the fixture surface itself uses `Neon` material or a SurfaceAppearance emissive mask"
+        },
+        {
+          "ref": "handbook/graphics/03-local-lights.md",
+          "quote": "   optional rim/backlight to separate characters from background.\n3. **Shadow budget**: only key lights cast shadows (`Shadows = true`); fills never. Target a handful of shadowed\n   lights visible at once (mobile: fewer).\n4. **Colour temperature**: pick a palette — warm tungsten (255,200,150) vs cool fluorescent (220,235,255) vs"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-06",
+      "must_index": 2,
+      "must": "emissive fixtures",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: emissive fixtures.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/03-local-lights.md",
+          "quote": "   = even wash (bright offices). Pools of light are the backbone of horror and liminal spaces.\n6. **Fixtures glow**: the fixture surface itself uses `Neon` material or a SurfaceAppearance emissive mask\n   (`EmissiveMaskContent`, `EmissiveStrength`, `EmissiveTint`) so bloom catches the source, not the wall.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-06",
+      "must_index": 3,
+      "must": "measure computeLightingPerform before/after",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: measure computeLightingPerform before/after.",
+      "evidence": [
+        {
+          "ref": "handbook/graphics/03-local-lights.md",
+          "quote": "## Verifying a lighting optimization\nCapture `computeLightingPerform` before and after the proposed change under the same\ncamera route, graphics settings, device and visible scene. Report the captured cost,\nnot a guessed improvement from reducing the number of lights."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-07",
+      "must_index": 0,
+      "must": "server tweens replicate every frame, jitter",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: server tweens replicate every frame, jitter.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "| Big one-shot work (map gen, deserialization) freezes a frame | chunk across frames (`task.wait()` every N items / time budget), or parallel Luau |\n| Server `TweenService` on replicated parts | tween on clients (server tweens replicate every frame and jitter) |\n| Raycasts/overlap queries per frame for many actors | cache, reduce frequency, spatial partition, `OverlapParams.MaxParts` |\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-07",
+      "must_index": 1,
+      "must": "tween on clients from replicated state or use physics constraints for gameplay-relevant motion",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: tween on clients from replicated state or use physics constraints for gameplay-relevant motion.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "| Big one-shot work (map gen, deserialization) freezes a frame | chunk across frames (`task.wait()` every N items / time budget), or parallel Luau |\n| Server `TweenService` on replicated parts | tween on clients (server tweens replicate every frame and jitter) |\n| Raycasts/overlap queries per frame for many actors | cache, reduce frequency, spatial partition, `OverlapParams.MaxParts` |\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-08",
+      "must_index": 0,
+      "must": "MicroProfiler GC scope spikes",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: MicroProfiler GC scope spikes.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "| `Allocate Bandwidth and Run Senders` | outgoing (server) | replicate less, stop server-side tweens |\n| `GC` | Luau garbage collection cycle | reduce allocations in hot paths |\n\n## Workflow"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-08",
+      "must_index": 1,
+      "must": "reduce allocations in hot loops",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: reduce allocations in hot loops.",
+      "evidence": [
+        {
+          "ref": "handbook/luau/06-performance-memory.md",
+          "quote": "|---|---|---|\n| Allocation in hot loops (tables, closures, strings, `Vector3`?) | GC work; `Vector3` is a value type (cheap), tables/closures/strings are heap | reuse tables (`table.clear`), hoist closures, build strings once |\n| Crossing into the engine (property get/set, method calls on Instances) | each call marshals through the reflection layer | cache Instance references and read values once per frame; batch writes |\n| `Instance:GetDescendants()`/`GetChildren()` every frame | allocates big arrays | build registries from `ChildAdded`/tags once |"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-08",
+      "must_index": 2,
+      "must": "LuaHeap over time",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: LuaHeap over time.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "## Memory\n- Watch `LuaHeap` and `InstanceCount` in the Developer Console over time (server especially — it lives for hours).\n- Leaks: connections on `Player`/character not disconnected (enable `Workspace.PlayerCharacterDestroyBehavior`),\n  per-player tables not cleared, caches without eviction, instances parented to nil but referenced."
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-RU-01",
+      "must_index": 0,
+      "must": "answer in Russian",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: answer in Russian.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "**SKILL.md → [tracks/INDEX.md](tracks/INDEX.md) (pick a track) → handbook chapters → a recipe → references / `api/`**.\nAnswer in the user's language; keep API names exact. Skill text is English for precision and token economy.\n\nActivate this engineering workflow only for Roblox/Luau engineering or scene-art work. An incidental mention"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-RU-01",
+      "must_index": 1,
+      "must": "measure before/after in comparable scenario",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: measure before/after in comparable scenario.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "3. Classify frame bars (orange/blue/red) → pick the top label by total time.\n4. Form one hypothesis; change one thing; recapture under identical conditions.\n5. Keep the change only if the metric improved and visuals/gameplay are unchanged. Record numbers.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-RU-01",
+      "must_index": 2,
+      "must": "profile CPU/render/network separately",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: profile CPU/render/network separately.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "- Reduce frequency and repeated work before micro-optimizing.\n- Budget physics, rendering, networking, and memory separately.\n- Keep before/after captures for performance claims.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-RU-01",
+      "must_index": 3,
+      "must": "bounded shared scheduling",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: bounded shared scheduling.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "| Expensive work bound to `Heartbeat/PreRender` | run at 5–20 Hz with an accumulator; event-driven where possible |\n| One connection per object per frame (100 NPC scripts each on Heartbeat) | one manager loop iterating a registry; LOD tick rates by distance |\n| Scanning `GetDescendants()`/`GetTagged()` each frame | maintain registries via events/tags |\n| Big one-shot work (map gen, deserialization) freezes a frame | chunk across frames (`task.wait()` every N items / time budget), or parallel Luau |"
+        }
+      ]
+    },
+    {
+      "case_id": "PERF-RU-01",
+      "must_index": 4,
+      "must": "no invented metrics",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The cited passage states the required rule or demonstrates its implementation: no invented metrics.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/08-performance.md",
+          "quote": "Label unverified performance causes as hypotheses, not measured facts. Do not invent\nFPS gains, memory totals, or profiler timings; report numbers only from saved captures\nwith the device, workload and before/after conditions."
+        }
+      ]
+    }
+  ]
+}

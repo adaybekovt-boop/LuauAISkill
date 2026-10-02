@@ -89,3 +89,17 @@ verify the hypothesis → fix → re-test in the same conditions (Server & Clien
 Sources: cd:studio/output, cd:studio/debugging, cd:studio/developer-console, cd:studio/testing-modes,
 cd:performance-optimization/microprofiler/use-microprofiler, cd:workspace/streaming/index, cd:scripting/events/remote,
 cd:cloud-services/data-stores/error-codes-and-limits, cd:animation/using.
+
+## Evidence-first diagnosis when execution is unavailable
+State observed facts separately from hypotheses; without logs or a reproducible run, do not claim a root cause
+or a verified fix. Ask for the smallest paired scripts, exact instance paths, execution side, reproduction steps
+and original client/server Output around the failure. Mark unexecuted checks NOT RUN and name the next check.
+For intermittent saves, first test failed-load handling and fast rejoin while the old server still owns the lock.
+
+The engine automatically prepends the sending Player to OnServerEvent arguments. The client sends
+`remote:FireServer(data)`; the server handler receives `(player, data)`. Log payload types on both sides,
+connection timing and the full remote path before changing an argument list.
+
+For an infinite WaitForChild, inspect spelling and the full parent path, the server/client side where the
+instance exists, whether streaming removed it, and whether another script creates it later. Use a timeout;
+if it expires, log the expected path, execution side and current children instead of indexing nil or waiting forever.

@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "id": "improved-layered-fit",
+ "url": "https://devforum.roblox.com/t/coming-soon-improved-layered-clothing-fit/3550013/1",
+ "author": "erververv_roblox",
+ "staff_badge_observed": true,
+ "published_on": "2025-03-14",
+ "observed_on": "2026-10-02",
+ "quote": "These properties are ignored on existing LC assets and body parts with non-default values set.",
+ "quote_sha256": "857d312a94622ebd59132d4a4ddb640a984e09dbeeae45a0af771135e82c7ece",
+ "capture_method": "Read-only research worker directly inspected the primary post in the cloud browser DOM/accessibility tree and observed the Roblox Staff badge; this file is a short observation record, not an HTML/screenshot archive.",
+ "date_verification": "Post date cross-checked against the indexed primary post body and browser display.",
+ "scope": "Applies to WrapLayer.Puffiness, WrapLayer.ShrinkFactor and WrapTarget.Stiffness when the improved fitting algorithm is active.",
+ "limitations": "Coming Soon announcement; completion of rollout was not independently verified. Does not mention AccessoryDescription.Puffiness."
+}

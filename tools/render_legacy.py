@@ -8,6 +8,9 @@ Validation: unique ids, known status, required guidance, detecting fixtures, reg
 from __future__ import annotations
 
 import json
+import hashlib
+from datetime import date
+from urllib.parse import urlsplit
 import re
 import sys
 from pathlib import Path
@@ -19,6 +22,33 @@ ORDER = ["scheduling", "language", "instances", "runtime", "security", "physics"
          "pathfinding", "camera"]
 
 
+def validate_reviewed_source(receipt: dict) -> list[str]:
+    """Integrity validation of an observed short extract, not a fresh network verification."""
+    try:
+        path = (ROOT / receipt['artifact']).resolve()
+        if not path.is_relative_to((DIR / 'staff-evidence').resolve()) or path.suffix != '.json':
+            return ['reviewed source artifact must be inside staff-evidence']
+        raw = path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != receipt['sha256']:
+            return ['reviewed source artifact hash mismatch']
+        source = json.loads(raw)
+        url = urlsplit(source['url'])
+        if url.scheme != 'https' or url.netloc != 'devforum.roblox.com' or not url.path.startswith('/t/'):
+            return ['reviewed source must identify an HTTPS Roblox DevForum topic']
+        for key in ('author', 'quote', 'capture_method', 'scope', 'limitations'):
+            if not isinstance(source.get(key), str) or not source[key].strip():
+                return ['reviewed source missing ' + key]
+        if source.get('staff_badge_observed') is not True:
+            return ['reviewed source needs observed Roblox Staff attribution']
+        date.fromisoformat(source['published_on'])
+        date.fromisoformat(source['observed_on'])
+        if hashlib.sha256(source['quote'].encode()).hexdigest() != source.get('quote_sha256'):
+            return ['reviewed source quote hash mismatch']
+        return []
+    except (KeyError, ValueError, OSError, TypeError) as error:
+        return ['invalid reviewed source: ' + str(error)]
+
+
 def render(data: dict) -> str:
     lines = [
         "# Legacy → current: catalog (generated from catalog.json — edit the JSON, then run tools/render_legacy.py)",
@@ -28,7 +58,7 @@ def render(data: dict) -> str:
         "",
         f"{len(data['entries'])} curated entries cover {len({name for entry in data['entries'] for name in entry.get('covers', [])})} distinct deprecated/superseded API rows. "
         "[Priority ranking](RANKING.md) is reproducible editorial triage, not measured public-code popularity or AI failure frequency. "
-        "Representative public/historical tutorial code and model outputs were not sampled; current official tutorial code is measured separately. Empirical ranking evidence remains provisional.",
+        "Representative public/historical tutorial code and model outputs were not sampled; current official tutorial code is measured separately. External-corpus ranking is not a release gate; see classification.json for dump-derived D3 coverage and unresolved migrations.",
         "",
         "Every entry has a detecting fixture; findings are review candidates, not proof of incorrect code. "
         "See [coverage report](coverage.json) and [fixtures](fixtures.luau).",
@@ -59,6 +89,11 @@ def render(data: dict) -> str:
             lines.append("- DETECTING FIXTURE: `" + e.get("fixture", "").replace("\n", " ") + "`")
             if e.get("verify"):
                 lines.append("- VERIFY: " + ", ".join(e["verify"]))
+            for receipt in e.get("reviewed_sources", []):
+                if not validate_reviewed_source(receipt):
+                    source = json.loads((ROOT / receipt['artifact']).read_text())
+                    local = Path(receipt['artifact']).relative_to(DIR.relative_to(ROOT)).as_posix()
+                    lines.append(f"- REVIEWED SOURCE: [{source['author']} (Roblox Staff), {source['published_on']}]({source['url']}); [hashed observation receipt]({local}). Scope: {source['scope']}")
             lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
@@ -69,6 +104,8 @@ def validate(data: dict) -> list[str]:
         if e["id"] in seen:
             errs.append(f"duplicate id {e['id']}")
         seen.add(e["id"])
+        for receipt in e.get("reviewed_sources", []):
+            errs.extend(e['id'] + ': ' + error for error in validate_reviewed_source(receipt))
         if e["status"] not in data["status_legend"]:
             errs.append(f"{e['id']}: unknown status {e['status']}")
         if e.get("detect"):

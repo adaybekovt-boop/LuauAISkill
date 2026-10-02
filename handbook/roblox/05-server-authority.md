@@ -31,7 +31,7 @@ authoritative state for a frame differs. Mispredictions are normal (other player
 | Core simulation | inside `RunService:BindToSimulation(fn, Enum.StepFrequency.Hz60 /* default Hz30 */, priority)` in a ModuleScript required by **both** server and client |
 | What can be touched in `fn` | only members with **Simulation Access** (`python tools/api.py BasePart.CFrame` shows "Simulation Access"); others error. Notably `Players:GetPlayers()` and `Player.Character` are **not** simulation-accessible → cache references via events outside the callback |
 | Custom state | **attributes** on predicted instances (mismatch → rollback); write them only inside bound functions |
-| Attribute replication limits | first 64 attributes per Instance, name ≤ 50 chars, string values ≤ 50 chars |
+| Attribute replication limits | first <!-- fact-value: server-authority-attribute-count -->64<!-- /fact-value --> attributes per Instance, name ≤ <!-- fact-value: server-authority-attribute-name-length -->50<!-- /fact-value --> chars, string values ≤ <!-- fact-value: server-authority-attribute-string-length -->50<!-- /fact-value --> chars | <!-- fact-refs: server-authority-attribute-count, server-authority-attribute-name-length, server-authority-attribute-string-length -->
 | Inputs | `InputAction`s (`InputContext` must be a descendant of the `Player`, e.g. clone a folder into each player on join); read `action:GetState()` inside the simulation on both sides |
 | Never in simulation | `UserInputService.InputBegan` etc., DataStore/HTTP/yields, UI, sounds, particles, purchases, `print` spam |
 | Effects | render in `RunService.PreRender`/`RenderStepped` (client) by **reading** simulated state (e.g. an attribute state machine); be ready to undo effects that were mispredicted |

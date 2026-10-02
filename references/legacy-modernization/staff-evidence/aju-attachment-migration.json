@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "id": "aju-attachment-migration",
+ "url": "https://devforum.roblox.com/t/avatar-joint-upgrade-aju-phase-2-rollout-updated-migration-recommendations/4656414/1",
+ "author": "Homeomorph",
+ "staff_badge_observed": true,
+ "published_on": "2026-05-27",
+ "observed_on": "2026-10-02",
+ "quote": "Directly attempting to set legacy properties like C0, C1, Part0, or Part1 on an AnimationConstraint will throw an error. They rely entirely on Attachments.",
+ "quote_sha256": "31ef4aa3cb6eea20b57a9cca8abeb766bc08eb4b9b0a39819b0e754cfd5f4aef",
+ "capture_method": "Read-only research worker directly inspected the primary post in the cloud browser DOM/accessibility tree and observed the Roblox Staff badge; this file is a short observation record, not an HTML/screenshot archive.",
+ "date_verification": "Post date cross-checked against the indexed primary post body and browser display.",
+ "scope": "AJU-enabled rigs using AnimationConstraint; legacy property writes are not an equivalent attachment migration.",
+ "limitations": "Conditional on AJU-enabled rigs; this does not instruct converting every rig or changing Motor6D semantics."
+}

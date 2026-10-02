@@ -1,0 +1,21 @@
+PASS  embedded code up to date
+PASS  legacy catalog rendered
+PASS  dump-derived legacy detection and fixtures
+PASS  pinned tutorial legacy sample
+PASS  legacy ranking reproducible
+PASS  engine smoke infrastructure (execution may remain pending)
+PASS  dated source-backed facts
+PASS  facts tables rendered
+PASS  fact-mention bindings
+PASS  eval semantic coverage audit (unresolved reported)
+PASS  eval bank and split integrity (readiness reported)
+PASS  content structure and token budget
+PASS  isolated packaging and foreign CWD
+PASS  API references
+PASS  source citations
+PASS  links and anchors
+PASS  tool unit tests
+PASS  Luau typecheck + CLI tests
+PASS  privileged recipe launcher typechecks
+
+19 passed, 0 failed, 0 skipped → qa/report.json

@@ -21,6 +21,39 @@
     "recipes/gameplay/parallel-npc-planning.md"
    ]
   },
+  "api:AdGui.OnAdEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AdService.ShowVideoAd": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AdService.VideoAdClosed": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:AlignOrientation": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -51,6 +84,83 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "references/service-map.md"
+   ]
+  },
+  "api:AnalyticsService.FireCustomEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnalyticsService.FireEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnalyticsService.FireInGameEconomyEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnalyticsService.FirePlayerProgressionEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnalyticsService.LogCustomEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnalyticsService.LogEconomyEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnalyticsService.LogProgressionEvent": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "api:AngularVelocity": {
@@ -148,6 +258,19 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AnimationTrack.AdjustWeight": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -192,6 +315,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -219,6 +344,17 @@
    ]
   },
   "api:AssetService.GetAssetIdsForPackageAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:AssetService.GetCreatorAssetID": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -259,6 +395,72 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/graphics/02-atmosphere-sky-post.md"
+   ]
+  },
+  "api:Atmosphere.Color": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:Atmosphere.Decay": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:Atmosphere.Density": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:Atmosphere.Glare": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:Atmosphere.Haze": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:Atmosphere.Offset": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
    ]
   },
   "api:Attachment.Axis": {
@@ -730,6 +932,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -774,6 +978,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -786,6 +992,83 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "recipes/gameplay/server-authority-dash.md"
+   ]
+  },
+  "api:BasePart.AssemblyRootPart": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.BackParamA": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.BackParamB": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.BackSurfaceInput": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.BottomParamA": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.BottomParamB": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.BottomSurfaceInput": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "api:BasePart.BreakJoints": {
@@ -897,6 +1180,39 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:BasePart.FrontParamA": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.FrontParamB": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.FrontSurfaceInput": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:BasePart.GetMass": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -909,6 +1225,50 @@
    ]
   },
   "api:BasePart.GetRenderCFrame": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.GetRootPart": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.LeftParamA": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.LeftParamB": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.LeftSurfaceInput": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -963,6 +1323,39 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:BasePart.RightParamA": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.RightParamB": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.RightSurfaceInput": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:BasePart.RotVelocity": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -996,6 +1389,39 @@
    ]
   },
   "api:BasePart.StoppedTouching": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.TopParamA": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.TopParamB": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BasePart.TopSurfaceInput": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -1094,6 +1520,61 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:BaseScript.LinkedSource": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:BloomEffect.Intensity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:BloomEffect.Size": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:BloomEffect.Threshold": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:BlurEffect.Size": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
   "api:BodyAngularVelocity": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -1101,6 +1582,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1134,6 +1617,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1156,6 +1641,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1189,6 +1676,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1200,6 +1689,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1244,6 +1735,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1277,6 +1770,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1336,7 +1831,51 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:Camera.CFrame": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:Camera.CoordinateFrame": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Camera.Focus": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Camera.GetPanSpeed": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Camera.GetTiltSpeed": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -1358,7 +1897,51 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:Camera.PanUnits": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Camera.TiltUnits": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:Camera.focus": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:CaptureService.CaptureSaved": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:CaptureService.UserCaptureSaved": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -1457,7 +2040,62 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:ColorCorrectionEffect.Brightness": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:ColorCorrectionEffect.Contrast": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:ColorCorrectionEffect.Saturation": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
   "api:ColorGradingEffect.TonemapperPreset": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Constraint.Attachment0": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Constraint.Attachment1": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -1501,7 +2139,73 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:DataModel.AllowedGearTypeChanged": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:DataModel.BindToClose": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DataModel.GearGenreSetting": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DataModel.GetMessage": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DataModel.GetRemoteBuildMode": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DataModel.IsGearTypeAllowed": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DataModel.ItemChanged": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -1601,6 +2305,204 @@
    ]
   },
   "api:DataStoreService.SetRateLimitForRequestType": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Debris.AddItem": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Debris.MaxItems": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Decal.Shiny": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Decal.Specular": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:DepthOfFieldEffect.FarIntensity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:DepthOfFieldEffect.FocusDistance": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:DepthOfFieldEffect.InFocusRadius": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:DepthOfFieldEffect.NearIntensity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:EditableMesh.GetFaceVertices": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetFacesWithAttribute": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetFacesWithColor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetFacesWithNormal": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetFacesWithUV": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetVertexFaces": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetVerticesWithAttribute": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetVerticesWithColor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetVerticesWithNormal": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:EditableMesh.GetVerticesWithUV": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -1760,6 +2662,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/ai-failure-modes.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
@@ -1906,6 +2810,28 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:FormFactorPart.FormFactor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:FormFactorPart.formFactor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:GamePassService.PlayerHasPass": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -1946,6 +2872,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -1973,6 +2901,28 @@
    ]
   },
   "api:GuiBase2d.RootLocalizationTable": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiBase3d.Color": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiBase3d.Color3": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -2017,6 +2967,28 @@
    ]
   },
   "api:GuiObject.BorderColor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiObject.DragBegin": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:GuiObject.DragStopped": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -2160,6 +3132,28 @@
    ]
   },
   "api:GuiService.TouchControlsEnabled": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:HingeConstraint.ActuatorType": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:HingeConstraint.AngularVelocity": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -2375,6 +3369,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -2533,6 +3529,17 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:InputAction.Fire": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:InputAction.GetState": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -2541,6 +3548,83 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "recipes/gameplay/server-authority-dash.md"
+   ]
+  },
+  "api:InputBinding.Fire": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.AllowInsertFreeModels": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.ApproveAssetId": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.ApproveAssetVersionId": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.GetBaseCategories": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.GetBaseSets": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.GetCollection": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "api:InsertService.GetFreeDecals": {
@@ -2577,6 +3661,50 @@
    ]
   },
   "api:InsertService.GetFreeModelsAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.GetUserCategories": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.GetUserSets": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.Insert": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:InsertService.LoadAsset": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -2691,7 +3819,9 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
-    "recipes/gameplay/server-authority-dash.md"
+    "recipes/gameplay/server-authority-dash.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "api:Instance.archivable": {
@@ -3176,6 +4306,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -3187,6 +4319,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -3198,6 +4332,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -3248,6 +4384,39 @@
    ]
   },
   "api:MarketplaceService.UserOwnsGamePassAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:MaterialVariant.StudsPerTile": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:MeshPart.HasJointOffset": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:MeshPart.JointOffset": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -3446,6 +4615,17 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:ModuleScript.LinkedSource": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:Mouse.KeyDown": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -3491,6 +4671,17 @@
    ]
   },
   "api:NumberValue.changed": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Object.Changed": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -3556,6 +4747,50 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:OpenCloudApiV1.CreateModel": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:OpenCloudApiV1.CreateUserNotificationAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:OpenCloudService.GetApiV1": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:OpenCloudService.InvokeAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:OverlapParams.AddToFilter": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -3585,6 +4820,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -3970,6 +5207,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -3981,6 +5220,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -3992,6 +5233,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4003,11 +5246,24 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
   },
   "api:Player.HasAppearanceLoaded": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Player.IsBestFriendsWith": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -4047,6 +5303,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4058,6 +5316,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4080,6 +5340,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4102,6 +5364,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "recipes/gameplay/authorized-chat-commands.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
@@ -4568,6 +5832,61 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:PointsService.AwardPoints": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:PointsService.GetAwardablePoints": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:PointsService.GetGamePointBalance": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:PointsService.GetPointBalance": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Pose.MaskWeight": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:RayValue.changed": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -4597,6 +5916,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4608,6 +5929,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4641,6 +5964,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4675,6 +6000,17 @@
     "recipes/gameplay/server-authority-dash.md"
    ]
   },
+  "api:RunService.IsServer": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:RunService.PreRender": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -4682,6 +6018,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4704,6 +6042,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -4730,6 +6070,17 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:ScreenshotHud.UsernameOverlayEnabled": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:Script.Source": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -4738,6 +6089,72 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "references/ai-failure-modes.md"
+   ]
+  },
+  "api:SelectionBox.SurfaceColor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:SelectionBox.SurfaceColor3": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:SelectionSphere.SurfaceColor": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:SelectionSphere.SurfaceColor3": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:SensorBase.Sense": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:SensorBase.UpdateType": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "api:ServiceProvider.GetService": {
@@ -4916,7 +6333,62 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:Stats.HeartbeatTime": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Stats.HeartbeatTimeMs": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Stats.PhysicsStepTime": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Stats.PhysicsStepTimeMs": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:StringValue.changed": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:StudioService.DrawConstraintsOnTop": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -4990,6 +6462,28 @@
     "recipes/gameplay/multiplayer-regression-harness.md"
    ]
   },
+  "api:SunRaysEffect.Intensity": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
+  "api:SunRaysEffect.Spread": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/facts.json",
+    "references/limits.md"
+   ]
+  },
   "api:SurfaceAppearance.Color": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
@@ -5002,6 +6496,50 @@
    ]
   },
   "api:SurfaceAppearance.ColorMap": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Team.AutoColorCharacters": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Team.Score": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:Teams.RebalanceTeams": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.CustomizedTeleportUI": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -5046,6 +6584,50 @@
    ]
   },
   "api:TeleportService.TeleportAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.TeleportPartyAsync": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.TeleportToPlaceInstance": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.TeleportToPrivateServer": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:TeleportService.TeleportToSpawnByName": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -5375,7 +6957,29 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "api:UIGridStyleLayout.ApplyLayout": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "api:UIGridStyleLayout.SetCustomSortFunction": {
+   "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
+   "type": "generated API index (engine reflection metadata)",
+   "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
+   "commit_date": "2026-09-29T14:57:18-05:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "api:UIGridStyleLayout.SortOrder": {
    "url": "api/members.tsv (generated from the engine API dump + creator-docs YAML)",
    "type": "generated API index (engine reflection metadata)",
    "repo_commit": "fcd6994996bb655bef047c69f456463d94faa569",
@@ -5611,6 +7215,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -5622,6 +7228,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -5633,6 +7241,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -5710,6 +7320,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -5721,6 +7333,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -5798,6 +7412,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -5853,6 +7469,8 @@
    "commit_date": "2026-09-29T14:57:18-05:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -6294,6 +7912,9 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews-visual.json",
+    "evals/coverage/reviews.json",
     "handbook/graphics/03-local-lights.md",
     "handbook/graphics/06-vfx-particles.md",
     "references/anti-patterns.md",
@@ -6316,7 +7937,9 @@
     "recipes/graphics/emergency-red-lighting.md",
     "recipes/graphics/flickering-fluorescent.md",
     "recipes/graphics/realistic-dark-corridor.md",
-    "recipes/graphics/realistic-flashlight.md"
+    "recipes/graphics/realistic-flashlight.md",
+    "references/facts.json",
+    "references/limits.md"
    ]
   },
   "cd:effects/particle-emitters": {
@@ -6447,8 +8070,10 @@
     "handbook/roblox/19-input.md",
     "recipes/gameplay/server-authority-dash.md",
     "recipes/gameplay/sprint-crouch-stamina.md",
+    "references/facts.json",
     "references/legacy-modernization/CATALOG.md",
-    "references/legacy-modernization/catalog.json"
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
    ]
   },
   "cd:input/mobile": {
@@ -6677,7 +8302,9 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/roblox/08-performance.md",
-    "handbook/roblox/24-studio-mcp-testing.md"
+    "handbook/roblox/24-studio-mcp-testing.md",
+    "references/facts.json",
+    "references/limits.md"
    ]
   },
   "cd:performance-optimization/microprofiler/network": {
@@ -6788,6 +8415,17 @@
     "recipes/gameplay/ragdoll.md"
    ]
   },
+  "cd:physics/constraints/hinge": {
+   "url": "https://create.roblox.com/docs/physics/constraints/hinge",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "cd:physics/constraints/linear-velocity": {
    "url": "https://create.roblox.com/docs/physics/constraints/linear-velocity",
    "type": "official Roblox documentation",
@@ -6835,6 +8473,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/09-physics.md",
     "handbook/roblox/15-combat.md",
     "references/legacy-modernization/CATALOG.md",
@@ -6900,7 +8540,9 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/roblox/26-chat-leaderboards.md",
-    "recipes/gameplay/friend-global-leaderboard.md"
+    "recipes/gameplay/friend-global-leaderboard.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:production/localization/automatic-translations": {
@@ -6934,7 +8576,9 @@
     "handbook/roblox/06-data-persistence.md",
     "handbook/roblox/25-monetization.md",
     "recipes/gameplay/idempotent-receipts.md",
-    "recipes/gameplay/save-system.md"
+    "recipes/gameplay/save-system.md",
+    "references/facts.json",
+    "references/limits.md"
    ]
   },
   "cd:production/monetization/managed-pricing": {
@@ -6964,7 +8608,9 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
-    "handbook/roblox/25-monetization.md"
+    "handbook/roblox/25-monetization.md",
+    "references/facts.json",
+    "references/limits.md"
    ]
   },
   "cd:production/monetization/price-optimization": {
@@ -7012,6 +8658,17 @@
     "recipes/gameplay/settings-menu.md",
     "recipes/graphics/emergency-red-lighting.md",
     "recipes/graphics/flickering-fluorescent.md"
+   ]
+  },
+  "cd:projects/assets/packages": {
+   "url": "https://create.roblox.com/docs/projects/assets/packages",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:projects/assets/privacy": {
@@ -7118,6 +8775,16 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "cd:reference/engine/classes/AccessoryDescription": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AccessoryDescription",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
   "cd:reference/engine/classes/Actor": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/Actor",
    "type": "official Roblox documentation",
@@ -7126,6 +8793,40 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "recipes/gameplay/parallel-npc-planning.md"
+   ]
+  },
+  "cd:reference/engine/classes/AdGui": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AdGui",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/AdService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AdService",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/AnalyticsService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AnalyticsService",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/legacy-modernization/source-gaps.json"
    ]
   },
   "cd:reference/engine/classes/AnimationClipProvider": {
@@ -7139,6 +8840,16 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "cd:reference/engine/classes/AnimationConstraint": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/AnimationConstraint",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
   "cd:reference/engine/classes/AnimationController": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/AnimationController",
    "type": "official Roblox documentation",
@@ -7146,6 +8857,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7167,6 +8880,7 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews.json",
     "handbook/roblox/16-animation.md"
    ]
   },
@@ -7274,12 +8988,25 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/BasePart": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/BasePart",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/BaseScript": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/BaseScript",
    "type": "official Roblox documentation",
    "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
    "commit_date": "2026-10-01T10:13:07+00:00",
@@ -7299,6 +9026,16 @@
     "handbook/graphics/06-vfx-particles.md"
    ]
   },
+  "cd:reference/engine/classes/BillboardGui": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/BillboardGui",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
   "cd:reference/engine/classes/BloomEffect": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/BloomEffect",
    "type": "official Roblox documentation",
@@ -7316,6 +9053,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7327,6 +9066,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7338,6 +9079,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7349,6 +9092,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7360,6 +9105,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7371,6 +9118,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7382,6 +9131,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -7426,6 +9177,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-visual.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/14-camera.md",
     "recipes/gameplay/bodycam-camera.md",
     "recipes/gameplay/first-person-viewmodel.md",
@@ -7434,7 +9187,19 @@
     "references/facts.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json",
+    "references/legacy-modernization/source-gaps.json",
     "references/limits.md"
+   ]
+  },
+  "cd:reference/engine/classes/CaptureService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/CaptureService",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/Chat": {
@@ -7516,6 +9281,16 @@
     "handbook/roblox/25-monetization.md"
    ]
   },
+  "cd:reference/engine/classes/Constraint": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Constraint",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
   "cd:reference/engine/classes/ContentProvider": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/ContentProvider",
    "type": "official Roblox documentation",
@@ -7552,6 +9327,16 @@
     "handbook/roblox/13-character-controllers.md"
    ]
   },
+  "cd:reference/engine/classes/CylindricalConstraint": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/CylindricalConstraint",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
   "cd:reference/engine/classes/DataModel": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/DataModel",
    "type": "official Roblox documentation",
@@ -7560,7 +9345,8 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "references/legacy-modernization/CATALOG.md",
-    "references/legacy-modernization/catalog.json"
+    "references/legacy-modernization/catalog.json",
+    "references/legacy-modernization/source-gaps.json"
    ]
   },
   "cd:reference/engine/classes/DataStore": {
@@ -7584,6 +9370,28 @@
     "recipes/gameplay/save-system.md"
    ]
   },
+  "cd:reference/engine/classes/Debris": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Debris",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/Decal": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Decal",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "cd:reference/engine/classes/EditableImage": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/EditableImage",
    "type": "official Roblox documentation",
@@ -7592,6 +9400,17 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "recipes/graphics/camera-aesthetics.md"
+   ]
+  },
+  "cd:reference/engine/classes/EditableMesh": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/EditableMesh",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/Explosion": {
@@ -7612,6 +9431,17 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "recipes/gameplay/health-damage.md"
+   ]
+  },
+  "cd:reference/engine/classes/FormFactorPart": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/FormFactorPart",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/GamePassService": {
@@ -7664,6 +9494,17 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "cd:reference/engine/classes/GuiBase3d": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/GuiBase3d",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "cd:reference/engine/classes/GuiObject": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/GuiObject",
    "type": "official Roblox documentation",
@@ -7688,7 +9529,8 @@
     "recipes/gameplay/settings-menu.md",
     "recipes/graphics/flickering-fluorescent.md",
     "references/legacy-modernization/CATALOG.md",
-    "references/legacy-modernization/catalog.json"
+    "references/legacy-modernization/catalog.json",
+    "references/legacy-modernization/source-gaps.json"
    ]
   },
   "cd:reference/engine/classes/HingeConstraint": {
@@ -7698,7 +9540,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
-    "recipes/gameplay/constraint-vehicle.md"
+    "recipes/gameplay/constraint-vehicle.md",
+    "references/legacy-modernization/source-gaps.json"
    ]
   },
   "cd:reference/engine/classes/Hint": {
@@ -7730,6 +9573,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/13-character-controllers.md",
     "handbook/roblox/15-combat.md",
     "handbook/roblox/20-npc-ai.md",
@@ -7742,6 +9587,7 @@
     "references/facts.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json",
+    "references/legacy-modernization/source-gaps.json",
     "references/limits.md"
    ]
   },
@@ -7763,7 +9609,9 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/roblox/19-input.md",
-    "recipes/gameplay/sprint-crouch-stamina.md"
+    "recipes/gameplay/sprint-crouch-stamina.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/InputBinding": {
@@ -7833,6 +9681,16 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "cd:reference/engine/classes/LayerCollector": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/LayerCollector",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
   "cd:reference/engine/classes/Light": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/Light",
    "type": "official Roblox documentation",
@@ -7851,6 +9709,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-visual.json",
+    "evals/coverage/reviews.json",
     "handbook/graphics/01-lighting.md",
     "handbook/graphics/03-local-lights.md",
     "recipes/graphics/cinematic-horror-interior.md",
@@ -7894,6 +9754,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/06-data-persistence.md",
     "handbook/roblox/25-monetization.md",
     "recipes/gameplay/idempotent-receipts.md",
@@ -7921,6 +9783,17 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/graphics/04-materials-pbr.md"
+   ]
+  },
+  "cd:reference/engine/classes/MeshPart": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/MeshPart",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/Message": {
@@ -7954,6 +9827,17 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/roblox/10-streaming.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/ModuleScript": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ModuleScript",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -8012,6 +9896,28 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "cd:reference/engine/classes/OpenCloudApiV1": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/OpenCloudApiV1",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/OpenCloudService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/OpenCloudService",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "cd:reference/engine/classes/OrderedDataStore": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/OrderedDataStore",
    "type": "official Roblox documentation",
@@ -8034,8 +9940,10 @@
     "recipes/gameplay/object-pooling.md",
     "recipes/graphics/graphics-presets.md",
     "recipes/graphics/industrial-warehouse.md",
+    "references/facts.json",
     "references/legacy-modernization/CATALOG.md",
-    "references/legacy-modernization/catalog.json"
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
    ]
   },
   "cd:reference/engine/classes/Path": {
@@ -8091,6 +9999,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-visual.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/09-physics.md",
     "references/facts.json",
     "references/legacy-modernization/CATALOG.md",
@@ -8105,6 +10015,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/02-lifecycle-events.md",
     "handbook/roblox/10-streaming.md",
     "handbook/roblox/14-camera.md",
@@ -8114,6 +10026,16 @@
     "recipes/gameplay/hitscan-gun.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/PlayerGui": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/PlayerGui",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
    ]
   },
   "cd:reference/engine/classes/Players": {
@@ -8141,6 +10063,17 @@
     "recipes/graphics/emergency-red-lighting.md"
    ]
   },
+  "cd:reference/engine/classes/PointsService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/PointsService",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "cd:reference/engine/classes/PolicyService": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/PolicyService",
    "type": "official Roblox documentation",
@@ -8149,6 +10082,17 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/roblox/25-monetization.md"
+   ]
+  },
+  "cd:reference/engine/classes/Pose": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Pose",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/ProximityPrompt": {
@@ -8189,6 +10133,7 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews.json",
     "handbook/roblox/03-networking.md",
     "maintainers/FACTS.md",
     "recipes/gameplay/network-rate-limiter.md",
@@ -8214,6 +10159,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
    ]
@@ -8225,13 +10172,18 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews-world.json",
+    "evals/coverage/reviews.json",
     "handbook/luau/05-coroutines-task-errors.md",
     "handbook/roblox/05-server-authority.md",
     "handbook/roblox/14-camera.md",
     "recipes/gameplay/bodycam-camera.md",
     "recipes/gameplay/first-person-viewmodel.md",
+    "references/facts.json",
     "references/legacy-modernization/CATALOG.md",
-    "references/legacy-modernization/catalog.json"
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
    ]
   },
   "cd:reference/engine/classes/SceneAnalysisService": {
@@ -8255,6 +10207,18 @@
     "recipes/gameplay/inventory.md"
    ]
   },
+  "cd:reference/engine/classes/ScreenshotHud": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/ScreenshotHud",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json",
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
   "cd:reference/engine/classes/ScriptProfilerService": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/ScriptProfilerService",
    "type": "official Roblox documentation",
@@ -8263,6 +10227,39 @@
    "retrieved": "2026-10-02",
    "cited_by": [
     "handbook/roblox/24-studio-mcp-testing.md"
+   ]
+  },
+  "cd:reference/engine/classes/SelectionBox": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SelectionBox",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/SelectionSphere": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SelectionSphere",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/SensorBase": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SensorBase",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/ServiceProvider": {
@@ -8285,6 +10282,16 @@
    "cited_by": [
     "handbook/graphics/02-atmosphere-sky-post.md",
     "recipes/graphics/night-exterior.md"
+   ]
+  },
+  "cd:reference/engine/classes/SlidingBallConstraint": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/SlidingBallConstraint",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
    ]
   },
   "cd:reference/engine/classes/Sound": {
@@ -8343,8 +10350,30 @@
     "references/legacy-modernization/catalog.json"
    ]
   },
+  "cd:reference/engine/classes/Stats": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Stats",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
   "cd:reference/engine/classes/StringValue": {
    "url": "https://create.roblox.com/docs/reference/engine/classes/StringValue",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/StudioService": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/StudioService",
    "type": "official Roblox documentation",
    "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
    "commit_date": "2026-10-01T10:13:07+00:00",
@@ -8420,7 +10449,20 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
-    "recipes/gameplay/health-damage.md"
+    "recipes/gameplay/health-damage.md",
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/Teams": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/Teams",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/CATALOG.md",
+    "references/legacy-modernization/catalog.json"
    ]
   },
   "cd:reference/engine/classes/TeleportOptions": {
@@ -8704,8 +10746,10 @@
     "recipes/gameplay/procedural-backrooms.md",
     "recipes/gameplay/projectile-weapon.md",
     "recipes/gameplay/round-manager.md",
+    "references/facts.json",
     "references/legacy-modernization/CATALOG.md",
-    "references/legacy-modernization/catalog.json"
+    "references/legacy-modernization/catalog.json",
+    "references/limits.md"
    ]
   },
   "cd:reference/engine/classes/WorldRoot": {
@@ -8715,6 +10759,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/09-physics.md",
     "handbook/roblox/12-procedural-generation.md",
     "handbook/roblox/15-combat.md",
@@ -8727,6 +10773,26 @@
     "recipes/gameplay/sprint-crouch-stamina.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
+   ]
+  },
+  "cd:reference/engine/classes/WrapLayer": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/WrapLayer",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
+   ]
+  },
+  "cd:reference/engine/classes/WrapTarget": {
+   "url": "https://create.roblox.com/docs/reference/engine/classes/WrapTarget",
+   "type": "official Roblox documentation",
+   "repo_commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "retrieved": "2026-10-02",
+   "cited_by": [
+    "references/legacy-modernization/source-gaps.json"
    ]
   },
   "cd:reference/engine/datatypes/CFrame": {
@@ -8747,6 +10813,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/09-physics.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
@@ -8770,6 +10838,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/09-physics.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
@@ -8903,6 +10973,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/luau/03-syntax-stdlib.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/catalog.json"
@@ -9095,6 +11167,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/luau/05-coroutines-task-errors.md",
     "references/legacy-modernization/CATALOG.md",
     "references/legacy-modernization/README.md",
@@ -9619,6 +11693,8 @@
    "commit_date": "2026-10-01T10:13:07+00:00",
    "retrieved": "2026-10-02",
    "cited_by": [
+    "evals/coverage/reviews-api.json",
+    "evals/coverage/reviews.json",
     "handbook/roblox/09-physics.md",
     "handbook/roblox/13-character-controllers.md",
     "handbook/roblox/15-combat.md",

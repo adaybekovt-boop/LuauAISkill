@@ -1,0 +1,186 @@
+{
+  "valid": true,
+  "structural_valid": true,
+  "structural_errors": [],
+  "total": 268,
+  "categories": {
+    "adversarial": {
+      "count": 21,
+      "russian": 3,
+      "broken_code_fixtures": 2
+    },
+    "animation": {
+      "count": 13,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "api-freshness": {
+      "count": 20,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "architecture": {
+      "count": 15,
+      "russian": 3,
+      "broken_code_fixtures": 2
+    },
+    "combat": {
+      "count": 13,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "datastores": {
+      "count": 21,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "debugging": {
+      "count": 16,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "graphics": {
+      "count": 14,
+      "russian": 3,
+      "broken_code_fixtures": 2
+    },
+    "lighting": {
+      "count": 15,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "luau": {
+      "count": 20,
+      "russian": 3,
+      "broken_code_fixtures": 2
+    },
+    "negative-triggers": {
+      "count": 13,
+      "russian": 3,
+      "broken_code_fixtures": 2
+    },
+    "networking": {
+      "count": 16,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "npc": {
+      "count": 13,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "performance": {
+      "count": 14,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "security": {
+      "count": 18,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "streaming": {
+      "count": 13,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    },
+    "ui": {
+      "count": 13,
+      "russian": 2,
+      "broken_code_fixtures": 2
+    }
+  },
+  "clean_holdout_ids": [
+    "HLD-adversarial-01",
+    "HLD-adversarial-02",
+    "HLD-adversarial-03",
+    "HLD-adversarial-04",
+    "HLD-adversarial-05",
+    "HLD-animation-01",
+    "HLD-animation-02",
+    "HLD-animation-03",
+    "HLD-animation-04",
+    "HLD-animation-05",
+    "HLD-api-freshness-01",
+    "HLD-api-freshness-02",
+    "HLD-api-freshness-03",
+    "HLD-api-freshness-04",
+    "HLD-api-freshness-05",
+    "HLD-architecture-01",
+    "HLD-architecture-02",
+    "HLD-architecture-03",
+    "HLD-architecture-04",
+    "HLD-architecture-05",
+    "HLD-combat-01",
+    "HLD-combat-02",
+    "HLD-combat-03",
+    "HLD-combat-04",
+    "HLD-combat-05",
+    "HLD-datastores-01",
+    "HLD-datastores-02",
+    "HLD-datastores-03",
+    "HLD-datastores-04",
+    "HLD-datastores-05",
+    "HLD-debugging-01",
+    "HLD-debugging-02",
+    "HLD-debugging-03",
+    "HLD-debugging-04",
+    "HLD-debugging-05",
+    "HLD-graphics-01",
+    "HLD-graphics-02",
+    "HLD-graphics-03",
+    "HLD-graphics-04",
+    "HLD-graphics-05",
+    "HLD-lighting-01",
+    "HLD-lighting-02",
+    "HLD-lighting-03",
+    "HLD-lighting-04",
+    "HLD-lighting-05",
+    "HLD-luau-01",
+    "HLD-luau-02",
+    "HLD-luau-03",
+    "HLD-luau-04",
+    "HLD-luau-05",
+    "HLD-negative-triggers-01",
+    "HLD-negative-triggers-02",
+    "HLD-negative-triggers-03",
+    "HLD-negative-triggers-04",
+    "HLD-negative-triggers-05",
+    "HLD-networking-01",
+    "HLD-networking-02",
+    "HLD-networking-03",
+    "HLD-networking-04",
+    "HLD-networking-05",
+    "HLD-npc-01",
+    "HLD-npc-02",
+    "HLD-npc-03",
+    "HLD-npc-04",
+    "HLD-npc-05",
+    "HLD-performance-01",
+    "HLD-performance-02",
+    "HLD-performance-03",
+    "HLD-performance-04",
+    "HLD-performance-05",
+    "HLD-security-01",
+    "HLD-security-02",
+    "HLD-security-03",
+    "HLD-security-04",
+    "HLD-security-05",
+    "HLD-streaming-01",
+    "HLD-streaming-02",
+    "HLD-streaming-03",
+    "HLD-streaming-04",
+    "HLD-streaming-05",
+    "HLD-ui-01",
+    "HLD-ui-02",
+    "HLD-ui-03",
+    "HLD-ui-04",
+    "HLD-ui-05"
+  ],
+  "fraction": 0.31716417910447764,
+  "errors": [],
+  "seal_skill_sha256": [
+    "d6bbe2ec8fc0718c7c9e2aab40b4a9a3dbde86d9a564fe2c341eeeef6735074a"
+  ],
+  "provenance_limit": "Custody artifacts are operator attestations; independent access isolation must be audited."
+}

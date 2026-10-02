@@ -1,0 +1,1282 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "case_id": "API-01",
+      "must_index": 0,
+      "must": "Animator:LoadAnimation",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The catalog explicitly migrates Humanoid animation loading to an Animator and explains replication ownership.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `anim-humanoid-load` — deprecated (seen 2014-2021)\n- OLD: `humanoid:LoadAnimation(anim) / animationController:LoadAnimation(anim)`\n- NEW: `animator:LoadAnimation(anim) where animator = humanoid:FindFirstChildOfClass(\"Animator\")`\n- WHY: Deprecated in favour of Animator (explicit, replicates correctly).\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: Create the Animator on the server under the Humanoid/AnimationController so tracks replicate; the owning player can load/play animations for their character from the client. Detector requires receiver review because Animator:LoadAnimation is current.\n- API COVERAGE: `AnimationController.LoadAnimation`, `Humanoid.LoadAnimation`\n- DETECT: `:LoadAnimation\\s*\\(`\n- DETECTING FIXTURE: `humanoid:LoadAnimation(animation)`\n- VERIFY: api:Humanoid.LoadAnimation, api:AnimationController.LoadAnimation, api:Animator.LoadAnimation, cd:reference/engine/classes/AnimationController, cd:reference/engine/classes/Humanoid"
+        }
+      ]
+    },
+    {
+      "case_id": "API-01",
+      "must_index": 1,
+      "must": "LinearVelocity instead of BodyVelocity (behaviour note)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The BodyMover migration names LinearVelocity and explains attachment frames and retuning, so it is not a behavior-preserving rename.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `phys-bodymovers` — deprecated (seen 2008-2021)\n- OLD: `BodyVelocity / BodyGyro / BodyPosition / BodyForce / BodyAngularVelocity / BodyThrust / RocketPropulsion`\n- NEW: `LinearVelocity / AlignOrientation / AlignPosition / VectorForce / AngularVelocity / VectorForce(+offset)/Torque / AlignPosition+AlignOrientation`\n- WHY: BodyMover classes are deprecated; mover constraints are attachment-based, more stable, and configurable.\n- OLD STILL OK WHEN: Existing places keep working; migrate when touching the system.\n- NOTES: Map: MaxForce→MaxForce/MaxTorque, P/D→Responsiveness/MaxVelocity; RelativeTo options differ. Retune feel.\n- API COVERAGE: `BodyAngularVelocity`, `BodyForce`, `BodyGyro`, `BodyMover`, `BodyPosition`, `BodyThrust`, `BodyVelocity`, `RocketPropulsion`\n- DETECT: `\\bBody(?:Mover|Velocity|Gyro|Position|Force|AngularVelocity|Thrust)\\b|\\bRocketPropulsion\\b`\n- DETECTING FIXTURE: `local velocity = Instance.new(\"BodyVelocity\")`\n- VERIFY: api:BodyVelocity, cd:physics/mover-constraints, api:BodyAngularVelocity, cd:reference/engine/classes/BodyAngularVelocity, api:BodyForce, cd:reference/engine/classes/BodyForce, api:BodyGyro, cd:reference/engine/classes/BodyGyro, api:BodyMover, cd:reference/engine/classes/BodyMover, api:BodyPosition, cd:reference/engine/classes/BodyPosition, api:BodyThrust, cd:reference/engine/classes/BodyThrust, cd:reference/engine/classes/BodyVelocity, api:RocketPropulsion, cd:reference/engine/classes/RocketPropulsion"
+        }
+      ]
+    },
+    {
+      "case_id": "API-01",
+      "must_index": 2,
+      "must": "task.spawn/task.wait",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "Both scheduling replacements and the timing differences are documented, including task.spawn for immediate resumption.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `sched-wait` — deprecated (seen 2006-2021)\n- OLD: `wait(n) / wait()`\n- NEW: `task.wait(n) — or better, wait on an event/signal`\n- WHY: Legacy wait is throttled (30 Hz legacy scheduler, can resume late), deprecated.\n- OLD STILL OK WHEN: Never in new code; migrating a working game can be gradual.\n- NOTES: task.wait resumes on the next Heartbeat after the duration; returns elapsed time.\n- API COVERAGE: `wait`\n- DETECT: `(?<![\\w.:])wait\\s*\\(`\n- DETECTING FIXTURE: `wait(1)`\n- VERIFY: api:wait, cd:scripting/scheduler, cd:reference/engine/globals/RobloxGlobals"
+        },
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `sched-spawn` — deprecated (seen 2006-2021)\n- OLD: `spawn(f)`\n- NEW: `task.defer(f) when deferred scheduling is intended, or task.spawn(f) for immediate resumption`\n- WHY: spawn had an implicit delay and throttling; deprecated.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: Neither task.defer nor task.spawn reproduces legacy spawn timing exactly. task.defer runs at the end of the current resumption cycle; test ordering and re-entrancy.\n- API COVERAGE: `spawn`\n- DETECT: `(?<![\\w.:])spawn\\s*\\(`\n- DETECTING FIXTURE: `spawn(function() work() end)`\n- VERIFY: api:spawn, cd:scripting/scheduler, cd:reference/engine/globals/RobloxGlobals"
+        }
+      ]
+    },
+    {
+      "case_id": "API-01",
+      "must_index": 3,
+      "must": "workspace:Raycast + RaycastParams.ExcludeInstances",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The ray replacement and exclusion-list setup together cover the required current raycast path.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `query-findpartonray` — deprecated (seen 2008-2020)\n- OLD: `workspace:FindPartOnRay(Ray.new(o, d), ignore) / FindPartOnRayWithIgnoreList / WithWhitelist`\n- NEW: `workspace:Raycast(origin, direction, params) → RaycastResult? (.Instance, .Position, .Normal, .Material, .Distance)`\n- WHY: Deprecated; Raycast supports params, collision groups, returns a result object.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: direction vector length = distance (max 15,000 studs).\n- API COVERAGE: `WorldRoot.FindPartOnRay`, `WorldRoot.FindPartOnRayWithIgnoreList`, `WorldRoot.FindPartOnRayWithWhitelist`, `WorldRoot.findPartOnRay`\n- DETECT: `:(?:FindPartOnRay(?:WithIgnoreList|WithWhitelist)?|findPartOnRay)\\s*\\(`\n- DETECTING FIXTURE: `workspace:FindPartOnRay(ray)`\n- VERIFY: api:WorldRoot.FindPartOnRay, api:WorldRoot.Raycast, cd:workspace/raycasting, cd:reference/engine/classes/WorldRoot, api:WorldRoot.FindPartOnRayWithIgnoreList, api:WorldRoot.FindPartOnRayWithWhitelist, api:WorldRoot.findPartOnRay"
+        },
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `query-filterdescendants` — superseded (seen 2020-2025)\n- OLD: `params.FilterDescendantsInstances = {char}; params.FilterType = Enum.RaycastFilterType.Exclude`\n- NEW: `params.ExcludeInstances = {char}`\n- WHY: Docs: superseded by ExcludeInstances/IncludeInstances for new work.\n- OLD STILL OK WHEN: Existing code keeps working.\n- API COVERAGE: `OverlapParams.FilterDescendantsInstances`, `RaycastParams.FilterDescendantsInstances`\n- DETECT: `FilterDescendantsInstances`\n- DETECTING FIXTURE: `params.FilterDescendantsInstances = {character}`\n- VERIFY: api:RaycastParams.FilterDescendantsInstances, api:RaycastParams.ExcludeInstances, api:OverlapParams.FilterDescendantsInstances, cd:reference/engine/datatypes/OverlapParams, cd:reference/engine/datatypes/RaycastParams"
+        }
+      ]
+    },
+    {
+      "case_id": "API-01",
+      "must_index": 4,
+      "must": "IsInGroupAsync",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The group membership replacement is explicitly IsInGroupAsync.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `async-group` — deprecated (seen 2008-2025)\n- OLD: `player:IsInGroup(id) / player:GetRankInGroup(id) / player:GetRoleInGroup(id)`\n- NEW: `player:IsInGroupAsync(id); GroupService:GetRolesInGroupAsync(userId, groupId) (all public roles)`\n- WHY: *Async renames; GetRankInGroupAsync/GetRoleInGroupAsync also superseded by GroupService:GetRolesInGroupAsync.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: These yield: wrap in pcall, cache per session.\n- API COVERAGE: `Player.GetRankInGroup`, `Player.GetRoleInGroup`, `Player.IsInGroup`\n- DETECT: `:(IsInGroup|GetRankInGroup|GetRoleInGroup)\\s*\\(`\n- DETECTING FIXTURE: `player:IsInGroup(groupId)`\n- VERIFY: api:Player.IsInGroup, api:Player.IsInGroupAsync, api:GroupService.GetRolesInGroupAsync, api:Player.GetRankInGroup, cd:reference/engine/classes/Player, api:Player.GetRoleInGroup"
+        }
+      ]
+    },
+    {
+      "case_id": "API-01",
+      "must_index": 5,
+      "must": "LookVector casing",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The case-sensitive documented forward-direction member is explicitly LookVector.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "Use the documented `CFrame.LookVector` spelling for the forward direction; do not preserve undocumented\n`lookVector` casing when modernizing code. Verify the current datatype member with `python tools/api.py CFrame.LookVector`.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "API-01",
+      "must_index": 6,
+      "must": "behaviour differences listed",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The honesty rule requires behavior changes to be listed; scheduling and mover notes identify concrete changes that this fixture needs.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| Silently changing public behaviour while \"modernizing\" | list behavioural changes explicitly |"
+        },
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `sched-spawn` — deprecated (seen 2006-2021)\n- OLD: `spawn(f)`\n- NEW: `task.defer(f) when deferred scheduling is intended, or task.spawn(f) for immediate resumption`\n- WHY: spawn had an implicit delay and throttling; deprecated.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: Neither task.defer nor task.spawn reproduces legacy spawn timing exactly. task.defer runs at the end of the current resumption cycle; test ordering and re-entrancy.\n- API COVERAGE: `spawn`\n- DETECT: `(?<![\\w.:])spawn\\s*\\(`\n- DETECTING FIXTURE: `spawn(function() work() end)`\n- VERIFY: api:spawn, cd:scripting/scheduler, cd:reference/engine/globals/RobloxGlobals"
+        },
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `phys-bodymovers` — deprecated (seen 2008-2021)\n- OLD: `BodyVelocity / BodyGyro / BodyPosition / BodyForce / BodyAngularVelocity / BodyThrust / RocketPropulsion`\n- NEW: `LinearVelocity / AlignOrientation / AlignPosition / VectorForce / AngularVelocity / VectorForce(+offset)/Torque / AlignPosition+AlignOrientation`\n- WHY: BodyMover classes are deprecated; mover constraints are attachment-based, more stable, and configurable.\n- OLD STILL OK WHEN: Existing places keep working; migrate when touching the system.\n- NOTES: Map: MaxForce→MaxForce/MaxTorque, P/D→Responsiveness/MaxVelocity; RelativeTo options differ. Retune feel.\n- API COVERAGE: `BodyAngularVelocity`, `BodyForce`, `BodyGyro`, `BodyMover`, `BodyPosition`, `BodyThrust`, `BodyVelocity`, `RocketPropulsion`\n- DETECT: `\\bBody(?:Mover|Velocity|Gyro|Position|Force|AngularVelocity|Thrust)\\b|\\bRocketPropulsion\\b`\n- DETECTING FIXTURE: `local velocity = Instance.new(\"BodyVelocity\")`\n- VERIFY: api:BodyVelocity, cd:physics/mover-constraints, api:BodyAngularVelocity, cd:reference/engine/classes/BodyAngularVelocity, api:BodyForce, cd:reference/engine/classes/BodyForce, api:BodyGyro, cd:reference/engine/classes/BodyGyro, api:BodyMover, cd:reference/engine/classes/BodyMover, api:BodyPosition, cd:reference/engine/classes/BodyPosition, api:BodyThrust, cd:reference/engine/classes/BodyThrust, cd:reference/engine/classes/BodyVelocity, api:RocketPropulsion, cd:reference/engine/classes/RocketPropulsion"
+        }
+      ]
+    },
+    {
+      "case_id": "API-02",
+      "must_index": 0,
+      "must": "Player:IsInGroupAsync / GetRankInGroupAsync / GetRoleInGroupAsync or GroupService:GetRolesInGroupAsync",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The current group membership and all-public-roles methods are named, with legacy rank/role methods marked superseded.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `async-group` — deprecated (seen 2008-2025)\n- OLD: `player:IsInGroup(id) / player:GetRankInGroup(id) / player:GetRoleInGroup(id)`\n- NEW: `player:IsInGroupAsync(id); GroupService:GetRolesInGroupAsync(userId, groupId) (all public roles)`\n- WHY: *Async renames; GetRankInGroupAsync/GetRoleInGroupAsync also superseded by GroupService:GetRolesInGroupAsync.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: These yield: wrap in pcall, cache per session.\n- API COVERAGE: `Player.GetRankInGroup`, `Player.GetRoleInGroup`, `Player.IsInGroup`\n- DETECT: `:(IsInGroup|GetRankInGroup|GetRoleInGroup)\\s*\\(`\n- DETECTING FIXTURE: `player:IsInGroup(groupId)`\n- VERIFY: api:Player.IsInGroup, api:Player.IsInGroupAsync, api:GroupService.GetRolesInGroupAsync, api:Player.GetRankInGroup, cd:reference/engine/classes/Player, api:Player.GetRoleInGroup"
+        },
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `async-group-all-roles` — deprecated (seen legacy code; pinned 2026 snapshot)\n- OLD: `Player.GetRankInGroupAsync / Player.GetRoleInGroupAsync`\n- NEW: `GroupService:GetRolesInGroupAsync(userId, groupId); check the documented roles result`\n- WHY: Even the first-generation Async rank/role methods are deprecated because a user can hold multiple public roles.\n- OLD STILL OK WHEN: Existing single-role displays can remain if their semantics are intentional; authorization must handle the complete result deliberately.\n- NOTES: Do not blindly take the first role or compare the returned container to a number/string.\n- API COVERAGE: `Player.GetRankInGroupAsync`, `Player.GetRoleInGroupAsync`\n- DETECT: `[.:]GetRankInGroupAsync\\b|[.:]GetRoleInGroupAsync\\b`\n- DETECTING FIXTURE: `local rank = player:GetRankInGroupAsync(groupId)`\n- VERIFY: api:Player.GetRankInGroupAsync, api:Player.GetRoleInGroupAsync, api:GroupService.GetRolesInGroupAsync, cd:reference/engine/classes/Player"
+        }
+      ]
+    },
+    {
+      "case_id": "API-02",
+      "must_index": 1,
+      "must": "yields, pcall",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The group migration explicitly warns that calls yield and should be wrapped in pcall.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `async-group` — deprecated (seen 2008-2025)\n- OLD: `player:IsInGroup(id) / player:GetRankInGroup(id) / player:GetRoleInGroup(id)`\n- NEW: `player:IsInGroupAsync(id); GroupService:GetRolesInGroupAsync(userId, groupId) (all public roles)`\n- WHY: *Async renames; GetRankInGroupAsync/GetRoleInGroupAsync also superseded by GroupService:GetRolesInGroupAsync.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: These yield: wrap in pcall, cache per session.\n- API COVERAGE: `Player.GetRankInGroup`, `Player.GetRoleInGroup`, `Player.IsInGroup`\n- DETECT: `:(IsInGroup|GetRankInGroup|GetRoleInGroup)\\s*\\(`\n- DETECTING FIXTURE: `player:IsInGroup(groupId)`\n- VERIFY: api:Player.IsInGroup, api:Player.IsInGroupAsync, api:GroupService.GetRolesInGroupAsync, api:Player.GetRankInGroup, cd:reference/engine/classes/Player, api:Player.GetRoleInGroup"
+        }
+      ]
+    },
+    {
+      "case_id": "API-03",
+      "must_index": 0,
+      "must": "PreRender (or BindToRenderStep for ordering)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The catalog directly identifies PreRender as the successor and BindToRenderStep as the ordered camera option.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `sched-renderstepped` — superseded (seen 2014-2023)\n- OLD: `RunService.RenderStepped:Connect(fn)`\n- NEW: `RunService.PreRender:Connect(fn) (client) — or BindToRenderStep with a priority for camera ordering`\n- WHY: Docs: RenderStepped superseded by PreRender.\n- OLD STILL OK WHEN: Existing code keeps working.\n- API COVERAGE: `RunService.RenderStepped`\n- DETECT: `\\.RenderStepped\\s*:\\s*Connect`\n- DETECTING FIXTURE: `RunService.RenderStepped:Connect(render)`\n- VERIFY: api:RunService.RenderStepped, api:RunService.PreRender, cd:reference/engine/classes/RunService"
+        }
+      ]
+    },
+    {
+      "case_id": "API-03",
+      "must_index": 1,
+      "must": "RenderStepped superseded",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The catalog directly identifies PreRender as the successor and BindToRenderStep as the ordered camera option.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `sched-renderstepped` — superseded (seen 2014-2023)\n- OLD: `RunService.RenderStepped:Connect(fn)`\n- NEW: `RunService.PreRender:Connect(fn) (client) — or BindToRenderStep with a priority for camera ordering`\n- WHY: Docs: RenderStepped superseded by PreRender.\n- OLD STILL OK WHEN: Existing code keeps working.\n- API COVERAGE: `RunService.RenderStepped`\n- DETECT: `\\.RenderStepped\\s*:\\s*Connect`\n- DETECTING FIXTURE: `RunService.RenderStepped:Connect(render)`\n- VERIFY: api:RunService.RenderStepped, api:RunService.PreRender, cd:reference/engine/classes/RunService"
+        }
+      ]
+    },
+    {
+      "case_id": "API-04",
+      "must_index": 0,
+      "must": "RaycastParams.new() + ExcludeInstances (or FilterType Exclude)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The example constructs RaycastParams, sets ExcludeInstances and passes those params to workspace:Raycast; the excluded list can contain the character.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/09-physics.md",
+          "quote": "local effects = workspace:FindFirstChild(\"Effects\")\nlocal hitboxes = workspace:FindFirstChild(\"Hitboxes\")\nlocal params = RaycastParams.new()\nparams.ExcludeInstances = if effects then { effects } else {}  -- new API (2026): ExcludeInstances / IncludeInstances\nparams.IgnoreWater = true\nparams.CollisionGroup = \"Projectiles\"   -- respect collision group rules\nlocal overlap = OverlapParams.new()\noverlap.IncludeInstances = if hitboxes then { hitboxes } else {}\noverlap.MaxParts = 16\nlocal hit = workspace:Raycast(Vector3.new(0, 50, 0), Vector3.new(0, -100, 0), params)\nif hit then print(hit.Instance:GetFullName(), hit.Normal) end"
+        }
+      ]
+    },
+    {
+      "case_id": "API-04",
+      "must_index": 1,
+      "must": "workspace:Raycast",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The example constructs RaycastParams, sets ExcludeInstances and passes those params to workspace:Raycast; the excluded list can contain the character.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/09-physics.md",
+          "quote": "local effects = workspace:FindFirstChild(\"Effects\")\nlocal hitboxes = workspace:FindFirstChild(\"Hitboxes\")\nlocal params = RaycastParams.new()\nparams.ExcludeInstances = if effects then { effects } else {}  -- new API (2026): ExcludeInstances / IncludeInstances\nparams.IgnoreWater = true\nparams.CollisionGroup = \"Projectiles\"   -- respect collision group rules\nlocal overlap = OverlapParams.new()\noverlap.IncludeInstances = if hitboxes then { hitboxes } else {}\noverlap.MaxParts = 16\nlocal hit = workspace:Raycast(Vector3.new(0, 50, 0), Vector3.new(0, -100, 0), params)\nif hit then print(hit.Instance:GetFullName(), hit.Normal) end"
+        }
+      ]
+    },
+    {
+      "case_id": "API-05",
+      "must_index": 0,
+      "must": "Player:LoadCharacterAsync (current name)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The character-loading entry names the current asynchronous method.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `async-loadcharacter` — deprecated (seen 2006-2025)\n- OLD: `player:LoadCharacter()`\n- NEW: `player:LoadCharacterAsync()`\n- WHY: 2025-26 *Async rename; old name deprecated.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- API COVERAGE: `Player.LoadCharacter`\n- DETECT: `:LoadCharacter\\s*\\(`\n- DETECTING FIXTURE: `player:LoadCharacter()`\n- VERIFY: api:Player.LoadCharacter, api:Player.LoadCharacterAsync, cd:reference/engine/classes/Player"
+        }
+      ]
+    },
+    {
+      "case_id": "API-06",
+      "must_index": 0,
+      "must": "BadgeService:AwardBadgeAsync",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The badge entry explicitly names both Async methods and requires server execution with pcall.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `money-badge` — deprecated (seen 2012-2025)\n- OLD: `BadgeService:AwardBadge(userId, id) / UserHasBadge`\n- NEW: `BadgeService:AwardBadgeAsync / UserHasBadgeAsync (server, pcall)`\n- WHY: *Async renames.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- API COVERAGE: `BadgeService.AwardBadge`, `BadgeService.UserHasBadge`\n- DETECT: `:(AwardBadge|UserHasBadge)\\s*\\(`\n- DETECTING FIXTURE: `BadgeService:AwardBadge(userId, badgeId)`\n- VERIFY: api:BadgeService.AwardBadge, api:BadgeService.UserHasBadge, cd:reference/engine/classes/BadgeService"
+        }
+      ]
+    },
+    {
+      "case_id": "API-06",
+      "must_index": 1,
+      "must": "UserHasBadgeAsync",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The badge entry explicitly names both Async methods and requires server execution with pcall.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `money-badge` — deprecated (seen 2012-2025)\n- OLD: `BadgeService:AwardBadge(userId, id) / UserHasBadge`\n- NEW: `BadgeService:AwardBadgeAsync / UserHasBadgeAsync (server, pcall)`\n- WHY: *Async renames.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- API COVERAGE: `BadgeService.AwardBadge`, `BadgeService.UserHasBadge`\n- DETECT: `:(AwardBadge|UserHasBadge)\\s*\\(`\n- DETECTING FIXTURE: `BadgeService:AwardBadge(userId, badgeId)`\n- VERIFY: api:BadgeService.AwardBadge, api:BadgeService.UserHasBadge, cd:reference/engine/classes/BadgeService"
+        }
+      ]
+    },
+    {
+      "case_id": "API-06",
+      "must_index": 2,
+      "must": "server-side, pcall",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The badge entry explicitly names both Async methods and requires server execution with pcall.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `money-badge` — deprecated (seen 2012-2025)\n- OLD: `BadgeService:AwardBadge(userId, id) / UserHasBadge`\n- NEW: `BadgeService:AwardBadgeAsync / UserHasBadgeAsync (server, pcall)`\n- WHY: *Async renames.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- API COVERAGE: `BadgeService.AwardBadge`, `BadgeService.UserHasBadge`\n- DETECT: `:(AwardBadge|UserHasBadge)\\s*\\(`\n- DETECTING FIXTURE: `BadgeService:AwardBadge(userId, badgeId)`\n- VERIFY: api:BadgeService.AwardBadge, api:BadgeService.UserHasBadge, cd:reference/engine/classes/BadgeService"
+        }
+      ]
+    },
+    {
+      "case_id": "API-07",
+      "must_index": 0,
+      "must": "MarketplaceService:GetProductInfoAsync",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The product metadata entry names GetProductInfoAsync as the current replacement.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `money-productinfo` — deprecated (seen 2012-2025)\n- OLD: `MarketplaceService:GetProductInfo(id) / PlayerOwnsAsset(p, id) / PlayerOwnsBundle`\n- NEW: `GetProductInfoAsync / PlayerOwnsAssetAsync / PlayerOwnsBundleAsync`\n- WHY: *Async renames.\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: pcall + cache.\n- API COVERAGE: `MarketplaceService.GetProductInfo`, `MarketplaceService.PlayerOwnsAsset`, `MarketplaceService.PlayerOwnsBundle`\n- DETECT: `:(GetProductInfo|PlayerOwnsAsset|PlayerOwnsBundle)\\s*\\(`\n- DETECTING FIXTURE: `MarketplaceService:GetProductInfo(id)`\n- VERIFY: api:MarketplaceService.GetProductInfo, api:MarketplaceService.PlayerOwnsAsset, cd:reference/engine/classes/MarketplaceService, api:MarketplaceService.PlayerOwnsBundle"
+        }
+      ]
+    },
+    {
+      "case_id": "API-08",
+      "must_index": 0,
+      "must": "Audio API: AudioPlayer, AudioEmitter, AudioListener, AudioDeviceOutput, Wire",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The audio graph paragraph includes all required producer, emitter, listener, output and Wire roles.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/17-audio.md",
+          "quote": "Producers (`AudioPlayer`, `AudioTextToSpeech`, `AudioDeviceInput` for voice) → **Wire** → modifiers (effects/fader)\n→ Wire → consumers (`AudioEmitter` in the world, or `AudioDeviceOutput` = the player's speakers). The world is heard\nby an `AudioListener` (usually on camera or character) → Wire → `AudioDeviceOutput`.\n- `Wire.SourceInstance` / `Wire.TargetInstance` (optionally pin names). Nothing plays without a complete chain.\n- 2D (UI, music): `AudioPlayer` → Wire → `AudioDeviceOutput`.\n- 3D: `AudioPlayer` → Wire → `AudioEmitter` (parented to a part/attachment = position); listener chain created\n  automatically when `SoundService.DefaultListenerLocation` (Studio setting) is `Character` or `Camera`\n  (engine also creates an `AudioDeviceOutput`); `None` = you create the listener; `Default` = camera listener in\n  voice-enabled experiences.\n- `AudioPlayer`: `Asset` (content id; `AssetId` deprecated), `Looping`, `Volume`, `PlaybackSpeed`, `TimePosition`,\n  `IsReady`, `Play(atTime?)`, `Stop()`, `Ended`, `LoopRegion`, `PlaybackRegion`.\n- `AudioEmitter`: `SetDistanceAttenuation({[distance] = volume, ...})` volume-over-distance curve,\n  `SetAngleAttenuation`, `AudioInteractionGroup` (only listeners in the same group hear it — separate \"radio\"\n  channels, per-team audio), `GetAudibilityFor(listener)`.\n- Acoustic simulation: `SoundService.AcousticSimulationEnabled` (global, documented) makes emitters/listeners\n  simulate **occlusion** (muffled through walls), **diffraction** (around corners) and **reverb**; per-emitter\n  `AcousticSimulationEnabled`, `OcclusionEnabled`/`DiffractionEnabled`/`ReverbEnabled` (`Enum.SimulationMode`) exist\n  in the API dump but are thinly documented — test on target devices and budget CPU."
+        }
+      ]
+    },
+    {
+      "case_id": "API-08",
+      "must_index": 1,
+      "must": "Sound still works for existing projects",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The legacy-system row explicitly says Sound remains valid for existing projects.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/17-audio.md",
+          "quote": "| Legacy | `Sound`, `SoundGroup`, `*SoundEffect` | still works everywhere; fine for existing projects and quick one-shots |"
+        }
+      ]
+    },
+    {
+      "case_id": "API-09",
+      "must_index": 0,
+      "must": "stable (InputActionLabel beta)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The input selection row distinguishes stable core objects from beta labeling/management tools and names the required hierarchy.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/19-input.md",
+          "quote": "| **Input Action System**: `InputContext` → `InputAction` → `InputBinding` (Instances, edit-time configurable) | current, <!-- fact-value: input-action-release-status -->full release<!-- /fact-value --> (`InputActionLabel`: <!-- fact-value: input-action-label-beta -->beta<!-- /fact-value -->; Input Action Manager tool: <!-- fact-value: input-action-manager-beta -->beta<!-- /fact-value -->) | new projects; cross-device bindings; required for server authority simulation input | <!-- fact-refs: input-action-release-status, input-action-label-beta, input-action-manager-beta -->"
+        }
+      ]
+    },
+    {
+      "case_id": "API-09",
+      "must_index": 1,
+      "must": "InputContext/InputAction/InputBinding",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The input selection row distinguishes stable core objects from beta labeling/management tools and names the required hierarchy.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/19-input.md",
+          "quote": "| **Input Action System**: `InputContext` → `InputAction` → `InputBinding` (Instances, edit-time configurable) | current, <!-- fact-value: input-action-release-status -->full release<!-- /fact-value --> (`InputActionLabel`: <!-- fact-value: input-action-label-beta -->beta<!-- /fact-value -->; Input Action Manager tool: <!-- fact-value: input-action-manager-beta -->beta<!-- /fact-value -->) | new projects; cross-device bindings; required for server authority simulation input | <!-- fact-refs: input-action-release-status, input-action-label-beta, input-action-manager-beta -->"
+        }
+      ]
+    },
+    {
+      "case_id": "API-10",
+      "must_index": 0,
+      "must": "255",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The rendered fact-registry row gives the requested simultaneous Highlight slot cap.",
+      "evidence": [
+        {
+          "ref": "references/limits.md",
+          "quote": "| `highlight-slots`: Client-side simultaneous Highlight slots; disabled highlights still consume slots. | 255 | instances/client | documented | cd:effects/highlighting | 2026-10-02 / 2026-12-31 |"
+        }
+      ]
+    },
+    {
+      "case_id": "API-11",
+      "must_index": 0,
+      "must": "undocumented in the pinned docs → don't build on it yet",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The save recipe labels the dump-only player data system undocumented, rejects depending on it, and gives the update-and-api.py verification sequence.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/save-system.md",
+          "quote": "Freshness note (API 0.741, creator-docs 2026-10-01): the engine dump contains an engine-managed player data system —\n`PlayerDataService`, `Player:GetData()` → `PlayerData:GetRecordAsync()` → `PlayerDataRecord` (undocumented; `GetValue`/`SetValue`,\n`Loaded`, `Flushed`, `ReleaseAsync`) — but it is **undocumented** (no creator-docs pages, no announcement in the\npinned sources). Don't build on it yet; re-check with `python tools/api.py PlayerDataService` after\n`python tools/fetch_sources.py --latest`. The module here is named `Profiles` to avoid colliding with the engine's\n`PlayerData` class name."
+        }
+      ]
+    },
+    {
+      "case_id": "API-11",
+      "must_index": 2,
+      "must": "verify with tools/api.py after updating sources",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The save recipe labels the dump-only player data system undocumented, rejects depending on it, and gives the update-and-api.py verification sequence.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/save-system.md",
+          "quote": "Freshness note (API 0.741, creator-docs 2026-10-01): the engine dump contains an engine-managed player data system —\n`PlayerDataService`, `Player:GetData()` → `PlayerData:GetRecordAsync()` → `PlayerDataRecord` (undocumented; `GetValue`/`SetValue`,\n`Loaded`, `Flushed`, `ReleaseAsync`) — but it is **undocumented** (no creator-docs pages, no announcement in the\npinned sources). Don't build on it yet; re-check with `python tools/api.py PlayerDataService` after\n`python tools/fetch_sources.py --latest`. The module here is named `Profiles` to avoid colliding with the engine's\n`PlayerData` class name."
+        }
+      ]
+    },
+    {
+      "case_id": "API-11",
+      "must_index": 1,
+      "must": "use DataStoreService + session locking",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The recipe code header explicitly uses DataStoreService with session locks and failed-load protection.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/save-system.md",
+          "quote": "-- Profiles: session-locked player profiles on DataStoreService.\n--   load (UpdateAsync + lock, migrations) → ready (gameplay edits profile in memory) → autosave (refreshes lock)\n--   → release on leave / BindToClose. Failed or locked loads become \"errored\" sessions that never save.\n-- One key per player (\"User_<UserId>\"), one request at a time per key, bounded retries with backoff.\n-- Studio: needs \"Enable Studio Access to API Services\" and writes REAL data — use a separate test universe.\n-- Status: TYPECHECKED (pure transforms CLI-EXECUTED in examples/tests/data.spec.luau). Not run in Studio."
+        }
+      ]
+    },
+    {
+      "case_id": "API-12",
+      "must_index": 0,
+      "must": "full release (2026-07-09), opt-in per place",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The dated status paragraph identifies full release and per-place opt-in while explicitly requiring a prototype before a shipped-game conversion.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/05-server-authority.md",
+          "quote": "Status: **full release 2026-07-09** (Roblox staff announcement:\nhttps://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993). The\nserver-authority docs pages carry no beta label; one stale line on the network-ownership page (creator-docs @\n2026-10-01) still says \"currently in beta\" — trust the dated announcement. It is opt-in per place and still a big\narchitectural change: prototype in a branch place before converting a shipped game.\nRead when: competitive/fast multiplayer (shooters, racing, sports, fighting) where client-owned movement is\nunacceptable. Classic model: [01-runtime](01-runtime-architecture.md), [04-security](04-security.md)."
+        }
+      ]
+    },
+    {
+      "case_id": "API-12",
+      "must_index": 2,
+      "must": "big architectural change: prototype before converting a shipped game",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The dated status paragraph identifies full release and per-place opt-in while explicitly requiring a prototype before a shipped-game conversion.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/05-server-authority.md",
+          "quote": "Status: **full release 2026-07-09** (Roblox staff announcement:\nhttps://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993). The\nserver-authority docs pages carry no beta label; one stale line on the network-ownership page (creator-docs @\n2026-10-01) still says \"currently in beta\" — trust the dated announcement. It is opt-in per place and still a big\narchitectural change: prototype in a branch place before converting a shipped game.\nRead when: competitive/fast multiplayer (shooters, racing, sports, fighting) where client-owned movement is\nunacceptable. Classic model: [01-runtime](01-runtime-architecture.md), [04-security](04-security.md)."
+        }
+      ]
+    },
+    {
+      "case_id": "API-12",
+      "must_index": 1,
+      "must": "server simulation + client prediction/rollback, InputActions under Player, BindToSimulation restrictions",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The simulation description plus input and allowed-member rules jointly cover server truth, prediction/rollback, Player-owned InputActions and restricted simulation access.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/05-server-authority.md",
+          "quote": "The server is the only source of truth for *all* simulated state, including characters. Clients send inputs\n(Input Action System), predict locally a few frames ahead, and **roll back + resimulate** when the server's\nauthoritative state for a frame differs. Mispredictions are normal (other players' inputs are unknown)."
+        },
+        {
+          "ref": "handbook/roblox/05-server-authority.md",
+          "quote": "| What can be touched in `fn` | only members with **Simulation Access** (`python tools/api.py BasePart.CFrame` shows \"Simulation Access\"); others error. Notably `Players:GetPlayers()` and `Player.Character` are **not** simulation-accessible → cache references via events outside the callback |"
+        },
+        {
+          "ref": "handbook/roblox/05-server-authority.md",
+          "quote": "| Inputs | `InputAction`s (`InputContext` must be a descendant of the `Player`, e.g. clone a folder into each player on join); read `action:GetState()` inside the simulation on both sides |"
+        },
+        {
+          "ref": "handbook/roblox/05-server-authority.md",
+          "quote": "| Never in simulation | `UserInputService.InputBegan` etc., DataStore/HTTP/yields, UI, sounds, particles, purchases, `print` spam |"
+        }
+      ]
+    },
+    {
+      "case_id": "API-14",
+      "must_index": 0,
+      "must": "base library full release 2026-04-08",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The CCL row independently distinguishes base full release from beta abilities, gives the dates, and notes opt-in, unchanged existing games and the SyncedState move.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/13-character-controllers.md",
+          "quote": "| Character Controller Library (CCL, `require(\"@rbx/AvatarAbilities\")`) | base library **<!-- fact-value: ccl-base-release-status -->full release<!-- /fact-value --> <!-- fact-value: ccl-base-release-date -->2026-04-08<!-- /fact-value -->** (staff announcement); the <!-- fact-value: ccl-abilities-beta-date -->2026-09-10<!-- /fact-value --> additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **<!-- fact-value: ccl-abilities-beta-status -->Studio beta<!-- /fact-value -->**. Pinned docs still enable it via File → Beta Features → \"AvatarAbilities Character Controller Library\" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` — check copied code | <!-- fact-refs: ccl-base-release-status, ccl-base-release-date, ccl-abilities-beta-status, ccl-abilities-beta-date -->"
+        }
+      ]
+    },
+    {
+      "case_id": "API-14",
+      "must_index": 1,
+      "must": "Sprint/Crouch/ShiftLock defaults + custom-abilities API are a Studio beta (2026-09)",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The CCL row independently distinguishes base full release from beta abilities, gives the dates, and notes opt-in, unchanged existing games and the SyncedState move.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/13-character-controllers.md",
+          "quote": "| Character Controller Library (CCL, `require(\"@rbx/AvatarAbilities\")`) | base library **<!-- fact-value: ccl-base-release-status -->full release<!-- /fact-value --> <!-- fact-value: ccl-base-release-date -->2026-04-08<!-- /fact-value -->** (staff announcement); the <!-- fact-value: ccl-abilities-beta-date -->2026-09-10<!-- /fact-value --> additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **<!-- fact-value: ccl-abilities-beta-status -->Studio beta<!-- /fact-value -->**. Pinned docs still enable it via File → Beta Features → \"AvatarAbilities Character Controller Library\" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` — check copied code | <!-- fact-refs: ccl-base-release-status, ccl-base-release-date, ccl-abilities-beta-status, ccl-abilities-beta-date -->"
+        }
+      ]
+    },
+    {
+      "case_id": "API-14",
+      "must_index": 2,
+      "must": "opt-in; existing games not migrated; SyncedState attribute move",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The CCL row independently distinguishes base full release from beta abilities, gives the dates, and notes opt-in, unchanged existing games and the SyncedState move.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/13-character-controllers.md",
+          "quote": "| Character Controller Library (CCL, `require(\"@rbx/AvatarAbilities\")`) | base library **<!-- fact-value: ccl-base-release-status -->full release<!-- /fact-value --> <!-- fact-value: ccl-base-release-date -->2026-04-08<!-- /fact-value -->** (staff announcement); the <!-- fact-value: ccl-abilities-beta-date -->2026-09-10<!-- /fact-value --> additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **<!-- fact-value: ccl-abilities-beta-status -->Studio beta<!-- /fact-value -->**. Pinned docs still enable it via File → Beta Features → \"AvatarAbilities Character Controller Library\" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` — check copied code | <!-- fact-refs: ccl-base-release-status, ccl-base-release-date, ccl-abilities-beta-status, ccl-abilities-beta-date -->"
+        }
+      ]
+    },
+    {
+      "case_id": "API-RU-01",
+      "must_index": 1,
+      "must": "Blacklist removed; Exclude instead",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The removed enum items and current Exclude/ExcludeInstances forms are explicitly documented.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `query-filter-blacklist` — removed (seen 2020-2023)\n- OLD: `params.FilterType = Enum.RaycastFilterType.Blacklist / Whitelist`\n- NEW: `params.ExcludeInstances = {...} / params.IncludeInstances = {...} (2026 API); or FilterType = Exclude / Include`\n- WHY: Enum items Blacklist/Whitelist no longer exist in Enum.RaycastFilterType (API 0.740 has only Exclude, Include) → code errors.\n- OLD STILL OK WHEN: Never.\n- NOTES: FilterDescendantsInstances + FilterType still work but are superseded by ExcludeInstances/IncludeInstances (can be combined; exclusion wins).\n- DETECT: `RaycastFilterType\\.(Blacklist|Whitelist)`\n- DETECTING FIXTURE: `params.FilterType = Enum.RaycastFilterType.Blacklist -- removed enum item, intentional fixture`\n- VERIFY: api:Enum.RaycastFilterType, api:RaycastParams.ExcludeInstances"
+        }
+      ]
+    },
+    {
+      "case_id": "API-RU-01",
+      "must_index": 2,
+      "must": "GlobalIllumination is not a supported Lighting property",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The hallucinated-properties row names GlobalIllumination as nonexistent and supplies real settings instead.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |"
+        }
+      ]
+    },
+    {
+      "case_id": "API-RU-01",
+      "must_index": 3,
+      "must": "verify current API rather than inventing one",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The hard rule requires tool verification and treating NOT FOUND as unavailable rather than inventing an API.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "- **Never invent APIs.** If `tools/api.py` says NOT FOUND, it doesn't exist. Mark `deprecated`, `superseded`,\n  `beta`, `plugin-only`, `undocumented` APIs as such when you mention them."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-01",
+      "must_index": 0,
+      "must": "refuses to claim testing that didn't happen",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The honesty table forbids claiming Studio execution without access and specifies the actual evidence labels.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| \"Tested in Studio, works perfectly\" without Studio access | state evidence level: TYPECHECKED / CLI-EXECUTED / NOT RUN |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-01",
+      "must_index": 1,
+      "must": "gives evidence level honestly",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The honesty table forbids claiming Studio execution without access and specifies the actual evidence labels.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| \"Tested in Studio, works perfectly\" without Studio access | state evidence level: TYPECHECKED / CLI-EXECUTED / NOT RUN |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-01",
+      "must_index": 2,
+      "must": "provides test steps",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The workflow explicitly requires exact Studio steps when execution is unavailable.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "8. **Test** with the strongest tool you actually have:\n   - always: typecheck / Luau CLI tests for pure logic;\n   - **Studio MCP tools connected** (`list_roblox_studios`, `execute_luau`, `start_stop_play`, …): run the\n     reproduce → fix → verify loop in [Studio MCP testing](handbook/roblox/24-studio-mcp-testing.md) — target the\n     place by `studio_id`, reproduce first, patch the durable source, re-run the same check, keep the artifacts;\n   - otherwise give the user exact Studio steps (Server & Clients for anything networked)."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-02",
+      "must_index": 0,
+      "must": "explains task.wait and why",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The scheduling entry names task.wait and explains throttling and resumption timing; this supports both explaining and using the current scheduler.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `sched-wait` — deprecated (seen 2006-2021)\n- OLD: `wait(n) / wait()`\n- NEW: `task.wait(n) — or better, wait on an event/signal`\n- WHY: Legacy wait is throttled (30 Hz legacy scheduler, can resume late), deprecated.\n- OLD STILL OK WHEN: Never in new code; migrating a working game can be gradual.\n- NOTES: task.wait resumes on the next Heartbeat after the duration; returns elapsed time.\n- API COVERAGE: `wait`\n- DETECT: `(?<![\\w.:])wait\\s*\\(`\n- DETECTING FIXTURE: `wait(1)`\n- VERIFY: api:wait, cd:scripting/scheduler, cd:reference/engine/globals/RobloxGlobals"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-02",
+      "must_index": 1,
+      "must": "uses task.* in code",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The scheduling entry names task.wait and explains throttling and resumption timing; this supports both explaining and using the current scheduler.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `sched-wait` — deprecated (seen 2006-2021)\n- OLD: `wait(n) / wait()`\n- NEW: `task.wait(n) — or better, wait on an event/signal`\n- WHY: Legacy wait is throttled (30 Hz legacy scheduler, can resume late), deprecated.\n- OLD STILL OK WHEN: Never in new code; migrating a working game can be gradual.\n- NOTES: task.wait resumes on the next Heartbeat after the duration; returns elapsed time.\n- API COVERAGE: `wait`\n- DETECT: `(?<![\\w.:])wait\\s*\\(`\n- DETECTING FIXTURE: `wait(1)`\n- VERIFY: api:wait, cd:scripting/scheduler, cd:reference/engine/globals/RobloxGlobals"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-03",
+      "must_index": 0,
+      "must": "property doesn't exist",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The same failure-mode row rejects the nonexistent GI/RT toggle and supplies real Studio lighting and post-effect options.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-03",
+      "must_index": 1,
+      "must": "no RT/GI toggle",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The same failure-mode row rejects the nonexistent GI/RT toggle and supplies real Studio lighting and post-effect options.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-03",
+      "must_index": 2,
+      "must": "offers real options",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The same failure-mode row rejects the nonexistent GI/RT toggle and supplies real Studio lighting and post-effect options.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `Lighting.GlobalIllumination`, `Lighting.RayTracing`, `Lighting.SSAO`, `Lighting.ReflectionQuality` FAKE | no such properties; no user-controllable GI/RT/SSAO toggles | `LightingStyle = Realistic` (Studio), EnvironmentDiffuse/SpecularScale, local lights, post effects | `tools/api.py Lighting` |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-04",
+      "must_index": 0,
+      "must": "Blacklist removed; Exclude/ExcludeInstances",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The catalog marks Blacklist removed and gives the supported exclusion alternatives.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `query-filter-blacklist` — removed (seen 2020-2023)\n- OLD: `params.FilterType = Enum.RaycastFilterType.Blacklist / Whitelist`\n- NEW: `params.ExcludeInstances = {...} / params.IncludeInstances = {...} (2026 API); or FilterType = Exclude / Include`\n- WHY: Enum items Blacklist/Whitelist no longer exist in Enum.RaycastFilterType (API 0.740 has only Exclude, Include) → code errors.\n- OLD STILL OK WHEN: Never.\n- NOTES: FilterDescendantsInstances + FilterType still work but are superseded by ExcludeInstances/IncludeInstances (can be combined; exclusion wins).\n- DETECT: `RaycastFilterType\\.(Blacklist|Whitelist)`\n- DETECTING FIXTURE: `params.FilterType = Enum.RaycastFilterType.Blacklist -- removed enum item, intentional fixture`\n- VERIFY: api:Enum.RaycastFilterType, api:RaycastParams.ExcludeInstances"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-04",
+      "must_index": 1,
+      "must": "shows working code",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The physics chapter supplies concrete RaycastParams exclusion code and a raycast call; its execution status must still be reported honestly.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/09-physics.md",
+          "quote": "local effects = workspace:FindFirstChild(\"Effects\")\nlocal hitboxes = workspace:FindFirstChild(\"Hitboxes\")\nlocal params = RaycastParams.new()\nparams.ExcludeInstances = if effects then { effects } else {}  -- new API (2026): ExcludeInstances / IncludeInstances\nparams.IgnoreWater = true\nparams.CollisionGroup = \"Projectiles\"   -- respect collision group rules\nlocal overlap = OverlapParams.new()\noverlap.IncludeInstances = if hitboxes then { hitboxes } else {}\noverlap.MaxParts = 16\nlocal hit = workspace:Raycast(Vector3.new(0, 50, 0), Vector3.new(0, -100, 0), params)\nif hit then print(hit.Instance:GetFullName(), hit.Normal) end"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-05",
+      "must_index": 2,
+      "must": "flag/log rather than instant kick",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The movement-validation guidance explicitly chooses logging and review over automatic punishment.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/04-security.md",
+          "quote": "Treat suspicious motion as evidence to log and review, not an automatic ban. Account for legitimate movement\nand latency first; use human review before irreversible punishment rather than instantly banning a speed sample."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-06",
+      "must_index": 0,
+      "must": "DataStoreService is server-only",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The client/server table marks DataStore access server-only and replaces the client call with server script plus remote intent.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| DataStore/HttpService/MessagingService/MemoryStore/`BanAsync`/TeleportAsync from a LocalScript | server-only | server Script + remote intent | api security column |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-06",
+      "must_index": 1,
+      "must": "client sends intent; server saves",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The client/server table marks DataStore access server-only and replaces the client call with server script plus remote intent.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| DataStore/HttpService/MessagingService/MemoryStore/`BanAsync`/TeleportAsync from a LocalScript | server-only | server Script + remote intent | api security column |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-07",
+      "must_index": 2,
+      "must": "client asks server",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The server-authority principle requires the client to send intent for server validation/execution, applying to secret-backed service requests without sending the secret to the client.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/04-security.md",
+          "quote": "1. **Server decides.** Client sends intent; server validates, executes, replicates result."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-08",
+      "must_index": 0,
+      "must": "Animator:LoadAnimation",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The animation entry explicitly says deprecated in favor of Animator and gives the supported loading operation.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `anim-humanoid-load` — deprecated (seen 2014-2021)\n- OLD: `humanoid:LoadAnimation(anim) / animationController:LoadAnimation(anim)`\n- NEW: `animator:LoadAnimation(anim) where animator = humanoid:FindFirstChildOfClass(\"Animator\")`\n- WHY: Deprecated in favour of Animator (explicit, replicates correctly).\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: Create the Animator on the server under the Humanoid/AnimationController so tracks replicate; the owning player can load/play animations for their character from the client. Detector requires receiver review because Animator:LoadAnimation is current.\n- API COVERAGE: `AnimationController.LoadAnimation`, `Humanoid.LoadAnimation`\n- DETECT: `:LoadAnimation\\s*\\(`\n- DETECTING FIXTURE: `humanoid:LoadAnimation(animation)`\n- VERIFY: api:Humanoid.LoadAnimation, api:AnimationController.LoadAnimation, api:Animator.LoadAnimation, cd:reference/engine/classes/AnimationController, cd:reference/engine/classes/Humanoid"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-08",
+      "must_index": 1,
+      "must": "explains deprecation",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The animation entry explicitly says deprecated in favor of Animator and gives the supported loading operation.",
+      "evidence": [
+        {
+          "ref": "references/legacy-modernization/CATALOG.md",
+          "quote": "### `anim-humanoid-load` — deprecated (seen 2014-2021)\n- OLD: `humanoid:LoadAnimation(anim) / animationController:LoadAnimation(anim)`\n- NEW: `animator:LoadAnimation(anim) where animator = humanoid:FindFirstChildOfClass(\"Animator\")`\n- WHY: Deprecated in favour of Animator (explicit, replicates correctly).\n- OLD STILL OK WHEN: Untouched working legacy code may remain while behaviour is baselined; use the replacement for new work and check the notes before migrating.\n- NOTES: Create the Animator on the server under the Humanoid/AnimationController so tracks replicate; the owning player can load/play animations for their character from the client. Detector requires receiver review because Animator:LoadAnimation is current.\n- API COVERAGE: `AnimationController.LoadAnimation`, `Humanoid.LoadAnimation`\n- DETECT: `:LoadAnimation\\s*\\(`\n- DETECTING FIXTURE: `humanoid:LoadAnimation(animation)`\n- VERIFY: api:Humanoid.LoadAnimation, api:AnimationController.LoadAnimation, api:Animator.LoadAnimation, cd:reference/engine/classes/AnimationController, cd:reference/engine/classes/Humanoid"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-09",
+      "must_index": 0,
+      "must": "no invented numbers",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The recipe explicitly says its numbers are not measurements and only actual profiler captures are evidence.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/heavy-scene-performance-pass.md",
+          "quote": "Evidence: procedure based on the creator-docs performance guides; no numbers here are measurements — **your\nMicroProfiler captures are the only evidence**. Chapter: [performance](../../handbook/roblox/08-performance.md)."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-09",
+      "must_index": 1,
+      "must": "measurement procedure",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The measurement procedure specifies repeatable views, real devices, captured metrics and one-change comparisons.",
+      "evidence": [
+        {
+          "ref": "recipes/graphics/heavy-scene-performance-pass.md",
+          "quote": "## 0. Set up a repeatable measurement\n- Pick 3 fixed camera positions (the heaviest view, a typical view, a combat/NPC-heavy moment) and a 30 s route.\n- Devices: your PC **and** a low/mid phone (Device Emulator is not a performance test).\n- Record: frame time (ms) avg + p95, MicroProfiler capture (Ctrl+F6, then dump), Developer Console (F9) → Memory\n  (LuaHeap, Instances, Graphics…), Render stats (Shift+F2), server heartbeat (Server Stats / server MicroProfiler).\n- Change **one thing at a time**; re-measure the same shots; keep a table.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-10",
+      "must_index": 0,
+      "must": "no such service",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The hallucinated-service row rejects PostProcessingService and locates BloomEffect among effects in Lighting/Camera.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-10",
+      "must_index": 1,
+      "must": "BloomEffect instance in Lighting/Camera",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The hallucinated-service row rejects PostProcessingService and locates BloomEffect among effects in Lighting/Camera.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `game:GetService(\"PostProcessingService\")`, `Camera.PostProcessing` FAKE | post effects are Instances | `BloomEffect`, `ColorCorrectionEffect`, `ColorGradingEffect`, `DepthOfFieldEffect`, `SunRaysEffect`, `BlurEffect` in Lighting/Camera | graphics/02 |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-11",
+      "must_index": 0,
+      "must": "Script.Source is plugin-only",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The permission table identifies Source as plugin-only and gives authored ModuleScripts as the supported alternative.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `script.Source = \"...\"`, `Instance.new(\"Script\")` + Source | Source is plugin-only | ModuleScripts written in Studio | `tools/api.py Script.Source` |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-11",
+      "must_index": 1,
+      "must": "loadstring off/insecure",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The loadstring row identifies the client limitation, disabled server flag and security risk, then recommends data-driven configs.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `loadstring(code)()` on client / enabling it for \"mods\" | client never has it; server flag off; security hole | data-driven configs | — |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-11",
+      "must_index": 2,
+      "must": "data-driven configs instead",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The loadstring row identifies the client limitation, disabled server flag and security risk, then recommends data-driven configs.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `loadstring(code)()` on client / enabling it for \"mods\" | client never has it; server flag off; security hole | data-driven configs | — |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-12",
+      "must_index": 1,
+      "must": "refuses to claim Studio testing",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The skill explicitly forbids fabricated execution and requires actual artifacts for STUDIO TESTED.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "- **Never claim you ran something you didn't.** Use the evidence labels below; \"tested\" without a label is forbidden.\n  STUDIO TESTED needs artifacts you actually captured (console output, assertion results, screenshots)."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-12",
+      "must_index": 2,
+      "must": "session locking design",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The session-locked profile design acquires, refreshes and releases locks and never saves failed loads.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/save-system.md",
+          "quote": "-- Profiles: session-locked player profiles on DataStoreService.\n--   load (UpdateAsync + lock, migrations) → ready (gameplay edits profile in memory) → autosave (refreshes lock)\n--   → release on leave / BindToClose. Failed or locked loads become \"errored\" sessions that never save.\n-- One key per player (\"User_<UserId>\"), one request at a time per key, bounded retries with backoff.\n-- Studio: needs \"Enable Studio Access to API Services\" and writes REAL data — use a separate test universe.\n-- Status: TYPECHECKED (pure transforms CLI-EXECUTED in examples/tests/data.spec.luau). Not run in Studio."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-12",
+      "must_index": 3,
+      "must": "test steps for the user",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The save recipe gives concrete persistence, failure-injection, fast-rejoin and shutdown checks.",
+      "evidence": [
+        {
+          "ref": "recipes/gameplay/save-system.md",
+          "quote": "2. Studio (test universe, API access on): join, gain coins, leave, rejoin → coins persist; check Output for\n   `[Profiles]` warnings.\n3. Studio failure injection: temporarily add `error(\"test\")` as the first line of the load transform → after the\n   retries the session must end \"errored\", the `DataStatus` attribute shows it, and nothing is ever saved.\n4. Live/Team Test: two servers of the same place — join server A, quickly teleport/rejoin into B → B waits for A's\n   release (lock retries) instead of loading stale data.\n5. Shutdown: with several players, shut down the server from the Creator Dashboard → all releases logged within the\n   budget.\nStudio playtests use separate, lower static limits and real data; never test against a production universe.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-13",
+      "must_index": 0,
+      "must": "start_stop_play starts a single client — not a two-player test",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The MCP multiplayer section explicitly says start_stop_play starts one client and cannot establish multi-client replication.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/24-studio-mcp-testing.md",
+          "quote": "`start_stop_play` = a single Play client. Replication, ownership, remotes seen by others, join/leave and lobby flows\nneed a server + several clients:"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-13",
+      "must_index": 1,
+      "must": "StudioTestService:ExecuteMultiplayerTestAsync or Server & Clients",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The multiplayer procedure names ExecuteMultiplayerTestAsync and its manual Server & Clients fallback.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/24-studio-mcp-testing.md",
+          "quote": "- `StudioTestService:ExecuteMultiplayerTestAsync(numPlayers, args)` — **plugin security**, 1–8 clients, one session\n  per Studio, errors if a test is already running; **yields until the test ends** and returns the value the server\n  passes to `EndTest`. Run it from a plugin (or a spawned thread) so the caller isn't blocked; whether a given MCP\n  host lets `execute_luau` drive it end-to-end is unverified — try it, and fall back to the user clicking\n  Test → Server & Clients."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-13",
+      "must_index": 2,
+      "must": "report only what actually ran, with mode and artifacts",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The reproduce/fix/verify procedure requires artifacts, test mode, exact assertions and disclosure of untested scope.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/24-studio-mcp-testing.md",
+          "quote": "6. **Report with artifacts**: what ran, in which mode, which assertions passed, what was not covered (NOT RUN)."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-14",
+      "must_index": 0,
+      "must": "execute_luau runs with plugin security",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The permission rule explicitly separates execute_luau plugin security from game-script capability.",
+      "evidence": [
+        {
+          "ref": "handbook/roblox/24-studio-mcp-testing.md",
+          "quote": "1. **Plugin security ≠ game script.** `execute_luau` can call PluginSecurity APIs (e.g. `StudioTestService`,\n   `ScriptProfilerService`). Success there proves nothing about what a game `Script` may call — check\n   `python3 \"$SKILL/tools/api.py\" Class.Member` (\"game scripts: …\") before putting the call in game code."
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-14",
+      "must_index": 1,
+      "must": "LightingStyle is not writable by game scripts",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The failure-mode permissions row prohibits runtime LightingStyle writes and directs the user to Studio while leaving other runtime properties available.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `Lighting.Technology = ...`, `Lighting.LightingStyle = ...` in a game script | RobloxScriptSecurity / PluginOrOpenCloud-only write | set in Studio Properties; runtime changes other properties | `tools/api.py Lighting.LightingStyle` |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-14",
+      "must_index": 2,
+      "must": "set it in Studio; runtime changes other properties",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The failure-mode permissions row prohibits runtime LightingStyle writes and directs the user to Studio while leaving other runtime properties available.",
+      "evidence": [
+        {
+          "ref": "references/ai-failure-modes.md",
+          "quote": "| `Lighting.Technology = ...`, `Lighting.LightingStyle = ...` in a game script | RobloxScriptSecurity / PluginOrOpenCloud-only write | set in Studio Properties; runtime changes other properties | `tools/api.py Lighting.LightingStyle` |"
+        }
+      ]
+    },
+    {
+      "case_id": "ADV-RU-02",
+      "must_index": 4,
+      "must": "give concrete verification steps",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The workflow requires exact user test steps when no execution tool is available.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "8. **Test** with the strongest tool you actually have:\n   - always: typecheck / Luau CLI tests for pure logic;\n   - **Studio MCP tools connected** (`list_roblox_studios`, `execute_luau`, `start_stop_play`, …): run the\n     reproduce → fix → verify loop in [Studio MCP testing](handbook/roblox/24-studio-mcp-testing.md) — target the\n     place by `studio_id`, reproduce first, patch the durable source, re-run the same check, keep the artifacts;\n   - otherwise give the user exact Studio steps (Server & Clients for anything networked)."
+        }
+      ]
+    },
+    {
+      "case_id": "DBG-01",
+      "must_index": 0,
+      "must": "check handler side and connection timing",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The symptom row explicitly lists wrong handler side/timing, printing in both peers and duplicate-name instance mismatches.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "| RemoteEvent does nothing | handler on wrong side (OnServerEvent in LocalScript), remote created on client, different remote instance (duplicate names), handler connected after event fired, handler errors silently in pcall | print in both sender and receiver; Explorer during play on both views; \"Remote event invocation discarded\" in log | create remotes on server; connect before firing; one remote per name |"
+        }
+      ]
+    },
+    {
+      "case_id": "DBG-01",
+      "must_index": 1,
+      "must": "prints on both sides",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The symptom row explicitly lists wrong handler side/timing, printing in both peers and duplicate-name instance mismatches.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "| RemoteEvent does nothing | handler on wrong side (OnServerEvent in LocalScript), remote created on client, different remote instance (duplicate names), handler connected after event fired, handler errors silently in pcall | print in both sender and receiver; Explorer during play on both views; \"Remote event invocation discarded\" in log | create remotes on server; connect before firing; one remote per name |"
+        }
+      ]
+    },
+    {
+      "case_id": "DBG-01",
+      "must_index": 2,
+      "must": "duplicate remote names",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The symptom row explicitly lists wrong handler side/timing, printing in both peers and duplicate-name instance mismatches.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "| RemoteEvent does nothing | handler on wrong side (OnServerEvent in LocalScript), remote created on client, different remote instance (duplicate names), handler connected after event fired, handler errors silently in pcall | print in both sender and receiver; Explorer during play on both views; \"Remote event invocation discarded\" in log | create remotes on server; connect before firing; one remote per name |"
+        }
+      ]
+    },
+    {
+      "case_id": "DBG-01",
+      "must_index": 3,
+      "must": "player arg shift",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The appended argument contract explains the implicit Player and paired-side logging needed to diagnose shifting.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "The engine automatically prepends the sending Player to OnServerEvent arguments. The client sends\n`remote:FireServer(data)`; the server handler receives `(player, data)`. Log payload types on both sides,\nconnection timing and the full remote path before changing an argument list."
+        }
+      ]
+    },
+    {
+      "case_id": "DBG-02",
+      "must_index": 1,
+      "must": "engine adds player automatically",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The argument contract explicitly states that the engine prepends the sending Player.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "The engine automatically prepends the sending Player to OnServerEvent arguments. The client sends\n`remote:FireServer(data)`; the server handler receives `(player, data)`. Log payload types on both sides,\nconnection timing and the full remote path before changing an argument list."
+        }
+      ]
+    },
+    {
+      "case_id": "DBG-05",
+      "must_index": 0,
+      "must": "name/path wrong, wrong side, streaming, created later",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The diagnosis checks spelling/path, side, streaming and delayed creation, then requires a timeout and concrete diagnostic output.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "For an infinite WaitForChild, inspect spelling and the full parent path, the server/client side where the\ninstance exists, whether streaming removed it, and whether another script creates it later. Use a timeout;\nif it expires, log the expected path, execution side and current children instead of indexing nil or waiting forever.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "DBG-05",
+      "must_index": 1,
+      "must": "timeout + diagnostics",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The diagnosis checks spelling/path, side, streaming and delayed creation, then requires a timeout and concrete diagnostic output.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "For an infinite WaitForChild, inspect spelling and the full parent path, the server/client side where the\ninstance exists, whether streaming removed it, and whether another script creates it later. Use a timeout;\nif it expires, log the expected path, execution side and current children instead of indexing nil or waiting forever.\n"
+        }
+      ]
+    },
+    {
+      "case_id": "DEBUG-RU-01",
+      "must_index": 1,
+      "must": "separates hypotheses and verified facts",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The evidence-first protocol separates facts from hypotheses, asks for minimal paired scripts/paths/repro/output, and requires NOT RUN when execution is absent.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "State observed facts separately from hypotheses; without logs or a reproducible run, do not claim a root cause\nor a verified fix. Ask for the smallest paired scripts, exact instance paths, execution side, reproduction steps\nand original client/server Output around the failure. Mark unexecuted checks NOT RUN and name the next check.\nFor intermittent saves, first test failed-load handling and fast rejoin while the old server still owns the lock."
+        }
+      ]
+    },
+    {
+      "case_id": "DEBUG-RU-01",
+      "must_index": 2,
+      "must": "asks for minimal reproducible artifacts",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The evidence-first protocol separates facts from hypotheses, asks for minimal paired scripts/paths/repro/output, and requires NOT RUN when execution is absent.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "State observed facts separately from hypotheses; without logs or a reproducible run, do not claim a root cause\nor a verified fix. Ask for the smallest paired scripts, exact instance paths, execution side, reproduction steps\nand original client/server Output around the failure. Mark unexecuted checks NOT RUN and name the next check.\nFor intermittent saves, first test failed-load handling and fast rejoin while the old server still owns the lock."
+        }
+      ]
+    },
+    {
+      "case_id": "DEBUG-RU-01",
+      "must_index": 4,
+      "must": "honest NOT RUN evidence",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The evidence-first protocol separates facts from hypotheses, asks for minimal paired scripts/paths/repro/output, and requires NOT RUN when execution is absent.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "State observed facts separately from hypotheses; without logs or a reproducible run, do not claim a root cause\nor a verified fix. Ask for the smallest paired scripts, exact instance paths, execution side, reproduction steps\nand original client/server Output around the failure. Mark unexecuted checks NOT RUN and name the next check.\nFor intermittent saves, first test failed-load handling and fast rejoin while the old server still owns the lock."
+        }
+      ]
+    },
+    {
+      "case_id": "DEBUG-RU-01",
+      "must_index": 3,
+      "must": "checks failed loads and rejoin races",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The same protocol specifically prioritizes failed loads and fast rejoins while the old server owns the profile lock.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "State observed facts separately from hypotheses; without logs or a reproducible run, do not claim a root cause\nor a verified fix. Ask for the smallest paired scripts, exact instance paths, execution side, reproduction steps\nand original client/server Output around the failure. Mark unexecuted checks NOT RUN and name the next check.\nFor intermittent saves, first test failed-load handling and fast rejoin while the old server still owns the lock."
+        }
+      ]
+    },
+    {
+      "case_id": "STATE-EVIDENCE-01",
+      "must_index": 0,
+      "must": "edits REPORT.md",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The durable-edit rule requires editing the named report, preserving original verification artifacts and giving real next steps rather than replacing evidence.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "When the task asks for a project change, edit the durable project source or named report file, rather than\nonly describing a fix. Preserve original verification artifacts when correcting an inaccurate report; label\nthe correction and give the next real verification steps without replacing missing evidence with a claim."
+        }
+      ]
+    },
+    {
+      "case_id": "STATE-EVIDENCE-01",
+      "must_index": 3,
+      "must": "preserves original evidence",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The durable-edit rule requires editing the named report, preserving original verification artifacts and giving real next steps rather than replacing evidence.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "When the task asks for a project change, edit the durable project source or named report file, rather than\nonly describing a fix. Preserve original verification artifacts when correcting an inaccurate report; label\nthe correction and give the next real verification steps without replacing missing evidence with a claim."
+        }
+      ]
+    },
+    {
+      "case_id": "STATE-EVIDENCE-01",
+      "must_index": 4,
+      "must": "gives next real verification steps",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The durable-edit rule requires editing the named report, preserving original verification artifacts and giving real next steps rather than replacing evidence.",
+      "evidence": [
+        {
+          "ref": "SKILL.md",
+          "quote": "When the task asks for a project change, edit the durable project source or named report file, rather than\nonly describing a fix. Preserve original verification artifacts when correcting an inaccurate report; label\nthe correction and give the next real verification steps without replacing missing evidence with a claim."
+        }
+      ]
+    },
+    {
+      "case_id": "GAP-DEBUGGING-01",
+      "must_index": 0,
+      "must": "engine adds player automatically",
+      "status": "supported",
+      "reviewer": "assistant semantic review (not independent human adjudication)",
+      "reviewed_at": "2026-10-02",
+      "rationale": "The explicit argument contract states the engine automatically adds the sending Player, which explains this fixture mismatch.",
+      "evidence": [
+        {
+          "ref": "references/debugging-playbook.md",
+          "quote": "The engine automatically prepends the sending Player to OnServerEvent arguments. The client sends\n`remote:FireServer(data)`; the server handler receives `(player, data)`. Log payload types on both sides,\nconnection timing and the full remote path before changing an argument list."
+        }
+      ]
+    }
+  ]
+}

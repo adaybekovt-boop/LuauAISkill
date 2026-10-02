@@ -8,14 +8,13 @@ export type Profile = {
 	coins: number,
 	inventory: { any },
 	settings: { [string]: any },
-	purchases: { string }, -- processed PurchaseIds, newest last (bounded)
+	purchases: { string }, -- permanent processed PurchaseIds; never evict dedupe history
 	stats: { playTime: number, joins: number },
 }
 
 local Schema = {}
 
 Schema.VERSION = 3
-Schema.MAX_PURCHASE_IDS = 200
 
 function Schema.template(): Profile
 	return {
@@ -81,15 +80,13 @@ function Schema.reconcile(data: { [string]: any }, template: { [string]: any })
 	end
 end
 
--- Records a PurchaseId; returns false if it was already processed. Keeps the list bounded.
+-- Records a PurchaseId; returns false if already processed. Never prune history: delayed receipts can replay.
+-- Monitor serialized profile size; storage exhaustion must defer purchases, not discard dedupe IDs.
 function Schema.recordPurchase(profile: Profile, purchaseId: string): boolean
 	if table.find(profile.purchases, purchaseId) then
 		return false
 	end
 	table.insert(profile.purchases, purchaseId)
-	while #profile.purchases > Schema.MAX_PURCHASE_IDS do
-		table.remove(profile.purchases, 1)
-	end
 	return true
 end
 

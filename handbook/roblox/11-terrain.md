@@ -26,11 +26,11 @@ Related: [procedural generation](12-procedural-generation.md), [materials](../gr
 ## Scripting API (stable)
 | Operation | API |
 |---|---|
-| Fill primitives | `FillBlock(cframe, size, material)`, `FillBall(center, r, material)`, `FillCylinder(cf, h, r, mat)`, `FillWedge(cf, size, mat)`, `FillRegion(region3, 4, mat)` |
+| Fill primitives | `FillBlock(cframe, size, material)`, `FillBall(center, r, material)`, `FillCylinder(cf, h, r, mat)`, `FillWedge(cf, size, mat)`, `FillRegion(region3, resolution, mat)` Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->
 | Remove | fill with `Enum.Material.Air` |
-| Bulk read/write | `ReadVoxels(region, 4)` / `WriteVoxels(region, 4, materials, occupancies)` (3D arrays `[x][y][z]`) |
-| Channel read/write (incl. water) | `ReadVoxelChannels(region, 4, {"SolidMaterial","SolidOccupancy","LiquidOccupancy"})` / `WriteVoxelChannels` |
-| Replace material | `ReplaceMaterial(region, 4, from, to)` |
+| Bulk read/write | `ReadVoxels(region, resolution)` / `WriteVoxels(region, resolution, materials, occupancies)` (3D arrays `[x][y][z]`) Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->
+| Channel read/write (incl. water) | `ReadVoxelChannels(region, resolution, {"SolidMaterial","SolidOccupancy","LiquidOccupancy"})` / `WriteVoxelChannels` Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->
+| Replace material | `ReplaceMaterial(region, resolution, from, to)` Resolution = <!-- fact-value: terrain-voxel-size[0] -->4<!-- /fact-value --> studs. | <!-- fact-refs: terrain-voxel-size -->
 | Copy/paste | `CopyRegion(region3int16)` → `TerrainRegion`, `PasteRegion(tr, corner, pasteEmpty)` |
 | Clear | `Terrain:Clear()` |
 `Region3` for voxel ops must be aligned: `region:ExpandToGrid(4)`. Methods ending in `_beta`

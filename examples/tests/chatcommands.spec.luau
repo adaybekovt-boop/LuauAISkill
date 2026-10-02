@@ -4,7 +4,7 @@ assert(Parser.parse("/respawn"))
 local kick = Parser.parse("/kick 12345")
 assert(kick and kick.targetId == 12345)
 for _, value in { "/kick DisplayName", "/kick 123 reason", "/kick -1", "/kick 1.2", "/kick 0", string.rep("x", 100) } do
-    assert(Parser.parse(value) == nil, value)
+	assert(Parser.parse(value) == nil, value)
 end
 assert(Parser.allowed(1, 1, {}))
 assert(Parser.allowed(2, 1, { [2] = true }))

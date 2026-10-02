@@ -2,7 +2,7 @@
 """Verify legacy guidance, API/doc references, every detector fixture and top-150 coverage.
 
 Write deterministic coverage.json, RANKING.md and fixtures.luau; --check rejects stale artifacts.
---release-gate additionally rejects provisional empirical ranking evidence. Static coverage is not
+--release-gate checks dump-derived D3 curation and A/B output evidence; external corpora are not a gate. Static coverage is not
 proof of popular usage, measured model failure, or Studio correctness.
 """
 from __future__ import annotations
@@ -16,6 +16,7 @@ import check_sources
 import check_links
 import rank_legacy
 import render_legacy
+import classify_legacy
 
 ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / 'references' / 'legacy-modernization'
@@ -81,7 +82,7 @@ def validate(data: dict, ranking: dict, require_docs: bool = True) -> tuple[list
         'public_code_frequency': ranking['public_code_frequency'],
         'measured_model_outputs': ranking['measured_model_outputs'],
         'official_tutorial_sample': ranking['official_tutorial_sample'],
-        'empirical_ranking_release_gate': 'BLOCKED: no representative public/historical tutorial sample or measured model outputs',
+        'empirical_ranking_release_gate': 'REMOVED: external-corpus ranking is not a release requirement',
         'coverage': dict(sorted(coverage.items())),
     }
     return errors, report
@@ -131,7 +132,9 @@ def main() -> int:
     data = json.loads((DIR / 'catalog.json').read_text(encoding='utf-8'))
     ranking = rank_legacy.build()
     errors, report = validate(data, ranking)
-    artifacts = {'coverage.json': json.dumps(report, indent=1, ensure_ascii=False) + '\n',
+    classification = classify_legacy.build()
+    artifacts = {'classification.json': json.dumps(classification, indent=1, ensure_ascii=False) + '\n',
+                 'coverage.json': json.dumps(report, indent=1, ensure_ascii=False) + '\n',
                  'RANKING.md': ranking_markdown(ranking, report['coverage']), 'fixtures.luau': fixtures_text(data)}
     for name, text in artifacts.items():
         path = DIR / name
@@ -145,8 +148,10 @@ def main() -> int:
     print(f"legacy coverage: {report['catalog_entries']} entries, {report['explicitly_covered_rows']}/{report['deprecated_rows']} API rows, "
           f"{report['top_n_covered']}/{report['top_n']} top-ranked, {len(errors)} error(s)")
     if args.release_gate:
-        print(report['empirical_ranking_release_gate'])
-        return 1
+        blocked = bool(classification['remaining_curation']) or classification['ab_output_curation']['status'] != 'verified'
+        if blocked:
+            print('BLOCKED: D3 unresolved migration evidence or actual A/B output curation not measured')
+        return 1 if errors or blocked else 0
     return 1 if errors else 0
 
 

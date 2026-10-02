@@ -23,6 +23,11 @@ This file is the entry point. Load more only when the task needs it (progressive
 **SKILL.md → [tracks/INDEX.md](tracks/INDEX.md) (pick a track) → handbook chapters → a recipe → references / `api/`**.
 Answer in the user's language; keep API names exact. Skill text is English for precision and token economy.
 
+Activate this engineering workflow only for Roblox/Luau engineering or scene-art work. An incidental mention
+of Roblox does not activate it. For unrelated requests (including translation, greetings, cooking, or another
+programming language), answer the actual request directly in its requested language and format, keep the
+response proportionate, and omit irrelevant Roblox code, architecture, and API-verification advice.
+
 **Paths.** Every path in this skill is relative to the skill directory — the folder that contains this SKILL.md —
 not to the user's project. Skill directory: `${CLAUDE_SKILL_DIR}` (if that still reads as a placeholder, your host
 didn't substitute it: use the absolute path of this file's folder). Below, `$SKILL` means that directory. Run tools
@@ -51,6 +56,10 @@ or `python3 "$SKILL/tools/scan_legacy.py" ./src` — never `python tools/...` fr
      place by `studio_id`, reproduce first, patch the durable source, re-run the same check, keep the artifacts;
    - otherwise give the user exact Studio steps (Server & Clients for anything networked).
 9. **Report honestly** (template below): evidence level per claim, what ran, what didn't, assumptions, risks.
+
+When the task asks for a project change, edit the durable project source or named report file, rather than
+only describing a fix. Preserve original verification artifacts when correcting an inaccurate report; label
+the correction and give the next real verification steps without replacing missing evidence with a claim.
 
 ## Hard rules
 - **Never invent APIs.** If `tools/api.py` says NOT FOUND, it doesn't exist. Mark `deprecated`, `superseded`,
@@ -116,28 +125,28 @@ Everything in this repository is at most TYPECHECKED / CLI-EXECUTED; nothing was
 | `check_code.py file.md` | typecheck Luau blocks (needs `tools/install_toolchain.py` + sources) |
 | `check_all.py` | every repository check (maintainers/CI, run inside the skill repo) |
 
-## Freshness snapshot (facts older models get wrong — verified against API 0.741.19 / docs 2026-10-01)
-- Local light range max **120** studs; `Highlight` limit **255**; `ExposureCompensation` −5…5.
-- `Lighting.Technology` is RobloxScriptSecurity + deprecated; `LightingStyle`/`PrioritizeLightingQuality` are Studio/plugin writes.
-- `RaycastFilterType.Blacklist/Whitelist` removed → `Exclude/Include`; `RaycastParams.ExcludeInstances`/`IncludeInstances` exist.
+## Freshness snapshot (verify the pinned API baseline with `tools/api.py`)
+- Local light range max **<!-- fact-value: local-light-range -->120<!-- /fact-value -->** studs; `Highlight` slots **<!-- fact-value: highlight-slots -->255<!-- /fact-value -->** per client (disabled highlights consume slots); `ExposureCompensation` range <!-- fact-value: lighting-exposure-range -->[-5, 5]<!-- /fact-value -->.
+- `Lighting.Technology` is RobloxScriptSecurity and superseded in documentation; the dump does not tag it Deprecated. `LightingStyle`/`PrioritizeLightingQuality` are Studio/plugin writes. <!-- fact-refs: lighting-technology-superseded -->
+- Use `RaycastFilterType.Exclude/Include` in place of legacy `Blacklist/Whitelist`; `RaycastParams.ExcludeInstances`/`IncludeInstances` exist.
 - Renamed to `*Async`: `LoadCharacterAsync`, `IsInGroupAsync`, `GetRolesInGroupAsync`, `IsFriendsWithAsync`,
   `GetProductInfoAsync`, `PlayerOwnsAssetAsync`, `AwardBadgeAsync`, `UserHasBadgeAsync`, `ReserveServerAsync`,
   `PreloadAsync`, `ApplyDescriptionAsync`, `PlayEmoteAsync` … (check any with `tools/api.py`).
-- `RenderStepped`/`Stepped` superseded by `PreRender`/`PreSimulation` for new work.
-- **Server authority mode is fully released (2026-07-09)**; the base Character Controller Library is released
-  (2026-04-08) — its Sprint/Crouch/ShiftLock defaults and custom-abilities API are a Studio beta (2026-09-10).
-  Audio API is the recommended audio system; Input Action System is stable (`InputActionLabel` beta).
-- `Player.FrustumStreaming` (`Enum.FrustumStreamingMode`, server-set) streams the camera view beyond the radius (2026-09-29).
-- Receipts: `ProcessReceipt` (`Enum.ProductPurchaseDecision`) and the newer `MarketplaceService:BindReceiptHandler`
-  (`Enum.ReceiptDecision.Processed`/`NotProcessedYet`) — different enums. Cross-game developer-product and pass sales are disabled since 2026-05-30 (use Robux transfers).
-- Legacy chat was migrated to TextChatService (2025); `TextChatCommand.Triggered` passes **unfiltered** text.
-- Studio ships a built-in **MCP server** (stdio; every call takes `studio_id`; `set_active_studio` is gone);
-  `start_stop_play` starts a single play client — multiplayer automation is `StudioTestService:ExecuteMultiplayerTestAsync` (1–8 players, plugin security).
-- DataStore: 4 MB values, server budget `60 + 40 × players`/min per type, 4 s `GetAsync` cache, BindToClose ~30 s;
-  `BatchGetAsync` works on **ordered** stores only, N keys cost N reads.
+- `RenderStepped`/`Stepped` superseded by `PreRender`/`PreSimulation` for new work. <!-- fact-refs: renderstepped-superseded, stepped-superseded -->
+- **Server authority mode is fully released (<!-- fact-value: server-authority-release-date -->2026-07-09<!-- /fact-value -->)**. <!-- fact-refs: server-authority-release-status -->
+- The base Character Controller Library is a **<!-- fact-value: ccl-base-release-status -->full release<!-- /fact-value -->** (<!-- fact-value: ccl-base-release-date -->2026-04-08<!-- /fact-value -->); its new default/custom abilities are a separate **<!-- fact-value: ccl-abilities-beta-status -->Studio beta<!-- /fact-value -->** (<!-- fact-value: ccl-abilities-beta-date -->2026-09-10<!-- /fact-value -->). See [character controllers](handbook/roblox/13-character-controllers.md) for setup and migration.
+- Audio API is the recommended audio system; Input Action System is **<!-- fact-value: input-action-release-status -->full release<!-- /fact-value -->** (`InputActionLabel` is <!-- fact-value: input-action-label-beta -->beta<!-- /fact-value -->).
+- `Player.FrustumStreaming` (`Enum.FrustumStreamingMode`, server-set) streams the camera view beyond the radius.
+- Receipts: `ProcessReceipt` (`Enum.ProductPurchaseDecision`) and `MarketplaceService:BindReceiptHandler`
+  (`Enum.ReceiptDecision.Processed`/`NotProcessedYet`) use different enums. Pinned docs schedule cross-game developer-product/pass sales to be disabled from <!-- fact-value: cross-game-developer-product-sales-disable-date -->2026-05-30<!-- /fact-value --> (use Robux transfers). <!-- fact-refs: cross-game-pass-sales-disable-date -->
+- Use TextChatService for chat; `TextChatCommand.Triggered` passes **unfiltered** text.
+- Studio ships a built-in **MCP server** (stdio; every call takes `studio_id`; use the current tool list).
+  `start_stop_play` starts a single play client; multiplayer automation is `StudioTestService:ExecuteMultiplayerTestAsync` (<!-- fact-value: studio-test-service-clients -->[1, 8]<!-- /fact-value --> players, plugin security).
+- DataStore values: <!-- fact-value: datastore-value-size -->4194304<!-- /fact-value --> serialized characters. Standard read/write default server budgets: <!-- fact-value: datastore-standard-read-server-rate -->60 + 40 * players<!-- /fact-value --> per minute each; ordered writes: <!-- fact-value: datastore-ordered-write-server-rate -->30 + 5 * players<!-- /fact-value --> per minute. <!-- fact-refs: datastore-standard-write-server-rate -->
+  `GetAsync` cache: <!-- fact-value: datastore-cache-duration -->4<!-- /fact-value --> s; `BindToClose`: about <!-- fact-value: bind-to-close-deadline -->30<!-- /fact-value --> s. `BatchGetAsync` supports ordered stores; requested keys consume read budget.
 - Require-by-string (`./`, `../`, `@self/`, `@game/`) works in Roblox and the Luau CLI.
-- Undocumented in 0.741: `PlayerDataService` / `Player:GetData()` / `PlayerDataRecord`, `Player:GetFriendsInServerAsync`,
-  `ProjectService`, `TextDocument` — present in the dump, no docs; don't build on them.
+- Undocumented in the pinned snapshot: `PlayerDataService` / `Player:GetData()` / `PlayerDataRecord`, `Player:GetFriendsInServerAsync`,
+  `ProjectService`, `TextDocument`; present in the dump, no docs, so don't build on them.
 
 ## Report template (end of any non-trivial task)
 ```text

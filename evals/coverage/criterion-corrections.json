@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "corrections": [
+    {
+      "case_id": "LIT-08",
+      "must_index": 1,
+      "original": "server owns ClockTime; clients own zone properties",
+      "corrected": "server owns authoritative cycle/time inputs; clients derive visual ClockTime and own zone properties",
+      "reason": "Original criterion preserved. The cited recipe uses authoritative replicated cycle metadata and client-derived visual ClockTime, whereas the rubric prescribes server-owned ClockTime. This architectural mismatch needs independent adjudication; coverage must not be gained by weakening the demand.",
+      "source": "recipes/graphics/lighting-controller-presets.md#server-wide-changes-daynight-story-events",
+      "reviewed_at": "2026-10-02",
+      "status": "pending_adjudication"
+    },
+    {
+      "case_id": "SEC-07",
+      "must_index": 0,
+      "original": "Technology is not scriptable/deprecated",
+      "corrected": "Technology is not writable by game scripts and is superseded in documentation; do not invent a Deprecated dump tag",
+      "status": "accepted_source_correction",
+      "reason": "Pinned API row has RobloxScriptSecurity for reading and writing and no Deprecated flag. The source-backed fact distinguishes documentation supersession from dump tags.",
+      "source": "api/members.tsv",
+      "source_sha256": "d99c0b399483cd39525ba1d5407036cd0c08c2dfcb3b34bbb0654415d79243a6",
+      "source_quote": "Lighting\tTechnology\tProperty\tTechnology\tRobloxScriptSecurity\tRobloxScriptSecurity\tReadSafe\tcap=Environment",
+      "fact_id": "lighting-technology-superseded",
+      "reviewed_at": "2026-10-02"
+    }
+  ]
+}

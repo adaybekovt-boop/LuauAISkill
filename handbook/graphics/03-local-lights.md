@@ -15,7 +15,7 @@ Prereq: [lighting](01-lighting.md). Recipes: [flickering fluorescent](../../reci
 | Type | Shape | Parent | Use |
 |---|---|---|---|
 | `PointLight` | sphere, `Range` | Attachment (recommended) or BasePart | bulbs, torches, fire, fill |
-| `SpotLight` | cone, `Angle` (≤180), `Face`, `Range` | Attachment/BasePart | flashlights, street lamps, stage lights |
+| `SpotLight` | cone, `Angle` (≤<!-- fact-value: spotlight-angle-maximum -->180<!-- /fact-value -->), `Face`, `Range` | Attachment/BasePart | flashlights, street lamps, stage lights | <!-- fact-refs: spotlight-angle-maximum -->
 | `SurfaceLight` | emits from a part face, `Angle`, `Face`, `Range` | BasePart | fluorescent panels, screens, windows (area-light look) |
 Shared: `Color`, `Brightness` (intensity at center; does not extend range), `Range` (**max 120 studs**),
 `Shadows` (expensive), `Enabled`. Studio setting "Show Light Guides" visualizes ranges.
@@ -71,3 +71,8 @@ ignored; the old limit of 31 is outdated) — still reuse one Highlight and move
 Sources: cd:effects/light-sources, cd:effects/highlighting, cd:reference/engine/classes/Light,
 cd:reference/engine/classes/PointLight, cd:reference/engine/classes/SpotLight, cd:reference/engine/classes/SurfaceLight,
 cd:reference/engine/classes/SurfaceAppearance, cd:reference/engine/classes/Lighting, cd:performance-optimization/improve.
+
+## Verifying a lighting optimization
+Capture `computeLightingPerform` before and after the proposed change under the same
+camera route, graphics settings, device and visible scene. Report the captured cost,
+not a guessed improvement from reducing the number of lights.

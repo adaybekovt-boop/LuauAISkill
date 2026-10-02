@@ -43,32 +43,32 @@ cannot submit a score, datastore key, page size, or arbitrary friend ID. The dis
 export type Row = { userId: number, score: number }
 local Rows = {}
 function Rows.valid(value: any): boolean
-    return type(value) == "number" and value == value and value >= 0 and value <= 2147483647 and value % 1 == 0
+	return type(value) == "number" and value == value and value >= 0 and value <= 2147483647 and value % 1 == 0
 end
 function Rows.sorted(entries: { [string]: any }, limit: number): { Row }
-    local rows: { Row } = {}
-    for key, entry in entries do
-        local id = tonumber(key)
-        if id and id > 0 and id % 1 == 0 and type(entry) == "table" and Rows.valid(entry.value) then
-            table.insert(rows, { userId = id, score = entry.value })
-        end
-    end
-    table.sort(rows, function(a: Row, b: Row) return a.score > b.score or (a.score == b.score and a.userId < b.userId) end)
-    while #rows > limit do table.remove(rows) end
-    return rows
+	local rows: { Row } = {}
+	for key, entry in entries do
+		local id = tonumber(key)
+		if id and id > 0 and id % 1 == 0 and type(entry) == "table" and Rows.valid(entry.value) then
+			table.insert(rows, { userId = id, score = entry.value })
+		end
+	end
+	table.sort(rows, function(a: Row, b: Row) return a.score > b.score or (a.score == b.score and a.userId < b.userId) end)
+	while #rows > limit do table.remove(rows) end
+	return rows
 end
 function Rows.keys(userId: number, friends: { number }): ({ string }, boolean)
-    local ids: { number } = {}
-    local seen: { [number]: boolean } = { [userId] = true }
-    for _, id in friends do
-        if id > 0 and id % 1 == 0 and id == id and not seen[id] then
-            seen[id] = true; table.insert(ids, id)
-        end
-    end
-    table.sort(ids)
-    local keys = { tostring(userId) }
-    for i = 1, math.min(99, #ids) do table.insert(keys, tostring(ids[i])) end
-    return keys, #ids > 99
+	local ids: { number } = {}
+	local seen: { [number]: boolean } = { [userId] = true }
+	for _, id in friends do
+		if id > 0 and id % 1 == 0 and id == id and not seen[id] then
+			seen[id] = true; table.insert(ids, id)
+		end
+	end
+	table.sort(ids)
+	local keys = { tostring(userId) }
+	for i = 1, math.min(99, #ids) do table.insert(keys, tostring(ids[i])) end
+	return keys, #ids > 99
 end
 return Rows
 ```
@@ -88,68 +88,68 @@ local store = DataStoreService:GetOrderedDataStore("BestScore_v1")
 export type Snapshot = { rows: { Rows.Row }, stale: boolean, partial: boolean, updatedAt: number }
 type Cache = { snapshot: Snapshot, expires: number, busy: boolean }
 local function empty(): Cache
-    return { snapshot = { rows = {}, stale = true, partial = false, updatedAt = 0 }, expires = 0, busy = false }
+	return { snapshot = { rows = {}, stale = true, partial = false, updatedAt = 0 }, expires = 0, busy = false }
 end
 local global = empty()
 local friends: { [Player]: Cache } = {}
 local pending: { [number]: number } = {}
 local Service = {}
 function Service.recordBest(userId: number, canonicalScore: number)
-    assert(userId > 0 and userId % 1 == 0 and Rows.valid(canonicalScore), "Invalid server score")
-    pending[userId] = math.max(pending[userId] or 0, canonicalScore)
+	assert(userId > 0 and userId % 1 == 0 and Rows.valid(canonicalScore), "Invalid server score")
+	pending[userId] = math.max(pending[userId] or 0, canonicalScore)
 end
 function Service.get(player: Player, mode: string): Snapshot
-    local cache = global
-    if mode == "friends" then
-        cache = friends[player] or empty()
-        friends[player] = cache
-    end
-    if cache.busy or os.clock() < cache.expires then return cache.snapshot end
-    cache.busy = true
-    cache.expires = os.clock() + 60 -- rate/backoff also applies to failures
-    local ok, rows, partial = pcall(function(): ({ Rows.Row }, boolean)
-        if mode == "friends" then
-            local ids = player:GetFriendsWhoPlayedAsync()
-            local keys, limited = Rows.keys(player.UserId, ids)
-            if DataStoreService:GetRequestBudgetForRequestType(Enum.DataStoreRequestType.OrderedRead) < #keys + 5 then
-                error("Read budget reserved for gameplay")
-            end
-            return Rows.sorted(store:BatchGetAsync(keys), 20), limited
-        end
-        if DataStoreService:GetRequestBudgetForRequestType(Enum.DataStoreRequestType.OrderedList) < 2 then
-            error("List budget exhausted")
-        end
-        local page = store:GetSortedAsync(false, 20):GetCurrentPage()
-        local entries: { [string]: any } = {}
-        for _, row in page do entries[row.key] = { value = row.value } end
-        return Rows.sorted(entries, 20), false
-    end)
-    cache.busy = false
-    if ok then
-        cache.snapshot = { rows = rows, stale = false, partial = partial, updatedAt = os.time() }
-    else
-        cache.snapshot.stale = true -- preserve last good data; failure is not an empty board
-    end
-    return cache.snapshot
+	local cache = global
+	if mode == "friends" then
+		cache = friends[player] or empty()
+		friends[player] = cache
+	end
+	if cache.busy or os.clock() < cache.expires then return cache.snapshot end
+	cache.busy = true
+	cache.expires = os.clock() + 60 -- rate/backoff also applies to failures
+	local ok, rows, partial = pcall(function(): ({ Rows.Row }, boolean)
+		if mode == "friends" then
+			local ids = player:GetFriendsWhoPlayedAsync()
+			local keys, limited = Rows.keys(player.UserId, ids)
+			if DataStoreService:GetRequestBudgetForRequestType(Enum.DataStoreRequestType.OrderedRead) < #keys + 5 then
+				error("Read budget reserved for gameplay")
+			end
+			return Rows.sorted(store:BatchGetAsync(keys), 20), limited
+		end
+		if DataStoreService:GetRequestBudgetForRequestType(Enum.DataStoreRequestType.OrderedList) < 2 then
+			error("List budget exhausted")
+		end
+		local page = store:GetSortedAsync(false, 20):GetCurrentPage()
+		local entries: { [string]: any } = {}
+		for _, row in page do entries[row.key] = { value = row.value } end
+		return Rows.sorted(entries, 20), false
+	end)
+	cache.busy = false
+	if ok then
+		cache.snapshot = { rows = rows, stale = false, partial = partial, updatedAt = os.time() }
+	else
+		cache.snapshot.stale = true -- preserve last good data; failure is not an empty board
+	end
+	return cache.snapshot
 end
 local running = true
 local connection = Players.PlayerRemoving:Connect(function(player) friends[player] = nil end)
 local function flush()
-    local budget = DataStoreService:GetRequestBudgetForRequestType(Enum.DataStoreRequestType.OrderedWrite)
-    for userId, score in pending do
-        if budget < 3 then break end
-        budget -= 1
-        local ok, saved = pcall(function()
-            return store:UpdateAsync(tostring(userId), function(old: any): any
-                if old ~= nil and not Rows.valid(old) then return nil end
-                return math.max(if type(old) == "number" then old else 0, score)
-            end)
-        end)
-        if ok and type(saved) == "number" and saved >= score and pending[userId] == score then pending[userId] = nil end
-    end
+	local budget = DataStoreService:GetRequestBudgetForRequestType(Enum.DataStoreRequestType.OrderedWrite)
+	for userId, score in pending do
+		if budget < 3 then break end
+		budget -= 1
+		local ok, saved = pcall(function()
+			return store:UpdateAsync(tostring(userId), function(old: any): any
+				if old ~= nil and not Rows.valid(old) then return nil end
+				return math.max(if type(old) == "number" then old else 0, score)
+			end)
+		end)
+		if ok and type(saved) == "number" and saved >= score and pending[userId] == score then pending[userId] = nil end
+	end
 end
 task.spawn(function()
-    while running do task.wait(60); if running then flush() end end
+	while running do task.wait(60); if running then flush() end end
 end)
 game:BindToClose(function() running = false; connection:Disconnect(); flush() end)
 return Service
@@ -171,12 +171,12 @@ remote.Parent = ReplicatedStorage
 local nextRequest: { [Player]: number } = {}
 local busy: { [Player]: boolean } = {}
 remote.OnServerEvent:Connect(function(player: Player, mode: any)
-    if (mode ~= "global" and mode ~= "friends") or busy[player] or os.clock() < (nextRequest[player] or 0) then return end
-    nextRequest[player] = os.clock() + 3
-    busy[player] = true
-    local snapshot = Service.get(player, mode)
-    busy[player] = nil
-    if player.Parent == Players then remote:FireClient(player, mode, snapshot) end
+	if (mode ~= "global" and mode ~= "friends") or busy[player] or os.clock() < (nextRequest[player] or 0) then return end
+	nextRequest[player] = os.clock() + 3
+	busy[player] = true
+	local snapshot = Service.get(player, mode)
+	busy[player] = nil
+	if player.Parent == Players then remote:FireClient(player, mode, snapshot) end
 end)
 Players.PlayerRemoving:Connect(function(player) nextRequest[player], busy[player] = nil, nil end)
 -- Trusted score producers call Service.recordBest(userId, score) AFTER their canonical save succeeds.
@@ -205,26 +205,26 @@ label.RichText = false; label.AutoLocalize = false; label.Text = "Loading scores
 local current = "global"
 local running = true
 for index, mode in { "global", "friends" } do
-    local button = Instance.new("TextButton")
-    button.Size = UDim2.new(0.5, 0, 0, 36); button.Position = UDim2.new((index - 1) * 0.5, 0, 0, 0)
-    button.Text = mode; button.Parent = frame
-    button.Activated:Connect(function() current = mode; remote:FireServer(mode) end)
+	local button = Instance.new("TextButton")
+	button.Size = UDim2.new(0.5, 0, 0, 36); button.Position = UDim2.new((index - 1) * 0.5, 0, 0, 0)
+	button.Text = mode; button.Parent = frame
+	button.Activated:Connect(function() current = mode; remote:FireServer(mode) end)
 end
 gui.Parent = player:WaitForChild("PlayerGui")
 local response = remote.OnClientEvent:Connect(function(mode: string, snapshot: any)
-    if mode ~= current then return end
-    local lines = { if snapshot.stale then "Scores unavailable / cached" else "Best scores" }
-    if snapshot.partial then table.insert(lines, "Limited to first 99 friend IDs + you") end
-    for rank, row in snapshot.rows do table.insert(lines, `{rank}. User {row.userId}: {row.score}`) end
-    if #snapshot.rows == 0 then table.insert(lines, "No recorded scores") end
-    label.Text = table.concat(lines, "\n")
+	if mode ~= current then return end
+	local lines = { if snapshot.stale then "Scores unavailable / cached" else "Best scores" }
+	if snapshot.partial then table.insert(lines, "Limited to first 99 friend IDs + you") end
+	for rank, row in snapshot.rows do table.insert(lines, `{rank}. User {row.userId}: {row.score}`) end
+	if #snapshot.rows == 0 then table.insert(lines, "No recorded scores") end
+	label.Text = table.concat(lines, "\n")
 end)
 remote:FireServer(current)
 task.spawn(function()
-    while running do
-        task.wait(65)
-        if running then remote:FireServer(current) end
-    end
+	while running do
+		task.wait(65)
+		if running then remote:FireServer(current) end
+	end
 end)
 script.Destroying:Connect(function() running = false; response:Disconnect(); gui:Destroy() end)
 -- User IDs avoid per-row username API bursts. Add a bounded name cache if your UI needs names.

@@ -155,7 +155,7 @@
   },
   {
    "file": "recipes/gameplay/idempotent-receipts.md",
-   "line": 190,
+   "line": 189,
    "status": "EMBEDDED",
    "reason": "examples/receipts/ServerScriptService/Receipts/TransferPrompt.luau (checked with its example project)"
   },
@@ -395,25 +395,25 @@
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 51,
+   "line": 62,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/Profiles/SessionLock.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 108,
+   "line": 119,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/Profiles/Schema.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 210,
+   "line": 218,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/Profiles/init.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 528,
+   "line": 536,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/DataServer.server.luau (checked with its example project)"
   },
@@ -671,7 +671,7 @@
   },
   {
    "file": "handbook/luau/04-patterns-data.md",
-   "line": 139,
+   "line": 144,
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -689,7 +689,7 @@
   },
   {
    "file": "handbook/luau/05-coroutines-task-errors.md",
-   "line": 85,
+   "line": 87,
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -725,13 +725,13 @@
   },
   {
    "file": "handbook/roblox/03-networking.md",
-   "line": 102,
+   "line": 117,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/roblox/04-security.md",
-   "line": 82,
+   "line": 85,
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -743,7 +743,7 @@
   },
   {
    "file": "handbook/roblox/06-data-persistence.md",
-   "line": 75,
+   "line": 87,
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -839,7 +839,7 @@
   },
   {
    "file": "handbook/roblox/22-code-quality.md",
-   "line": 37,
+   "line": 43,
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -869,7 +869,7 @@
   },
   {
    "file": "handbook/roblox/26-chat-leaderboards.md",
-   "line": 82,
+   "line": 84,
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -1569,7 +1569,7 @@
    "status": "CLI-EXECUTED",
    "exit": 0,
    "tail": [
-    "receipts.spec: atomic grants, duplicate/ambiguous retry, transfer sides, collision, corruption, capacity passed"
+    "receipts.spec: grants, retries, transfer sides, collisions, corruption, >1500 receipts, conflicts, failures, overflow passed"
    ]
   },
   {

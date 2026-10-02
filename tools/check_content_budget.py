@@ -20,6 +20,10 @@ def inspect(root: Path = ROOT, require_tokenizer: bool = False) -> dict:
         if require_tokenizer:
             raise RuntimeError('Install maintainers/requirements-release.txt for exact token counts')
         encoder = None
+    except Exception as error:  # installed, but the encoding file can't be downloaded (offline/proxied CI)
+        if require_tokenizer:
+            raise RuntimeError(f'tiktoken is installed but cl100k_base could not be loaded: {error}') from error
+        encoder = None
     errors = []
     router_lines = len((root / 'SKILL.md').read_text(encoding='utf-8').splitlines())
     if router_lines > 500:
@@ -46,6 +50,10 @@ def inspect(root: Path = ROOT, require_tokenizer: bool = False) -> dict:
             continue
         content = path.read_text(encoding='utf-8')
         count = len(encoder.encode(content, disallowed_special=())) if encoder else len(content.encode('utf-8'))
+        generated = rel.as_posix() in {'references/legacy-modernization/CATALOG.md', 'references/legacy-modernization/RANKING.md', 'references/limits.md'}
+        knowledge = path.suffix == '.md' and rel.parts[0] in {'handbook', 'tracks', 'recipes', 'references'} and not generated
+        if encoder and knowledge and count > 8000:
+            errors.append(f'{rel}: authored knowledge exceeds 8000 tokens ({count})')
         records.append({'file': rel.as_posix(), 'tokens' if encoder else 'token_upper_bound_bytes': count,
                         'over_8000': count > 8000})
     return {'tokenizer': 'tiktoken/cl100k_base' if encoder else 'unavailable; UTF-8 byte upper bound only',

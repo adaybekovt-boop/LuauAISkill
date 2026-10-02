@@ -25,8 +25,8 @@ Read when: writing any Luau; porting Lua 5.1–5.4 / JS / Python habits. Related
 | Fact | Consequence |
 |---|---|
 | Only `nil` and `false` are falsy | `0`, `""`, `{}` are truthy. `x or default` breaks when `false` is valid → use `if x == nil then default else x`. |
-| One number type: IEEE-754 double | Integers exact to 2^53. Money/ids above that lose precision; store large ids as strings. `0.1 + 0.2 ~= 0.3`. |
-| `NaN ~= NaN` | `n ~= n` detects NaN. `math.isnan/isinf/isfinite` exist (Luau 2025+, Roblox docs list them). |
+| One number type: IEEE-754 double | Integers exact to <!-- fact-value: luau-exact-integers -->9007199254740992<!-- /fact-value -->. Money/ids above that lose precision; store large ids as strings. `0.1 + 0.2 ~= 0.3`. | <!-- fact-refs: luau-exact-integers --> <!-- fact-examples: {"values": ["754", "0.1", "0.2", "0.3"], "reason": "IEEE standard designation and floating-point arithmetic demonstration; the exact-integer limit is fact-bound."} -->
+| `NaN ~= NaN` | `n ~= n` detects NaN. `math.isnan/isinf/isfinite` exist (Roblox docs list them). |
 | Strings are immutable byte arrays | `#s` is bytes, not characters. Use `utf8.len`, `utf8.codes` for text. |
 | Tables are references | Assignment/argument passing aliases. Remotes and DataStores **copy** (and strip metatables). |
 | `vector` is a native value type | Roblox `Vector3` is backed by it; `vector.create(x,y,z)` works in Roblox and CLI. |
@@ -56,6 +56,9 @@ local t = { f(1) }                    -- only the LAST call in a list expands to
 - Closures capture variables, not values: loops create a fresh binding per iteration (safe to capture `i`).
 
 ## Operators and syntax that differ from other languages
+Before dividing untrusted values, check that both operands are numbers and finite, and reject a zero divisor.
+Static annotations and casts do not replace these runtime checks.
+
 - `~=` not-equal; `..` concat (numbers auto-convert; use string interpolation instead); `//` floor division
   (rounds toward −∞: `-7 // 2 == -4`); `%` result has the sign of the divisor.
 - Compound assignment `+= -= *= /= //= %= ^= ..=` are statements, not expressions.

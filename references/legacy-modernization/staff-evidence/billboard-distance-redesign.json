@@ -1,0 +1,15 @@
+{
+ "schema": 1,
+ "id": "billboard-distance-redesign",
+ "url": "https://devforum.roblox.com/t/billboardguicurrentdistance-doesnt-work/3649780/2",
+ "author": "theburgerkingbuilder",
+ "staff_badge_observed": true,
+ "published_on": "2025-08-28",
+ "observed_on": "2026-10-02",
+ "quote": "their intended functionality is better handled by developers in a LocalScript.",
+ "quote_sha256": "ca4f5f0995ce914d58da765721d2869f494140280b1eb0837a5b6b9fcb09debe",
+ "capture_method": "Read-only research worker directly inspected the primary post in the cloud browser DOM/accessibility tree and observed the Roblox Staff badge; this file is a short observation record, not an HTML/screenshot archive.",
+ "date_verification": "Post date cross-checked against the indexed primary post body and browser display.",
+ "scope": "The post explicitly lists DistanceStep, DistanceLowerLimit and DistanceUpperLimit. This curation covers the two deprecated limit members in the pinned dump.",
+ "limitations": "No replacement formula or distance convention is established. MaxDistance controls culling, not equivalent scale clamping."
+}

@@ -1,0 +1,475 @@
+{
+ "schema": 1,
+ "reviewed_against": "pinned creator-docs sources/lock.json",
+ "unreviewed_relevant_rows": 0,
+ "rows": [
+  {
+   "api": "AccessoryDescription.Puffiness",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/AccessoryDescription",
+   "source_sha256": "caae73baf2c795e8ce6d0a0418efbe78ef097e1cab639051c7e4678907c776c7",
+   "evidence": {
+    "summary": "The layered clothing puffiness, if the `Class.Accessory` is layered.\n",
+    "description": "The `Class.WrapLayer.Puffiness` value when applying the `Class.Accessory`,\nif it is layered.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "AnalyticsService.FireLogEvent",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/AnalyticsService",
+   "source_sha256": "6318b536d06d2e7c21550660d5c381680fdf72bf6ac76158c0eee2ef63f49123",
+   "evidence": {
+    "summary": "Fire a log event used to track errors and warnings experienced by players.\n",
+    "description": "This function triggers an event used to track errors and warnings\nexperienced by players. For example, it could be called to indicate when a\nfunction call fails, such as a datastore save or\n`Class.TeleportService:Teleport()`. See the example below.\n",
+    "deprecation_message": "This method is deprecated. Do not use it for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "AnimationConstraint.C0",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/AnimationConstraint",
+   "source_sha256": "ac6408c5217f72d1140fa4509eb54bf354fb3ee88c563e3509b918ab0067109c",
+   "evidence": {
+    "summary": null,
+    "description": null,
+    "deprecation_message": null
+   },
+   "blocker": "Pinned owner document has no member entry.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "animationconstraint-attachment-joints",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/aju-attachment-migration.json",
+     "sha256": "7f91b19d8c75e1afb3a9d5e79c267bb1dc4f4b7b7d6db29766e932d143907bc2"
+    }
+   ],
+   "resolution_scope": "Read-only legacy inspection requires checking the actual rig; never copy writable Motor6D property assumptions to AnimationConstraint. For AJU-enabled rigs, review the staff migration guidance before procedural animation changes. Attachment rest-pose mutation and local Transform animation are not interchangeable. The staff source supplies guidance absent from the pinned AnimationConstraint YAML."
+  },
+  {
+   "api": "AnimationConstraint.C1",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/AnimationConstraint",
+   "source_sha256": "ac6408c5217f72d1140fa4509eb54bf354fb3ee88c563e3509b918ab0067109c",
+   "evidence": {
+    "summary": null,
+    "description": null,
+    "deprecation_message": null
+   },
+   "blocker": "Pinned owner document has no member entry.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "animationconstraint-attachment-joints",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/aju-attachment-migration.json",
+     "sha256": "7f91b19d8c75e1afb3a9d5e79c267bb1dc4f4b7b7d6db29766e932d143907bc2"
+    }
+   ],
+   "resolution_scope": "Read-only legacy inspection requires checking the actual rig; never copy writable Motor6D property assumptions to AnimationConstraint. For AJU-enabled rigs, review the staff migration guidance before procedural animation changes. Attachment rest-pose mutation and local Transform animation are not interchangeable. The staff source supplies guidance absent from the pinned AnimationConstraint YAML."
+  },
+  {
+   "api": "AnimationConstraint.Part0",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/AnimationConstraint",
+   "source_sha256": "ac6408c5217f72d1140fa4509eb54bf354fb3ee88c563e3509b918ab0067109c",
+   "evidence": {
+    "summary": null,
+    "description": null,
+    "deprecation_message": null
+   },
+   "blocker": "Pinned owner document has no member entry.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "animationconstraint-attachment-joints",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/aju-attachment-migration.json",
+     "sha256": "7f91b19d8c75e1afb3a9d5e79c267bb1dc4f4b7b7d6db29766e932d143907bc2"
+    }
+   ],
+   "resolution_scope": "Read-only legacy inspection requires checking the actual rig; never copy writable Motor6D property assumptions to AnimationConstraint. For AJU-enabled rigs, review the staff migration guidance before procedural animation changes. Attachment rest-pose mutation and local Transform animation are not interchangeable. The staff source supplies guidance absent from the pinned AnimationConstraint YAML."
+  },
+  {
+   "api": "AnimationConstraint.Part1",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/AnimationConstraint",
+   "source_sha256": "ac6408c5217f72d1140fa4509eb54bf354fb3ee88c563e3509b918ab0067109c",
+   "evidence": {
+    "summary": null,
+    "description": null,
+    "deprecation_message": null
+   },
+   "blocker": "Pinned owner document has no member entry.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "animationconstraint-attachment-joints",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/aju-attachment-migration.json",
+     "sha256": "7f91b19d8c75e1afb3a9d5e79c267bb1dc4f4b7b7d6db29766e932d143907bc2"
+    }
+   ],
+   "resolution_scope": "Read-only legacy inspection requires checking the actual rig; never copy writable Motor6D property assumptions to AnimationConstraint. For AJU-enabled rigs, review the staff migration guidance before procedural animation changes. Attachment rest-pose mutation and local Transform animation are not interchangeable. The staff source supplies guidance absent from the pinned AnimationConstraint YAML."
+  },
+  {
+   "api": "BillboardGui.DistanceLowerLimit",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/BillboardGui",
+   "source_sha256": "290164a76e3434042cf921e23f1f54b7b0a82de4a085dee7734408e363e33d16",
+   "evidence": {
+    "summary": "Determines the distance in studs at which the `Class.BillboardGui` will\nstop scaling larger in size.\n",
+    "description": "Determines the distance in studs at which the `Class.BillboardGui` will\nstop scaling larger in size relative to the player's current camera, with\na default of `0`. If the\n`Class.BillboardGui.CurrentDistance|CurrentDistance` of the\n`Class.BillboardGui` is below this value, it will not scale any larger\nthan it would at this distance.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "billboard-distance-scale-redesign",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/billboard-distance-redesign.json",
+     "sha256": "ea0d2ff55fc68f6d0b7d59a6735742e56819706c9deb501c6dc4400b0cf6c0ca"
+    }
+   ],
+   "resolution_scope": "Untouched historical UI may retain old values during a measured migration. Do not substitute MaxDistance, which is culling, or invent an equivalent scale formula. The staff post does not settle absolute versus camera-projected distance semantics."
+  },
+  {
+   "api": "BillboardGui.DistanceUpperLimit",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/BillboardGui",
+   "source_sha256": "290164a76e3434042cf921e23f1f54b7b0a82de4a085dee7734408e363e33d16",
+   "evidence": {
+    "summary": "Determines the distance in studs at which the `Class.BillboardGui` will\nstop scaling smaller in size.\n",
+    "description": "Determines the distance in studs at which the `Class.BillboardGui` will\nstop scaling smaller in size relative to the player's current camera. If\nthe `Class.BillboardGui.CurrentDistance|CurrentDistance` of the\n`Class.BillboardGui` is above this value, it will not scale any smaller\nthan it would at this distance.\n\nThis property is ignored if the value is less than `0`. The default value\nis `-1`, meaning the property is ignored by default.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "billboard-distance-scale-redesign",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/billboard-distance-redesign.json",
+     "sha256": "ea0d2ff55fc68f6d0b7d59a6735742e56819706c9deb501c6dc4400b0cf6c0ca"
+    }
+   ],
+   "resolution_scope": "Untouched historical UI may retain old values during a measured migration. Do not substitute MaxDistance, which is culling, or invent an equivalent scale formula. The staff post does not settle absolute versus camera-projected distance semantics."
+  },
+  {
+   "api": "Camera.GetLargestCutoffDistance",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/Camera",
+   "source_sha256": "2a0c038e5cb21dbc34610adc5be64bbe604e8222a83edf2cc2b2b08c779c0ee6",
+   "evidence": {
+    "summary": "Returns how much the `Class.Camera` needs to be pushed towards its\n`Class.Camera.Focus|Focus` in order to make sure there is no obstructions\nbetween the `Class.Camera.Focus|Focus` and `Class.Camera.CFrame|CFrame`.\n",
+    "description": "This method is used by `PopperCam` in the default camera scripts to ensure\nobstructions do not come between the `Class.Camera` and its subject.\n\nThis method will check all `Class.BasePart|BaseParts` and `Class.Terrain`\nin the `Class.Workspace` with the following exceptions:\n\n- Any `Class.Instance` specified in the `ignoreList` (including its\n  descendants) will be ignored\n- `Class.BasePart|BaseParts` with `Class.BasePart.CanCollide` set to false\n  are ignored\n- `Class.BasePart|BaseParts` with a `Class.BasePart.Transparency` greater\n  than 0.95 will be ignored Water `Class.Terrain` is ignored\n\nNote, as this method requires an `ignoreList` to run, you should pass an\nempty table when none is required.\n",
+    "deprecation_message": "This method is deprecated. Do not use it for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "Camera.SetCameraPanMode",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/Camera",
+   "source_sha256": "2a0c038e5cb21dbc34610adc5be64bbe604e8222a83edf2cc2b2b08c779c0ee6",
+   "evidence": {
+    "summary": "Sets the `Enum.CameraPanMode` to be used by the `Class.Camera` on mobile\ndevices.\n",
+    "description": "This method sets the `Enum.CameraPanMode` to be used by the `Class.Camera`\non mobile devices.\n\nWhen the \\*'EdgeBump' `Enum.CameraPanMode` is used, swipe to pan is\ndisabled and the edge bump camera controls are enabled.\n\nSetCameraPan mode has no effect on Windows or Mac users.\n",
+    "deprecation_message": "This method has been deprecated and should not be used in new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "Constraint.GetDebugAppliedForce",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/Constraint",
+   "source_sha256": "ba0d6760f4077299b9c6d8fa78784caa99c46698af744a9d10e9d3609161dfda",
+   "evidence": {
+    "summary": "",
+    "description": "",
+    "deprecation_message": "This method should not be used in new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "Constraint.GetDebugAppliedTorque",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/Constraint",
+   "source_sha256": "ba0d6760f4077299b9c6d8fa78784caa99c46698af744a9d10e9d3609161dfda",
+   "evidence": {
+    "summary": "",
+    "description": "",
+    "deprecation_message": "This method should not be used in new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "CylindricalConstraint.SoftlockAngularServoUponReachingTarget",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/CylindricalConstraint",
+   "source_sha256": "3ec78c8c985476f1e87848f058574cf5a7b58f9eeec6ccf4713834ad15096f10",
+   "evidence": {
+    "summary": "",
+    "description": "",
+    "deprecation_message": "This property should not be used in new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "DataModel.SavePlace",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/DataModel",
+   "source_sha256": "6ccd3a610059f42a9384fddbb5fb2daa45fc687c813f83d168b5e0343d5503a5",
+   "evidence": {
+    "summary": "Saves the current place.\n",
+    "description": "This function was used by an ancient data persistence method to save the\ncurrent place.\n\nNote:\n\n- In order for this method to work the save place API has to be enabled\n  for the current place.\n",
+    "deprecation_message": "This item is deprecated. Do not use it for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "GuiService.IsModalDialog",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/GuiService",
+   "source_sha256": "581011d8695bc9b8bc85908f82313432abd58504462bbe128b41b7efac77269e",
+   "evidence": {
+    "summary": "Indicates whether a modal dialog is visible.\n",
+    "description": "This property tells whether or not a modal dialog is visible, such as the\ngame menu or a purchase prompt.\n",
+    "deprecation_message": "This item is deprecated. Do not use it for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "GuiService.IsWindows",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/GuiService",
+   "source_sha256": "581011d8695bc9b8bc85908f82313432abd58504462bbe128b41b7efac77269e",
+   "evidence": {
+    "summary": "Indicates whether the user is playing on a computer running Windows.\n",
+    "description": "The IsWindows property defines if the user is playing on a computer\nrunning Windows.\n",
+    "deprecation_message": "This item is deprecated. Do not use it for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "HingeConstraint.SoftlockServoUponReachingTarget",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/HingeConstraint",
+   "source_sha256": "1609f94884e9c4468e3cf05911fb215369158ef998725d4057d6c285865a1251",
+   "evidence": {
+    "summary": "",
+    "description": "",
+    "deprecation_message": "This property should not be used in new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "hinge-softlock-retired",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/hinge-softlock-disabled.json",
+     "sha256": "aefa53cb95082a172298dbf2d892cb62006d19eedf1ecb31f095ae7aac4b1c37"
+    }
+   ],
+   "resolution_scope": "A serialized legacy value may remain, but it must not be treated as evidence the hinge will lock. This evidence is limited to HingeConstraint. Do not extrapolate to similarly named properties on other constraint classes or claim a parameter-for-parameter substitute. The pinned generic deprecation warning is clarified by the dated staff behavior statement."
+  },
+  {
+   "api": "Humanoid.CollisionType",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/Humanoid",
+   "source_sha256": "4ec90505ba6101df9852aeb8962a735952cb4eb5bb58e65010858bca1f0a9ac8",
+   "evidence": {
+    "summary": "Selects the `Enum.HumanoidCollisionType` for R15 and Rthro non-player\ncharacters.\n",
+    "description": "This property selects the `Enum.HumanoidCollisionType` for R15 and Rthro\nnon-player characters.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "LayerCollector.GetLayoutNodeTree",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/LayerCollector",
+   "source_sha256": "40cb871235e052431f776b8ca0b00c4ca5e2a5a7847377693a74516324d0c723",
+   "evidence": {
+    "summary": "",
+    "description": "",
+    "deprecation_message": "This method should not be used for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "PlayerGui.GetTopbarTransparency",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/PlayerGui",
+   "source_sha256": "3e8ad1df7c62ca930b57cf05b74b90f203021124952145c5e7fb66e585bb68ff",
+   "evidence": {
+    "summary": "Returns the transparency of the Topbar.\n",
+    "description": "Returns the current transparency of the topbar `Class.CoreGui`, a value in\nthe range `[0, 1]` where `0` is completely opaque and `1` is completely\ntransparent. This is the value previously assigned with\n`Class.PlayerGui:SetTopbarTransparency()`, and it defaults to `0.5`. This\nmethod can only be called from a `Class.LocalScript`; calling it from a\nserver script raises an error.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "PlayerGui.SetTopbarTransparency",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/PlayerGui",
+   "source_sha256": "3e8ad1df7c62ca930b57cf05b74b90f203021124952145c5e7fb66e585bb68ff",
+   "evidence": {
+    "summary": "Sets the transparency of the top bar.\n",
+    "description": "This method sets the transparency of the top bar `Class.CoreGui`. A value\nof `0` is completely opaque and a value of `1` is completely transparent.\nValues outside of the range `[0, 1]` are clamped. The default transparency\nof the topbar is `0.5`.\n\nUsing the `Class.StarterGui:SetCore()` method with the `\"TopbarEnabled\"`\noption allows you to enable/disable the entire topbar and all of its\nfeatures (player list, health, etc). By contrast, this method only affects\nhow the top bar is displayed.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "topbar-transparency-setter-retired",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/topbar-transparency-retired.json",
+     "sha256": "732ef053957a5580cd3b17e8f4f2e2622a5ca68275d190bda354ec84dce5b1d2"
+    }
+   ],
+   "resolution_scope": "Historical topbar behavior must be checked separately; do not infer that this setter controls a current topbar. Conditional on the announced new topbar. The source does not establish removal of the getter or change signal, so those remain separate unresolved rows."
+  },
+  {
+   "api": "PlayerGui.TopbarTransparencyChangedSignal",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/PlayerGui",
+   "source_sha256": "3e8ad1df7c62ca930b57cf05b74b90f203021124952145c5e7fb66e585bb68ff",
+   "evidence": {
+    "summary": "Fires when the transparency of the Topbar CoreGui changes.\n",
+    "description": "Fires whenever the transparency of the topbar `Class.CoreGui` changes,\nsuch as after a call to `Class.PlayerGui:SetTopbarTransparency()`. The\nevent passes the new transparency as its `transparency` argument, a value\nin the range `[0, 1]`. It only fires when the clamped transparency differs\nfrom the previous value, so setting the same value again does not re-fire\nit.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "ScreenshotHud.ExperienceNameOverlayEnabled",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/ScreenshotHud",
+   "source_sha256": "a34de507c21f6128f232a7ae27395da1f859d343c616ad691be9d72ced399482",
+   "evidence": {
+    "summary": "Whether the experience name in the overlay is enabled.\n",
+    "description": "Determines whether the experience name in the overlay is enabled.\n",
+    "deprecation_message": "This property is deprecated. Do not use it for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "capture-watermark-settings-retired",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/capture-watermark-retired.json",
+     "sha256": "8d3f45c771390efd6a7b34d21868e184d471bbefd1e234398e00eaa0e347e498"
+    }
+   ],
+   "resolution_scope": "Legacy serialized settings may remain; verify any different custom capture workflow independently. The staff statement explicitly scopes the affected captures. Do not generalize it to arbitrary developer-created overlays or invent another ScreenshotHud branding property."
+  },
+  {
+   "api": "ScreenshotHud.OverlayFont",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/ScreenshotHud",
+   "source_sha256": "a34de507c21f6128f232a7ae27395da1f859d343c616ad691be9d72ced399482",
+   "evidence": {
+    "summary": "`Datatype.Font` used for the experience name in the overlay.\n",
+    "description": "The `Datatype.Font` used for the experience name in the overlay.\n",
+    "deprecation_message": "This property is deprecated. Do not use it for new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "capture-watermark-settings-retired",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/capture-watermark-retired.json",
+     "sha256": "8d3f45c771390efd6a7b34d21868e184d471bbefd1e234398e00eaa0e347e498"
+    }
+   ],
+   "resolution_scope": "Legacy serialized settings may remain; verify any different custom capture workflow independently. The staff statement explicitly scopes the affected captures. Do not generalize it to arbitrary developer-created overlays or invent another ScreenshotHud branding property."
+  },
+  {
+   "api": "SlidingBallConstraint.SoftlockServoUponReachingTarget",
+   "status": "reviewed_source_gap",
+   "source": "cd:reference/engine/classes/SlidingBallConstraint",
+   "source_sha256": "b5ce698df9ec28233b836b89864812d174b1af65ed873d6b232f808a5bef5a62",
+   "evidence": {
+    "summary": "",
+    "description": "",
+    "deprecation_message": "This property should not be used in new work.\n"
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature."
+  },
+  {
+   "api": "WrapLayer.Puffiness",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/WrapLayer",
+   "source_sha256": "e66fcfd6fbac17ffe2d0af4569f230cc2552e991ea1c2443b38785e60f9504e2",
+   "evidence": {
+    "summary": "Controls how much underlying clothing items inflate the current clothing\nitem.\n",
+    "description": "Controls how much underlying clothing items inflate the current clothing\nitem.\n\nValid range is -1 to 1. A value of -1 compresses the clothing, body, and\nall underlying layers such that the clothing itself takes the shape of the\nbody. A value of 0 makes the clothing item fit as if it was the only piece\nof clothing being worn, compressing all underlying layers. A value of 1\n(default) never compresses anything and infinitely inflates over\nunderlying clothing items.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "layered-fit-retired-tuning",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/improved-layered-fit.json",
+     "sha256": "1c95d90971503c8439f2a242f1ed3b88f303e0e7a5b5aa6252c11dfe6e229227"
+    }
+   ],
+   "resolution_scope": "Historical assets may retain serialized values, but they are not proof that the active fitting algorithm uses them. The dated post announces an upcoming rollout; this receipt does not independently establish universal rollout completion. Apply this guidance conditionally and test affected clothing. AccessoryDescription.Puffiness is not covered. Pinned old descriptions explain historical tuning; the dated staff note clarifies behavior under the new algorithm."
+  },
+  {
+   "api": "WrapLayer.ShrinkFactor",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/WrapLayer",
+   "source_sha256": "e66fcfd6fbac17ffe2d0af4569f230cc2552e991ea1c2443b38785e60f9504e2",
+   "evidence": {
+    "summary": "Allows slight shrinking/expanding of the resulting render mesh, without\naffecting any other layers.\n",
+    "description": "This property is intended for fine-tuning purposes and is highly optional.\n\nAllows slight shrinking/expanding of the resulting render mesh, without\naffecting any other layers. This is useful in rare cases when the clothing\nmesh does not precisely fit the underlying clothing layers (the cage is\nusually slightly overestimated atop the real shape to avoid layer\ninterpenetration). Even slight overestimation has the tendency to\naccumulate, especially when there are a lot of layers. While this is\nusually not critical, some items like backpacks may be problematic.\n\nValid range is -1 to 1. A value of -1 will maximally expand while a value\nof 1 will maximally shrink. A value of 0 (default) has no effect.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "layered-fit-retired-tuning",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/improved-layered-fit.json",
+     "sha256": "1c95d90971503c8439f2a242f1ed3b88f303e0e7a5b5aa6252c11dfe6e229227"
+    }
+   ],
+   "resolution_scope": "Historical assets may retain serialized values, but they are not proof that the active fitting algorithm uses them. The dated post announces an upcoming rollout; this receipt does not independently establish universal rollout completion. Apply this guidance conditionally and test affected clothing. AccessoryDescription.Puffiness is not covered. Pinned old descriptions explain historical tuning; the dated staff note clarifies behavior under the new algorithm."
+  },
+  {
+   "api": "WrapTarget.Stiffness",
+   "status": "resolved_with_scoped_staff_guidance",
+   "source": "cd:reference/engine/classes/WrapTarget",
+   "source_sha256": "4ac9dfa6a0e9a1d05e396d4abdff7630934bb73c8128f54e726dddc65ad1d43b",
+   "evidence": {
+    "summary": "Defines how much the body mesh can be compressed by clothing.\n",
+    "description": "Defines how much the body mesh can be compressed by clothing. Super tight\nclothing may lead to an intersection between the clothing mesh and body\nmesh. To solve this visual artifact, the deformer can compress the body\nmesh slightly to solve possible intersections.\n\nValid range is 0 to 1. A value of 0 will compress the body mesh as much as\nnecessary to ensure that the intersections are eliminated (visible body\nparts might look a little bit deformed). A value of 1 will prevent the\nbody mesh from being compressed (may lead to visible intersections or\nZ-fighting). A value of 0.9 (default) is a reasonable default that solves\nmost of the intersections without introducing any significant body\ndeformation.\n",
+    "deprecation_message": ""
+   },
+   "blocker": "Pinned member documentation describes legacy behavior but supplies no verified equivalent replacement; no automatic migration asserted.",
+   "next_step": "Verify an authoritative migration mapping or explicitly approve a behavior-changing design for the affected feature.",
+   "resolved_by": "layered-fit-retired-tuning",
+   "reviewed_sources": [
+    {
+     "artifact": "references/legacy-modernization/staff-evidence/improved-layered-fit.json",
+     "sha256": "1c95d90971503c8439f2a242f1ed3b88f303e0e7a5b5aa6252c11dfe6e229227"
+    }
+   ],
+   "resolution_scope": "Historical assets may retain serialized values, but they are not proof that the active fitting algorithm uses them. The dated post announces an upcoming rollout; this receipt does not independently establish universal rollout completion. Apply this guidance conditionally and test affected clothing. AccessoryDescription.Puffiness is not covered. Pinned old descriptions explain historical tuning; the dated staff note clarifies behavior under the new algorithm."
+  }
+ ]
+}

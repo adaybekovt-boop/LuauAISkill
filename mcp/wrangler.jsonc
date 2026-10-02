@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	// Must equal the Worker's name in the Cloudflare dashboard when deploying through Workers Builds.
-	"name": "luau-skill-mcp",
+	"name": "luauaiskill",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-09-01",
 	"compatibility_flags": ["nodejs_compat"],

@@ -24,7 +24,7 @@ byte-identical to the Python tools (enforced by `test/parity.test.mjs`).
 ## Deploy with Workers Builds (GitHub → Cloudflare)
 1. Cloudflare dashboard → Workers & Pages → Create → **Import a repository** → this repository.
 2. Build settings:
-   - **Worker name**: `luau-skill-mcp` — must equal `name` in `wrangler.jsonc` (change one or the other).
+   - **Worker name**: `luauaiskill` — must equal `name` in `wrangler.jsonc` (change one or the other).
    - **Root directory**: `mcp`
    - **Build command**: `npm ci`
    - **Deploy command**: `npx wrangler deploy` (default)
@@ -32,7 +32,7 @@ byte-identical to the Python tools (enforced by `test/parity.test.mjs`).
      branch that has it, or builds fail with "no wrangler config".
 3. Nothing else to configure: `wrangler.jsonc` runs `node scripts/build-data.mjs` before bundling, which reads
    `../api`, `../references` and the Markdown from the same checkout. No Python is needed in the build.
-4. Open `https://luau-skill-mcp.<account>.workers.dev/` — it reports skill version, commit, engine API version and
+4. Open `https://luauaiskill.<account>.workers.dev/` — it reports skill version, commit, engine API version and
    counts. That commit should match the one you pushed.
 
 Size: ≈ 4.6 MB upload, ≈ 0.95 MB gzip (Free plan limit 3 MB gzip). Startup parses the bundled data once per isolate
@@ -42,7 +42,7 @@ Size: ≈ 4.6 MB upload, ≈ 0.95 MB gzip (Free plan limit 3 MB gzip). Startup p
 ## Connect a client
 | Client | How |
 |---|---|
-| Claude Code | `claude mcp add --transport http luau-skill https://luau-skill-mcp.<account>.workers.dev/mcp` → check with `/mcp` |
+| Claude Code | `claude mcp add --transport http luau-skill https://luauaiskill.<account>.workers.dev/mcp` → check with `/mcp` |
 | claude.ai / Claude Desktop | Settings → Connectors → Add custom connector → the `/mcp` URL (works only without `MCP_TOKEN`; those clients use OAuth, not static headers) |
 | Cursor | `.cursor/mcp.json`: `{ "mcpServers": { "luau-skill": { "url": "https://…/mcp" } } }` |
 | Others | any client with Streamable HTTP; for stdio-only clients use a bridge such as `npx mcp-remote https://…/mcp` |

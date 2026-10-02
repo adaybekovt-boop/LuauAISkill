@@ -1,5 +1,12 @@
 # Luau language core (not Lua 5.x)
 
+## TL;DR
+- Use Luau semantics rather than importing Lua-version assumptions.
+- Distinguish nil, false, and missing table entries.
+- Keep array and dictionary responsibilities clear.
+- Track multiple returns and vararg behavior explicitly.
+- Keep globals controlled and errors bounded.
+
 Read when: writing any Luau; porting Lua 5.1–5.4 / JS / Python habits. Related: [types](02-types.md),
 [syntax & stdlib](03-syntax-stdlib.md), [patterns](04-patterns-data.md), [async](05-coroutines-task-errors.md),
 [performance](06-performance-memory.md).

@@ -1,5 +1,8 @@
 # Recipe: health & damage (single server entry point, kill credit, i-frames, spawn protection)
 
+## When NOT to use
+Do not layer this over an existing authoritative damage service without choosing one state owner.
+
 Evidence: TYPECHECKED · **not run in Studio**. Side: server. Part of the combat example
 (`examples/combat`), used by [melee](melee-combat.md), [hitscan](hitscan-gun.md), [projectile](projectile-weapon.md),
 [ragdoll](ragdoll.md). Chapter: [combat](../../handbook/roblox/15-combat.md).

@@ -12,3 +12,5 @@ STUDIO TESTED (Play / Server & Clients, with artifacts) → LIVE TESTED (publish
 - Pure logic → `.spec.luau` tests runnable by the Luau CLI (see `examples/tests`).
 - Roblox code → typecheck with Roblox definitions; then Studio tests from the recipe's test table.
 - This repo: `python tools/check_all.py` runs every check (see README).
+
+Additional verified examples: [multiplayer-regression-harness](../recipes/gameplay/multiplayer-regression-harness.md).

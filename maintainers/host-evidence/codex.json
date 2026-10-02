@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "host": "codex",
+  "status": "VERIFIED",
+  "tested_on": "2026-10-02T12:37:45.410402Z",
+  "package_sha256": "f0f19e1503c2dfdd7db362d5a53643f448a9cf32c2802be360f54cde7296dbd6",
+  "packaged_file_count": 354,
+  "host_version": "codex-cli 0.159.2",
+  "host_version_stderr": "",
+  "scope": "Actual Codex app-server discovery plus direct installed-tool execution",
+  "model_inference": "NOT RUN",
+  "agent_tool_use": "NOT RUN",
+  "login": "NOT REQUESTED",
+  "isolation": {
+    "fresh_home": "<TEMP>/home",
+    "fresh_codex_home": "<TEMP>/home/.codex",
+    "inherited_environment": false,
+    "rpc_methods": [
+      "initialize",
+      "initialized",
+      "skills/list"
+    ]
+  },
+  "checks": {
+    "skill_discovered": true,
+    "api_lookup_from_foreign_cwd": true,
+    "package_unchanged_during_verification": true
+  },
+  "passed_checks": [
+    "skill_discovered",
+    "api_lookup_from_foreign_cwd",
+    "package_unchanged_during_verification"
+  ],
+  "host_discovery": {
+    "command": [
+      "/opt/codex/bin/codex",
+      "app-server",
+      "--listen",
+      "stdio://",
+      "-c",
+      "analytics.enabled=false"
+    ],
+    "transcript": [
+      {
+        "direction": "request",
+        "message": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "initialize",
+          "params": {
+            "clientInfo": {
+              "name": "luau-skill-host-verification",
+              "version": "1.0.0"
+            },
+            "capabilities": {
+              "explicitGatewayOauth": true
+            }
+          }
+        }
+      },
+      {
+        "direction": "response",
+        "message": {
+          "id": 1,
+          "result": {
+            "userAgent": "luau-skill-host-verification/0.159.2 (Debian 13.0.0; x86_64) unknown (luau-skill-host-verification; 1.0.0)",
+            "codexHome": "<TEMP>/home/.codex",
+            "platformFamily": "unix",
+            "platformOs": "linux"
+          }
+        }
+      },
+      {
+        "direction": "request",
+        "message": {
+          "jsonrpc": "2.0",
+          "method": "initialized"
+        }
+      },
+      {
+        "direction": "request",
+        "message": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "skills/list",
+          "params": {
+            "cwds": [
+              "<TEMP>/project"
+            ],
+            "forceReload": true
+          }
+        }
+      },
+      {
+        "direction": "response",
+        "message": {
+          "method": "remoteControl/status/changed",
+          "params": {
+            "status": "disabled",
+            "serverName": "<REDACTED_HOST_IDENTIFIER>",
+            "installationId": "<REDACTED_HOST_IDENTIFIER>",
+            "environmentId": null
+          },
+          "emittedAtMs": 1790944665159
+        }
+      },
+      {
+        "direction": "response",
+        "message": {
+          "id": 2,
+          "result": {
+            "data": [
+              {
+                "cwd": "<TEMP>/project",
+                "skills": [
+                  {
+                    "name": "tk-luau-roblox",
+                    "description": "Modern Roblox Studio + Luau engineering: architecture, networking/security, DataStores, monetization, chat, performance, combat, NPC AI, UI, audio, streaming, procedural generation, lighting/graphics, legacy-code modernization and verification through the Studio MCP server. Includes a generated engine API index with a lookup tool, a verified legacy\u2192current catalog, typechecked end-to-end recipes and evals. Use for writing, reviewing, debugging, testing or modernizing Roblox code (Luau, Rojo, RemoteEvents, DataStores) and for scene lighting/art direction.",
+                    "path": "<TEMP>/project/.agents/skills/tk-luau-roblox/SKILL.md",
+                    "scope": "repo",
+                    "enabled": true,
+                    "pluginId": null
+                  },
+                  {
+                    "name": "imagegen",
+                    "description": "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas.",
+                    "interface": {
+                      "displayName": "Image Gen",
+                      "shortDescription": "Generate or edit images for websites, games, and more",
+                      "iconSmall": "<TEMP>/home/.codex/skills/.system/imagegen/assets/imagegen-small.svg",
+                      "iconLarge": "<TEMP>/home/.codex/skills/.system/imagegen/assets/imagegen.png",
+                      "iconSmallUrl": null,
+                      "iconLargeUrl": null,
+                      "brandColor": null,
+                      "defaultPrompt": "Use $imagegen to make or edit an image for this project."
+                    },
+                    "path": "<TEMP>/home/.codex/skills/.system/imagegen/SKILL.md",
+                    "scope": "system",
+                    "enabled": true,
+                    "pluginId": null
+                  },
+                  {
+                    "name": "openai-docs",
+                    "description": "Use for Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, customization, automations, and self-knowledge\u2014including 'you,' 'your,' 'this app,' or 'this coding agent' when they refer to Codex\u2014and for OpenAI APIs/products and ChatGPT Work. Also use for model choice/migration, prompting, SDKs, Responses, Realtime, agents, evals, and Chat/Work/Codex comparisons. Do not use for generic app/software tasks that merely mention Codex.",
+                    "shortDescription": "Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, and self-knowledge; OpenAI APIs and ChatGPT Work. 'You'/'this app' means Codex only.",
+                    "interface": {
+                      "displayName": "OpenAI Docs",
+                      "shortDescription": "OpenAI and Codex docs for models, skills, tasks, and setup",
+                      "iconSmall": "<TEMP>/home/.codex/skills/.system/openai-docs/assets/openai-small.svg",
+                      "iconLarge": "<TEMP>/home/.codex/skills/.system/openai-docs/assets/openai.png",
+                      "iconSmallUrl": null,
+                      "iconLargeUrl": null,
+                      "brandColor": null,
+                      "defaultPrompt": "Use OpenAI Docs for official docs lookup, questions about Codex itself or Codex surfaces, model selection, model migration, and prompt-upgrade work."
+                    },
+                    "path": "<TEMP>/home/.codex/skills/.system/openai-docs/SKILL.md",
+                    "scope": "system",
+                    "enabled": true,
+                    "pluginId": null
+                  },
+                  {
+                    "name": "review-agent",
+                    "description": "Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions.",
+                    "interface": {
+                      "displayName": "Review Agent",
+                      "shortDescription": "Find actionable bugs in code changes",
+                      "iconSmall": null,
+                      "iconLarge": null,
+                      "iconSmallUrl": null,
+                      "iconLargeUrl": null,
+                      "brandColor": null,
+                      "defaultPrompt": "Use $review-agent to review the requested code changes and return actionable findings."
+                    },
+                    "path": "<TEMP>/home/.codex/skills/.system/review-agent/SKILL.md",
+                    "scope": "system",
+                    "enabled": true,
+                    "pluginId": null
+                  },
+                  {
+                    "name": "skill-creator",
+                    "description": "Create or update a Codex skill with appropriately scoped instructions and any needed supporting resources.",
+                    "shortDescription": "Create or update a skill",
+                    "interface": {
+                      "displayName": "Skill Creator",
+                      "shortDescription": "Create or update a skill",
+                      "iconSmall": "<TEMP>/home/.codex/skills/.system/skill-creator/assets/skill-creator-small.svg",
+                      "iconLarge": "<TEMP>/home/.codex/skills/.system/skill-creator/assets/skill-creator.png",
+                      "iconSmallUrl": null,
+                      "iconLargeUrl": null,
+                      "brandColor": null,
+                      "defaultPrompt": null
+                    },
+                    "path": "<TEMP>/home/.codex/skills/.system/skill-creator/SKILL.md",
+                    "scope": "system",
+                    "enabled": true,
+                    "pluginId": null
+                  },
+                  {
+                    "name": "skill-installer",
+                    "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+                    "shortDescription": "Install curated skills from openai/skills or other repos",
+                    "interface": {
+                      "displayName": "Skill Installer",
+                      "shortDescription": "Install curated skills from openai/skills or other repos",
+                      "iconSmall": "<TEMP>/home/.codex/skills/.system/skill-installer/assets/skill-installer-small.svg",
+                      "iconLarge": "<TEMP>/home/.codex/skills/.system/skill-installer/assets/skill-installer.png",
+                      "iconSmallUrl": null,
+                      "iconLargeUrl": null,
+                      "brandColor": null,
+                      "defaultPrompt": null
+                    },
+                    "path": "<TEMP>/home/.codex/skills/.system/skill-installer/SKILL.md",
+                    "scope": "system",
+                    "enabled": true,
+                    "pluginId": null
+                  }
+                ],
+                "errors": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "skills_result": {
+      "data": [
+        {
+          "cwd": "<TEMP>/project",
+          "skills": [
+            {
+              "name": "tk-luau-roblox",
+              "description": "Modern Roblox Studio + Luau engineering: architecture, networking/security, DataStores, monetization, chat, performance, combat, NPC AI, UI, audio, streaming, procedural generation, lighting/graphics, legacy-code modernization and verification through the Studio MCP server. Includes a generated engine API index with a lookup tool, a verified legacy\u2192current catalog, typechecked end-to-end recipes and evals. Use for writing, reviewing, debugging, testing or modernizing Roblox code (Luau, Rojo, RemoteEvents, DataStores) and for scene lighting/art direction.",
+              "path": "<TEMP>/project/.agents/skills/tk-luau-roblox/SKILL.md",
+              "scope": "repo",
+              "enabled": true,
+              "pluginId": null
+            },
+            {
+              "name": "imagegen",
+              "description": "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas.",
+              "interface": {
+                "displayName": "Image Gen",
+                "shortDescription": "Generate or edit images for websites, games, and more",
+                "iconSmall": "<TEMP>/home/.codex/skills/.system/imagegen/assets/imagegen-small.svg",
+                "iconLarge": "<TEMP>/home/.codex/skills/.system/imagegen/assets/imagegen.png",
+                "iconSmallUrl": null,
+                "iconLargeUrl": null,
+                "brandColor": null,
+                "defaultPrompt": "Use $imagegen to make or edit an image for this project."
+              },
+              "path": "<TEMP>/home/.codex/skills/.system/imagegen/SKILL.md",
+              "scope": "system",
+              "enabled": true,
+              "pluginId": null
+            },
+            {
+              "name": "openai-docs",
+              "description": "Use for Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, customization, automations, and self-knowledge\u2014including 'you,' 'your,' 'this app,' or 'this coding agent' when they refer to Codex\u2014and for OpenAI APIs/products and ChatGPT Work. Also use for model choice/migration, prompting, SDKs, Responses, Realtime, agents, evals, and Chat/Work/Codex comparisons. Do not use for generic app/software tasks that merely mention Codex.",
+              "shortDescription": "Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, and self-knowledge; OpenAI APIs and ChatGPT Work. 'You'/'this app' means Codex only.",
+              "interface": {
+                "displayName": "OpenAI Docs",
+                "shortDescription": "OpenAI and Codex docs for models, skills, tasks, and setup",
+                "iconSmall": "<TEMP>/home/.codex/skills/.system/openai-docs/assets/openai-small.svg",
+                "iconLarge": "<TEMP>/home/.codex/skills/.system/openai-docs/assets/openai.png",
+                "iconSmallUrl": null,
+                "iconLargeUrl": null,
+                "brandColor": null,
+                "defaultPrompt": "Use OpenAI Docs for official docs lookup, questions about Codex itself or Codex surfaces, model selection, model migration, and prompt-upgrade work."
+              },
+              "path": "<TEMP>/home/.codex/skills/.system/openai-docs/SKILL.md",
+              "scope": "system",
+              "enabled": true,
+              "pluginId": null
+            },
+            {
+              "name": "review-agent",
+              "description": "Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions.",
+              "interface": {
+                "displayName": "Review Agent",
+                "shortDescription": "Find actionable bugs in code changes",
+                "iconSmall": null,
+                "iconLarge": null,
+                "iconSmallUrl": null,
+                "iconLargeUrl": null,
+                "brandColor": null,
+                "defaultPrompt": "Use $review-agent to review the requested code changes and return actionable findings."
+              },
+              "path": "<TEMP>/home/.codex/skills/.system/review-agent/SKILL.md",
+              "scope": "system",
+              "enabled": true,
+              "pluginId": null
+            },
+            {
+              "name": "skill-creator",
+              "description": "Create or update a Codex skill with appropriately scoped instructions and any needed supporting resources.",
+              "shortDescription": "Create or update a skill",
+              "interface": {
+                "displayName": "Skill Creator",
+                "shortDescription": "Create or update a skill",
+                "iconSmall": "<TEMP>/home/.codex/skills/.system/skill-creator/assets/skill-creator-small.svg",
+                "iconLarge": "<TEMP>/home/.codex/skills/.system/skill-creator/assets/skill-creator.png",
+                "iconSmallUrl": null,
+                "iconLargeUrl": null,
+                "brandColor": null,
+                "defaultPrompt": null
+              },
+              "path": "<TEMP>/home/.codex/skills/.system/skill-creator/SKILL.md",
+              "scope": "system",
+              "enabled": true,
+              "pluginId": null
+            },
+            {
+              "name": "skill-installer",
+              "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+              "shortDescription": "Install curated skills from openai/skills or other repos",
+              "interface": {
+                "displayName": "Skill Installer",
+                "shortDescription": "Install curated skills from openai/skills or other repos",
+                "iconSmall": "<TEMP>/home/.codex/skills/.system/skill-installer/assets/skill-installer-small.svg",
+                "iconLarge": "<TEMP>/home/.codex/skills/.system/skill-installer/assets/skill-installer.png",
+                "iconSmallUrl": null,
+                "iconLargeUrl": null,
+                "brandColor": null,
+                "defaultPrompt": null
+              },
+              "path": "<TEMP>/home/.codex/skills/.system/skill-installer/SKILL.md",
+              "scope": "system",
+              "enabled": true,
+              "pluginId": null
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    "stderr": "",
+    "error": null,
+    "shutdown": "stdin closed after read-only protocol checks",
+    "process_returncode": 0
+  },
+  "api_lookup": {
+    "command": [
+      "/tmp/luau-release-tools/bin/python",
+      "-I",
+      "<TEMP>/project/.agents/skills/tk-luau-roblox/tools/api.py",
+      "Part.Anchored"
+    ],
+    "cwd": "<TEMP>/unrelated-project",
+    "returncode": 0,
+    "stdout": "Part.Anchored  (inherited from BasePart)\n  kind: Property   type/signature: bool\n  security: read=None write=None   thread: ReadSafe   flags: sim\n  - game scripts: read yes, write yes\n  - Simulation Access: usable inside RunService:BindToSimulation\n  - parallel: read-only (write in serial phase)\n  summary: Determines whether a part is immovable by physics.\n  docs: https://create.roblox.com/docs/reference/engine/classes/BasePart#Anchored\n",
+    "stderr": ""
+  },
+  "path_sanitization": "Disposable temporary root replaced with <TEMP>; serverName and installationId redacted."
+}

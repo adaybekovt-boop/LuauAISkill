@@ -1,5 +1,12 @@
 # Monetization: developer products, passes, subscriptions, transfers, policy
 
+## TL;DR
+- Grant value only from an authoritative receipt callback.
+- Persist receipt idempotency with the granted value.
+- Keep receipt API families and decision enums distinct.
+- Handle retries, unavailable profiles, and transfer roles explicitly.
+- Test duplicate delivery and failure windows without real purchases.
+
 Read when: selling anything (developer products, passes, subscriptions, real-world commerce), Robux transfers,
 loot boxes / gacha / spins, price tests. Related: [data persistence](06-data-persistence.md#developer-products-marketplaceserviceprocessreceipt)
 (durable grants), recipe [save-system](../../recipes/gameplay/save-system.md) (working, session-locked receipt

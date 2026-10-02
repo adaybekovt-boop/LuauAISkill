@@ -1,5 +1,8 @@
 # Recipe: object pooling for high-frequency effects (and when not to pool)
 
+## When NOT to use
+Do not pool infrequent cheap objects without measurements; retained state and memory have a cost.
+
 Evidence: TYPECHECKED · **not run in Studio** — pooling is a performance change: measure before/after in the
 MicroProfiler on your target device. Chapter: [performance](../../handbook/roblox/08-performance.md).
 

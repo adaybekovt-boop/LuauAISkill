@@ -21,12 +21,21 @@ PY = sys.executable
 CHECKS = [
     ("embedded code up to date", [PY, "tools/embed_code.py", "--check"]),
     ("legacy catalog rendered", [PY, "tools/render_legacy.py", "--check"]),
+    ("ranked legacy coverage and fixtures", [PY, "tools/check_legacy.py", "--check"]),
+    ("pinned tutorial legacy sample", [PY, "tools/sample_legacy_tutorials.py", "--check"]),
+    ("legacy ranking reproducible", [PY, "tools/rank_legacy.py", "--check"]),
+    ("engine smoke infrastructure (execution may remain pending)", [PY, "tools/check_engine_evidence.py", "--allow-pending"]),
+    ("dated source-backed facts", [PY, "tools/check_facts.py"]),
+    ("facts tables rendered", [PY, "tools/render_facts.py", "--check"]),
+    ("content structure and token budget", [PY, "tools/check_content_budget.py"]),
+    ("isolated packaging and foreign CWD", [PY, "tools/check_packaging.py"]),
     ("API references", [PY, "tools/check_api_refs.py"]),
     ("source citations", [PY, "tools/check_sources.py", "--check"]),
     ("links and anchors", [PY, "tools/check_links.py"]),
     ("tool unit tests", [PY, "-m", "unittest", "discover", "-s", "tests", "-q"]),
 ]
 CODE_CHECK = ("Luau typecheck + CLI tests", [PY, "tools/check_code.py"])
+PRIVILEGED_CHECK = ("privileged recipe launcher typechecks", [PY, "tools/check_recipe_contexts.py"])
 
 
 def toolchain_ready() -> bool:
@@ -40,10 +49,11 @@ def main() -> int:
     checks = list(CHECKS)
     skipped = []
     if not fast and toolchain_ready():
-        checks.append(CODE_CHECK)
+        checks.extend([CODE_CHECK, PRIVILEGED_CHECK])
     else:
-        skipped.append(CODE_CHECK[0] + (" (--fast)" if fast else
-                       " (run tools/install_toolchain.py and tools/fetch_sources.py first)"))
+        for item in (CODE_CHECK, PRIVILEGED_CHECK):
+            skipped.append(item[0] + (" (--fast)" if fast else
+                           " (run tools/install_toolchain.py and tools/fetch_sources.py first)"))
     results = []
     failed = 0
     for name, cmd in checks:

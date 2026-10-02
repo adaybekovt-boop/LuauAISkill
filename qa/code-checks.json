@@ -1,734 +1,887 @@
 {
  "summary": {
   "markdown": {
-   "EMBEDDED": 71,
+   "EMBEDDED": 96,
    "TYPECHECKED": 49
   },
   "examples": {
-   "TYPECHECKED": 70
+   "TYPECHECKED": 101
+  },
+  "cli_typechecks": {
+   "TYPECHECKED": 17
   },
   "cli_tests": {
-   "CLI-EXECUTED": 9
+   "CLI-EXECUTED": 17
   }
  },
  "markdown": [
   {
+   "file": "recipes/gameplay/authorized-chat-commands.md",
+   "line": 38,
+   "status": "EMBEDDED",
+   "reason": "examples/chatcommands/ServerScriptService/ChatCommands.server.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/authorized-chat-commands.md",
+   "line": 98,
+   "status": "EMBEDDED",
+   "reason": "examples/chatcommands/ServerScriptService/Commands/Parser.luau (checked with its example project)"
+  },
+  {
    "file": "recipes/gameplay/bodycam-camera.md",
-   "line": 32,
+   "line": 35,
    "status": "EMBEDDED",
    "reason": "examples/movement/StarterPlayer/StarterPlayerScripts/BodycamCamera.client.luau (checked with its example project)"
   },
   {
-   "file": "recipes/gameplay/door-system.md",
+   "file": "recipes/gameplay/constraint-vehicle.md",
    "line": 41,
+   "status": "EMBEDDED",
+   "reason": "examples/vehicle/ReplicatedStorage/Vehicle/Drive.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/constraint-vehicle.md",
+   "line": 61,
+   "status": "EMBEDDED",
+   "reason": "examples/vehicle/ServerScriptService/VehicleServer.server.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/constraint-vehicle.md",
+   "line": 181,
+   "status": "EMBEDDED",
+   "reason": "examples/vehicle/StarterPlayer/StarterPlayerScripts/VehicleClient.client.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/door-system.md",
+   "line": 44,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ServerScriptService/Doors.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/door-system.md",
-   "line": 162,
+   "line": 165,
    "status": "EMBEDDED",
    "reason": "examples/interaction/StarterPlayer/StarterPlayerScripts/DoorVisuals.client.luau (checked with its example project)"
   },
   {
+   "file": "recipes/gameplay/first-person-viewmodel.md",
+   "line": 40,
+   "status": "EMBEDDED",
+   "reason": "examples/viewmodel/ReplicatedStorage/Viewmodel/Sway.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/first-person-viewmodel.md",
+   "line": 58,
+   "status": "EMBEDDED",
+   "reason": "examples/viewmodel/StarterPlayer/StarterPlayerScripts/ViewmodelClient.client.luau (checked with its example project)"
+  },
+  {
    "file": "recipes/gameplay/footsteps.md",
-   "line": 27,
+   "line": 30,
    "status": "EMBEDDED",
    "reason": "examples/movement/StarterPlayer/StarterPlayerScripts/Footsteps.client.luau (checked with its example project)"
   },
   {
+   "file": "recipes/gameplay/friend-global-leaderboard.md",
+   "line": 41,
+   "status": "EMBEDDED",
+   "reason": "examples/leaderboard/ServerScriptService/Boards/Rows.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/friend-global-leaderboard.md",
+   "line": 81,
+   "status": "EMBEDDED",
+   "reason": "examples/leaderboard/ServerScriptService/Boards/Service.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/friend-global-leaderboard.md",
+   "line": 163,
+   "status": "EMBEDDED",
+   "reason": "examples/leaderboard/ServerScriptService/LeaderboardServer.server.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/friend-global-leaderboard.md",
+   "line": 190,
+   "status": "EMBEDDED",
+   "reason": "examples/leaderboard/StarterPlayer/StarterPlayerScripts/LeaderboardClient.client.luau (checked with its example project)"
+  },
+  {
    "file": "recipes/gameplay/health-damage.md",
-   "line": 23,
+   "line": 26,
    "status": "EMBEDDED",
    "reason": "examples/combat/ServerScriptService/Combat/Damage.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/health-damage.md",
-   "line": 112,
+   "line": 115,
    "status": "EMBEDDED",
    "reason": "examples/combat/ServerScriptService/WeaponServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/hitscan-gun.md",
-   "line": 27,
+   "line": 30,
    "status": "EMBEDDED",
    "reason": "examples/combat/ReplicatedStorage/Combat/CombatMath.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/hitscan-gun.md",
-   "line": 92,
+   "line": 95,
    "status": "EMBEDDED",
    "reason": "examples/combat/ServerScriptService/Combat/Common.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/hitscan-gun.md",
-   "line": 204,
+   "line": 207,
    "status": "EMBEDDED",
    "reason": "examples/combat/ServerScriptService/Combat/Hitscan.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/hitscan-gun.md",
-   "line": 304,
+   "line": 307,
    "status": "EMBEDDED",
    "reason": "examples/combat/StarterPlayer/StarterPlayerScripts/WeaponClient.client.luau (checked with its example project)"
   },
   {
+   "file": "recipes/gameplay/idempotent-receipts.md",
+   "line": 46,
+   "status": "EMBEDDED",
+   "reason": "examples/receipts/ServerScriptService/ReceiptServer.server.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/idempotent-receipts.md",
+   "line": 130,
+   "status": "EMBEDDED",
+   "reason": "examples/receipts/ServerScriptService/Receipts/Ledger.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/idempotent-receipts.md",
+   "line": 190,
+   "status": "EMBEDDED",
+   "reason": "examples/receipts/ServerScriptService/Receipts/TransferPrompt.luau (checked with its example project)"
+  },
+  {
    "file": "recipes/gameplay/interaction-system.md",
-   "line": 48,
+   "line": 51,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ReplicatedStorage/Interaction/Config.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/interaction-system.md",
-   "line": 65,
+   "line": 68,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ServerScriptService/Interaction/Handlers.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/interaction-system.md",
-   "line": 125,
+   "line": 128,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ServerScriptService/InteractionServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/inventory.md",
-   "line": 28,
+   "line": 31,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ReplicatedStorage/Inventory/Items.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/inventory.md",
-   "line": 50,
+   "line": 53,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ReplicatedStorage/Inventory/InventoryModel.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/inventory.md",
-   "line": 218,
+   "line": 221,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ServerScriptService/Inventory/InventoryService.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/inventory.md",
-   "line": 371,
+   "line": 374,
    "status": "EMBEDDED",
    "reason": "examples/interaction/ServerScriptService/InventoryServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/inventory.md",
-   "line": 429,
+   "line": 432,
    "status": "EMBEDDED",
    "reason": "examples/interaction/StarterPlayer/StarterPlayerScripts/InventoryClient.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/matchmaking-queue.md",
-   "line": 38,
+   "line": 41,
    "status": "EMBEDDED",
    "reason": "examples/rounds/ServerScriptService/Matchmaking/QueueLogic.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/matchmaking-queue.md",
-   "line": 98,
+   "line": 101,
    "status": "EMBEDDED",
    "reason": "examples/rounds/ServerScriptService/Matchmaking/init.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/melee-combat.md",
-   "line": 28,
+   "line": 31,
    "status": "EMBEDDED",
    "reason": "examples/combat/ReplicatedStorage/Combat/Weapons.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/melee-combat.md",
-   "line": 96,
+   "line": 99,
    "status": "EMBEDDED",
    "reason": "examples/combat/ServerScriptService/Combat/Melee.luau (checked with its example project)"
   },
   {
+   "file": "recipes/gameplay/multiplayer-regression-harness.md",
+   "line": 53,
+   "status": "EMBEDDED",
+   "reason": "examples/regression/ReplicatedStorage/Regression/Protocol.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/multiplayer-regression-harness.md",
+   "line": 74,
+   "status": "EMBEDDED",
+   "reason": "examples/regression/ServerScriptService/RegressionServer.server.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/multiplayer-regression-harness.md",
+   "line": 189,
+   "status": "EMBEDDED",
+   "reason": "examples/regression/StarterPlayer/StarterPlayerScripts/RegressionClient.client.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/multiplayer-regression-harness.md",
+   "line": 222,
+   "status": "EMBEDDED",
+   "reason": "examples/regression/PluginLauncher.lua.txt (checked with its example project)"
+  },
+  {
    "file": "recipes/gameplay/network-rate-limiter.md",
-   "line": 33,
+   "line": 36,
    "status": "EMBEDDED",
    "reason": "examples/net/ServerScriptService/Net/NetServer.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/network-rate-limiter.md",
-   "line": 182,
+   "line": 185,
    "status": "EMBEDDED",
    "reason": "examples/net/ReplicatedStorage/Net/NetClient.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/network-rate-limiter.md",
-   "line": 256,
+   "line": 259,
    "status": "EMBEDDED",
    "reason": "examples/net/ServerScriptService/NetExample.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/network-rate-limiter.md",
-   "line": 313,
+   "line": 316,
    "status": "EMBEDDED",
    "reason": "examples/net/StarterPlayer/StarterPlayerScripts/NetExample.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/npc-chase.md",
-   "line": 33,
+   "line": 36,
    "status": "EMBEDDED",
    "reason": "examples/npc/ServerScriptService/Npc/Brain.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/npc-chase.md",
-   "line": 115,
+   "line": 118,
    "status": "EMBEDDED",
    "reason": "examples/npc/ServerScriptService/Npc/Noise.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/npc-chase.md",
-   "line": 170,
+   "line": 173,
    "status": "EMBEDDED",
    "reason": "examples/npc/ServerScriptService/Npc/Perception.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/npc-patrol.md",
-   "line": 31,
+   "line": 34,
    "status": "EMBEDDED",
    "reason": "examples/npc/ServerScriptService/Npc/NpcService.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/npc-patrol.md",
-   "line": 296,
+   "line": 299,
    "status": "EMBEDDED",
    "reason": "examples/npc/ServerScriptService/Npc/Mover.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/npc-patrol.md",
-   "line": 488,
+   "line": 491,
    "status": "EMBEDDED",
    "reason": "examples/npc/ServerScriptService/NpcServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/object-pooling.md",
-   "line": 29,
+   "line": 32,
    "status": "EMBEDDED",
    "reason": "examples/pooling/ReplicatedStorage/Pooling/PartPool.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/object-pooling.md",
-   "line": 136,
+   "line": 139,
    "status": "EMBEDDED",
    "reason": "examples/pooling/StarterPlayer/StarterPlayerScripts/PooledTracers.client.luau (checked with its example project)"
   },
   {
+   "file": "recipes/gameplay/parallel-npc-planning.md",
+   "line": 44,
+   "status": "EMBEDDED",
+   "reason": "examples/parallel/ServerScriptService/Parallel/Planner.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/parallel-npc-planning.md",
+   "line": 91,
+   "status": "EMBEDDED",
+   "reason": "examples/parallel/ServerScriptService/Parallel/Worker.server.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/parallel-npc-planning.md",
+   "line": 112,
+   "status": "EMBEDDED",
+   "reason": "examples/parallel/ServerScriptService/ParallelManager.server.luau (checked with its example project)"
+  },
+  {
    "file": "recipes/gameplay/procedural-backrooms.md",
-   "line": 35,
+   "line": 38,
    "status": "EMBEDDED",
    "reason": "examples/procgen/ReplicatedStorage/Procgen/Layout.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/procedural-backrooms.md",
-   "line": 213,
+   "line": 216,
    "status": "EMBEDDED",
    "reason": "examples/procgen/ServerScriptService/BackroomsServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/projectile-weapon.md",
-   "line": 26,
+   "line": 29,
    "status": "EMBEDDED",
    "reason": "examples/combat/ServerScriptService/Combat/Projectiles.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/ragdoll.md",
-   "line": 28,
+   "line": 31,
    "status": "EMBEDDED",
    "reason": "examples/combat/ServerScriptService/Combat/Ragdoll.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/ragdoll.md",
-   "line": 160,
+   "line": 163,
    "status": "EMBEDDED",
    "reason": "examples/combat/StarterPlayer/StarterPlayerScripts/RagdollClient.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/round-manager.md",
-   "line": 28,
+   "line": 31,
    "status": "EMBEDDED",
    "reason": "examples/rounds/ReplicatedStorage/Rounds/RoundState.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/round-manager.md",
-   "line": 92,
+   "line": 95,
    "status": "EMBEDDED",
    "reason": "examples/rounds/ServerScriptService/RoundServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/round-manager.md",
-   "line": 229,
+   "line": 232,
    "status": "EMBEDDED",
    "reason": "examples/rounds/StarterPlayer/StarterPlayerScripts/RoundClient.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 48,
+   "line": 51,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/Profiles/SessionLock.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 105,
+   "line": 108,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/Profiles/Schema.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 207,
+   "line": 210,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/Profiles/init.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/save-system.md",
-   "line": 525,
+   "line": 528,
    "status": "EMBEDDED",
    "reason": "examples/data/ServerScriptService/DataServer.server.luau (checked with its example project)"
   },
   {
+   "file": "recipes/gameplay/server-authority-dash.md",
+   "line": 46,
+   "status": "EMBEDDED",
+   "reason": "examples/simulation/ReplicatedStorage/Dash/DashState.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/server-authority-dash.md",
+   "line": 66,
+   "status": "EMBEDDED",
+   "reason": "examples/simulation/ReplicatedStorage/Dash/Simulation.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/server-authority-dash.md",
+   "line": 159,
+   "status": "EMBEDDED",
+   "reason": "examples/simulation/ServerScriptService/DashServer.server.luau (checked with its example project)"
+  },
+  {
+   "file": "recipes/gameplay/server-authority-dash.md",
+   "line": 193,
+   "status": "EMBEDDED",
+   "reason": "examples/simulation/StarterPlayer/StarterPlayerScripts/DashClient.client.luau (checked with its example project)"
+  },
+  {
    "file": "recipes/gameplay/settings-menu.md",
-   "line": 31,
+   "line": 34,
    "status": "EMBEDDED",
    "reason": "examples/settings/ReplicatedStorage/Settings/Schema.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/settings-menu.md",
-   "line": 95,
+   "line": 98,
    "status": "EMBEDDED",
    "reason": "examples/settings/ReplicatedStorage/Settings/ClientSettings.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/settings-menu.md",
-   "line": 138,
+   "line": 141,
    "status": "EMBEDDED",
    "reason": "examples/settings/ServerScriptService/SettingsServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/settings-menu.md",
-   "line": 196,
+   "line": 199,
    "status": "EMBEDDED",
    "reason": "examples/settings/StarterPlayer/StarterPlayerScripts/SettingsClient.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/sprint-crouch-stamina.md",
-   "line": 33,
+   "line": 36,
    "status": "EMBEDDED",
    "reason": "examples/movement/ReplicatedStorage/Movement/Config.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/sprint-crouch-stamina.md",
-   "line": 59,
+   "line": 62,
    "status": "EMBEDDED",
    "reason": "examples/movement/ReplicatedStorage/Movement/Stamina.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/sprint-crouch-stamina.md",
-   "line": 104,
+   "line": 107,
    "status": "EMBEDDED",
    "reason": "examples/movement/ServerScriptService/MovementServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/gameplay/sprint-crouch-stamina.md",
-   "line": 271,
+   "line": 274,
    "status": "EMBEDDED",
    "reason": "examples/movement/StarterPlayer/StarterPlayerScripts/MovementClient.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/backrooms-fluorescent-office.md",
-   "line": 19,
+   "line": 25,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region BackroomsOffice) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/camera-aesthetics.md",
-   "line": 30,
+   "line": 36,
    "status": "EMBEDDED",
    "reason": "examples/lighting/StarterPlayer/StarterPlayerScripts/CameraLook.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/cinematic-horror-interior.md",
-   "line": 20,
+   "line": 26,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region HorrorInterior) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/emergency-red-lighting.md",
-   "line": 21,
+   "line": 24,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region EmergencyRed) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/emergency-red-lighting.md",
-   "line": 45,
+   "line": 48,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ServerScriptService/PowerServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/emergency-red-lighting.md",
-   "line": 76,
+   "line": 79,
    "status": "EMBEDDED",
    "reason": "examples/lighting/StarterPlayer/StarterPlayerScripts/EmergencyLights.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/flickering-fluorescent.md",
-   "line": 21,
+   "line": 24,
    "status": "EMBEDDED",
    "reason": "examples/lighting/StarterPlayer/StarterPlayerScripts/FlickerLights.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/fog.md",
-   "line": 16,
+   "line": 22,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region FogDay) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/graphics-presets.md",
-   "line": 30,
+   "line": 33,
    "status": "EMBEDDED",
    "reason": "examples/settings/StarterPlayer/StarterPlayerScripts/GraphicsTier.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/industrial-warehouse.md",
-   "line": 13,
+   "line": 19,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region IndustrialWarehouse) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/lighting-controller-presets.md",
-   "line": 22,
+   "line": 25,
    "status": "EMBEDDED",
    "reason": "examples/lighting/StarterPlayer/StarterPlayerScripts/LightingController.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/night-exterior.md",
-   "line": 13,
+   "line": 19,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region NightExterior) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/poolrooms.md",
-   "line": 13,
+   "line": 19,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region Poolrooms) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/realistic-dark-corridor.md",
-   "line": 17,
+   "line": 23,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region DarkCorridor) (checked with its example project)"
   },
   {
    "file": "recipes/graphics/realistic-flashlight.md",
-   "line": 26,
+   "line": 29,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ServerScriptService/FlashlightServer.server.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/realistic-flashlight.md",
-   "line": 75,
+   "line": 78,
    "status": "EMBEDDED",
    "reason": "examples/lighting/StarterPlayer/StarterPlayerScripts/Flashlight.client.luau (checked with its example project)"
   },
   {
    "file": "recipes/graphics/sunset.md",
-   "line": 12,
+   "line": 18,
    "status": "EMBEDDED",
    "reason": "examples/lighting/ReplicatedStorage/LightingPresets.luau (region Sunset) (checked with its example project)"
   },
   {
    "file": "handbook/graphics/02-atmosphere-sky-post.md",
-   "line": 54,
+   "line": 61,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/luau/01-language-core.md",
-   "line": 40,
+   "line": 47,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/luau/02-types.md",
-   "line": 28,
+   "line": 35,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/luau/02-types.md",
-   "line": 45,
+   "line": 52,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/luau/02-types.md",
-   "line": 71,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/02-types.md",
-   "line": 95,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/02-types.md",
-   "line": 114,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/03-syntax-stdlib.md",
-   "line": 58,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/03-syntax-stdlib.md",
-   "line": 70,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/04-patterns-data.md",
-   "line": 18,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/04-patterns-data.md",
-   "line": 49,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/04-patterns-data.md",
-   "line": 81,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/04-patterns-data.md",
-   "line": 107,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/04-patterns-data.md",
-   "line": 132,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/05-coroutines-task-errors.md",
-   "line": 31,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/05-coroutines-task-errors.md",
-   "line": 49,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/luau/05-coroutines-task-errors.md",
    "line": 78,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
-   "file": "handbook/luau/06-performance-memory.md",
-   "line": 36,
+   "file": "handbook/luau/02-types.md",
+   "line": 102,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
-   "file": "handbook/luau/06-performance-memory.md",
-   "line": 81,
+   "file": "handbook/luau/02-types.md",
+   "line": 121,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
-   "file": "handbook/roblox/02-lifecycle-events.md",
-   "line": 9,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/02-lifecycle-events.md",
+   "file": "handbook/luau/03-syntax-stdlib.md",
    "line": 65,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
-   "file": "handbook/roblox/03-networking.md",
-   "line": 53,
+   "file": "handbook/luau/03-syntax-stdlib.md",
+   "line": 77,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/04-patterns-data.md",
+   "line": 25,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/04-patterns-data.md",
+   "line": 56,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/04-patterns-data.md",
+   "line": 88,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/04-patterns-data.md",
+   "line": 114,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/04-patterns-data.md",
+   "line": 139,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/05-coroutines-task-errors.md",
+   "line": 38,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/05-coroutines-task-errors.md",
+   "line": 56,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/05-coroutines-task-errors.md",
+   "line": 85,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/06-performance-memory.md",
+   "line": 43,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/luau/06-performance-memory.md",
+   "line": 88,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/02-lifecycle-events.md",
+   "line": 16,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/02-lifecycle-events.md",
+   "line": 72,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/roblox/03-networking.md",
-   "line": 95,
+   "line": 60,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/03-networking.md",
+   "line": 102,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/roblox/04-security.md",
-   "line": 75,
+   "line": 82,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/roblox/05-server-authority.md",
-   "line": 39,
+   "line": 46,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "handbook/roblox/06-data-persistence.md",
-   "line": 68,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/08-performance.md",
-   "line": 67,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/09-physics.md",
-   "line": 58,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/09-physics.md",
-   "line": 96,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/11-terrain.md",
-   "line": 44,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/12-procedural-generation.md",
-   "line": 24,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/12-procedural-generation.md",
-   "line": 69,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/13-character-controllers.md",
-   "line": 55,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/13-character-controllers.md",
-   "line": 87,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/14-camera.md",
-   "line": 37,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/15-combat.md",
-   "line": 37,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/17-audio.md",
-   "line": 35,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/19-input.md",
-   "line": 30,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/20-npc-ai.md",
-   "line": 42,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/21-architecture.md",
-   "line": 17,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/21-architecture.md",
-   "line": 51,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/22-code-quality.md",
-   "line": 30,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/23-tooling-testing.md",
-   "line": 79,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/24-studio-mcp-testing.md",
-   "line": 63,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/25-monetization.md",
-   "line": 35,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/26-chat-leaderboards.md",
-   "line": 28,
-   "status": "TYPECHECKED",
-   "errors": []
-  },
-  {
-   "file": "handbook/roblox/26-chat-leaderboards.md",
    "line": 75,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
-   "file": "recipes/graphics/lighting-controller-presets.md",
-   "line": 162,
+   "file": "handbook/roblox/08-performance.md",
+   "line": 74,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/09-physics.md",
+   "line": 65,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/09-physics.md",
+   "line": 103,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/11-terrain.md",
+   "line": 51,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/12-procedural-generation.md",
+   "line": 31,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/12-procedural-generation.md",
+   "line": 76,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/13-character-controllers.md",
+   "line": 62,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/13-character-controllers.md",
+   "line": 94,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/14-camera.md",
+   "line": 44,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/15-combat.md",
+   "line": 44,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/17-audio.md",
+   "line": 42,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/19-input.md",
+   "line": 37,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/20-npc-ai.md",
+   "line": 49,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/21-architecture.md",
+   "line": 24,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/21-architecture.md",
+   "line": 58,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/22-code-quality.md",
+   "line": 37,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/23-tooling-testing.md",
+   "line": 86,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/24-studio-mcp-testing.md",
+   "line": 70,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/25-monetization.md",
+   "line": 42,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/26-chat-leaderboards.md",
+   "line": 35,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/26-chat-leaderboards.md",
+   "line": 82,
    "status": "TYPECHECKED",
    "errors": []
   },
   {
    "file": "recipes/graphics/lighting-controller-presets.md",
-   "line": 170,
+   "line": 165,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "recipes/graphics/lighting-controller-presets.md",
+   "line": 173,
    "status": "TYPECHECKED",
    "errors": []
   }
@@ -766,6 +919,16 @@
   },
   {
    "file": "examples/lib/ReplicatedStorage/Lib/Validate.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/chatcommands/ServerScriptService/ChatCommands.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/chatcommands/ServerScriptService/Commands/Parser.luau",
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -895,6 +1058,26 @@
    "errors": []
   },
   {
+   "file": "examples/leaderboard/ServerScriptService/Boards/Rows.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/leaderboard/ServerScriptService/Boards/Service.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/leaderboard/ServerScriptService/LeaderboardServer.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/leaderboard/StarterPlayer/StarterPlayerScripts/LeaderboardClient.client.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
    "file": "examples/lighting/ReplicatedStorage/LightingPresets.luau",
    "status": "TYPECHECKED",
    "errors": []
@@ -1015,6 +1198,21 @@
    "errors": []
   },
   {
+   "file": "examples/parallel/ServerScriptService/Parallel/Planner.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/parallel/ServerScriptService/Parallel/Worker.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/parallel/ServerScriptService/ParallelManager.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
    "file": "examples/pooling/ReplicatedStorage/Pooling/PartPool.luau",
    "status": "TYPECHECKED",
    "errors": []
@@ -1031,6 +1229,71 @@
   },
   {
    "file": "examples/procgen/ServerScriptService/BackroomsServer.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/receipts/ServerScriptService/ReceiptServer.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/receipts/ServerScriptService/Receipts/Ledger.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/receipts/ServerScriptService/Receipts/TransferPrompt.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/regression/ReplicatedStorage/Regression/Protocol.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/regression/ServerScriptService/RegressionServer.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/regression/StarterPlayer/StarterPlayerScripts/RegressionClient.client.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/release-smoke/ServerScriptService/ReleaseSmoke/Cases.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/release-smoke/ServerScriptService/ReleaseSmoke/Context.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/release-smoke/ServerScriptService/ReleaseSmoke/DataCase.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/release-smoke/ServerScriptService/ReleaseSmoke/Fixtures.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/release-smoke/ServerScriptService/ReleaseSmoke/Run.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/release-smoke/ServerScriptService/ReleaseSmokeServer.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/release-smoke/StarterPlayer/StarterPlayerScripts/ReleaseSmokeClient.client.luau",
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -1083,9 +1346,149 @@
    "file": "examples/settings/StarterPlayer/StarterPlayerScripts/SettingsClient.client.luau",
    "status": "TYPECHECKED",
    "errors": []
+  },
+  {
+   "file": "examples/simulation/ReplicatedStorage/Dash/DashState.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/simulation/ReplicatedStorage/Dash/Simulation.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/simulation/ServerScriptService/DashServer.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/simulation/StarterPlayer/StarterPlayerScripts/DashClient.client.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/vehicle/ReplicatedStorage/Vehicle/Drive.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/vehicle/ServerScriptService/VehicleServer.server.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/vehicle/StarterPlayer/StarterPlayerScripts/VehicleClient.client.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/viewmodel/ReplicatedStorage/Viewmodel/Sway.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/viewmodel/StarterPlayer/StarterPlayerScripts/ViewmodelClient.client.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  }
+ ],
+ "cli_typechecks": [
+  {
+   "file": "examples/tests/chatcommands.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/combat.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/data.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/inventory.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/leaderboard.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/lib.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/movement.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/npc.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/parallel.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/procgen.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/receipts.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/regression.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/rounds.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/settings.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/simulation.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/vehicle.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "examples/tests/viewmodel.spec.luau",
+   "status": "TYPECHECKED",
+   "errors": []
   }
  ],
  "cli_tests": [
+  {
+   "file": "examples/tests/chatcommands.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "chatcommands.spec: exact grammar, numeric identity, authorization and malformed payloads passed"
+   ]
+  },
   {
    "file": "examples/tests/combat.spec.luau",
    "status": "CLI-EXECUTED",
@@ -1111,13 +1514,21 @@
    ]
   },
   {
+   "file": "examples/tests/leaderboard.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "leaderboard.spec: stable ties, invalid entries, deduped/capped batch and partial flag passed"
+   ]
+  },
+  {
    "file": "examples/tests/lib.spec.luau",
    "status": "CLI-EXECUTED",
    "exit": 0,
    "tail": [
-    "[Signal] handler error:\t./examples/tests/lib.spec.luau:72: boom",
-    "[Signal] handler error:\t./examples/tests/lib.spec.luau:72: boom",
-    "[Signal] handler error:\t./examples/tests/lib.spec.luau:72: boom",
+    "[Signal] handler error:\t./examples/tests/lib.spec.luau:75: boom",
+    "[Signal] handler error:\t./examples/tests/lib.spec.luau:75: boom",
+    "[Signal] handler error:\t./examples/tests/lib.spec.luau:75: boom",
     "lib.spec: 10 passed, 0 failed"
    ]
   },
@@ -1138,11 +1549,35 @@
    ]
   },
   {
+   "file": "examples/tests/parallel.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "parallel.spec: nearest/tie/range, output parity and fail-closed measurement gate passed"
+   ]
+  },
+  {
    "file": "examples/tests/procgen.spec.luau",
    "status": "CLI-EXECUTED",
    "exit": 0,
    "tail": [
     "procgen.spec: 5 passed, 0 failed"
+   ]
+  },
+  {
+   "file": "examples/tests/receipts.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "receipts.spec: atomic grants, duplicate/ambiguous retry, transfer sides, collision, corruption, capacity passed"
+   ]
+  },
+  {
+   "file": "examples/tests/regression.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "regression.spec: all-peer barrier, stale acknowledgment and structured failure passed"
    ]
   },
   {
@@ -1159,6 +1594,30 @@
    "exit": 0,
    "tail": [
     "settings.spec: 4 passed, 0 failed"
+   ]
+  },
+  {
+   "file": "examples/tests/simulation.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "simulation.spec: deterministic replay, cooldown, press latch and reversible effect state passed"
+   ]
+  },
+  {
+   "file": "examples/tests/vehicle.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "vehicle.spec: saturation, skid steering, empty seat, stale intent and NaN passed"
+   ]
+  },
+  {
+   "file": "examples/tests/viewmodel.spec.luau",
+   "status": "CLI-EXECUTED",
+   "exit": 0,
+   "tail": [
+    "viewmodel.spec: bounded delta/offset, immutable step and Reduced Motion passed"
    ]
   }
  ]

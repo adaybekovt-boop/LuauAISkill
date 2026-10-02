@@ -1,5 +1,8 @@
 # Recipe: bodycam camera controller (layer on the default camera, comfort-aware)
 
+## When NOT to use
+Do not use for a fixed-camera game or as a mandatory motion effect; provide comfort controls.
+
 Evidence: TYPECHECKED · **not run in Studio** (camera feel must be tuned by eye). Side: client only.
 Chapter: [camera](../../handbook/roblox/14-camera.md). Visual look (grain, vignette, colour, timestamp overlay):
 [camera aesthetics](../graphics/camera-aesthetics.md).

@@ -1,5 +1,8 @@
 # Recipe: projectile weapon (server-simulated, client-rendered, splash damage)
 
+## When NOT to use
+Do not use purely cosmetic client projectiles as the source of authoritative hit decisions.
+
 Evidence: ballistics CLI-EXECUTED (`examples/tests/combat.spec.luau`) · server TYPECHECKED · **not run in Studio**.
 Needs: [health & damage](health-damage.md), shared `Common`/`CombatMath`/client (embedded in [hitscan](hitscan-gun.md)).
 

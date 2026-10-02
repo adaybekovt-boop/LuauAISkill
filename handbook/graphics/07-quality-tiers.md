@@ -1,5 +1,12 @@
 # Device scalability: Low / Medium / High / Ultra tiers
 
+## TL;DR
+- Offer quality tiers for the effects the experience controls.
+- Do not assume the script can override all engine graphics settings.
+- Select tiers from measured device performance.
+- Keep gameplay rules independent of visual quality.
+- Measure CPU and GPU separately when reducing cost.
+
 Read when: shipping to phones + PCs + consoles, graphics settings menu, adaptive quality, heavy scenes.
 Related: [performance](../roblox/08-performance.md), recipes [graphics presets & settings](../../recipes/graphics/graphics-presets.md),
 [settings menu](../../recipes/gameplay/settings-menu.md).

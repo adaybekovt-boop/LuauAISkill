@@ -3,10 +3,17 @@
 -- Run: luau examples/tests/combat.spec.luau (from repo root).
 local CombatMath = require("../combat/ReplicatedStorage/Combat/CombatMath")
 
-local v = vector.create
+-- CLI-only boundary adapter: native vectors provide the operators/components exercised here.
+-- This does not test Roblox Vector3 construction or engine behavior.
+local function v(x: number, y: number, z: number): Vector3
+	return vector.create(x, y, z) :: any
+end
 local passed, failed = 0, 0
 local function test(name: string, fn: () -> ())
-	local ok, err = pcall(fn)
+	local ok, err = pcall(function(): boolean
+		fn()
+		return true
+	end)
 	if ok then
 		passed += 1
 	else

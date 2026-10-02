@@ -1,0 +1,83 @@
+{
+  "scope": "isolated filesystem layouts and foreign-CWD execution; not actual host installs",
+  "actual_host_acceptance": "NOT RUN",
+  "results": [
+    {
+      "host": "claude-code-personal",
+      "tool": "api.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "claude-code-personal",
+      "tool": "search.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "claude-code-personal",
+      "tool": "scan_legacy.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "claude-code-project",
+      "tool": "api.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "claude-code-project",
+      "tool": "search.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "claude-code-project",
+      "tool": "scan_legacy.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "codex",
+      "tool": "api.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "codex",
+      "tool": "search.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "codex",
+      "tool": "scan_legacy.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "cursor",
+      "tool": "api.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "cursor",
+      "tool": "search.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "cursor",
+      "tool": "scan_legacy.py",
+      "status": "PASS",
+      "cwd": "foreign"
+    },
+    {
+      "host": "claude.ai",
+      "status": "PACKAGE_VALIDATED",
+      "actual_upload": "NOT RUN"
+    }
+  ]
+}

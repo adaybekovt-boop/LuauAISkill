@@ -1,5 +1,12 @@
 # Modern Luau syntax and standard library (Roblox, 2026)
 
+## TL;DR
+- Check the available Luau syntax and library subset.
+- Choose task scheduling by required timing.
+- Use the correct clock for duration or synchronized time.
+- Use buffers only with explicit layouts and bounds.
+- Prefer supported standard functions over copied compatibility helpers.
+
 Read when: choosing idioms, using library functions, reviewing code written from pre-2021 memory.
 Related: [core](01-language-core.md), [performance](06-performance-memory.md).
 

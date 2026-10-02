@@ -1,5 +1,12 @@
 # VFX: particles, beams, trails, decals, transparency cost
 
+## TL;DR
+- Choose particles, beams, or trails for the effect shape.
+- Make timing and silhouette readable before adding detail.
+- Keep cosmetic presentation separate from authoritative gameplay.
+- Budget screen coverage and effect concurrency.
+- Pool and clean up effects with explicit ownership.
+
 Read when: dust, smoke, sparks, rain, muzzle flashes, magic, blood, weather.
 Related: [local lights](03-local-lights.md), [quality tiers](07-quality-tiers.md), [performance](../roblox/08-performance.md#gpu--render-thread).
 

@@ -1,5 +1,12 @@
 # NPC / AI: pathfinding, perception, decision making, scaling to many NPCs
 
+## TL;DR
+- Use a manager with explicit NPC state and budgets.
+- Choose the simplest decision model that meets the design.
+- Stagger perception and pathfinding rather than updating everything at once.
+- Handle blocked paths, missing targets, and lifecycle cleanup.
+- Measure NPC scaling with realistic navigation and physics.
+
 Read when: enemies, monsters (horror), patrols, companions, crowds, "100 NPCs lag the server".
 Related: [animation](16-animation.md), [performance](08-performance.md#cpu-humanoids--animation), [combat](15-combat.md),
 recipes [NPC patrol](../../recipes/gameplay/npc-patrol.md), [NPC chase](../../recipes/gameplay/npc-chase.md).

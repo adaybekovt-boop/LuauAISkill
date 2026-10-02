@@ -5,7 +5,10 @@ local InventoryModel = require("../interaction/ReplicatedStorage/Inventory/Inven
 local defs = { Battery = { name = "Battery", maxStack = 8 }, Keycard = { name = "Keycard", maxStack = 1 } }
 local passed, failed = 0, 0
 local function test(name: string, fn: () -> ())
-	local ok, err = pcall(fn)
+	local ok, err = pcall(function(): boolean
+		fn()
+		return true
+	end)
 	if ok then
 		passed += 1
 	else
@@ -72,7 +75,7 @@ test("serialize/deserialize round-trip and sanitize hostile data", function()
 	eq(dropped, 0)
 	eq(InventoryModel.count(copy, "Battery"), 9)
 	eq(InventoryModel.count(copy, "Keycard"), 1)
-	local hostile = {
+	local hostile: { any } = { -- deliberately malformed deserialization boundary
 		{ s = 1, i = "Battery", c = 999 }, -- clamped to maxStack
 		{ s = 1, i = "Keycard", c = 1 }, -- duplicate slot
 		{ s = 9, i = "Battery", c = 1 }, -- out of range

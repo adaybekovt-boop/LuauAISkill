@@ -1,0 +1,1298 @@
+{
+  "schema_version": 1,
+  "source_pins": {
+    "creator-docs": "578b33e83e5137b880eb594523159a6f1f691265",
+    "api-dump": "fcd6994996bb655bef047c69f456463d94faa569",
+    "luau-site": "a60a62708901b1b7774518e2af9719e9efe678e0"
+  },
+  "url_sources": {
+    "https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993": {
+      "file": "references/fact-sources/server-authority-release.json",
+      "sha256": "765d2dd1c7ad36744e0b440b624176da5354d85a00d1c59bb3a31c164b38df0f"
+    }
+  },
+  "facts": [
+    {
+      "id": "server-authority-release-status",
+      "section": "Feature status",
+      "statement": "Server authority was announced as a full release for all games.",
+      "value": "full release",
+      "unit": "release status",
+      "status": "ga",
+      "source": "https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993",
+      "checked_on": "2026-10-02",
+      "expires_after": 30,
+      "evidence": [
+        "[Full Release] Ship Fair And Competitive Games with Server Authority",
+        "We’re launching Server Authority for all games today."
+      ],
+      "notes": "The dated announcement supersedes a stale beta sentence in the pinned network-ownership guide. This does not claim that every related feature is generally available."
+    },
+    {
+      "id": "server-authority-release-date",
+      "section": "Feature status",
+      "statement": "Date of the official server authority full-release announcement.",
+      "value": "2026-07-09",
+      "unit": "calendar date",
+      "status": "documented",
+      "source": "https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993",
+      "checked_on": "2026-10-02",
+      "expires_after": 180,
+      "evidence": [
+        "[Full Release] Ship Fair And Competitive Games with Server Authority",
+        "\"published_on\": \"2026-07-09\""
+      ]
+    },
+    {
+      "id": "remote-client-send-rate",
+      "section": "Networking",
+      "statement": "RemoteEvent and UnreliableRemoteEvent client-to-server rate; shared among all remotes of the same type.",
+      "value": 500,
+      "unit": "requests/second/client",
+      "status": "approximate",
+      "source": "cd:reference/engine/classes/RemoteEvent",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "approximately 500 requests per second, per client. This limit is **shared among all remote events of the same type**."
+      ]
+    },
+    {
+      "id": "unreliable-remote-payload",
+      "section": "Networking",
+      "statement": "UnreliableRemoteEvent payloads above this size are dropped.",
+      "value": 1000,
+      "unit": "bytes",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/UnreliableRemoteEvent",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Events with payloads larger than 1000 bytes are dropped."
+      ]
+    },
+    {
+      "id": "remote-function-callback",
+      "section": "Networking",
+      "statement": "Only the last callback assigned to a RemoteFunction executes.",
+      "value": 1,
+      "unit": "effective callback/RemoteFunction",
+      "status": "documented",
+      "source": "cd:scripting/events/remote",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "if you define multiple callbacks to the same `Class.RemoteFunction`, only the last definition executes."
+      ]
+    },
+    {
+      "id": "deferred-reentrancy-depth",
+      "section": "Networking",
+      "statement": "Deferred-event re-entrancy depth limit.",
+      "value": 10,
+      "unit": "levels",
+      "status": "documented",
+      "source": "cd:scripting/events/deferred",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Re-entrancy\" prevents events from continuously firing one another when they reach a certain depth. The current limit for this is 10."
+      ]
+    },
+    {
+      "id": "datastore-value-size",
+      "section": "Data stores",
+      "statement": "Maximum serialized data-store value size.",
+      "value": 4194304,
+      "unit": "characters/key",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>Data (key value)</td> <td>4,194,304 per key</td>"
+      ]
+    },
+    {
+      "id": "datastore-name-length",
+      "section": "Data stores",
+      "statement": "Maximum data-store name length.",
+      "value": 50,
+      "unit": "characters",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>Data store name</td> <td>50</td>"
+      ]
+    },
+    {
+      "id": "datastore-key-length",
+      "section": "Data stores",
+      "statement": "Maximum data-store key length.",
+      "value": 50,
+      "unit": "characters",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>Key name</td> <td>50</td>"
+      ]
+    },
+    {
+      "id": "datastore-scope-length",
+      "section": "Data stores",
+      "statement": "Maximum data-store scope length.",
+      "value": 50,
+      "unit": "characters",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>Scope</td> <td>50</td>"
+      ]
+    },
+    {
+      "id": "datastore-metadata-total",
+      "section": "Data stores",
+      "statement": "Maximum total user-defined metadata size.",
+      "value": 300,
+      "unit": "characters",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "There's no limit to the total number of key-value pairs, but the total size can't exceed 300 characters."
+      ]
+    },
+    {
+      "id": "datastore-standard-read-server-rate",
+      "section": "Data stores",
+      "statement": "Standard data-store read default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "60 + 40 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>Read</b></td> <td>`StandardRead`</td> <td>`Class.DataStore:GetAsync()|GetAsync()`<br></br>`Class.DataStore:GetVersionAsync()|GetVersionAsync()`<br></br>`Class.DataStore:GetVersionAtTimeAsync()|GetVersionAtTimeAsync()`<br></br>`Class.DataStore:UpdateAsync()|UpdateAsync()`</td> <td>60 + numPlayers × 40</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-standard-write-server-rate",
+      "section": "Data stores",
+      "statement": "Standard data-store write default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "60 + 40 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>Write</b></td> <td>`StandardWrite`</td> <td>`Class.DataStore:SetAsync()|SetAsync()`<br></br>`Class.DataStore:IncrementAsync()|IncrementAsync()`<br></br>`Class.DataStore:UpdateAsync()|UpdateAsync()`</td> <td>60 + numPlayers × 40</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-standard-list-server-rate",
+      "section": "Data stores",
+      "statement": "Standard data-store list default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "5 + 2 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>List</b></td> <td>`StandardList`</td> <td>`Class.DataStoreService:ListDataStoresAsync()|ListDataStoresAsync()`<br></br>`Class.DataStore:ListKeysAsync()|ListKeysAsync()`<br></br>`Class.DataStore:ListVersionsAsync()|ListVersionsAsync()`</td> <td>5 + numPlayers × 2</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-standard-remove-server-rate",
+      "section": "Data stores",
+      "statement": "Standard data-store remove default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "60 + 40 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>Remove</b></td> <td>`StandardRemove`</td> <td>`Class.DataStore:RemoveAsync()|RemoveAsync()`</td> <td>60 + numPlayers × 40</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-ordered-read-server-rate",
+      "section": "Data stores",
+      "statement": "Ordered data-store read default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "60 + 40 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>Read</b></td> <td>`OrderedRead`</td> <td>`Class.OrderedDataStore:GetAsync()|GetAsync()`<br></br>`Class.GlobalDataStore:BatchGetAsync()|BatchGetAsync()`<br></br>`Class.OrderedDataStore:UpdateAsync()|UpdateAsync()`</td> <td>60 + numPlayers × 40</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-ordered-write-server-rate",
+      "section": "Data stores",
+      "statement": "Ordered data-store write default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "30 + 5 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>Write</b></td> <td>`OrderedWrite`</td> <td>`Class.OrderedDataStore:SetAsync()|SetAsync()`<br></br>`Class.OrderedDataStore:IncrementAsync()|IncrementAsync()`<br></br>`Class.OrderedDataStore:UpdateAsync()|UpdateAsync()`</td> <td>30 + numPlayers × 5</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-ordered-list-server-rate",
+      "section": "Data stores",
+      "statement": "Ordered data-store list default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "5 + 2 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>List</b></td> <td>`OrderedList`</td> <td>`Class.OrderedDataStore:GetSortedAsync()|GetSortedAsync()`</td> <td>5 + numPlayers × 2</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-ordered-remove-server-rate",
+      "section": "Data stores",
+      "statement": "Ordered data-store remove default server rate; configurable through SetRateLimitForRequestType.",
+      "value": "30 + 5 * players",
+      "unit": "requests/minute/server",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<tr> <td><b>Remove</b></td> <td>`OrderedRemove`</td> <td>`Class.OrderedDataStore:RemoveAsync()|RemoveAsync()`</td> <td>30 + numPlayers × 5</td> </tr>"
+      ]
+    },
+    {
+      "id": "datastore-read-experience-rate",
+      "section": "Data stores",
+      "statement": "Read experience rate for each data-store type; game-server and Open Cloud usage share its budget.",
+      "value": "300 + 40 * concurrent_users",
+      "unit": "requests/minute/experience/data-store-type",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>300 + concurrentUsers × 40</td>",
+        "Game server and Open Cloud **share** a budget"
+      ]
+    },
+    {
+      "id": "datastore-write-experience-rate",
+      "section": "Data stores",
+      "statement": "Write experience rate for each data-store type; game-server and Open Cloud usage share its budget.",
+      "value": "300 + 20 * concurrent_users",
+      "unit": "requests/minute/experience/data-store-type",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>300 + concurrentUsers × 20</td>",
+        "Game server and Open Cloud **share** a budget"
+      ]
+    },
+    {
+      "id": "datastore-list-experience-rate",
+      "section": "Data stores",
+      "statement": "List experience rate for each data-store type; game-server and Open Cloud usage share its budget.",
+      "value": "300 + 2 * concurrent_users",
+      "unit": "requests/minute/experience/data-store-type",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>300 + concurrentUsers × 2</td>",
+        "Game server and Open Cloud **share** a budget"
+      ]
+    },
+    {
+      "id": "datastore-remove-experience-rate",
+      "section": "Data stores",
+      "statement": "Remove experience rate for each data-store type; game-server and Open Cloud usage share its budget.",
+      "value": "300 + 40 * concurrent_users",
+      "unit": "requests/minute/experience/data-store-type",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>300 + concurrentUsers × 40</td>",
+        "Game server and Open Cloud **share** a budget"
+      ]
+    },
+    {
+      "id": "datastore-key-read-throughput",
+      "section": "Data stores",
+      "statement": "Per-key read throughput; each request is rounded up to the next kilobyte.",
+      "value": 25,
+      "unit": "MB/minute/key",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>25 MB per minute</td>",
+        "For every request, Roblox rounds throughput up to the next kilobyte."
+      ]
+    },
+    {
+      "id": "datastore-key-write-throughput",
+      "section": "Data stores",
+      "statement": "Per-key write throughput; each request is rounded up to the next kilobyte.",
+      "value": 4,
+      "unit": "MB/minute/key",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>4 MB per minute</td>",
+        "For every request, Roblox rounds throughput up to the next kilobyte."
+      ]
+    },
+    {
+      "id": "datastore-queue-size",
+      "section": "Data stores",
+      "statement": "Requests beyond the per-queue limit are dropped.",
+      "value": 30,
+      "unit": "requests/queue",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Each queue has a limit of 30 requests."
+      ]
+    },
+    {
+      "id": "datastore-storage",
+      "section": "Data stores",
+      "statement": "Storage allowance measured using compressed latest key versions.",
+      "value": "500 + 1 * lifetime_users",
+      "unit": "MB/experience",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Total latest version storage limit = 500 MB + 1 MB × lifetime user count",
+        "Storage usage is measured using the **compressed size** of the latest version of each key."
+      ]
+    },
+    {
+      "id": "datastore-cache-duration",
+      "section": "Data stores",
+      "statement": "Default GetAsync local-cache lifetime.",
+      "value": 4,
+      "unit": "seconds",
+      "status": "default",
+      "source": "cd:cloud-services/data-stores/versioning-listing-and-caching",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "store values you retrieve from the backend in a local cache for four seconds."
+      ]
+    },
+    {
+      "id": "bind-to-close-deadline",
+      "section": "Data stores",
+      "statement": "BindToClose callbacks have this time to complete.",
+      "value": 30,
+      "unit": "seconds",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/player-data-purchasing",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "callbacks only have 30 seconds to complete."
+      ]
+    },
+    {
+      "id": "ordered-datastore-page-size",
+      "section": "Data stores",
+      "statement": "OrderedDataStore GetSortedAsync page-size range.",
+      "value": [
+        1,
+        100
+      ],
+      "unit": "entries/page",
+      "status": "documented",
+      "source": "cd:cloud-services/data-stores/error-codes-and-limits",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The minimum page size for an `Class.OrderedDataStore` is 1.",
+        "The maximum page size for an `Class.OrderedDataStore` is 100."
+      ]
+    },
+    {
+      "id": "batch-get-supported-store",
+      "section": "Data stores",
+      "statement": "GlobalDataStore BatchGetAsync currently supports ordered stores only.",
+      "value": "OrderedDataStore",
+      "unit": "store type",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/GlobalDataStore",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "This method is currently only supported on `Class.OrderedDataStore`."
+      ]
+    },
+    {
+      "id": "batch-get-max-keys",
+      "section": "Data stores",
+      "statement": "Default BatchGetAsync maximum keys per call; server-configured, not a fixed universal maximum.",
+      "value": 100,
+      "unit": "keys/request",
+      "status": "default",
+      "source": "cd:reference/engine/classes/GlobalDataStore",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "server-configured maximum (default 100)."
+      ]
+    },
+    {
+      "id": "batch-get-min-keys",
+      "section": "Data stores",
+      "statement": "Minimum BatchGetAsync key count.",
+      "value": 1,
+      "unit": "keys/request",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/GlobalDataStore",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The `keys` array must contain at least one key"
+      ]
+    },
+    {
+      "id": "batch-get-read-budget",
+      "section": "Data stores",
+      "statement": "BatchGetAsync read budget is charged by requested key count.",
+      "value": "requested_keys",
+      "unit": "read requests",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/GlobalDataStore",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Each call counts against the ordered data store read budget based on the number of keys requested."
+      ]
+    },
+    {
+      "id": "memorystore-memory-quota",
+      "section": "Memory stores",
+      "statement": "Game-wide memory quota.",
+      "value": "64 + 1.2 * users",
+      "unit": "KB/game",
+      "status": "documented",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "**64 KB + 1.2 KB \\* [number of users]**"
+      ]
+    },
+    {
+      "id": "memorystore-quota-decrease-delay",
+      "section": "Memory stores",
+      "statement": "Traceback period before reevaluating memory quota downwards.",
+      "value": 8,
+      "unit": "days",
+      "status": "documented",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "There's a traceback period of eight days before the quota reevaluates to a lower value."
+      ]
+    },
+    {
+      "id": "memorystore-request-quota",
+      "section": "Memory stores",
+      "statement": "Game-wide request-unit quota.",
+      "value": "1000 + 120 * concurrent_users",
+      "unit": "request units/minute/game",
+      "status": "documented",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "**1000 + 120 \\* [number of concurrent users]** request units per minute."
+      ]
+    },
+    {
+      "id": "memorystore-structure-items",
+      "section": "Memory stores",
+      "statement": "Maximum sorted-map or queue item count.",
+      "value": 1000000,
+      "unit": "items/structure",
+      "status": "documented",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Maximum number of items: 1,000,000"
+      ]
+    },
+    {
+      "id": "memorystore-structure-memory",
+      "section": "Memory stores",
+      "statement": "Maximum sorted-map or queue size, including sorted-map keys.",
+      "value": 100,
+      "unit": "MB/structure",
+      "status": "documented",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Maximum total size (including keys for sorted map): 100 MB"
+      ]
+    },
+    {
+      "id": "memorystore-partition-rate",
+      "section": "Memory stores",
+      "statement": "Approximate per-partition throttling onset; stay well below it.",
+      "value": 30000,
+      "unit": "request units/minute/partition",
+      "status": "approximate",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "throttling to begin at roughly **30,000 request units per minute** for a single partition"
+      ]
+    },
+    {
+      "id": "memorystore-hash-key-write-rate",
+      "section": "Memory stores",
+      "statement": "Approximate hash-map single-key write rate; UpdateAsync consumes read and write budgets.",
+      "value": 5000,
+      "unit": "request units/minute/key",
+      "status": "approximate",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "approximately **5,000 write request units per minute**"
+      ]
+    },
+    {
+      "id": "memorystore-hash-key-read-rate",
+      "section": "Memory stores",
+      "statement": "Approximate hash-map single-key read rate; partition limits also apply.",
+      "value": 15000,
+      "unit": "request units/minute/key",
+      "status": "approximate",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "**15,000 read request units per minute**"
+      ]
+    },
+    {
+      "id": "memorystore-max-expiration",
+      "section": "Memory stores",
+      "statement": "Maximum hash-map expiration time.",
+      "value": 3888000,
+      "unit": "seconds",
+      "status": "documented",
+      "source": "cd:cloud-services/memory-stores/hash-map",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The maximum expiration time is 3,888,000 seconds (45 days)."
+      ]
+    },
+    {
+      "id": "memorystore-default-expiration",
+      "section": "Memory stores",
+      "statement": "Documented default expiration for MemoryStoreQueue AddAsync and MemoryStoreSortedMap SetAsync.",
+      "value": 45,
+      "unit": "days",
+      "status": "default",
+      "source": "cd:cloud-services/memory-stores/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "the default expiration time is 45 days for both `Class.MemoryStoreQueue:AddAsync()` and `Class.MemoryStoreSortedMap:SetAsync()`"
+      ]
+    },
+    {
+      "id": "messaging-message-size",
+      "section": "Messaging",
+      "statement": "Maximum MessagingService message size.",
+      "value": 1,
+      "unit": "kB/message",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/MessagingService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<b>Size of message</b> </td> <td> 1kB"
+      ]
+    },
+    {
+      "id": "messaging-send-rate",
+      "section": "Messaging",
+      "statement": "Messages sent per server.",
+      "value": "600 + 240 * players",
+      "unit": "messages/minute/server",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/MessagingService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "600 + 240 * (number of players in this game server) per minute"
+      ]
+    },
+    {
+      "id": "messaging-topic-receive-rate",
+      "section": "Messaging",
+      "statement": "Messages received per topic.",
+      "value": "40 + 80 * servers",
+      "unit": "messages/minute/topic",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/MessagingService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "(40 + 80 * number of servers) per minute"
+      ]
+    },
+    {
+      "id": "messaging-game-receive-rate",
+      "section": "Messaging",
+      "statement": "Messages received for the entire game.",
+      "value": "400 + 200 * servers",
+      "unit": "messages/minute/game",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/MessagingService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "(400 + 200 * number of servers) per minute"
+      ]
+    },
+    {
+      "id": "messaging-subscriptions",
+      "section": "Messaging",
+      "statement": "Subscriptions allowed per server.",
+      "value": "20 + 8 * players",
+      "unit": "subscriptions/server",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/MessagingService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "20 + 8 * (number of players in this game server)"
+      ]
+    },
+    {
+      "id": "messaging-subscribe-rate",
+      "section": "Messaging",
+      "statement": "Subscribe requests per server.",
+      "value": 240,
+      "unit": "requests/minute/server",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/MessagingService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "240 requests per minute"
+      ]
+    },
+    {
+      "id": "messaging-topic-length",
+      "section": "Messaging",
+      "statement": "MessagingService topic length range.",
+      "value": [
+        1,
+        80
+      ],
+      "unit": "characters/topic",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/MessagingService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "developer‑defined strings (1–80 characters)"
+      ]
+    },
+    {
+      "id": "server-authority-attribute-count",
+      "section": "Server authority",
+      "statement": "Server-authority replication includes only the first attributes up to this count.",
+      "value": 64,
+      "unit": "attributes/instance",
+      "status": "documented",
+      "source": "cd:projects/server-authority/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "It is among the first 64 attributes on its `Class.Instance`."
+      ]
+    },
+    {
+      "id": "server-authority-attribute-name-length",
+      "section": "Server authority",
+      "statement": "Server-authority replicated attribute name length.",
+      "value": 50,
+      "unit": "characters/name",
+      "status": "documented",
+      "source": "cd:projects/server-authority/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Its name contains at most 50 characters."
+      ]
+    },
+    {
+      "id": "server-authority-attribute-string-length",
+      "section": "Server authority",
+      "statement": "Server-authority replicated string attribute value length.",
+      "value": 50,
+      "unit": "characters/value",
+      "status": "documented",
+      "source": "cd:projects/server-authority/index",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "If a string type attribute, its value contains at most 50 characters."
+      ]
+    },
+    {
+      "id": "raycast-length",
+      "section": "Rendering and physics",
+      "statement": "Maximum raycast length.",
+      "value": 15000,
+      "unit": "studs",
+      "status": "documented",
+      "source": "cd:workspace/raycasting",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The maximum length is 15,000 studs."
+      ]
+    },
+    {
+      "id": "collision-groups",
+      "section": "Rendering and physics",
+      "statement": "Current maximum collision groups.",
+      "value": 32,
+      "unit": "groups",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/PhysicsService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The maximum number of collision groups supported, currently 32."
+      ]
+    },
+    {
+      "id": "local-light-range",
+      "section": "Rendering and physics",
+      "statement": "Maximum PointLight, SpotLight and SurfaceLight range.",
+      "value": 120,
+      "unit": "studs",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/Lighting",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The maximum `Class.PointLight.Range|Range` of `Class.PointLight`, `Class.SpotLight`, and `Class.SurfaceLight` objects is always 120 studs"
+      ]
+    },
+    {
+      "id": "highlight-slots",
+      "section": "Rendering and physics",
+      "statement": "Client-side simultaneous Highlight slots; disabled highlights still consume slots.",
+      "value": 255,
+      "unit": "instances/client",
+      "status": "documented",
+      "source": "cd:effects/highlighting",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "While a disabled `Class.Highlight` doesn't display, it still takes one of the 255 available `Class.Highlight` slots."
+      ]
+    },
+    {
+      "id": "camera-field-of-view",
+      "section": "Rendering and physics",
+      "statement": "Vertical Camera FieldOfView clamp.",
+      "value": [
+        1,
+        120
+      ],
+      "unit": "degrees",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/Camera",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "This property is clamped between `1` and `120` degrees"
+      ]
+    },
+    {
+      "id": "camera-field-of-view-default",
+      "section": "Rendering and physics",
+      "statement": "Default vertical Camera FieldOfView.",
+      "value": 70,
+      "unit": "degrees",
+      "status": "default",
+      "source": "cd:reference/engine/classes/Camera",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "`120` degrees and defaults at `70`."
+      ]
+    },
+    {
+      "id": "lighting-exposure-range",
+      "section": "Rendering and physics",
+      "statement": "Lighting ExposureCompensation range.",
+      "value": [
+        -5,
+        5
+      ],
+      "unit": "exposure stops",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/Lighting",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "has a range from `-5` to `5`."
+      ]
+    },
+    {
+      "id": "texture-resolution",
+      "section": "Rendering and physics",
+      "statement": "Supported texture resolution ceiling; asset-specific budgets and requirements may be lower.",
+      "value": [
+        4096,
+        4096
+      ],
+      "unit": "pixels",
+      "status": "documented",
+      "source": "cd:art/modeling/texture-specifications",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Roblox supports up to 4096×4096 pixel texture resolutions (4K)."
+      ]
+    },
+    {
+      "id": "particle-flipbook-texture",
+      "section": "Rendering and physics",
+      "statement": "Texture dimensions required by the pinned FlipbookIncompatible default message.",
+      "value": [
+        1024,
+        1024
+      ],
+      "unit": "pixels",
+      "status": "documented",
+      "source": "api:ParticleEmitter.FlipbookIncompatible",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Particle texture must be 1024 by 1024 to use flipbooks."
+      ]
+    },
+    {
+      "id": "terrain-voxel-size",
+      "section": "Rendering and physics",
+      "statement": "Terrain voxel dimensions.",
+      "value": [
+        4,
+        4,
+        4
+      ],
+      "unit": "studs",
+      "status": "documented",
+      "source": "cd:parts/terrain",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "voxels** which are 4&times;4&times;4 stud regions"
+      ]
+    },
+    {
+      "id": "humanoid-move-to-timeout",
+      "section": "Rendering and physics",
+      "statement": "Humanoid MoveTo timeout if its goal is not reached; reissuing MoveTo resets it.",
+      "value": 8,
+      "unit": "seconds",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/Humanoid",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "movement operation will time out after 8 seconds"
+      ]
+    },
+    {
+      "id": "frustum-stream-out-delay",
+      "section": "Rendering and physics",
+      "statement": "Opportunistic out-of-view stream-out delay beyond normal radius and active replication foci.",
+      "value": 1.5,
+      "unit": "seconds",
+      "status": "documented",
+      "source": "cd:workspace/streaming/frustum",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "instances that leave the camera view and fall outside the normal streaming radius or any active replication focus linger for 1.5 seconds"
+      ]
+    },
+    {
+      "id": "native-code-block-instructions",
+      "section": "Luau and tooling",
+      "statement": "Native compiler per-block instruction limit as documented.",
+      "value": "64K",
+      "unit": "instructions/block",
+      "status": "documented",
+      "source": "cd:luau/native-code-gen",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "a single block of code inside a function used more than 64K instructions"
+      ]
+    },
+    {
+      "id": "native-code-function-blocks",
+      "section": "Luau and tooling",
+      "statement": "Native compiler per-function internal-block limit as documented.",
+      "value": "32K",
+      "unit": "blocks/function",
+      "status": "documented",
+      "source": "cd:luau/native-code-gen",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "a single function contains more than 32K internal blocks of code"
+      ]
+    },
+    {
+      "id": "native-code-module-instructions",
+      "section": "Luau and tooling",
+      "statement": "Native compiler instruction limit per script.",
+      "value": 1000000,
+      "unit": "instructions/script",
+      "status": "documented",
+      "source": "cd:luau/native-code-gen",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "a limit of 1 million instructions for the entire script"
+      ]
+    },
+    {
+      "id": "script-sync-scripts",
+      "section": "Luau and tooling",
+      "statement": "Maximum scripts per top-level synced instance.",
+      "value": 10000,
+      "unit": "scripts/synced root",
+      "status": "documented",
+      "source": "cd:scripting/sync",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Script Sync supports up to 10,000 scripts per top-level synced instance"
+      ]
+    },
+    {
+      "id": "script-sync-roots",
+      "section": "Luau and tooling",
+      "statement": "Maximum top-level synced instances.",
+      "value": 128,
+      "unit": "synced roots",
+      "status": "documented",
+      "source": "cd:scripting/sync",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "up to 128 top-level synced instances"
+      ]
+    },
+    {
+      "id": "text-to-speech-text-length",
+      "section": "Luau and tooling",
+      "statement": "Text-to-speech text limit.",
+      "value": 300,
+      "unit": "characters/request",
+      "status": "documented",
+      "source": "cd:audio/objects",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "There is a limit of 300 characters per request."
+      ]
+    },
+    {
+      "id": "studio-multiclient-count",
+      "section": "Luau and tooling",
+      "statement": "Maximum simulated clients in Studio Server & Clients.",
+      "value": 8,
+      "unit": "clients",
+      "status": "documented",
+      "source": "cd:studio/testing-modes",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "although you can simulate up to eight."
+      ]
+    },
+    {
+      "id": "studio-test-service-clients",
+      "section": "Luau and tooling",
+      "statement": "StudioTestService ExecuteMultiplayerTestAsync client-count range.",
+      "value": [
+        1,
+        8
+      ],
+      "unit": "clients",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/StudioTestService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The number of client DataModels to create. Must be between 1 and 8."
+      ]
+    },
+    {
+      "id": "studio-test-service-sessions",
+      "section": "Luau and tooling",
+      "statement": "Maximum simultaneous multiplayer test sessions per Studio instance.",
+      "value": 1,
+      "unit": "session/Studio instance",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/StudioTestService",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Only one multiplayer test session can run at a time per Studio instance."
+      ]
+    },
+    {
+      "id": "studio-test-service-security",
+      "section": "Luau and tooling",
+      "statement": "ExecuteMultiplayerTestAsync requires plugin security.",
+      "value": "PluginSecurity",
+      "unit": "API security",
+      "status": "documented",
+      "source": "api:StudioTestService.ExecuteMultiplayerTestAsync",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "\"Security\": \"PluginSecurity\""
+      ]
+    },
+    {
+      "id": "studio-mcp-script-search",
+      "section": "Luau and tooling",
+      "statement": "Studio MCP script_search maximum results.",
+      "value": 10,
+      "unit": "results",
+      "status": "documented",
+      "source": "cd:studio/mcp",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Searches for scripts by name using fuzzy matching. Returns up to 10 results."
+      ]
+    },
+    {
+      "id": "studio-mcp-script-grep",
+      "section": "Luau and tooling",
+      "statement": "Studio MCP script_grep maximum matches.",
+      "value": 50,
+      "unit": "matches",
+      "status": "documented",
+      "source": "cd:studio/mcp",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Searches for a string pattern across all scripts in the game. Returns up to 50 matches."
+      ]
+    },
+    {
+      "id": "text-channel-metadata",
+      "section": "Luau and tooling",
+      "statement": "TextChannel SendAsync metadata limit; longer metadata prevents delivery to other users.",
+      "value": 200,
+      "unit": "characters",
+      "status": "documented",
+      "source": "cd:reference/engine/classes/TextChannel",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "The `metadata` argument has a limit of 200 characters."
+      ]
+    },
+    {
+      "id": "physics-stud-length",
+      "section": "Units and numeric precision",
+      "statement": "Metric length corresponding to one stud.",
+      "value": 28,
+      "unit": "centimeters/stud",
+      "status": "documented",
+      "source": "cd:physics/units",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>$\\text{1 stud}$</td> <td>$\\text{28 cm}$</td>"
+      ]
+    },
+    {
+      "id": "physics-mass-unit",
+      "section": "Units and numeric precision",
+      "statement": "Metric mass corresponding to one Roblox Mass Unit.",
+      "value": 21.952,
+      "unit": "kilograms/RMU",
+      "status": "documented",
+      "source": "cd:physics/units",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "<td>$\\text{1 RMU}$*</td> <td>$\\text{21.952 kg}$</td>"
+      ]
+    },
+    {
+      "id": "physics-default-gravity",
+      "section": "Units and numeric precision",
+      "statement": "Default gravity.",
+      "value": 196.2,
+      "unit": "studs/second²",
+      "status": "default",
+      "source": "cd:physics/units",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "$\\text{196.2 studs/s²}$"
+      ]
+    },
+    {
+      "id": "luau-exact-integers",
+      "section": "Units and numeric precision",
+      "statement": "Integers up to this magnitude are exactly representable by Luau numbers.",
+      "value": 9007199254740992,
+      "unit": "integer magnitude",
+      "status": "documented",
+      "source": "https://luau.org/getting-started/syntax",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "which can represent integers up to 2^53 exactly"
+      ]
+    },
+    {
+      "id": "open-cloud-luau-script-size",
+      "section": "Open Cloud Luau Execution",
+      "statement": "Maximum Open Cloud Luau Execution script size.",
+      "value": 4,
+      "unit": "MB",
+      "status": "documented",
+      "source": "https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Scripts can be up to 4 MB in size"
+      ]
+    },
+    {
+      "id": "open-cloud-luau-runtime",
+      "section": "Open Cloud Luau Execution",
+      "statement": "Maximum Open Cloud Luau Execution script runtime.",
+      "value": 5,
+      "unit": "minutes",
+      "status": "documented",
+      "source": "https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "run for up to 5 minutes."
+      ]
+    },
+    {
+      "id": "open-cloud-luau-return-size",
+      "section": "Open Cloud Luau Execution",
+      "statement": "Maximum JSON-serialized return value size.",
+      "value": 4,
+      "unit": "MB",
+      "status": "documented",
+      "source": "https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "return values after JSON serialization must not exceed 4 MB."
+      ]
+    },
+    {
+      "id": "open-cloud-luau-log-retention-size",
+      "section": "Open Cloud Luau Execution",
+      "statement": "Maximum retained log data; older logs are discarded on overflow.",
+      "value": 450,
+      "unit": "KB",
+      "status": "documented",
+      "source": "https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "A maximum of 450 KB of logs are retained."
+      ]
+    },
+    {
+      "id": "open-cloud-luau-task-retention",
+      "section": "Open Cloud Luau Execution",
+      "statement": "Task information retention after completion.",
+      "value": 24,
+      "unit": "hours",
+      "status": "documented",
+      "source": "https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "Information about a task is retained for 24 hours after task completion."
+      ]
+    },
+    {
+      "id": "open-cloud-luau-incomplete-tasks",
+      "section": "Open Cloud Luau Execution",
+      "statement": "Maximum incomplete tasks per place; further creation returns HTTP 429.",
+      "value": 10,
+      "unit": "tasks/place",
+      "status": "documented",
+      "source": "https://github.com/Roblox/creator-docs/blob/578b33e83e5137b880eb594523159a6f1f691265/content/en-us/reference/cloud/openapi.json",
+      "checked_on": "2026-10-02",
+      "expires_after": 90,
+      "evidence": [
+        "At most ten incomplete tasks are allowed per place."
+      ]
+    }
+  ]
+}

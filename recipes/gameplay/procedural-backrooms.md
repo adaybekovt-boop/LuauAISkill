@@ -1,5 +1,8 @@
 # Recipe: procedural Backrooms (infinite, deterministic, connected, budgeted)
 
+## When NOT to use
+Do not use random room placement without navigation, overlap, and reproducibility checks.
+
 Evidence: layout CLI-EXECUTED (`examples/tests/procgen.spec.luau`: determinism, 121 chunks fully connected,
 border agreement on 49 chunk pairs, light mix) · builder TYPECHECKED · **not run in Studio**.
 Chapters: [procedural generation](../../handbook/roblox/12-procedural-generation.md), [streaming](../../handbook/roblox/10-streaming.md).

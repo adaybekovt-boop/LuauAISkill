@@ -1,0 +1,55 @@
+{
+  "name": "LuauAISkill smoke network-rate-limiter",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "StreamingEnabled": false
+      },
+      "$attributes": {
+        "ReleaseSmokeCase": "network-rate-limiter",
+        "ReleaseSmokeEnabled": false,
+        "ReleaseSmokeSourceDigest": "SET_USING_CHECK_ENGINE_EVIDENCE_DIGEST",
+        "ReleaseSmokeEngineVersion": "",
+        "ReleaseSmokeAllowDataStore": false,
+        "ReleaseSmokeTestUniverseId": 0,
+        "ReleaseSmokeOpenCloud": false,
+        "ReleaseSmokePauseForScreenshots": false
+      }
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Lib": {
+        "$path": "../../lib/ReplicatedStorage/Lib"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "ReleaseSmoke": {
+        "$path": "../ServerScriptService/ReleaseSmoke"
+      },
+      "ReleaseSmokeServer": {
+        "$path": "../ServerScriptService/ReleaseSmokeServer.server.luau"
+      },
+      "Net": {
+        "$path": "../../net/ServerScriptService/Net"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "SmokeScripts": {
+        "$className": "Folder"
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "ReleaseSmokeClient": {
+          "$path": "../StarterPlayer/StarterPlayerScripts/ReleaseSmokeClient.client.luau"
+        }
+      }
+    }
+  }
+}

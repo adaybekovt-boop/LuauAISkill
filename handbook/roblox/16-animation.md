@@ -1,5 +1,12 @@
 # Animation: Animator, tracks, priorities, blending, markers, IK, graphs
 
+## TL;DR
+- Load and manage tracks through the supported animation path.
+- Understand which side owns and replicates each animation.
+- Choose priorities and transitions explicitly.
+- Disconnect marker and completion handlers on cleanup.
+- Verify rig compatibility and permissions for real assets.
+
 Read when: character/NPC/weapon animation, locomotion blending, aim/look, foot placement, procedural motion.
 Related: [character controllers](13-character-controllers.md), [combat](15-combat.md), [NPC](20-npc-ai.md).
 

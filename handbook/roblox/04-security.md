@@ -1,5 +1,12 @@
 # Security and anti-exploit (practical, not paranoid)
 
+## TL;DR
+- Assume clients can modify local code and send arbitrary payloads.
+- Validate permissions, state, distance, timing, and numeric bounds.
+- Do not trust ownership, touch events, or client-reported damage alone.
+- Keep secrets and authoritative decisions on the server.
+- Log useful violations without making validation itself expensive.
+
 Read when: any remote handler, economy, combat, movement, inventory, purchases, teleports, admin tools.
 Related: [networking](03-networking.md), [server authority mode](05-server-authority.md), [data](06-data-persistence.md),
 [combat](15-combat.md), [anti-patterns](../../references/anti-patterns.md).

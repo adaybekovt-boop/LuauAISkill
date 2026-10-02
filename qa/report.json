@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T10:23:33+00:00",
+ "generated": "2026-10-02T12:39:10+00:00",
  "results": [
   {
    "check": "embedded code up to date",
@@ -14,7 +14,71 @@
    "status": "PASS",
    "command": "tools/render_legacy.py --check",
    "tail": [
-    "legacy catalog: 89 entries, 0 error(s)"
+    "legacy catalog: 152 entries, 0 error(s)"
+   ]
+  },
+  {
+   "check": "ranked legacy coverage and fixtures",
+   "status": "PASS",
+   "command": "tools/check_legacy.py --check",
+   "tail": [
+    "legacy coverage: 152 entries, 327/704 API rows, 150/150 top-ranked, 0 error(s)"
+   ]
+  },
+  {
+   "check": "pinned tutorial legacy sample",
+   "status": "PASS",
+   "command": "tools/sample_legacy_tutorials.py --check",
+   "tail": [
+    "official tutorial sample: 1738 code blocks in 285 files; 58 lexical candidate blocks; not representative public popularity"
+   ]
+  },
+  {
+   "check": "legacy ranking reproducible",
+   "status": "PASS",
+   "command": "tools/rank_legacy.py --check",
+   "tail": [
+    "legacy ranking: 704 rows; representative public-code frequencies absent"
+   ]
+  },
+  {
+   "check": "engine smoke infrastructure (execution may remain pending)",
+   "status": "PASS",
+   "command": "tools/check_engine_evidence.py --allow-pending",
+   "tail": [
+    "PASS engine smoke infrastructure; 10/10 NOT RUN; release gate remains BLOCKED"
+   ]
+  },
+  {
+   "check": "dated source-backed facts",
+   "status": "PASS",
+   "command": "tools/check_facts.py",
+   "tail": [
+    "facts: 89 checked, 0 error(s)"
+   ]
+  },
+  {
+   "check": "facts tables rendered",
+   "status": "PASS",
+   "command": "tools/render_facts.py --check",
+   "tail": [
+    "facts table: 89 entries, current"
+   ]
+  },
+  {
+   "check": "content structure and token budget",
+   "status": "PASS",
+   "command": "tools/check_content_budget.py",
+   "tail": [
+    "Router 147/500 lines; 39 chapter summaries; 12 flagged files; tiktoken/cl100k_base"
+   ]
+  },
+  {
+   "check": "isolated packaging and foreign CWD",
+   "status": "PASS",
+   "command": "tools/check_packaging.py",
+   "tail": [
+    "PASS 13 packaging checks; actual host acceptance NOT RUN"
    ]
   },
   {
@@ -30,7 +94,7 @@
    "status": "PASS",
    "command": "tools/check_sources.py --check",
    "tail": [
-    "sources: 412 resolved, 0 unresolved"
+    "sources: 874 resolved, 0 unresolved"
    ]
   },
   {
@@ -38,7 +102,7 @@
    "status": "PASS",
    "command": "tools/check_links.py",
    "tail": [
-    "links: 472 checked, 0 broken"
+    "links: 675 checked, 0 broken"
    ]
   },
   {
@@ -46,7 +110,7 @@
    "status": "PASS",
    "command": "-m unittest discover -s tests -q",
    "tail": [
-    "Ran 25 tests in 0.354s",
+    "Ran 153 tests in 20.045s",
     "",
     "OK"
    ]
@@ -56,7 +120,17 @@
    "status": "PASS",
    "command": "tools/check_code.py",
    "tail": [
-    "{\"markdown\": {\"EMBEDDED\": 71, \"TYPECHECKED\": 49}, \"examples\": {\"TYPECHECKED\": 70}, \"cli_tests\": {\"CLI-EXECUTED\": 9}}"
+    "{\"markdown\": {\"EMBEDDED\": 96, \"TYPECHECKED\": 49}, \"examples\": {\"TYPECHECKED\": 101}, \"cli_typechecks\": {\"TYPECHECKED\": 17}, \"cli_tests\": {\"CLI-EXECUTED\": 17}}"
+   ]
+  },
+  {
+   "check": "privileged recipe launcher typechecks",
+   "status": "PASS",
+   "command": "tools/check_recipe_contexts.py",
+   "tail": [
+    "TYPECHECKED examples/regression/PluginLauncher.lua.txt: PluginSecurity / new solver",
+    "TYPECHECKED regression fixture signatures: PluginSecurity old + new; runtime API security None verified",
+    "Studio execution: NOT RUN (static gate only)"
    ]
   }
  ]

@@ -13,3 +13,5 @@ Non-negotiables
 Recipes: [heavy-scene-performance-pass](../recipes/graphics/heavy-scene-performance-pass.md), [npc-patrol](../recipes/gameplay/npc-patrol.md),
 [object-pooling](../recipes/gameplay/object-pooling.md), [graphics-presets](../recipes/graphics/graphics-presets.md).
 Evals: `evals/cases/performance.jsonl`.
+
+Additional verified examples: [parallel-npc-planning](../recipes/gameplay/parallel-npc-planning.md).

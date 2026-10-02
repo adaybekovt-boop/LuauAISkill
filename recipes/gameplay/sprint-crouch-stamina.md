@@ -1,5 +1,8 @@
 # Recipe: sprint, crouch, stamina (client feel + server authority)
 
+## When NOT to use
+Do not treat local movement presentation as proof that stamina and speed rules were respected.
+
 Evidence: stamina model CLI-EXECUTED (`examples/tests/movement.spec.luau`, 4 tests) · client/server TYPECHECKED ·
 **not run in Studio**. Chapters: [character controllers](../../handbook/roblox/13-character-controllers.md),
 [input](../../handbook/roblox/19-input.md), [security](../../handbook/roblox/04-security.md).

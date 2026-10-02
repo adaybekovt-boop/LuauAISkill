@@ -1,5 +1,12 @@
 # Text chat (TextChatService), chat commands, leaderboards
 
+## TL;DR
+- Use supported text chat and preserve filtering.
+- Authorize chat commands on the server.
+- Keep command parsing separate from privileged execution.
+- Choose friend, in-server, or global leaderboards deliberately.
+- Keep durable scores authoritative and bound leaderboard refresh work.
+
 Read when: chat customization, chat commands (admin, emotes, `/trade`), system messages, private/team channels,
 global or friend leaderboards. Related: [security](04-security.md) (admin checks), [data persistence](06-data-persistence.md)
 (OrderedDataStore basics, budgets), [UI](18-ui-ux.md).

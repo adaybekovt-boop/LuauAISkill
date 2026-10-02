@@ -1,0 +1,7 @@
+--!strict
+-- Run from a Studio plugin/command bar in Edit mode, NEVER as a game Script.
+local StudioTestService: StudioTestService = game:GetService("StudioTestService")
+local HttpService = game:GetService("HttpService")
+local result = StudioTestService:ExecuteMultiplayerTestAsync(2, { suite = "recipe-regression-v1" })
+print("REGRESSION_LAUNCH_RESULT " .. HttpService:JSONEncode(result))
+assert(type(result) == "table" and result.failed == 0 and result.passed >= 8, "Regression suite failed")

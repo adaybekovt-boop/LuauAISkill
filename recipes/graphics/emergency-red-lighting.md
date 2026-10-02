@@ -1,5 +1,8 @@
 # Recipe: emergency red lighting (power failure event)
 
+## When NOT to use
+Do not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.
+
 Evidence: TYPECHECKED · **not run in Studio**. Related: [lighting controller](lighting-controller-presets.md),
 [realistic flashlight](realistic-flashlight.md) (players will need it).
 

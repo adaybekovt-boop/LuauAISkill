@@ -8,7 +8,10 @@ local Hash = require("../lib/ReplicatedStorage/Lib/Hash")
 
 local passed, failed = 0, 0
 local function test(name: string, fn: () -> ())
-	local ok, err = pcall(fn)
+	local ok, err = pcall(function(): boolean
+		fn()
+		return true
+	end)
 	if ok then
 		passed += 1
 	else

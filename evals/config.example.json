@@ -1,0 +1,25 @@
+{
+  "generator": {
+    "model": "SET-MODEL-NAME",
+    "version": "SET-IMMUTABLE-MODEL-REVISION",
+    "settings": {"temperature": 0.2, "top_p": 1, "max_output_tokens": 8192}
+  },
+  "judge": {
+    "model": "SET-JUDGE-NAME",
+    "version": "SET-IMMUTABLE-JUDGE-REVISION",
+    "settings": {"temperature": 0, "top_p": 1, "max_output_tokens": 4096}
+  },
+  "seed": 20261002,
+  "repetitions": 3,
+  "bootstrap_samples": 10000,
+  "tool_policy": {
+    "internet": false,
+    "common_tools": ["read_project", "edit_project", "run_allowed_project_checks"],
+    "maximum_tool_calls": 40,
+    "wall_time_seconds": 600,
+    "fresh_session_per_answer": true,
+    "baseline_skill_access": false,
+    "generation_rubric_access": false,
+    "judge_project_tool_access": false
+  }
+}

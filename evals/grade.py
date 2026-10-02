@@ -64,7 +64,7 @@ def grade(case: dict, answer: str) -> dict:
     if code:
         for sev, msg in api_findings(code):
             res["flags"].append(f"api {sev}: {msg}")
-    if case.get("lang") == "ru" and not re.search(r"[А-Яа-яЁё]", answer):
+    if case.get("answer_lang", case.get("lang")) == "ru" and not re.search(r"[А-Яа-яЁё]", answer):
         res["flags"].append("answered in the wrong language (expected Russian)")
     res["auto"] = "FLAGGED" if res["flags"] else "PASS-AUTO"
     return res

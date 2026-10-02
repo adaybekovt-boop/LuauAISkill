@@ -1,5 +1,12 @@
 # Luau types: strict, gradual, practical
 
+## TL;DR
+- Use strict mode and type module boundaries.
+- Refine unknown values before using them.
+- Static types do not validate remote payloads at runtime.
+- Mark syntax that depends on the new solver.
+- Keep casts local and justify each loss of checking.
+
 Read when: designing module APIs, network contracts, data schemas, fixing type errors.
 Related: [core](01-language-core.md), [patterns](04-patterns-data.md), [networking](../roblox/03-networking.md).
 

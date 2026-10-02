@@ -14,3 +14,5 @@ Non-negotiables
 - Tag-based binders for world objects (streaming-safe cleanup).
 - Deadlines replicated as server time, not ticking countdowns.
 Evals: `evals/cases/architecture.jsonl`, `evals/cases/security.jsonl`.
+
+Additional verified examples: [authorized-chat-commands](../recipes/gameplay/authorized-chat-commands.md), [constraint-vehicle](../recipes/gameplay/constraint-vehicle.md), [idempotent-receipts](../recipes/gameplay/idempotent-receipts.md), [friend-global-leaderboard](../recipes/gameplay/friend-global-leaderboard.md).

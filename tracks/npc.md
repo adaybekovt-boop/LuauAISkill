@@ -11,3 +11,5 @@ Non-negotiables
 - Server owns NPC physics (`SetNetworkOwner(nil)`); fair detection (grace, last known position, search).
 
 Recipes: [npc-patrol](../recipes/gameplay/npc-patrol.md), [npc-chase](../recipes/gameplay/npc-chase.md). Evals: `evals/cases/npc.jsonl`.
+
+Additional verified examples: [parallel-npc-planning](../recipes/gameplay/parallel-npc-planning.md).

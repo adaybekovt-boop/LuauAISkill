@@ -6,7 +6,10 @@ local Layout = require("../procgen/ReplicatedStorage/Procgen/Layout")
 local P = { size = 8, loopChance = 0.35, borderChance = 0.3, lightSpacing = 2, pillarChance = 0.12 }
 local passed, failed = 0, 0
 local function test(name: string, fn: () -> ())
-	local ok, err = pcall(fn)
+	local ok, err = pcall(function(): boolean
+		fn()
+		return true
+	end)
 	if ok then
 		passed += 1
 	else
@@ -66,7 +69,7 @@ test("neighbouring chunks agree on shared borders and each border has an opening
 	end
 end)
 test("lights on the grid with a mix of states", function()
-	local counts = { on = 0, off = 0, flicker = 0 }
+	local counts: { [string]: number } = { on = 0, off = 0, flicker = 0 }
 	for cx = 0, 9 do
 		for _, l in Layout.chunk(5, cx, 0, P).lights do
 			counts[l.state] += 1

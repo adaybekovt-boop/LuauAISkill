@@ -1,5 +1,8 @@
 # Recipe: graphics presets (Low/Medium/High/Ultra for your content, adaptive "Auto")
 
+## When NOT to use
+Do not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.
+
 Evidence: TYPECHECKED · **not run in Studio**; thresholds must be tuned on real devices. Chapter:
 [device scalability](../../handbook/graphics/07-quality-tiers.md). Setting UI: [settings menu](../gameplay/settings-menu.md).
 

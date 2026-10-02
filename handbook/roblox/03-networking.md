@@ -1,5 +1,12 @@
 # Networking: remotes, replication, payloads, rate limits
 
+## TL;DR
+- Choose remotes by delivery and response requirements.
+- Treat every client payload as untrusted.
+- Validate cheap shape checks before expensive world checks.
+- Rate-limit before granting authoritative effects.
+- Send only the state each recipient is allowed to see.
+
 Read when: any client↔server communication. Always also read [security](04-security.md).
 Related: [runtime](01-runtime-architecture.md), [server authority mode](05-server-authority.md),
 recipes: [network rate limiter](../../recipes/gameplay/network-rate-limiter.md), [interaction](../../recipes/gameplay/interaction-system.md).

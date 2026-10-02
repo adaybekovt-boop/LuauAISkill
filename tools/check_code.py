@@ -8,7 +8,7 @@
      -- fragment                    excerpt that references names defined elsewhere
 2. examples/<project>/ trees (Rojo-style folders named after services): a sourcemap is generated so cross-module
    requires resolve, then every .luau file is typechecked with luau-lsp.
-3. examples/tests/*.spec.luau: executed with the standalone `luau` CLI (pure modules only).
+3. examples/tests/*.spec.luau: typechecked under both solvers, then executed with the standalone `luau` CLI (pure modules only).
 
 Status vocabulary (see SKILL.md): TYPECHECKED = luau-lsp strict pass with Roblox defs; CLI-EXECUTED = ran under
 the Luau CLI; SKIPPED = explicit marker; FAILED = errors. Nothing here is STUDIO-TESTED.
@@ -64,7 +64,10 @@ def lsp_analyze(files: list[Path], cwd: Path, sourcemap: Path | None = None, new
     res = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
     lines = [ln for ln in (res.stdout + res.stderr).splitlines()
              if ln.strip() and not ln.startswith(("[INFO]", "[WARN]"))]
-    return [ln for ln in lines if not any(f": {cat}" in ln or f"{cat}:" in ln for cat in IGNORED)]
+    diagnostics = [ln for ln in lines if not any(f": {cat}" in ln or f"{cat}:" in ln for cat in IGNORED)]
+    if res.returncode != 0 and not diagnostics:
+        diagnostics.append(f"luau-lsp exited {res.returncode} without a usable diagnostic")
+    return diagnostics
 
 
 def md_blocks(path: Path) -> list[tuple[int, str, str]]:
@@ -109,6 +112,7 @@ def check_markdown(paths: list[Path]) -> list[dict]:
                 ns_only = bool(NS_MARKER.match(first)) or any(NS_MARKER.match(x) for x in body.splitlines()[:3])
                 jobs.append((name, rel, line, offset, ns_only))
         errors: dict[str, list[str]] = {}
+        global_errors: list[str] = []
         # Every block must pass the new solver; blocks not marked "-- NS" must also pass the old solver
         # (Studio's default solver can differ from the CLI's).
         for solver_new in (False, True):
@@ -120,6 +124,10 @@ def check_markdown(paths: list[Path]) -> list[dict]:
                     if m:
                         tag = "[new solver] " if solver_new else "[old solver] "
                         errors.setdefault(m.group(1), []).append(tag + ln)
+                    else:
+                        global_errors.append(ln)
+        if global_errors:
+            results.append({"file": "<markdown typechecker>", "status": "FAILED", "errors": global_errors})
         for name, rel, line, offset, _ns in jobs:
             errs = errors.get(name, [])
             fixed = []
@@ -220,6 +228,10 @@ def check_examples(projects: list[Path]) -> list[dict]:
             all_files = sorted(p for p in project.rglob("*.luau") if "tests" not in p.parts)
             errs = lsp_analyze(all_files, project, smap_path) + \
                 lsp_analyze(all_files, project, smap_path, new_solver=True)
+            unmatched = [line for line in errs if not any(f.name in line for f in all_files)]
+            if unmatched:
+                results.append({"file": project.relative_to(ROOT).as_posix(),
+                                "status": "FAILED", "errors": unmatched})
             by_file: dict[str, list[str]] = {}
             for e in errs:
                 key = e.split("(")[0].strip()
@@ -232,6 +244,29 @@ def check_examples(projects: list[Path]) -> list[dict]:
             unlink_lib(project, linked)
             (project / "sourcemap.json").unlink(missing_ok=True)
     return results
+
+
+def check_cli_types() -> list[dict]:
+    """Every executable CLI spec also passes strict old/new solvers with Roblox type names."""
+    files = sorted((ROOT / "examples" / "tests").glob("*.spec.luau"))
+    linked = {p: link_lib(p) for p in example_projects()}
+    try:
+        errors = lsp_analyze(files, ROOT) + lsp_analyze(files, ROOT, new_solver=True)
+        results = []
+        for path in files:
+            own = [line for line in errors if path.name in line]
+            if not path.read_text(encoding="utf-8").startswith("--!strict"):
+                own.append("CLI specs must use strict mode")
+            results.append({"file": path.relative_to(ROOT).as_posix(),
+                            "status": "FAILED" if own else "TYPECHECKED", "errors": own})
+        # A tool/global diagnostic must never be lost because no filename matched.
+        unmatched = [line for line in errors if not any(path.name in line for path in files)]
+        if unmatched:
+            results.append({"file": "examples/tests", "status": "FAILED", "errors": unmatched})
+        return results
+    finally:
+        for project, link in linked.items():
+            unlink_lib(project, link)
 
 
 def run_cli_tests() -> list[dict]:
@@ -263,7 +298,7 @@ def main() -> int:
     if not a.paths:
         md_paths = sorted(p for p in ROOT.rglob("*.md")
                           if not (set(p.relative_to(ROOT).parts) & SKIP_DIRS))
-    report: dict = {"markdown": [], "examples": [], "cli_tests": []}
+    report: dict = {"markdown": [], "examples": [], "cli_typechecks": [], "cli_tests": []}
     if not a.examples_only and md_paths:
         report["markdown"] = check_markdown(md_paths)
     if not a.md_only and not [p for p in a.paths if p.endswith(".md")]:
@@ -272,9 +307,10 @@ def main() -> int:
         if LIB.exists():
             projects.insert(0, LIB)
         report["examples"] = check_examples(projects)
+        report["cli_typechecks"] = check_cli_types() if (ex / "tests").exists() else []
         report["cli_tests"] = run_cli_tests() if (ex / "tests").exists() else []
     failed = 0
-    for section in ("markdown", "examples", "cli_tests"):
+    for section in ("markdown", "examples", "cli_typechecks", "cli_tests"):
         for r in report[section]:
             if r["status"] == "FAILED":
                 failed += 1

@@ -1,5 +1,12 @@
 # Luau patterns: modules, objects, data, iteration, cleanup
 
+## TL;DR
+- Choose the simplest data structure that represents the state.
+- Give modules clear ownership and a small public surface.
+- Keep persistent and replicated data serialization-friendly.
+- Use metatables only when they simplify the design.
+- Make cleanup and resource ownership explicit.
+
 Read when: structuring code, choosing OOP vs plain data, designing serializable state.
 Related: [types](02-types.md), [architecture](../roblox/21-architecture.md), [code quality](../roblox/22-code-quality.md).
 

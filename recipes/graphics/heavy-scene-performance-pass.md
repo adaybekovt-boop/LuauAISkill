@@ -1,5 +1,11 @@
 # Recipe: performance pass on a heavy scene (measure → fix → measure)
 
+## When NOT to use
+Do not optimize by visual guesswork; capture the limiting subsystem and a reproducible baseline first.
+
+## Architecture
+Measure the scene, identify its bottleneck, change one subsystem, and compare the same capture.
+
 Evidence: procedure based on the creator-docs performance guides; no numbers here are measurements — **your
 MicroProfiler captures are the only evidence**. Chapter: [performance](../../handbook/roblox/08-performance.md).
 

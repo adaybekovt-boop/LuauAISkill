@@ -13,3 +13,5 @@ Non-negotiables
 
 Recipes: [sprint-crouch-stamina](../recipes/gameplay/sprint-crouch-stamina.md), [bodycam-camera](../recipes/gameplay/bodycam-camera.md),
 [footsteps](../recipes/gameplay/footsteps.md). Evals: `evals/cases/animation.jsonl`, `evals/cases/ui.jsonl`.
+
+Additional verified examples: [first-person-viewmodel](../recipes/gameplay/first-person-viewmodel.md), [server-authority-dash](../recipes/gameplay/server-authority-dash.md).

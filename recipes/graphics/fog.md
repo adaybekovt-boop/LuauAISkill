@@ -1,5 +1,11 @@
 # Recipe: fog scenes (overcast fog, horror fog, fog as a streaming/draw-distance tool)
 
+## When NOT to use
+Do not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.
+
+## Architecture
+Establish the scene and lighting intent first; apply the bounded presentation settings below, then verify the result on target devices. Keep visual effects separate from authoritative gameplay.
+
 Evidence: preset TYPECHECKED/validated · look **not screenshot-verified**.
 Chapter: [atmosphere/sky/post](../../handbook/graphics/02-atmosphere-sky-post.md).
 

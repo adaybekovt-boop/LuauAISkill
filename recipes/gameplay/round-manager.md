@@ -1,5 +1,8 @@
 # Recipe: round manager (Waiting → Intermission → InRound → Results)
 
+## When NOT to use
+Do not use in-memory round state as durable tournament or purchase state.
+
 Evidence: state machine CLI-EXECUTED (`examples/tests/rounds.spec.luau`) · server/HUD TYPECHECKED · **not run in
 Studio**. Side: server loop + client HUD. Chapter: [architecture](../../handbook/roblox/21-architecture.md),
 [cross-server](../../handbook/roblox/07-cross-server.md) (for multi-server games see [matchmaking](matchmaking-queue.md)).

@@ -1,5 +1,12 @@
 # Local lights, practicals, fake bounce, emissives
 
+## TL;DR
+- Match each light type to the intended source.
+- Build a hierarchy of key, fill, and accent lighting.
+- Fake bounce selectively rather than filling every surface.
+- Budget shadow-casting lights and measure overlap.
+- Clean up animated lights and flashlight bindings.
+
 Read when: interiors, night scenes, horror, flashlights, fluorescent/neon fixtures, emergency lighting.
 Prereq: [lighting](01-lighting.md). Recipes: [flickering fluorescent](../../recipes/graphics/flickering-fluorescent.md),
 [realistic flashlight](../../recipes/graphics/realistic-flashlight.md), [emergency red lighting](../../recipes/graphics/emergency-red-lighting.md).

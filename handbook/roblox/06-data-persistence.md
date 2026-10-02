@@ -1,5 +1,12 @@
 # Data persistence: DataStores, profiles, purchases
 
+## TL;DR
+- Choose persistent, ordered, or temporary storage by purpose.
+- Model player profiles with explicit session ownership.
+- Make updates and purchase grants idempotent.
+- Respect budgets and bound retry/backoff behavior.
+- Test contention, failed saves, reconnects, and shutdown paths.
+
 Read when: saving anything across sessions (progress, inventory, currency, settings), developer products.
 Related: [cross-server](07-cross-server.md) (MemoryStore/Messaging/Teleport), recipe
 [save system](../../recipes/gameplay/save-system.md), [security](04-security.md).

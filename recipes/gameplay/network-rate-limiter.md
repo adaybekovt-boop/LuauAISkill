@@ -1,5 +1,8 @@
 # Recipe: remotes with rate limits and parsers (NetServer / NetClient)
 
+## When NOT to use
+Do not use rate limits as a substitute for payload, permission, and game-state validation.
+
 Evidence: TokenBucket CLI-EXECUTED (`examples/tests/lib.spec.luau`) · NetServer/NetClient/examples TYPECHECKED ·
 **not run in Studio**. Side: server declares, client consumes.
 Chapters: [networking](../../handbook/roblox/03-networking.md), [security](../../handbook/roblox/04-security.md).

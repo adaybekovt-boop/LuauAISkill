@@ -1,0 +1,1027 @@
+{
+ "schema": 1,
+ "generated_by": "tools/check_legacy.py",
+ "evidence": "STATIC VERIFIED; detectors are Python-executed; NOT RUN in Studio",
+ "catalog_entries": 152,
+ "entries_with_detecting_fixtures": 152,
+ "deprecated_rows": 704,
+ "explicitly_covered_rows": 327,
+ "top_n": 150,
+ "top_n_covered": 150,
+ "missing_top_n": [],
+ "api_references": 501,
+ "pinned_document_references": 123,
+ "ranking_evidence_status": "provisional",
+ "public_code_frequency": {
+  "status": "not_sampled",
+  "reason": "No representative public-code corpus was sampled; no frequency measurements are claimed."
+ },
+ "measured_model_outputs": {
+  "status": "not_sampled",
+  "reason": "Eval prompt/fixture mentions are not measured generated-output failures."
+ },
+ "official_tutorial_sample": {
+  "file": "tutorial-sample.json",
+  "sha256": "b4ab5fc86423c1388cf92d323c0122204792e546e8ab9a7cd230a21af62a90a3",
+  "source": {
+   "kind": "current pinned official creator-docs tutorial/code sample",
+   "repository": "https://github.com/Roblox/creator-docs",
+   "commit": "578b33e83e5137b880eb594523159a6f1f691265",
+   "commit_date": "2026-10-01T10:13:07+00:00",
+   "scope": "content/en-us/**/*.md[x] Lua/Luau fences and **/*.lua[u]"
+  },
+  "measurement": {
+   "eligible_source_files": 1020,
+   "files_with_code": 285,
+   "code_blocks": 1738,
+   "code_lines": 24406,
+   "matching_blocks": 58,
+   "manifest_sha256": "34d75e459fb3b1de819f8028bbe2629dc1f88cce822953f1a7cb0d11c72c596d"
+  },
+  "used_in_score": false
+ },
+ "empirical_ranking_release_gate": "BLOCKED: no representative public/historical tutorial sample or measured model outputs",
+ "coverage": {
+  "AnimationClipProvider.GetAnimationClip": [
+   "anim-clip-provider-async"
+  ],
+  "AnimationClipProvider.GetAnimationClipById": [
+   "anim-clip-provider-async"
+  ],
+  "AnimationClipProvider.GetAnimations": [
+   "anim-clip-provider-async"
+  ],
+  "AnimationController.AnimationPlayed": [
+   "anim-played-signal"
+  ],
+  "AnimationController.GetPlayingAnimationTracks": [
+   "anim-playing-tracks"
+  ],
+  "AnimationController.LoadAnimation": [
+   "anim-humanoid-load"
+  ],
+  "AssetService.GetAssetIdsForPackage": [
+   "asset-search-package-async"
+  ],
+  "AssetService.SearchAudio": [
+   "asset-search-package-async"
+  ],
+  "Attachment.GetAxis": [
+   "phys-attachment-axis"
+  ],
+  "Attachment.GetSecondaryAxis": [
+   "phys-attachment-axis"
+  ],
+  "Attachment.Rotation": [
+   "phys-attachment-orientation"
+  ],
+  "Attachment.SetAxis": [
+   "phys-attachment-axis"
+  ],
+  "Attachment.SetSecondaryAxis": [
+   "phys-attachment-axis"
+  ],
+  "Attachment.WorldRotation": [
+   "phys-attachment-orientation"
+  ],
+  "AudioEmitter.SimulationFidelity": [
+   "audio-acoustic-simulation"
+  ],
+  "AudioListener.SimulationFidelity": [
+   "audio-acoustic-simulation"
+  ],
+  "AudioPlayer.AssetId": [
+   "audio-assetid"
+  ],
+  "AudioSearchParams.AudioSubtype": [
+   "audio-search-subtype"
+  ],
+  "AvatarEditorService.CheckApplyDefaultClothing": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.ConformToAvatarRules": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetAvatarRules": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetBatchItemDetails": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetFavorite": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetInventory": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetItemDetails": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetOutfitDetails": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetOutfits": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetRecommendedAssets": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.GetRecommendedBundles": [
+   "avatar-editor-async"
+  ],
+  "AvatarEditorService.SearchCatalog": [
+   "avatar-editor-async"
+  ],
+  "BadgeService.AwardBadge": [
+   "money-badge"
+  ],
+  "BadgeService.IsDisabled": [
+   "badge-info-enabled"
+  ],
+  "BadgeService.IsLegal": [
+   "badge-islegal"
+  ],
+  "BadgeService.UserHasBadge": [
+   "money-badge"
+  ],
+  "BasePart.BreakJoints": [
+   "inst-makejoints"
+  ],
+  "BasePart.CollisionGroupId": [
+   "phys-collision-groups"
+  ],
+  "BasePart.Elasticity": [
+   "phys-material-properties"
+  ],
+  "BasePart.Friction": [
+   "phys-material-properties"
+  ],
+  "BasePart.GetRenderCFrame": [
+   "phys-render-cframe"
+  ],
+  "BasePart.LocalSimulationTouched": [
+   "phys-touch-events"
+  ],
+  "BasePart.MakeJoints": [
+   "inst-makejoints"
+  ],
+  "BasePart.OutfitChanged": [
+   "phys-outfit-changed"
+  ],
+  "BasePart.RotVelocity": [
+   "phys-velocity"
+  ],
+  "BasePart.SpecificGravity": [
+   "phys-material-properties"
+  ],
+  "BasePart.StoppedTouching": [
+   "phys-touch-events"
+  ],
+  "BasePart.Velocity": [
+   "phys-velocity"
+  ],
+  "BasePart.breakJoints": [
+   "inst-model-aliases"
+  ],
+  "BasePart.brickColor": [
+   "phys-lowercase-aliases"
+  ],
+  "BasePart.getMass": [
+   "phys-lowercase-aliases"
+  ],
+  "BasePart.makeJoints": [
+   "inst-model-aliases"
+  ],
+  "BasePart.resize": [
+   "phys-lowercase-aliases"
+  ],
+  "BodyAngularVelocity": [
+   "phys-bodymovers"
+  ],
+  "BodyAngularVelocity.angularvelocity": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyAngularVelocity.maxTorque": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyForce": [
+   "phys-bodymovers"
+  ],
+  "BodyForce.force": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyGyro": [
+   "phys-bodymovers"
+  ],
+  "BodyGyro.cframe": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyGyro.maxTorque": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyMover": [
+   "phys-bodymovers"
+  ],
+  "BodyPosition": [
+   "phys-bodymovers"
+  ],
+  "BodyPosition.lastForce": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyPosition.maxForce": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyPosition.position": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyThrust": [
+   "phys-bodymovers"
+  ],
+  "BodyThrust.force": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyThrust.location": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyVelocity": [
+   "phys-bodymovers"
+  ],
+  "BodyVelocity.maxForce": [
+   "phys-bodymover-aliases"
+  ],
+  "BodyVelocity.velocity": [
+   "phys-bodymover-aliases"
+  ],
+  "BoolValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "BrickColorValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "CFrameValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "Camera.CoordinateFrame": [
+   "camera-old"
+  ],
+  "Camera.Interpolate": [
+   "camera-old"
+  ],
+  "Camera.focus": [
+   "camera-old"
+  ],
+  "Chat.FilterStringForPlayerAsync": [
+   "chat-filter-player"
+  ],
+  "CollectionService.GetCollection": [
+   "inst-collection-tags"
+  ],
+  "CollectionService.ItemAdded": [
+   "inst-collection-tags"
+  ],
+  "CollectionService.ItemRemoved": [
+   "inst-collection-tags"
+  ],
+  "Color3Value.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "ContentProvider.Preload": [
+   "async-preload"
+  ],
+  "ContextActionService.BindActionToInputTypes": [
+   "input-bindtypes"
+  ],
+  "DataModel.OnClose": [
+   "data-shutdown-callback"
+  ],
+  "DataModel.VIPServerId": [
+   "server-private-fields"
+  ],
+  "DataModel.VIPServerOwnerId": [
+   "server-private-fields"
+  ],
+  "DataModel.lighting": [
+   "inst-service-aliases"
+  ],
+  "DataModel.workspace": [
+   "inst-service-aliases"
+  ],
+  "DataStore.RemoveVersionAsync": [
+   "data-remove-version"
+  ],
+  "Enum.AlignType.Parallel": [
+   "phys-align-enums"
+  ],
+  "Enum.AlignType.Perpendicular": [
+   "phys-align-enums"
+  ],
+  "Enum.DevTouchMovementMode.DPad": [
+   "input-touch-movement-enums"
+  ],
+  "Enum.DevTouchMovementMode.Thumbpad": [
+   "input-touch-movement-enums"
+  ],
+  "Enum.DevTouchMovementMode.Thumbstick": [
+   "input-touch-movement-enums"
+  ],
+  "Enum.PathStatus.ClosestNoPath": [
+   "path-old"
+  ],
+  "Enum.PathStatus.ClosestOutOfRange": [
+   "path-old"
+  ],
+  "Enum.SortOrder.Custom": [
+   "ui-layout-custom-sort"
+  ],
+  "Enum.StreamingPauseMode.ClientPhysicsPause": [
+   "stream-pausemode"
+  ],
+  "Enum.StreamingPauseMode.Default": [
+   "stream-pausemode"
+  ],
+  "Enum.StreamingPauseMode.Disabled": [
+   "stream-pausemode"
+  ],
+  "Enum.Technology.Compatibility": [
+   "light-compat-look"
+  ],
+  "Enum.Technology.Legacy": [
+   "light-compat-look"
+  ],
+  "Enum.Technology.Unified": [
+   "light-compat-look"
+  ],
+  "GamePassService.PlayerHasPass": [
+   "money-gamepass"
+  ],
+  "GlobalDataStore.OnUpdate": [
+   "data-onupdate"
+  ],
+  "GuiBase2d.Localize": [
+   "ui-auto-localize"
+  ],
+  "GuiObject.BackgroundColor": [
+   "ui-text-props"
+  ],
+  "GuiObject.BorderColor": [
+   "ui-text-props"
+  ],
+  "GuiObject.Draggable": [
+   "ui-draggable"
+  ],
+  "GuiObject.Transparency": [
+   "ui-transparency"
+  ],
+  "GuiObject.TweenPosition": [
+   "ui-tween-methods"
+  ],
+  "GuiObject.TweenSize": [
+   "ui-tween-methods"
+  ],
+  "GuiObject.TweenSizeAndPosition": [
+   "ui-tween-methods"
+  ],
+  "GuiService.AddSelectionParent": [
+   "ui-selection-groups"
+  ],
+  "GuiService.AddSelectionTuple": [
+   "ui-selection-groups"
+  ],
+  "GuiService.RemoveSelectionGroup": [
+   "ui-selection-groups"
+  ],
+  "Hint": [
+   "inst-message-hint"
+  ],
+  "HopperBin": [
+   "inst-hopperbin"
+  ],
+  "Humanoid.AddCustomStatus": [
+   "inst-status"
+  ],
+  "Humanoid.AddStatus": [
+   "inst-status"
+  ],
+  "Humanoid.AnimationPlayed": [
+   "anim-played-signal"
+  ],
+  "Humanoid.ApplyDescription": [
+   "async-humanoiddesc"
+  ],
+  "Humanoid.ApplyDescriptionReset": [
+   "async-description-reset"
+  ],
+  "Humanoid.CustomStatusAdded": [
+   "inst-status"
+  ],
+  "Humanoid.CustomStatusRemoved": [
+   "inst-status"
+  ],
+  "Humanoid.GetPlayingAnimationTracks": [
+   "anim-playing-tracks"
+  ],
+  "Humanoid.GetStatuses": [
+   "inst-status"
+  ],
+  "Humanoid.HasCustomStatus": [
+   "inst-status"
+  ],
+  "Humanoid.HasStatus": [
+   "inst-status"
+  ],
+  "Humanoid.LeftLeg": [
+   "anim-r6-body-parts"
+  ],
+  "Humanoid.LoadAnimation": [
+   "anim-humanoid-load"
+  ],
+  "Humanoid.PlayEmote": [
+   "async-humanoiddesc"
+  ],
+  "Humanoid.RemoveCustomStatus": [
+   "inst-status"
+  ],
+  "Humanoid.RemoveStatus": [
+   "inst-status"
+  ],
+  "Humanoid.RightLeg": [
+   "anim-r6-body-parts"
+  ],
+  "Humanoid.StatusAdded": [
+   "inst-status"
+  ],
+  "Humanoid.StatusRemoved": [
+   "inst-status"
+  ],
+  "Humanoid.Torso": [
+   "anim-r6-body-parts"
+  ],
+  "Humanoid.loadAnimation": [
+   "anim-humanoid-aliases"
+  ],
+  "Humanoid.maxHealth": [
+   "anim-humanoid-aliases"
+  ],
+  "Humanoid.takeDamage": [
+   "anim-humanoid-aliases"
+  ],
+  "InsertService.GetFreeDecals": [
+   "asset-free-search-async"
+  ],
+  "InsertService.GetFreeModels": [
+   "asset-free-search-async"
+  ],
+  "Instance.Remove": [
+   "inst-remove"
+  ],
+  "Instance.archivable": [
+   "inst-lowercase-properties"
+  ],
+  "Instance.childAdded": [
+   "inst-lowercase-properties"
+  ],
+  "Instance.children": [
+   "inst-lowercase-properties"
+  ],
+  "Instance.clone": [
+   "inst-lowercase"
+  ],
+  "Instance.destroy": [
+   "inst-lowercase"
+  ],
+  "Instance.findFirstChild": [
+   "inst-lowercase"
+  ],
+  "Instance.getChildren": [
+   "inst-lowercase"
+  ],
+  "Instance.isDescendantOf": [
+   "inst-lowercase-properties"
+  ],
+  "Instance.remove": [
+   "inst-lowercase"
+  ],
+  "IntValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "KeyframeSequenceProvider.GetAnimations": [
+   "anim-keyframe-provider-async"
+  ],
+  "KeyframeSequenceProvider.GetKeyframeSequence": [
+   "anim-keyframe-provider-async"
+  ],
+  "KeyframeSequenceProvider.GetKeyframeSequenceById": [
+   "anim-keyframe-provider-async"
+  ],
+  "Lighting.Outlines": [
+   "light-outlines"
+  ],
+  "Lighting.ShadowColor": [
+   "light-shadow-color"
+  ],
+  "Lighting.getMinutesAfterMidnight": [
+   "light-time-aliases"
+  ],
+  "Lighting.setMinutesAfterMidnight": [
+   "light-time-aliases"
+  ],
+  "LocalizationService.GetTranslatorForPlayer": [
+   "ui-translator-async"
+  ],
+  "LocalizationTable.DevelopmentLanguage": [
+   "ui-localization-language"
+  ],
+  "LocalizationTable.GetContents": [
+   "ui-localization-table"
+  ],
+  "LocalizationTable.GetString": [
+   "ui-localization-table"
+  ],
+  "LocalizationTable.RemoveKey": [
+   "ui-localization-table"
+  ],
+  "LocalizationTable.Root": [
+   "ui-localization-language"
+  ],
+  "LocalizationTable.SetContents": [
+   "ui-localization-table"
+  ],
+  "LocalizationTable.SetEntry": [
+   "ui-localization-table"
+  ],
+  "MarketplaceService.GetProductInfo": [
+   "money-productinfo"
+  ],
+  "MarketplaceService.PlayerOwnsAsset": [
+   "money-productinfo"
+  ],
+  "MarketplaceService.PlayerOwnsBundle": [
+   "money-productinfo"
+  ],
+  "MarketplaceService.PromptPremiumPurchase": [
+   "money-premium-prompt"
+  ],
+  "Message": [
+   "inst-message-hint"
+  ],
+  "Model.BreakJoints": [
+   "inst-makejoints"
+  ],
+  "Model.GetModelCFrame": [
+   "inst-model-bounds"
+  ],
+  "Model.GetModelSize": [
+   "inst-model-bounds"
+  ],
+  "Model.GetPrimaryPartCFrame": [
+   "inst-setprimarypartcframe"
+  ],
+  "Model.MakeJoints": [
+   "inst-makejoints"
+  ],
+  "Model.ResetOrientationToIdentity": [
+   "inst-model-identity"
+  ],
+  "Model.SetIdentityOrientation": [
+   "inst-model-identity"
+  ],
+  "Model.SetPrimaryPartCFrame": [
+   "inst-setprimarypartcframe"
+  ],
+  "Model.breakJoints": [
+   "inst-model-aliases"
+  ],
+  "Model.makeJoints": [
+   "inst-model-aliases"
+  ],
+  "Model.move": [
+   "inst-model-aliases"
+  ],
+  "Model.moveTo": [
+   "inst-model-aliases"
+  ],
+  "Mouse.KeyDown": [
+   "input-mouse"
+  ],
+  "Mouse.KeyUp": [
+   "input-mouse"
+  ],
+  "Mouse.keyDown": [
+   "input-mouse"
+  ],
+  "NumberValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "Object.className": [
+   "inst-lowercase-properties"
+  ],
+  "Object.isA": [
+   "inst-lowercase-properties"
+  ],
+  "ObjectValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "OverlapParams.AddToFilter": [
+   "query-addtofilter"
+  ],
+  "OverlapParams.FilterDescendantsInstances": [
+   "query-filterdescendants"
+  ],
+  "OverlapParams.FilterType": [
+   "query-filtertype"
+  ],
+  "ParticleEmitter.VelocitySpread": [
+   "render-particle-spread"
+  ],
+  "Path.GetPointCoordinates": [
+   "path-waypoints"
+  ],
+  "PathfindingService.ComputeRawPathAsync": [
+   "path-old"
+  ],
+  "PathfindingService.ComputeSmoothPathAsync": [
+   "path-old"
+  ],
+  "PathfindingService.EmptyCutoff": [
+   "path-emptycutoff"
+  ],
+  "PhysicsService.CollisionGroupContainsPart": [
+   "phys-collision-group-queries"
+  ],
+  "PhysicsService.CreateCollisionGroup": [
+   "phys-collision-groups"
+  ],
+  "PhysicsService.GetCollisionGroupId": [
+   "phys-collision-group-queries"
+  ],
+  "PhysicsService.GetCollisionGroupName": [
+   "phys-collision-group-queries"
+  ],
+  "PhysicsService.GetCollisionGroups": [
+   "phys-collision-group-queries"
+  ],
+  "PhysicsService.RemoveCollisionGroup": [
+   "phys-unregister-group"
+  ],
+  "PhysicsService.SetPartCollisionGroup": [
+   "phys-collision-groups"
+  ],
+  "Player.AppearanceDidLoad": [
+   "player-appearance-loaded"
+  ],
+  "Player.CharacterAppearance": [
+   "player-character-appearance"
+  ],
+  "Player.DataComplexity": [
+   "data-player-save"
+  ],
+  "Player.DataComplexityLimit": [
+   "data-player-save"
+  ],
+  "Player.DataReady": [
+   "data-player-save"
+  ],
+  "Player.GetFriendsOnline": [
+   "async-friends"
+  ],
+  "Player.GetRankInGroup": [
+   "async-group"
+  ],
+  "Player.GetRankInGroupAsync": [
+   "async-group-all-roles"
+  ],
+  "Player.GetRoleInGroup": [
+   "async-group"
+  ],
+  "Player.GetRoleInGroupAsync": [
+   "async-group-all-roles"
+  ],
+  "Player.IsFriendsWith": [
+   "async-friends"
+  ],
+  "Player.IsInGroup": [
+   "async-group"
+  ],
+  "Player.LoadBoolean": [
+   "data-player-save"
+  ],
+  "Player.LoadCharacter": [
+   "async-loadcharacter"
+  ],
+  "Player.LoadCharacterAppearance": [
+   "player-character-appearance"
+  ],
+  "Player.LoadCharacterWithHumanoidDescription": [
+   "async-character-description"
+  ],
+  "Player.LoadData": [
+   "data-player-save"
+  ],
+  "Player.LoadInstance": [
+   "data-player-save"
+  ],
+  "Player.LoadNumber": [
+   "data-player-save"
+  ],
+  "Player.LoadString": [
+   "data-player-save"
+  ],
+  "Player.SaveBoolean": [
+   "data-player-save"
+  ],
+  "Player.SaveData": [
+   "data-player-save"
+  ],
+  "Player.SaveInstance": [
+   "data-player-save"
+  ],
+  "Player.SaveNumber": [
+   "data-player-save"
+  ],
+  "Player.SaveString": [
+   "data-player-save"
+  ],
+  "Player.WaitForDataReady": [
+   "data-player-save"
+  ],
+  "Player.isFriendsWith": [
+   "async-friends"
+  ],
+  "Player.loadBoolean": [
+   "data-player-save"
+  ],
+  "Player.loadInstance": [
+   "data-player-save"
+  ],
+  "Player.loadNumber": [
+   "data-player-save"
+  ],
+  "Player.loadString": [
+   "data-player-save"
+  ],
+  "Player.saveBoolean": [
+   "data-player-save"
+  ],
+  "Player.saveInstance": [
+   "data-player-save"
+  ],
+  "Player.saveNumber": [
+   "data-player-save"
+  ],
+  "Player.saveString": [
+   "data-player-save"
+  ],
+  "Player.userId": [
+   "player-userid-alias"
+  ],
+  "Player.waitForDataReady": [
+   "data-player-save"
+  ],
+  "Players.CreateHumanoidModelFromDescription": [
+   "async-avatar-model-description"
+  ],
+  "Players.CreateHumanoidModelFromUserId": [
+   "async-humanoiddesc"
+  ],
+  "Players.GetCharacterAppearanceAsync": [
+   "player-character-appearance"
+  ],
+  "Players.GetHumanoidDescriptionFromOutfitId": [
+   "async-avatar-model-description"
+  ],
+  "Players.GetHumanoidDescriptionFromUserId": [
+   "async-humanoiddesc"
+  ],
+  "Players.NumPlayers": [
+   "player-service-aliases"
+  ],
+  "Players.getPlayers": [
+   "player-service-aliases"
+  ],
+  "Players.localPlayer": [
+   "player-service-aliases"
+  ],
+  "Players.numPlayers": [
+   "player-service-aliases"
+  ],
+  "Players.playerFromCharacter": [
+   "player-service-aliases"
+  ],
+  "Players.players": [
+   "player-service-aliases"
+  ],
+  "RayValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "RaycastParams.AddToFilter": [
+   "query-addtofilter"
+  ],
+  "RaycastParams.FilterDescendantsInstances": [
+   "query-filterdescendants"
+  ],
+  "RaycastParams.FilterType": [
+   "query-filtertype"
+  ],
+  "RocketPropulsion": [
+   "phys-bodymovers"
+  ],
+  "RunService.RenderStepped": [
+   "sched-renderstepped"
+  ],
+  "RunService.Stepped": [
+   "sched-stepped"
+  ],
+  "ServiceProvider.getService": [
+   "inst-service-aliases"
+  ],
+  "ServiceProvider.service": [
+   "inst-service-aliases"
+  ],
+  "Sound.EmitterSize": [
+   "audio-sound-props"
+  ],
+  "Sound.MaxDistance": [
+   "audio-sound-props"
+  ],
+  "Sound.MinDistance": [
+   "audio-sound-props"
+  ],
+  "Sound.Pitch": [
+   "audio-sound-props"
+  ],
+  "Sound.isPlaying": [
+   "audio-sound-aliases"
+  ],
+  "Sound.pause": [
+   "audio-sound-aliases"
+  ],
+  "Sound.play": [
+   "audio-sound-aliases"
+  ],
+  "Sound.stop": [
+   "audio-sound-aliases"
+  ],
+  "StarterGui.ResetPlayerGuiOnSpawn": [
+   "ui-resetplayergui"
+  ],
+  "StringValue.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "TeleportService.ReserveServer": [
+   "tp-reserve"
+  ],
+  "Terrain.AutowedgeCell": [
+   "terrain-legacy-cells"
+  ],
+  "Terrain.AutowedgeCells": [
+   "terrain-legacy-cells"
+  ],
+  "Terrain.ConvertToSmooth": [
+   "terrain-smooth-flags"
+  ],
+  "Terrain.GetCell": [
+   "terrain-legacy-cells"
+  ],
+  "Terrain.GetWaterCell": [
+   "terrain-legacy-water"
+  ],
+  "Terrain.IsSmooth": [
+   "terrain-smooth-flags"
+  ],
+  "Terrain.SetCell": [
+   "terrain-legacy-cells"
+  ],
+  "Terrain.SetCells": [
+   "terrain-legacy-cells"
+  ],
+  "Terrain.SetWaterCell": [
+   "terrain-legacy-water"
+  ],
+  "TerrainRegion.ConvertToSmooth": [
+   "terrain-smooth-flags"
+  ],
+  "TerrainRegion.IsSmooth": [
+   "terrain-smooth-flags"
+  ],
+  "TextBox.FontSize": [
+   "ui-text-props"
+  ],
+  "TextBox.TextColor": [
+   "ui-text-props"
+  ],
+  "TextBox.TextWrap": [
+   "ui-text-props"
+  ],
+  "TextButton.FontSize": [
+   "ui-text-props"
+  ],
+  "TextButton.TextColor": [
+   "ui-text-props"
+  ],
+  "TextButton.TextWrap": [
+   "ui-text-props"
+  ],
+  "TextFilterResult.GetChatForUserAsync": [
+   "chat-filter-player"
+  ],
+  "TextLabel.FontSize": [
+   "ui-text-props"
+  ],
+  "TextLabel.TextColor": [
+   "ui-text-props"
+  ],
+  "TextLabel.TextWrap": [
+   "ui-text-props"
+  ],
+  "UIGridStyleLayout.SetCustomSortFunction": [
+   "ui-layout-custom-sort"
+  ],
+  "UserInputService.GetUserCFrame": [
+   "input-vr-service"
+  ],
+  "UserInputService.ModalEnabled": [
+   "input-modalenabled"
+  ],
+  "UserInputService.UserCFrameChanged": [
+   "input-vr-service"
+  ],
+  "UserInputService.UserHeadCFrame": [
+   "input-vr-service"
+  ],
+  "Vector3Value.changed": [
+   "inst-value-changed-aliases"
+  ],
+  "Workspace.BreakJoints": [
+   "inst-makejoints"
+  ],
+  "Workspace.FilteringEnabled": [
+   "sec-filteringenabled"
+  ],
+  "Workspace.InterpolationThrottling": [
+   "stream-interpolation-throttling"
+  ],
+  "Workspace.MakeJoints": [
+   "inst-makejoints"
+  ],
+  "WorldRoot.FindPartOnRay": [
+   "query-findpartonray"
+  ],
+  "WorldRoot.FindPartOnRayWithIgnoreList": [
+   "query-findpartonray"
+  ],
+  "WorldRoot.FindPartOnRayWithWhitelist": [
+   "query-findpartonray"
+  ],
+  "WorldRoot.FindPartsInRegion3": [
+   "query-region3"
+  ],
+  "WorldRoot.FindPartsInRegion3WithIgnoreList": [
+   "query-region3"
+  ],
+  "WorldRoot.FindPartsInRegion3WithWhiteList": [
+   "query-region3"
+  ],
+  "WorldRoot.IsRegion3Empty": [
+   "query-region3"
+  ],
+  "WorldRoot.IsRegion3EmptyWithIgnoreList": [
+   "query-region3"
+  ],
+  "WorldRoot.findPartOnRay": [
+   "query-findpartonray"
+  ],
+  "WorldRoot.findPartsInRegion3": [
+   "query-region3"
+  ],
+  "collectgarbage": [
+   "lang-collectgarbage"
+  ],
+  "delay": [
+   "sched-delay"
+  ],
+  "getfenv": [
+   "lang-getfenv"
+  ],
+  "setfenv": [
+   "lang-getfenv"
+  ],
+  "spawn": [
+   "sched-spawn"
+  ],
+  "table.foreach": [
+   "lang-table-getn"
+  ],
+  "table.foreachi": [
+   "lang-table-getn"
+  ],
+  "table.getn": [
+   "lang-table-getn"
+  ],
+  "wait": [
+   "sched-wait"
+  ],
+  "ypcall": [
+   "lang-ypcall"
+  ]
+ }
+}

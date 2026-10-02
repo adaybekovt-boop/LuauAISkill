@@ -1,0 +1,61 @@
+{
+  "release": "3.0",
+  "status": "BLOCKED",
+  "checks": [
+    {
+      "gate": "aggregate checks",
+      "status": "PASS",
+      "command": [
+        "/tmp/luau-release-tools/bin/python",
+        "tools/check_all.py"
+      ],
+      "output": "PASS  embedded code up to date\nPASS  legacy catalog rendered\nPASS  ranked legacy coverage and fixtures\nPASS  pinned tutorial legacy sample\nPASS  legacy ranking reproducible\nPASS  engine smoke infrastructure (execution may remain pending)\nPASS  dated source-backed facts\nPASS  facts tables rendered\nPASS  content structure and token budget\nPASS  isolated packaging and foreign CWD\nPASS  API references\nPASS  source citations\nPASS  links and anchors\nPASS  tool unit tests\nPASS  Luau typecheck + CLI tests\nPASS  privileged recipe launcher typechecks\n\n16 passed, 0 failed, 0 skipped \u2192 qa/report.json\n"
+    },
+    {
+      "gate": "snapshot at most 14 days old",
+      "status": "PASS",
+      "age_days": 0
+    },
+    {
+      "gate": "empirically ranked top-150 legacy coverage",
+      "status": "BLOCKED",
+      "command": [
+        "/tmp/luau-release-tools/bin/python",
+        "tools/check_legacy.py",
+        "--check",
+        "--release-gate"
+      ],
+      "output": "legacy coverage: 152 entries, 327/704 API rows, 150/150 top-ranked, 0 error(s)\nBLOCKED: no representative public/historical tutorial sample or measured model outputs\n"
+    },
+    {
+      "gate": "exact token accounting",
+      "status": "PASS",
+      "command": [
+        "/tmp/luau-release-tools/bin/python",
+        "tools/check_content_budget.py",
+        "--require-tokenizer"
+      ],
+      "output": "Router 147/500 lines; 39 chapter summaries; 12 flagged files; tiktoken/cl100k_base\n"
+    },
+    {
+      "gate": "all ten engine smoke receipts",
+      "status": "BLOCKED",
+      "command": [
+        "/tmp/luau-release-tools/bin/python",
+        "tools/check_engine_evidence.py"
+      ],
+      "output": "FAIL save-system: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL network-rate-limiter: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL inventory: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL interaction: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL hitscan-gun: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL round-manager: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL sprint-crouch-stamina: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL npc-patrol: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL settings-menu: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nFAIL lighting-presets: NOT RUN \u2014 No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.\nEngine release gate BLOCKED: 10 failure(s), 10 NOT RUN\n"
+    },
+    {
+      "gate": "real full A/B evidence after passing pilot",
+      "status": "BLOCKED",
+      "output": "NOT RUN; no run directory supplied"
+    },
+    {
+      "gate": "actual host installs and upload",
+      "status": "BLOCKED",
+      "output": "claude-code-personal: pending or not bound to current package"
+    }
+  ],
+  "package_sha256": "f0f19e1503c2dfdd7db362d5a53643f448a9cf32c2802be360f54cde7296dbd6"
+}

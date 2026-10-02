@@ -1,5 +1,8 @@
 # Recipe: NPC patrol at scale (one manager, LOD, non-blocking pathfinding)
 
+## When NOT to use
+Do not assume a valid static route remains traversable after world or streaming changes.
+
 Evidence: brain/noise CLI-EXECUTED (`examples/tests/npc.spec.luau`, 5 tests) · manager/mover TYPECHECKED ·
 **not run in Studio**. Side: server. Chapter: [NPC / AI](../../handbook/roblox/20-npc-ai.md).
 Continues in [NPC chase](npc-chase.md) (perception, hearing, catching).

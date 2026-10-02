@@ -1,0 +1,58 @@
+{
+  "name": "LuauAISkill smoke npc-patrol",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "StreamingEnabled": false
+      },
+      "$attributes": {
+        "ReleaseSmokeCase": "npc-patrol",
+        "ReleaseSmokeEnabled": false,
+        "ReleaseSmokeSourceDigest": "SET_USING_CHECK_ENGINE_EVIDENCE_DIGEST",
+        "ReleaseSmokeEngineVersion": "",
+        "ReleaseSmokeAllowDataStore": false,
+        "ReleaseSmokeTestUniverseId": 0,
+        "ReleaseSmokeOpenCloud": false,
+        "ReleaseSmokePauseForScreenshots": false
+      }
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Lib": {
+        "$path": "../../lib/ReplicatedStorage/Lib"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "ReleaseSmoke": {
+        "$path": "../ServerScriptService/ReleaseSmoke"
+      },
+      "ReleaseSmokeServer": {
+        "$path": "../ServerScriptService/ReleaseSmokeServer.server.luau"
+      },
+      "Npc": {
+        "$path": "../../npc/ServerScriptService/Npc"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "SmokeScripts": {
+        "$className": "Folder",
+        "NpcServer": {
+          "$path": "../../npc/ServerScriptService/NpcServer.server.luau"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "ReleaseSmokeClient": {
+          "$path": "../StarterPlayer/StarterPlayerScripts/ReleaseSmokeClient.client.luau"
+        }
+      }
+    }
+  }
+}

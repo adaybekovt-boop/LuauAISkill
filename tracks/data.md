@@ -17,3 +17,5 @@ Non-negotiables
 
 Recipes: [save-system](../recipes/gameplay/save-system.md), [matchmaking-queue](../recipes/gameplay/matchmaking-queue.md).
 Evals: `evals/cases/datastores.jsonl`.
+
+Additional verified examples: [idempotent-receipts](../recipes/gameplay/idempotent-receipts.md), [friend-global-leaderboard](../recipes/gameplay/friend-global-leaderboard.md).

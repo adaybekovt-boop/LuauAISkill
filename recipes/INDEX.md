@@ -29,6 +29,14 @@ unit tests in `examples/tests/` · Studio = not run for any recipe.
 | [procedural-backrooms](gameplay/procedural-backrooms.md) | infinite deterministic connected chunks, budgeted building | S | TC + CLI | procgen |
 | [settings-menu](gameplay/settings-menu.md) | schema-driven settings, server-sanitized, gamepad/touch UI | S+C | TC + CLI | settings |
 | [object-pooling](gameplay/object-pooling.md) | when/how to pool client effects | C | TC | pooling |
+| [idempotent-receipts](gameplay/idempotent-receipts.md) | atomic product fulfillment + independent Robux-transfer receipts | S | TC + CLI | receipts |
+| [authorized-chat-commands](gameplay/authorized-chat-commands.md) | bounded TextChatCommand parsing + server authorization | S | TC + CLI | chatcommands |
+| [friend-global-leaderboard](gameplay/friend-global-leaderboard.md) | ordered best-score index, friend batches, caches + stale UI | S+C | TC + CLI | leaderboard |
+| [constraint-vehicle](gameplay/constraint-vehicle.md) | skid-steer constraint cart, authenticated intent + ownership | S+C | TC + CLI | vehicle |
+| [first-person-viewmodel](gameplay/first-person-viewmodel.md) | cosmetic rig, camera layering, wall retreat + cleanup | C | TC + CLI | viewmodel |
+| [server-authority-dash](gameplay/server-authority-dash.md) | fixed simulation dash + reversible rollback-safe visual | S+C | TC + CLI | simulation |
+| [parallel-npc-planning](gameplay/parallel-npc-planning.md) | Actor planner with parity + executable measurement gate | S | TC + CLI | parallel |
+| [multiplayer-regression-harness](gameplay/multiplayer-regression-harness.md) | bounded StudioTestService server/client regression fixture | Plugin+S+C | TC + CLI | regression |
 
 ## Graphics (`recipes/graphics/`)
 | Recipe | Look / system | Evidence |

@@ -1,5 +1,12 @@
 # Combat: melee, hitscan, projectiles, lag compensation, reactions, ragdoll
 
+## TL;DR
+- Let clients predict presentation and servers decide damage.
+- Model combat phases and valid transitions explicitly.
+- Choose hit detection for the weapon and latency model.
+- Validate timing, range, resources, and team rules.
+- Test respawn, interruption, duplicate requests, and death cleanup.
+
 Read when: any damage-dealing system, PvP, PvE, weapons, abilities.
 Related: [security](04-security.md), [networking](03-networking.md), [physics queries](09-physics.md#spatial-queries),
 [animation](16-animation.md), recipes: [melee combat](../../recipes/gameplay/melee-combat.md),

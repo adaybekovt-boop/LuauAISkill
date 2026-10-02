@@ -1,0 +1,61 @@
+{
+  "name": "LuauAISkill smoke round-manager",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "StreamingEnabled": false
+      },
+      "$attributes": {
+        "ReleaseSmokeCase": "round-manager",
+        "ReleaseSmokeEnabled": false,
+        "ReleaseSmokeSourceDigest": "SET_USING_CHECK_ENGINE_EVIDENCE_DIGEST",
+        "ReleaseSmokeEngineVersion": "",
+        "ReleaseSmokeAllowDataStore": false,
+        "ReleaseSmokeTestUniverseId": 0,
+        "ReleaseSmokeOpenCloud": false,
+        "ReleaseSmokePauseForScreenshots": false
+      }
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Lib": {
+        "$path": "../../lib/ReplicatedStorage/Lib"
+      },
+      "Rounds": {
+        "$path": "../../rounds/ReplicatedStorage/Rounds"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "ReleaseSmoke": {
+        "$path": "../ServerScriptService/ReleaseSmoke"
+      },
+      "ReleaseSmokeServer": {
+        "$path": "../ServerScriptService/ReleaseSmokeServer.server.luau"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "SmokeScripts": {
+        "$className": "Folder",
+        "RoundServer": {
+          "$path": "../../rounds/ServerScriptService/RoundServer.server.luau"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "ReleaseSmokeClient": {
+          "$path": "../StarterPlayer/StarterPlayerScripts/ReleaseSmokeClient.client.luau"
+        },
+        "RoundClient": {
+          "$path": "../../rounds/StarterPlayer/StarterPlayerScripts/RoundClient.client.luau"
+        }
+      }
+    }
+  }
+}

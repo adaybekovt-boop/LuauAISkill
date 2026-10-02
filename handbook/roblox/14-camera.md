@@ -1,5 +1,12 @@
 # Camera: first/third person, shoulder, bodycam, springs, shake, recoil, comfort
 
+## TL;DR
+- Give the camera one owner and layer offsets deliberately.
+- Use framerate-independent smoothing.
+- Keep recoil, shake, and bob separately tunable.
+- Respect motion comfort and accessibility settings.
+- Restore camera state and remove bindings on cleanup.
+
 Read when: any custom camera, FPS/horror feel, cinematics, recoil/shake, VR-comfort-sensitive effects.
 Related: [character controllers](13-character-controllers.md), graphics recipe [bodycam/CCTV/old camera looks](../../recipes/graphics/camera-aesthetics.md),
 gameplay recipe [bodycam controller](../../recipes/gameplay/bodycam-camera.md).

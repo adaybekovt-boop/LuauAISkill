@@ -1,5 +1,12 @@
 # Cross-server systems: MemoryStore, MessagingService, TeleportService, matchmaking
 
+## TL;DR
+- Use temporary shared storage only for temporary state.
+- Treat messaging as notifications rather than durable truth.
+- Make cross-server operations idempotent.
+- Handle teleport and matchmaking failures explicitly.
+- Account for server shutdown and stale shared entries.
+
 Read when: lobbies, queues, parties, global events, server browsers, multi-place games.
 Related: [data persistence](06-data-persistence.md), recipes [matchmaking](../../recipes/gameplay/matchmaking-queue.md),
 [round manager](../../recipes/gameplay/round-manager.md).

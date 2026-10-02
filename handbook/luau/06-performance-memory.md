@@ -1,5 +1,12 @@
 # Luau performance and memory
 
+## TL;DR
+- Measure before optimizing and keep a baseline.
+- Reduce repeated work and allocations before changing architecture.
+- Choose data layout for the actual access pattern.
+- Use Actors only for separable work with a measured benefit.
+- Track retained resources as well as allocation rate.
+
 Read when: a profile shows Luau time (not rendering/physics) is the bottleneck, or memory grows.
 Engine-level performance (rendering, physics, network, MicroProfiler): [roblox/08-performance](../roblox/08-performance.md).
 

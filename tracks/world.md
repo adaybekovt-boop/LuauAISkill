@@ -10,3 +10,5 @@ Non-negotiables
 - Procgen: data first, deterministic seeds (`Random.new(seed)`/hash), connectivity proven on data, budgets per frame.
 
 Recipes: [procedural-backrooms](../recipes/gameplay/procedural-backrooms.md). Evals: `evals/cases/streaming.jsonl`.
+
+Additional verified examples: [constraint-vehicle](../recipes/gameplay/constraint-vehicle.md).

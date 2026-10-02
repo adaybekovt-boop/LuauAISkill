@@ -15,3 +15,5 @@ Non-negotiables
 Recipes: [network-rate-limiter](../recipes/gameplay/network-rate-limiter.md), [interaction-system](../recipes/gameplay/interaction-system.md),
 [hitscan-gun](../recipes/gameplay/hitscan-gun.md). Verify with the recipes' exploit tables.
 Evals: `evals/cases/networking.jsonl`, `evals/cases/security.jsonl`.
+
+Additional verified examples: [authorized-chat-commands](../recipes/gameplay/authorized-chat-commands.md), [constraint-vehicle](../recipes/gameplay/constraint-vehicle.md), [server-authority-dash](../recipes/gameplay/server-authority-dash.md).

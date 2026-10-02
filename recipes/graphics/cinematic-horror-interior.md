@@ -1,5 +1,11 @@
 # Recipe: cinematic horror interior (dark house at night)
 
+## When NOT to use
+Do not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.
+
+## Architecture
+Establish the scene and lighting intent first; apply the bounded presentation settings below, then verify the result on target devices. Keep visual effects separate from authoritative gameplay.
+
 Evidence: preset values TYPECHECKED and validated against the API index · look **not screenshot-verified** — tune
 on your devices. Chapters: [lighting](../../handbook/graphics/01-lighting.md), [local lights](../../handbook/graphics/03-local-lights.md),
 [environment art](../../handbook/graphics/05-environment-art.md#horror-environments), [audio](../../handbook/roblox/17-audio.md).

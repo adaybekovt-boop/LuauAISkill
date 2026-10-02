@@ -1,0 +1,7 @@
+VERIFIED codex-cli 0.159.2: host receipt verification
+PASS skill_discovered
+PASS api_lookup_from_foreign_cwd
+PASS package_unchanged_during_verification
+Model inference and agent tool use: NOT RUN
+Package SHA-256: f0f19e1503c2dfdd7db362d5a53643f448a9cf32c2802be360f54cde7296dbd6
+Receipt: /workspace/scratch/4ecccc39d4bd/LuauAISkill/maintainers/host-evidence/codex.json

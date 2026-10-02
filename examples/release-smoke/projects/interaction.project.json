@@ -1,0 +1,61 @@
+{
+  "name": "LuauAISkill smoke interaction",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "StreamingEnabled": false
+      },
+      "$attributes": {
+        "ReleaseSmokeCase": "interaction",
+        "ReleaseSmokeEnabled": false,
+        "ReleaseSmokeSourceDigest": "SET_USING_CHECK_ENGINE_EVIDENCE_DIGEST",
+        "ReleaseSmokeEngineVersion": "",
+        "ReleaseSmokeAllowDataStore": false,
+        "ReleaseSmokeTestUniverseId": 0,
+        "ReleaseSmokeOpenCloud": false,
+        "ReleaseSmokePauseForScreenshots": false
+      }
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Lib": {
+        "$path": "../../lib/ReplicatedStorage/Lib"
+      },
+      "Interaction": {
+        "$path": "../../interaction/ReplicatedStorage/Interaction"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "ReleaseSmoke": {
+        "$path": "../ServerScriptService/ReleaseSmoke"
+      },
+      "ReleaseSmokeServer": {
+        "$path": "../ServerScriptService/ReleaseSmokeServer.server.luau"
+      },
+      "Interaction": {
+        "$path": "../../interaction/ServerScriptService/Interaction"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "SmokeScripts": {
+        "$className": "Folder",
+        "InteractionServer": {
+          "$path": "../../interaction/ServerScriptService/InteractionServer.server.luau"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "ReleaseSmokeClient": {
+          "$path": "../StarterPlayer/StarterPlayerScripts/ReleaseSmokeClient.client.luau"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 # Recipe: ragdoll (death and knock-down, R15/R6, reversible)
 
+## When NOT to use
+Do not apply this rig-specific setup to arbitrary custom rigs without adapting constraints and cleanup.
+
 Evidence: TYPECHECKED · **not run in Studio** (ragdoll feel and stability must be tuned in Studio).
 Side: server builds constraints; the owning client switches its Humanoid state. Part of `examples/combat`.
 Chapter: [combat → ragdoll](../../handbook/roblox/15-combat.md#ragdoll-on-death-or-knock-down).

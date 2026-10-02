@@ -1,5 +1,12 @@
 # Threads, scheduling, events and errors in Roblox Luau
 
+## TL;DR
+- Treat yields as points where state can change.
+- Choose defer, spawn, and delay by ordering needs.
+- Disconnect events and cancel work when its owner ends.
+- Reject stale async results with a generation or cancellation check.
+- Bound retries and retain useful error context.
+
 Read when: anything asynchronous — yields, remotes, DataStores, timers, cleanup, "works once then breaks".
 Related: [lifecycle](../roblox/02-lifecycle-events.md), [performance](06-performance-memory.md).
 

@@ -1,5 +1,8 @@
 # Recipe: footsteps (stride-based, material-aware, Audio API, all characters)
 
+## When NOT to use
+Do not use footstep presentation as authoritative movement detection or an anti-cheat signal.
+
 Evidence: TYPECHECKED · **not run in Studio** (needs your sound assets). Side: client only.
 Chapters: [audio](../../handbook/roblox/17-audio.md), [character controllers](../../handbook/roblox/13-character-controllers.md#stride-based-footsteps-client-for-every-visible-character).
 

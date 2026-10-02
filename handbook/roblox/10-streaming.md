@@ -1,5 +1,12 @@
 # Instance streaming and large worlds
 
+## TL;DR
+- Assume distant instances may be absent or disappear on clients.
+- Keep persistent state outside streamed instance references.
+- Use model streaming controls for a specific need.
+- Bound waits and restore bindings after objects return.
+- Test stream-in and stream-out transitions, not only initial load.
+
 Read when: big maps, open worlds, mobile memory problems, client scripts that break because objects are missing,
 LOD. Related: [lifecycle binder](02-lifecycle-events.md#tagged-objects-collectionservice-binder-replaces-scripts-inside-every-model),
 [terrain](11-terrain.md), [procedural](12-procedural-generation.md), [performance](08-performance.md).

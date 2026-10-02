@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "command": "python tools/check_api_refs.py ",
+      "returncode": 0,
+      "output": "api-refs: 0 error(s), 0 warning(s)\n"
+    },
+    {
+      "command": "python tools/check_sources.py --check",
+      "returncode": 0,
+      "output": "sources: 874 resolved, 0 unresolved\n"
+    },
+    {
+      "command": "python tools/check_facts.py ",
+      "returncode": 0,
+      "output": "facts: 89 checked, 0 error(s)\n"
+    }
+  ],
+  "affected_files": [],
+  "meaning": "Conservative dependency candidates; review, not proof that every file is broken."
+}

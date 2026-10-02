@@ -1,0 +1,38 @@
+{
+  "description": "Actual application acceptance remains pending. Filesystem layout checks are separate.",
+  "hosts": [
+    {
+      "host": "claude-code-personal",
+      "status": "PENDING"
+    },
+    {
+      "host": "claude-code-project",
+      "status": "PENDING"
+    },
+    {
+      "host": "claude.ai",
+      "status": "PENDING"
+    },
+    {
+      "host": "codex",
+      "status": "VERIFIED",
+      "tested_on": "2026-10-02T12:37:45.410402Z",
+      "package_sha256": "f0f19e1503c2dfdd7db362d5a53643f448a9cf32c2802be360f54cde7296dbd6",
+      "passed_checks": [
+        "skill_discovered",
+        "api_lookup_from_foreign_cwd",
+        "package_unchanged_during_verification"
+      ],
+      "artifacts": [
+        {
+          "path": "maintainers/host-evidence/codex.json",
+          "sha256": "d43943725a5ca8fff6ce650f5c961b58d118f9de1b3a7806e1d4191a8a366268"
+        }
+      ]
+    },
+    {
+      "host": "cursor",
+      "status": "PENDING"
+    }
+  ]
+}

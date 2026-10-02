@@ -1,5 +1,8 @@
 # Recipe: melee combat (server attack timeline, box + cone + LOS hits)
 
+## When NOT to use
+Do not use client-reported hit lists as damage authority; competitive rollback requires additional design.
+
 Evidence: cone math CLI-EXECUTED (`examples/tests/combat.spec.luau`) · server/client TYPECHECKED · **not run in
 Studio**. Side: server authority, client feedback. Needs: [health & damage](health-damage.md), shared helpers
 `examples/combat/ServerScriptService/Combat/Common.luau` and `CombatMath` (embedded in [hitscan](hitscan-gun.md)).

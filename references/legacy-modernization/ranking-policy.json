@@ -1,0 +1,11 @@
+{
+ "schema": 1,
+ "description": "Declared editorial risk, not observed model failure rates or public-code popularity. First matching group wins. Eval mentions are computed independently from prompt and attached fixture only, never expected answers or catalog text.",
+ "sources": ["references/ai-failure-modes.md", "references/anti-patterns.md", "evals/RUBRIC.md"],
+ "risk_groups": [
+  {"id": "data-money-chat", "weight": 5, "match": "^(?:Player\\.(?:[Ss]ave|[Ll]oad(?:Boolean|Number|String|Instance|Data)|[Ww]aitForDataReady|Data)|(?:GlobalDataStore|DataStore|DataStoreService|GamePassService|MarketplaceService|BadgeService|TextFilterResult|Chat)\\.)", "why": "Data loss, purchase entitlement and chat filtering have security, moderation or economic consequences."},
+  {"id": "runtime-physics", "weight": 4, "match": "^(?:(?:RunService|WorldRoot|BasePart|PhysicsService|Humanoid|AnimationController|Model|Workspace|Path|PathfindingService|Terrain|TerrainRegion|RaycastParams|OverlapParams|Lighting)\\.|Body|RocketPropulsion$|(?:wait|spawn|delay|ypcall|getfenv|setfenv)$)", "why": "Timing, animation replication, collision/query semantics and engine-only settings can break gameplay or authority assumptions."},
+  {"id": "player-facing", "weight": 3, "match": "^(?:(?:Player|Players|TeleportService|ContentProvider|GuiObject|GuiBase2d|GuiBase3d|GuiService|TextLabel|TextButton|TextBox|StarterGui|ScreenGui|Mouse|Camera|UserInputService|ContextActionService|CollectionService|Instance|Object|ServiceProvider|Sound|AudioPlayer|AudioEmitter|AudioListener|AvatarEditorService|LocalizationService|LocalizationTable|UIGridStyleLayout|Attachment|ParticleEmitter)\\.|(?:Message|Hint|HopperBin)$|Enum\\.(?:PathStatus|Technology|StreamingPauseMode|DevTouchMovementMode|AlignType|SortOrder)\\.|table\\.)", "why": "Input, UI, character, localization and object-lifecycle changes affect ordinary game scripts and player experience."},
+  {"id": "other", "weight": 1, "match": ".*", "why": "Other entries remain ranked; restricted/undocumented APIs receive an explicit penalty rather than being omitted."}
+ ]
+}

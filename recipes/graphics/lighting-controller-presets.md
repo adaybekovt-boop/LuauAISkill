@@ -1,5 +1,8 @@
 # Recipe: lighting controller with presets and zones
 
+## When NOT to use
+Do not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.
+
 Evidence: TYPECHECKED; preset keys validated against the API index (all writable by game scripts) · **not run in
 Studio**. Chapter: [lighting → runtime changes](../../handbook/graphics/01-lighting.md#runtime-lighting-changes-what-scripts-may-change).
 

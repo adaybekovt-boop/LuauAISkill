@@ -1,5 +1,12 @@
 # UI / UX: responsive, cross-device, accessible, performant
 
+## TL;DR
+- Design responsive UI around safe areas and varied screens.
+- Use layouts and constraints rather than fixed pixel assumptions.
+- Support touch, keyboard, and gamepad navigation.
+- Keep authoritative actions out of presentation code.
+- Test readability, accessibility, and expensive update paths.
+
 Read when: HUD, menus, inventory, settings, prompts, tooltips, localization, text input.
 Related: [input](19-input.md), recipes [settings menu](../../recipes/gameplay/settings-menu.md),
 [inventory](../../recipes/gameplay/inventory.md), [interaction system](../../recipes/gameplay/interaction-system.md).

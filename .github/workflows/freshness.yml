@@ -37,32 +37,42 @@ jobs:
           if git diff --quiet -- api/; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
           { echo "## API drift vs committed index (client $version)"; echo; echo '```text'; cat drift.md; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Check the skill text against the new index
-        if: steps.diff.outputs.changed == 'true'
-        continue-on-error: true
+      - name: Check references, citations, and facts against the new snapshot
         run: |
-          python tools/check_api_refs.py > refs.txt 2>&1 || true
-          { echo "## check_api_refs on the new index"; echo '```text'; tail -n 60 refs.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          python tools/freshness_report.py > validation.md
+          cat validation.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Open an issue for new drift
-        if: steps.diff.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ steps.diff.outputs.version }}
         run: |
-          title="Engine API drift: $VERSION"
+          snapshot=$(python -c "import json;print(json.load(open('sources/lock.json'))['sources']['creator-docs']['sha'][:12])")
+          if git diff --quiet -- api/ && ! grep -q ": FAIL" validation.md; then exit 0; fi
+          title="Engine/docs drift: $VERSION ($snapshot)"
           if gh issue list --state all --search "\"$title\" in:title" --json number --jq 'length' | grep -qv '^0$'; then
             echo "issue already exists"; exit 0
           fi
           {
-            echo "The weekly freshness job found engine API changes (client $VERSION) relative to the committed \`api/\`."
+            echo "The weekly freshness job found API, citation, or fact drift (client $VERSION) relative to the committed \`api/\`."
             echo
             echo "Next: \`python tools/fetch_sources.py --latest && python tools/build_api_index.py && python tools/api_diff.py\`,"
             echo "review new/removed/deprecated members against the handbook, catalog and SKILL.md freshness snapshot,"
             echo "then \`python tools/check_all.py\` and commit."
             echo
             echo '```text'
-            head -c 60000 drift.md
+            head -c 24000 drift.md
             echo '```'
+            head -c 35000 validation.md
           } > body.md
           gh issue create --title "$title" --body-file body.md
+
+      - name: Upload drift evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freshness-evidence
+          path: |
+            qa/freshness.json
+            validation.md
+            drift.md

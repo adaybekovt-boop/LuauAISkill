@@ -1,0 +1,61 @@
+{
+  "name": "LuauAISkill smoke sprint-crouch-stamina",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "StreamingEnabled": false
+      },
+      "$attributes": {
+        "ReleaseSmokeCase": "sprint-crouch-stamina",
+        "ReleaseSmokeEnabled": false,
+        "ReleaseSmokeSourceDigest": "SET_USING_CHECK_ENGINE_EVIDENCE_DIGEST",
+        "ReleaseSmokeEngineVersion": "",
+        "ReleaseSmokeAllowDataStore": false,
+        "ReleaseSmokeTestUniverseId": 0,
+        "ReleaseSmokeOpenCloud": false,
+        "ReleaseSmokePauseForScreenshots": false
+      }
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Lib": {
+        "$path": "../../lib/ReplicatedStorage/Lib"
+      },
+      "Movement": {
+        "$path": "../../movement/ReplicatedStorage/Movement"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "ReleaseSmoke": {
+        "$path": "../ServerScriptService/ReleaseSmoke"
+      },
+      "ReleaseSmokeServer": {
+        "$path": "../ServerScriptService/ReleaseSmokeServer.server.luau"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "SmokeScripts": {
+        "$className": "Folder",
+        "MovementServer": {
+          "$path": "../../movement/ServerScriptService/MovementServer.server.luau"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "ReleaseSmokeClient": {
+          "$path": "../StarterPlayer/StarterPlayerScripts/ReleaseSmokeClient.client.luau"
+        },
+        "MovementClient": {
+          "$path": "../../movement/StarterPlayer/StarterPlayerScripts/MovementClient.client.luau"
+        }
+      }
+    }
+  }
+}

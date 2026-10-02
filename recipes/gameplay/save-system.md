@@ -1,5 +1,8 @@
 # Recipe: save system (session-locked profiles, autosave, BindToClose, migrations, purchases)
 
+## When NOT to use
+Do not deploy against production player data before testing lease contention, retries, migrations, and shutdown.
+
 Evidence: lock transforms + migrations TYPECHECKED + CLI-EXECUTED (`examples/tests/data.spec.luau`, 9 tests with a
 fake store that reproduces the UpdateAsync contract) · service TYPECHECKED · **not run against real DataStores**.
 Side: server only. Chapter: [data persistence](../../handbook/roblox/06-data-persistence.md) (limits, rules).

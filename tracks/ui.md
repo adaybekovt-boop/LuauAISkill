@@ -12,3 +12,5 @@ Non-negotiables
 - Test in Device Emulator (phone portrait/landscape) and with a controller.
 
 Recipes: [settings-menu](../recipes/gameplay/settings-menu.md), [inventory](../recipes/gameplay/inventory.md). Evals: `evals/cases/ui.jsonl`.
+
+Additional verified examples: [friend-global-leaderboard](../recipes/gameplay/friend-global-leaderboard.md).

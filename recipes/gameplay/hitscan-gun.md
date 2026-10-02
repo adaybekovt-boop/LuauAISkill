@@ -1,5 +1,8 @@
 # Recipe: hitscan gun (client prediction, server raycast, ammo/reload, tracers)
 
+## When NOT to use
+Do not use when projectile travel time is part of gameplay; choose a projectile model instead.
+
 Evidence: math CLI-EXECUTED (`examples/tests/combat.spec.luau`, 6 tests) · server/client TYPECHECKED · **not run
 in Studio**. Side: server authority, client feedback. Needs: [health & damage](health-damage.md).
 Chapter: [combat](../../handbook/roblox/15-combat.md) (lag compensation theory).

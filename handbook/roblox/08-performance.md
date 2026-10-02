@@ -1,5 +1,12 @@
 # Performance: measure → find the bottleneck → fix → measure
 
+## TL;DR
+- Measure the limiting subsystem on target hardware.
+- Profile realistic player counts and workloads.
+- Reduce frequency and repeated work before micro-optimizing.
+- Budget physics, rendering, networking, and memory separately.
+- Keep before/after captures for performance claims.
+
 Read when: low FPS, stutter, server lag (low heartbeat), memory growth, long load times, mobile crashes.
 Luau-level details: [luau/06](../luau/06-performance-memory.md). Graphics budgets: [graphics/07 tiers](../graphics/07-quality-tiers.md).
 Recipe: [performance pass on a heavy scene](../../recipes/graphics/heavy-scene-performance-pass.md).

@@ -1,5 +1,8 @@
 # Recipe: settings menu (schema-driven, saved on the server, gamepad/touch friendly)
 
+## When NOT to use
+Do not let client preferences modify authoritative gameplay rules or bypass server permissions.
+
 Evidence: schema CLI-EXECUTED (`examples/tests/settings.spec.luau`, 4 tests) · client/server TYPECHECKED ·
 **not run in Studio**. Chapters: [UI/UX](../../handbook/roblox/18-ui-ux.md), [input](../../handbook/roblox/19-input.md).
 Graphics part: [graphics presets](../graphics/graphics-presets.md). Persistence: [save system](save-system.md).

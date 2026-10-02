@@ -1,5 +1,12 @@
 # Architecture: the simplest structure that fits the project
 
+## TL;DR
+- Start with the smallest architecture that fits the project.
+- Give services and controllers explicit responsibilities.
+- Use components for repeated world-object behavior.
+- Keep dependencies and initialization order visible.
+- Adopt frameworks or ECS only when their benefit is concrete.
+
 Read when: starting a project, restructuring, adding a major system, choosing frameworks.
 Related: [runtime](01-runtime-architecture.md), [code quality](22-code-quality.md), [patterns](../luau/04-patterns-data.md).
 

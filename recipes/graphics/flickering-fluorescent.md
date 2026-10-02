@@ -1,5 +1,8 @@
 # Recipe: flickering fluorescent lights
 
+## When NOT to use
+Do not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.
+
 Evidence: TYPECHECKED · **not run in Studio**.
 Chapter: [local lights → flicker](../../handbook/graphics/03-local-lights.md#flicker-and-animated-lights).
 

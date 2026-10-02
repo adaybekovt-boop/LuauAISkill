@@ -1,5 +1,12 @@
 # Audio: the Audio API graph, spatial sound, soundscapes, horror ambience
 
+## TL;DR
+- Choose the current audio graph or Sound path deliberately.
+- Keep spatial routing and ownership explicit.
+- Separate shared world sound from per-player feedback.
+- Budget concurrent voices and clean up completed playback.
+- Provide controls and alternatives for important audio cues.
+
 Read when: any sound work. Related: [character footsteps](13-character-controllers.md#stride-based-footsteps-client-for-every-visible-character),
 recipe [footsteps](../../recipes/gameplay/footsteps.md), [horror soundscape](../../recipes/graphics/cinematic-horror-interior.md#sound).
 

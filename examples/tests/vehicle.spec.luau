@@ -1,0 +1,10 @@
+--!strict
+local Drive = require("../vehicle/ReplicatedStorage/Vehicle/Drive")
+assert(not Drive.valid(0/0, 0) and not Drive.valid(math.huge, 0) and not Drive.valid(2, 0))
+local l, r = Drive.wheels(1, 0, true, 0)
+assert(l == 16 and r == 16)
+l, r = Drive.wheels(0, 1, true, 0)
+assert(l > 0 and r < 0)
+assert(Drive.wheels(1, 0, false, 0) == 0)
+assert(Drive.wheels(1, 0, true, 0.36) == 0)
+print("vehicle.spec: saturation, skid steering, empty seat, stale intent and NaN passed")

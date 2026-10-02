@@ -1,5 +1,12 @@
 # Global lighting: how the Lighting properties actually work together
 
+## TL;DR
+- Choose the Studio lighting mode before tuning the scene.
+- Separate runtime-writable controls from plugin-only properties.
+- Establish exposure and sky before local lighting.
+- Diagnose washed-out scenes before adding effects.
+- Measure shadow cost on target devices.
+
 Read when: any scene's mood/lighting. Next: [atmosphere, sky, post](02-atmosphere-sky-post.md), [local lights](03-local-lights.md),
 [materials](04-materials-pbr.md), scene recipes in [recipes/graphics](../../recipes/graphics/).
 

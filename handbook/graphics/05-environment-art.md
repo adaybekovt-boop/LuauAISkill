@@ -1,5 +1,12 @@
 # Environment art: scale, modular kits, composition, liminal & horror spaces
 
+## TL;DR
+- Design scale around the player and camera.
+- Build modular kits with consistent snapping.
+- Use composition and light to guide navigation.
+- Place clutter with a purpose and a budget.
+- Test repeated spaces for readability, navigation, and visual variety.
+
 Read when: building maps, interiors, liminal/Backrooms/horror environments, making a place look intentional.
 Related: [lighting](01-lighting.md), [materials](04-materials-pbr.md), [procedural](../roblox/12-procedural-generation.md),
 scene recipes in [recipes/graphics](../../recipes/graphics/).

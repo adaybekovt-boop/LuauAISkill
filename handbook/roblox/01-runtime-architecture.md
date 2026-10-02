@@ -1,5 +1,12 @@
 # Roblox runtime architecture: client, server, shared
 
+## TL;DR
+- Keep authoritative state and validation on the server.
+- Keep input and cosmetic presentation on the client.
+- Place scripts according to container and execution context.
+- Treat client-owned physics as untrusted input.
+- Keep shared modules free of accidental server-only assumptions.
+
 Read when: placing scripts/assets, deciding who owns logic, starting a project, debugging "script doesn't run".
 Related: [lifecycle](02-lifecycle-events.md), [networking](03-networking.md), [security](04-security.md),
 [architecture patterns](21-architecture.md), service cheat sheet: [references/service-map](../../references/service-map.md).

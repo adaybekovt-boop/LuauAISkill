@@ -1,5 +1,12 @@
 # Terrain: voxels, materials, water, procedural terrain
 
+## TL;DR
+- Use the documented terrain voxel and region APIs.
+- Align read/write operations with the supported grid.
+- Generate deterministic chunks before applying them.
+- Budget generation and application separately.
+- Test seams and material transitions in the engine.
+
 Read when: outdoor worlds, caves, biomes, water, scripted terrain generation.
 Related: [procedural generation](12-procedural-generation.md), [materials](../graphics/04-materials-pbr.md),
 [streaming](10-streaming.md).

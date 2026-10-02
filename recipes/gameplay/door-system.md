@@ -1,5 +1,8 @@
 # Recipe: doors (server state + collision, client animation, locks, auto-close)
 
+## When NOT to use
+Do not use a cosmetic client door as a security boundary; keep access and collision decisions authoritative.
+
 Evidence: TYPECHECKED · **not run in Studio**. Side: server (state/collision) + client (animation).
 Needs: [interaction system](interaction-system.md), `examples/lib`. Keys come from [inventory](inventory.md)
 through the `Handlers.hasItem` hook.

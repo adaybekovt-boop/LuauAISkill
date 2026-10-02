@@ -1,5 +1,8 @@
 # Recipe: matchmaking queue (lobby → reserved match servers with MemoryStore)
 
+## When NOT to use
+Do not treat a temporary queue entry as a durable entitlement or proof that a teleport completed.
+
 Evidence: match forming CLI-EXECUTED (`examples/tests/rounds.spec.luau`) · lobby/match server TYPECHECKED ·
 **not run live** (MemoryStore, MessagingService and teleports need a published experience; teleports never work in
 Studio playtests). Side: server. Chapter: [cross-server](../../handbook/roblox/07-cross-server.md).

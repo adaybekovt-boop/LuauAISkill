@@ -1,5 +1,12 @@
 # Testing through Studio MCP, multiplayer harnesses and Open Cloud
 
+## TL;DR
+- Discover the actual connected Studio tools before using them.
+- Target the intended Studio session and test mode.
+- Reproduce the failure before editing durable source.
+- Use multiplayer tooling for client/server assertions.
+- Store engine artifacts and keep unsupported checks explicitly pending.
+
 Read when: you (the agent) have Roblox Studio MCP tools connected, the user asks you to verify/playtest/debug in
 Studio, you need multiplayer or CI tests, or you are about to write STUDIO TESTED / CLOUD EXECUTED in a report.
 Related: [tooling & testing](23-tooling-testing.md) (evidence labels, Studio test modes, sync workflows),

@@ -1,5 +1,12 @@
 # Engine server authority mode (prediction + rollback)
 
+## TL;DR
+- Verify the current feature status and required Studio settings.
+- Keep simulation callbacks deterministic and replay-safe.
+- Use supported simulation bindings for authoritative movement.
+- Separate simulation state from one-shot presentation effects.
+- Test rollback and multiplayer behavior before choosing this mode.
+
 Status: **full release 2026-07-09** (Roblox staff announcement:
 https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993). The
 server-authority docs pages carry no beta label; one stale line on the network-ownership page (creator-docs @

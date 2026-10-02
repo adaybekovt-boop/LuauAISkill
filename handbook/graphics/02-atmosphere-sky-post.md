@@ -1,5 +1,12 @@
 # Atmosphere, sky, clouds, post-processing
 
+## TL;DR
+- Tune atmosphere for readable depth, not uniform fog.
+- Keep sky and atmosphere consistent.
+- Use post-processing sparingly and with a clear purpose.
+- Parent per-player post effects to the camera.
+- Treat weather presets as starting points that need visual checks.
+
 Read when: mood, depth, weather, time of day, cinematic look. Prereq: [lighting](01-lighting.md).
 
 ## Atmosphere (`Atmosphere` in Lighting) — API defaults in brackets

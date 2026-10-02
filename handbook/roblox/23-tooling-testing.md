@@ -1,5 +1,12 @@
 # Tooling and testing methodology
 
+## TL;DR
+- Distinguish typechecking, CLI execution, and engine testing.
+- Test pure logic independently of engine integration.
+- Use multiplayer modes for replication and authority claims.
+- Keep tool versions, commands, and results reproducible.
+- Never infer a Studio pass from a static check.
+
 Read when: setting up a project, choosing workflow, verifying changes, reporting what was tested.
 Related: [performance tools](08-performance.md#tools-and-what-each-answers), [debugging playbook](../../references/debugging-playbook.md).
 

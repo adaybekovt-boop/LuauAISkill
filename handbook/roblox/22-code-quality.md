@@ -1,5 +1,12 @@
 # Code quality rules for AI-written Roblox code
 
+## TL;DR
+- Write strict, explicit code with bounded failure paths.
+- Keep naming, ownership, and module boundaries consistent.
+- Centralize cleanup for every owned resource.
+- Review security and lifecycle behavior before polishing style.
+- Report only verification that actually ran.
+
 Read when: writing or reviewing any code. These are defaults; follow the project's existing conventions first.
 
 ## Rules

@@ -1,5 +1,12 @@
 # Lifecycle: players, characters, tagged objects, attributes, cleanup
 
+## TL;DR
+- Handle existing players and future player arrivals.
+- Separate player lifetime from character lifetime.
+- Use binders for tagged objects and undo their work on removal.
+- Treat streamed instances as temporary on clients.
+- Disconnect connections and destroy owned resources explicitly.
+
 Read when: code that runs per player / per character / per tagged object; respawn bugs; leaks; "works for the
 first player only". Related: [async](../luau/05-coroutines-task-errors.md), [streaming](10-streaming.md),
 [code quality](22-code-quality.md).

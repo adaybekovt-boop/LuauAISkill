@@ -1,5 +1,12 @@
 # Input: Input Action System, ContextActionService, UserInputService
 
+## TL;DR
+- Choose input APIs for the action and device model.
+- Separate input intent from authoritative permission.
+- Avoid duplicate bindings and clean up context changes.
+- Support rebinding and correct device prompts.
+- Validate all gameplay actions on the server.
+
 Read when: binding controls, rebinding, gamepad/touch support, menus vs gameplay input conflicts.
 Related: [UI/UX](18-ui-ux.md), [server authority](05-server-authority.md) (requires InputActions for simulation input).
 

@@ -1,5 +1,8 @@
 # Recipe: interaction system (ProximityPrompt + server validation + handler registry)
 
+## When NOT to use
+Do not use proximity alone to authorize valuable actions; the target handler must enforce permissions.
+
 Evidence: code TYPECHECKED (luau-lsp strict, old + new solver, Roblox defs 0.741) · helpers CLI-EXECUTED ·
 **not run in Studio**. Side: server (+ engine-provided prompt UI on clients).
 Needs: `examples/lib` (Binder, TokenBucket, Validate, Cleanup). Used by: [door system](door-system.md),

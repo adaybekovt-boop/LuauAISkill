@@ -33,12 +33,14 @@ jobs:
 
       - name: API index is reproducible from the pinned sources
         run: |
-          pip install pyyaml
+          pip install pyyaml -r maintainers/requirements-release.txt
           python tools/build_api_index.py
           git diff --exit-code -- api/
 
       - name: All checks (embeds, catalog, API refs, sources, links, unit tests, typecheck, Luau tests)
-        run: python tools/check_all.py
+        run: |
+          python tools/check_all.py
+          python tools/check_content_budget.py --require-tokenizer
 
       - name: Upload QA reports
         if: always()

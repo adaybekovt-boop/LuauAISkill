@@ -1,5 +1,12 @@
 # Procedural generation: seeds, layouts, chunks, guarantees
 
+## TL;DR
+- Separate deterministic layout from instance creation.
+- Use explicit seeds and stable random-number ownership.
+- Guarantee navigable connections before decoration.
+- Validate overlaps and chunk boundaries.
+- Budget instantiation and clean up unloaded chunks.
+
 Read when: Backrooms/liminal mazes, dungeons, roguelike rooms, infinite corridors, scattered props, terrain.
 Related: [terrain](11-terrain.md), [streaming](10-streaming.md), [environment art](../graphics/05-environment-art.md),
 recipe [procedural Backrooms generator](../../recipes/gameplay/procedural-backrooms.md).

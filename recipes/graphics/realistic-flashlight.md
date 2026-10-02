@@ -1,5 +1,8 @@
 # Recipe: realistic flashlight (two-cone beam, hand lag, visible to others)
 
+## When NOT to use
+Do not copy this visual preset unchanged into an unrelated scene or treat it as a measured performance budget.
+
 Evidence: TYPECHECKED · **not run in Studio** (beam look must be tuned by eye).
 Chapter: [local lights → flashlight](../../handbook/graphics/03-local-lights.md#flashlight-essentials).
 

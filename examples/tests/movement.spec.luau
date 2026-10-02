@@ -5,7 +5,10 @@ local Stamina = require("../movement/ReplicatedStorage/Movement/Stamina")
 local params = { max = 100, drainPerSecond = 20, regenPerSecond = 25, regenDelay = 1, startThreshold = 15 }
 local passed, failed = 0, 0
 local function test(name: string, fn: () -> ())
-	local ok, err = pcall(fn)
+	local ok, err = pcall(function(): boolean
+		fn()
+		return true
+	end)
 	if ok then
 		passed += 1
 	else

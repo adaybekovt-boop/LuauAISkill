@@ -14,9 +14,9 @@ Snapshot: **2026-10-02** · engine API **0.741.19** · creator-docs `578b33e` ·
 | [`SKILL.md`](SKILL.md) | entry point: workflow (incl. Studio MCP verification), hard rules, evidence labels, routing, freshness snapshot |
 | [`tracks/`](tracks/INDEX.md) | 17 task routes: which files to load for networking, data, graphics, combat, NPC… |
 | [`handbook/`](handbook) | 39 chapters: `luau/` (6), `roblox/` (26), `graphics/` (7) — dense tables, decision trees, typechecked code |
-| [`recipes/`](recipes/INDEX.md) | 20 gameplay + 15 graphics end-to-end recipes (architecture, full code, tests, exploit checks) |
+| [`recipes/`](recipes/INDEX.md) | 28 gameplay + 15 graphics end-to-end recipes (architecture, full code, tests, exploit checks) |
 | [`examples/`](examples) | recipe code as Rojo-style projects (`examples/<project>/<Service>/…`), shared `lib/`, Luau CLI tests |
-| [`references/`](references) | legacy→current catalog (89 entries), community ecosystem (versions, status, pitfalls), AI failure modes, anti-patterns, debugging playbook, limits, service map |
+| [`references/`](references) | legacy→current catalog (152 entries; 327 explicit API mappings), community ecosystem (versions, status, pitfalls), AI failure modes, anti-patterns, debugging playbook, limits, service map |
 | [`api/`](api) | generated engine API index (classes, members, enums, datatypes, deprecations, summaries) |
 | [`evals/`](evals/README.md) | categorized eval cases incl. broken-code fixtures and adversarial prompts + rubric |
 | [`tools/`](tools) | API lookup, legacy scanner, search, checkers, source fetch/lock, embed tool |
@@ -29,11 +29,14 @@ Snapshot: **2026-10-02** · engine API **0.741.19** · creator-docs `578b33e` ·
   tool paths resolve through `${CLAUDE_SKILL_DIR}`, so the tools work from any project directory.
 - **Claude apps (claude.ai / Desktop)**: zip a folder named `tk-luau-roblox/` containing the repository and upload it
   under Customize → Skills. The frontmatter uses only portable fields (`name`, `description`, `license`,
-  `compatibility`, `metadata`), so upload validation accepts it. Leave out `.cache/` and `.git/`.
+  `compatibility`, `metadata`), to support upload validation; actual host acceptance must still be tested. Leave out `.cache/` and `.git/`.
 - **Studio MCP**: if Roblox Studio's MCP server is connected to the agent, the skill uses it to reproduce and verify
   fixes ([handbook/roblox/24-studio-mcp-testing.md](handbook/roblox/24-studio-mcp-testing.md)).
-- **Other agents** (Codex, Cursor, custom): point the agent's instructions at `SKILL.md`; `AGENTS.md` does that for
-  tools that read it.
+- **Codex**: copy the skill folder to `<project>/.agents/skills/tk-luau-roblox/`.
+- **Cursor**: copy the skill folder to `<project>/.cursor/skills/tk-luau-roblox/`.
+- **Packaging checks**: `python tools/check_packaging.py --zip /tmp/tk-luau-roblox.zip` exercises isolated
+  personal/project layouts and runs runtime tools from an unrelated CWD. These checks do not establish actual
+  host discovery or acceptance; record those separately before a full release.
 - Python 3.10+ is enough for `tools/api.py`, `tools/search.py`, `tools/scan_legacy.py` (the API index is committed).
 
 ## Everyday tools
@@ -46,16 +49,25 @@ python tools/search.py "session locking"          # ranked search over the skill
 python tools/check_api_refs.py my-notes.md        # validate API names in any Markdown/Luau
 ```
 
+## 3.0 release preparation
+
+The next full release is gated by real engine runs, blinded A/B results, fresh facts, and actual host acceptance.
+See [the release procedure](maintainers/RELEASE_3_0.md). Run `python tools/check_release.py` for the fail-closed
+readiness report; version 2.1.0 remains in force until every criterion passes.
+
 ## Verification status (honest)
 | Check | Result (2026-10-02) | How to reproduce |
 |---|---|---|
 | Luau code blocks in Markdown | typechecked with luau-lsp 1.70.1 + Roblox defs, strict, old **and** new solver | `python tools/check_code.py` |
-| Example projects (`examples/`) | 70 files typechecked (same settings) | same |
-| Pure logic tests | 9 suites, 51 tests executed with Luau CLI 0.740 | same (runs `examples/tests/*.spec.luau`) |
+| Example projects (`examples/`) | 101 game-context files typechecked; privileged launcher checked separately | `python tools/check_code.py` and `python tools/check_recipe_contexts.py` |
+| Pure logic tests | 17 strict suites typechecked with both solvers and executed with Luau CLI 0.740 | same (runs `examples/tests/*.spec.luau`) |
 | API references in all text/code | 0 unknown / 0 unmarked deprecated | `python tools/check_api_refs.py` |
 | Source citations (`cd:`, `luau:`, `api:`) | all resolve against pinned sources | `python tools/check_sources.py` |
 | Links and anchors | checked | `python tools/check_links.py` |
-| Tool unit tests | `tests/` (Python unittest) | `python -m unittest discover tests` |
+| Tool unit tests | `tests/` (Python unittest), including evidence rejection and evaluation integrity | `python -m unittest discover -s tests` |
+| Dated machine facts | 89 source-backed entries; expired/missing/changed evidence fails CI | `python tools/check_facts.py` |
+| Release smoke infrastructure | 10 executable fixtures; 0 actual engine runs | `python tools/check_engine_evidence.py --allow-pending` |
+| Ranked legacy coverage | 150/150 provisional top rows; 152 detecting fixtures; empirical ranking still incomplete | `python tools/check_legacy.py --check` |
 | **Roblox Studio / live servers** | **nothing was run in Studio or live** | follow each recipe's "How to test" |
 Visual presets are art-direction starting points; property names/types are validated, the look is not
 screenshot-verified.

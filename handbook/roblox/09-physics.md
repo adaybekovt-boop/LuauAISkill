@@ -1,5 +1,12 @@
 # Physics: assemblies, ownership, constraints, spatial queries, collisions
 
+## TL;DR
+- Reason about assemblies rather than isolated parts.
+- Assign ownership deliberately and validate client-influenced physics.
+- Prefer current constraints over deprecated movers.
+- Choose spatial queries for the shape of the test.
+- Test stability under latency and changing ownership.
+
 Read when: moving things physically, vehicles, projectiles, ragdolls, doors/platforms, hit detection queries.
 Related: [security](04-security.md#movement-and-physics-ownership), [combat](15-combat.md),
 [character controllers](13-character-controllers.md), [performance](08-performance.md#cpu-physics).

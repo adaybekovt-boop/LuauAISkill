@@ -1,5 +1,8 @@
 # Recipe: NPC chase (vision cone + LOS, hearing via noise events, fair detection, search, hiding)
 
+## When NOT to use
+Do not spawn an unbounded independent pathfinding loop per NPC; budget population-level work.
+
 Evidence: brain/noise CLI-EXECUTED (`examples/tests/npc.spec.luau`) · perception/manager TYPECHECKED ·
 **not run in Studio**. Side: server. Builds on [NPC patrol](npc-patrol.md) (same manager and mover).
 

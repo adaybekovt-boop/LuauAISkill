@@ -1,5 +1,11 @@
 # Recipe: camera aesthetics — bodycam, CCTV, VHS / old camera
 
+## When NOT to use
+Do not force camera distortion or motion on every player; preserve readability and comfort options.
+
+## Architecture
+Establish the scene and lighting intent first; apply the bounded presentation settings below, then verify the result on target devices. Keep visual effects separate from authoritative gameplay.
+
 Evidence: TYPECHECKED · **not run in Studio**. Camera motion: [bodycam controller](../gameplay/bodycam-camera.md).
 Chapters: [atmosphere/sky/post](../../handbook/graphics/02-atmosphere-sky-post.md), [camera](../../handbook/roblox/14-camera.md).
 

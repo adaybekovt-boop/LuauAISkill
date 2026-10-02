@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render references/legacy-modernization/catalog.json → CATALOG.md and validate entries.
 
-Validation: unique ids, known status, detect regexes compile. (Source refs are validated by check_sources.py.)
+Validation: unique ids, known status, required guidance, detecting fixtures, regexes compile. (Source refs are validated by check_sources.py.)
   python tools/render_legacy.py          write CATALOG.md
   python tools/render_legacy.py --check  fail if CATALOG.md is stale or entries invalid (CI)
 """
@@ -26,6 +26,13 @@ def render(data: dict) -> str:
         f"API snapshot {data['api_snapshot']}, creator-docs `{data['docs_commit'][:12]}`, checked {data['checked_on']}. "
         "Statuses: " + "; ".join(f"**{k}** = {v}" for k, v in data["status_legend"].items()) + ".",
         "",
+        f"{len(data['entries'])} curated entries cover {len({name for entry in data['entries'] for name in entry.get('covers', [])})} distinct deprecated/superseded API rows. "
+        "[Priority ranking](RANKING.md) is reproducible editorial triage, not measured public-code popularity or AI failure frequency. "
+        "Representative public/historical tutorial code and model outputs were not sampled; current official tutorial code is measured separately. Empirical ranking evidence remains provisional.",
+        "",
+        "Every entry has a detecting fixture; findings are review candidates, not proof of incorrect code. "
+        "See [coverage report](coverage.json) and [fixtures](fixtures.luau).",
+        "",
         "Scan a project for these patterns: `python tools/scan_legacy.py <project-dir>`. For any other API run "
         "`python tools/api.py Class.Member` (the full deprecated list is `api/deprecated.tsv`).",
         "",
@@ -46,6 +53,10 @@ def render(data: dict) -> str:
                 lines.append(f"- OLD STILL OK WHEN: {e['when_ok']}")
             if e.get("notes"):
                 lines.append(f"- NOTES: {e['notes']}")
+            if e.get("covers"):
+                lines.append("- API COVERAGE: " + ", ".join(f"`{name}`" for name in e["covers"]))
+            lines.append("- DETECT: `" + e.get("detect", "") + "`")
+            lines.append("- DETECTING FIXTURE: `" + e.get("fixture", "").replace("\n", " ") + "`")
             if e.get("verify"):
                 lines.append("- VERIFY: " + ", ".join(e["verify"]))
             lines.append("")
@@ -62,10 +73,12 @@ def validate(data: dict) -> list[str]:
             errs.append(f"{e['id']}: unknown status {e['status']}")
         if e.get("detect"):
             try:
-                re.compile(e["detect"])
+                regex = re.compile(e["detect"])
+                if not regex.search(e.get("fixture", "")):
+                    errs.append(f"{e['id']}: fixture is not detected")
             except re.error as err:
                 errs.append(f"{e['id']}: bad regex {err}")
-        for field in ("old", "new", "why"):
+        for field in ("old", "new", "why", "when_ok", "detect", "fixture", "verify"):
             if not e.get(field):
                 errs.append(f"{e['id']}: missing {field}")
     return errs

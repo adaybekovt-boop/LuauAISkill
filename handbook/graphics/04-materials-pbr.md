@@ -1,5 +1,12 @@
 # Materials and PBR: Material, MaterialVariant, SurfaceAppearance, textures
 
+## TL;DR
+- Choose built-in materials, material variants, or surface appearance deliberately.
+- Keep PBR maps in the expected workflow.
+- Match texel density across adjacent assets.
+- Break tiling without hiding poor material scale.
+- Evaluate transparency and material cost on target hardware.
+
 Read when: surfaces look plastic/toy-like, choosing textures, realistic environments, memory budgets.
 Related: [lighting](01-lighting.md), [environment art](05-environment-art.md).
 

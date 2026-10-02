@@ -1,5 +1,12 @@
 # Character controllers: walking, sprint, crouch, slide, vault, ladders, footsteps, fall damage
 
+## TL;DR
+- Choose the controller architecture before adding abilities.
+- Keep movement permissions and resource state authoritative.
+- Separate input capture from movement rules.
+- Reset character-dependent state after respawn.
+- Test slopes, interruptions, and multiplayer ownership behavior.
+
 Read when: movement features, first-person feel, stamina, parkour.
 Related: [camera](14-camera.md), [animation](16-animation.md), [security](04-security.md#movement-and-physics-ownership),
 recipes [sprint/crouch/stamina](../../recipes/gameplay/sprint-crouch-stamina.md), [footsteps](../../recipes/gameplay/footsteps.md).

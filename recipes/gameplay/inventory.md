@@ -1,5 +1,8 @@
 # Recipe: inventory, pickups and hotbar (server-authoritative)
 
+## When NOT to use
+Do not use this small full-snapshot model unchanged for trading, economy settlement, or very large containers.
+
 Evidence: pure model TYPECHECKED + CLI-EXECUTED (`examples/tests/inventory.spec.luau`, 6 tests) · service/client
 TYPECHECKED · **not run in Studio**. Side: server authority, client view.
 Needs: [interaction system](interaction-system.md) (pickups), `examples/lib`. Persistence: [save system](save-system.md).

@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "save-system",
+      "project": "examples/release-smoke/projects/save-system.project.json",
+      "recipe": "recipes/gameplay/save-system.md",
+      "source_roots": [
+        "examples/data",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients",
+        "open-cloud"
+      ],
+      "minimum_clients": 0,
+      "assertions": [
+        "acquire-real-key",
+        "foreign-lock-rejected",
+        "uncached-save-readback",
+        "release-clears-lock",
+        "second-owner-preserves-data",
+        "disposable-key-cleaned"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "network-rate-limiter",
+      "project": "examples/release-smoke/projects/network-rate-limiter.project.json",
+      "recipe": "recipes/gameplay/network-rate-limiter.md",
+      "source_roots": [
+        "examples/net",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 2,
+      "assertions": [
+        "invalid-payload-rejected",
+        "valid-request-roundtrip",
+        "rate-limit-enforced",
+        "per-player-budget-isolated",
+        "server-counters-match"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "inventory",
+      "project": "examples/release-smoke/projects/inventory.project.json",
+      "recipe": "recipes/gameplay/inventory.md",
+      "source_roots": [
+        "examples/interaction",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 2,
+      "assertions": [
+        "invalid-slot-no-mutation",
+        "move-server-authoritative",
+        "use-consumes-and-heals",
+        "owner-receives-snapshot",
+        "other-inventory-unchanged"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "interaction",
+      "project": "examples/release-smoke/projects/interaction.project.json",
+      "recipe": "recipes/gameplay/interaction-system.md",
+      "source_roots": [
+        "examples/interaction",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 1,
+      "assertions": [
+        "tag-creates-prompt",
+        "near-prompt-dispatched",
+        "disabled-target-unchanged",
+        "distant-attempt-unchanged",
+        "untag-destroys-prompt"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "hitscan-gun",
+      "project": "examples/release-smoke/projects/hitscan-gun.project.json",
+      "recipe": "recipes/gameplay/hitscan-gun.md",
+      "source_roots": [
+        "examples/combat",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 1,
+      "assertions": [
+        "spoofed-origin-rejected",
+        "server-raycast-damages",
+        "server-ammo-decrements",
+        "wall-blocks-damage",
+        "reload-restores-magazine"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "round-manager",
+      "project": "examples/release-smoke/projects/round-manager.project.json",
+      "recipe": "recipes/gameplay/round-manager.md",
+      "source_roots": [
+        "examples/rounds",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 2,
+      "assertions": [
+        "two-players-start-round",
+        "map-created",
+        "phase-and-deadline-replicate",
+        "elimination-selects-winner",
+        "map-cleaned-after-results",
+        "next-cycle-respawns"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "sprint-crouch-stamina",
+      "project": "examples/release-smoke/projects/sprint-crouch-stamina.project.json",
+      "recipe": "recipes/gameplay/sprint-crouch-stamina.md",
+      "source_roots": [
+        "examples/movement",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 1,
+      "assertions": [
+        "input-actions-created",
+        "crouch-speed-applied",
+        "stand-speed-restored",
+        "sprint-speed-applied",
+        "server-stamina-drains",
+        "server-stamina-recovers",
+        "respawn-clears-movement"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "npc-patrol",
+      "project": "examples/release-smoke/projects/npc-patrol.project.json",
+      "recipe": "recipes/gameplay/npc-patrol.md",
+      "source_roots": [
+        "examples/npc",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 1,
+      "assertions": [
+        "tag-binds-patrol",
+        "path-and-physics-move-npc",
+        "server-owns-npc",
+        "untag-stops-manager-writes"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "settings-menu",
+      "project": "examples/release-smoke/projects/settings-menu.project.json",
+      "recipe": "recipes/gameplay/settings-menu.md",
+      "source_roots": [
+        "examples/settings",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 1,
+      "assertions": [
+        "menu-and-controls-created",
+        "client-sanitizes-settings",
+        "camera-fov-applies",
+        "server-save-sync-roundtrip",
+        "menu-survives-respawn"
+      ],
+      "screenshots": [],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    },
+    {
+      "id": "lighting-presets",
+      "project": "examples/release-smoke/projects/lighting-presets.project.json",
+      "recipe": "recipes/graphics/lighting-controller-presets.md",
+      "source_roots": [
+        "examples/lighting",
+        "examples/lib",
+        "examples/release-smoke/ServerScriptService",
+        "examples/release-smoke/StarterPlayer"
+      ],
+      "allowed_environments": [
+        "studio-server-clients"
+      ],
+      "minimum_clients": 1,
+      "assertions": [
+        "preset-HorrorInterior",
+        "preset-BackroomsOffice",
+        "preset-DarkCorridor",
+        "preset-NightExterior",
+        "preset-Sunset",
+        "preset-FogDay",
+        "preset-IndustrialWarehouse",
+        "preset-Poolrooms",
+        "preset-EmergencyRed",
+        "effects-not-duplicated"
+      ],
+      "screenshots": [
+        "HorrorInterior",
+        "BackroomsOffice",
+        "DarkCorridor",
+        "NightExterior",
+        "Sunset",
+        "FogDay",
+        "IndustrialWarehouse",
+        "Poolrooms",
+        "EmergencyRed"
+      ],
+      "status": "NOT RUN",
+      "blocker": "No connected Roblox Studio execution surface or authorized Open Cloud execution task is available in this build environment.",
+      "receipts": []
+    }
+  ]
+}

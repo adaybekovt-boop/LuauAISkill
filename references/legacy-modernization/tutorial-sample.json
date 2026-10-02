@@ -1,0 +1,4136 @@
+{
+ "schema": 1,
+ "generated_by": "tools/sample_legacy_tutorials.py",
+ "source": {
+  "kind": "current pinned official creator-docs tutorial/code sample",
+  "repository": "https://github.com/Roblox/creator-docs",
+  "commit": "578b33e83e5137b880eb594523159a6f1f691265",
+  "commit_date": "2026-10-01T10:13:07+00:00",
+  "scope": "content/en-us/**/*.md[x] Lua/Luau fences and **/*.lua[u]"
+ },
+ "limitations": [
+  "Not a representative public repository or historical tutorial sample.",
+  "Not measured model outputs or error rates.",
+  "Counts are distinct code blocks/files with lexical reference candidates, not runtime usage or independent projects.",
+  "Comments and strings are excluded except Instance.new class literals; backtick interpolation is conservatively omitted.",
+  "Class counts require Instance.new; shared member names need explicit owner text; variable aliases and dynamic indexing may be missed.",
+  "Repeated documentation examples can repeat the same API; examples may intentionally demonstrate old behaviour."
+ ],
+ "measurement": {
+  "eligible_source_files": 1020,
+  "files_with_code": 285,
+  "code_blocks": 1738,
+  "code_lines": 24406,
+  "matching_blocks": 58,
+  "manifest_sha256": "34d75e459fb3b1de819f8028bbe2629dc1f88cce822953f1a7cb0d11c72c596d"
+ },
+ "rows": [
+  {
+   "api": "AccessoryDescription.Puffiness",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AdGui.OnAdEvent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AdService.ShowVideoAd",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AdService.VideoAdClosed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnalyticsService.ApiKey",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnalyticsService.FireCustomEvent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnalyticsService.FireEvent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnalyticsService.FireInGameEconomyEvent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnalyticsService.FireLogEvent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnalyticsService.FirePlayerProgressionEvent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationClipProvider.GetAnimationClip",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationClipProvider.GetAnimationClipById",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationClipProvider.GetAnimations",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationConstraint.C0",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationConstraint.C1",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationConstraint.Part0",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationConstraint.Part1",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationController.AnimationPlayed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationController.GetPlayingAnimationTracks",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnimationController.LoadAnimation",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AnnotationsService.LoadResolvedAnnotations",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AssetImportService.UploadAssetFromContentAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AssetImportService.UploadAssetFromPathAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AssetService.GetAssetIdsForPackage",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AssetService.GetCreatorAssetID",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AssetService.SearchAudio",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Attachment.GetAxis",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Attachment.GetSecondaryAxis",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Attachment.Rotation",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Attachment.SetAxis",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Attachment.SetSecondaryAxis",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Attachment.WorldRotation",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AudioEmitter.SimulationFidelity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AudioListener.SimulationFidelity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AudioPlayer.AssetId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AudioSearchParams.AudioSubtype",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AuroraScript",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AuroraScriptObject",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AuroraScriptService",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AuroraService",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.CheckApplyDefaultClothing",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.ConformToAvatarRules",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetAvatarRules",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetBatchItemDetails",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetFavorite",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetInventory",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "AvatarEditorService.GetItemDetails",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetOutfitDetails",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetOutfits",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetRecommendedAssets",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.GetRecommendedBundles",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "AvatarEditorService.SearchCatalog",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "BadgeService.AwardBadge",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "BadgeService.IsDisabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BadgeService.IsLegal",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BadgeService.UserHasBadge",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.BackParamA",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.BackParamB",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.BackSurfaceInput",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.BottomParamA",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.BottomParamB",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.BottomSurfaceInput",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.BreakJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.CollisionGroupId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.Elasticity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.Friction",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.FrontParamA",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.FrontParamB",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.FrontSurfaceInput",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.GetRenderCFrame",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.GetRootPart",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.LeftParamA",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.LeftParamB",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.LeftSurfaceInput",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.LocalSimulationTouched",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.MakeJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.OutfitChanged",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.RightParamA",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.RightParamB",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.RightSurfaceInput",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.RotVelocity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.SpecificGravity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.StoppedTouching",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.TopParamA",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.TopParamB",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.TopSurfaceInput",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.Velocity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.breakJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.brickColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.getMass",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.makeJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BasePart.resize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BaseScript.LinkedSource",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BevelMesh",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BillboardGui.DistanceLowerLimit",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BillboardGui.DistanceUpperLimit",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyAngularVelocity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyAngularVelocity.angularvelocity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyAngularVelocity.maxTorque",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyForce",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyForce.force",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyGyro",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyGyro.cframe",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyGyro.maxTorque",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyMover",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyPosition",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyPosition.lastForce",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyPosition.maxForce",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyPosition.position",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyThrust",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyThrust.force",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyThrust.location",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyVelocity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyVelocity.maxForce",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BodyVelocity.velocity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BoolValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "BrickColorValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CFrameValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.CoordinateFrame",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.GetLargestCutoffDistance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.GetPanSpeed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.GetTiltSpeed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.Interpolate",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.PanUnits",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.SetCameraPanMode",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.TiltUnits",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Camera.focus",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CaptureService.CaptureSaved",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Chat.FilterStringForPlayerAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ClickDetector.mouseClick",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Collaborator.CollaboratorColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CollectionService.GetCollection",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CollectionService.ItemAdded",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CollectionService.ItemRemoved",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Color3.toHSV",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Color3Value.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Constraint.GetDebugAppliedForce",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Constraint.GetDebugAppliedTorque",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ContentProvider.Preload",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ContextActionService.BindActionToInputTypes",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Controller.bindButton",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Controller.getButton",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CustomEvent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CustomEventReceiver",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CylinderMesh",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "CylindricalConstraint.SoftlockAngularServoUponReachingTarget",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.AllowedGearTypeChanged",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.GameAvatarType",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.GearGenreSetting",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.GetMessage",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.GetRemoteBuildMode",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.IsGearTypeAllowed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.IsPioneerBuild",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.ItemChanged",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.OnClose",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.PioneerSource",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.R15CollisionType",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.SavePlace",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.VIPServerId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.VIPServerOwnerId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.lighting",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataModel.workspace",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataStore.RemoveVersionAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DataStoreService.LegacyNamingScheme",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Debris.MaxItems",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Debris.addItem",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DebuggerManager",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DebuggerManager.StepIn",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DebuggerManager.StepOut",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DebuggerManager.StepOver",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Decal.Shiny",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Decal.Specular",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DoubleConstrainedValue",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "DoubleConstrainedValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "EditableMesh.GetFacesWithAttribute",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "EditableMesh.GetVerticesWithAttribute",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AdEventType.RewardedAdGrant",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AdEventType.RewardedAdLoaded",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AdEventType.RewardedAdUnloaded",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AdEventType.UserCompletedVideo",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AdEventType.VideoLoaded",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AdEventType.VideoRemoved",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AlignType.Parallel",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.AlignType.Perpendicular",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.CatalogCategoryFilter.Collectibles",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.DevTouchMovementMode.DPad",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.DevTouchMovementMode.Thumbpad",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.DevTouchMovementMode.Thumbstick",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearGenreSetting.AllGenres",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearGenreSetting.MatchingGenreOnly",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.BuildingTools",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.Explosives",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.MeleeWeapons",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.MusicalInstruments",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.NavigationEnhancers",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.PowerUps",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.RangedWeapons",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.SocialItems",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.GearType.Transport",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.MouseBackButton",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.MouseNoButton",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.MouseX",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.MouseY",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World0",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World1",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World10",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World11",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World12",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World13",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World14",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World15",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World16",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World17",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World18",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World19",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World2",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World20",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World21",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World22",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World23",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World24",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World25",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World26",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World27",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World28",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World29",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World3",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World30",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World31",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World32",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World33",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World34",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World35",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World36",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World37",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World38",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World39",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World4",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World40",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World41",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World42",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World43",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World44",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World45",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World46",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World47",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World48",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World49",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World5",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World50",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World51",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World52",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World53",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World54",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World55",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World56",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World57",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World58",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World59",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World6",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World60",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World61",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World62",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World63",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World64",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World65",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World66",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World67",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World68",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World69",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World7",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World70",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World71",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World72",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World73",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World74",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World75",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World76",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World77",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World78",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World79",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World8",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World80",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World81",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World82",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World83",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World84",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World85",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World86",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World87",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World88",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World89",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World9",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World90",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World91",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World92",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World93",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World94",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.KeyCode.World95",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.MeshType.CornerWedge",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.MeshType.ParallelRamp",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.MeshType.Prism",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.MeshType.Pyramid",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.MeshType.RightAngleRamp",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.PathStatus.ClosestNoPath",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.PathStatus.ClosestOutOfRange",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.PathStatus.FailFinishNotEmpty",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.PathStatus.FailStartNotEmpty",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.PoseEasingStyle.Cubic",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.RibbonTool.MaterialPicker",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.SecurityCapability.AssetRequire",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.SecurityCapability.Avatar",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.SortOrder.Custom",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.Boolean",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.CFrame",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.Color3",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.Float",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.INVALID",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.Instance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.Random",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.Vector2",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StateObjectFieldType.Vector3",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.Status.Confusion",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.Status.Poison",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StreamingPauseMode.ClientPhysicsPause",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StreamingPauseMode.Default",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.StreamingPauseMode.Disabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.Technology.Compatibility",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.Technology.Legacy",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.Technology.Unified",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.UITheme.Dark",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Enum.UITheme.Light",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Fire.size",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Flag",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "FlagStand",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "FloorWire",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "FormFactorPart.FormFactor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "FormFactorPart.formFactor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "FunctionalTest",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GamePassService.PlayerHasPass",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GameSettings.VideoCaptureEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GlobalDataStore.OnUpdate",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Glue",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiBase2d.Localize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiBase3d.Color",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiMain",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.BackgroundColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.BorderColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.DragBegin",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.DragStopped",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.Draggable",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.Transparency",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.TweenPosition",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "GuiObject.TweenSize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiObject.TweenSizeAndPosition",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.AddSelectionParent",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.AddSelectionTuple",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.BrowserWindowClosed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.ErrorMessageChanged",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.GetErrorMessage",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.IsModalDialog",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.IsWindows",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.OpenBrowserWindow",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.OpenNativeOverlay",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "GuiService.RemoveSelectionGroup",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Hat",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "HingeConstraint.SoftlockServoUponReachingTarget",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Hint",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Hole",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Hopper",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "HopperBin",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.AddCustomStatus",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.AddStatus",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.AnimationPlayed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.ApplyDescription",
+   "code_block_candidates": 3,
+   "file_candidates": 2
+  },
+  {
+   "api": "Humanoid.ApplyDescriptionReset",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.CollisionType",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.CustomStatusAdded",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.CustomStatusRemoved",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.GetPlayingAnimationTracks",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.GetStatuses",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.HasCustomStatus",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.HasStatus",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.LeftLeg",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.LoadAnimation",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.PlayEmote",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "Humanoid.RemoveCustomStatus",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.RemoveStatus",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.RightLeg",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.StatusAdded",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.StatusRemoved",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.Torso",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.loadAnimation",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.maxHealth",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Humanoid.takeDamage",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InputAction.Fire",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.AllowInsertFreeModels",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.ApproveAssetId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.ApproveAssetVersionId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.GetBaseCategories",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.GetBaseSets",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.GetCollection",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.GetFreeDecals",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.GetFreeModels",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.GetUserCategories",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.GetUserSets",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.Insert",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "InsertService.loadAsset",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.DataCost",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.Remove",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.archivable",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.childAdded",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.children",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.clone",
+   "code_block_candidates": 2,
+   "file_candidates": 1
+  },
+  {
+   "api": "Instance.destroy",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.findFirstChild",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.getChildren",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.isDescendantOf",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Instance.remove",
+   "code_block_candidates": 15,
+   "file_candidates": 9
+  },
+  {
+   "api": "IntConstrainedValue",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "IntConstrainedValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "IntValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "JointInstance.part1",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "JointsService",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "KeyframeSequenceProvider.GetAnimations",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "KeyframeSequenceProvider.GetKeyframeSequence",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "KeyframeSequenceProvider.GetKeyframeSequenceById",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LayerCollector.GetLayoutNodeTree",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Lighting.Outlines",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Lighting.ShadowColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Lighting.getMinutesAfterMidnight",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Lighting.setMinutesAfterMidnight",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationService.GetTranslatorForPlayer",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationTable.DevelopmentLanguage",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationTable.GetContents",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationTable.GetString",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationTable.RemoveKey",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationTable.Root",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationTable.SetContents",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "LocalizationTable.SetEntry",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ManualGlue",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ManualSurfaceJointInstance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ManualWeld",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "MarketplaceService.GetProductInfo",
+   "code_block_candidates": 4,
+   "file_candidates": 3
+  },
+  {
+   "api": "MarketplaceService.PlayerOwnsAsset",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "MarketplaceService.PlayerOwnsBundle",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "MarketplaceService.PromptPremiumPurchase",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "MeshPart.HasJointOffset",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "MeshPart.JointOffset",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "MeshPart.MeshID",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Message",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.BreakJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.GetModelCFrame",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.GetModelSize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.GetPrimaryPartCFrame",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.MakeJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.ResetOrientationToIdentity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.SetIdentityOrientation",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.SetPrimaryPartCFrame",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "Model.breakJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.makeJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Model.move",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "Model.moveTo",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ModuleScript.LinkedSource",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "MotorFeature",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Mouse.KeyDown",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Mouse.KeyUp",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Mouse.hit",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Mouse.keyDown",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Mouse.target",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "NumberValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Object.className",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Object.isA",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ObjectValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OpenCloudApiV1",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OpenCloudApiV1.CreateModel",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OpenCloudApiV1.CreateUserNotificationAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OpenCloudService",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OpenCloudService.GetApiV1",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OpenCloudService.InvokeAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OverlapParams.AddToFilter",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OverlapParams.FilterDescendantsInstances",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "OverlapParams.FilterType",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PartOperation.ManifoldMesh_DEPRECATED",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ParticleEmitter.VelocitySpread",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Path.GetPointCoordinates",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PathfindingService.ComputeRawPathAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PathfindingService.ComputeSmoothPathAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PathfindingService.EmptyCutoff",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PhysicsService.CollisionGroupContainsPart",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PhysicsService.CreateCollisionGroup",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PhysicsService.GetCollisionGroupId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PhysicsService.GetCollisionGroupName",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PhysicsService.GetCollisionGroups",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PhysicsService.RemoveCollisionGroup",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PhysicsService.SetPartCollisionGroup",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Plane",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.AppearanceDidLoad",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.CharacterAppearance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.DataComplexity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.DataComplexityLimit",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.DataReady",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.GetFriendsOnline",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.GetRankInGroup",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.GetRankInGroupAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.GetRoleInGroup",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.GetRoleInGroupAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.IsBestFriendsWith",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.IsFriendsWith",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.IsInGroup",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.LoadBoolean",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.LoadCharacter",
+   "code_block_candidates": 9,
+   "file_candidates": 4
+  },
+  {
+   "api": "Player.LoadCharacterAppearance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.LoadCharacterWithHumanoidDescription",
+   "code_block_candidates": 2,
+   "file_candidates": 1
+  },
+  {
+   "api": "Player.LoadData",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.LoadInstance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.LoadNumber",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.LoadString",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.SaveBoolean",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.SaveData",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.SaveInstance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.SaveNumber",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.SaveString",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.SetUnder13",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.WaitForDataReady",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.isFriendsWith",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.loadBoolean",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.loadInstance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.loadNumber",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.loadString",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.saveBoolean",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.saveInstance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.saveNumber",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.saveString",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.userId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Player.waitForDataReady",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PlayerGui.GetTopbarTransparency",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PlayerGui.SetTopbarTransparency",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PlayerGui.TopbarTransparencyChangedSignal",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.CreateHumanoidModelFromDescription",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.CreateHumanoidModelFromUserId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.GetCharacterAppearanceAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.GetHumanoidDescriptionFromOutfitId",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "Players.GetHumanoidDescriptionFromUserId",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "Players.NumPlayers",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.getPlayers",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.localPlayer",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.numPlayers",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.playerFromCharacter",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Players.players",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Plugin.CreateDockWidgetPluginGui",
+   "code_block_candidates": 4,
+   "file_candidates": 1
+  },
+  {
+   "api": "Plugin.GetStudioUserId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Plugin.ImportFbxAnimation",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Plugin.ImportFbxRig",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Plugin.OpenScript",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Plugin.PromptSaveSelection",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PluginManager.CreatePlugin",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PluginManagerInterface.CreatePlugin",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PointsService",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PointsService.AwardPoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PointsService.GetAwardablePoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PointsService.GetGamePointBalance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "PointsService.GetPointBalance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Pose.MaskWeight",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RayValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RaycastParams.AddToFilter",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RaycastParams.FilterDescendantsInstances",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RaycastParams.FilterType",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RocketPropulsion",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RocketPropulsion.fire",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Rotate",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RotateP",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RotateV",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RunService.RenderStepped",
+   "code_block_candidates": 3,
+   "file_candidates": 2
+  },
+  {
+   "api": "RunService.Reset",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "RunService.Stepped",
+   "code_block_candidates": 2,
+   "file_candidates": 2
+  },
+  {
+   "api": "ScreenshotHud.ExperienceNameOverlayEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ScreenshotHud.OverlayFont",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ScreenshotHud.UsernameOverlayEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SelectionBox.SurfaceColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SelectionPartLasso",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SelectionPointLasso",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SelectionSphere.SurfaceColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SensorBase.Sense",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ServiceProvider.getService",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ServiceProvider.service",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SkateboardPlatform",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SkateboardPlatform.equipped",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SkateboardPlatform.unequipped",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Skin",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SlidingBallConstraint.SoftlockServoUponReachingTarget",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Snap",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SocialService.PromptLinkSharing",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.EmitterSize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.MaxDistance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.MinDistance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.Pitch",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.isPlaying",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "Sound.pause",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.play",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.stop",
+   "code_block_candidates": 4,
+   "file_candidates": 3
+  },
+  {
+   "api": "Sound.xmlRead_MaxDistance_3",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Sound.xmlRead_MinDistance_3",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "StarterGui.ResetPlayerGuiOnSpawn",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Stats.HeartbeatTimeMs",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Stats.PhysicsStepTimeMs",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Status",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "StringValue.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Studio.UI Theme",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "StudioService.DrawConstraintsOnTop",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "StudioService.PromptImportFile",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "StudioService.PromptImportFiles",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "SyncScriptBuilder.RawBytecode",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Team.AutoColorCharacters",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Team.Score",
+   "code_block_candidates": 2,
+   "file_candidates": 1
+  },
+  {
+   "api": "Teams.RebalanceTeams",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TeleportService.CustomizedTeleportUI",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TeleportService.ReserveServer",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TeleportService.TeleportPartyAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TeleportService.TeleportToPlaceInstance",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TeleportService.TeleportToPrivateServer",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TeleportService.TeleportToSpawnByName",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.AutowedgeCell",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.AutowedgeCells",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.ConvertToSmooth",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.GetCell",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.GetWaterCell",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.IsSmooth",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.SetCell",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.SetCells",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Terrain.SetWaterCell",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TerrainRegion.ConvertToSmooth",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TerrainRegion.IsSmooth",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TestService.Is30FpsThrottleEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TestService.Run",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextBox.FontSize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextBox.TextColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextBox.TextWrap",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextButton.FontSize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextButton.TextColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextButton.TextWrap",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextFilterResult.GetChatForUserAsync",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextLabel.FontSize",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextLabel.TextColor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TextLabel.TextWrap",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "TorsionSpringConstraint.LimitEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "UIGridStyleLayout.ApplyLayout",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "UIGridStyleLayout.SetCustomSortFunction",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "UserInputService.GetUserCFrame",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "UserInputService.LegacyInputEventsEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "UserInputService.ModalEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "UserInputService.UserCFrameChanged",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "UserInputService.UserHeadCFrame",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Vector3Value.changed",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.GetAndClearCallFailureMessage",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.GetAudioProcessingSettings",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.GetMicDevices",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.GetParticipants",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.GetVoiceChatApiVersion",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.GetVoiceChatAvailable",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.IsPublishPaused",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.IsSubscribePaused",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.JoinByGroupId",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.JoinByGroupIdToken",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.Leave",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.ParticipantsStateChanged",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.PlayerMicActivitySignalChange",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.PublishPause",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.SetMicDevice",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.StateChanged",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.SubscribePause",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.SubscribePauseAll",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "VoiceChatInternal.VoiceChatState",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Workspace.BreakJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Workspace.FilteringEnabled",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Workspace.InterpolationThrottling",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "Workspace.MakeJoints",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.FindPartOnRay",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.FindPartOnRayWithIgnoreList",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.FindPartOnRayWithWhitelist",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.FindPartsInRegion3",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.FindPartsInRegion3WithIgnoreList",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.FindPartsInRegion3WithWhiteList",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.IsRegion3Empty",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.IsRegion3EmptyWithIgnoreList",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.findPartOnRay",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WorldRoot.findPartsInRegion3",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WrapLayer.Puffiness",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WrapLayer.ShrinkFactor",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "WrapTarget.Stiffness",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "collectgarbage",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "delay",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "elapsedTime",
+   "code_block_candidates": 1,
+   "file_candidates": 1
+  },
+  {
+   "api": "getfenv",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "printidentity",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "setfenv",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "spawn",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "stats",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "table.foreach",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "table.foreachi",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "table.getn",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "version",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "wait",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  },
+  {
+   "api": "ypcall",
+   "code_block_candidates": 0,
+   "file_candidates": 0
+  }
+ ],
+ "matching_block_receipts": [
+  {
+   "path": "content/en-us/animation/graph-editor.md",
+   "file_sha256": "904451b1ef5cda08c32c2cdcc025612e53f2f161cd3dfe1345a1513d974975dd",
+   "first_code_line": 93,
+   "language": "lua",
+   "code_sha256": "19781cd08d2e35988ff53f907eda3eb2c037f3c5d1bee45cd4631cf12acf8ce0",
+   "api_candidates": [
+    "RunService.Stepped"
+   ]
+  },
+  {
+   "path": "content/en-us/art/characters/facial-animation/moods.md",
+   "file_sha256": "ce054ed5b6a2043ca1804084a9401693e728fae1930739279d194b7bc874bcc8",
+   "first_code_line": 99,
+   "language": "lua",
+   "code_sha256": "8fc07021903da81774a6fc18749996012686c2d3c46ff8bd025540ed7c8706d0",
+   "api_candidates": [
+    "Humanoid.ApplyDescription"
+   ]
+  },
+  {
+   "path": "content/en-us/characters/appearance.md",
+   "file_sha256": "dbb730f254edb13532f7408887e8ba3075418e378937dc0d6f968d6357c1fa10",
+   "first_code_line": 102,
+   "language": "lua",
+   "code_sha256": "07323b50bc27000dd798c363ac20032457327a52a216d5f587a177d159188ce4",
+   "api_candidates": [
+    "Players.GetHumanoidDescriptionFromOutfitId"
+   ]
+  },
+  {
+   "path": "content/en-us/characters/appearance.md",
+   "file_sha256": "dbb730f254edb13532f7408887e8ba3075418e378937dc0d6f968d6357c1fa10",
+   "first_code_line": 114,
+   "language": "lua",
+   "code_sha256": "2ffb690c60062e4f3445f62b5b0de037c58ed0f44f2d0a6b2297aca974ed2f2d",
+   "api_candidates": [
+    "Players.GetHumanoidDescriptionFromUserId"
+   ]
+  },
+  {
+   "path": "content/en-us/characters/appearance.md",
+   "file_sha256": "dbb730f254edb13532f7408887e8ba3075418e378937dc0d6f968d6357c1fa10",
+   "first_code_line": 172,
+   "language": "lua",
+   "code_sha256": "5e115b3bfed5706a989ae1f8f9a39946cc226348981bb3d16bd144fece24dc26",
+   "api_candidates": [
+    "Humanoid.ApplyDescription"
+   ]
+  },
+  {
+   "path": "content/en-us/characters/appearance.md",
+   "file_sha256": "dbb730f254edb13532f7408887e8ba3075418e378937dc0d6f968d6357c1fa10",
+   "first_code_line": 188,
+   "language": "lua",
+   "code_sha256": "bf21aac5dcecc91c89f5284b4c8cd40cdc6cd0739489db8f695b29fb66604afe",
+   "api_candidates": [
+    "Humanoid.ApplyDescription"
+   ]
+  },
+  {
+   "path": "content/en-us/characters/appearance.md",
+   "file_sha256": "dbb730f254edb13532f7408887e8ba3075418e378937dc0d6f968d6357c1fa10",
+   "first_code_line": 211,
+   "language": "lua",
+   "code_sha256": "5de4840e646c288e8d0b6364ef87d71f6b712c71881dcfc0605259385bc2ee99",
+   "api_candidates": [
+    "Player.LoadCharacterWithHumanoidDescription"
+   ]
+  },
+  {
+   "path": "content/en-us/characters/appearance.md",
+   "file_sha256": "dbb730f254edb13532f7408887e8ba3075418e378937dc0d6f968d6357c1fa10",
+   "first_code_line": 237,
+   "language": "lua",
+   "code_sha256": "b9ead336d18ab2db9e9534edb11dc299557c5855c8d3e8ececfc2c24eed1a959",
+   "api_candidates": [
+    "Player.LoadCharacterWithHumanoidDescription"
+   ]
+  },
+  {
+   "path": "content/en-us/characters/emotes.md",
+   "file_sha256": "5af42c5f48b55cac4397c2988b52be0b5331460561dcbd3b75a478b60b1a938f",
+   "first_code_line": 86,
+   "language": "lua",
+   "code_sha256": "f7b01ddc541c8f494247b51675fc47edb6fb43a73c4497b3ff6ce2003944bc31",
+   "api_candidates": [
+    "Humanoid.PlayEmote"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/cleanup-and-reset.md",
+   "file_sha256": "eff54a71d0edfec310b9e37c5a2a9ff10ea47bd12ac53f81762f08ab8ba0a8d8",
+   "first_code_line": 446,
+   "language": "lua",
+   "code_sha256": "81c090957a0d40acffcfd7cc04a54660a8b7246fe0ee290a3b52ee907d0c79d0",
+   "api_candidates": [
+    "Sound.stop"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/cleanup-and-reset.md",
+   "file_sha256": "eff54a71d0edfec310b9e37c5a2a9ff10ea47bd12ac53f81762f08ab8ba0a8d8",
+   "first_code_line": 531,
+   "language": "lua",
+   "code_sha256": "f2b79892fbcc7f930cd521bf8cc458b2a1c68f5ce899a2df5db4908cd6b32e9f",
+   "api_candidates": [
+    "Instance.remove",
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/creating-a-gui.md",
+   "file_sha256": "cc11ceb709a58ba11e5fced44b53e98c0e63a4173d83ebf13d22b3f089efe04d",
+   "first_code_line": 316,
+   "language": "lua",
+   "code_sha256": "830b1f6faa75f529f82ef8bce5436700eb80f379fa48ae0236b57ef1514efe2f",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/ending-matches.md",
+   "file_sha256": "5ec495a205cf383aea95cbf95553bb1c56fb4fcf4198bda5dbce28b57c8c1c48",
+   "first_code_line": 42,
+   "language": "lua",
+   "code_sha256": "2b15ed37b82625b7e38561368bf0880dbc1030c9b61c2d202076845bd1e1292b",
+   "api_candidates": [
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/ending-matches.md",
+   "file_sha256": "5ec495a205cf383aea95cbf95553bb1c56fb4fcf4198bda5dbce28b57c8c1c48",
+   "first_code_line": 298,
+   "language": "lua",
+   "code_sha256": "59d608b9c6237ef2b09b5cd67749081fad5a354acfa3651d62697fdcc72533ef",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/ending-matches.md",
+   "file_sha256": "5ec495a205cf383aea95cbf95553bb1c56fb4fcf4198bda5dbce28b57c8c1c48",
+   "first_code_line": 339,
+   "language": "lua",
+   "code_sha256": "b4919752c1bf19972cc97da6ee01da6f94af6dce822006789ae5e96719e5afaa",
+   "api_candidates": [
+    "Sound.stop"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/ending-matches.md",
+   "file_sha256": "5ec495a205cf383aea95cbf95553bb1c56fb4fcf4198bda5dbce28b57c8c1c48",
+   "first_code_line": 380,
+   "language": "lua",
+   "code_sha256": "7530628eda26dfa2525b94ee16bf576a5fddbb89a2536a9ad7959400892dfe5c",
+   "api_candidates": [
+    "Instance.remove",
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/ending-matches.md",
+   "file_sha256": "5ec495a205cf383aea95cbf95553bb1c56fb4fcf4198bda5dbce28b57c8c1c48",
+   "first_code_line": 525,
+   "language": "lua",
+   "code_sha256": "462b05e6d5e491e61ce78390ec83541c45a951413c05611a68ed431532a8c927",
+   "api_candidates": [
+    "Sound.stop"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/managing-players.md",
+   "file_sha256": "3c63887fc0ee0d8f6eeb3f86080ec635b2d830d4d41c43e89e0b15976d3c5a21",
+   "first_code_line": 179,
+   "language": "lua",
+   "code_sha256": "7c4bd29f8bb80007e4b8584b87a87fda342800a9c3bd749fbf532fdc9c0bff4c",
+   "api_candidates": [
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/managing-players.md",
+   "file_sha256": "3c63887fc0ee0d8f6eeb3f86080ec635b2d830d4d41c43e89e0b15976d3c5a21",
+   "first_code_line": 242,
+   "language": "lua",
+   "code_sha256": "9b5a8192453ead5180bb3a514dfbd5a00a55aad24fadda5465ec77326b22e779",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/managing-players.md",
+   "file_sha256": "3c63887fc0ee0d8f6eeb3f86080ec635b2d830d4d41c43e89e0b15976d3c5a21",
+   "first_code_line": 298,
+   "language": "lua",
+   "code_sha256": "3c1390d04d33d62af1987244cbc998941e050f600627ebd9fef708edae9f5990",
+   "api_candidates": [
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/managing-players.md",
+   "file_sha256": "3c63887fc0ee0d8f6eeb3f86080ec635b2d830d4d41c43e89e0b15976d3c5a21",
+   "first_code_line": 313,
+   "language": "lua",
+   "code_sha256": "c94adfd0f853e65ce68665b20b19deb63dcf67eb036244c413721828d8160e4d",
+   "api_candidates": [
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/managing-players.md",
+   "file_sha256": "3c63887fc0ee0d8f6eeb3f86080ec635b2d830d4d41c43e89e0b15976d3c5a21",
+   "first_code_line": 378,
+   "language": "lua",
+   "code_sha256": "7a101d5771947a8a59e303e30c3a352a8b3150f60067cc3673c2e173e00b733a",
+   "api_candidates": [
+    "Instance.remove",
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/education/battle-royale-series/timers-and-events.md",
+   "file_sha256": "47db1c20d184838dad1b1530d28b217d1f675ffdef8b46ae5149d601ebf9dc73",
+   "first_code_line": 87,
+   "language": "lua",
+   "code_sha256": "d7cfe54b0db1250ef99d7719f1173c86f53208b1efc85ee0ae29f6bcf308cd4d",
+   "api_candidates": [
+    "Sound.stop"
+   ]
+  },
+  {
+   "path": "content/en-us/luau/luau-csharp-comparison.md",
+   "file_sha256": "c50a045cc376a0e49b5322b27a0d4df89348cc954e7cce3accf140c7556dd1a2",
+   "first_code_line": 197,
+   "language": "lua",
+   "code_sha256": "07178ca312ebe654a64f9c3642f4d15cfbf683961a1052a760d70641dd8ad55a",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/luau/metatables.md",
+   "file_sha256": "d7274adca68c8c024440d22135120cdfc60dfc9c3764a02e015b0520061ee9ad",
+   "first_code_line": 387,
+   "language": "lua",
+   "code_sha256": "4f5475d270064c82a00704dbdf92758061cdbc20cdd1b6decc27754c1b7c0db0",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/luau/metatables.md",
+   "file_sha256": "d7274adca68c8c024440d22135120cdfc60dfc9c3764a02e015b0520061ee9ad",
+   "first_code_line": 448,
+   "language": "lua",
+   "code_sha256": "b02ea675b9cbda65cdf38c43bcb0b0d8c25dfdf80daa35fdaff3c6499ea26fdf",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/luau/stacks.md",
+   "file_sha256": "63b3560bfbb3ae8e78880d27d7cb46bdf2a09d5bc9426aa2ce28a847206fe3fb",
+   "first_code_line": 17,
+   "language": "lua",
+   "code_sha256": "071419ffee7bde1da74861aef67e4cd18de8ee16b40039d607c1eebe45835fa4",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/luau/tables.md",
+   "file_sha256": "7a92cb0f1e97cd9ef447b20dd17381865b79ae038224b5d5a119deaa5e495cf4",
+   "first_code_line": 115,
+   "language": "lua",
+   "code_sha256": "776a7d5b42cc0e6b33669a466408c5968530aac02284c298f3bc5a8214546fc2",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/luau/tables.md",
+   "file_sha256": "7a92cb0f1e97cd9ef447b20dd17381865b79ae038224b5d5a119deaa5e495cf4",
+   "first_code_line": 267,
+   "language": "lua",
+   "code_sha256": "b75c7388cf4185a01257d3cfdebf3a087afb7f5a13af563baf5e21639bb68081",
+   "api_candidates": [
+    "Instance.clone"
+   ]
+  },
+  {
+   "path": "content/en-us/luau/tables.md",
+   "file_sha256": "7a92cb0f1e97cd9ef447b20dd17381865b79ae038224b5d5a119deaa5e495cf4",
+   "first_code_line": 281,
+   "language": "lua",
+   "code_sha256": "58e8ffde6ae681c929b3338721e180c746e5b8037982cb45318447699c3e485d",
+   "api_candidates": [
+    "Instance.clone"
+   ]
+  },
+  {
+   "path": "content/en-us/performance-optimization/microprofiler/use-microprofiler.md",
+   "file_sha256": "5d20cbabf95ed22c9a9ad7c63948dcdb4ae441a120894612239f54c9cb770d4d",
+   "first_code_line": 55,
+   "language": "lua",
+   "code_sha256": "d9ef8f4178a4b771397f0501817ae10cc46306bd2122fa8d67327f1f4d07e24b",
+   "api_candidates": [
+    "RunService.Stepped"
+   ]
+  },
+  {
+   "path": "content/en-us/players/avatar-editor.md",
+   "file_sha256": "00930002cc8b4544a1b80c6f510a1e3410a2d979f1879bea8ce0ba2470108e90",
+   "first_code_line": 48,
+   "language": "lua",
+   "code_sha256": "c9a864e4ec5cf5d1e20e7cbd5c069e0f18bda2be47622a268b82839951718ec2",
+   "api_candidates": [
+    "AvatarEditorService.GetInventory"
+   ]
+  },
+  {
+   "path": "content/en-us/players/avatar-editor.md",
+   "file_sha256": "00930002cc8b4544a1b80c6f510a1e3410a2d979f1879bea8ce0ba2470108e90",
+   "first_code_line": 127,
+   "language": "lua",
+   "code_sha256": "2871bc90171f7ac1a6967fa476831a5c0fc0d1e3899be5333f39724e38d09945",
+   "api_candidates": [
+    "AvatarEditorService.SearchCatalog"
+   ]
+  },
+  {
+   "path": "content/en-us/players/users.md",
+   "file_sha256": "b07f80491a3f4d297336985755d6e9239172931f4a07082a9e1f5aaf8a578ee4",
+   "first_code_line": 138,
+   "language": "lua",
+   "code_sha256": "434f37fcdc85e71de7d29e1093c8c172b2d74b435f33beb0f17f48631d190942",
+   "api_candidates": [
+    "BadgeService.AwardBadge"
+   ]
+  },
+  {
+   "path": "content/en-us/production/monetization/developer-products.md",
+   "file_sha256": "e649d11387275a75695f131086c8a89b09c555be755c0e11057247c89861cd69",
+   "first_code_line": 73,
+   "language": "lua",
+   "code_sha256": "e4e04fd9deca33877478acbee772727003fca0601b2eae1250065e8eab2c518d",
+   "api_candidates": [
+    "MarketplaceService.GetProductInfo"
+   ]
+  },
+  {
+   "path": "content/en-us/production/monetization/developer-products.md",
+   "file_sha256": "e649d11387275a75695f131086c8a89b09c555be755c0e11057247c89861cd69",
+   "first_code_line": 133,
+   "language": "lua",
+   "code_sha256": "111ec86101a119daa0e52c6dc5d6649cd71534001b0430b53cb874eb124e597e",
+   "api_candidates": [
+    "MarketplaceService.GetProductInfo"
+   ]
+  },
+  {
+   "path": "content/en-us/production/monetization/engagement-based-payouts.md",
+   "file_sha256": "78be046f00035bf83c05531e94f722ae0bd3a4a13541f726076d1f5e56046c40",
+   "first_code_line": 74,
+   "language": "lua",
+   "code_sha256": "867d0b5081082f69ba3ea169abfd7532edd75980af61db31bcb4987a30fefe44",
+   "api_candidates": [
+    "MarketplaceService.PromptPremiumPurchase"
+   ]
+  },
+  {
+   "path": "content/en-us/production/monetization/passes.md",
+   "file_sha256": "65b507473c299175c60e3b50ebe5bf3e4a7f14b6eaba98b2baf322f67a36e4c0",
+   "first_code_line": 78,
+   "language": "lua",
+   "code_sha256": "6bb96a8a7b795dc18e01ee08248c078017779e8f55d77998497f8db022ec929f",
+   "api_candidates": [
+    "MarketplaceService.GetProductInfo"
+   ]
+  },
+  {
+   "path": "content/en-us/production/monetization/price-optimization.md",
+   "file_sha256": "d6e9b993eaacc3618bc849033b94bc1549e799c0ab1fcaccc84393e3fb6e5165",
+   "first_code_line": 47,
+   "language": "lua",
+   "code_sha256": "063104dcf2f75750743343693a28df139e29a56fb82e6bfe1686f85133e0499e",
+   "api_candidates": [
+    "MarketplaceService.GetProductInfo"
+   ]
+  },
+  {
+   "path": "content/en-us/projects/server-authority/techniques.md",
+   "file_sha256": "ed60d71a6e60e1d53878fc17405ce9d7c44f28345ac88880594f658c8b910b45",
+   "first_code_line": 83,
+   "language": "lua",
+   "code_sha256": "98af58a5fae6bfcc56b1754a8c9964d29c28b87d98422bbafd6e437d35a18e41",
+   "api_candidates": [
+    "RunService.RenderStepped"
+   ]
+  },
+  {
+   "path": "content/en-us/projects/server-authority/techniques.md",
+   "file_sha256": "ed60d71a6e60e1d53878fc17405ce9d7c44f28345ac88880594f658c8b910b45",
+   "first_code_line": 155,
+   "language": "lua",
+   "code_sha256": "3a1892e02a97ccfe93dff61206c4ab534aafa6e2e5aedd328c49be4850bc6ba6",
+   "api_candidates": [
+    "Sound.isPlaying"
+   ]
+  },
+  {
+   "path": "content/en-us/projects/server-authority/techniques.md",
+   "file_sha256": "ed60d71a6e60e1d53878fc17405ce9d7c44f28345ac88880594f658c8b910b45",
+   "first_code_line": 285,
+   "language": "lua",
+   "code_sha256": "1eec3e44382a6c911d9f9f1ac500c65d4322cb1f396f7bf5a5787ca5f5bced5a",
+   "api_candidates": [
+    "RunService.RenderStepped"
+   ]
+  },
+  {
+   "path": "content/en-us/resources/beyond-the-dark/user-interface.md",
+   "file_sha256": "0a1e921a167db4d40bc843e2b2cb6337360fe0f0ef2ba85bf6c1b48d01346bef",
+   "first_code_line": 67,
+   "language": "lua",
+   "code_sha256": "9e4fc98be929374c7291795f441457249c684e8e530e22bad4cb6a2b947462fb",
+   "api_candidates": [
+    "GuiObject.TweenPosition",
+    "Model.move",
+    "delay"
+   ]
+  },
+  {
+   "path": "content/en-us/scripting/scheduler.md",
+   "file_sha256": "f62f56b718d0a6bb035e077da8133603eae31c17879af6be2f19cc4f35bb5097",
+   "first_code_line": 87,
+   "language": "lua",
+   "code_sha256": "40fb089e16157993962025d2ddb636c459878d3f50f0fae89372e1abe6e5fb7a",
+   "api_candidates": [
+    "elapsedTime"
+   ]
+  },
+  {
+   "path": "content/en-us/studio/build-studio-widgets.md",
+   "file_sha256": "1042d68a858fd0b444321a0535b7ce976b72a9e2348598541c095d60550e2d71",
+   "first_code_line": 70,
+   "language": "lua",
+   "code_sha256": "6cd6c7033ac01f8cac554013043edbba6cc5e11a80621b08fc0977e8a054a77f",
+   "api_candidates": [
+    "Plugin.CreateDockWidgetPluginGui"
+   ]
+  },
+  {
+   "path": "content/en-us/studio/build-studio-widgets.md",
+   "file_sha256": "1042d68a858fd0b444321a0535b7ce976b72a9e2348598541c095d60550e2d71",
+   "first_code_line": 95,
+   "language": "lua",
+   "code_sha256": "65d217124b6ab73f1a2960e242c8abfcf2fb3dad8654bae25319384b8933f489",
+   "api_candidates": [
+    "Plugin.CreateDockWidgetPluginGui"
+   ]
+  },
+  {
+   "path": "content/en-us/studio/build-studio-widgets.md",
+   "file_sha256": "1042d68a858fd0b444321a0535b7ce976b72a9e2348598541c095d60550e2d71",
+   "first_code_line": 295,
+   "language": "lua",
+   "code_sha256": "0d8f988b5768581c5e44e39d4ef6aff560748786341ae21ab9565f0af5caab9f",
+   "api_candidates": [
+    "Plugin.CreateDockWidgetPluginGui"
+   ]
+  },
+  {
+   "path": "content/en-us/studio/build-studio-widgets.md",
+   "file_sha256": "1042d68a858fd0b444321a0535b7ce976b72a9e2348598541c095d60550e2d71",
+   "first_code_line": 341,
+   "language": "lua",
+   "code_sha256": "7103642c4e12176effb6718321fdbf3d4f95c724a15b4b3737878e4e0cf32541",
+   "api_candidates": [
+    "Plugin.CreateDockWidgetPluginGui"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/curriculums/gameplay-scripting/spawn-respawn.md",
+   "file_sha256": "daf9abf730e070ce129d2adf1b542dfe3e632747b88af91ab9d92aded61a4ef7",
+   "first_code_line": 64,
+   "language": "lua",
+   "code_sha256": "eaece2e1334b95f5cf24d36abc7588c4114951d44f250b77dc9ab113ff2fb43c",
+   "api_candidates": [
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/curriculums/gameplay-scripting/spawn-respawn.md",
+   "file_sha256": "daf9abf730e070ce129d2adf1b542dfe3e632747b88af91ab9d92aded61a4ef7",
+   "first_code_line": 93,
+   "language": "lua",
+   "code_sha256": "baa203c21f51b4af4720f7e33c35b0d704611832aca263b53c15ffeff1e10d92",
+   "api_candidates": [
+    "Player.LoadCharacter"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/curriculums/user-interface-design/implement-designs-in-studio.md",
+   "file_sha256": "634095409ea568277a219549f47f9fcae25724dd0449990bc23526d1eb5818b7",
+   "first_code_line": 1997,
+   "language": "lua",
+   "code_sha256": "561cef51987ba9ff7d47629342552a1e8891090e95b86e5e1c71c5bdeba8e8e2",
+   "api_candidates": [
+    "RunService.RenderStepped"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/fundamentals/coding-4/nested-loops.md",
+   "file_sha256": "cd2842a99e974e249b5f7b26f23355218230375dab579ed3ffd3b07b502f3254",
+   "first_code_line": 323,
+   "language": "lua",
+   "code_sha256": "2449ea2d746561e06fd47195af8adf0ed6c776768b1b82aab3b939ecf8446981",
+   "api_candidates": [
+    "Model.SetPrimaryPartCFrame"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/fundamentals/coding-5/make-changes-to-arrays.md",
+   "file_sha256": "c16926641a21a97da55552fc49c79e996c4f6e91fa82959afe5146f887f0fd97",
+   "first_code_line": 53,
+   "language": "lua",
+   "code_sha256": "146f1f73a1c81033eab55f8ed6fbdb25ae0b704ca82b4352eeeb4681f025f22b",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/fundamentals/coding-5/make-changes-to-arrays.md",
+   "file_sha256": "c16926641a21a97da55552fc49c79e996c4f6e91fa82959afe5146f887f0fd97",
+   "first_code_line": 73,
+   "language": "lua",
+   "code_sha256": "7f3842b1ed6065f1381dca6a43d802d8cdc4c1c4aca4d489bfee89dcb25971dd",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/fundamentals/coding-5/make-changes-to-arrays.md",
+   "file_sha256": "c16926641a21a97da55552fc49c79e996c4f6e91fa82959afe5146f887f0fd97",
+   "first_code_line": 160,
+   "language": "lua",
+   "code_sha256": "be3b9ab36242f0ee862aa5541a693105f15bd2ab5d0825c95dbb2c684ee2b88e",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/fundamentals/coding-5/make-changes-to-arrays.md",
+   "file_sha256": "c16926641a21a97da55552fc49c79e996c4f6e91fa82959afe5146f887f0fd97",
+   "first_code_line": 208,
+   "language": "lua",
+   "code_sha256": "763a37f18f42601566b932262a1591b5c34711e2cd1e40a88f54bd7ab0f85d15",
+   "api_candidates": [
+    "Instance.remove"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/use-case-tutorials/data-storage/create-leaderboard.md",
+   "file_sha256": "83c36928e3c32a76ba769b367a7ecad8278e362ba651a7596ab4ce7cb5799415",
+   "first_code_line": 269,
+   "language": "lua",
+   "code_sha256": "04d6b06577b931a4cda1f2dbb763c6fa74b64854c254adff4867d406d5eddadc",
+   "api_candidates": [
+    "Team.Score"
+   ]
+  },
+  {
+   "path": "content/en-us/tutorials/use-case-tutorials/data-storage/create-leaderboard.md",
+   "file_sha256": "83c36928e3c32a76ba769b367a7ecad8278e362ba651a7596ab4ce7cb5799415",
+   "first_code_line": 555,
+   "language": "lua",
+   "code_sha256": "dfaac9def7bd0022a5a2473b74d1c0d1b8d3d61ee8f95c28fed0f374b3bccd4e",
+   "api_candidates": [
+    "Team.Score"
+   ]
+  }
+ ]
+}

@@ -64,6 +64,18 @@ export class SqliteD1 {
 		});
 		return make([]);
 	}
+	async batch(statements) {
+		this.db.exec("BEGIN");
+		try {
+			const results = [];
+			for (const statement of statements) results.push(await statement.run());
+			this.db.exec("COMMIT");
+			return results;
+		} catch (error) {
+			this.db.exec("ROLLBACK");
+			throw error;
+		}
+	}
 }
 
 export function makeEnv(overrides = {}) {
@@ -87,9 +99,23 @@ export const google = {
 	profile: { sub: "1001", email: "dev@example.com", email_verified: true, name: "Dev" },
 	calls: [],
 };
+export const stripe = { calls: [], subscriptions: new Map(), failure: false };
 const realFetch = globalThis.fetch;
 globalThis.fetch = async (input, init) => {
 	const url = typeof input === "string" ? input : input.url;
+	if (url.startsWith("https://api.stripe.com/v1/")) {
+		const path = url.slice("https://api.stripe.com/v1/".length);
+		const fields = Object.fromEntries(new URLSearchParams(init?.body));
+		stripe.calls.push({ path, method: init?.method ?? "GET", fields });
+		if (stripe.failure) return Response.json({ error: { message: "upstream secret should never be shown" } }, { status: 500 });
+		if (path === "customers") return Response.json({ id: "cus_test" });
+		if (path === "checkout/sessions") return Response.json({ id: "cs_test", url: "https://checkout.stripe.com/test" });
+		if (path === "checkout/sessions/cs_test/expire") return Response.json({ id: "cs_test", status: "expired" });
+		if (path.startsWith("subscriptions?")) return Response.json({ data: [] });
+		if (path === "billing_portal/sessions") return Response.json({ url: "https://billing.stripe.com/test" });
+		if (path.startsWith("subscriptions/")) return Response.json(stripe.subscriptions.get(path.split("/")[1]) ?? {}, { status: stripe.subscriptions.has(path.split("/")[1]) ? 200 : 404 });
+		throw new Error(`Unhandled Stripe request: ${path}`);
+	}
 	if (url.startsWith("https://oauth2.googleapis.com/token")) {
 		const body = new URLSearchParams(init.body);
 		google.calls.push(Object.fromEntries(body));
@@ -175,6 +201,16 @@ export async function googleSignIn(browser, returnTo = "/account", code = "good-
 	assert.equal(googleUrl.origin + googleUrl.pathname, "https://accounts.google.com/o/oauth2/v2/auth");
 	const state = googleUrl.searchParams.get("state");
 	return browser.fetch(`/auth/google/callback?code=${code}&state=${encodeURIComponent(state)}`);
+}
+
+export async function accountForm(browser, path, fields = {}) {
+	const account = await browser.fetch("/account");
+	assert.equal(account.status, 200, await account.clone().text());
+	const html = await account.text();
+	const csrf = /name="csrf" value="([^"]+)"/.exec(html)[1];
+	const operation_id = /name="operation_id" value="([^"]+)"/.exec(html)[1];
+	return browser.fetch(path, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded", Origin: ORIGIN },
+		body: new URLSearchParams({ csrf, operation_id, ...fields }) });
 }
 
 /** Full claude.ai-style flow. Returns { accessToken, refreshToken, clientId, browser }. */

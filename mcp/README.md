@@ -2,10 +2,14 @@
 
 A remote, read-only MCP server, behind Google sign-in + OAuth, that serves the tk-luau-roblox skill to any MCP client: engine API facts, legacy-code
 scan, ranked search over the handbook/recipes/references, and the documents themselves. It is stateless
-(Streamable HTTP, JSON responses, no sessions, no Durable Objects, no storage) and built **from this repository on
+(Streamable HTTP, JSON responses, no MCP sessions, no Durable Objects; account state uses D1/KV) and built **from this repository on
 every deploy**, so a push to GitHub updates the server.
 
-Endpoint: `https://luaumcp.tklabsskill.site/mcp` · site: `/` · build info: `/health`.
+Endpoint: `https://luaumcp.tklabsskill.site/mcp` · account: `/account` · build info: `/health` · readiness: `/ready`.
+
+**Launch and provider setup: [LAUNCH_RU.md](LAUNCH_RU.md).** Google and Stripe are implemented; no provider credentials are committed.
+Before Google is configured, `AUTH_MODE=auto` preserves public MCP access. Once Google is configured, OAuth/API keys and account quotas apply.
+The static site checks `/api/config` and enables sign-in/payment controls automatically.
 
 ## Tools
 | Tool | Same as | Does |
@@ -30,7 +34,7 @@ byte-identical to the Python tools (enforced by `test/parity.test.mjs`).
    - **Deploy command**: `npx wrangler deploy` (default)
    - **Production branch**: the branch you merge into (`main`). Until this folder is on `main`, point it at the
      branch that has it, or builds fail with "no wrangler config".
-3. Nothing else to configure: `wrangler.jsonc` runs `node scripts/build-data.mjs` before bundling, which reads
+3. KV and D1 bindings are provisioned by Wrangler (the build token needs their permissions). No provider secrets are needed for public preview. The Google/Stripe setup is in the launch guide. Data build: `wrangler.jsonc` runs `node scripts/build-data.mjs` before bundling, which reads
    `../api`, `../references` and the Markdown from the same checkout. No Python is needed in the build.
 4. Open `https://luaumcp.tklabsskill.site/health` — it reports skill version, commit, engine API version and
    counts. That commit should match the one you pushed.
@@ -56,13 +60,13 @@ in Claude, the client discovers this server (401 → `/.well-known/oauth-protect
 opens `/authorize`. There the user signs in **with Google** on this site (`/login`), sees a consent page (client
 name, where access goes) and approves; Claude receives a token and calls `/mcp` with it.
 
-- Users live in D1 (`users`, created on first use: Google `sub`, email, subscription status/period end).
+- Users, usage, API-key hashes, subscription state and webhook receipts live in D1 (tables created idempotently on first use).
 - `ACCESS_POLICY` (var): `registered` — any signed-in Google user with a verified email; `subscribed` — an active
   subscription (`subscription_status = active` and period end in the future). The check runs at consent **and on
   every MCP request**, so ending a subscription cuts access immediately (tokens alone are not enough).
-- Until a payment provider is wired, grant subscriptions manually:
+- Stripe Checkout/Portal and verified webhooks manage subscriptions. For a deliberate manual administrative override:
   `curl -X POST https://<host>/admin/subscription -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" -d '{"email":"user@gmail.com","status":"active","period_end":1767225600000}'`
-  (`period_end` in ms; omit for no end; `status: none|canceled` revokes). A payment webhook will call the same update.
+  (`period_end` in ms; omit for no end; `status: none|canceled` revokes). Stripe webhooks use their own verified, idempotent subscription reconciliation.
 - Site: `/` (sign in), `/account` (status + MCP URL), `/logout`, `/health` (JSON build info).
 - Security: PKCE everywhere (Claude ↔ server and server ↔ Google), Google `state` bound to the browser by a cookie,
   consent page can't be framed or replayed from another browser, unverified Google emails are refused, sessions are
@@ -75,7 +79,8 @@ name, where access goes) and approves; Claude receives a token and calls `/mcp` 
    - Credentials → Create OAuth client ID → Web application → Authorized redirect URI:
      `https://luaumcp.tklabsskill.site/auth/google/callback`.
 2. **Secrets** — Cloudflare → Workers → `luauaiskill` → Settings → Variables and Secrets (type *Secret*):
-   `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `CONSENT_SECRET` (40+ random chars), `ADMIN_TOKEN` (random).
+   `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`. Optional independent consent signing key: `CONSENT_SECRET` (32+ random chars).
+   `ADMIN_TOKEN` is optional and only needed for manual administrative subscription grants. Stripe secrets are listed in the launch guide.
 3. **Storage** — `wrangler.jsonc` declares `OAUTH_KV` and D1 `DB` without ids; wrangler creates them on the first
    deploy. If the Workers Builds token can't create resources, create a KV namespace and a D1 database
    (`luauaiskill-users`) in the dashboard and add their ids to both `wrangler.jsonc` files.
@@ -93,3 +98,14 @@ npx wrangler dev    # http://127.0.0.1:8787/mcp ; inspect with: npx @modelcontex
 ```
 `src/generated/` is produced by `scripts/build-data.mjs` and gitignored. Change behaviour in `src/*.ts`, keep it in
 step with the Python tool it mirrors, and let the parity test prove it.
+
+## Production protections
+
+The free plan allows 100 successful tool calls/resource reads per UTC week; paid subscriptions remove that weekly limit.
+Both plans have a 60 calls/minute allowance. One conditional D1 upsert reserves the allowance across concurrent requests.
+Failed calls are refunded. Account API keys share the same allowance; keys and OAuth connections can be revoked in the account.
+Cloudflare rate limiting protects registration, login, demo and MCP requests by IP. Request bodies are bounded; account forms use CSRF protection.
+Provider secrets and submitted code are never logged by the request error handler.
+
+`node scripts/smoke.mjs <endpoint>` checks all seven tools with the official MCP SDK (optional `MCP_API_KEY` environment variable).
+`npm test` additionally exercises OAuth, subscriptions, parallel quotas, keys, CSRF and payment-webhook failures with stubbed providers.

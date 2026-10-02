@@ -3,18 +3,24 @@
 	// Root-level entry for Cloudflare Workers Builds when the project's Root directory is "/".
 	// The Worker lives in mcp/ (see mcp/README.md); mcp/wrangler.jsonc is the same Worker for Root directory "mcp".
 	"name": "luauaiskill",
+	"account_id": "4779193285f4b7225a52cfb160958347",
 	"main": "mcp/src/index.ts",
 	"compatibility_date": "2026-09-01",
 	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
 	// Installs the Worker's dependencies and rebuilds mcp/src/generated/data.js from this checkout before bundling.
-	"build": { "command": "npm ci --prefix mcp --no-audit --no-fund && node mcp/scripts/build-data.mjs" },
+	"build": { "command": "npm ci --prefix mcp --no-audit --no-fund && node mcp/scripts/build-data.mjs", "watch_dir": ["api", "handbook", "recipes", "references", "tracks"] },
 	// OAuth grants/tokens + site sessions. No id: wrangler provisions the namespace on first deploy.
 	"kv_namespaces": [{ "binding": "OAUTH_KV" }],
 	// Registered users and subscription status (table created on first use).
 	"d1_databases": [{ "binding": "DB", "database_name": "luauaiskill-users" }],
+	"ratelimits": [{ "name": "EDGE_RATE_LIMITER", "namespace_id": "47791901", "simple": { "limit": 120, "period": 60 } }],
 	"vars": {
 		// Public origin users and MCP clients see; OAuth metadata and redirect URIs are built from it.
 		"PUBLIC_URL": "https://luaumcp.tklabsskill.site",
+		"SITE_URL": "https://luauaiskill-site.pages.dev",
+		"AUTH_MODE": "auto",
+		"FREE_CALLS_PER_WEEK": "100",
+		"CALLS_PER_MINUTE": "60",
 		// "registered": any signed-in Google user may use the MCP. "subscribed": an active subscription is required.
 		"ACCESS_POLICY": "registered"
 	},

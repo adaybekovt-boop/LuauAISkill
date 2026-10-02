@@ -11,7 +11,8 @@
     "test": "npm run build:test && node --test test/*.test.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "dry-run": "wrangler deploy --dry-run --outdir .wrangler-dry"
+    "dry-run": "wrangler deploy --dry-run --outdir .wrangler-dry",
+    "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
     "@cfworker/json-schema": "^4.1.1",

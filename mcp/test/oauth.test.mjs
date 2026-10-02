@@ -1,7 +1,7 @@
 // OAuth gate: discovery, Google sign-in on the site, consent, token, and per-request access policy.
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { Browser, ORIGIN, REDIRECT, authorizeUrl, connect, ctx, google, googleSignIn, makeEnv, pkce, registerClient, rpc, worker } from "./harness.mjs";
+import { Browser, ORIGIN, REDIRECT, accountForm, authorizeUrl, connect, ctx, google, googleSignIn, makeEnv, pkce, registerClient, rpc, worker } from "./harness.mjs";
 
 test("unauthenticated /mcp gets a Bearer challenge pointing at resource metadata", async () => {
 	const env = makeEnv();
@@ -172,7 +172,7 @@ test("site pages: landing, account, health, logout", async () => {
 	assert.match(html, /https:\/\/mcp\.example\.test\/mcp/);
 	res = await browser.fetch("/health");
 	assert.equal((await res.json()).auth, "oauth (Google sign-in)");
-	res = await browser.fetch("/logout", { method: "POST" });
+	res = await accountForm(browser, "/logout");
 	assert.equal(res.status, 302);
 	res = await browser.fetch("/account");
 	assert.equal(res.status, 302);

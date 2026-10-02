@@ -24,11 +24,37 @@ const SCHEMA = [
 		disabled INTEGER NOT NULL DEFAULT 0
 	)`,
 	"CREATE INDEX IF NOT EXISTS users_email ON users (email)",
+	`CREATE TABLE IF NOT EXISTS usage (
+		user_id TEXT PRIMARY KEY, week INTEGER NOT NULL, week_calls INTEGER NOT NULL,
+		minute INTEGER NOT NULL, minute_calls INTEGER NOT NULL
+	)`,
+	`CREATE TABLE IF NOT EXISTS billing_customers (
+		user_id TEXT PRIMARY KEY, customer_id TEXT NOT NULL UNIQUE
+	)`,
+	`CREATE TABLE IF NOT EXISTS billing_subscriptions (
+		subscription_id TEXT PRIMARY KEY, user_id TEXT NOT NULL, customer_id TEXT NOT NULL,
+		status TEXT NOT NULL, period_end INTEGER, amount INTEGER NOT NULL, currency TEXT NOT NULL,
+		cancel_at_period_end INTEGER NOT NULL DEFAULT 0, updated_at INTEGER NOT NULL
+	)`,
+	"CREATE INDEX IF NOT EXISTS billing_subscriptions_user ON billing_subscriptions (user_id)",
+	`CREATE TABLE IF NOT EXISTS billing_events (
+		id TEXT PRIMARY KEY, created_at INTEGER NOT NULL
+	)`,
+	`CREATE TABLE IF NOT EXISTS billing_checkout (
+		user_id TEXT PRIMARY KEY, operation_id TEXT NOT NULL, amount INTEGER NOT NULL,
+		expires_at INTEGER NOT NULL, session_id TEXT
+	)`,
+	`CREATE TABLE IF NOT EXISTS revoked_grants (id TEXT NOT NULL, user_id TEXT NOT NULL, PRIMARY KEY(id, user_id))`,
+	`CREATE TABLE IF NOT EXISTS api_keys (
+		id TEXT PRIMARY KEY, user_id TEXT NOT NULL, token_hash TEXT NOT NULL UNIQUE,
+		label TEXT NOT NULL, created_at INTEGER NOT NULL, expires_at INTEGER NOT NULL, revoked_at INTEGER
+	)`,
+	"CREATE INDEX IF NOT EXISTS api_keys_user ON api_keys (user_id)",
 ];
 
 const ready = new WeakMap<D1Database, Promise<void>>();
 
-function ensureSchema(db: D1Database): Promise<void> {
+export function ensureSchema(db: D1Database): Promise<void> {
 	let p = ready.get(db);
 	if (!p) {
 		p = (async () => {
@@ -74,12 +100,15 @@ export async function setSubscriptionByEmail(
 }
 
 export function policy(env: Env): "registered" | "subscribed" {
+	if (env.ACCESS_POLICY && env.ACCESS_POLICY !== "registered" && env.ACCESS_POLICY !== "subscribed") {
+		throw new Error("Invalid ACCESS_POLICY");
+	}
 	return env.ACCESS_POLICY === "subscribed" ? "subscribed" : "registered";
 }
 
 export function hasActiveSubscription(user: User, now = Date.now()): boolean {
 	return (
-		user.subscription_status === "active" && (user.subscription_period_end === null || user.subscription_period_end > now)
+		["active", "trialing"].includes(user.subscription_status) && (user.subscription_period_end === null || user.subscription_period_end > now)
 	);
 }
 

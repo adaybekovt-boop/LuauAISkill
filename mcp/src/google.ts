@@ -1,7 +1,7 @@
 // "Sign in with Google" (OpenID Connect, authorization code + PKCE). The login state lives in KV under the hash of
 // a random `state`, and the same state is pinned to the browser by a short-lived cookie, so a callback can't be
 // replayed from another browser.
-import { publicUrl, type Env } from "./env";
+import { googleReady, publicUrl, type Env } from "./env";
 import { cookie, randomToken, readCookie, sha256 } from "./session";
 
 export const GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth";
@@ -18,8 +18,11 @@ export interface GoogleProfile {
 
 /** Only same-site relative paths may be returned to (no open redirect). */
 export function safeReturnTo(value: string | null): string {
-	if (!value || !value.startsWith("/") || value.startsWith("//") || value.includes("\\")) return "/account";
-	return value;
+	if (!value || !value.startsWith("/") || value.startsWith("//") || /[\\\u0000-\u0020]/.test(value)) return "/account";
+	try {
+		const parsed = new URL(value, "https://local.invalid");
+		return parsed.origin === "https://local.invalid" ? parsed.pathname + parsed.search : "/account";
+	} catch { return "/account"; }
 }
 
 async function s256(verifier: string): Promise<string> {
@@ -32,10 +35,10 @@ export function redirectUri(env: Env): string {
 }
 
 export async function startGoogleLogin(env: Env, returnTo: string): Promise<Response> {
+	if (!googleReady(env)) return new Response("Google sign-in is not configured yet. MCP is available in public preview.", { status: 503 });
 	const state = randomToken();
 	const verifier = randomToken(48);
-	const nonce = randomToken(16);
-	await env.OAUTH_KV.put(`google-login:${await sha256(state)}`, JSON.stringify({ verifier, nonce, returnTo }), {
+	await env.OAUTH_KV.put(`google-login:${await sha256(state)}`, JSON.stringify({ verifier, returnTo: safeReturnTo(returnTo) }), {
 		expirationTtl: LOGIN_TTL,
 	});
 	const url = new URL(GOOGLE_AUTH_URL);
@@ -45,7 +48,6 @@ export async function startGoogleLogin(env: Env, returnTo: string): Promise<Resp
 		response_type: "code",
 		scope: "openid email profile",
 		state,
-		nonce,
 		code_challenge: await s256(verifier),
 		code_challenge_method: "S256",
 		prompt: "select_account",
@@ -72,7 +74,7 @@ export async function finishGoogleLogin(
 	const raw = await env.OAUTH_KV.get(key);
 	if (!raw) throw new LoginError("Sign-in expired. Please try again.");
 	await env.OAUTH_KV.delete(key);
-	const { verifier, returnTo } = JSON.parse(raw) as { verifier: string; nonce: string; returnTo: string };
+	const { verifier, returnTo } = JSON.parse(raw) as { verifier: string; returnTo: string };
 	const code = url.searchParams.get("code");
 	if (!code) throw new LoginError("Google did not return an authorization code.");
 
@@ -87,12 +89,14 @@ export async function finishGoogleLogin(
 			grant_type: "authorization_code",
 			code_verifier: verifier,
 		}),
+		signal: AbortSignal.timeout(10000),
 	});
 	if (!tokenRes.ok) throw new LoginError("Google rejected the sign-in. Please try again.");
 	const tokens = (await tokenRes.json()) as { access_token?: string };
 	if (!tokens.access_token) throw new LoginError("Google did not return an access token.");
 
-	const infoRes = await fetch(GOOGLE_USERINFO_URL, { headers: { Authorization: `Bearer ${tokens.access_token}` } });
+	// The profile is fetched directly from Google's authenticated userinfo endpoint; no unverified ID token is used.
+	const infoRes = await fetch(GOOGLE_USERINFO_URL, { headers: { Authorization: `Bearer ${tokens.access_token}` }, signal: AbortSignal.timeout(10000) });
 	if (!infoRes.ok) throw new LoginError("Could not read the Google profile.");
 	const info = (await infoRes.json()) as { sub?: string; email?: string; email_verified?: boolean; name?: string };
 	if (!info.sub || !info.email || info.email_verified !== true) {

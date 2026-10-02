@@ -50,3 +50,14 @@ export async function destroySession(env: Env, request: Request): Promise<string
 	if (token) await env.OAUTH_KV.delete(`site-session:${await sha256(token)}`);
 	return cookie(SESSION_COOKIE, "", 0);
 }
+
+export async function csrfToken(env: Env, request: Request): Promise<string> {
+	return sha256(`${env.CONSENT_SECRET}:${readCookie(request, SESSION_COOKIE) ?? ""}`);
+}
+
+export async function validCsrf(env: Env, request: Request, form: FormData): Promise<boolean> {
+	const origin = request.headers.get("Origin");
+	if (origin && origin !== new URL(env.PUBLIC_URL).origin) return false;
+	const supplied = form.get("csrf");
+	return typeof supplied === "string" && supplied === await csrfToken(env, request);
+}

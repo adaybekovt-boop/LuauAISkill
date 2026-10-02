@@ -25,8 +25,8 @@ byte-identical to the Python tools (enforced by `test/parity.test.mjs`).
 1. Cloudflare dashboard → Workers & Pages → Create → **Import a repository** → this repository.
 2. Build settings:
    - **Worker name**: `luauaiskill` — must equal `name` in `wrangler.jsonc` (change one or the other).
-   - **Root directory**: `mcp`
-   - **Build command**: `npm ci`
+   - **Root directory**: `mcp` with **Build command** `npm ci` — or leave Root directory `/` and Build command
+     empty: the repository-root `wrangler.jsonc` installs `mcp/` and builds the same Worker.
    - **Deploy command**: `npx wrangler deploy` (default)
    - **Production branch**: the branch you merge into (`main`). Until this folder is on `main`, point it at the
      branch that has it, or builds fail with "no wrangler config".

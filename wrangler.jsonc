@@ -1,0 +1,13 @@
+{
+	"$schema": "mcp/node_modules/wrangler/config-schema.json",
+	// Root-level entry for Cloudflare Workers Builds when the project's Root directory is "/".
+	// The Worker lives in mcp/ (see mcp/README.md); mcp/wrangler.jsonc is the same Worker for Root directory "mcp".
+	"name": "luauaiskill",
+	"main": "mcp/src/index.ts",
+	"compatibility_date": "2026-09-01",
+	"compatibility_flags": ["nodejs_compat"],
+	// Installs the Worker's dependencies and rebuilds mcp/src/generated/data.js from this checkout before bundling.
+	"build": { "command": "npm ci --prefix mcp --no-audit --no-fund && node mcp/scripts/build-data.mjs" },
+	"observability": { "enabled": true },
+	"workers_dev": true
+}

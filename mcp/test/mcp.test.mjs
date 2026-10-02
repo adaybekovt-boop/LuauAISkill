@@ -127,6 +127,26 @@ test("optional bearer token guards /mcp", async () => {
 	assert.equal(r.status, 200);
 });
 
+test("MCP also answers at the bare origin", async () => {
+	const res = await worker.fetch(
+		new Request(`${BASE}/`, {
+			method: "POST",
+			headers: { "Content-Type": "application/json", Accept: ACCEPT },
+			body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "t", version: "0" } } }),
+		}),
+		{},
+	);
+	assert.equal(res.status, 200);
+	assert.equal((await res.json()).result.serverInfo.name, "luau-skill");
+});
+
+test("OAuth discovery says there is no authorization server", async () => {
+	for (const path of ["/.well-known/oauth-protected-resource", "/.well-known/oauth-authorization-server", "/.well-known/oauth-protected-resource/mcp"]) {
+		const res = await worker.fetch(new Request(`${BASE}${path}`), {});
+		assert.equal(res.status, 404, path);
+	}
+});
+
 test("health endpoint and GET /mcp", async () => {
 	let res = await worker.fetch(new Request(`${BASE}/`), {});
 	const info = await res.json();

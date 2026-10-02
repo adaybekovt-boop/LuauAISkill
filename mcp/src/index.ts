@@ -77,6 +77,8 @@ export default {
 		const url = new URL(request.url);
 		if (request.method === "OPTIONS") return withCors(new Response(null, { status: 204 }));
 		if (url.pathname === "/mcp" || url.pathname === "/mcp/") return handleMcp(request, env);
+		// Clients are often given the bare origin: accept MCP POSTs at "/" too (GET "/" stays the info page).
+		if (url.pathname === "/" && request.method === "POST") return handleMcp(request, env);
 		if (url.pathname === "/" || url.pathname === "/health") {
 			return json({
 				name: SERVER_NAME,

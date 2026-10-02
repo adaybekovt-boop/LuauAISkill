@@ -2,7 +2,7 @@
  "summary": {
   "markdown": {
    "EMBEDDED": 71,
-   "TYPECHECKED": 45
+   "TYPECHECKED": 49
   },
   "examples": {
    "TYPECHECKED": 70
@@ -584,7 +584,7 @@
   },
   {
    "file": "handbook/roblox/05-server-authority.md",
-   "line": 36,
+   "line": 39,
    "status": "TYPECHECKED",
    "errors": []
   },
@@ -692,7 +692,31 @@
   },
   {
    "file": "handbook/roblox/23-tooling-testing.md",
-   "line": 73,
+   "line": 79,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/24-studio-mcp-testing.md",
+   "line": 63,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/25-monetization.md",
+   "line": 35,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/26-chat-leaderboards.md",
+   "line": 28,
+   "status": "TYPECHECKED",
+   "errors": []
+  },
+  {
+   "file": "handbook/roblox/26-chat-leaderboards.md",
+   "line": 75,
    "status": "TYPECHECKED",
    "errors": []
   },

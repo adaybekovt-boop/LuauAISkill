@@ -2,7 +2,7 @@
 
 Use for: remotes, replication, anti-exploit, validation, server authority mode.
 Load: [networking](../handbook/roblox/03-networking.md) → [security](../handbook/roblox/04-security.md) →
-[server authority (beta)](../handbook/roblox/05-server-authority.md) if the project uses it → [limits](../references/limits.md).
+[server authority mode](../handbook/roblox/05-server-authority.md) if the project uses it → [limits](../references/limits.md).
 
 Non-negotiables
 - Client sends intent; server validates (rate → types/ranges incl. NaN/inf → state → distance/LOS → act).

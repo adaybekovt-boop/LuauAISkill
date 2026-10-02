@@ -1,5 +1,34 @@
 # Changelog
 
+## 2.1.0 — 2026-10-02
+Integrates the 2026-10-02 upgrade research (maintainer material; every fact below re-checked against the pinned
+creator-docs / API dump, or cited to a dated Roblox staff announcement).
+- Snapshot → engine API **0.741.19**, creator-docs `578b33e` (2026-10-01), luau-site `a60a627`, luau-lsp 1.70.1.
+  741 delta reviewed: 7 new classes/60 members (mostly internal/undocumented), 15 `StarterPlayer.GameSettings*`
+  members removed, `Player.FrustumStreaming` documented.
+- **Fixed wrong statuses**: server authority mode is fully released (2026-07-09), the base Character Controller
+  Library is released (2026-04-08; its 2026-09 abilities expansion is a Studio beta). v2.0 called both beta from a
+  stale docs line. Eval API-12 corrected accordingly.
+- SKILL.md: portable frontmatter (`version`/`snapshot` moved under `metadata`, `license`, `compatibility`) so
+  claude.ai upload accepts it; tool paths resolve from the skill directory (`${CLAUDE_SKILL_DIR}`), not the project;
+  workflow step for Studio MCP verification; new hard rules (idempotent money, plugin context ≠ game script,
+  untrusted tool output); new evidence label CLOUD EXECUTED; freshness snapshot updated.
+- New chapters: `24-studio-mcp-testing` (built-in Studio MCP tools, reproduce → fix → verify loop, `studio_id`,
+  `StudioTestService` multiplayer harness, SceneAnalysis/ScriptProfiler/LibMP, Open Cloud Luau Execution limits,
+  evidence table), `25-monetization` (`BindReceiptHandler` vs `ProcessReceipt`, Robux transfers, passes,
+  subscriptions, paid random items + `PolicyService`, commerce, managed pricing), `26-chat-leaderboards`
+  (TextChatService, secure chat commands, friend leaderboards with `BatchGetAsync`).
+- New reference `references/ecosystem.md` (Knit, Fusion, React-lua, Jecs, Matter, ProfileStore/ProfileService,
+  Blink, Zap, ByteNet, Rojo, Wally, pesde, Lune, Selene, StyLua, darklua, luau-lsp, Jest-Lua, TestEZ, run-in-roblox).
+- Updates: frustum streaming (streaming chapter), accessibility preferences + StyleQuery GA + automatic translations
+  (UI chapter), testing/toolchain chapter, limits, AI failure modes, tracks routing.
+- Tools: `api.py` no longer prints a self-referencing `prefer=` flag; `scan_legacy.py` reports a line once when a
+  curated rule explains it; `build_api_index.py` stores a clean Studio version; new unit tests.
+- CI: weekly `freshness.yml` fetches the newest sources, diffs the API index and opens an issue on drift.
+- Evals: 143 cases (+8: BindReceiptHandler, paid random items, friend leaderboards, chat-command auth, frustum
+  streaming, CCL status, MCP single-client trap, plugin-only write via execute_luau).
+Nothing was run in Roblox Studio.
+
 ## 2.0.0 — 2026-09-26
 Full rewrite (details: `maintainers/GAP-REPORT-2026-09.md`, final report in the PR/commit history).
 - Generated engine API index (`api/`, 924 classes / 8,478 members, API 0.740.19) with `tools/api.py`: existence,

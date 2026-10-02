@@ -114,7 +114,9 @@ def main() -> int:
     dump = json.loads(DUMP.read_text(encoding="utf-8"))
     lock = json.loads((ROOT / "sources" / "lock.json").read_text(encoding="utf-8"))
     version = (SRC / "api-dump" / "version.txt").read_text().strip()
-    studio_version = (REF / "STUDIO_VERSION").read_text().strip() if (REF / "STUDIO_VERSION").exists() else ""
+    # STUDIO_VERSION holds "<version>\n<build hash>"; keep only the version line.
+    studio_version = ((REF / "STUDIO_VERSION").read_text().strip().splitlines() or [""])[0] \
+        if (REF / "STUDIO_VERSION").exists() else ""
 
     # Official YAML: summaries, deprecation messages, simulationAccess.
     docs: dict[str, dict] = {}

@@ -56,10 +56,13 @@ def main() -> int:
         for n, line in enumerate(path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
             if line.lstrip().startswith("--"):
                 continue
-            for rid, rx, fix in rules:
-                if rx.search(line):
-                    findings.append({"file": path.relative_to(base).as_posix(), "line": n, "rule": rid,
-                                     "code": line.strip()[:160], "suggest": fix})
+            hits = [(rid, fix) for rid, rx, fix in rules if rx.search(line)]
+            # A curated catalog rule already explains the line; the generic API-deprecation hit would repeat it.
+            if any(not rid.startswith("api-deprecated:") for rid, _ in hits):
+                hits = [(rid, fix) for rid, fix in hits if not rid.startswith("api-deprecated:")]
+            for rid, fix in hits:
+                findings.append({"file": path.relative_to(base).as_posix(), "line": n, "rule": rid,
+                                 "code": line.strip()[:160], "suggest": fix})
     if a.json:
         print(json.dumps({"read_only": True, "findings": findings}, indent=1))
     else:

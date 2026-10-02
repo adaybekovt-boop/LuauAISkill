@@ -51,7 +51,7 @@ remotes and physics you let them own.
 
 ## Movement and physics ownership
 - Characters are client-owned: the server can't prevent a client from moving its character anywhere; it can only
-  detect and correct. Official guidance: no universal solution; engine server authority mode (beta) is the real
+  detect and correct. Official guidance: no universal solution; engine server authority mode (released 2026-07) is the real
   fix ([05](05-server-authority.md)).
 - Practical detection: sample root position on the server at 2–10 Hz; compare horizontal (XZ) displacement vs max
   legal speed × dt with a **leaky bucket** so lag bursts don't trigger; exempt legit teleports (set a server flag

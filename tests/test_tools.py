@@ -117,6 +117,22 @@ class LegacyCatalog(unittest.TestCase):
         for expected in ("anim-humanoid-load", "sched-spawn", "query-findpartonray", "phys-bodymovers", "async-group"):
             self.assertIn(expected, hits)
 
+    def test_scanner_reports_each_line_once_per_explanation(self):
+        # A line covered by a curated rule must not also get the generic api-deprecated finding.
+        out = subprocess.run([sys.executable, str(ROOT / "tools/scan_legacy.py"), "--json",
+                              str(ROOT / "evals/fixtures/legacy-grab-bag.luau")], capture_output=True, text=True, check=True)
+        findings = json.loads(out.stdout)["findings"]
+        curated = {f["line"] for f in findings if not f["rule"].startswith("api-deprecated:")}
+        generic = {f["line"] for f in findings if f["rule"].startswith("api-deprecated:")}
+        self.assertTrue(curated)
+        self.assertEqual(curated & generic, set())
+
+    def test_api_flags_hide_self_referencing_prefer(self):
+        out = subprocess.run([sys.executable, str(ROOT / "tools/api.py"), "Humanoid.LoadAnimation"],
+                             capture_output=True, text=True, check=True).stdout
+        self.assertIn("DEPRECATED", out)
+        self.assertNotIn("prefer=LoadAnimation", out)
+
 
 class LightingPresets(unittest.TestCase):
     SECTION_CLASS = {"lighting": "Lighting", "atmosphere": "Atmosphere", "colorCorrection": "ColorCorrectionEffect",

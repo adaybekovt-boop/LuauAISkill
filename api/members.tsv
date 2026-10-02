@@ -173,6 +173,8 @@ AnimationClipProvider	GetAnimationClipAsync	Function	(assetId: ContentId) -> Ani
 AnimationClipProvider	GetAnimationClipById	Function	(assetId: int64, useCache: bool) -> AnimationClip	PluginSecurity	PluginSecurity	Unsafe	deprecated,prefer=GetAnimationClipAsync,cap=Animation
 AnimationClipProvider	GetAnimationNodeDefinition	Function	(type: AnimationNodeType) -> Dictionary	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Animation
 AnimationClipProvider	GetAnimationNodeTypes	Function	() -> Array	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Animation
+AnimationClipProvider	GetAnimationValueNodeDefinition	Function	(type: AnimationValueNodeType) -> Dictionary	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Animation
+AnimationClipProvider	GetAnimationValueNodeTypes	Function	() -> Array	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Animation
 AnimationClipProvider	GetAnimations	Function	(userId: User) -> Instance	None	None	Unsafe	yields,deprecated,prefer=GetAnimationsAsync,cap=Animation
 AnimationClipProvider	GetAnimationsAsync	Function	(userId: User) -> Instance	None	None	Unsafe	yields,cap=Animation
 AnimationClipProvider	GetClipEvaluatorAsync	Function	(assetId: ContentId) -> ClipEvaluator	None	None	Unsafe	yields,cap=Animation
@@ -458,7 +460,7 @@ AssetImportService	StartSingleFileWatch	Function	(filePath: string) -> ()	Roblox
 AssetImportService	StartSingleMeshImport	Event	(fileName: string, assetId: int64)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 AssetImportService	StopSingleFileWatch	Function	(filePath: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 AssetImportService	UploadAssetFromContentAsync	Function	(content: string, createAssetRequest: Dictionary) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields,deprecated,prefer=UploadVersionedAssetFromContentAsync
-AssetImportService	UploadAssetFromPathAsync	Function	(filepath: string, createAssetRequest: Dictionary) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields,deprecated,prefer=UploadVersionedAssetFromPathAsync
+AssetImportService	UploadAssetFromPathAsync	Function	(filepath: string, createAssetRequest: Dictionary, progressCallback: Function? = nil) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields,deprecated,prefer=UploadVersionedAssetFromPathAsync
 AssetImportService	UploadVersionedAssetFromContentAsync	Function	(content: string, createAssetRequest: Dictionary, assetId: int64 = 0) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 AssetImportService	UploadVersionedAssetFromPathAsync	Function	(filepath: string, createAssetRequest: Dictionary, assetId: int64 = 0) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 AssetImportSession	ApplyPreset	Function	(preset: Dictionary) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
@@ -532,6 +534,7 @@ AssetService	CreateMeshPartAsync	Function	(meshContent: Content, options: Dictio
 AssetService	CreatePlaceAsync	Function	(placeName: string, templatePlaceID: int64, description: string = ) -> int64	None	None	Unsafe	yields,cap=AssetCreateUpdate
 AssetService	CreatePlaceInPlayerInventoryAsync	Function	(player: Instance, placeName: string, templatePlaceID: int64, description: string = ) -> int64	None	None	Unsafe	yields,cap=AssetCreateUpdate
 AssetService	CreateSurfaceAppearanceAsync	Function	(content: Dictionary) -> SurfaceAppearance	None	None	Unsafe	yields,cap=Basic
+AssetService	CreateTextContentAsync	Function	(text: string) -> Content	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 AssetService	CreateTextureAsync	Function	(content: Dictionary) -> Texture	None	None	Unsafe	yields,cap=Basic,undocumented
 AssetService	DeserializeInstance	Function	(serializedInstance: string) -> Instance	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 AssetService	GetAssetIdsForPackage	Function	(packageAssetId: int64) -> Array	None	None	Unsafe	yields,deprecated,prefer=GetAssetIdsForPackageAsync,cap=AssetRead
@@ -545,6 +548,7 @@ AssetService	LoadAssetAsync	Function	(assetId: int64) -> Instance	None	None	Unsa
 AssetService	OpenPublishResultModal	Event	(resultType: PromptCreatePlatformContentResult)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 AssetService	PromptCreatePlatformContentAsync	Function	(player: Player, object: Object, assetType: AssetType) -> Tuple	None	None	Unsafe	yields,cap=AssetCreateUpdate
 AssetService	PromptImportAnimationClipFromVideoAsync	Function	(player: Player, progressCallback: Function) -> Tuple	None	None	Unsafe	yields,cap=AssetManagement
+AssetService	ReadTextContentAsync	Function	(content: Content) -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 AssetService	SavePlaceAsync	Function	(requestParameters: Dictionary?) -> ()	None	None	Unsafe	yields,cap=AssetCreateUpdate
 AssetService	SearchAudio	Function	(searchParameters: AudioSearchParams) -> AudioPages	None	None	Unsafe	yields,deprecated,prefer=SearchAudioAsync,cap=AssetRead
 AssetService	SearchAudioAsync	Function	(searchParameters: AudioSearchParams) -> AudioPages	None	None	Unsafe	yields,cap=AssetRead
@@ -834,6 +838,7 @@ AudioSpeechToText	Enabled	Property	bool	None	None	ReadSafe	cap=Audio
 AudioSpeechToText	GetConnectedWires	Function	(pin: string) -> Instances	None	None	Unsafe	cap=Audio
 AudioSpeechToText	GetInputPins	Function	() -> Array	None	None	Unsafe	cap=Audio
 AudioSpeechToText	GetOutputPins	Function	() -> Array	None	None	Unsafe	cap=Audio
+AudioSpeechToText	Locale	Property	string	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,cap=Audio
 AudioSpeechToText	Text	Property	string	None	None	ReadSafe	cap=Audio
 AudioSpeechToText	VoiceDetected	Property	bool	None	None	ReadSafe	readonly,notreplicated,cap=Audio
 AudioSpeechToText	VoiceDetectedOverride	Property	bool	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,cap=Audio
@@ -1070,6 +1075,7 @@ AvatarClothingRules	CustomSweaterAccessoryId	Property	int64	RobloxScriptSecurity
 AvatarClothingRules	CustomTShirtAccessoryEnabled	Property	bool	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	
 AvatarClothingRules	CustomTShirtAccessoryId	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	
 AvatarClothingRules	LimitBounds	Property	Vector3	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	
+AvatarClothingRules	WillLimitLayeredAccessoryAsync	Function	(humanoid: Humanoid, accessory: Accoutrement) -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 AvatarCollisionRules	CollisionMode	Property	AvatarSettingsCollisionMode	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	
 AvatarCollisionRules	HitAndTouchDetectionMode	Property	AvatarSettingsHitAndTouchDetectionMode	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	
 AvatarCollisionRules	LegacyCollisionMode	Property	AvatarSettingsLegacyCollisionMode	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	
@@ -2286,7 +2292,7 @@ Decal	EmissiveMaskContent	Property	Content	None	PluginSecurity	ReadSafe	cap=Basi
 Decal	EmissiveStrength	Property	float	None	None	ReadSafe	cap=Basic,undocumented
 Decal	EmissiveTint	Property	Color3	None	None	ReadSafe	cap=Basic,undocumented
 Decal	LocalTransparencyModifier	Property	float	None	None	ReadSafe	hidden,notreplicated,cap=Basic
-Decal	LocalizedTextureContent	Property	Content	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	readonly,notreplicated,cap=Basic
+Decal	LocalizedTextureContent	Property	Content	RobloxScriptSecurity	NotAccessibleSecurity	ReadSafe	notreplicated,cap=Basic
 Decal	MetalnessMap	Property	ContentId	PluginSecurity	PluginSecurity	ReadSafe	hidden,cap=Basic
 Decal	MetalnessMapContent	Property	Content	None	PluginSecurity	ReadSafe	cap=Basic
 Decal	NormalMap	Property	ContentId	PluginSecurity	PluginSecurity	ReadSafe	hidden,cap=Basic
@@ -2638,6 +2644,7 @@ ExperienceNotificationService	InvokeOptInPromptClosed	Function	() -> ()	RobloxSc
 ExperienceNotificationService	OptInPromptClosed	Event	()	None	None	Unsafe	cap=Players|Social
 ExperienceNotificationService	PromptOptIn	Function	() -> ()	None	None	Unsafe	cap=Players|Social
 ExperienceNotificationService	PromptOptInRequested	Event	()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players|Social
+ExperienceService	ConsumePendingExperienceLeaveWithReason	Function	() -> Dictionary	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	ExecuteCrossExperienceCall	Function	(callId: string, params: Dictionary, successCallback: Function, errorCallback: Function) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	GetFollowUserId	Function	() -> int64	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	GetPendingJoinAttempt	Function	() -> Dictionary	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
@@ -2646,6 +2653,7 @@ ExperienceService	GetQueuePosition	Function	() -> int	RobloxScriptSecurity	Roblo
 ExperienceService	LaunchExperience	Function	(params: Dictionary) -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	LaunchExperienceFromSource	Function	(params: Dictionary, source: string) -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	LaunchExperienceFromSourceWithCallback	Function	(params: Dictionary, source: string, callback: Function) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ExperienceService	LeaveExperienceWithReason	Function	(reason: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	OnCrossExperienceStarted	Event	(type: string, params: Dictionary)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	OnCrossExperienceStopped	Event	(type: string, params: Dictionary)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ExperienceService	OnNewJoinAttempt	Event	(params: Dictionary)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
@@ -2850,6 +2858,20 @@ FriendService	FriendsUpdated	Event	(friendData: Array)	RobloxScriptSecurity	Robl
 FriendService	GetPlatformFriends	Function	() -> Array	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 FriendService	RemoteFriendEventSignal	Event	(userId: int64, userId: int64, event: FriendRequestEvent)	RobloxSecurity	RobloxSecurity	Unsafe	hidden
 FriendService	RemoteFriendStatusSignal	Event	(userId: int64, userId: int64, status: FriendStatus)	RobloxSecurity	RobloxSecurity	Unsafe	hidden
+FriendsCallingInstance	CallId	Property	string	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingInstance	ConversationId	Property	int64	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingInstance	EndReason	Property	FriendsCallingEndReason	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingInstance	InitiatorUserId	Property	int64	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingInstance	IsDeafened	Property	bool	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingInstance	Phase	Property	FriendsCallingPhase	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingInstance	Volume	Property	float	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingParticipant	Error	Property	FriendsCallingParticipantErrors	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingParticipant	IsLocalMuted	Property	bool	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingParticipant	IsSpeaking	Property	bool	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingParticipant	LeaveReason	Property	FriendsCallingParticipantLeaveReason	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingParticipant	Status	Property	FriendsCallingParticipantStatus	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingParticipant	UserId	Property	int64	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
+FriendsCallingParticipant	Volume	Property	float	RobloxSecurity	RobloxSecurity	ReadSafe	readonly,notreplicated
 FunctionalTest	AllowSleep	Property	bool	None	None	ReadSafe	hidden,notreplicated,notscriptable
 FunctionalTest	Description	Property	string	None	None	ReadSafe	
 FunctionalTest	Error	Function	(message: string = ) -> ()	None	None	Unsafe	
@@ -3207,6 +3229,7 @@ HeightmapImporterService	CancelImportHeightmap	Function	() -> ()	RobloxScriptSec
 HeightmapImporterService	ColormapHasUnknownPixels	Event	()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 HeightmapImporterService	GetHeightmapPreviewAsync	Function	(heightmapAssetId: ContentId) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 HeightmapImporterService	ImportHeightmap	Function	(region: Region3, heightmapAssetId: ContentId, colormapAssetId: ContentId, defaultMaterial: Material) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
+HeightmapImporterService	ImportHeightmapWithMaterialSlotsAsync	Function	(region: Region3, heightmapAssetId: ContentId, colormapAssetId: ContentId, defaultMaterialIndex: int) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 HeightmapImporterService	IsValidColormap	Function	(colormapAssetId: ContentId) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 HeightmapImporterService	IsValidHeightmap	Function	(heightmapAssetId: ContentId) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 HeightmapImporterService	ProgressUpdate	Event	(progressRatio: float, operation: string)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
@@ -3639,7 +3662,7 @@ ImageButton	ImageRectOffset	Property	Vector2	None	None	ReadSafe	cap=UI
 ImageButton	ImageRectSize	Property	Vector2	None	None	ReadSafe	cap=UI
 ImageButton	ImageTransparency	Property	float	None	None	ReadSafe	cap=UI
 ImageButton	IsLoaded	Property	bool	None	None	ReadSafe	readonly,notreplicated,cap=UI
-ImageButton	LocalizedImageContent	Property	Content	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	readonly,notreplicated,cap=UI
+ImageButton	LocalizedImageContent	Property	Content	RobloxScriptSecurity	NotAccessibleSecurity	ReadSafe	notreplicated,cap=UI
 ImageButton	PressedImage	Property	ContentId	None	None	ReadSafe	cap=UI
 ImageButton	PressedImageContent	Property	Content	None	None	ReadSafe	cap=UI
 ImageButton	ResampleMode	Property	ResamplerMode	None	None	ReadSafe	cap=UI
@@ -3659,7 +3682,7 @@ ImageLabel	ImageRectOffset	Property	Vector2	None	None	ReadSafe	cap=UI
 ImageLabel	ImageRectSize	Property	Vector2	None	None	ReadSafe	cap=UI
 ImageLabel	ImageTransparency	Property	float	None	None	ReadSafe	cap=UI
 ImageLabel	IsLoaded	Property	bool	None	None	ReadSafe	readonly,notreplicated,cap=UI
-ImageLabel	LocalizedImageContent	Property	Content	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	readonly,notreplicated,cap=UI
+ImageLabel	LocalizedImageContent	Property	Content	RobloxScriptSecurity	NotAccessibleSecurity	ReadSafe	notreplicated,cap=UI
 ImageLabel	ResampleMode	Property	ResamplerMode	None	None	ReadSafe	cap=UI
 ImageLabel	ScaleType	Property	ScaleType	None	None	ReadSafe	cap=UI
 ImageLabel	SetEnableContentImageSizeChangedEvents	Function	(enabled: bool) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=UI
@@ -4171,6 +4194,7 @@ MarketplaceService	PromptBulkPurchaseFinished	Event	(player: Instance, status: M
 MarketplaceService	PromptBulkPurchaseRefreshed	Event	(player: Instance, status: MarketplaceBulkPurchasePromptStatus, response: Dictionary)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 MarketplaceService	PromptBulkPurchaseRequested	Event	(player: Instance, displayData: Array, orderRequest: Dictionary, purchaserRobuxBalance: int64, orderTotalRobux: int64, options: Dictionary)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 MarketplaceService	PromptBulkPurchaseRequestedV2	Event	(player: Instance, displayData: Array, orderRequest: Dictionary, purchaserRobuxBalance: int64, orderTotalRobux: int64, options: Dictionary, discountInformation: Dictionary)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+MarketplaceService	PromptBulkPurchaseRequestedV3	Event	(player: Instance, status: MarketplaceBulkPurchasePromptStatus, response: Dictionary)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 MarketplaceService	PromptBundlePurchase	Function	(player: Instance, bundleId: int64) -> ()	None	None	Unsafe	cap=PromptExternalPurchase
 MarketplaceService	PromptBundlePurchaseFinished	Event	(player: Instance, bundleId: int64, wasPurchased: bool)	None	None	Unsafe	cap=PromptExternalPurchase
 MarketplaceService	PromptBundlePurchaseRequested	Event	(player: Instance, bundleId: int64)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
@@ -4584,7 +4608,10 @@ NotificationService	RobloxEventReceived	Event	(eventData: Map)	RobloxScriptSecur
 NotificationService	ScheduleNotification	Function	(userId: int64, alertId: int, alertMsg: string, minutesToFire: int) -> ()	LocalUserSecurity	LocalUserSecurity	Unsafe	cap=Players
 NotificationService	SelectedTheme	Property	string	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	notreplicated,cap=Players
 NotificationService	SubscribeToRccEventNamespace	Function	(eventNamespace: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
+NotificationService	SubscribeToTopic	Function	(token: string, replaceToken: string = ) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
 NotificationService	SwitchedToAppShellFeature	Function	(appShellFeature: AppShellFeature) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
+NotificationService	TopicNotificationReceived	Event	(eventData: Map)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
+NotificationService	UnsubscribeFromTopic	Function	(token: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
 NumberPose	Value	Property	double	None	None	ReadSafe	cap=Animation
 NumberValue	Changed	Event	(value: double)	None	None	Unsafe	
 NumberValue	Value	Property	double	None	None	ReadSafe	sim
@@ -4951,13 +4978,14 @@ Player	DistanceFromCharacter	Function	(point: Vector3) -> float	None	None	Unsafe
 Player	FollowUserId	Property	int64	None	None	ReadSafe	readonly,notreplicated,cap=Players
 Player	FollowUserIdReplicated	Property	int64	None	None	ReadSafe	hidden,notscriptable,cap=Players
 Player	FriendStatusChanged	Event	(player: Player, friendStatus: FriendStatus)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
-Player	FrustumStreaming	Property	FrustumStreamingMode	None	None	ReadSafe	cap=Players,undocumented
+Player	FrustumStreaming	Property	FrustumStreamingMode	None	None	ReadSafe	cap=Players
 Player	GameplayPaused	Property	bool	None	NotAccessibleSecurity	ReadSafe	hidden,cap=Players
 Player	GetBlockListInitialized	Function	() -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
 Player	GetCameraState	Function	() -> Dictionary	None	None	Safe	customluastate,sim,cap=Players
 Player	GetCanManageAsync	Function	() -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields,cap=Players
 Player	GetData	Function	() -> PlayerData	None	None	Unsafe	cap=Players,undocumented
 Player	GetFriendStatus	Function	(player: Player) -> FriendStatus	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Players
+Player	GetFriendsInServerAsync	Function	() -> Array	None	None	Unsafe	yields,cap=Players|Social,undocumented
 Player	GetFriendsInUniverseAsync	Function	() -> Array	None	None	Unsafe	yields,cap=Players|Social,undocumented
 Player	GetFriendsOnline	Function	(maxFriends: int = 200) -> Array	None	None	Unsafe	yields,deprecated,prefer=GetFriendsOnlineAsync,cap=Players|Social
 Player	GetFriendsOnlineAsync	Function	(maxFriends: int = 200) -> Array	None	None	Unsafe	yields,cap=Players|Social
@@ -5405,6 +5433,29 @@ ProceduralModel	GenerationError	Property	string	None	None	ReadSafe	readonly,notr
 ProceduralModel	Generator	Property	ModuleScript	None	None	ReadSafe	cap=Basic
 ProceduralModel	Size	Property	Vector3	None	None	ReadSafe	cap=Basic
 ProceduralModel	WaitForGenerationAsync	Function	() -> bool	None	None	Unsafe	yields,cap=Basic
+ProjectService	ContentMap	Property	NetAssetRef	RobloxSecurity	RobloxSecurity	ReadSafe	hidden,notscriptable
+ProjectService	ContentMapCreateFolderRequested	Event	(operationId: int64, path: string, dependencyOperationIds: Array)	RobloxSecurity	RobloxSecurity	Unsafe	hidden
+ProjectService	ContentMapMoveRequested	Event	(operationId: int64, fromPath: string, toPath: string, dependencyOperationIds: Array)	RobloxSecurity	RobloxSecurity	Unsafe	hidden
+ProjectService	ContentMapMutationResult	Event	(operationId: int64, result: ProjectServiceOperationResult, authoritativeRevision: int64)	RobloxSecurity	RobloxSecurity	Unsafe	hidden
+ProjectService	ContentMapRemovePathRequested	Event	(operationId: int64, path: string, dependencyOperationIds: Array)	RobloxSecurity	RobloxSecurity	Unsafe	hidden
+ProjectService	ContentMapSetContentRequested	Event	(operationId: int64, path: string, content: Content, dependencyOperationIds: Array)	RobloxSecurity	RobloxSecurity	Unsafe	hidden
+ProjectService	CreateFolder	Function	(path: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	EffectivePathsChanged	Event	()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	Exists	Function	(path: string) -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	GetContentMapMemoryBytes	Function	() -> int64	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	GetMetaDataAsync	Function	(path: string?) -> Array	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
+ProjectService	GetOrphanPathSubscribers	Function	() -> Array	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	GetPathSubscribers	Function	(path: string) -> Array	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	GetPaths	Function	(folderPath: string?) -> Array	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	Move	Function	(fromPath: string, toPath: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	PathAdded	Event	(path: string)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	PathChanged	Event	(path: string)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	PathMoved	Event	(fromPath: string, toPath: string)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	PathRemoved	Event	(path: string)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	RemovePath	Function	(path: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	RemovePathSubscribers	Function	(path: string) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	ResolveContent	Function	(path: string) -> Content	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+ProjectService	SetContent	Function	(path: string, value: Content) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ProximityPrompt	ActionText	Property	string	None	None	ReadSafe	cap=Input|UI
 ProximityPrompt	AutoLocalize	Property	bool	None	None	ReadSafe	cap=Input|UI
 ProximityPrompt	ButtonHoldBeganActionReplicated	Event	(player: Player)	RobloxSecurity	RobloxSecurity	Unsafe	hidden,cap=UI|Input
@@ -5737,6 +5788,7 @@ RunService	GetCoreScriptVersion	Function	() -> string	RobloxScriptSecurity	Roblo
 RunService	GetPhysicsStepId	Function	() -> int64	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Basic
 RunService	GetPredictionStatus	Function	(context: Instance) -> PredictionStatus	None	None	Unsafe	sim,cap=Basic
 RunService	GetRobloxClientChannel	Function	() -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Basic
+RunService	GetRobloxClientIxpEnrolledExperiments	Function	() -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Basic
 RunService	GetRobloxGuiFocused	Function	() -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Basic
 RunService	GetRobloxVersion	Function	() -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Basic
 RunService	GetTotalScriptPlusExecutionTime	Function	() -> double	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Basic
@@ -5899,6 +5951,7 @@ ScriptEditorService	GetScriptDocuments	Function	() -> Instances	PluginSecurity	P
 ScriptEditorService	IsAutocompleteCallbackRegistered	Function	(name: string) -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ScriptEditorService	IsScriptAnalysisCallbackRegistered	Function	(name: string) -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 ScriptEditorService	OpenScriptDocumentAsync	Function	(script: LuaSourceContainer, options: Dictionary = nil) -> Tuple	PluginSecurity	PluginSecurity	Unsafe	yields
+ScriptEditorService	OpenStringValueDocumentAsync	Function	(stringValue: StringValue, options: Dictionary = nil) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 ScriptEditorService	OpenTemporaryDocumentAsync	Function	(scriptId: string, initialContent: string) -> Tuple	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 ScriptEditorService	RegisterAutocompleteCallback	Function	(name: string, priority: int, callbackFunction: Function) -> ()	PluginSecurity	PluginSecurity	Unsafe	
 ScriptEditorService	RegisterScriptAnalysisCallback	Function	(name: string, priority: int, callbackFunction: Function) -> ()	PluginSecurity	PluginSecurity	Unsafe	
@@ -6358,23 +6411,8 @@ StarterPlayer	DevTouchCameraMovementMode	Property	DevTouchCameraMovementMode	Non
 StarterPlayer	DevTouchMovementMode	Property	DevTouchMovementMode	None	None	ReadSafe	cap=Players
 StarterPlayer	EnableDynamicHeads	Property	LoadDynamicHeads	None	None	ReadSafe	notscriptable,cap=Players
 StarterPlayer	EnableMouseLockOption	Property	bool	None	None	ReadSafe	cap=Players
-StarterPlayer	GameSettingsAssetIDFace	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDHead	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDLeftArm	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDLeftLeg	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDPants	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDRightArm	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDRightLeg	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDShirt	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDTeeShirt	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsAssetIDTorso	Property	int64	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
 StarterPlayer	GameSettingsAvatar	Property	GameAvatarType	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,cap=Players
 StarterPlayer	GameSettingsR15Collision	Property	R15CollisionType	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsScaleRangeBodyType	Property	NumberRange	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsScaleRangeHead	Property	NumberRange	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsScaleRangeHeight	Property	NumberRange	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsScaleRangeProportion	Property	NumberRange	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
-StarterPlayer	GameSettingsScaleRangeWidth	Property	NumberRange	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Players
 StarterPlayer	HealthDisplayDistance	Property	float	None	None	ReadSafe	cap=Players
 StarterPlayer	LoadCharacterAppearance	Property	bool	None	None	ReadSafe	cap=Players
 StarterPlayer	LoadCharacterLayeredClothing	Property	LoadCharacterLayeredClothing	None	None	ReadSafe	hidden,notscriptable,cap=Players
@@ -6663,6 +6701,7 @@ StudioAssetService	ResolveSaveInstanceToRoblox	Function	(requestId: string, asse
 StudioAssetService	SerializeInstances	Function	(instances: Instances, groupId: int64 = 0, isPackage: bool = false) -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 StudioAssetService	ShowSaveToRoblox	Function	(instances: Instances, assetType: Variant, hasSubsequent: bool = false) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 StudioAssetService	UpdatePublishedPackage	Function	(assetmetadata: Dictionary, rootInstance: Instance, isConvert: bool = false, addUndoWaypoint: bool = false) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+StudioAssetService	UploadAndInsertAssetForJobAsync	Function	(jobId: string) -> Instance	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 StudioAttachment	AutoHideParent	Property	bool	None	None	ReadSafe	undocumented
 StudioAttachment	IsArrowVisible	Property	bool	None	None	ReadSafe	undocumented
 StudioAttachment	Offset	Property	Vector2	None	None	ReadSafe	undocumented
@@ -6689,6 +6728,7 @@ StudioCameraService	ShowCameraSpeed	Event	(speed: float)	RobloxScriptSecurity	Ro
 StudioCameraService	UpdateUI	Event	(deltaTime: double)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 StudioCaptureService	CanCaptureScreenshot	Function	() -> bool	PluginSecurity	PluginSecurity	Unsafe	
 StudioCaptureService	CapturePluginGui	Function	(pluginGui: PluginGui) -> StudioScreenshotCapture	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
+StudioCaptureService	CapturePluginGuiByPluginGuiIdAsync	Function	(pluginGuiId: string) -> StudioScreenshotCapture	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	yields
 StudioCaptureService	CaptureScreenshot	Function	(screenshotOptions: Dictionary) -> StudioScreenshotCapture	PluginSecurity	PluginSecurity	Unsafe	
 StudioCaptureService	RequestScreenshotPermissionAsync	Function	() -> bool	PluginSecurity	PluginSecurity	Unsafe	yields
 StudioData	EnableScriptCollabByDefaultOnLoad	Property	bool	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden
@@ -7017,6 +7057,7 @@ Terrain	GetTerrainWireframe	Function	(cframe: CFrame, size: Vector3) -> Array	Ro
 Terrain	GetWaterCell	Function	(x: int, y: int, z: int) -> Tuple	None	None	Unsafe	deprecated,cap=Environment
 Terrain	GrassLength	Property	float	None	None	ReadSafe	notscriptable,cap=Environment
 Terrain	GridBackendReloadRequired	Event	(wouldUseNewGrid: bool)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Environment
+Terrain	IsMaterialSlotInvalid	Function	(slotIndex: int) -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Environment
 Terrain	IsSmooth	Property	bool	None	None	ReadSafe	readonly,notreplicated,deprecated,cap=Environment
 Terrain	IterateVoxelsAsync_beta	Function	(region: Region3, resolution: int, channelIds: Array) -> TerrainIterateOperation	None	None	Unsafe	customluastate,cap=Environment,undocumented
 Terrain	LastUsedModificationMethod	Property	TerrainAcquisitionMethod	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,notreplicated,cap=Environment
@@ -7108,6 +7149,7 @@ TestService	CreateAndSavePropertySet	Function	(source: Instance) -> string	Roblo
 TestService	CreateExtraAssetsFileFromPropertySet	Function	(psetFileName: string) -> string	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	
 TestService	Description	Property	string	None	None	ReadSafe	
 TestService	Done	Function	() -> ()	None	None	Unsafe	
+TestService	Enabled	Property	bool	None	None	Unsafe	readonly,notreplicated,undocumented
 TestService	Error	Function	(description: string, source: Instance = nil, line: int = 0) -> ()	None	None	Unsafe	
 TestService	ErrorCount	Property	int	None	None	ReadSafe	readonly,notreplicated
 TestService	ExecuteWithStudioRun	Property	bool	None	None	ReadSafe	
@@ -7259,6 +7301,7 @@ TextChatMessage	ChatActionType	Property	string	RobloxScriptSecurity	RobloxScript
 TextChatMessage	ChatWindowMessageProperties	Property	ChatWindowMessageProperties	None	None	ReadSafe	cap=Chat
 TextChatMessage	ForModeration	Property	bool	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,cap=Chat
 TextChatMessage	IsHiddenMessage	Property	bool	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,cap=Chat
+TextChatMessage	IsHistorical	Property	bool	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,cap=Chat
 TextChatMessage	MessageId	Property	string	None	None	ReadSafe	cap=Chat
 TextChatMessage	Metadata	Property	string	None	None	ReadSafe	cap=Chat
 TextChatMessage	OriginalText	Property	string	RobloxScriptSecurity	RobloxScriptSecurity	ReadSafe	hidden,cap=Chat
@@ -7344,6 +7387,7 @@ TextChatService	UniverseChatMessageReceived	Event	(textChatMessage: TextChatMess
 TextChatService	UserMessageIntentSent	Event	(userIntentMessage: TextChatMessage)	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Chat
 TextChatService	UserMessageIntentSentRemote	Event	(text: string, prefixText: string, metadata: string, messageId: string, textSource: TextSource, textChannel: TextChannel, timestamp: int64)	RobloxSecurity	RobloxSecurity	Unsafe	hidden,cap=Chat
 TextChatService	setModerationModeEnabled	Function	(userId: int64, enabled: bool) -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Chat
+TextDocument	TextContent	Property	Content	PluginSecurity	PluginSecurity	ReadSafe	undocumented
 TextFilterResult	GetChatForUserAsync	Function	(toUserId: int64) -> string	None	None	Unsafe	yields,deprecated,cap=UI
 TextFilterResult	GetNonChatStringForBroadcastAsync	Function	() -> string	None	None	Unsafe	yields,cap=UI
 TextFilterResult	GetNonChatStringForUserAsync	Function	(toUserId: int64) -> string	None	None	Unsafe	yields,cap=UI
@@ -8238,6 +8282,7 @@ VoiceChatService	getInternalSubscribePauseAll	Function	() -> bool	RobloxScriptSe
 VoiceChatService	getInternalVoiceChatApiVersion	Function	() -> int	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Audio|Chat
 VoiceChatService	isInternalPublishPaused	Function	() -> bool	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Audio|Chat
 VoiceChatService	joinVoice	Function	() -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Audio|Chat
+VoiceChatService	lastVoiceChatConnectivity	Function	() -> Dictionary	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Audio|Chat
 VoiceChatService	lastVoiceChatStats	Function	() -> Dictionary	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Audio|Chat
 VoiceChatService	leaveVoice	Function	(leaveReason: VoiceClientLeaveReasons = LuaInitiated) -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Audio|Chat
 VoiceChatService	notifyServerACSCleanup	Function	() -> ()	RobloxScriptSecurity	RobloxScriptSecurity	Unsafe	cap=Audio|Chat

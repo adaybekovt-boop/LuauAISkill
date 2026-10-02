@@ -46,6 +46,8 @@ and with the top bar/chat open. Text must stay ≥ ~14 px effective on phones.
   `GetNonChatStringForBroadcastAsync()` (everyone) or `GetNonChatStringForUserAsync(toUserId)` (specific user). pcall,
   length-cap before calling, never show raw text on failure (show nothing/placeholder). Chat itself goes through
   `TextChatService` (filtered automatically); `TextChatService.ChatVersion` is not writable by game scripts.
+- Players can enable **Automatic Translations** themselves (since 2026-06), even where you didn't; manual
+  translations still win; set `AutoLocalize = false` on names, codes and other literal text.
 - Localization: `AutoLocalize` on text objects + `LocalizationTable`s / automatic text capture; format numbers/dates
   per locale; leave 30–40 % extra width for German/Russian. Don't concatenate translated fragments — use keyed
   strings with parameters.
@@ -56,6 +58,11 @@ selectors, `"::UICorner"` modifiers, `"@Query"` queries), tokens and themes via 
 (`"$Token"` references), `StyleDerive` to inherit, `StyleLink` to apply a sheet to a ScreenGui tree (one sheet per
 tree), `StyleQuery` for conditional styles (screen size, input type). Great for themes (light/dark, colorblind)
 without per-frame property writes. It's not full browser CSS — only documented selectors/properties work.
+- `StyleQuery` is fully released (2026-05-11). Built-in `@` selectors need no `StyleQuery` instance:
+  `@ViewportDisplaySizeSmall|Medium|Large`, `@PreferredInputKeyboardAndMouse|Touch|Gamepad`,
+  `@ReducedMotionEnabledTrue|False`, `@PreferredTextSizeMedium|Large|Larger|Largest` (e.g. selector
+  `"@ReducedMotionEnabledTrue Frame"`). Custom queries can match size/aspect ratio; `StyleQuery.IsActive` is
+  read-only. Don't style the queried container in a way that flips its own condition (flicker loop).
 
 ## Input across devices
 - Buttons: use `GuiButton.Activated` (works for mouse, touch, gamepad select) — not `MouseButton1Click` alone.
@@ -86,8 +93,12 @@ without per-frame property writes. It's not full browser CSS — only documented
 - Avoid full-screen transparent overlays stacked (overdraw on mobile).
 
 ## Accessibility checklist
-- [ ] Readable text size and contrast; don't encode information by color alone.
-- [ ] Reduced motion setting respected (camera shake, bob, UI animations).
+Player preferences are readable (read-only, per client) on `GuiService`: `PreferredTextSize`
+(`Enum.PreferredTextSize`), `PreferredTransparency` (0–1; multiply `BackgroundTransparency` by it — 0 = player wants opaque backgrounds),
+`ReducedMotionEnabled`. React to changes with `GetPropertyChangedSignal`, or let StyleSheets do it via the built-in
+`@` queries above.
+- [ ] Readable text size and contrast; scale with `PreferredTextSize`; don't encode information by color alone.
+- [ ] Reduced motion setting respected (`ReducedMotionEnabled`: camera shake, bob, UI animations).
 - [ ] All actions reachable by gamepad and touch.
 - [ ] Captions/visual cues for important audio.
 - [ ] No flashing effects above ~3 Hz full-screen.
@@ -96,4 +107,5 @@ Sources: cd:ui/index, cd:ui/on-screen-containers, cd:ui/position-and-size, cd:ui
 cd:ui/grid-table-layouts, cd:ui/scrolling-frames, cd:ui/appearance-modifiers, cd:ui/labels, cd:ui/rich-text,
 cd:ui/text-filtering, cd:ui/styling/index, cd:ui/styling/css-comparisons, cd:ui/proximity-prompts,
 cd:projects/cross-platform, cd:production/publishing/accessibility, cd:reference/engine/classes/ScreenGui,
-cd:reference/engine/classes/TextService.
+cd:reference/engine/classes/TextService, cd:reference/engine/classes/GuiService,
+cd:reference/engine/classes/StyleRule, cd:production/localization/automatic-translations.

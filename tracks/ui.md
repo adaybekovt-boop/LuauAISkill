@@ -1,7 +1,8 @@
 # Track: UI / UX
 
 Use for: HUDs, menus, inventories, mobile/console UI, accessibility, settings.
-Load: [UI/UX](../handbook/roblox/18-ui-ux.md) → [input](../handbook/roblox/19-input.md).
+Load: [UI/UX](../handbook/roblox/18-ui-ux.md) → [input](../handbook/roblox/19-input.md); chat UI/commands →
+[chat & leaderboards](../handbook/roblox/26-chat-leaderboards.md).
 
 Non-negotiables
 - Scale + constraints (`UIAspectRatioConstraint`, `UISizeConstraint`, `UITextSizeConstraint`), `ScreenInsets`, no offset-only layouts.

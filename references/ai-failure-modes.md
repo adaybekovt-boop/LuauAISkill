@@ -1,6 +1,6 @@
 # AI failure modes in Roblox/Luau work (BAD → WHY → CURRENT CORRECT → VERIFY USING)
 
-Read before submitting any Roblox code or answer. Every "correct" item was checked against API 0.740.19 /
+Read before submitting any Roblox code or answer. Every "correct" item was checked against API 0.741.19 /
 creator-docs (Sep 2026). "VERIFY" tells you how to prove it yourself: `python tools/api.py X`,
 `python tools/check_api_refs.py file`, `python tools/check_code.py`, or a named doc.
 Lines marked FAKE show names that do not exist — never use them.
@@ -20,7 +20,7 @@ Lines marked FAKE show names that do not exist — never use them.
 | `Vector3.magnitude` / `.unit` lowercase | undocumented legacy aliases | `.Magnitude`, `.Unit` | `tools/api.py Vector3` |
 | `TweenService:Tween(part, 1, {...})` FAKE | wrong method/args | `TweenService:Create(inst, TweenInfo.new(1), goals):Play()` | `tools/api.py TweenService` |
 | `PathfindingService:FindPath(a, b)` FAKE; `FindPathAsync` legacy | wrong/old | `CreatePath(params)` + `path:ComputeAsync(a, b)` | npc chapter |
-| `Player:GetData()`, `PlayerDataService`, `PlayerDataRecord` (exist, undocumented in 0.740) | present in the engine dump without creator-docs pages → unreleased/in development; behaviour and availability unknown | DataStoreService + session-locked profiles ([save system](../recipes/gameplay/save-system.md)) | `tools/api.py PlayerDataService` prints UNDOCUMENTED |
+| `Player:GetData()`, `PlayerDataService`, `PlayerDataRecord` (exist, undocumented in 0.740–0.741) | present in the engine dump without creator-docs pages → unreleased/in development; behaviour and availability unknown | DataStoreService + session-locked profiles ([save system](../recipes/gameplay/save-system.md)) | `tools/api.py PlayerDataService` prints UNDOCUMENTED |
 
 ## 2. Other engines / other languages leaking in
 | BAD | WHY | CORRECT | VERIFY |
@@ -54,6 +54,7 @@ Lines marked FAKE show names that do not exist — never use them.
 | `meshPart.CollisionFidelity = ...` at runtime | plugin-only write | set in Studio | api tool |
 | `pcall(function() Lighting.Technology = ... end)` "to be safe" | pcall doesn't grant permission; hides the failure | don't write it | — |
 | `loadstring(code)()` on client / enabling it for "mods" | client never has it; server flag off; security hole | data-driven configs | — |
+| "It worked in `execute_luau` / the command bar" → same call in a game Script | MCP `execute_luau` and the command bar run with plugin security | check the game-script verdict before shipping | `tools/api.py Class.Member` |
 
 ## 5. Data & persistence semantics
 | BAD | WHY | CORRECT | VERIFY |
@@ -66,13 +67,16 @@ Lines marked FAKE show names that do not exist — never use them.
 | Storing `Vector3`/`CFrame`/Instances in DataStores | not serializable | numbers/arrays | data chapter |
 | Granting dev products on `PromptProductPurchaseFinished` | not a receipt; can fire without durable purchase | `ProcessReceipt` only | `api:MarketplaceService.ProcessReceipt` |
 | `OrderedDataStore` for tables | integers only | standard DataStore + separate ordered score | data chapter |
+| Returning `Enum.ProductPurchaseDecision` from a `BindReceiptHandler` handler (or `ReceiptDecision` from `ProcessReceipt`) | two receipt APIs, two enums | `BindReceiptHandler` → `Enum.ReceiptDecision.Processed`/`NotProcessedYet` | monetization chapter |
+| Copying the docs' minimal `ProcessReceipt` sample into production | grants into leaderstats with no `PurchaseId` dedupe/durable save | session-locked profile + recorded `PurchaseId` ([save system](../recipes/gameplay/save-system.md)) | monetization chapter |
+| `dataStore:BatchGetAsync(keys)` on a standard DataStore | ordered stores only; throws | `GetAsync` per key (or ordered store for scores) | `tools/api.py GlobalDataStore.BatchGetAsync` |
 
 ## 6. Outdated facts (confidently stated by models trained on older data)
 See [legacy-modernization/CATALOG.md](legacy-modernization/CATALOG.md) (`outdated-fact` entries): light range 120 (not
 60), Highlight cap 255 (not 31), DataStore limits changed, `*Async` renames (`LoadCharacterAsync`, `IsInGroupAsync`,
 `GetProductInfoAsync`, `AwardBadgeAsync`, `ReserveServerAsync`, `PreloadAsync`), `PreRender`/`PreSimulation`
 superseding `RenderStepped`/`Stepped`, Audio API superseding `Sound` for new work, Input Action System, server
-authority mode (beta), `ExcludeInstances`.
+authority mode (full release 2026-07, older models say beta or don't know it), `ExcludeInstances`.
 
 ## 7. Behavioural/semantic errors that typecheck fine
 | BAD | WHY | CORRECT |
@@ -87,6 +91,9 @@ authority mode (beta), `ExcludeInstances`.
 | `TeleportService:TeleportAsync` "works" in Studio | Studio playtests don't support teleports | publish and test |
 | `Touched` with no debounce | fires many times per contact | per-target cooldown set |
 | `string.format("%s", nil)` | errors in Luau | `tostring(x)` |
+| Echoing `TextChatCommand.Triggered` text to other players | it is the **unfiltered** message | filter with `TextService:FilterStringAsync` or don't echo |
+| Verifying replication with MCP `start_stop_play` | it starts one client | `StudioTestService:ExecuteMultiplayerTestAsync` or Server & Clients |
+| Fixing a bug by editing instances during Play (MCP or by hand) | play-mode changes are discarded; Rojo overwrites synced scripts | patch the source of truth, then re-run the reproducer |
 
 ## 8. Honesty failures
 | BAD | CORRECT |
@@ -94,8 +101,11 @@ authority mode (beta), `ExcludeInstances`.
 | "Tested in Studio, works perfectly" without Studio access | state evidence level: TYPECHECKED / CLI-EXECUTED / NOT RUN |
 | Inventing profiler numbers or FPS gains | only report measured values with conditions |
 | Claiming an API exists because it "should" | `python tools/api.py X` → NOT FOUND means don't use |
+| "STUDIO TESTED" because a playtest subagent said "passed" | quote the concrete assertions/console lines/screenshot it produced, with mode |
+| "Tested" after an Open Cloud task | CLOUD EXECUTED: server DataModel only, no physics, no clients |
 | Silently changing public behaviour while "modernizing" | list behavioural changes explicitly |
 
 Sources: api:Lighting.LightingStyle, api:Script.Source, api:MeshPart.MeshId, api:Enum.RaycastFilterType,
 cd:scripting/events/remote, cd:scripting/locations, cd:cloud-services/data-stores/versioning-listing-and-caching,
-cd:reference/engine/classes/MarketplaceService, cd:projects/teleport, cd:art/modeling/surface-appearance.
+cd:reference/engine/classes/MarketplaceService, cd:projects/teleport, cd:studio/mcp,
+cd:reference/engine/classes/StudioTestService, cd:reference/engine/classes/TextChatCommand, cd:art/modeling/surface-appearance.

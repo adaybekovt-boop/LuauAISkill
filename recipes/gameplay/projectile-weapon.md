@@ -164,7 +164,7 @@ Client rendering is in `WeaponClient.client.luau` (`projectileSpawn` / `projecti
 ## Latency notes
 - The shooter sees their projectile appear after one round trip. To hide it, spawn a local predicted visual
   immediately and replace/merge it when `ProjectileSpawn` arrives (match by a client shot id you send along).
-- Server authority mode (beta) offers predicted instance creation for projectiles — see
+- Server authority mode (released 2026-07) offers predicted instance creation for projectiles — see
   [server authority](../../handbook/roblox/05-server-authority.md) before building your own prediction.
 
 ## How to test

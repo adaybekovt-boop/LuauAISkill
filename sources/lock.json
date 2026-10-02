@@ -1,9 +1,25 @@
 {
-  "fetched_on": "2026-09-26",
+  "fetched_on": "2026-10-02",
   "sources": {
-    "api-dump": {"url": "https://github.com/MaximumADHD/Roblox-Client-Tracker.git", "sha": "68bf0fc0cd64a3c5ec7e65cb1aa137d04ba65508", "commit_date": "2026-09-24T17:25:17-05:00"},
-    "creator-docs": {"url": "https://github.com/Roblox/creator-docs.git", "sha": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91", "commit_date": "2026-09-25T10:12:55+00:00"},
-    "luau-lsp": {"url": "https://github.com/JohnnyMorganz/luau-lsp.git", "sha": "de723864774804acbf175e98d24852a7a9977f10", "commit_date": "2026-09-24T04:21:28+00:00"},
-    "luau-site": {"url": "https://github.com/luau-lang/site.git", "sha": "07c3dcd990e170cce92bae9027e16c1377de5fb4", "commit_date": "2026-09-21T03:17:32-07:00"}
+    "api-dump": {
+      "url": "https://github.com/MaximumADHD/Roblox-Client-Tracker.git",
+      "sha": "fcd6994996bb655bef047c69f456463d94faa569",
+      "commit_date": "2026-09-29T14:57:18-05:00"
+    },
+    "creator-docs": {
+      "url": "https://github.com/Roblox/creator-docs.git",
+      "sha": "578b33e83e5137b880eb594523159a6f1f691265",
+      "commit_date": "2026-10-01T10:13:07+00:00"
+    },
+    "luau-lsp": {
+      "url": "https://github.com/JohnnyMorganz/luau-lsp.git",
+      "sha": "6ebc3e53ab59b40d45bb42db5ca5e9c2a87a1c96",
+      "commit_date": "2026-09-30T05:52:56+00:00"
+    },
+    "luau-site": {
+      "url": "https://github.com/luau-lang/site.git",
+      "sha": "a60a62708901b1b7774518e2af9719e9efe678e0",
+      "commit_date": "2026-09-29T12:16:36-07:00"
+    }
   }
 }

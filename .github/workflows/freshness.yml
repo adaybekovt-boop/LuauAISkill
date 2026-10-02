@@ -1,0 +1,68 @@
+name: freshness
+
+# Weekly: fetch the newest creator-docs / API dump / luau site, rebuild the API index and report what changed.
+# Nothing is committed — a maintainer reviews the issue, then runs the same commands locally and updates the text.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  api-drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch latest sources and rebuild the API index
+        run: |
+          pip install pyyaml
+          python tools/fetch_sources.py --latest
+          python tools/build_api_index.py
+
+      - name: Diff against the committed index
+        id: diff
+        run: |
+          python tools/api_diff.py --limit 200 > drift.md
+          version=$(python -c "import json;print(json.load(open('api/META.json'))['generated_from']['api_dump']['client_version'])")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if git diff --quiet -- api/; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
+          { echo "## API drift vs committed index (client $version)"; echo; echo '```text'; cat drift.md; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Check the skill text against the new index
+        if: steps.diff.outputs.changed == 'true'
+        continue-on-error: true
+        run: |
+          python tools/check_api_refs.py > refs.txt 2>&1 || true
+          { echo "## check_api_refs on the new index"; echo '```text'; tail -n 60 refs.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open an issue for new drift
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.diff.outputs.version }}
+        run: |
+          title="Engine API drift: $VERSION"
+          if gh issue list --state all --search "\"$title\" in:title" --json number --jq 'length' | grep -qv '^0$'; then
+            echo "issue already exists"; exit 0
+          fi
+          {
+            echo "The weekly freshness job found engine API changes (client $VERSION) relative to the committed \`api/\`."
+            echo
+            echo "Next: \`python tools/fetch_sources.py --latest && python tools/build_api_index.py && python tools/api_diff.py\`,"
+            echo "review new/removed/deprecated members against the handbook, catalog and SKILL.md freshness snapshot,"
+            echo "then \`python tools/check_all.py\` and commit."
+            echo
+            echo '```text'
+            head -c 60000 drift.md
+            echo '```'
+          } > body.md
+          gh issue create --title "$title" --body-file body.md

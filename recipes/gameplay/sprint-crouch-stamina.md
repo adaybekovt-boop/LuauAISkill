@@ -478,7 +478,7 @@ end)
 - Toggle sprint (accessibility setting): flip `wantSprint` on `Pressed` instead of hold.
 - Slide: from sprint + crouch → short `LinearVelocity` burst on the client; server tolerance via
   `MovementExemptUntil` for the burst duration.
-- Server authority mode (beta) removes the need for displacement checks by simulating movement on the server —
+- Server authority mode (released 2026-07) removes the need for displacement checks by simulating movement on the server —
   see [server authority](../../handbook/roblox/05-server-authority.md).
 
 Sources: cd:input/input-action-system, cd:reference/engine/classes/InputAction,

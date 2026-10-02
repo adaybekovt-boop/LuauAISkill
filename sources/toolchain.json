@@ -1,4 +1,4 @@
 {
   "luau": {"repo": "luau-lang/luau", "version": "0.740", "provides": ["luau", "luau-analyze", "luau-compile", "luau-ast"]},
-  "luau-lsp": {"repo": "JohnnyMorganz/luau-lsp", "version": "1.70.0", "provides": ["luau-lsp"], "definitions": "luau-lsp scripts/globalTypes.None.d.luau from sources/lock.json (security level None = ordinary game scripts)"}
+  "luau-lsp": {"repo": "JohnnyMorganz/luau-lsp", "version": "1.70.1", "provides": ["luau-lsp"], "definitions": "luau-lsp scripts/globalTypes.None.d.luau from sources/lock.json (security level None = ordinary game scripts)"}
 }

@@ -4,6 +4,7 @@ Use for: starting a project, placing scripts, structuring modules, refactoring, 
 Load: [runtime architecture](../handbook/roblox/01-runtime-architecture.md) → [lifecycle & events](../handbook/roblox/02-lifecycle-events.md)
 → [architecture](../handbook/roblox/21-architecture.md) → [code quality](../handbook/roblox/22-code-quality.md) →
 [tooling & testing](../handbook/roblox/23-tooling-testing.md); [service map](../references/service-map.md) for "which service".
+Project already on Knit/Fusion/React/ECS/Blink/Zap/ProfileStore/Rojo → [ecosystem](../references/ecosystem.md) first.
 
 Non-negotiables
 - Inspect the existing project first (structure, conventions, sync tool, lifecycle pattern) and follow it.

@@ -100,6 +100,9 @@ AvatarEditorService	Instance	notcreatable,service	A service to support developer
 AvatarImportService	Instance	notcreatable,service,notreplicated,undocumented	
 AvatarRules	Instance	undocumented	
 AvatarSettings	Instance	notcreatable,service,undocumented	
+BackendReplicatedStorage	Instance	notcreatable,service,undocumented	
+BackendServerScriptService	Instance	notcreatable,service,notreplicated,undocumented	
+BackendServerStorage	Instance	notcreatable,service,notreplicated,undocumented	
 Backpack	Instance		A container object that holds a player's inventory. Any `Tool` in a player's `Backpack` will be displayed in their inventory at the bottom of the screen.
 BackpackItem	Model	notcreatable	BackpackItem is an abstract class for backpack items such as HopperBins and Tools.
 BadgeService	Instance	notcreatable,service	Provides information on badges and awards them.
@@ -318,6 +321,8 @@ FormFactorPart	BasePart	notcreatable	The FormFactorPart class is an abstract cla
 Frame	GuiObject		A `GuiObject` that renders as a plain rectangle, generally used as a container.
 FriendPages	Pages	notcreatable,notreplicated	A special version of `Pages` that contains information about a player's friends.
 FriendService	Instance	notcreatable,service	An internal service which is used to send, cancel, accept and decline friend requests in-game.
+FriendsCallingInstance	Instance	notcreatable,notreplicated,undocumented	
+FriendsCallingParticipant	Instance	notcreatable,notreplicated,undocumented	
 FunctionalTest	Instance	deprecated	Deprecated container for automated test scripts; use `TestService` instead.
 GamePassService	Instance	notcreatable,service	A service associated with the legacy game pass system. Use `MarketplaceService` for all new work.
 GameSettings	Instance	notcreatable,service,notreplicated,notbrowsable	A container for miscellaneous in-game options.
@@ -583,6 +588,7 @@ PrismaticConstraint	SlidingBallConstraint		Constraint which creates a rigid join
 ProceduralBehaviorSchedulerService	Instance	notcreatable,service,notreplicated,undocumented	
 ProceduralModel	Model		Procedural models support edit-time procedural generation. Instead of manually constructing model content, a procedural model generates its contents automatically in response to parameter changes.
 ProcessInstancePhysicsService	Instance	notcreatable,service	An internal engine service that generates collision geometry (physics data) for `MeshPart` and `PartOperation` instances that need new physics.
+ProjectService	Instance	notcreatable,service,undocumented	
 ProximityPrompt	Instance		An object that lets you prompt players to interact with an object in the 3D world.
 ProximityPromptService	Instance	service,notbrowsable	Allows developers to interact with `ProximityPrompt` objects in a global way.
 PublishService	Instance	notcreatable,service,notreplicated	A service that centralizes uploading assets to Roblox, including publishing cage mesh edits and creating assets or asset versions.
@@ -693,7 +699,7 @@ SkateboardController	Controller		Translates player input into throttle and steer
 SkateboardPlatform	Part	deprecated	A SkateboardPlatform can be used to create a skateboard. When characters get on a skateboard, they are stuck to it until they press the escape key. Until then, the character uses skateboard animations and travels faster than a walking char…
 Skin	CharacterAppearance	deprecated	Historically changed the colors of body parts to match the `Skin.SkinColor` property. Superseded by the `BodyColors` class.
 Sky	Instance		Changes the default appearance of the experience's sky.
-SlidingBallConstraint	Constraint	notcreatable	The base class for constraints that allow their attachments to slide along an axis but not rotate.
+SlidingBallConstraint	Constraint	notcreatable	The base class for constraints that allow their attachments to slide along an axis.
 SlimAnimationDataEntity	Instance	notcreatable,undocumented	
 SlimAnimationReplicationService	Instance	notcreatable,service,undocumented	
 SlimContentProvider	CacheableContentProvider	notcreatable,service	A service that fetches and caches SLIM (Scalable Lightweight Interactive Models) asset content representations for model rendering.
@@ -804,6 +810,7 @@ TextChatConfigurations	Instance	notcreatable,notreplicated	The parental class of
 TextChatMessage	Instance	notcreatable	A data object representing a text chat message.
 TextChatMessageProperties	Instance		Overrides `TextChatMessage` properties when returned by callbacks defined in `TextChatService.OnIncomingMessage` or `TextChannel.OnIncomingMessage`.
 TextChatService	Instance	notcreatable,service	A service handling in-experience text chat.
+TextDocument	Instance	notbrowsable,undocumented	
 TextFilterResult	Instance	notcreatable,notreplicated	Represents the result of a call to `TextService:FilterStringAsync()`, used to distribute a filtered string accordingly.
 TextFilterTranslatedResult	Instance	notcreatable,notreplicated	Holds the filtered source text and its filtered translations produced by `TextService:FilterAndTranslateStringAsync()`.
 TextGenerator	Instance		Gives access to a large language model for text generation.

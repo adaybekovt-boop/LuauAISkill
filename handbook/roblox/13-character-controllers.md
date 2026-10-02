@@ -10,7 +10,7 @@ recipes [sprint/crouch/stamina](../../recipes/gameplay/sprint-crouch-stamina.md)
 | **Humanoid** (default) | stable | almost everything; well understood; animations/tools/seats work |
 | Humanoid + custom logic (WalkSpeed, states, forces) | stable | sprint/crouch/slide/vault/lean on top of Humanoid (this chapter) |
 | `ControllerManager` + `GroundController`/`AirController`/`ClimbController`/`SwimController` + sensors | stable API, physics-based | custom physical characters, vehicles-like creatures; more work |
-| Character Controller Library (CCL, `require("@rbx/AvatarAbilities")`) | **beta** (File → Beta Features → "AvatarAbilities Character Controller Library", Avatar Settings → Movement) | prototyping ability systems (labels, conditions, conflicts); don't ship without checking release status |
+| Character Controller Library (CCL, `require("@rbx/AvatarAbilities")`) | base library **full release 2026-04-08** (staff announcement); the 2026-09-10 additions — default Sprint/Crouch/ShiftLock abilities and the custom-abilities API — are a **Studio beta**. Docs @ 2026-10-01 still enable it via File → Beta Features → "AvatarAbilities Character Controller Library" + Avatar Settings → Movement | new ability-based movement; opt-in, existing games are not migrated automatically; ability `Active`/`Enabled` attributes live under `Ability/SyncedState` since 2026-04-20 — check copied code |
 | Fully custom (anchored root + CFrame) | stable | top-down/2D games, NPC crowds; you own collisions |
 
 ## Humanoid essentials
@@ -110,3 +110,7 @@ Sources: cd:characters/index, cd:reference/engine/classes/Humanoid, cd:reference
 cd:characters/character-controller-library/index, cd:characters/character-controller-library/quick-start,
 cd:reference/engine/classes/ControllerManager, cd:reference/engine/classes/GroundController,
 cd:scripting/security/network-ownership, cd:workspace/raycasting.
+Status announcements: https://devforum.roblox.com/t/full-release-the-future-of-character-movement-character-controller-library/4565267
+(full release, 2026-04-08; `SyncedState` move 2026-04-20),
+https://devforum.roblox.com/t/studio-beta-expanding-the-character-controller-library-new-default-abilities-custom-abilities-api/4863739
+(Studio beta, 2026-09-10).

@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-26T11:14:16+00:00",
+ "generated": "2026-10-02T10:23:33+00:00",
  "results": [
   {
    "check": "embedded code up to date",
@@ -30,7 +30,7 @@
    "status": "PASS",
    "command": "tools/check_sources.py --check",
    "tail": [
-    "sources: 379 resolved, 0 unresolved"
+    "sources: 412 resolved, 0 unresolved"
    ]
   },
   {
@@ -38,7 +38,7 @@
    "status": "PASS",
    "command": "tools/check_links.py",
    "tail": [
-    "links: 441 checked, 0 broken"
+    "links: 472 checked, 0 broken"
    ]
   },
   {
@@ -46,7 +46,7 @@
    "status": "PASS",
    "command": "-m unittest discover -s tests -q",
    "tail": [
-    "Ran 23 tests in 0.321s",
+    "Ran 25 tests in 0.354s",
     "",
     "OK"
    ]
@@ -56,7 +56,7 @@
    "status": "PASS",
    "command": "tools/check_code.py",
    "tail": [
-    "{\"markdown\": {\"EMBEDDED\": 71, \"TYPECHECKED\": 45}, \"examples\": {\"TYPECHECKED\": 70}, \"cli_tests\": {\"CLI-EXECUTED\": 9}}"
+    "{\"markdown\": {\"EMBEDDED\": 71, \"TYPECHECKED\": 49}, \"examples\": {\"TYPECHECKED\": 70}, \"cli_tests\": {\"CLI-EXECUTED\": 9}}"
    ]
   }
  ]

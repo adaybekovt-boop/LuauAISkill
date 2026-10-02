@@ -10,7 +10,7 @@ This is the minimum correct design, small enough to read. Community libraries (P
 the same ideas with more features; using one is a fine choice — verify it does session locking, never saves failed
 loads, and handles BindToClose. Don't combine two profile systems on the same keys.
 
-Freshness note (API 0.740, creator-docs 2026-09-25): the engine dump contains an engine-managed player data system —
+Freshness note (API 0.741, creator-docs 2026-10-01): the engine dump contains an engine-managed player data system —
 `PlayerDataService`, `Player:GetData()` → `PlayerData:GetRecordAsync()` → `PlayerDataRecord` (undocumented; `GetValue`/`SetValue`,
 `Loaded`, `Flushed`, `ReleaseAsync`) — but it is **undocumented** (no creator-docs pages, no announcement in the
 pinned sources). Don't build on it yet; re-check with `python tools/api.py PlayerDataService` after

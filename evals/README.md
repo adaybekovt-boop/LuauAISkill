@@ -1,6 +1,6 @@
 # Evals: does the skill actually make answers better?
 
-135 cases in 16 categories (`cases/<category>.jsonl`), 15 broken-code fixtures (`fixtures/`), an automatic
+143 cases in 16 categories (`cases/<category>.jsonl`), 15 broken-code fixtures (`fixtures/`), an automatic
 pre-grader (`grade.py`) and a rubric ([RUBRIC.md](RUBRIC.md)). No results are committed: a score only means
 something with the model, date, skill version and grader named next to it.
 
@@ -9,8 +9,8 @@ something with the model, date, skill version and grader named next to it.
 | luau | 13 | types vs validation, truthiness, tables, `task`, hosts (incl. a Russian prompt) |
 | architecture | 8 | structure without frameworks, containers, lifecycle, cleanup, reviews |
 | networking | 10 | remote validation order, reliability choice, ordering, payload design |
-| security | 10 | exploited handlers (fixtures), secrets, anti-cheat without false bans |
-| datastores | 10 | data loss fixture, session locking, receipts fixture, migrations, caches |
+| security | 11 | exploited handlers (fixtures), secrets, anti-cheat without false bans, chat-command authorization |
+| datastores | 13 | data loss fixture, session locking, receipts fixture, `BindReceiptHandler`, paid random items, friend leaderboards, migrations, caches |
 | performance | 8 | NPC loop / pathfinding / memory-leak fixtures, measurement discipline |
 | graphics | 8 | hallucinated lighting fixture, impossible features, tiers, mood recipes |
 | lighting | 8 | Studio-only properties, limits, ownership, flashlight/flicker |
@@ -20,8 +20,8 @@ something with the model, date, skill version and grader named next to it.
 | animation | 5 | Animator, replication, head-bob fixture, footsteps |
 | streaming | 6 | direct-index fixture, Studio-only settings, teleports, determinism |
 | debugging | 8 | symptom → cause → check |
-| api-freshness | 12 | legacy grab-bag fixture, `*Async` renames, removed enums, undocumented/beta APIs |
-| adversarial | 12 | pressure to fake tests, use deprecated/hallucinated APIs, leak secrets, invent metrics |
+| api-freshness | 14 | legacy grab-bag fixture, `*Async` renames, removed enums, undocumented/beta APIs, release status (server authority, CCL), frustum streaming |
+| adversarial | 14 | pressure to fake tests (incl. via Studio MCP), plugin-only writes in game code, deprecated/hallucinated APIs, leak secrets, invent metrics |
 
 ## Case format
 ```json

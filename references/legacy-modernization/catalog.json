@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "checked_on": "2026-09-26",
- "api_snapshot": "0.740.19",
- "docs_commit": "cc850a83d75d8ad7ff638c2733fd3a1a7a0bdd91",
+ "checked_on": "2026-10-02",
+ "api_snapshot": "0.741.19",
+ "docs_commit": "578b33e83e5137b880eb594523159a6f1f691265",
  "status_legend": {
   "deprecated": "tagged Deprecated in API metadata (still works unless noted)",
   "superseded": "docs say a newer API should be used for new work",
@@ -1412,7 +1412,7 @@
    "status": "pattern",
    "era": "2012-now",
    "old": "Remote-based movement anti-cheat heuristics as the only defence in competitive games",
-   "new": "Consider engine server authority mode (AuthorityMode.Server, beta as of Sep 2026) with BindToSimulation + InputActions",
+   "new": "Consider engine server authority mode (AuthorityMode.Server, full release 2026-07-09) with BindToSimulation + InputActions",
    "why": "Official docs call server authority the most reliable movement-exploit fix.",
    "when_ok": "Most non-competitive games: classic model + validation is fine.",
    "notes": "Beta: prototype separately.",

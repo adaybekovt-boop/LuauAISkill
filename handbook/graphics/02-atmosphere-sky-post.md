@@ -74,4 +74,4 @@ print(Lighting.ClockTime)
 Sources: cd:environment/atmosphere, cd:environment/skybox, cd:environment/clouds, cd:environment/post-processing-effects,
 cd:environment/global-wind, cd:reference/engine/classes/Atmosphere, cd:reference/engine/classes/Sky,
 cd:reference/engine/classes/Clouds, cd:reference/engine/classes/BloomEffect, cd:reference/engine/classes/ColorGradingEffect,
-api:Atmosphere (defaults from API dump 0.740.19).
+api:Atmosphere (defaults from API dump 0.740.19; unchanged in 0.741.19).

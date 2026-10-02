@@ -8,11 +8,13 @@ Related: [performance tools](08-performance.md#tools-and-what-each-answers), [de
 |---|---|---|
 | `STATIC VERIFIED` | read/reasoned + API names checked against the index | `python tools/check_api_refs.py`, `python tools/api.py` |
 | `TYPECHECKED` | passes luau-lsp/luau-analyze strict with Roblox definitions | `python tools/check_code.py` or `luau-lsp analyze` |
-| `CLI-EXECUTED` | pure Luau logic ran under the `luau` CLI with assertions | `luau file.spec.luau` |
-| `STUDIO TESTED` | ran in Roblox Studio (state which mode: Play, Server & Clients N, Team Test) and observed expected behaviour | only if you actually did it |
+| `CLI-EXECUTED` | pure Luau logic ran under the `luau` CLI (or Lune) with assertions | `luau file.spec.luau` |
+| `CLOUD EXECUTED` | Open Cloud Luau Execution task on a place version (server DataModel, no physics/clients) | [Open Cloud](24-studio-mcp-testing.md#ci-without-studio-open-cloud-luau-execution) |
+| `STUDIO TESTED` | ran in Roblox Studio (state which mode: Play, Server & Clients N, Team Test) and observed expected behaviour | yourself via [Studio MCP](24-studio-mcp-testing.md) with artifacts, or reported by the user |
 | `LIVE TESTED` | published place, real clients/devices | only if you actually did it |
 | `NOT RUN` | none of the above | say so |
-An AI without Studio access must never write "tested in Studio".
+An AI without Studio access must never write "tested in Studio"; with Studio MCP connected, follow
+[24-studio-mcp-testing](24-studio-mcp-testing.md) and cite the artifacts.
 
 ## Studio
 - **Test modes**: Play (solo client+server in one), Play Here, Run (server only, no character), **Server & Clients**
@@ -25,11 +27,9 @@ An AI without Studio access must never write "tested in Studio".
   `Lighting.LightingStyle` — game scripts can't).
 - **Output** filters, **Developer Console** (F9) in play; **MicroProfiler** (Ctrl+F6); **Script Profiler**;
   **Luau heap**; **Scene Analysis**.
-- **Studio MCP server** (built into Studio): tools such as `script_read`, `multi_edit`, `script_grep`,
-  `search_game_tree`, `inspect_instance`, `execute_luau` (Edit/Client/Server), `start_stop_play`,
-  `get_console_output`, `screen_capture`, input simulation, asset search/insert, `generate_procedural_model`. If an
-  agent has it connected, it can actually playtest — then results may be reported as STUDIO TESTED with evidence
-  (console output, captures).
+- **Studio MCP server** (built into Studio, stdio): agents read/edit scripts, run Luau in Edit/Client/Server, start
+  play, simulate input, read the console and capture the viewport — see [24-studio-mcp-testing](24-studio-mcp-testing.md)
+  for the tool list, the reproduce → fix → verify loop, multiplayer (`StudioTestService`) and evidence rules.
 - **Assistant** (in-Studio AI) exists; treat its output like any other code: verify.
 
 ## Source workflows
@@ -37,7 +37,7 @@ An AI without Studio access must never write "tested in Studio".
 |---|---|---|---|
 | Studio only (+ Team Create, version history, packages) | place file in the cloud | zero setup | weak diff/review, no CI |
 | **Script Sync** (built-in) | scripts on disk ↔ Studio, everything else in the place | Git for code, keeps Studio for building, works with Team Create | only Script/LocalScript/ModuleScript/Folder sync; attributes/tags on scripts are **not** synced (don't sync tagged scripts); limits 10k scripts per root, 128 roots |
-| **Rojo** (community) | the file system (`default.project.json`), including models (`.rbxm/.model.json`) | full Git/CI, packages via Wally | builders must sync assets carefully; two-way sync limitations |
+| **Rojo** (community, 7.7+) | the file system (`default.project.json`), including models (`.rbxm/.model.json`) | full Git/CI, packages via Wally/pesde | builders must sync assets carefully; 7.7 adds explicit syncback (Studio → disk), not automatic two-way sync |
 Script Sync naming: `name.luau` ModuleScript · `name.server.luau` Script(Server) · `name.client.luau` Script(Client) ·
 `name.local.luau` LocalScript · `name.legacy.luau` Script(Legacy) · `name.plugin.luau` Script(Plugin) · folder =
 Folder · `name/init.*.luau` = script with children. (Rojo uses `.server.luau`/`.client.luau` too, but its
@@ -48,9 +48,14 @@ Folder · `name/init.*.luau` = script with children. (Rojo uses `.server.luau`/`
   Studio companion plugin keeps the DataModel map in sync for Script Sync users.
 - **Selene** (linter with Roblox std), **StyLua** (formatter), **Wally** (package manager), **Rokit/Aftman/Foreman**
   (toolchain managers), **Lune** (standalone Luau runtime for scripts/tests outside Roblox).
-- Testing frameworks: TestEZ-style/Jest-Lua-style runners inside Studio; or pure-logic tests under the `luau` CLI /
-  Lune. `TestService` exists but its `Run` is deprecated (`RunAsync`); most teams use a framework.
-None are required by this skill.
+- Testing frameworks: Jest-Lua (runs inside Roblox, not under Lune) or TestEZ (archived 2024 — keep existing suites,
+  don't start new ones on it); pure-logic tests under the `luau` CLI / Lune (Lune 0.10.5 embeds Luau 0.709 — newer
+  syntax may not parse). `TestService` exists but its `Run` is deprecated (`RunAsync`); most teams use a framework.
+- Engine-backed automation: Studio MCP + `StudioTestService` (local Studio), Open Cloud Luau Execution (CI, server
+  only) — [24-studio-mcp-testing](24-studio-mcp-testing.md). `run-in-roblox` (last release 2020) opens a real Studio;
+  it is not headless.
+Versions, maintenance status and AI pitfalls per library: [ecosystem](../../references/ecosystem.md). None are
+required by this skill.
 
 ## Testing methodology
 | Layer | What | Where |
@@ -58,7 +63,8 @@ None are required by this skill.
 | Syntax/types | every file strict-typechecks | luau-lsp / luau-analyze |
 | Unit | pure modules (validation, math, state machines, inventory ops, migrations, RNG/hash, rate limiter) | `luau` CLI / Lune / in-Studio runner |
 | Integration (single client) | bootstrap, remotes wiring, UI flows, tags/binders | Studio Play |
-| Multi-client | replication, authority, two players interacting with the same object, late join, rejoin | Studio **Server & Clients** (2–3 clients) |
+| Multi-client | replication, authority, two players interacting with the same object, late join, rejoin | Studio **Server & Clients** (2–3 clients) or scripted `StudioTestService:ExecuteMultiplayerTestAsync` (1–8) |
+| Server engine in CI | modules with real engine types, migrations on a copy | Open Cloud Luau Execution (test universe) |
 | Adversarial | invalid payloads (NaN, huge numbers, wrong types, other players' instances), spam 100 req/s, out-of-range interactions | command bar on a client in Server & Clients (`remote:FireServer(...)`) |
 | Network | 100–300 ms latency, packet loss; unreliable remotes under loss | Network Simulator |
 | Data | load/save/failure/lock/migration, shutdown with players | Studio with API access on a **test** universe; fault-injected store adapters |

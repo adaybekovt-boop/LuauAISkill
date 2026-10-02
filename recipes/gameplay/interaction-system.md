@@ -1,6 +1,6 @@
 # Recipe: interaction system (ProximityPrompt + server validation + handler registry)
 
-Evidence: code TYPECHECKED (luau-lsp strict, old + new solver, Roblox defs 0.740) · helpers CLI-EXECUTED ·
+Evidence: code TYPECHECKED (luau-lsp strict, old + new solver, Roblox defs 0.741) · helpers CLI-EXECUTED ·
 **not run in Studio**. Side: server (+ engine-provided prompt UI on clients).
 Needs: `examples/lib` (Binder, TokenBucket, Validate, Cleanup). Used by: [door system](door-system.md),
 [inventory & pickups](inventory.md). Chapters: [networking](../../handbook/roblox/03-networking.md),

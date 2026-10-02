@@ -3,7 +3,7 @@
 End-to-end, copyable systems. Every recipe states its evidence level; nothing here was run in Roblox Studio unless it
 says so. Code lives in `examples/<project>/` (Rojo-style service folders) and is embedded into the recipe; shared
 helpers are in `examples/lib` (Cleanup, Binder, TokenBucket, Validate, Signal, Spring, Hash).
-Evidence: TC = typechecked (luau-lsp strict, old + new solver, Roblox defs 0.740) · CLI = pure logic executed by
+Evidence: TC = typechecked (luau-lsp strict, old + new solver, Roblox defs 0.741) · CLI = pure logic executed by
 unit tests in `examples/tests/` · Studio = not run for any recipe.
 
 ## Gameplay (`recipes/gameplay/`)

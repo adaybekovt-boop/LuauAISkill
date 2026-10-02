@@ -1,7 +1,10 @@
-# Engine server authority mode (prediction + rollback) — BETA
+# Engine server authority mode (prediction + rollback)
 
-Status (creator-docs @ 2026-09-25): the network-ownership security page says "Server authority is currently in beta
-and will be released soon". Treat as opt-in beta: prototype in a separate place, keep a classic fallback.
+Status: **full release 2026-07-09** (Roblox staff announcement:
+https://devforum.roblox.com/t/full-release-ship-fair-and-competitive-games-with-server-authority/4727993). The
+server-authority docs pages carry no beta label; one stale line on the network-ownership page (creator-docs @
+2026-10-01) still says "currently in beta" — trust the dated announcement. It is opt-in per place and still a big
+architectural change: prototype in a branch place before converting a shipped game.
 Read when: competitive/fast multiplayer (shooters, racing, sports, fighting) where client-owned movement is
 unacceptable. Classic model: [01-runtime](01-runtime-architecture.md), [04-security](04-security.md).
 
@@ -79,7 +82,7 @@ example above is a shape illustration (TYPECHECKED only); not run under server a
 |---|---|
 | PvP where movement/physics cheating ruins the game | Co-op, horror, social, tycoon, obby, story games |
 | Physics-driven competitive objects (ball, cars) | Heavy use of legacy character scripts you can't port |
-| You can restructure core gameplay into a deterministic simulation module | Team unfamiliar; deadline soon; must ship on stable features |
+| You can restructure core gameplay into a deterministic simulation module | Team unfamiliar with deterministic simulation; deadline soon |
 Classic + server validation ([04](04-security.md)) is enough for most games.
 
 ## Pitfalls

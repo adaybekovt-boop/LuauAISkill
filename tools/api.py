@@ -142,7 +142,9 @@ def show_member(cls: str, member: str) -> int:
     owner, m = found
     print(f"{cls}.{member}" + (f"  (inherited from {owner})" if owner != cls else ""))
     print(f"  kind: {m['kind']}   type/signature: {m['type_or_signature']}")
-    print(f"  security: read={m['read']} write={m['write']}   thread: {m['thread']}   flags: {m['flags'] or '-'}")
+    # Drop a self-referencing "prefer=<same name>" (the replacement lives on another class; see the message).
+    shown = ",".join(f for f in m["flags"].split(",") if f and f != f"prefer={m['member']}")
+    print(f"  security: read={m['read']} write={m['write']}   thread: {m['thread']}   flags: {shown or '-'}")
     for n in verdict(m):
         print("  - " + n)
     s = summaries().get(f"{owner}.{member}")

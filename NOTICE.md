@@ -3,7 +3,7 @@
 ## This package
 - Authored text (SKILL.md, tracks, handbook, recipes' prose, references, evals, READMEs): **Creative Commons
   Attribution 4.0 International** — https://creativecommons.org/licenses/by/4.0/legalcode. Attribute as
-  "LuauAISkill (TK Luau + Roblox), version 2.0.0, 2026-09-26" and indicate changes.
+  "LuauAISkill (TK Luau + Roblox), version 2.1.0, 2026-10-02" and indicate changes.
 - Code (tools/*.py, examples/**/*.luau, tests): MIT — [licenses/LICENSE-CODE.txt](licenses/LICENSE-CODE.txt).
   Provided without warranty; examples are typechecked and partly unit-tested but not run in Roblox Studio.
 

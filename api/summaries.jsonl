@@ -3155,6 +3155,7 @@
 {"k": "Player.DisplayName", "s": "The display name of the authenticated user associated with the `Player`."}
 {"k": "Player.DistanceFromCharacter", "s": "Returns the distance between the character's head and the given `Vector3`, or `0` if the player has no character."}
 {"k": "Player.FollowUserId", "s": "Describes the user ID of the player who was followed into an experience by a player."}
+{"k": "Player.FrustumStreaming", "s": "Controls the engine's instance streaming behavior for the player's camera view."}
 {"k": "Player.GameplayPaused", "s": "Whether player client-side gameplay is currently paused."}
 {"k": "Player.GetCameraState", "s": "Returns a dictionary containing the player's current camera state."}
 {"k": "Player.GetFriendsOnline", "s": "Returns a dictionary of online friends."}
@@ -3819,7 +3820,7 @@
 {"k": "Sky.SunAngularSize", "s": "The perceived angular size of the sun while using this skybox, in degrees."}
 {"k": "Sky.SunTextureContent", "s": "The image displayed for the sun while using this skybox."}
 {"k": "Sky.SunTextureId", "s": "The texture of the sun while using this skybox."}
-{"k": "SlidingBallConstraint", "s": "The base class for constraints that allow their attachments to slide along an axis but not rotate."}
+{"k": "SlidingBallConstraint", "s": "The base class for constraints that allow their attachments to slide along an axis."}
 {"k": "SlidingBallConstraint.ActuatorType", "s": "Sets whether the translation of the `SlidingBallConstraint` is actuated and, if so, what kind of actuation."}
 {"k": "SlidingBallConstraint.CurrentPosition", "s": "The current offset between the constraint's `Attachment`."}
 {"k": "SlidingBallConstraint.LimitsEnabled", "s": "Sets whether the `SlidingBallConstraint` will limit the range of translation."}
@@ -5493,7 +5494,9 @@
 {"k": "Enum.EasingStyle", "s": "Enum used with `TweenInfo` to control the motion of a `Tween`."}
 {"k": "Enum.ElasticBehavior", "s": "This enum is used by `ScrollingFrame.ElasticBehavior` to control when elastic scrolling is active on touch‑enabled devices."}
 {"k": "Enum.EmitterPositionType", "s": "Defines where and how an `AudioEmitter` is positioned when sending out spatial audio."}
+{"k": "Enum.EngagementLevel", "s": "Describes how many days a player played the current experience in the last 7 days, represented as a bucket."}
 {"k": "Enum.EnviromentalPhysicsThrottle", "s": "Used to control the throttle rate of Roblox's physics engine."}
+{"k": "Enum.ExperienceActivationStatus", "s": "Describes whether a player is new, active, lapsed, or reactivated in the current experience."}
 {"k": "Enum.ExperienceAuthScope", "s": "Enumerates the authorization scopes an experience can request when prompting a creator for permission to access their assets."}
 {"k": "Enum.ExperienceEventStatus", "s": "Describes the lifecycle state of a Roblox experience event as returned by `SocialService`."}
 {"k": "Enum.ExplosionType", "s": "Determines whether an `Explosion` creates craters when it detonates."}
@@ -5516,6 +5519,7 @@
 {"k": "Enum.FormFactor", "s": "Deprecated enum that previously controlled the minimum size and resize increment of a `FormFactorPart` along each axis."}
 {"k": "Enum.FrameStyle", "s": "Used to set the style of a `Frame`."}
 {"k": "Enum.FramerateManagerMode", "s": "Controls how the Frame Rate Manager (FRM) adjusts rendering quality to maintain target frame rates."}
+{"k": "Enum.FrustumStreamingMode", "s": "Used with `Player.FrustumStreaming` to control the engine's instance streaming behavior for their camera view"}
 {"k": "Enum.FunctionalTestResult", "s": "Status of a single functional test run."}
 {"k": "Enum.GameAvatarType", "s": "Value indicating which type of avatar an experience uses."}
 {"k": "Enum.GamepadType", "s": "Identifies the hardware type of a connected gamepad controller."}
@@ -5632,6 +5636,7 @@
 {"k": "Enum.PlayerCharacterDestroyBehavior", "s": "Controls destruction behavior when a player character is removed."}
 {"k": "Enum.PlayerChatType", "s": "Determines the style of a chat message."}
 {"k": "Enum.PlayerExitReason", "s": "An enum that specifies the reason for **Players.PlayerRemoving** signal."}
+{"k": "Enum.PlayerPlatformActivationStatus", "s": "Describes whether a player is new, active, lapsed, or reactivated on Roblox."}
 {"k": "Enum.PlayerPlatformSpenderStatus", "s": "Describes a player's platform-wide spender status bucket."}
 {"k": "Enum.PluginConnectionTargetType", "s": "Describes the data model type that the remote end of a `PluginConnection` runs in."}
 {"k": "Enum.PoseEasingDirection", "s": "Used exclusively by Pose.EasingDirection to specify direction of the EasingStyle curve."}
@@ -5788,9 +5793,11 @@
 {"k": "Enum.UIFlexMode", "s": "Used with `UIFlexItem.FlexMode` to define how the parent `GuiObject` grows or shrinks."}
 {"k": "Enum.UITheme", "s": "Deprecated Studio UI color theme (`Light` or `Dark`)."}
 {"k": "Enum.UploadCaptureResult", "s": "Describes the outcome of a `CaptureService:UploadCaptureAsync()` call."}
+{"k": "Enum.UserAcquisitionSource", "s": "Describes how a player first found the current experience."}
 {"k": "Enum.UserCFrame", "s": "Determines what body part is being tracked by a VR device, and what its `CFrame` actually is."}
 {"k": "Enum.UserInputState", "s": "This enum describes the state of an input that is currently or was recently performed."}
 {"k": "Enum.UserInputType", "s": "Describes the type of a user input event."}
+{"k": "Enum.UserNewReturningStatus", "s": "Describes whether a player is new to the current experience or has played it before."}
 {"k": "Enum.VRComfortSetting", "s": "Named presets for VR comfort assists such as vignette, smooth rotation, and third-person follow camera."}
 {"k": "Enum.VRControllerModelMode", "s": "Controls whether and how the player's VR hand controller models are rendered in an experience."}
 {"k": "Enum.VRLaserPointerMode", "s": "Specifies the display mode of the VR laser pointer used to interact with the user interface."}

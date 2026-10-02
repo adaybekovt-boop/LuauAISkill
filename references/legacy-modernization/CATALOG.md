@@ -1,6 +1,6 @@
 # Legacy → current: catalog (generated from catalog.json — edit the JSON, then run tools/render_legacy.py)
 
-API snapshot 0.740.19, creator-docs `cc850a83d75d`, checked 2026-09-26. Statuses: **deprecated** = tagged Deprecated in API metadata (still works unless noted); **superseded** = docs say a newer API should be used for new work; **removed** = feature/enum item gone — old code errors or does nothing; **restricted** = exists but game scripts may not write/call it (security/capability); **discouraged** = official docs recommend the newer system; old one still supported; **outdated-fact** = a number/limit/behaviour models remember that changed; **pattern** = not an API status — an obsolete or unsafe practice.
+API snapshot 0.741.19, creator-docs `578b33e83e51`, checked 2026-10-02. Statuses: **deprecated** = tagged Deprecated in API metadata (still works unless noted); **superseded** = docs say a newer API should be used for new work; **removed** = feature/enum item gone — old code errors or does nothing; **restricted** = exists but game scripts may not write/call it (security/capability); **discouraged** = official docs recommend the newer system; old one still supported; **outdated-fact** = a number/limit/behaviour models remember that changed; **pattern** = not an API status — an obsolete or unsafe practice.
 
 Scan a project for these patterns: `python tools/scan_legacy.py <project-dir>`. For any other API run `python tools/api.py Class.Member` (the full deprecated list is `api/deprecated.tsv`).
 
@@ -232,7 +232,7 @@ player.leaderstats.Coins.Value += 10
 
 ### `server-authority-opt` — pattern (seen 2012-now)
 - OLD: `Remote-based movement anti-cheat heuristics as the only defence in competitive games`
-- NEW: `Consider engine server authority mode (AuthorityMode.Server, beta as of Sep 2026) with BindToSimulation + InputActions`
+- NEW: `Consider engine server authority mode (AuthorityMode.Server, full release 2026-07-09) with BindToSimulation + InputActions`
 - WHY: Official docs call server authority the most reliable movement-exploit fix.
 - OLD STILL OK WHEN: Most non-competitive games: classic model + validation is fine.
 - NOTES: Beta: prototype separately.

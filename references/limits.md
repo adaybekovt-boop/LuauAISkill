@@ -1,4 +1,4 @@
-# Engine and service limits (verified numbers, Sep 2026)
+# Engine and service limits (verified numbers, Sep–Oct 2026)
 
 Numbers change — each row cites its source; re-check with `python tools/fetch_sources.py --latest` + the cited doc.
 "≈" = documented as approximate.
@@ -43,6 +43,13 @@ Numbers change — each row cites its source; re-check with `python tools/fetch_
 | Script Sync | 10,000 scripts per synced root; 128 roots | cd:scripting/sync |
 | Text-to-speech | 300 characters per request | cd:audio/objects |
 | Studio multi-client test | up to 8 clients | cd:studio/testing-modes |
+| `StudioTestService:ExecuteMultiplayerTestAsync` | 1–8 clients; one session per Studio; plugin security | cd:reference/engine/classes/StudioTestService |
+| Studio MCP `script_search` / `script_grep` | ≤ 10 results / ≤ 50 matches | cd:studio/mcp |
+| Open Cloud Luau Execution task | script ≤ 4 MB; runtime ≤ 5 min; return values ≤ 4 MB JSON; logs ≤ 450 KB kept; task info 24 h; ≤ 10 incomplete tasks per place (else HTTP 429) | cd:cloud/reference/openapi |
+| `GlobalDataStore:BatchGetAsync` | ordered stores only; 1–100 keys (default max); N keys = N reads | cd:reference/engine/classes/GlobalDataStore |
+| `OrderedDataStore:GetSortedAsync` page size | 1–100 | cd:cloud-services/data-stores/error-codes-and-limits |
+| `TextChannel:SendAsync` metadata | ≤ 200 characters (longer → message not delivered) | cd:reference/engine/classes/TextChannel |
+| Frustum streaming stream-out | `Opportunistic`: out-of-view instances outside radius/foci linger ~1.5 s | cd:workspace/streaming/frustum |
 | Physics units | 1 stud = 0.28 m; 1 RMU = 21.952 kg; default gravity 196.2 studs/s² | cd:physics/units |
 | Number precision | integers exact to 2^53 | luau:getting-started/syntax |
 

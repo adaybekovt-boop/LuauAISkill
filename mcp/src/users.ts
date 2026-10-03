@@ -10,7 +10,12 @@ export interface User {
 	subscription_status: string;
 	subscription_period_end: number | null;
 	disabled: number;
+	/** Complimentary subscription (promo code or admin grant), independent of Stripe. COMP_FOREVER = no end. */
+	comp_until?: number | null;
 }
+
+/** Sentinel for a complimentary subscription without an end date (year 3000). */
+export const COMP_FOREVER = 32503680000000;
 
 const SCHEMA = [
 	`CREATE TABLE IF NOT EXISTS users (
@@ -50,7 +55,21 @@ const SCHEMA = [
 		label TEXT NOT NULL, created_at INTEGER NOT NULL, expires_at INTEGER NOT NULL, revoked_at INTEGER
 	)`,
 	"CREATE INDEX IF NOT EXISTS api_keys_user ON api_keys (user_id)",
+	`CREATE TABLE IF NOT EXISTS promo_codes (
+		code TEXT PRIMARY KEY, grant_days INTEGER NOT NULL, max_uses INTEGER, uses INTEGER NOT NULL DEFAULT 0,
+		allowed_emails TEXT, expires_at INTEGER, active INTEGER NOT NULL DEFAULT 1, note TEXT, created_at INTEGER NOT NULL
+	)`,
+	`CREATE TABLE IF NOT EXISTS promo_redemptions (
+		code TEXT NOT NULL, user_id TEXT NOT NULL, redeemed_at INTEGER NOT NULL, PRIMARY KEY(code, user_id)
+	)`,
+	`CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL)`,
+	`CREATE TABLE IF NOT EXISTS admin_log (
+		id INTEGER PRIMARY KEY AUTOINCREMENT, at INTEGER NOT NULL, admin_email TEXT NOT NULL, action TEXT NOT NULL, detail TEXT NOT NULL
+	)`,
 ];
+
+/** Columns added after the first release; ALTER fails harmlessly when the column already exists. */
+const ADDED_COLUMNS = ["ALTER TABLE users ADD COLUMN comp_until INTEGER"];
 
 const ready = new WeakMap<D1Database, Promise<void>>();
 
@@ -59,6 +78,13 @@ export function ensureSchema(db: D1Database): Promise<void> {
 	if (!p) {
 		p = (async () => {
 			for (const sql of SCHEMA) await db.prepare(sql).run();
+			for (const sql of ADDED_COLUMNS) {
+				try {
+					await db.prepare(sql).run();
+				} catch (error) {
+					if (!/duplicate column/i.test(String(error instanceof Error ? error.message : error))) throw error;
+				}
+			}
 		})();
 		p.catch(() => ready.delete(db));
 		ready.set(db, p);
@@ -106,10 +132,19 @@ export function policy(env: Env): "registered" | "subscribed" {
 	return env.ACCESS_POLICY === "subscribed" ? "subscribed" : "registered";
 }
 
-export function hasActiveSubscription(user: User, now = Date.now()): boolean {
+export function hasPaidSubscription(user: User, now = Date.now()): boolean {
 	return (
 		["active", "trialing"].includes(user.subscription_status) && (user.subscription_period_end === null || user.subscription_period_end > now)
 	);
+}
+
+export function hasComplimentary(user: User, now = Date.now()): boolean {
+	return typeof user.comp_until === "number" && user.comp_until > now;
+}
+
+/** Paid through Stripe or granted by a promo code / the admin. */
+export function hasActiveSubscription(user: User, now = Date.now()): boolean {
+	return hasPaidSubscription(user, now) || hasComplimentary(user, now);
 }
 
 export type Access = { ok: true; user: User } | { ok: false; reason: "unknown_user" | "disabled" | "subscription_required" };

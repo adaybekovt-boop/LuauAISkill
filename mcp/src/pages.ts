@@ -18,14 +18,14 @@ input,select{font:inherit;max-width:100%;padding:10px;border:1px solid var(--lin
 button,a,input,select{min-height:44px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 pre{white-space:pre-wrap;overflow-wrap:anywhere}form{margin:12px 0}hr{border:0;border-top:1px solid var(--line);margin:20px 0}`;
 
-export function page(title: string, body: string, status = 200, headers?: Headers): Response {
+export function page(title: string, body: string, status = 200, headers?: Headers, lang = "en"): Response {
 	const h = headers ?? new Headers();
 	h.set("Content-Type", "text/html; charset=utf-8");
 	h.set("Cache-Control", "no-store");
 	if (!h.has("X-Frame-Options")) h.set("X-Frame-Options", "DENY");
 	if (!h.has("Content-Security-Policy")) h.set("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'");
 	return new Response(
-		`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
+		`<!doctype html><html lang="${lang}"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
 			`<title>${escape(title)}</title><style>${STYLE}</style><main>${body}</main></html>`,
 		{ status, headers: h },
 	);
@@ -51,6 +51,9 @@ export function accountPage(opts: {
 	amount?: number;
 	cancelAtPeriodEnd?: boolean;
 	keys: ApiKey[];
+	/** Complimentary subscription end (promo/admin grant); null = none. */
+	compUntil?: number | null;
+	promoNotice?: string;
 	grants: {id: string; name: string}[];
 	nextCursor?: string;
 	newKey?: string;
@@ -71,7 +74,12 @@ ${opts.notice ? `<p role="status">${escape(opts.notice)}</p>` : ""}
 <dt>Resets</dt><dd>${escape(new Date(opts.usage.resets_at).toISOString().slice(0, 16))} UTC</dd>
 <dt>Rate limit</dt><dd>${opts.usage.calls_per_minute} tool calls / minute</dd>
 <dt>Subscription</dt><dd>${escape(opts.subscription)} · until ${escape(until)}${opts.cancelAtPeriodEnd ? " · cancels at period end" : ""}</dd>
+${opts.compUntil && opts.compUntil > Date.now() ? `<dt>Promo</dt><dd>${opts.compUntil >= 32503680000000 ? "Subscription forever" : `Subscription until ${new Date(opts.compUntil).toISOString().slice(0, 10)}`}</dd>` : ""}
 </dl></div>
+<div class="box"><h2>Promo code</h2>
+${opts.promoNotice ? `<p role="status">${escape(opts.promoNotice)}</p>` : ""}
+<form method="post" action="/account/promo">${csrf}<input name="code" maxlength="32" placeholder="LUAU-XXXX-XXXX" aria-label="Promo code" required autocapitalize="characters">
+<button class="btn">Apply</button></form></div>
 <div class="box"><p>MCP server URL</p><p><code>${escape(opts.mcpUrl)}</code></p>
 <p class="muted">Claude → Settings → Connectors → Add custom connector.</p></div>
 <div class="box"><h2>Subscription · pay what you want</h2>

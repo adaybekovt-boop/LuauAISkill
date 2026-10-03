@@ -22,8 +22,10 @@ export interface Env {
 	GOOGLE_CLIENT_SECRET: string;
 	/** Optional independent 32+ character consent key. Otherwise derived from the Google client secret. */
 	CONSENT_SECRET: string;
-	/** Optional bearer token for /admin/* (manual subscription grants until a payment provider is wired). */
+	/** Optional bearer token for /admin/subscription (scripted grants). */
 	ADMIN_TOKEN?: string;
+	/** Comma-separated Google emails allowed into the /admin panel (case-insensitive). */
+	ADMIN_EMAILS?: string;
 	/** Injected by OAuthProvider into the default handler. */
 	OAUTH_PROVIDER: OAuthHelpers;
 }

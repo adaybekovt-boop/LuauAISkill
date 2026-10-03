@@ -11,6 +11,9 @@ import { SERVER_NAME } from "./server";
 import { billingReady, BillingError, cancelCheckout, changePrice, startCheckout, startPortal, subscriptionInfo, validAmount, webhook } from "./billing";
 import { createKey, listKeys, revokeKey } from "./keys";
 import { freeLimit, minuteLimit, usageInfo } from "./usage";
+import { adminPanel } from "./admin";
+import { redeemPromo } from "./promo";
+import { getSettings } from "./settings";
 import { lookup } from "./api";
 
 function redirect(location: string, headers?: Headers): Response {
@@ -121,7 +124,15 @@ async function googleCallback(request: Request, env: Env): Promise<Response> {
 	}
 }
 
-async function account(request: Request, env: Env, newKey?: string): Promise<Response> {
+const PROMO_MESSAGES: Record<string, string> = {
+	invalid: "This promo code doesn't exist or is turned off.",
+	not_allowed: "This promo code is for other accounts.",
+	used_up: "This promo code has no activations left.",
+	already_redeemed: "You have already used this promo code.",
+	expired: "This promo code has expired.",
+};
+
+async function account(request: Request, env: Env, newKey?: string, promoNotice?: string): Promise<Response> {
 	const session = await getSession(env, request);
 	if (!session) return redirect("/login?return_to=/account");
 	const user = await getUser(env, session.userId);
@@ -146,6 +157,7 @@ async function account(request: Request, env: Env, newKey?: string): Promise<Res
 			csrf: await csrfToken(env, request), operationId: randomToken(16), usage: await usageInfo(env, user), billingReady: billingReady(env),
 			amount: sub?.amount ?? validAmount(new URL(request.url).searchParams.get("amount")) ?? 700, cancelAtPeriodEnd: Boolean(sub?.cancel_at_period_end),
 			keys: await listKeys(env, user.id), grants: connections, nextCursor: grants?.cursor, newKey,
+			compUntil: user.comp_until ?? null, promoNotice,
 			notice: status === "success" ? "Checkout completed. Subscription access activates after payment confirmation; refresh this page shortly."
 				: status === "canceled" ? "Checkout canceled. No new subscription was activated." : status === "updated" ? "Price updated for future invoices." : undefined,
 		}),
@@ -164,6 +176,12 @@ async function accountAction(request: Request, env: Env, path: string): Promise<
 	if (path === "/account/keys") {
 		const token = await createKey(env, user.id, String(form.get("label") ?? "MCP client"));
 		return token ? account(request, env, token) : page("Key limit", errorPage("Revoke an unused key before creating another."), 409);
+	}
+	if (path === "/account/promo") {
+		const result = await redeemPromo(env, user.id, form.get("code"));
+		return account(request, env, undefined, result.ok
+			? result.grantDays === 0 ? "Promo applied: subscription forever." : `Promo applied: subscription until ${new Date(result.compUntil).toISOString().slice(0, 10)}.`
+			: PROMO_MESSAGES[result.reason]);
 	}
 	if (path === "/account/keys/revoke") await revokeKey(env, user.id, String(form.get("id") ?? ""));
 	else if (path === "/account/connections/revoke") {
@@ -213,10 +231,14 @@ export const siteHandler = {
 	async fetch(request: Request, env: Env): Promise<Response> {
 		const url = new URL(request.url);
 		const path = url.pathname;
-		if (path === "/api/config" && request.method === "GET") return json({
-			google_ready: googleReady(env), billing_ready: billingReady(env), auth_mode: oauthEnabled(env) ? "oauth" : "public-preview",
-			mcp_url: `${publicUrl(env)}/mcp`, free_calls_per_week: freeLimit(env), calls_per_minute: minuteLimit(env),
-		});
+		if (path === "/api/config" && request.method === "GET") {
+			const settings = await getSettings(env);
+			return json({
+				google_ready: googleReady(env), billing_ready: billingReady(env), auth_mode: oauthEnabled(env) ? "oauth" : "public-preview",
+				mcp_url: `${publicUrl(env)}/mcp`, free_calls_per_week: await freeLimit(env), calls_per_minute: await minuteLimit(env),
+				announcement: settings.announcement,
+			});
+		}
 		if (path === "/api/demo" && request.method === "POST") {
 			const body = await request.json().catch(() => null) as {query?: unknown} | null;
 			if (typeof body?.query !== "string" || !body.query.trim() || body.query.length > 200) return json({error: "A query of 1–200 characters is required."}, 400);
@@ -234,7 +256,8 @@ export const siteHandler = {
 		if (path === "/login" && request.method === "GET") return startGoogleLogin(env, safeReturnTo(url.searchParams.get("return_to")));
 		if (path === "/logout" || path.startsWith("/account/") || path.startsWith("/billing/")) return accountAction(request, env, path);
 		if (path === "/account" && request.method === "GET") return account(request, env);
-		if (path.startsWith("/admin/")) return admin(request, env, path);
+		if (path === "/admin/subscription") return admin(request, env, path);
+		if (path === "/admin" || path.startsWith("/admin/")) return adminPanel(request, env, path);
 		if (path === "/health") {
 			return json({
 				name: SERVER_NAME,
